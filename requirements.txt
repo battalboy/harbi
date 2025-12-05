@@ -1,0 +1,10 @@
+streamlit
+pandas
+playwright
+requests
+watchdog
+certifi
+rapidfuzz
+beautifulsoup4
+lxml
+

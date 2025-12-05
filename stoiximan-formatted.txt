@@ -1,0 +1,18 @@
+Team 1: Stade Brestois 29 | Team 2: AS Monaco | Team 1 Win: 11.78 | Draw: 3.55 | Team 2 Win: 24.60
+Team 1: Enosis Neon Paralimni | Team 2: Enosi Neon Ypsona | Team 1 Win: 150.00 | Draw: 6.20 | Team 2 Win: 21.13
+Team 1: Galatasaray SK | Team 2: Samsunspor | Team 1 Win: 11.17 | Draw: 5.80 | Team 2 Win: 229.00
+Team 1: Fortuna Dusseldorf | Team 2: FC Schalke 04 | Team 1 Win: 19.75 | Draw: 4.00 | Team 2 Win: 21.42
+Team 1: SC Preussen Münster | Team 2: Hannover 96 | Team 1 Win: 111.50 | Draw: 4.40 | Team 2 Win: 21.34
+Team 1: Comoros | Team 2: Saudi Arabia | Team 1 Win: 18.50 | Draw: 4.30 | Team 2 Win: 21.37
+Team 1: Floridsdorfer AC | Team 2: WSC Hertha Wels | Team 1 Win: 11.005 | Draw: 14.00 | Team 2 Win: 270.00
+Team 1: Rapid Vienna II | Team 2: SW Bregenz | Team 1 Win: 11.02 | Draw: 12.00 | Team 2 Win: 255.00
+Team 1: FC Bourg Peronnas | Team 2: FC Sochaux | Team 1 Win: 13.45 | Draw: 2.87 | Team 2 Win: 22.12
+Team 1: Villefranche | Team 2: SM Caen | Team 1 Win: 14.00 | Draw: 3.00 | Team 2 Win: 21.90
+Team 1: US Quevilly-Rouen | Team 2: Orleans US | Team 1 Win: 13.35 | Draw: 3.00 | Team 2 Win: 22.10
+Team 1: Versailles 78 | Team 2: Le Puy | Team 1 Win: 12.37 | Draw: 2.87 | Team 2 Win: 22.95
+Team 1: Fleury 91 | Team 2: LB Chateauroux | Team 1 Win: 11.72 | Draw: 3.15 | Team 2 Win: 24.70
+Team 1: Dijon FCO | Team 2: Valenciennes FC | Team 1 Win: 11.25 | Draw: 4.75 | Team 2 Win: 210.25
+Team 1: Aubagne FC | Team 2: FC Rouen | Team 1 Win: 12.72 | Draw: 2.80 | Team 2 Win: 22.60
+Team 1: NK Slaven Belupo | Team 2: HNK Gorica | Team 1 Win: 11.11 | Draw: 6.60 | Team 2 Win: 260.00
+Team 1: Maties | Team 2: Nanini Na All Stars | Team 1 Win: 11.22 | Draw: 4.30 | Team 2 Win: 217.00
+Team 1: Nec FC | Team 2: Vipers | Team 1 Win: 16.20 | Draw: 1.50 | Team 2 Win: 23.60
