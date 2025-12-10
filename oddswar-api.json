@@ -1,0 +1,2810 @@
+{
+    "exchangeMarkets": [
+        {
+            "id": "1.251527160",
+            "betfair_market_id": "1.251527160",
+            "competition_id": "12214445",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T12:00:00.000Z",
+            "total_matched": 164.25,
+            "event_id": "35044173",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "CS",
+            "competition": {
+                "id": "12214445",
+                "name": "Montenegrin 2nd League"
+            },
+            "event": {
+                "id": "35044173",
+                "name": "Rudar Pljevlja v FK Podgorica",
+                "countryCode": "CS",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T12:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 4807098,
+                    "runnerName": "Rudar Pljevlja",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 24820236,
+                    "runnerName": "FK Podgorica",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251534865",
+            "betfair_market_id": "1.251534865",
+            "competition_id": "12208242",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T12:00:00.000Z",
+            "total_matched": 171.83,
+            "event_id": "35044169",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "CS",
+            "competition": {
+                "id": "12208242",
+                "name": "Montenegrin 1st League"
+            },
+            "event": {
+                "id": "35044169",
+                "name": "OFK Petrovac v FK Bokelj",
+                "countryCode": "CS",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T12:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 10365226,
+                    "runnerName": "OFK Petrovac",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 10365199,
+                    "runnerName": "FK Bokelj",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251520695",
+            "betfair_market_id": "1.251520695",
+            "competition_id": "3784863",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T12:00:00.000Z",
+            "total_matched": 647.53,
+            "event_id": "35045488",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "3784863",
+                "name": "UEFA Youth League"
+            },
+            "event": {
+                "id": "35045488",
+                "name": "Athletic Bilbao U19 v Paris St-G U19",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T12:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 11230155,
+                    "runnerName": "Athletic Bilbao U19",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 6569319,
+                    "runnerName": "Paris St-G U19",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251452771",
+            "betfair_market_id": "1.251452771",
+            "competition_id": "12209621",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T12:00:00.000Z",
+            "total_matched": 2294.29,
+            "event_id": "35039890",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "PT",
+            "competition": {
+                "id": "12209621",
+                "name": "Portuguese U23"
+            },
+            "event": {
+                "id": "35039890",
+                "name": "GD Estoril Praia U23 v Uni\u00e3o de Leiria U23",
+                "countryCode": "PT",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T12:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 20182451,
+                    "runnerName": "GD Estoril Praia U23",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 87469089,
+                    "runnerName": "Uni\u00e3o de Leiria U23",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251530333",
+            "betfair_market_id": "1.251530333",
+            "competition_id": "12688794",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T12:15:00.000Z",
+            "total_matched": 6905.37,
+            "event_id": "35046114",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "12688794",
+                "name": "AFC Champions League Two"
+            },
+            "event": {
+                "id": "35046114",
+                "name": "Selangor FA v Lion City Sailors FC",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T12:15:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 5355894,
+                    "runnerName": "Selangor FA",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 42948438,
+                    "runnerName": "Lion City Sailors FC",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251530441",
+            "betfair_market_id": "1.251530441",
+            "competition_id": "12688794",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T12:15:00.000Z",
+            "total_matched": 3148.27,
+            "event_id": "35046093",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "12688794",
+                "name": "AFC Champions League Two"
+            },
+            "event": {
+                "id": "35046093",
+                "name": "Persib Bandung v Bangkok Utd",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T12:15:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 5221477,
+                    "runnerName": "Persib Bandung",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 9282747,
+                    "runnerName": "Bangkok Utd",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251537827",
+            "betfair_market_id": "1.251537827",
+            "competition_id": "2371216",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T12:30:00.000Z",
+            "total_matched": 376.53,
+            "event_id": "35046612",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "JO",
+            "competition": {
+                "id": "2371216",
+                "name": "Jordan 1st Division"
+            },
+            "event": {
+                "id": "35046612",
+                "name": "Al Arabi (JOR) v Ma'an",
+                "countryCode": "JO",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T12:30:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 41555114,
+                    "runnerName": "Al Arabi (Jor)",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 22823465,
+                    "runnerName": "Ma'an",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251534559",
+            "betfair_market_id": "1.251534559",
+            "competition_id": "2371216",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T12:30:00.000Z",
+            "total_matched": 177.36,
+            "event_id": "35046287",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "JO",
+            "competition": {
+                "id": "2371216",
+                "name": "Jordan 1st Division"
+            },
+            "event": {
+                "id": "35046287",
+                "name": "Doqarah FC v Etihad Al Ramtha",
+                "countryCode": "JO",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T12:30:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 80031681,
+                    "runnerName": "Doqarah FC",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 22288052,
+                    "runnerName": "Etihad Al Ramtha",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251509367",
+            "betfair_market_id": "1.251509367",
+            "competition_id": "3784863",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T12:30:00.000Z",
+            "total_matched": 47.72,
+            "event_id": "35045078",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "3784863",
+                "name": "UEFA Youth League"
+            },
+            "event": {
+                "id": "35045078",
+                "name": "FC Midtjylland U19 v FC Koln U19",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T12:30:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 6384347,
+                    "runnerName": "FC Midtjylland U19",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 6415589,
+                    "runnerName": "FC Koln U19",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251532928",
+            "betfair_market_id": "1.251532928",
+            "competition_id": "12005859",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T12:30:00.000Z",
+            "total_matched": 275.28,
+            "event_id": "35046179",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "12005859",
+                "name": "Friendly Matches"
+            },
+            "event": {
+                "id": "35046179",
+                "name": "FC Sellier & Bellot Vlasim v Zlate Moravce",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T12:30:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 21285670,
+                    "runnerName": "FC Sellier & Bellot Vlasim",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 2397382,
+                    "runnerName": "Zlate Moravce",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251531535",
+            "betfair_market_id": "1.251531535",
+            "competition_id": "2371216",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T12:30:00.000Z",
+            "total_matched": 236.16,
+            "event_id": "35046289",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "JO",
+            "competition": {
+                "id": "2371216",
+                "name": "Jordan 1st Division"
+            },
+            "event": {
+                "id": "35046289",
+                "name": "Yarmouk v Samma",
+                "countryCode": "JO",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T12:30:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 10698731,
+                    "runnerName": "Yarmouk",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 59768755,
+                    "runnerName": "Samma",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251537921",
+            "betfair_market_id": "1.251537921",
+            "competition_id": "2371216",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T12:30:00.000Z",
+            "total_matched": 1826.18,
+            "event_id": "35046610",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "JO",
+            "competition": {
+                "id": "2371216",
+                "name": "Jordan 1st Division"
+            },
+            "event": {
+                "id": "35046610",
+                "name": "Kfarsoum v Jerash SC",
+                "countryCode": "JO",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T12:30:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 5647844,
+                    "runnerName": "Kfarsoum",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 23294148,
+                    "runnerName": "Jerash SC",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251514648",
+            "betfair_market_id": "1.251514648",
+            "competition_id": "3784863",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T13:00:00.000Z",
+            "total_matched": 1385.22,
+            "event_id": "35045235",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "3784863",
+                "name": "UEFA Youth League"
+            },
+            "event": {
+                "id": "35045235",
+                "name": "Club Brugge U19 v Arsenal U19",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T13:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 10702893,
+                    "runnerName": "Club Brugge U19",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 2502328,
+                    "runnerName": "Arsenal U19",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251504895",
+            "betfair_market_id": "1.251504895",
+            "competition_id": "7247362",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T13:00:00.000Z",
+            "total_matched": 11.83,
+            "event_id": "35044804",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "UG",
+            "competition": {
+                "id": "7247362",
+                "name": "Ugandan Premier League"
+            },
+            "event": {
+                "id": "35044804",
+                "name": "Lugazi FC v Uganda Police",
+                "countryCode": "UG",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T13:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 73806270,
+                    "runnerName": "Lugazi FC",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 9487897,
+                    "runnerName": "Uganda Police",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251527467",
+            "betfair_market_id": "1.251527467",
+            "competition_id": "12208242",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T13:00:00.000Z",
+            "total_matched": 41.12,
+            "event_id": "35044171",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "CS",
+            "competition": {
+                "id": "12208242",
+                "name": "Montenegrin 1st League"
+            },
+            "event": {
+                "id": "35044171",
+                "name": "FK Arsenal Tivat v Fk Jedinstvo Bijelo Polje",
+                "countryCode": "CS",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T13:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 20223698,
+                    "runnerName": "FK Arsenal Tivat",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 20377532,
+                    "runnerName": "FK Jedinstvo Bijelo Polje",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251527647",
+            "betfair_market_id": "1.251527647",
+            "competition_id": "12208242",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T13:00:00.000Z",
+            "total_matched": 55.34,
+            "event_id": "35044170",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "CS",
+            "competition": {
+                "id": "12208242",
+                "name": "Montenegrin 1st League"
+            },
+            "event": {
+                "id": "35044170",
+                "name": "Fk Jezero v Fk Buducnost Podgorica",
+                "countryCode": "CS",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T13:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 14575010,
+                    "runnerName": "FK Jezero",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 14092633,
+                    "runnerName": "FK Buducnost Podgorica",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251541460",
+            "betfair_market_id": "1.251541460",
+            "competition_id": "3784863",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T13:00:00.000Z",
+            "total_matched": 3482.32,
+            "event_id": "35046688",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "3784863",
+                "name": "UEFA Youth League"
+            },
+            "event": {
+                "id": "35046688",
+                "name": "Leverkusen U19 v Newcastle United U19",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T13:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 7653282,
+                    "runnerName": "Leverkusen U19",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 60728761,
+                    "runnerName": "Newcastle United U19",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251542072",
+            "betfair_market_id": "1.251542072",
+            "competition_id": "7247362",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T13:00:00.000Z",
+            "total_matched": 52.52,
+            "event_id": "35046866",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "UG",
+            "competition": {
+                "id": "7247362",
+                "name": "Ugandan Premier League"
+            },
+            "event": {
+                "id": "35046866",
+                "name": "Buhimba Saints United v UPDF FC",
+                "countryCode": "UG",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T13:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 89378423,
+                    "runnerName": "Buhimba Saints United",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 14880720,
+                    "runnerName": "Updf FC",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251514738",
+            "betfair_market_id": "1.251514738",
+            "competition_id": "3784863",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T13:00:00.000Z",
+            "total_matched": 54.59,
+            "event_id": "35045172",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "3784863",
+                "name": "UEFA Youth League"
+            },
+            "event": {
+                "id": "35045172",
+                "name": "Dinamo Tbilisi U19 v Dinamo Minsk U19",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T13:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 11630573,
+                    "runnerName": "Dinamo Tbilisi U19",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 63395682,
+                    "runnerName": "Dinamo Minsk U19",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251502304",
+            "betfair_market_id": "1.251502304",
+            "competition_id": "97855",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T14:00:00.000Z",
+            "total_matched": 433.82,
+            "event_id": "35044588",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "SK",
+            "competition": {
+                "id": "97855",
+                "name": "Slovakian Cup"
+            },
+            "event": {
+                "id": "35044588",
+                "name": "Ruzomberok v FC Kosice",
+                "countryCode": "SK",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T14:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 52764,
+                    "runnerName": "Ruzomberok",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 1539445,
+                    "runnerName": "FC Kosice",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251508079",
+            "betfair_market_id": "1.251508079",
+            "competition_id": "3784863",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T14:00:00.000Z",
+            "total_matched": 666.78,
+            "event_id": "35044967",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "3784863",
+                "name": "UEFA Youth League"
+            },
+            "event": {
+                "id": "35044967",
+                "name": "Juventus U19 v Pafos U19",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T14:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 2502329,
+                    "runnerName": "Juventus U19",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 61344774,
+                    "runnerName": "Pafos U19",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251527557",
+            "betfair_market_id": "1.251527557",
+            "competition_id": "12208242",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T14:00:00.000Z",
+            "total_matched": 3106.07,
+            "event_id": "35044182",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "CS",
+            "competition": {
+                "id": "12208242",
+                "name": "Montenegrin 1st League"
+            },
+            "event": {
+                "id": "35044182",
+                "name": "FK Decic v FK Mladost Donja Gorica",
+                "countryCode": "CS",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T14:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 10440434,
+                    "runnerName": "FK Decic",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 40743239,
+                    "runnerName": "FK Mladost Donja Gorica",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251514157",
+            "betfair_market_id": "1.251514157",
+            "competition_id": "12383129",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T14:30:00.000Z",
+            "total_matched": 508.29,
+            "event_id": "35045314",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "ES",
+            "competition": {
+                "id": "12383129",
+                "name": "Spanish Primera Federaci\u00f3n - Group 2"
+            },
+            "event": {
+                "id": "35045314",
+                "name": "Marbella v Atletico Madrid II",
+                "countryCode": "ES",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T14:30:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 2250362,
+                    "runnerName": "Marbella",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 10243043,
+                    "runnerName": "Atletico Madrid II",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251541574",
+            "betfair_market_id": "1.251541574",
+            "competition_id": "3784863",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T15:00:00.000Z",
+            "total_matched": 1211.1,
+            "event_id": "35046685",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "3784863",
+                "name": "UEFA Youth League"
+            },
+            "event": {
+                "id": "35046685",
+                "name": "Dortmund U19 v Bodo/Glimt U19",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T15:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 6267902,
+                    "runnerName": "Dortmund U19",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 18458809,
+                    "runnerName": "Bodo/Glimt U19",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251527737",
+            "betfair_market_id": "1.251527737",
+            "competition_id": "12208242",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T15:00:00.000Z",
+            "total_matched": 64.3,
+            "event_id": "35044167",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "CS",
+            "competition": {
+                "id": "12208242",
+                "name": "Montenegrin 1st League"
+            },
+            "event": {
+                "id": "35044167",
+                "name": "FK Sutjeska v FK Mornar",
+                "countryCode": "CS",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T15:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 10386844,
+                    "runnerName": "FK Sutjeska",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 10386779,
+                    "runnerName": "FK Mornar",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251508169",
+            "betfair_market_id": "1.251508169",
+            "competition_id": "3784863",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T15:00:00.000Z",
+            "total_matched": 473.03,
+            "event_id": "35044989",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "3784863",
+                "name": "UEFA Youth League"
+            },
+            "event": {
+                "id": "35044989",
+                "name": "Real Madrid U19 v Man City U19",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T15:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 7653237,
+                    "runnerName": "Real Madrid U19",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 6569324,
+                    "runnerName": "Man City U19",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251531013",
+            "betfair_market_id": "1.251531013",
+            "competition_id": "12444373",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T15:00:00.000Z",
+            "total_matched": 384.44,
+            "event_id": "35046227",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "EG",
+            "competition": {
+                "id": "12444373",
+                "name": "Egyptian League Cup"
+            },
+            "event": {
+                "id": "35046227",
+                "name": "El Geish v Ceramica Cleopatra",
+                "countryCode": "EG",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T15:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 7024303,
+                    "runnerName": "El Geish",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 37456793,
+                    "runnerName": "Ceramica Cleopatra",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251507288",
+            "betfair_market_id": "1.251507288",
+            "competition_id": "12226205",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T15:00:00.000Z",
+            "total_matched": 159.16,
+            "event_id": "35045012",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "GE",
+            "competition": {
+                "id": "12226205",
+                "name": "Georgian Cup"
+            },
+            "event": {
+                "id": "35045012",
+                "name": "FC Iberia 1999 v Dila Gori",
+                "countryCode": "GE",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T15:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 66686428,
+                    "runnerName": "FC Iberia 1999",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 6511598,
+                    "runnerName": "Dila Gori",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251509475",
+            "betfair_market_id": "1.251509475",
+            "competition_id": "3784863",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T15:00:00.000Z",
+            "total_matched": 107.65,
+            "event_id": "35045077",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "3784863",
+                "name": "UEFA Youth League"
+            },
+            "event": {
+                "id": "35045077",
+                "name": "Betis Sevilla U19 v Porto U19",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T15:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 22897955,
+                    "runnerName": "Betis Sevilla U19",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 2502334,
+                    "runnerName": "Porto U19",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251506491",
+            "betfair_market_id": "1.251506491",
+            "competition_id": "3784863",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T15:30:00.000Z",
+            "total_matched": 90.49,
+            "event_id": "35044925",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "3784863",
+                "name": "UEFA Youth League"
+            },
+            "event": {
+                "id": "35044925",
+                "name": "Puskas Akademia FC U19 v FCSB U19",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T15:30:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 62067714,
+                    "runnerName": "Puskas Akademia FC U19",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 39042584,
+                    "runnerName": "FCSB U19",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251533741",
+            "betfair_market_id": "1.251533741",
+            "competition_id": "12005859",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T15:30:00.000Z",
+            "total_matched": 1.74,
+            "event_id": "35046149",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "12005859",
+                "name": "Friendly Matches"
+            },
+            "event": {
+                "id": "35046149",
+                "name": "Al Wahda (Abu Dhabi) v Al Nassr",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T15:30:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 6132829,
+                    "runnerName": "Al Wahda (Abu Dhabi)",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 6359075,
+                    "runnerName": "Al Nassr",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251509583",
+            "betfair_market_id": "1.251509583",
+            "competition_id": "3784863",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T15:30:00.000Z",
+            "total_matched": 108,
+            "event_id": "35045071",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "3784863",
+                "name": "UEFA Youth League"
+            },
+            "event": {
+                "id": "35045071",
+                "name": "MSK Zilina U19 v FK Crvena Zvezda U19",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T15:30:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 7313728,
+                    "runnerName": "MSK Zilina U19",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 11264663,
+                    "runnerName": "FK Crvena Zvezda U19",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251548588",
+            "betfair_market_id": "1.251548588",
+            "competition_id": "12209362",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T16:00:00.000Z",
+            "total_matched": 64.05,
+            "event_id": "35047338",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "JO",
+            "competition": {
+                "id": "12209362",
+                "name": "Jordanian Cup"
+            },
+            "event": {
+                "id": "35047338",
+                "name": "Al-Baq'a v Al Ramtha",
+                "countryCode": "JO",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T16:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 38662718,
+                    "runnerName": "Al-Baq'a",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 5744956,
+                    "runnerName": "Al Ramtha",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251506961",
+            "betfair_market_id": "1.251506961",
+            "competition_id": "3784863",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T16:00:00.000Z",
+            "total_matched": 311.56,
+            "event_id": "35044944",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "3784863",
+                "name": "UEFA Youth League"
+            },
+            "event": {
+                "id": "35044944",
+                "name": "Nantes U19 FC v Maccabi Haifa U19",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T16:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 22716114,
+                    "runnerName": "Nantes U19 FC",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 10046353,
+                    "runnerName": "Maccabi Haifa U19",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251504716",
+            "betfair_market_id": "1.251504716",
+            "competition_id": "12707558",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T17:00:00.000Z",
+            "total_matched": 6184.02,
+            "event_id": "35044787",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "12707558",
+                "name": "FIFA Intercontinental Cup"
+            },
+            "event": {
+                "id": "35044787",
+                "name": "Cruz Azul v Flamengo",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T17:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 328204,
+                    "runnerName": "Cruz Azul",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 198138,
+                    "runnerName": "Flamengo",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251503113",
+            "betfair_market_id": "1.251503113",
+            "competition_id": "12199507",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T17:00:00.000Z",
+            "total_matched": 96.3,
+            "event_id": "35043997",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "IT",
+            "competition": {
+                "id": "12199507",
+                "name": "Italian Serie C Cup"
+            },
+            "event": {
+                "id": "35043997",
+                "name": "Ravenna v Renate",
+                "countryCode": "IT",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T17:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 1235223,
+                    "runnerName": "Ravenna",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 4077808,
+                    "runnerName": "Renate",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251503293",
+            "betfair_market_id": "1.251503293",
+            "competition_id": "12199507",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T17:00:00.000Z",
+            "total_matched": 281.21,
+            "event_id": "35043993",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "IT",
+            "competition": {
+                "id": "12199507",
+                "name": "Italian Serie C Cup"
+            },
+            "event": {
+                "id": "35043993",
+                "name": "Ternana v Union Brescia",
+                "countryCode": "IT",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T17:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 60308,
+                    "runnerName": "Ternana",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 87451686,
+                    "runnerName": "Union Brescia",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251503023",
+            "betfair_market_id": "1.251503023",
+            "competition_id": "12199507",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T17:00:00.000Z",
+            "total_matched": 187.86,
+            "event_id": "35044000",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "IT",
+            "competition": {
+                "id": "12199507",
+                "name": "Italian Serie C Cup"
+            },
+            "event": {
+                "id": "35044000",
+                "name": "Pro Vercelli v US Latina Calcio",
+                "countryCode": "IT",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T17:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 5369664,
+                    "runnerName": "Pro Vercelli",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 19693888,
+                    "runnerName": "US Latina Calcio",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251503203",
+            "betfair_market_id": "1.251503203",
+            "competition_id": "12199507",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T17:00:00.000Z",
+            "total_matched": 143.42,
+            "event_id": "35043994",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "IT",
+            "competition": {
+                "id": "12199507",
+                "name": "Italian Serie C Cup"
+            },
+            "event": {
+                "id": "35043994",
+                "name": "Potenza v Crotone",
+                "countryCode": "IT",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T17:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 2519556,
+                    "runnerName": "Potenza",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 60300,
+                    "runnerName": "Crotone",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251508385",
+            "betfair_market_id": "1.251508385",
+            "competition_id": "3784863",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T17:00:00.000Z",
+            "total_matched": 118.76,
+            "event_id": "35044965",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "3784863",
+                "name": "UEFA Youth League"
+            },
+            "event": {
+                "id": "35044965",
+                "name": "Genk U19 v HJK Helsinki U19",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T17:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 10390150,
+                    "runnerName": "Genk U19",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 7292471,
+                    "runnerName": "HJK Helsinki U19",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251414653",
+            "betfair_market_id": "1.251414653",
+            "competition_id": "135",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T17:00:00.000Z",
+            "total_matched": 2561.16,
+            "event_id": "35037875",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "CH",
+            "competition": {
+                "id": "135",
+                "name": "Swiss Challenge League"
+            },
+            "event": {
+                "id": "35037875",
+                "name": "Stade Lausanne-Ouchy v Neuchatel Xamax",
+                "countryCode": "CH",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T17:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 5805890,
+                    "runnerName": "Stade Lausanne-Ouchy",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 65779,
+                    "runnerName": "Neuchatel Xamax",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251534958",
+            "betfair_market_id": "1.251534958",
+            "competition_id": "12005859",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T17:00:00.000Z",
+            "total_matched": 27.82,
+            "event_id": "35046174",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "12005859",
+                "name": "Friendly Matches"
+            },
+            "event": {
+                "id": "35046174",
+                "name": "Sparta Prague B v Aritma Praha",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T17:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 5964774,
+                    "runnerName": "Sparta Prague B",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 15190257,
+                    "runnerName": "Aritma Praha",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251241545",
+            "betfair_market_id": "1.251241545",
+            "competition_id": "12220206",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T17:45:00.000Z",
+            "total_matched": 99.04,
+            "event_id": "35018239",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "12220206",
+                "name": "UEFA Women's Champions League"
+            },
+            "event": {
+                "id": "35018239",
+                "name": "Valerenga (W) v Paris FC (W)",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T17:45:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 6415473,
+                    "runnerName": "Valerenga (W)",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 15228979,
+                    "runnerName": "Paris FC (W)",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251241437",
+            "betfair_market_id": "1.251241437",
+            "competition_id": "12220206",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T17:45:00.000Z",
+            "total_matched": 3552.9,
+            "event_id": "35018264",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "12220206",
+                "name": "UEFA Women's Champions League"
+            },
+            "event": {
+                "id": "35018264",
+                "name": "Barcelona (W) v S.L. Benfica (W)",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T17:45:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 5226501,
+                    "runnerName": "Barcelona (W)",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 36683262,
+                    "runnerName": "S.L. Benfica (W)",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251082460",
+            "betfair_market_id": "1.251082460",
+            "competition_id": "228",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T17:45:00.000Z",
+            "total_matched": 204268.59,
+            "event_id": "35004052",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "228",
+                "name": "UEFA Champions League"
+            },
+            "event": {
+                "id": "35004052",
+                "name": "Villarreal v FC Copenhagen",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T17:45:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 28191,
+                    "runnerName": "Villarreal",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 52533356,
+                    "runnerName": "FC Copenhagen",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251082599",
+            "betfair_market_id": "1.251082599",
+            "competition_id": "228",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T17:45:00.000Z",
+            "total_matched": 185776.02,
+            "event_id": "35004051",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "competition": {
+                "id": "228",
+                "name": "UEFA Champions League"
+            },
+            "event": {
+                "id": "35004051",
+                "name": "Qarabag FK v Ajax",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T17:45:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 10583858,
+                    "runnerName": "Qarabag Fk",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 52494689,
+                    "runnerName": "Ajax",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251530923",
+            "betfair_market_id": "1.251530923",
+            "competition_id": "12444373",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T18:00:00.000Z",
+            "total_matched": 386,
+            "event_id": "35046226",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "EG",
+            "competition": {
+                "id": "12444373",
+                "name": "Egyptian League Cup"
+            },
+            "event": {
+                "id": "35046226",
+                "name": "Ismaily v El Gounah",
+                "countryCode": "EG",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T18:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 5170870,
+                    "runnerName": "Ismaily",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 5202561,
+                    "runnerName": "El Gounah",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251531303",
+            "betfair_market_id": "1.251531303",
+            "competition_id": "12444373",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T18:00:00.000Z",
+            "total_matched": 917.02,
+            "event_id": "35046253",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "EG",
+            "competition": {
+                "id": "12444373",
+                "name": "Egyptian League Cup"
+            },
+            "event": {
+                "id": "35046253",
+                "name": "ZED FC v Smouha",
+                "countryCode": "EG",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T18:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 38208152,
+                    "runnerName": "ZED FC",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 5170871,
+                    "runnerName": "Smouha",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251494909",
+            "betfair_market_id": "1.251494909",
+            "competition_id": "12007003",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T19:00:00.000Z",
+            "total_matched": 431.47,
+            "event_id": "35043678",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "BO",
+            "competition": {
+                "id": "12007003",
+                "name": "Bolivian Liga de Futbol Profesional"
+            },
+            "event": {
+                "id": "35043678",
+                "name": "Blooming Santa Cruz v Aurora",
+                "countryCode": "BO",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T19:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 10259108,
+                    "runnerName": "Blooming Santa Cruz",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 893608,
+                    "runnerName": "Aurora",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        },
+        {
+            "id": "1.251535079",
+            "betfair_market_id": "1.251535079",
+            "competition_id": "12722076",
+            "venue_id": null,
+            "event_type_id": "1",
+            "market_name": "Match Odds",
+            "market_start_time": "2025-12-10T19:00:00.000Z",
+            "total_matched": 12.74,
+            "event_id": "35046428",
+            "market_type_id": "match_odds",
+            "createdAt": null,
+            "updatedAt": "2025-12-10T11:58:08.850Z",
+            "isTurnInPlayEnabled": true,
+            "wallet": "UK wallet",
+            "country_code": "GB",
+            "competition": {
+                "id": "12722076",
+                "name": "English U21 Premier League Cup"
+            },
+            "event": {
+                "id": "35046428",
+                "name": "Coventry City U21 v Watford U21",
+                "countryCode": "GB",
+                "timezone": "GMT",
+                "openDate": "2025-12-10T19:00:00.000Z"
+            },
+            "eventType": {
+                "id": "1",
+                "name": "Soccer"
+            },
+            "market_type": "MATCH_ODDS",
+            "runners": [
+                {
+                    "selectionId": 6617009,
+                    "runnerName": "Coventry City U21",
+                    "handicap": 0,
+                    "sortPriority": 1,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 10123520,
+                    "runnerName": "Watford U21",
+                    "handicap": 0,
+                    "sortPriority": 2,
+                    "metadata": {}
+                },
+                {
+                    "selectionId": 58805,
+                    "runnerName": "The Draw",
+                    "handicap": 0,
+                    "sortPriority": 3,
+                    "metadata": {}
+                }
+            ],
+            "venue": ""
+        }
+    ],
+    "error": null,
+    "lastPage": 1
+}

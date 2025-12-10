@@ -42,6 +42,11 @@ def parse_json_matches_with_odds(json_file_path):
             team1 = participants[0].get('name', 'Unknown')
             team2 = participants[1].get('name', 'Unknown')
             
+            # Skip esports matches
+            if '(Esports)' in team1 or '(Esports)' in team2 or \
+               '(esports)' in team1 or '(esports)' in team2:
+                continue
+            
             # Find Match Result market for this event
             market_ids = event.get('marketIdList', [])
             team1_odds = 'N/A'
@@ -121,11 +126,16 @@ def format_match(match):
     Returns:
         str: Formatted match string
     """
+    # Build full URL
+    url = match.get('url', '')
+    full_url = f"https://en.stoiximan.gr{url}" if url else 'N/A'
+    
     return (f"Team 1: {match['team1']} | "
             f"Team 2: {match['team2']} | "
             f"Team 1 Win: {match['team1_odds']} | "
             f"Draw: {match['draw_odds']} | "
-            f"Team 2 Win: {match['team2_odds']}")
+            f"Team 2 Win: {match['team2_odds']} | "
+            f"Link: {full_url}")
 
 
 def save_formatted_matches(matches, output_file_path):

@@ -1,30 +1,26 @@
-Team 1: Paris Saint Germain (Felix) (Esports) | Team 2: Real Madrid (Adriano) (Esports) | Team 1 Win: N/A | Draw: N/A | Team 2 Win: N/A
-Team 1: S.L. Benfica (JKey) (Esports) | Team 2: Sporting CP (SPACE) (Esports) | Team 1 Win: 1.8 | Draw: 3.1 | Team 2 Win: 4.05
-Team 1: Eintracht Frankfurt (Baba) (Esports) | Team 2: Borussia Dortmund (Hulk) (Esports) | Team 1 Win: 4.15 | Draw: 3.4 | Team 2 Win: 1.67
-Team 1: France (Aveaaaaa) (Esports) | Team 2: Spain (gelennzz) (Esports) | Team 1 Win: 5.5 | Draw: 4.0 | Team 2 Win: 1.44
-Team 1: Nottingham Forest (Habibi) (Esports) | Team 2: FC Porto (Fred) (Esports) | Team 1 Win: 2.77 | Draw: 3.2 | Team 2 Win: 2.18
-Team 1: Paris Saint Germain (Felix) (Esports) | Team 2: FC Barcelona (Mateo) (Esports) | Team 1 Win: 2.3 | Draw: 4.4 | Team 2 Win: 2.25
-Team 1: Spain (gelennzz) (Esports) | Team 2: Germany (bodyaoo) (Esports) | Team 1 Win: 3.55 | Draw: 5.1 | Team 2 Win: 1.6
-Team 1: Atletico Vega Real | Team 2: Jarabacoa | Team 1 Win: 1.009 | Draw: 10.5 | Team 2 Win: 40.0
-Team 1: CD Corsarios De Campeche | Team 2: Mons Calpe SC Yucatan | Team 1 Win: 2.87 | Draw: 1.85 | Team 2 Win: 4.45
-Team 1: Real Madrid (Adriano) (Esports) | Team 2: Manchester City FC (Odin) (Esports) | Team 1 Win: 2.67 | Draw: 3.9 | Team 2 Win: 2.1
-Team 1: UD Tamaraceite | Team 2: UD Las Palmas C | Team 1 Win: 1.01 | Draw: 10.25 | Team 2 Win: 45.0
-Team 1: Bayer 04 Leverkusen (Eminem) (Esports) | Team 2: SC Freiburg (Tifosi) (Esports) | Team 1 Win: 4.45 | Draw: 3.8 | Team 2 Win: 1.55
-Team 1: Argentina (maksdh) (Esports) | Team 2: France (Aveaaaaa) (Esports) | Team 1 Win: 1.98 | Draw: 4.5 | Team 2 Win: 2.67
-Team 1: Germany (Haidan) (Esports) | Team 2: England (Lucas) (Esports) | Team 1 Win: 2.5 | Draw: 4.55 | Team 2 Win: 1.95
-Team 1: Germany (bodyaoo) (Esports) | Team 2: England (nekishka) (Esports) | Team 1 Win: N/A | Draw: N/A | Team 2 Win: N/A
-Team 1: Aguilas UAGro | Team 2: Zapata FC | Team 1 Win: 1.06 | Draw: 7.5 | Team 2 Win: 30.0
-Team 1: Academia Dragones | Team 2: Tapachula Soconusco FC II | Team 1 Win: 3.95 | Draw: 3.65 | Team 2 Win: 1.72
-Team 1: Liverpool (CHASER) (Esports) | Team 2: Napoli (QILIN) (Esports) | Team 1 Win: 1.29 | Draw: 4.05 | Team 2 Win: 9.25
-Team 1: Dragones Toluca FC II | Team 2: Deportivo Metepec | Team 1 Win: 2.3 | Draw: 2.92 | Team 2 Win: 3.0
-Team 1: Furia Azul FC | Team 2: Bucaneros FC | Team 1 Win: 3.75 | Draw: 3.4 | Team 2 Win: 1.82
-Team 1: Atletico Madrid (Gael) (Esports) | Team 2: Manchester City FC (Odin) (Esports) | Team 1 Win: 3.1 | Draw: 3.4 | Team 2 Win: 1.95
-Team 1: Porto (DangerDim77) (Esports) | Team 2: Vitoria SC (cl1vlind) (Esports) | Team 1 Win: 3.85 | Draw: 2.7 | Team 2 Win: 2.0
-Team 1: Arietes FC | Team 2: Novillos Neza | Team 1 Win: 1.57 | Draw: 3.55 | Team 2 Win: 5.3
-Team 1: Real Madrid (AVALANCHE) (Esports) | Team 2: Manchester City (ATLAS) (Esports) | Team 1 Win: 1.88 | Draw: 3.55 | Team 2 Win: 3.15
-Team 1: Maracana CE | Team 2: CEFAT CE | Team 1 Win: 2.35 | Draw: 2.3 | Team 2 Win: 4.0
-Team 1: Newcastle UTD (BLITZ) (Esports) | Team 2: Arsenal (RESISTANCE) (Esports) | Team 1 Win: N/A | Draw: N/A | Team 2 Win: N/A
-Team 1: Italy (Vangogh) (Esports) | Team 2: Portugal (Beckham) (Esports) | Team 1 Win: 1.88 | Draw: 4.6 | Team 2 Win: 2.62
-Team 1: CD Platense II | Team 2: Olancho FC II | Team 1 Win: 1.009 | Draw: 10.5 | Team 2 Win: 45.0
-Team 1: Morvant Caledonia United | Team 2: AC Port of Spain | Team 1 Win: 2.67 | Draw: 3.55 | Team 2 Win: 2.2
-Team 1: Real Betis (Razvan) (Esports) | Team 2: Panathinaikos (Jetli) (Esports) | Team 1 Win: 1.52 | Draw: 3.5 | Team 2 Win: 5.4
+Team 1: Bursaspor U19 | Team 2: Sariyerspor U19 | Team 1 Win: 1.83 | Draw: 3.15 | Team 2 Win: 4.1 | Link: https://en.stoiximan.gr/live/bursaspor-u19-sariyerspor-u19/77531090/
+Team 1: Sepahan Novin Esfahan | Team 2: Naft Masjed Soleyman FC | Team 1 Win: 3.25 | Draw: 1.93 | Team 2 Win: 3.55 | Link: https://en.stoiximan.gr/live/sepahan-novin-esfahan-naft-masjed-soleyman-fc/77564260/
+Team 1: Iraq U23 | Team 2: United Arab Emirates U23 | Team 1 Win: 1.9 | Draw: 3.0 | Team 2 Win: 4.0 | Link: https://en.stoiximan.gr/live/iraq-u23-united-arab-emirates-u23/77536380/
+Team 1: Al Jeel | Team 2: Jerash | Team 1 Win: 1.82 | Draw: 2.95 | Team 2 Win: 4.45 | Link: https://en.stoiximan.gr/live/al-jeel-jerash/77264321/
+Team 1: Shillong Lajong FC II | Team 2: Meghalaya Police | Team 1 Win: 1.03 | Draw: 9.25 | Team 2 Win: 32.0 | Link: https://en.stoiximan.gr/live/shillong-lajong-fc-ii-meghalaya-police/77522621/
+Team 1: OFK Petrovac | Team 2: FK Bokelj Kotor | Team 1 Win: 1.62 | Draw: 3.3 | Team 2 Win: 5.4 | Link: https://en.stoiximan.gr/live/ofk-petrovac-fk-bokelj-kotor/75924542/
+Team 1: Beyoglu Yeni Carsi AS U19 | Team 2: Erokspor U19 | Team 1 Win: 32.0 | Draw: 10.0 | Team 2 Win: 1.02 | Link: https://en.stoiximan.gr/live/beyoglu-yeni-carsi-as-u19-erokspor-u19/77367253/
+Team 1: FC Sellier & Bellot Vlasim | Team 2: FC Vion Zlate Moravce | Team 1 Win: 1.98 | Draw: 4.15 | Team 2 Win: 2.75 | Link: https://en.stoiximan.gr/live/fc-sellier-&-bellot-vlasim-fc-vion-zlate-moravce/77522633/
+Team 1: Sakaryaspor U19 | Team 2: Istanbulspor U19 | Team 1 Win: 5.0 | Draw: 3.75 | Team 2 Win: 1.55 | Link: https://en.stoiximan.gr/live/sakaryaspor-u19-istanbulspor-u19/77531093/
+Team 1: Thailand (W) | Team 2: Singapore (W) | Team 1 Win: 1.001 | Draw: 50.0 | Team 2 Win: 250.0 | Link: https://en.stoiximan.gr/live/thailand-w-singapore-w/77536374/
+Team 1: Al Hussein SC | Team 2: Karbalaa | Team 1 Win: 2.4 | Draw: 2.22 | Team 2 Win: 4.1 | Link: https://en.stoiximan.gr/live/al-hussein-sc-karbalaa/77562574/
+Team 1: FK Rudar Pljevlja | Team 2: FK Podgorica | Team 1 Win: 1.04 | Draw: 9.5 | Team 2 Win: 25.0 | Link: https://en.stoiximan.gr/live/fk-rudar-pljevlja-fk-podgorica/77522634/
+Team 1: Persib Bandung | Team 2: Bangkok United | Team 1 Win: 1.75 | Draw: 3.1 | Team 2 Win: 5.1 | Link: https://en.stoiximan.gr/live/persib-bandung-bangkok-united/77537384/
+Team 1: Chainat FC | Team 2: Songkhla United FC | Team 1 Win: N/A | Draw: N/A | Team 2 Win: N/A | Link: https://en.stoiximan.gr/live/chainat-fc-songkhla-united-fc/77523604/
+Team 1: Selangor FC | Team 2: Lion City Sailors | Team 1 Win: 2.8 | Draw: 3.75 | Team 2 Win: 2.07 | Link: https://en.stoiximan.gr/live/selangor-fc-lion-city-sailors/77537385/
+Team 1: FC Robo (W) | Team 2: Delta Queens (W) | Team 1 Win: 1.39 | Draw: 4.0 | Team 2 Win: 7.2 | Link: https://en.stoiximan.gr/live/fc-robo-w-delta-queens-w/77534395/
+Team 1: FC Gareji | Team 2: FC Spaeri | Team 1 Win: 1.85 | Draw: 3.1 | Team 2 Win: 4.05 | Link: https://en.stoiximan.gr/live/fc-gareji-fc-spaeri/77462985/
+Team 1: SL Benfica U19 | Team 2: Napoli U19 | Team 1 Win: 1.1 | Draw: 7.9 | Team 2 Win: 22.0 | Link: https://en.stoiximan.gr/live/sl-benfica-u19-napoli-u19/77279646/
+Team 1: Reliance FYC | Team 2: Kalina Rangers CFF | Team 1 Win: N/A | Draw: N/A | Team 2 Win: N/A | Link: https://en.stoiximan.gr/live/reliance-fyc-kalina-rangers-cff/77521636/
+Team 1: Athletic Bilbao U19 | Team 2: Paris Saint-Germain U19 | Team 1 Win: 1.85 | Draw: 3.85 | Team 2 Win: 3.6 | Link: https://en.stoiximan.gr/live/athletic-bilbao-u19-paris-saint-germain-u19/77279667/
+Team 1: Moik Baku | Team 2: Simal | Team 1 Win: N/A | Draw: N/A | Team 2 Win: N/A | Link: https://en.stoiximan.gr/live/moik-baku-simal/77522467/
+Team 1: Pendikspor U19 | Team 2: Ümraniyespor U19 | Team 1 Win: 1.13 | Draw: 6.7 | Team 2 Win: 13.0 | Link: https://en.stoiximan.gr/live/pendikspor-u19-umraniyespor-u19/77367258/
+Team 1: Villarreal CF U19 | Team 2: FC Copenhagen U19 | Team 1 Win: 1.34 | Draw: 4.15 | Team 2 Win: 10.5 | Link: https://en.stoiximan.gr/live/villarreal-cf-u19-fc-copenhagen-u19/77279648/
+Team 1: GD Estoril Praia U23 | Team 2: UD Leiria U23 | Team 1 Win: 2.05 | Draw: 3.05 | Team 2 Win: 3.4 | Link: https://en.stoiximan.gr/live/gd-estoril-praia-u23-ud-leiria-u23/77067439/
+Team 1: Oman U23 | Team 2: Yemen U23 | Team 1 Win: 2.95 | Draw: 2.87 | Team 2 Win: 2.37 | Link: https://en.stoiximan.gr/live/oman-u23-yemen-u23/77536379/
+Team 1: Baku Sporting FC | Team 2: Sahdag Qusar | Team 1 Win: 1.36 | Draw: 3.5 | Team 2 Win: 11.25 | Link: https://en.stoiximan.gr/live/baku-sporting-fc-sahdag-qusar/77522469/

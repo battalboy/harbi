@@ -1,0 +1,552 @@
+{
+    "error": null,
+    "marketDetails": [
+        {
+            "is_in_play": false,
+            "status": "open",
+            "marketId": "1.251520695",
+            "runners": [
+                {
+                    "id": "1.251520695_11230155",
+                    "market_id": "1.251520695",
+                    "betfair_market_id": "1.251520695",
+                    "selection_id": 11230155,
+                    "status": "active",
+                    "total_matched": 295.24,
+                    "last_price_traded": 2.16,
+                    "handicap": 0,
+                    "prices": [
+                        {
+                            "bet_side": "back",
+                            "id": "1.251520695_11230155_back_0",
+                            "market_runner_id": "1.251520695_11230155",
+                            "price": 2.16,
+                            "size": 15.28,
+                            "traded_volume": 17.44
+                        },
+                        {
+                            "bet_side": "back",
+                            "id": "1.251520695_11230155_back_1",
+                            "market_runner_id": "1.251520695_11230155",
+                            "price": 2.1,
+                            "size": 25.06,
+                            "traded_volume": 46.62
+                        },
+                        {
+                            "bet_side": "back",
+                            "id": "1.251520695_11230155_back_2",
+                            "market_runner_id": "1.251520695_11230155",
+                            "price": 2.04,
+                            "size": 2.84
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251520695_11230155_lay_0",
+                            "market_runner_id": "1.251520695_11230155",
+                            "price": 2.18,
+                            "size": 6.09,
+                            "traded_volume": 12
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251520695_11230155_lay_1",
+                            "market_runner_id": "1.251520695_11230155",
+                            "price": 2.2,
+                            "size": 16.35,
+                            "traded_volume": 8.09
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251520695_11230155_lay_2",
+                            "market_runner_id": "1.251520695_11230155",
+                            "price": 2.22,
+                            "size": 4.81,
+                            "traded_volume": 2
+                        }
+                    ],
+                    "removeDate": null,
+                    "adjustmentFactor": null
+                },
+                {
+                    "id": "1.251520695_6569319",
+                    "market_id": "1.251520695",
+                    "betfair_market_id": "1.251520695",
+                    "selection_id": 6569319,
+                    "status": "active",
+                    "total_matched": 446.74,
+                    "last_price_traded": 3.3,
+                    "handicap": 0,
+                    "prices": [
+                        {
+                            "bet_side": "back",
+                            "id": "1.251520695_6569319_back_0",
+                            "market_runner_id": "1.251520695_6569319",
+                            "price": 3.15,
+                            "size": 5.28,
+                            "traded_volume": 8.09
+                        },
+                        {
+                            "bet_side": "back",
+                            "id": "1.251520695_6569319_back_1",
+                            "market_runner_id": "1.251520695_6569319",
+                            "price": 3.1,
+                            "size": 9.19,
+                            "traded_volume": 14.24
+                        },
+                        {
+                            "bet_side": "back",
+                            "id": "1.251520695_6569319_back_2",
+                            "market_runner_id": "1.251520695_6569319",
+                            "price": 3,
+                            "size": 2.78,
+                            "traded_volume": 222.87
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251520695_6569319_lay_0",
+                            "market_runner_id": "1.251520695_6569319",
+                            "price": 3.45,
+                            "size": 12.57,
+                            "traded_volume": 23.63
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251520695_6569319_lay_1",
+                            "market_runner_id": "1.251520695_6569319",
+                            "price": 3.55,
+                            "size": 15.69
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251520695_6569319_lay_2",
+                            "market_runner_id": "1.251520695_6569319",
+                            "price": 3.6,
+                            "size": 14.18
+                        }
+                    ],
+                    "removeDate": null,
+                    "adjustmentFactor": null
+                },
+                {
+                    "id": "1.251520695_58805",
+                    "market_id": "1.251520695",
+                    "betfair_market_id": "1.251520695",
+                    "selection_id": 58805,
+                    "status": "active",
+                    "total_matched": 204.11,
+                    "last_price_traded": 4.4,
+                    "handicap": 0,
+                    "prices": [
+                        {
+                            "bet_side": "back",
+                            "id": "1.251520695_58805_back_0",
+                            "market_runner_id": "1.251520695_58805",
+                            "price": 4.1,
+                            "size": 22.22
+                        },
+                        {
+                            "bet_side": "back",
+                            "id": "1.251520695_58805_back_1",
+                            "market_runner_id": "1.251520695_58805",
+                            "price": 4,
+                            "size": 15.75
+                        },
+                        {
+                            "bet_side": "back",
+                            "id": "1.251520695_58805_back_2",
+                            "market_runner_id": "1.251520695_58805",
+                            "price": 3.95,
+                            "size": 18.37
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251520695_58805_lay_0",
+                            "market_runner_id": "1.251520695_58805",
+                            "price": 4.6,
+                            "size": 3.63,
+                            "traded_volume": 5.32
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251520695_58805_lay_1",
+                            "market_runner_id": "1.251520695_58805",
+                            "price": 4.7,
+                            "size": 4.23,
+                            "traded_volume": 0.51
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251520695_58805_lay_2",
+                            "market_runner_id": "1.251520695_58805",
+                            "price": 4.8,
+                            "size": 1,
+                            "traded_volume": 3.94
+                        }
+                    ],
+                    "removeDate": null,
+                    "adjustmentFactor": null
+                }
+            ],
+            "numberOfWinners": 1
+        },
+        {
+            "is_in_play": true,
+            "status": "open",
+            "marketId": "1.251527160",
+            "runners": [
+                {
+                    "id": "1.251527160_4807098",
+                    "market_id": "1.251527160",
+                    "betfair_market_id": "1.251527160",
+                    "selection_id": 4807098,
+                    "status": "active",
+                    "total_matched": 124.42,
+                    "last_price_traded": 1.69,
+                    "handicap": 0,
+                    "prices": [
+                        {
+                            "bet_side": "back",
+                            "id": "1.251527160_4807098_back_0",
+                            "market_runner_id": "1.251527160_4807098",
+                            "price": 1.31,
+                            "size": 3.43
+                        },
+                        {
+                            "bet_side": "back",
+                            "id": "1.251527160_4807098_back_1",
+                            "market_runner_id": "1.251527160_4807098",
+                            "price": 1.3,
+                            "size": 95.15
+                        },
+                        {
+                            "bet_side": "back",
+                            "id": "1.251527160_4807098_back_2",
+                            "market_runner_id": "1.251527160_4807098",
+                            "price": 1.18,
+                            "size": 1
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251527160_4807098_lay_0",
+                            "market_runner_id": "1.251527160_4807098",
+                            "price": 55,
+                            "size": 1.03
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251527160_4807098_lay_1",
+                            "market_runner_id": "1.251527160_4807098",
+                            "price": 60,
+                            "size": 1.22
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251527160_4807098_lay_2",
+                            "market_runner_id": "1.251527160_4807098",
+                            "price": 380,
+                            "size": 1.05
+                        }
+                    ],
+                    "removeDate": null,
+                    "adjustmentFactor": null
+                },
+                {
+                    "id": "1.251527160_24820236",
+                    "market_id": "1.251527160",
+                    "betfair_market_id": "1.251527160",
+                    "selection_id": 24820236,
+                    "status": "active",
+                    "total_matched": 27.57,
+                    "last_price_traded": 6,
+                    "handicap": 0,
+                    "prices": [
+                        {
+                            "bet_side": "back",
+                            "id": "1.251527160_24820236_back_0",
+                            "market_runner_id": "1.251527160_24820236",
+                            "price": 1.74,
+                            "size": 1
+                        },
+                        {
+                            "bet_side": "back",
+                            "id": "1.251527160_24820236_back_1",
+                            "market_runner_id": "1.251527160_24820236",
+                            "price": 1.73,
+                            "size": 12.23
+                        },
+                        {
+                            "bet_side": "back",
+                            "id": "1.251527160_24820236_back_2",
+                            "market_runner_id": "1.251527160_24820236",
+                            "price": 1.31,
+                            "size": 3.43
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251527160_24820236_lay_0",
+                            "market_runner_id": "1.251527160_24820236",
+                            "price": 55,
+                            "size": 1.03
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251527160_24820236_lay_1",
+                            "market_runner_id": "1.251527160_24820236",
+                            "price": 60,
+                            "size": 1.22
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251527160_24820236_lay_2",
+                            "market_runner_id": "1.251527160_24820236",
+                            "price": 500,
+                            "size": 1.04
+                        }
+                    ],
+                    "removeDate": null,
+                    "adjustmentFactor": null
+                },
+                {
+                    "id": "1.251527160_58805",
+                    "market_id": "1.251527160",
+                    "betfair_market_id": "1.251527160",
+                    "selection_id": 58805,
+                    "status": "active",
+                    "total_matched": 26.94,
+                    "last_price_traded": 4.1,
+                    "handicap": 0,
+                    "prices": [
+                        {
+                            "bet_side": "back",
+                            "id": "1.251527160_58805_back_0",
+                            "market_runner_id": "1.251527160_58805",
+                            "price": 2.24,
+                            "size": 1
+                        },
+                        {
+                            "bet_side": "back",
+                            "id": "1.251527160_58805_back_1",
+                            "market_runner_id": "1.251527160_58805",
+                            "price": 2.22,
+                            "size": 10.49
+                        },
+                        {
+                            "bet_side": "back",
+                            "id": "1.251527160_58805_back_2",
+                            "market_runner_id": "1.251527160_58805",
+                            "price": 2.1,
+                            "size": 105
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251527160_58805_lay_0",
+                            "market_runner_id": "1.251527160_58805",
+                            "price": 4.5,
+                            "size": 1
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251527160_58805_lay_1",
+                            "market_runner_id": "1.251527160_58805",
+                            "price": 4.6,
+                            "size": 26.89
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251527160_58805_lay_2",
+                            "market_runner_id": "1.251527160_58805",
+                            "price": 29,
+                            "size": 1.24
+                        }
+                    ],
+                    "removeDate": null,
+                    "adjustmentFactor": null
+                }
+            ],
+            "numberOfWinners": 1
+        },
+        {
+            "is_in_play": false,
+            "status": "open",
+            "marketId": "1.251534865",
+            "runners": [
+                {
+                    "id": "1.251534865_10365226",
+                    "market_id": "1.251534865",
+                    "betfair_market_id": "1.251534865",
+                    "selection_id": 10365226,
+                    "status": "active",
+                    "total_matched": 148.21,
+                    "last_price_traded": 1.63,
+                    "handicap": 0,
+                    "prices": [
+                        {
+                            "bet_side": "back",
+                            "id": "1.251534865_10365226_back_0",
+                            "market_runner_id": "1.251534865_10365226",
+                            "price": 1.57,
+                            "size": 18.73,
+                            "traded_volume": 0.74
+                        },
+                        {
+                            "bet_side": "back",
+                            "id": "1.251534865_10365226_back_1",
+                            "market_runner_id": "1.251534865_10365226",
+                            "price": 1.56,
+                            "size": 42,
+                            "traded_volume": 3.06
+                        },
+                        {
+                            "bet_side": "back",
+                            "id": "1.251534865_10365226_back_2",
+                            "market_runner_id": "1.251534865_10365226",
+                            "price": 1.54,
+                            "size": 35.95
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251534865_10365226_lay_0",
+                            "market_runner_id": "1.251534865_10365226",
+                            "price": 1.68,
+                            "size": 19.95
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251534865_10365226_lay_1",
+                            "market_runner_id": "1.251534865_10365226",
+                            "price": 1.84,
+                            "size": 6.74
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251534865_10365226_lay_2",
+                            "market_runner_id": "1.251534865_10365226",
+                            "price": 1.95,
+                            "size": 4.04
+                        }
+                    ],
+                    "removeDate": null,
+                    "adjustmentFactor": null
+                },
+                {
+                    "id": "1.251534865_10365199",
+                    "market_id": "1.251534865",
+                    "betfair_market_id": "1.251534865",
+                    "selection_id": 10365199,
+                    "status": "active",
+                    "total_matched": 40.15,
+                    "last_price_traded": 6.8,
+                    "handicap": 0,
+                    "prices": [
+                        {
+                            "bet_side": "back",
+                            "id": "1.251534865_10365199_back_0",
+                            "market_runner_id": "1.251534865_10365199",
+                            "price": 5.8,
+                            "size": 5.14
+                        },
+                        {
+                            "bet_side": "back",
+                            "id": "1.251534865_10365199_back_1",
+                            "market_runner_id": "1.251534865_10365199",
+                            "price": 4.9,
+                            "size": 3.24
+                        },
+                        {
+                            "bet_side": "back",
+                            "id": "1.251534865_10365199_back_2",
+                            "market_runner_id": "1.251534865_10365199",
+                            "price": 3.7,
+                            "size": 1.62
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251534865_10365199_lay_0",
+                            "market_runner_id": "1.251534865_10365199",
+                            "price": 7.6,
+                            "size": 13,
+                            "traded_volume": 4
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251534865_10365199_lay_1",
+                            "market_runner_id": "1.251534865_10365199",
+                            "price": 8.2,
+                            "size": 4.06
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251534865_10365199_lay_2",
+                            "market_runner_id": "1.251534865_10365199",
+                            "price": 9.2,
+                            "size": 1.3
+                        }
+                    ],
+                    "removeDate": null,
+                    "adjustmentFactor": null
+                },
+                {
+                    "id": "1.251534865_58805",
+                    "market_id": "1.251534865",
+                    "betfair_market_id": "1.251534865",
+                    "selection_id": 58805,
+                    "status": "active",
+                    "total_matched": 19.87,
+                    "last_price_traded": 4.3,
+                    "handicap": 0,
+                    "prices": [
+                        {
+                            "bet_side": "back",
+                            "id": "1.251534865_58805_back_0",
+                            "market_runner_id": "1.251534865_58805",
+                            "price": 4,
+                            "size": 3
+                        },
+                        {
+                            "bet_side": "back",
+                            "id": "1.251534865_58805_back_1",
+                            "market_runner_id": "1.251534865_58805",
+                            "price": 3.9,
+                            "size": 5.25,
+                            "traded_volume": 12.38
+                        },
+                        {
+                            "bet_side": "back",
+                            "id": "1.251534865_58805_back_2",
+                            "market_runner_id": "1.251534865_58805",
+                            "price": 3.85,
+                            "size": 5.25
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251534865_58805_lay_0",
+                            "market_runner_id": "1.251534865_58805",
+                            "price": 4.3,
+                            "size": 6.84,
+                            "traded_volume": 0.27
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251534865_58805_lay_1",
+                            "market_runner_id": "1.251534865_58805",
+                            "price": 4.5,
+                            "size": 8.54,
+                            "traded_volume": 2.7
+                        },
+                        {
+                            "bet_side": "lay",
+                            "id": "1.251534865_58805_lay_2",
+                            "market_runner_id": "1.251534865_58805",
+                            "price": 4.6,
+                            "size": 13.74,
+                            "traded_volume": 0.6
+                        }
+                    ],
+                    "removeDate": null,
+                    "adjustmentFactor": null
+                }
+            ],
+            "numberOfWinners": 1
+        }
+    ]
+}
