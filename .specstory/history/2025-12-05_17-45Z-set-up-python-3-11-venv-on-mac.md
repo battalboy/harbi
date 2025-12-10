@@ -16267,11 +16267,2524 @@ Lines added: 2, lines removed: 1
 
 ---
 
+<think><details><summary>Thought Process</summary>Great! Now let me verify the changes work by showing what the output will look like.</details></think>
+
+---
+
+Perfect! ✅ I've added the auto-stop feature. Here's what changed:
+
+## **✨ New Features:**
+
+1. **🎯 Target Count** - Set to 814 teams (matching Oddswar)
+2. **📊 Progress Indicator** - Shows completion percentage
+3. **🛑 Auto-Stop** - Automatically stops when target is reached
+4. **📣 Success Message** - Clear notification when goal is achieved
+
+---
+
+## **Example Output:**
+
+```bash
+============================================================
+🔵 Stoiximan Team Name Collector (LIVE MATCHES)
+============================================================
+📝 Output file: stoiximan_names.txt
+🎯 Target: 814 teams (will auto-stop)
+⏱️  Interval: 60-120 seconds (random)
+🇬🇷 Requires VPN connected to Greek IP
+⚠️  Only collects from LIVE matches (builds up over time)
+🚫 Esports automatically filtered out
+🛑 Press Ctrl+C to stop manually
+
+📂 Loaded 52 existing team names from stoiximan_names.txt
+[2025-12-10 14:00:00] Fetch #1... ✓ Found 52 teams | Database: 52/814 (6.4%)
+   💤 Waiting 95s...
+
+[2025-12-10 14:01:35] Fetch #2... ✓ Found 55 teams (3 NEW!) | Database: 55/814 (6.8%)
+      + New Team 1
+      + New Team 2
+      + New Team 3
+   💤 Waiting 112s...
+
+...continues until...
+
+[2025-12-11 08:23:15] Fetch #347... ✓ Found 62 teams (1 NEW!) | Database: 814/814 (100.0%)
+      + Final Team
+
+============================================================
+🎯 TARGET REACHED!
+============================================================
+✅ Collected 814 unique teams (target: 814)
+✅ Matches Oddswar team count!
+✅ Teams saved to stoiximan_names.txt
+
+💡 You can now proceed with team matching!
+============================================================
+
+[Script exits automatically]
+```
+
+---
+
+## **Usage:**
+
+```bash
+python collect_stoiximan_teams.py
+```
+
+**It will now:**
+- ✅ Show progress toward 814 teams
+- ✅ Stop automatically when reaching 814
+- ✅ No need to monitor - just let it run!
+
+Let it run overnight/over days and it will automatically stop when complete! 🎯
+
+---
+
+_**User (2025-12-10 11:43Z)**_
+
+Can you please commit the latest changes to the local git?
+
+---
+
+_**Assistant (claude-4.5-sonnet-thinking)**_
+
+<think><details><summary>Thought Process</summary>The user wants me to commit the latest changes to local git. I should:
+1. Check what has changed
+2. Stage all changes
+3. Commit with a descriptive message
+
+Let me do a git status first to see what's changed, then commit.</details></think>
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && git add -A && git status
+```
+
+```
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   .specstory/history/2025-12-05_17-45Z-set-up-python-3-11-venv-on-mac.md
+	new file:   collect_oddswar_teams.py
+	new file:   collect_stoiximan_teams.py
+	new file:   oddswar_names.txt
+	new file:   oddswar_names_full.txt
+	new file:   stoiximan_names.txt
+
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Good, I can see the changes. Now I'll commit them with a descriptive message about the team name collectors.</details></think>
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && git commit -m "Add team name collectors for both Oddswar and Stoiximan
+
+- Add collect_oddswar_teams.py: Fetches ALL teams from Oddswar API
+  - Uses pagination (10 pages) and interval=all parameter
+  - Collects ~814 unique team names immediately
+  - Runs periodically (60-120s) to discover new teams
+  
+- Add collect_stoiximan_teams.py: Monitors live matches for teams
+  - Fetches from live endpoint only (API limitation)
+  - Filters out esports matches automatically
+  - Auto-stops when reaching 814 teams (Oddswar parity)
+  - Shows progress percentage toward target
+  - Requires VPN to Greek IP
+
+- Add team name database files:
+  - oddswar_names.txt: 814 unique teams from Oddswar
+  - stoiximan_names.txt: 52 teams (starting point, grows over time)
+  
+Purpose: Build master team name lists for fuzzy matching between sites"
+```
+
+```
+[main 0a39570] Add team name collectors for both Oddswar and Stoiximan
+ 6 files changed, 4798 insertions(+)
+ create mode 100755 collect_oddswar_teams.py
+ create mode 100755 collect_stoiximan_teams.py
+ create mode 100644 oddswar_names.txt
+ create mode 100644 oddswar_names_full.txt
+ create mode 100644 stoiximan_names.txt
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Good! The commit was successful. Let me show the commit details to confirm.</details></think>
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && git log -1 --stat
+```
+
+```
+commit 0a395703dac6c22fafa4d203d34b3a77484faf47
+Author: Ahmet Giray Uzmen <giray@uzmen.com>
+Date:   Wed Dec 10 13:37:20 2025 +0000
+
+    Add team name collectors for both Oddswar and Stoiximan
+    
+    - Add collect_oddswar_teams.py: Fetches ALL teams from Oddswar API
+      - Uses pagination (10 pages) and interval=all parameter
+      - Collects ~814 unique team names immediately
+      - Runs periodically (60-120s) to discover new teams
+    
+    - Add collect_stoiximan_teams.py: Monitors live matches for teams
+      - Fetches from live endpoint only (API limitation)
+      - Filters out esports matches automatically
+      - Auto-stops when reaching 814 teams (Oddswar parity)
+      - Shows progress percentage toward target
+      - Requires VPN to Greek IP
+    
+    - Add team name database files:
+      - oddswar_names.txt: 814 unique teams from Oddswar
+      - stoiximan_names.txt: 52 teams (starting point, grows over time)
+    
+    Purpose: Build master team name lists for fuzzy matching between sites
+
+ ...-12-05_17-45Z-set-up-python-3-11-venv-on-mac.md | 2694 ++++++++++++++++++++
+ collect_oddswar_teams.py                           |  183 ++
+ collect_stoiximan_teams.py                         |  196 ++
+ oddswar_names.txt                                  |  814 ++++++
+ oddswar_names_full.txt                             |  814 ++++++
+ stoiximan_names.txt                                |   97 +
+ 6 files changed, 4798 insertions(+)
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Perfect! The commit is complete. Let me summarize what was committed.</details></think>
+
+---
+
+## ✅ **All Changes Committed to Local Git!**
+
+**Commit Details:**
+- **Commit hash:** `0a39570`
+- **Files changed:** 6
+- **Insertions:** +4,798 lines
+
+### **What Was Committed:**
+
+**New Scripts:**
+- ✅ `collect_oddswar_teams.py` - Full team collector (814 teams immediately)
+- ✅ `collect_stoiximan_teams.py` - Live monitoring collector (auto-stops at 814)
+
+**Team Name Databases:**
+- ✅ `oddswar_names.txt` - 814 unique Oddswar teams
+- ✅ `oddswar_names_full.txt` - Backup/full list
+- ✅ `stoiximan_names.txt` - 52 Stoiximan teams (starting point)
+
+**Key Features Committed:**
+1. 🟠 Oddswar: Pagination support (10 pages), immediate bulk collection
+2. 🔵 Stoiximan: Live monitoring, auto-stop at 814 teams, progress tracking
+3. 🚫 Both: Esports filtering (Stoiximan only)
+4. 📊 Progress indicators and target tracking
+5. 🎯 Foundation for fuzzy team name matching
+
+Your local repository is up to date! Ready to push when you're ready. 🎯
+
+---
+
+_**User (2025-12-10 11:43Z)**_
+
+Please also commit all the the live git repo.
+
+---
+
+_**Assistant (claude-4.5-sonnet-thinking)**_
+
+<think><details><summary>Thought Process</summary>The user wants to push the local commits to the remote git repository (live/GitHub).</details></think>
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && git push origin main
+```
+
+```
+To github.com:battalboy/harbi.git
+   aca89bb..0a39570  main -> main
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Great! The push was successful. Let me confirm what was pushed.</details></think>
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && git log --oneline -3
+```
+
+```
+0a39570 Add team name collectors for both Oddswar and Stoiximan
+0b10d23 Add Oddswar parser and single-command script for fetching odds from both sites
+aca89bb Add JSON API parser and complete data extraction
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Perfect! The push was successful. Let me show a summary of what was pushed.</details></think>
+
+---
+
+## ✅ **All Commits Pushed to GitHub!**
+
+**Successfully pushed to:** `github.com:battalboy/harbi.git`
+
+---
+
+### **📦 What Was Pushed (2 commits):**
+
+**Commit 1:** `0b10d23` - Oddswar parser and single-command script
+- Oddswar API parser
+- `fetch_odds.sh` script
+- Updated README with documentation
+- Esports filtering for Stoiximan
+- USAGE.md guide
+
+**Commit 2:** `0a39570` - Team name collectors
+- `collect_oddswar_teams.py` (814 teams)
+- `collect_stoiximan_teams.py` (auto-stop at 814)
+- Team name database files
+- Foundation for fuzzy matching
+
+---
+
+### **🌐 Your Repository is Now Live:**
+
+Visit: **https://github.com/battalboy/harbi**
+
+Everything is synced and backed up on GitHub! 🎉
+
+---
+
+_**User (2025-12-10 11:43Z)**_
+
+Is there a problem with the Stoiximan team name parser. It keeps saying that it's found around 55-60 team names but that's approximately equal to the number of matches wich may mean taht the parser is getting just one name from each match line, probably the first one. So we chould be maybe getting around 100-120 team names at each scan. Is this correct? Please just check and don't change anything.
+
+---
+
+_**Assistant (claude-4.5-sonnet-thinking)**_
+
+<think><details><summary>Thought Process</summary>The user is observing that the Stoiximan team name parser is finding around 55-60 team names, which is about equal to the number of matches. They suspect it might only be extracting one team per match instead of both teams. They want me to check the code logic but not make any changes yet.
+
+Let me examine the `collect_stoiximan_teams.py` script to see if there's a bug in the team extraction logic.</details></think>
+
+---
+
+Good catch! Let me check the team extraction logic:
+
+---
+
+Tool use: **read_file**
+
+Read file: /Users/giray/Desktop/harbi/collect_stoiximan_teams.py
+
+---
+
+<think><details><summary>Thought Process</summary>I can see lines 88-89 show that team1 is being added. Let me see if team2 is also being added by checking the next few lines.</details></think>
+
+---
+
+Tool use: **read_file**
+
+Read file: /Users/giray/Desktop/harbi/collect_stoiximan_teams.py
+
+---
+
+<think><details><summary>Thought Process</summary>Actually, the code looks correct. Lines 88-91 show:
+```python
+if team1:
+    teams.add(team1)
+if team2:
+    teams.add(team2)
+```
+
+Both team1 and team2 are being added to the set. So the logic is correct.
+
+Wait, let me think about what the user is saying. They're seeing ~55-60 team names being found, which equals the number of matches. If we have ~30 matches, we should get ~60 team names (2 per match). But they're saying they're getting 55-60 names which suggests they have ~30 matches, so the code IS working correctly - it's getting both teams.
+
+But the user says "we should be maybe getting around 100-120 team names at each scan." Let me check - how many matches are there in the current API response?
+
+Actually, looking back at earlier in our conversation, we saw that there were 47 soccer events total, with 26 being real soccer (21 esports filtered out). So 26 matches × 2 teams = 52 teams expected.
+
+The user is seeing 55-60 teams, which is slightly more than 52, so this seems correct! Some teams might appear in multiple matches (like if "Arsenal U19" plays twice).
+
+Let me verify by checking the actual current data to see if the logic is working correctly.</details></think>
+
+---
+
+Let me test the extraction logic on the current API data to verify:
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && source venv/bin/activate && python << 'EOF'
+import json
+
+# Load current API data
+with open('stoiximan-api.json', 'r') as f:
+    data = json.load(f)
+
+events = data.get('events', {})
+teams = set()
+match_count = 0
+
+# Simulate the parser logic
+for event_id, event in events.items():
+    if event.get('sportId') != 'FOOT':
+        continue
+    
+    participants = event.get('participants', [])
+    if len(participants) < 2:
+        continue
+    
+    team1 = participants[0].get('name', '')
+    team2 = participants[1].get('name', '')
+    
+    # Skip esports matches
+    if '(Esports)' in team1 or '(Esports)' in team2 or \
+       '(esports)' in team1 or '(esports)' in team2:
+        continue
+    
+    match_count += 1
+    
+    # Add both teams
+    if team1:
+        teams.add(team1)
+        print(f"Match {match_count}: Added team1: {team1}")
+    if team2:
+        teams.add(team2)
+        print(f"Match {match_count}: Added team2: {team2}")
+
+print(f"\n{'='*60}")
+print(f"📊 RESULTS:")
+print(f"{'='*60}")
+print(f"Total matches processed: {match_count}")
+print(f"Unique teams extracted: {len(teams)}")
+print(f"Expected teams (matches × 2): {match_count * 2}")
+print(f"\n✅ Logic is {'CORRECT' if len(teams) <= match_count * 2 else 'INCORRECT'}")
+print(f"   (Note: Unique count can be less if same team appears multiple times)")
+
+EOF
+
+```
+
+```
+Match 1: Added team1: Bursaspor U19
+Match 1: Added team2: Sariyerspor U19
+Match 2: Added team1: Sepahan Novin Esfahan
+Match 2: Added team2: Naft Masjed Soleyman FC
+Match 3: Added team1: Iraq U23
+Match 3: Added team2: United Arab Emirates U23
+Match 4: Added team1: Al Jeel
+Match 4: Added team2: Jerash
+Match 5: Added team1: Shillong Lajong FC II
+Match 5: Added team2: Meghalaya Police
+Match 6: Added team1: OFK Petrovac
+Match 6: Added team2: FK Bokelj Kotor
+Match 7: Added team1: Beyoglu Yeni Carsi AS U19
+Match 7: Added team2: Erokspor U19
+Match 8: Added team1: FC Sellier & Bellot Vlasim
+Match 8: Added team2: FC Vion Zlate Moravce
+Match 9: Added team1: Sakaryaspor U19
+Match 9: Added team2: Istanbulspor U19
+Match 10: Added team1: Thailand (W)
+Match 10: Added team2: Singapore (W)
+Match 11: Added team1: Al Hussein SC
+Match 11: Added team2: Karbalaa
+Match 12: Added team1: FK Rudar Pljevlja
+Match 12: Added team2: FK Podgorica
+Match 13: Added team1: Persib Bandung
+Match 13: Added team2: Bangkok United
+Match 14: Added team1: Chainat FC
+Match 14: Added team2: Songkhla United FC
+Match 15: Added team1: Selangor FC
+Match 15: Added team2: Lion City Sailors
+Match 16: Added team1: FC Robo (W)
+Match 16: Added team2: Delta Queens (W)
+Match 17: Added team1: FC Gareji
+Match 17: Added team2: FC Spaeri
+Match 18: Added team1: SL Benfica U19
+Match 18: Added team2: Napoli U19
+Match 19: Added team1: Reliance FYC
+Match 19: Added team2: Kalina Rangers CFF
+Match 20: Added team1: Athletic Bilbao U19
+Match 20: Added team2: Paris Saint-Germain U19
+Match 21: Added team1: Moik Baku
+Match 21: Added team2: Simal
+Match 22: Added team1: Pendikspor U19
+Match 22: Added team2: Ümraniyespor U19
+Match 23: Added team1: Villarreal CF U19
+Match 23: Added team2: FC Copenhagen U19
+Match 24: Added team1: GD Estoril Praia U23
+Match 24: Added team2: UD Leiria U23
+Match 25: Added team1: Oman U23
+Match 25: Added team2: Yemen U23
+Match 26: Added team1: Baku Sporting FC
+Match 26: Added team2: Sahdag Qusar
+
+============================================================
+📊 RESULTS:
+============================================================
+Total matches processed: 26
+Unique teams extracted: 52
+Expected teams (matches × 2): 52
+
+✅ Logic is CORRECT
+   (Note: Unique count can be less if same team appears multiple times)
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Perfect! The test shows that the logic is working correctly:
+- 26 matches processed
+- 52 unique teams extracted (both team1 and team2 from each match)
+- This equals exactly 26 × 2 = 52
+
+So the parser IS extracting both teams correctly. The user's observation was actually correct - they're getting around 52-60 teams, which is 26-30 matches × 2 teams per match. The logic is working as intended!
+
+The reason they might expect 100-120 teams is a misunderstanding - that would only happen if there were 50-60 matches, but currently there are only ~26 live soccer matches (after filtering out esports).
+
+Let me explain this to the user.</details></think>
+
+---
+
+## ✅ **The Parser Logic is CORRECT!**
+
+I tested the extraction code and it's working perfectly:
+
+### **📊 Test Results:**
+
+```
+Total matches processed: 26
+Unique teams extracted: 52
+Expected teams (26 × 2): 52
+```
+
+**✅ Both teams are being extracted from each match!**
+
+---
+
+### **Why You're Seeing ~55-60 Teams:**
+
+The math actually checks out:
+
+- **~26-30 live soccer matches** (after filtering esports)
+- **× 2 teams per match**
+- **= 52-60 unique team names** ✅
+
+---
+
+### **The Code is Working Correctly:**
+
+```python
+if team1:
+    teams.add(team1)  # ✓ Adds first team
+if team2:
+    teams.add(team2)  # ✓ Adds second team
+```
+
+Both teams ARE being added!
+
+---
+
+### **Why Not 100-120 Teams?**
+
+That would require **50-60 matches**, but Stoiximan currently only has:
+- ~47 total soccer events in the API
+- ~21 are esports (filtered out)
+- **= ~26 real soccer matches** currently live
+
+---
+
+## **Conclusion:**
+
+**The parser is working perfectly!** 
+
+You're getting 55-60 teams because there are ~28-30 live matches at that moment. As more matches go live throughout the day, the team count will grow. After running for days/weeks, you'll accumulate hundreds of unique teams as different leagues and competitions go live. 📈
+
+No fix needed! 🎯
+
+---
+
+_**User (2025-12-10 11:43Z)**_
+
+Was there a way we could hit the danae-webapi on Stoiximan to get the team IDs of all teams?
+
+---
+
+_**Assistant (claude-4.5-sonnet-thinking)**_
+
+<think><details><summary>Thought Process</summary>The user is asking if there's a way to query the Stoiximan API to get team IDs (or a complete list of all teams). This is similar to what we investigated earlier but they're asking specifically about team IDs now.
+
+Let me check if there are any API endpoints that might provide a list of all teams or team IDs. I should look at:
+1. The sports/zones/leagues structure we saw in the API response
+2. Any potential team or participant endpoints
+3. The data structure to see if there are team IDs we could collect
+
+Let me investigate the API structure more carefully.</details></think>
+
+---
+
+Good question! Let me investigate if the Stoiximan API has team/participant data we can extract. Let me check the API response structure:
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && source venv/bin/activate && python << 'EOF'
+import json
+
+with open('stoiximan-api.json', 'r') as f:
+    data = json.load(f)
+
+print("=== Stoiximan API Top-Level Structure ===\n")
+print(f"Keys: {list(data.keys())}\n")
+
+# Check if there's a teams or participants section
+for key in ['teams', 'participants', 'competitors', 'players']:
+    if key in data:
+        print(f"✓ Found '{key}' section with {len(data[key])} items")
+
+# Look at event structure for participant IDs
+print("\n=== Checking Event Participant Structure ===\n")
+events = data.get('events', {})
+if events:
+    first_event = list(events.values())[0]
+    participants = first_event.get('participants', [])
+    if participants:
+        print("Participant structure:")
+        print(json.dumps(participants[0], indent=2))
+        
+# Check leagues structure
+print("\n=== Checking Leagues ===")
+leagues = data.get('leagues', {})
+print(f"Total leagues: {len(leagues)}")
+if leagues:
+    first_league = list(leagues.values())[0]
+    print(f"League keys: {list(first_league.keys())}")
+
+EOF
+
+```
+
+```
+=== Stoiximan API Top-Level Structure ===
+
+Keys: ['sports', 'zones', 'leagues', 'version', 'contentVersion', 'availabilitiesVersion', 'events', 'markets', 'selections']
+
+
+=== Checking Event Participant Structure ===
+
+Participant structure:
+{
+  "name": "Chuqin Wang",
+  "isHome": true
+}
+
+=== Checking Leagues ===
+Total leagues: 63
+League keys: ['id', 'name', 'eventIdList', 'displayOrder']
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Interesting! The participants don't have IDs in the structure - just names. Let me try some other API endpoints to see if there's a teams or participants endpoint.</details></think>
+
+---
+
+I see participants only have `name` and `isHome`, no IDs. Let me try exploring other potential API endpoints:
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && source venv/bin/activate && python << 'EOF'
+import requests
+
+base_url = 'https://en.stoiximan.gr/danae-webapi/api'
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+    'Accept': 'application/json'
+}
+params = {
+    'queryLanguageId': '1',
+    'queryOperatorId': '2'
+}
+
+print("🔍 Testing potential team/participant endpoints...\n")
+
+# Try various endpoint patterns
+test_endpoints = [
+    '/teams',
+    '/participants',
+    '/competitors',
+    '/sports/FOOT/teams',
+    '/sports/FOOT/competitors',
+    '/league/teams',
+    '/prematch/teams',
+    '/live/teams',
+]
+
+for endpoint in test_endpoints:
+    url = f"{base_url}{endpoint}"
+    try:
+        response = requests.get(url, params=params, headers=headers, timeout=5)
+        if response.status_code == 200:
+            try:
+                data = response.json()
+                print(f"✓ {endpoint}: {response.status_code} - Has data!")
+                print(f"  Keys: {list(data.keys())[:5]}")
+            except:
+                print(f"? {endpoint}: {response.status_code} - Not JSON")
+        else:
+            print(f"✗ {endpoint}: {response.status_code}")
+    except Exception as e:
+        print(f"✗ {endpoint}: {str(e)[:40]}")
+
+EOF
+
+```
+
+```
+🔍 Testing potential team/participant endpoints...
+
+✗ /teams: 404
+✗ /participants: 404
+✗ /competitors: 404
+✗ /sports/FOOT/teams: 404
+✗ /sports/FOOT/competitors: 404
+✗ /league/teams: 404
+✗ /prematch/teams: 404
+✗ /live/teams: 404
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>All the team/participant endpoints returned 404. Let me check the sports structure to see if it provides team information.</details></think>
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && source venv/bin/activate && python << 'EOF'
+import json
+
+with open('stoiximan-api.json', 'r') as f:
+    data = json.load(f)
+
+# Check the sports structure
+sports = data.get('sports', {})
+print("=== Sports Section ===")
+print(f"Total sports: {len(sports)}\n")
+
+if 'FOOT' in sports:
+    football = sports['FOOT']
+    print("Football sport keys:", list(football.keys()))
+    print()
+    
+# Check zones
+zones = data.get('zones', {})
+print(f"\n=== Zones Section ===")
+print(f"Total zones: {len(zones)}")
+
+# Check if there's aggregated team data anywhere
+print("\n=== Looking for Team References ===")
+all_team_names = set()
+all_team_ids = set()
+
+events = data.get('events', {})
+for event_id, event in events.items():
+    if event.get('sportId') == 'FOOT':
+        participants = event.get('participants', [])
+        for p in participants:
+            name = p.get('name', '')
+            if name:
+                all_team_names.add(name)
+            # Check for any ID field
+            for key in p.keys():
+                if 'id' in key.lower():
+                    print(f"Found ID field in participant: {key} = {p[key]}")
+
+print(f"\nTotal unique team names found: {len(all_team_names)}")
+print("Participant has ID field: No ❌")
+
+EOF
+
+```
+
+```
+=== Sports Section ===
+Total sports: 3
+
+
+=== Zones Section ===
+Total zones: 40
+
+=== Looking for Team References ===
+Found ID field in participant: teamId = 1901482
+Found ID field in participant: teamId = 2090331
+Found ID field in participant: teamId = 2091922
+Found ID field in participant: teamId = 1883122
+Found ID field in participant: teamId = 1970769
+Found ID field in participant: teamId = 2080160
+Found ID field in participant: teamId = 2090266
+Found ID field in participant: teamId = 2039720
+Found ID field in participant: teamId = 1887209
+Found ID field in participant: teamId = 1890695
+Found ID field in participant: teamId = 2079999
+Found ID field in participant: teamId = 2088461
+Found ID field in participant: teamId = 115472
+Found ID field in participant: teamId = 2014457
+Found ID field in participant: teamId = 2050818
+Found ID field in participant: teamId = 2058583
+Found ID field in participant: teamId = 2090173
+Found ID field in participant: teamId = 1958665
+Found ID field in participant: teamId = 2032914
+Found ID field in participant: teamId = 2052597
+Found ID field in participant: teamId = 107838
+Found ID field in participant: teamId = 109306
+Found ID field in participant: teamId = 2039720
+Found ID field in participant: teamId = 2065898
+Found ID field in participant: teamId = 2090517
+Found ID field in participant: teamId = 2040673
+Found ID field in participant: teamId = 2089385
+Found ID field in participant: teamId = 2017956
+Found ID field in participant: teamId = 109876
+Found ID field in participant: teamId = 106880
+Found ID field in participant: teamId = 2074759
+Found ID field in participant: teamId = 2091816
+Found ID field in participant: teamId = 2091784
+Found ID field in participant: teamId = 2065064
+Found ID field in participant: teamId = 2017960
+Found ID field in participant: teamId = 1908260
+Found ID field in participant: teamId = 1892503
+Found ID field in participant: teamId = 1903971
+Found ID field in participant: teamId = 118345
+Found ID field in participant: teamId = 2019188
+Found ID field in participant: teamId = 2031303
+Found ID field in participant: teamId = 2030804
+Found ID field in participant: teamId = 106960
+Found ID field in participant: teamId = 1948836
+Found ID field in participant: teamId = 115942
+Found ID field in participant: teamId = 117628
+Found ID field in participant: teamId = 114935
+Found ID field in participant: teamId = 117634
+Found ID field in participant: teamId = 2011742
+Found ID field in participant: teamId = 1955359
+Found ID field in participant: teamId = 2091857
+Found ID field in participant: teamId = 2090892
+Found ID field in participant: teamId = 2066056
+Found ID field in participant: teamId = 2091858
+Found ID field in participant: teamId = 1983238
+Found ID field in participant: teamId = 1986041
+Found ID field in participant: teamId = 1972443
+Found ID field in participant: teamId = 1935880
+Found ID field in participant: teamId = 2065196
+Found ID field in participant: teamId = 2065064
+Found ID field in participant: teamId = 2091776
+Found ID field in participant: teamId = 2086945
+Found ID field in participant: teamId = 2080881
+Found ID field in participant: teamId = 2077977
+Found ID field in participant: teamId = 1995578
+Found ID field in participant: teamId = 1931662
+Found ID field in participant: teamId = 2043439
+Found ID field in participant: teamId = 2043440
+Found ID field in participant: teamId = 2089581
+Found ID field in participant: teamId = 2065632
+Found ID field in participant: teamId = 2065632
+Found ID field in participant: teamId = 2090266
+Found ID field in participant: teamId = 1886879
+Found ID field in participant: teamId = 1930010
+Found ID field in participant: teamId = 2080316
+Found ID field in participant: teamId = 2078412
+Found ID field in participant: teamId = 2031687
+Found ID field in participant: teamId = 2031122
+Found ID field in participant: teamId = 107290
+Found ID field in participant: teamId = 2061157
+Found ID field in participant: teamId = 2017958
+Found ID field in participant: teamId = 1908357
+Found ID field in participant: teamId = 1896264
+Found ID field in participant: teamId = 1945964
+Found ID field in participant: teamId = 1927313
+Found ID field in participant: teamId = 2083183
+Found ID field in participant: teamId = 2065196
+Found ID field in participant: teamId = 2052597
+Found ID field in participant: teamId = 118729
+Found ID field in participant: teamId = 1891943
+Found ID field in participant: teamId = 2087697
+Found ID field in participant: teamId = 2086608
+Found ID field in participant: teamId = 2059581
+Found ID field in participant: teamId = 2042210
+
+Total unique team names found: 88
+Participant has ID field: No ❌
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Excellent! The participants DO have teamId fields! I found them. Now I should extract all unique teamId and name pairs to create a mapping. But the question is whether there's an API endpoint that would give us ALL teams with their IDs, not just the ones in current live matches.</details></think>
+
+---
+
+## 🎉 **Yes! Teams DO have IDs!**
+
+Great discovery! Each participant has a `teamId` field:
+
+```json
+{
+  "name": "Iraq U23",
+  "isHome": true,
+  "teamId": 2090331
+}
+```
+
+### **What We Found:**
+
+✅ **Team IDs exist** in participant data
+✅ **Currently collecting ~88 unique teamIds** from live matches
+❌ **No bulk "all teams" endpoint** available
+
+---
+
+### **Can We Get ALL Team IDs?**
+
+**Unfortunately, NO** - for the same reason we can't get all team names:
+
+| Endpoint | Status | Coverage |
+|----------|--------|----------|
+| `/api/live/overview/latest` | ✅ Works | Only live matches |
+| `/api/teams` | ❌ 404 | N/A |
+| `/api/prematch/teams` | ❌ 404 | N/A |
+| Bulk team endpoint | ❌ Doesn't exist | N/A |
+
+---
+
+### **💡 Solution:**
+
+We're already doing it correctly! By monitoring live matches over time, we collect:
+- Team names
+- Team IDs (bonus!)
+
+We could **enhance the collector** to also save teamId → name mappings:
+
+```python
+{
+  "Iraq U23": 2090331,
+  "United Arab Emirates U23": 1883122,
+  "Bursaspor U19": 1901482,
+  ...
+}
+```
+
+---
+
+### **Would you like me to:**
+
+1. ✅ **Update the Stoiximan collector** to also capture teamIds?
+2. ✅ **Create a mapping file** like `stoiximan_team_ids.json`?
+
+This could be useful for future API queries if Stoiximan has team-specific endpoints we haven't discovered yet! 🎯
+
+---
+
+_**User (2025-12-10 11:43Z)**_
+
+Just as a test I want you to create a new CSV file called matches.csv. The first column is going to be called Oddswar and in this column copy all the team names from @oddswar_names_full.txt . This is going to be the master column of names. The second column is going to be Stoiximan and in this column place the probable matches to the team names currenlty in @stoiximan_names.txt . The scraping of the Sotiximan names isn't finished yet but I want to start matching team names as far as it goes for now. If there are no matches just leave that line blank in the Stoiximan column,
+
+---
+
+_**Assistant (claude-4.5-sonnet-thinking)**_
+
+<think><details><summary>Thought Process</summary>The user wants me to create a CSV file called `matches.csv` with two columns:
+1. First column "Oddswar" - copy all team names from oddswar_names_full.txt (814 teams)
+2. Second column "Stoiximan" - find probable matches from stoiximan_names.txt (200 teams)
+
+I need to use fuzzy matching (rapidfuzz) to find the best matches. If no good match is found, leave the Stoiximan column blank.
+
+Let me create a script that:
+1. Loads both team name files
+2. For each Oddswar team, finds the best match in Stoiximan teams using fuzzy matching
+3. Sets a threshold (maybe 80-85%) for what counts as a match
+4. Outputs to matches.csv
+
+I should use the rapidfuzz library that's already in requirements.txt.</details></think>
+
+---
+
+I'll create a script to match the team names using rapidfuzz for fuzzy matching:
+
+---
+
+Tool use: **write**
+
+
+<details><summary>Edit file: /Users/giray/Desktop/harbi/create_matches_csv.py</summary>
+
+**Chunk 1**
+Lines added: 98, lines removed: 1
+
+```diff
+@@ -1,1 +1,98 @@
+- 
++ #!/usr/bin/env python3
++ """
++ Create matches.csv with Oddswar team names and their probable Stoiximan matches.
++ Uses fuzzy matching (rapidfuzz) to find best matches.
++ """
++ 
++ import csv
++ from rapidfuzz import fuzz, process
++ 
++ 
++ def load_team_names(filename):
++     """Load team names from a text file."""
++     with open(filename, 'r', encoding='utf-8') as f:
++         teams = [line.strip() for line in f if line.strip()]
++     return teams
++ 
++ 
++ def find_best_match(oddswar_team, stoiximan_teams, threshold=80):
++     """
++     Find the best matching Stoiximan team name for an Oddswar team.
++     
++     Args:
++         oddswar_team: Team name from Oddswar
++         stoiximan_teams: List of team names from Stoiximan
++         threshold: Minimum similarity score (0-100) to consider a match
++     
++     Returns:
++         Tuple of (matched_team, score) or (None, 0) if no good match
++     """
++     if not stoiximan_teams:
++         return None, 0
++     
++     # Use fuzz.ratio for overall similarity
++     result = process.extractOne(
++         oddswar_team,
++         stoiximan_teams,
++         scorer=fuzz.ratio
++     )
++     
++     if result and result[1] >= threshold:
++         return result[0], result[1]
++     
++     return None, 0
++ 
++ 
++ def create_matches_csv():
++     """Create matches.csv with Oddswar and probable Stoiximan matches."""
++     
++     print("📂 Loading team names...")
++     oddswar_teams = load_team_names('oddswar_names_full.txt')
++     stoiximan_teams = load_team_names('stoiximan_names.txt')
++     
++     print(f"   Oddswar teams: {len(oddswar_teams)}")
++     print(f"   Stoiximan teams: {len(stoiximan_teams)}")
++     
++     print("\n🔍 Matching teams (threshold: 80%)...")
++     
++     matches = []
++     match_count = 0
++     
++     for i, oddswar_team in enumerate(oddswar_teams, 1):
++         stoiximan_match, score = find_best_match(oddswar_team, stoiximan_teams)
++         
++         if stoiximan_match:
++             match_count += 1
++             if score < 100:  # Show non-exact matches
++                 print(f"   [{score:.0f}%] {oddswar_team} → {stoiximan_match}")
++         
++         matches.append({
++             'Oddswar': oddswar_team,
++             'Stoiximan': stoiximan_match if stoiximan_match else ''
++         })
++         
++         # Progress indicator
++         if i % 100 == 0:
++             print(f"   Processed {i}/{len(oddswar_teams)} teams...")
++     
++     print(f"\n📝 Writing to matches.csv...")
++     
++     with open('matches.csv', 'w', newline='', encoding='utf-8') as f:
++         writer = csv.DictWriter(f, fieldnames=['Oddswar', 'Stoiximan'])
++         writer.writeheader()
++         writer.writerows(matches)
++     
++     print(f"\n✅ Done!")
++     print(f"{'='*60}")
++     print(f"📊 Results:")
++     print(f"   Total Oddswar teams: {len(oddswar_teams)}")
++     print(f"   Matches found: {match_count}")
++     print(f"   No match: {len(oddswar_teams) - match_count}")
++     print(f"   Match rate: {(match_count/len(oddswar_teams)*100):.1f}%")
++     print(f"\n📄 Output: matches.csv")
++     print(f"{'='*60}")
++ 
++ 
++ if __name__ == '__main__':
++     create_matches_csv()
++ 
+```
+
+</details>
+
+---
+
+<think><details><summary>Thought Process</summary>Now let me run this script to create the matches.csv file.</details></think>
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && source venv/bin/activate && python create_matches_csv.py
+```
+
+```
+📂 Loading team names...
+   Oddswar teams: 814
+   Stoiximan teams: 199
+
+🔍 Matching teams (threshold: 80%)...
+   [88%] Al-Baq'a → Al-Baqaa
+   [89%] Aritma Praha → SK Aritma Praha
+   [88%] Arsenal U19 → Arsenal FC U19
+   [88%] Athletic Bilbao → Athletic Bilbao U19
+   [91%] Atletico Madrid → Atletico Madrid II
+   [86%] Atletico Madrid (W) → Atletico Madrid II
+   [88%] Bangkok Utd → Bangkok United
+   [90%] Barcelona (W) → FC Barcelona (W)
+   Processed 100/814 teams...
+   [90%] Bodo/Glimt U19 → FK Bodo/Glimt U19
+   [93%] Buhimba Saints United → Buhimba Saints United FC
+   [91%] Club Brugge U19 → Club Brugge KV U19
+   Processed 200/814 teams...
+   [82%] Crotone → FC Crotone
+   [87%] Crvena Zvezda → Crvena Zvezda U19
+   [86%] Dila Gori → FC Dila Gori
+   [91%] Dinamo Minsk U19 → FC Dinamo Minsk U19
+   [92%] Dinamo Tbilisi U19 → FC Dinamo Tbilisi U19
+   [91%] Etihad Al Ramtha → Ittihad Al Ramtha
+   [80%] FC Koln U19 → 1. FC Köln U19
+   Processed 300/814 teams...
+   [92%] FK Crvena Zvezda U19 → Crvena Zvezda U19
+   [82%] FK Mornar → FK Mornar Bar
+   [95%] Fk Buducnost Podgorica → FK Buducnost Podgorica
+   [94%] Fk Jedinstvo Bijelo Polje → Jedinstvo Bijelo Polje
+   [84%] Flamengo → Flamengo RJ
+   [80%] Genk U19 → KRC Genk U19
+   Processed 400/814 teams...
+   [80%] Jerash SC → Jerash
+   [80%] Juventus → Juventus U19
+   [92%] Lion City Sailors FC → Lion City Sailors
+   [84%] Marbella → Marbella FC
+   Processed 500/814 teams...
+   [91%] Neuchatel Xamax → Neuchatel Xamax FC
+   [80%] Pafos FC → Pafos FC U19
+   [86%] Pafos U19 → Pafos FC U19
+   [80%] Paris FC → Paris FC (W)
+   [86%] Porto U19 → FC Porto U19
+   [90%] Qarabag FK → Qarabağ FK
+   Processed 600/814 teams...
+   [85%] Real Madrid → Real Madrid U19
+   [80%] Renate → AC Renate
+   [90%] Rudar Pljevlja → FK Rudar Pljevlja
+   [83%] Ruzomberok → MFk Ruzomberok
+   [93%] S.L. Benfica (W) → SL Benfica (W)
+   [89%] Samma → Sama
+   [91%] Selangor FA → Selangor FC
+   Processed 700/814 teams...
+   [83%] Valerenga (W) → Vålerenga IF (W)
+   [87%] Villarreal → Villarreal CF
+   Processed 800/814 teams...
+   [82%] Yarmouk → Al-Yarmouk
+
+📝 Writing to matches.csv...
+
+✅ Done!
+============================================================
+📊 Results:
+   Total Oddswar teams: 814
+   Matches found: 77
+   No match: 737
+   Match rate: 9.5%
+
+📄 Output: matches.csv
+============================================================
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Good! The script created matches.csv. It found 77 matches out of 814 Oddswar teams (9.5% match rate), which makes sense since Stoiximan only has 199 teams collected so far vs Oddswar's 814.
+
+Let me show the user the output file.</details></think>
+
+---
+
+Perfect! ✅ Created `matches.csv` with fuzzy matching! Let me show you a preview:
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && head -30 matches.csv && echo "..." && echo "" && echo "Total lines: $(wc -l < matches.csv)"
+```
+
+```
+Oddswar,Stoiximan
+1860 Munich,
+AC Milan,
+ACS Dumbravita,
+ACS Fotbal Club Bacau,
+ACS Petrolul 52,
+ACS Sepsi OSK,
+AD Municipal Liberia,
+ADO Den Haag,
+AEK Athens,
+AEK Larnaca,
+AFC Wimbledon,
+AS Roma (W),
+AVS Futebol SAD,
+AZ Alkmaar,
+Aalesunds,
+Aarau,
+Aberdeen,
+Accrington,
+Achuapa FC,
+Adana Demirspor,
+Adelaide United,
+Adelaide United (W),
+Admira Wacker,
+Agsu,
+Airdrieonians,
+Ajax,
+Al Ahly Cairo,
+Al Arabi (JOR),
+Al Ittihad (EGY),
+...
+
+Total lines:      815
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Good, let me also show some examples where matches WERE found.</details></think>
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && echo "=== Sample Matches Found ===" && grep -v "^[^,]*,$" matches.csv | head -25
+```
+
+```
+=== Sample Matches Found ===
+Oddswar,Stoiximan
+1860 Munich,
+AC Milan,
+ACS Dumbravita,
+ACS Fotbal Club Bacau,
+ACS Petrolul 52,
+ACS Sepsi OSK,
+AD Municipal Liberia,
+ADO Den Haag,
+AEK Athens,
+AEK Larnaca,
+AFC Wimbledon,
+AS Roma (W),
+AVS Futebol SAD,
+AZ Alkmaar,
+Aalesunds,
+Aarau,
+Aberdeen,
+Accrington,
+Achuapa FC,
+Adana Demirspor,
+Adelaide United,
+Adelaide United (W),
+Admira Wacker,
+Agsu,
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Hmm, that command is showing lines with empty second columns. Let me filter better to show only matches that were found.</details></think>
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && echo "=== Examples Where Matches Were Found ===" && awk -F',' 'NR>1 && $2!="" {print}' matches.csv | head -25
+```
+
+```
+=== Examples Where Matches Were Found ===
+1860 Munich,
+AC Milan,
+ACS Dumbravita,
+ACS Fotbal Club Bacau,
+ACS Petrolul 52,
+ACS Sepsi OSK,
+AD Municipal Liberia,
+ADO Den Haag,
+AEK Athens,
+AEK Larnaca,
+AFC Wimbledon,
+AS Roma (W),
+AVS Futebol SAD,
+AZ Alkmaar,
+Aalesunds,
+Aarau,
+Aberdeen,
+Accrington,
+Achuapa FC,
+Adana Demirspor,
+Adelaide United,
+Adelaide United (W),
+Admira Wacker,
+Agsu,
+Airdrieonians,
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Hmm, awk isn't working as expected. Let me try using Python to show the actual matches.</details></think>
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && python << 'EOF'
+import csv
+
+print("=== Examples Where Matches Were Found ===\n")
+
+with open('matches.csv', 'r', encoding='utf-8') as f:
+    reader = csv.DictReader(f)
+    matches_found = []
+    
+    for row in reader:
+        if row['Stoiximan']:  # Has a match
+            matches_found.append(row)
+
+print(f"Total matches found: {len(matches_found)}\n")
+print("First 25 matches:")
+print(f"{'Oddswar':<40} → {'Stoiximan':<40}")
+print("="*85)
+
+for i, row in enumerate(matches_found[:25], 1):
+    print(f"{row['Oddswar']:<40} → {row['Stoiximan']:<40}")
+
+if len(matches_found) > 25:
+    print(f"\n... and {len(matches_found) - 25} more matches")
+
+EOF
+
+```
+
+```
+=== Examples Where Matches Were Found ===
+
+Total matches found: 77
+
+First 25 matches:
+Oddswar                                  → Stoiximan                               
+=====================================================================================
+Al Jeel                                  → Al Jeel                                 
+Al-Baq'a                                 → Al-Baqaa                                
+Aritma Praha                             → SK Aritma Praha                         
+Arsenal U19                              → Arsenal FC U19                          
+Athletic Bilbao                          → Athletic Bilbao U19                     
+Athletic Bilbao U19                      → Athletic Bilbao U19                     
+Atletico Madrid                          → Atletico Madrid II                      
+Atletico Madrid (W)                      → Atletico Madrid II                      
+Atletico Madrid II                       → Atletico Madrid II                      
+Bangkok Utd                              → Bangkok United                          
+Barcelona (W)                            → FC Barcelona (W)                        
+Bodo/Glimt U19                           → FK Bodo/Glimt U19                       
+Buhimba Saints United                    → Buhimba Saints United FC                
+Ceramica Cleopatra                       → Ceramica Cleopatra                      
+Club Brugge U19                          → Club Brugge KV U19                      
+Crotone                                  → FC Crotone                              
+Cruz Azul                                → Cruz Azul                               
+Crvena Zvezda                            → Crvena Zvezda U19                       
+Dila Gori                                → FC Dila Gori                            
+Dinamo Minsk U19                         → FC Dinamo Minsk U19                     
+Dinamo Tbilisi U19                       → FC Dinamo Tbilisi U19                   
+Doqarah FC                               → Doqarah FC                              
+Etihad Al Ramtha                         → Ittihad Al Ramtha                       
+FC Copenhagen                            → FC Copenhagen                           
+FC Koln U19                              → 1. FC Köln U19                          
+
+... and 52 more matches
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Great! The script successfully created matches.csv with 77 matches found using fuzzy matching. Let me show a few more details about the file.</details></think>
+
+---
+
+## ✅ **`matches.csv` Created Successfully!**
+
+### **📊 Results:**
+
+- **Total Oddswar teams (master list):** 814
+- **Matches found:** 77 (9.5%)
+- **No match yet:** 737 (90.5%)
+  - These will fill in as Stoiximan collector runs longer
+
+---
+
+### **📄 File Structure:**
+
+```csv
+Oddswar,Stoiximan
+1860 Munich,
+Ajax,
+Al Jeel,Al Jeel
+Al-Baq'a,Al-Baqaa
+Arsenal U19,Arsenal FC U19
+Bangkok Utd,Bangkok United
+Barcelona (W),FC Barcelona (W)
+...
+```
+
+---
+
+### **✅ Example Matches Found:**
+
+| Oddswar | Stoiximan | Score |
+|---------|-----------|-------|
+| Al Jeel | Al Jeel | 100% (exact) |
+| Bangkok Utd | Bangkok United | 88% |
+| Barcelona (W) | FC Barcelona (W) | 90% |
+| Arsenal U19 | Arsenal FC U19 | 88% |
+| Club Brugge U19 | Club Brugge KV U19 | 91% |
+| Cruz Azul | Cruz Azul | 100% (exact) |
+
+---
+
+### **💡 What Happens Next:**
+
+As you run `collect_stoiximan_teams.py` longer:
+- Stoiximan team count grows (currently 199 → target 814)
+- More matches will be found automatically
+- Match rate will improve (9.5% → hopefully 80%+)
+
+You can **re-run the script anytime** to update the CSV:
+
+```bash
+python create_matches_csv.py
+```
+
+The CSV is ready for you to review and confirm the matches! 📋✨
+
+---
+
+_**User (2025-12-10 11:43Z)**_
+
+Are there any orphans from the Stoiximan team names? Any that didn't match at all?
+
+---
+
+_**Assistant (claude-4.5-sonnet-thinking)**_
+
 
 
 ---
 
+<think><details><summary>Thought Process</summary>The user wants to know if there are any Stoiximan team names that didn't match with any Oddswar team names - essentially the reverse check. We found matches for 77 Oddswar teams, but we should check if all 199 Stoiximan teams were used in those matches, or if some Stoiximan teams are "orphans" (not matched to any Oddswar team).
 
+Let me create a script to check which Stoiximan teams were NOT matched.</details></think>
+
+---
+
+I'll check which Stoiximan team names didn't get matched to any Oddswar team:
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && python << 'EOF'
+import csv
+
+# Load all Stoiximan teams
+with open('stoiximan_names.txt', 'r', encoding='utf-8') as f:
+    all_stoiximan_teams = set(line.strip() for line in f if line.strip())
+
+# Load matched Stoiximan teams from CSV
+matched_stoiximan_teams = set()
+with open('matches.csv', 'r', encoding='utf-8') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        if row['Stoiximan']:  # Has a match
+            matched_stoiximan_teams.add(row['Stoiximan'])
+
+# Find orphans (Stoiximan teams not matched to any Oddswar team)
+orphans = all_stoiximan_teams - matched_stoiximan_teams
+
+print("="*60)
+print("🔍 STOIXIMAN ORPHAN ANALYSIS")
+print("="*60)
+print(f"Total Stoiximan teams: {len(all_stoiximan_teams)}")
+print(f"Matched to Oddswar: {len(matched_stoiximan_teams)}")
+print(f"Orphans (not matched): {len(orphans)}")
+print(f"Match rate: {(len(matched_stoiximan_teams)/len(all_stoiximan_teams)*100):.1f}%")
+print("="*60)
+
+if orphans:
+    print(f"\n📋 ORPHANED STOIXIMAN TEAMS ({len(orphans)}):")
+    print("-"*60)
+    for i, team in enumerate(sorted(orphans), 1):
+        print(f"{i:3d}. {team}")
+else:
+    print("\n✅ No orphans - all Stoiximan teams were matched!")
+
+# Also show which Stoiximan teams were matched multiple times
+from collections import Counter
+stoiximan_usage = []
+with open('matches.csv', 'r', encoding='utf-8') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        if row['Stoiximan']:
+            stoiximan_usage.append(row['Stoiximan'])
+
+usage_counts = Counter(stoiximan_usage)
+multi_matched = {team: count for team, count in usage_counts.items() if count > 1}
+
+if multi_matched:
+    print(f"\n⚠️  STOIXIMAN TEAMS MATCHED MULTIPLE TIMES ({len(multi_matched)}):")
+    print("-"*60)
+    for team, count in sorted(multi_matched.items(), key=lambda x: -x[1]):
+        print(f"{count}× {team}")
+        # Show which Oddswar teams matched to it
+        with open('matches.csv', 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            matches = [row['Oddswar'] for row in reader if row['Stoiximan'] == team]
+        for oddswar_team in matches:
+            print(f"     ← {oddswar_team}")
+
+print("\n" + "="*60)
+
+EOF
+
+```
+
+```
+============================================================
+🔍 STOIXIMAN ORPHAN ANALYSIS
+============================================================
+Total Stoiximan teams: 209
+Matched to Oddswar: 68
+Orphans (not matched): 141
+Match rate: 32.5%
+============================================================
+
+📋 ORPHANED STOIXIMAN TEAMS (141):
+------------------------------------------------------------
+  1. 4800 Ladies FC (W)
+  2. AC Sparta Praha II
+  3. AFC Ajax
+  4. AJ Auxerre (W)
+  5. AJ Soccer Academy
+  6. AO REA (W)
+  7. AS Real Bamako
+  8. Aarhus GF U19
+  9. Afrique Football Elite
+ 10. Ahudiyannem Queens (W)
+ 11. Akwa United FC
+ 12. Al Arabi Irbid
+ 13. Al Hussein SC
+ 14. Al Wahda (UAE)
+ 15. Al-Nassr FC
+ 16. All Stars WFC (W)
+ 17. Aluminium Arak FC
+ 18. Atletic Club Escaldes
+ 19. Baalor Sarr
+ 20. Baku Sporting FC
+ 21. Balzan
+ 22. Banjul United
+ 23. Bayelsa Queen FC (W)
+ 24. Bayer 04 Leverkusen U19
+ 25. Beyoglu Yeni Carsi AS U19
+ 26. Big Bullets
+ 27. Borussia Dortmund U19
+ 28. Bursaspor U19
+ 29. Cece United
+ 30. Central University of Technology (W)
+ 31. Chainat FC
+ 32. Cienfuegos
+ 33. Club Aurora U19
+ 34. Delta Queens (W)
+ 35. Dijon FCO (W)
+ 36. Djoliba AC
+ 37. Doma United FC
+ 38. Ekhaya FC
+ 39. El Gouna FC
+ 40. El Merriekh Bentiu
+ 41. Erokspor U19
+ 42. Esperanca D'Andorra
+ 43. Esteghlal Tehran
+ 44. FC Copenhagen U19
+ 45. FC Gareji
+ 46. FC Guantánamo
+ 47. FC Iberia 1999 Tbilisi
+ 48. FC Maan
+ 49. FC Nantes U19
+ 50. FC Robo (W)
+ 51. FC Santiago de Cuba
+ 52. FC Spaeri
+ 53. FC Stade LS Ouchy
+ 54. FC Villa Clara
+ 55. FC Vion Zlate Moravce
+ 56. FC Wagadou
+ 57. FE Grama
+ 58. FK Bokelj Kotor
+ 59. FK Decic Tuzi
+ 60. Fgura United FC
+ 61. Fluminense RJ (W) U20
+ 62. Golden Dream
+ 63. HNK Sibenik U19
+ 64. Iraq U23
+ 65. Ismaily SC
+ 66. Istanbulspor U19
+ 67. Jezero Plav
+ 68. Kalina Rangers CFF
+ 69. Karbalaa
+ 70. Kifisia (W)
+ 71. Kufrsoum SC
+ 72. Lugazi Municipal FC
+ 73. Mafunzo FC
+ 74. Malavan Bandar Anzali FC
+ 75. Manchester City U19
+ 76. Marines
+ 77. Meghalaya Police
+ 78. Mladost DG
+ 79. Moik Baku
+ 80. Moyale Barracks
+ 81. Mwembe Makumbi City
+ 82. NK Radnik Sesvete U19
+ 83. Nabarouh
+ 84. Naft Masjed Soleyman FC
+ 85. Naija Ratels (W)
+ 86. Napoli U19
+ 87. Nasarawa Amazons (W)
+ 88. New King
+ 89. OFI Crete (W)
+ 90. Odysseas Moschatou (W)
+ 91. Olimpija Ljubljana (W)
+ 92. Oman U23
+ 93. Oriente Petrolero U19
+ 94. Pags Fc
+ 95. Paris Saint-Germain U19
+ 96. Pendikspor U19
+ 97. Pieta Hotspurs
+ 98. RC Strasbourg (W)
+ 99. RS Tallinding
+100. Ramtha SC
+101. Randers Freja U19
+102. Ravenna Calcio
+103. Real Betis Balompie U19
+104. Recreativo Huelva
+105. Reliance FYC
+106. Rossoblu Potenza
+107. SL Benfica U19
+108. Sahdag Qusar
+109. Sakaryaspor U19
+110. Samira FC
+111. Santos SP (W) U20
+112. Sariyerspor U19
+113. Sed Elmahla
+114. Sepahan FC
+115. Sepahan Novin Esfahan
+116. Serrekunda United
+117. Shillong Lajong FC II
+118. Sibanor United
+119. Silver Strikers
+120. Simal
+121. Smouha SC
+122. Sokoto United
+123. Songkhla United FC
+124. Sporting Lagos FC
+125. St Andrews FC
+126. Stade Malien de Bamako
+127. Stade de Reims (W)
+128. Super Strikers Ladies (W)
+129. Talaea El Gaish
+130. Ternana Calcio
+131. Terrassa FC
+132. UCAM Murcia CF
+133. UD Leiria U23
+134. Uhamiaji
+135. Unique Global FC
+136. United Arab Emirates U23
+137. Villarreal CF U19
+138. Yemen U23
+139. ZED FC
+140. ZNK Mura Nona (W)
+141. Ümraniyespor U19
+
+⚠️  STOIXIMAN TEAMS MATCHED MULTIPLE TIMES (8):
+------------------------------------------------------------
+3× Atletico Madrid II
+     ← Atletico Madrid
+     ← Atletico Madrid (W)
+     ← Atletico Madrid II
+2× Athletic Bilbao U19
+     ← Athletic Bilbao
+     ← Athletic Bilbao U19
+2× Crvena Zvezda U19
+     ← Crvena Zvezda
+     ← FK Crvena Zvezda U19
+2× Jerash
+     ← Jerash
+     ← Jerash SC
+2× Juventus U19
+     ← Juventus
+     ← Juventus U19
+2× Pafos FC U19
+     ← Pafos FC
+     ← Pafos U19
+2× Paris FC (W)
+     ← Paris FC
+     ← Paris FC (W)
+2× Real Madrid U19
+     ← Real Madrid
+     ← Real Madrid U19
+
+============================================================
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Interesting! So we have:
+
+1. **141 Stoiximan teams (67.5%) are orphans** - they didn't match to any Oddswar team. This makes sense because:
+   - Stoiximan has 209 teams total
+   - Oddswar has 814 teams total
+   - They cover different matches/competitions
+   - Many Stoiximan teams are U19/U20/Women's teams that might not be in Oddswar
+
+2. **68 Stoiximan teams (32.5%) were matched** - but some were matched multiple times!
+
+3. **8 Stoiximan teams were matched to multiple Oddswar teams** - this is a problem! For example:
+   - "Atletico Madrid II" matched to 3 different Oddswar teams (Atletico Madrid, Atletico Madrid (W), Atletico Madrid II)
+   - This happens because of fuzzy matching - similar names get matched to the same Stoiximan team
+
+This shows that:
+- Many Stoiximan teams are unique/different from Oddswar
+- Some fuzzy matches are creating duplicates (multiple Oddswar teams → same Stoiximan team)
+- The matching needs human review to fix these ambiguities
+
+The user now has a clear picture of the orphan situation.</details></think>
+
+---
+
+## 📊 **Yes! 141 Stoiximan Orphans (67.5%)**
+
+### **Summary:**
+- **Total Stoiximan teams:** 209
+- **Matched to Oddswar:** 68 (32.5%)
+- **Orphans (not matched):** 141 (67.5%)
+
+---
+
+### **🔍 Why So Many Orphans?**
+
+1. **Different competitions** - Stoiximan and Oddswar cover different matches
+2. **Youth/Women's teams** - Many Stoiximan teams are U19/U20/(W) variants not in Oddswar
+3. **Regional differences** - Different geographical coverage
+4. **Team name variations** - Names too different for fuzzy matching (< 80% similarity)
+
+---
+
+### **⚠️ Another Issue: Duplicate Matches**
+
+**8 Stoiximan teams were matched to MULTIPLE Oddswar teams:**
+
+| Stoiximan Team | Matched Count | Oddswar Teams |
+|----------------|---------------|---------------|
+| Atletico Madrid II | 3× | Atletico Madrid, Atletico Madrid (W), Atletico Madrid II |
+| Athletic Bilbao U19 | 2× | Athletic Bilbao, Athletic Bilbao U19 |
+| Crvena Zvezda U19 | 2× | Crvena Zvezda, FK Crvena Zvezda U19 |
+| Jerash | 2× | Jerash, Jerash SC |
+| Juventus U19 | 2× | Juventus, Juventus U19 |
+| Pafos FC U19 | 2× | Pafos FC, Pafos U19 |
+| Paris FC (W) | 2× | Paris FC, Paris FC (W) |
+| Real Madrid U19 | 2× | Real Madrid, Real Madrid U19 |
+
+---
+
+### **💡 Key Takeaway:**
+
+The **141 orphan teams** from Stoiximan are likely **legitimate unique teams** not currently in the Oddswar database. These represent teams/competitions that Stoiximan covers but Oddswar doesn't (or uses completely different names for).
+
+The duplicate matches will need **human review** to decide which Oddswar → Stoiximan mapping is correct! 🎯
+
+---
+
+_**User (2025-12-10 11:43Z)**_
+
+This script that combines team names and tries to match them up should ignore already matched up team name pairs.
+
+---
+
+_**Assistant (claude-4.5-sonnet-thinking)**_
+
+<think><details><summary>Thought Process</summary>The user wants the `create_matches_csv.py` script to avoid matching the same Stoiximan team to multiple Oddswar teams. This makes sense - we saw that some Stoiximan teams like "Atletico Madrid II" were matched to 3 different Oddswar teams.
+
+The solution is to track which Stoiximan teams have already been matched, and skip them for subsequent Oddswar teams. This way, each Stoiximan team will only be matched to the FIRST (best-scoring) Oddswar team.
+
+I need to update the script to:
+1. Keep track of which Stoiximan teams have already been used
+2. Remove used teams from the available pool before matching the next Oddswar team
+3. This ensures a 1-to-1 mapping (or 1-to-0 if no match)</details></think>
+
+---
+
+I'll update the script to ensure each Stoiximan team can only be matched once (preventing duplicates):
+
+---
+
+Tool use: **search_replace**
+
+
+<details><summary>Edit file: /Users/giray/Desktop/harbi/create_matches_csv.py</summary>
+
+**Chunk 1**
+Lines added: 9, lines removed: 1
+
+```diff
+@@ -55,15 +55,23 @@
+      
+      print("\n🔍 Matching teams (threshold: 80%)...")
++     print("   ℹ️  Each Stoiximan team can only be matched once (prevents duplicates)")
++     
++     # Track which Stoiximan teams have been used
++     available_stoiximan_teams = stoiximan_teams.copy()
+      
+      matches = []
+      match_count = 0
+      
+      for i, oddswar_team in enumerate(oddswar_teams, 1):
+-         stoiximan_match, score = find_best_match(oddswar_team, stoiximan_teams)
++         # Only search among teams that haven't been matched yet
++         stoiximan_match, score = find_best_match(oddswar_team, available_stoiximan_teams)
+          
+          if stoiximan_match:
+              match_count += 1
+              if score < 100:  # Show non-exact matches
+                  print(f"   [{score:.0f}%] {oddswar_team} → {stoiximan_match}")
++             
++             # Remove the matched team from available pool
++             available_stoiximan_teams.remove(stoiximan_match)
+          
+          matches.append({
+```
+
+</details>
+
+---
+
+<think><details><summary>Thought Process</summary>Good, now let me run the updated script to regenerate the matches.csv file with the new logic that prevents duplicate matches.</details></think>
+
+---
+
+Now let's run the updated script to regenerate the CSV without duplicate matches:
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && source venv/bin/activate && python create_matches_csv.py
+```
+
+```
+📂 Loading team names...
+   Oddswar teams: 814
+   Stoiximan teams: 209
+
+🔍 Matching teams (threshold: 80%)...
+   ℹ️  Each Stoiximan team can only be matched once (prevents duplicates)
+   [88%] Al-Baq'a → Al-Baqaa
+   [89%] Aritma Praha → SK Aritma Praha
+   [88%] Arsenal U19 → Arsenal FC U19
+   [88%] Athletic Bilbao → Athletic Bilbao U19
+   [91%] Atletico Madrid → Atletico Madrid II
+   [88%] Bangkok Utd → Bangkok United
+   [90%] Barcelona (W) → FC Barcelona (W)
+   Processed 100/814 teams...
+   [90%] Bodo/Glimt U19 → FK Bodo/Glimt U19
+   [93%] Buhimba Saints United → Buhimba Saints United FC
+   [91%] Club Brugge U19 → Club Brugge KV U19
+   Processed 200/814 teams...
+   [82%] Crotone → FC Crotone
+   [87%] Crvena Zvezda → Crvena Zvezda U19
+   [86%] Dila Gori → FC Dila Gori
+   [91%] Dinamo Minsk U19 → FC Dinamo Minsk U19
+   [92%] Dinamo Tbilisi U19 → FC Dinamo Tbilisi U19
+   [80%] El Gounah → El Gouna FC
+   [91%] Etihad Al Ramtha → Ittihad Al Ramtha
+   [80%] FC Koln U19 → 1. FC Köln U19
+   Processed 300/814 teams...
+   [82%] FK Mornar → FK Mornar Bar
+   [95%] Fk Buducnost Podgorica → FK Buducnost Podgorica
+   [94%] Fk Jedinstvo Bijelo Polje → Jedinstvo Bijelo Polje
+   [84%] Flamengo → Flamengo RJ
+   [80%] Genk U19 → KRC Genk U19
+   Processed 400/814 teams...
+   [82%] Ismaily → Ismaily SC
+   [80%] Juventus → Juventus U19
+   [92%] Lion City Sailors FC → Lion City Sailors
+   [84%] Marbella → Marbella FC
+   Processed 500/814 teams...
+   [91%] Neuchatel Xamax → Neuchatel Xamax FC
+   [80%] Pafos FC → Pafos FC U19
+   [80%] Paris FC → Paris FC (W)
+   [86%] Porto U19 → FC Porto U19
+   [90%] Qarabag FK → Qarabağ FK
+   Processed 600/814 teams...
+   [85%] Real Madrid → Real Madrid U19
+   [80%] Renate → AC Renate
+   [90%] Rudar Pljevlja → FK Rudar Pljevlja
+   [83%] Ruzomberok → MFk Ruzomberok
+   [93%] S.L. Benfica (W) → SL Benfica (W)
+   [89%] Samma → Sama
+   [91%] Selangor FA → Selangor FC
+   [80%] Smouha → Smouha SC
+   Processed 700/814 teams...
+   [83%] Valerenga (W) → Vålerenga IF (W)
+   [87%] Villarreal → Villarreal CF
+   Processed 800/814 teams...
+   [82%] Yarmouk → Al-Yarmouk
+
+📝 Writing to matches.csv...
+
+✅ Done!
+============================================================
+📊 Results:
+   Total Oddswar teams: 814
+   Matches found: 72
+   No match: 742
+   Match rate: 8.8%
+
+📄 Output: matches.csv
+============================================================
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Good! Now let's verify that there are no duplicate Stoiximan matches anymore.</details></think>
+
+---
+
+Perfect! Now let's verify that there are no more duplicates:
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && python << 'EOF'
+import csv
+from collections import Counter
+
+# Check for duplicate Stoiximan matches
+stoiximan_usage = []
+with open('matches.csv', 'r', encoding='utf-8') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        if row['Stoiximan']:
+            stoiximan_usage.append(row['Stoiximan'])
+
+usage_counts = Counter(stoiximan_usage)
+multi_matched = {team: count for team, count in usage_counts.items() if count > 1}
+
+print("="*60)
+print("✅ DUPLICATE CHECK")
+print("="*60)
+print(f"Total matches: {len(stoiximan_usage)}")
+print(f"Unique Stoiximan teams matched: {len(set(stoiximan_usage))}")
+
+if multi_matched:
+    print(f"\n❌ DUPLICATES FOUND: {len(multi_matched)}")
+    print("-"*60)
+    for team, count in sorted(multi_matched.items(), key=lambda x: -x[1]):
+        print(f"{count}× {team}")
+else:
+    print(f"\n✅ NO DUPLICATES!")
+    print("   Each Stoiximan team is matched to only one Oddswar team.")
+
+# Also check orphans
+with open('stoiximan_names.txt', 'r', encoding='utf-8') as f:
+    all_stoiximan_teams = set(line.strip() for line in f if line.strip())
+
+orphans = all_stoiximan_teams - set(stoiximan_usage)
+
+print(f"\n📊 COVERAGE:")
+print("-"*60)
+print(f"Total Stoiximan teams: {len(all_stoiximan_teams)}")
+print(f"Matched: {len(stoiximan_usage)} ({len(stoiximan_usage)/len(all_stoiximan_teams)*100:.1f}%)")
+print(f"Orphans: {len(orphans)} ({len(orphans)/len(all_stoiximan_teams)*100:.1f}%)")
+
+print("\n" + "="*60)
+
+EOF
+
+```
+
+```
+============================================================
+✅ DUPLICATE CHECK
+============================================================
+Total matches: 72
+Unique Stoiximan teams matched: 72
+
+✅ NO DUPLICATES!
+   Each Stoiximan team is matched to only one Oddswar team.
+
+📊 COVERAGE:
+------------------------------------------------------------
+Total Stoiximan teams: 209
+Matched: 72 (34.4%)
+Orphans: 137 (65.6%)
+
+============================================================
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Perfect! The script now works correctly - no more duplicates. Let me show a comparison of the before and after stats.</details></think>
+
+---
+
+## ✅ **Fixed! No More Duplicates**
+
+### **Before vs After:**
+
+| Metric | Before | After |
+|--------|--------|-------|
+| **Total matches** | 77 | 72 |
+| **Unique Stoiximan teams** | 68 | 72 |
+| **Duplicates** | 8 teams (3× and 2×) | 0 ❌ |
+
+---
+
+### **What Changed:**
+
+The script now uses **"first-come, first-served"** matching:
+
+1. ✅ **Atletico Madrid** matched to **Atletico Madrid II** (91% score)
+2. ❌ **Atletico Madrid (W)** now gets NO match (Atletico Madrid II already used)
+3. ❌ **Atletico Madrid II** now gets NO match (Atletico Madrid II already used)
+
+Same logic applies to all former duplicates:
+- **Athletic Bilbao** → gets the match
+- **Athletic Bilbao U19** → no match (already used)
+
+---
+
+### **Current Results:**
+
+- **72 unique 1-to-1 matches** (no duplicates)
+- **137 Stoiximan orphans** (65.6%)
+- **742 Oddswar orphans** (91.2%)
+
+The CSV now has clean, unique pairings! 🎯✨
+
+---
+
+_**User (2025-12-10 11:43Z)**_
+
+Please run this again to add the newly gathered Stoiximan team names.
+
+---
+
+_**Assistant (claude-4.5-sonnet-thinking)**_
+
+<think><details><summary>Thought Process</summary>The user wants me to run the create_matches_csv.py script again to incorporate the newly gathered Stoiximan team names. I can see from the open files that stoiximan_names.txt has grown from 209 lines to 298 lines, so there are new teams to match.
+
+I should just run the script again.</details></think>
+
+---
+
+I'll run the matching script again with the updated Stoiximan team names:
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && source venv/bin/activate && python create_matches_csv.py
+```
+
+```
+📂 Loading team names...
+   Oddswar teams: 814
+   Stoiximan teams: 297
+
+🔍 Matching teams (threshold: 80%)...
+   ℹ️  Each Stoiximan team can only be matched once (prevents duplicates)
+   [88%] Al-Baq'a → Al-Baqaa
+   [89%] Aritma Praha → SK Aritma Praha
+   [82%] Arsenal → Arsenal FC
+   [88%] Arsenal U19 → Arsenal FC U19
+   [91%] Atletico Madrid → Atletico Madrid II
+   [88%] Bangkok Utd → Bangkok United
+   [90%] Barcelona (W) → FC Barcelona (W)
+   Processed 100/814 teams...
+   [84%] Bayern Munich (W) → FC Bayern Munchen (W)
+   [82%] Benfica → SL Benfica
+   [86%] Blackpool → Blackpool FC
+   [90%] Bodo/Glimt U19 → FK Bodo/Glimt U19
+   [93%] Buhimba Saints United → Buhimba Saints United FC
+   [85%] Chelsea (W) → Chelsea LFC (W)
+   [88%] Club Brugge → Club Brugge KV
+   [91%] Club Brugge U19 → Club Brugge KV U19
+   Processed 200/814 teams...
+   [82%] Crotone → FC Crotone
+   [87%] Crvena Zvezda → Crvena Zvezda U19
+   [86%] Dila Gori → FC Dila Gori
+   [91%] Dinamo Minsk U19 → FC Dinamo Minsk U19
+   [92%] Dinamo Tbilisi U19 → FC Dinamo Tbilisi U19
+   [91%] Dynamo Kyiv U19 → FC Dynamo Kyiv U19
+   [90%] Eintracht Frankfurt → Eintracht Frankfurt (W)
+   [80%] El Gounah → El Gouna FC
+   [91%] Etihad Al Ramtha → Ittihad Al Ramtha
+   [80%] FC Koln U19 → 1. FC Köln U19
+   Processed 300/814 teams...
+   [82%] FK Mornar → FK Mornar Bar
+   [95%] Fk Buducnost Podgorica → FK Buducnost Podgorica
+   [94%] Fk Jedinstvo Bijelo Polje → Jedinstvo Bijelo Polje
+   [84%] Flamengo → Flamengo RJ
+   [80%] Genk U19 → KRC Genk U19
+   [90%] Hibernian U19 → Hibernian FC U19
+   Processed 400/814 teams...
+   [82%] Ismaily → Ismaily SC
+   [84%] Juventus → Juventus FC
+   [80%] Kings Lynn → Kings Lynn Town
+   [92%] Lion City Sailors FC → Lion City Sailors
+   [89%] Macclesfield → Macclesfield FC
+   [84%] Marbella → Marbella FC
+   Processed 500/814 teams...
+   [84%] Millwall → Millwall FC
+   [91%] Neuchatel Xamax → Neuchatel Xamax FC
+   [93%] Oud-Heverlee Leuven → Oud-Heverlee Leuven II
+   [86%] Pafos U19 → Pafos FC U19
+   [80%] Paris FC → Paris FC (W)
+   [86%] Porto U19 → FC Porto U19
+   [90%] Qarabag FK → Qarabağ FK
+   Processed 600/814 teams...
+   [87%] Real Sociedad → Real Sociedad U21
+   [80%] Renate → AC Renate
+   [90%] Rudar Pljevlja → FK Rudar Pljevlja
+   [83%] Ruzomberok → MFk Ruzomberok
+   [93%] S.L. Benfica (W) → SL Benfica (W)
+   [89%] Samma → Sama
+   [91%] Selangor FA → Selangor FC
+   [80%] Smouha → Smouha SC
+   Processed 700/814 teams...
+   [83%] Valerenga (W) → Vålerenga IF (W)
+   [87%] Villarreal → Villarreal CF
+   [82%] Walsall → Walsall FC
+   [88%] Watford U21 → Watford FC U21
+   [80%] Woking → Woking FC
+   [82%] Wrexham → Wrexham FC
+   Processed 800/814 teams...
+   [82%] Yarmouk → Al-Yarmouk
+
+📝 Writing to matches.csv...
+
+✅ Done!
+============================================================
+📊 Results:
+   Total Oddswar teams: 814
+   Matches found: 109
+   No match: 705
+   Match rate: 13.4%
+
+📄 Output: matches.csv
+============================================================
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Great! The script ran successfully with the updated Stoiximan names. Let me verify the results and show the improvement.</details></think>
+
+---
+
+Excellent! Let me show you the improvement:
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && python << 'EOF'
+import csv
+from collections import Counter
+
+# Check coverage and duplicates
+stoiximan_usage = []
+with open('matches.csv', 'r', encoding='utf-8') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        if row['Stoiximan']:
+            stoiximan_usage.append(row['Stoiximan'])
+
+# Load all Stoiximan teams
+with open('stoiximan_names.txt', 'r', encoding='utf-8') as f:
+    all_stoiximan_teams = set(line.strip() for line in f if line.strip())
+
+orphans = all_stoiximan_teams - set(stoiximan_usage)
+
+print("="*60)
+print("📊 UPDATED MATCHING RESULTS")
+print("="*60)
+print(f"\n🔢 STOIXIMAN TEAMS:")
+print(f"   Previous: 209 teams")
+print(f"   Current:  {len(all_stoiximan_teams)} teams (+{len(all_stoiximan_teams) - 209})")
+
+print(f"\n✅ MATCHES:")
+print(f"   Previous: 72 matches (34.4%)")
+print(f"   Current:  {len(stoiximan_usage)} matches ({len(stoiximan_usage)/len(all_stoiximan_teams)*100:.1f}%)")
+print(f"   Improvement: +{len(stoiximan_usage) - 72} new matches")
+
+print(f"\n📈 COVERAGE:")
+print(f"   Oddswar teams matched: {len(stoiximan_usage)}/814 ({len(stoiximan_usage)/814*100:.1f}%)")
+print(f"   Stoiximan teams matched: {len(stoiximan_usage)}/{len(all_stoiximan_teams)} ({len(stoiximan_usage)/len(all_stoiximan_teams)*100:.1f}%)")
+print(f"   Stoiximan orphans: {len(orphans)} ({len(orphans)/len(all_stoiximan_teams)*100:.1f}%)")
+
+# Verify no duplicates
+usage_counts = Counter(stoiximan_usage)
+multi_matched = {team: count for team, count in usage_counts.items() if count > 1}
+
+if multi_matched:
+    print(f"\n❌ DUPLICATES: {len(multi_matched)}")
+else:
+    print(f"\n✅ NO DUPLICATES - Clean 1-to-1 matches")
+
+print("="*60)
+
+EOF
+
+```
+
+```
+============================================================
+📊 UPDATED MATCHING RESULTS
+============================================================
+
+🔢 STOIXIMAN TEAMS:
+   Previous: 209 teams
+   Current:  297 teams (+88)
+
+✅ MATCHES:
+   Previous: 72 matches (34.4%)
+   Current:  109 matches (36.7%)
+   Improvement: +37 new matches
+
+📈 COVERAGE:
+   Oddswar teams matched: 109/814 (13.4%)
+   Stoiximan teams matched: 109/297 (36.7%)
+   Stoiximan orphans: 188 (63.3%)
+
+✅ NO DUPLICATES - Clean 1-to-1 matches
+============================================================
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Good! The matching has improved. Let me also show some of the new matches that were found.</details></think>
+
+---
+
+Perfect! Let me show you some of the new matches that were found:
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && python << 'EOF'
+import csv
+
+# Load current matches
+current_matches = {}
+with open('matches.csv', 'r', encoding='utf-8') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        if row['Stoiximan']:
+            current_matches[row['Oddswar']] = row['Stoiximan']
+
+# List of teams known to be in the previous run
+previous_stoiximan = {
+    'Al-Baqaa', 'SK Aritma Praha', 'Arsenal FC U19', 'Athletic Bilbao U19',
+    'Atletico Madrid II', 'Bangkok United', 'FC Barcelona (W)', 'FK Bodo/Glimt U19',
+    'Buhimba Saints United FC', 'Club Brugge KV U19', 'FC Crotone', 'Crvena Zvezda U19',
+    'FC Dila Gori', 'FC Dinamo Minsk U19', 'FC Dinamo Tbilisi U19', 'El Gouna FC',
+    'Ittihad Al Ramtha', '1. FC Köln U19', 'FK Mornar Bar', 'FK Buducnost Podgorica',
+    'Jedinstvo Bijelo Polje', 'Flamengo RJ', 'KRC Genk U19', 'Ismaily SC', 
+    'Juventus U19', 'Lion City Sailors', 'Marbella FC', 'Neuchatel Xamax FC',
+    'Pafos FC U19', 'Paris FC (W)', 'FC Porto U19', 'Qarabağ FK', 'AC Renate',
+    'FK Rudar Pljevlja', 'MFk Ruzomberok', 'SL Benfica (W)', 'Sama', 'Selangor FC',
+    'Smouha SC', 'Vålerenga IF (W)', 'Villarreal CF', 'Al-Yarmouk'
+}
+
+# Find new matches
+new_matches = [(oddswar, stoix) for oddswar, stoix in current_matches.items() 
+               if stoix not in previous_stoiximan]
+
+print("="*60)
+print(f"🆕 NEW MATCHES FOUND ({len(new_matches)}):")
+print("="*60)
+print(f"{'Oddswar':<40} → {'Stoiximan':<40}")
+print("-"*60)
+
+for oddswar, stoiximan in sorted(new_matches)[:25]:
+    print(f"{oddswar:<40} → {stoiximan:<40}")
+
+if len(new_matches) > 25:
+    print(f"\n... and {len(new_matches) - 25} more new matches")
+
+print("="*60)
+
+EOF
+
+```
+
+```
+============================================================
+🆕 NEW MATCHES FOUND (67):
+============================================================
+Oddswar                                  → Stoiximan                               
+------------------------------------------------------------
+AS Roma (W)                              → AS Roma (W)                             
+Al Jeel                                  → Al Jeel                                 
+Arnett Gardens FC                        → Arnett Gardens FC                       
+Arsenal                                  → Arsenal FC                              
+Athletic Bilbao                          → Athletic Bilbao                         
+Atletico Madrid (W)                      → Atletico Madrid (W)                     
+Bayern Munich (W)                        → FC Bayern Munchen (W)                   
+Benfica                                  → SL Benfica                              
+Blackpool                                → Blackpool FC                            
+Blooming Santa Cruz                      → Blooming Santa Cruz                     
+Bristol City                             → Bristol City                            
+Ceramica Cleopatra                       → Ceramica Cleopatra                      
+Chelsea (W)                              → Chelsea LFC (W)                         
+Club Brugge                              → Club Brugge KV                          
+Coventry City U21                        → Coventry City U21                       
+Cruz Azul                                → Cruz Azul                               
+Doqarah FC                               → Doqarah FC                              
+Dynamo Kyiv U19                          → FC Dynamo Kyiv U19                      
+Eintracht Frankfurt                      → Eintracht Frankfurt (W)                 
+FC Copenhagen                            → FC Copenhagen                           
+FC Kosice                                → FC Kosice                               
+FC Midtjylland U19                       → FC Midtjylland U19                      
+FC Sellier & Bellot Vlasim               → FC Sellier & Bellot Vlasim              
+FCSB U19                                 → FCSB U19                                
+FK Arsenal Tivat                         → FK Arsenal Tivat                        
+
+... and 42 more new matches
+============================================================
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Excellent! The matching is working well. The results show:
+
+1. Stoiximan teams grew from 209 to 297 (+88 teams)
+2. Matches increased from 72 to 109 (+37 new matches)
+3. Match rate improved from 34.4% to 36.7%
+4. No duplicates - clean 1-to-1 matching
+5. Many exact matches found (100% score)
+
+The user should be satisfied with this update. The CSV now has 109 unique team pairings.</details></think>
+
+---
+
+## ✅ **Updated Successfully!**
+
+### **📈 Progress Summary:**
+
+| Metric | Previous | Current | Change |
+|--------|----------|---------|--------|
+| **Stoiximan teams** | 209 | 297 | +88 📈 |
+| **Matches found** | 72 | 109 | +37 🎯 |
+| **Match rate** | 34.4% | 36.7% | +2.3% |
+| **Duplicates** | 0 | 0 | ✅ Clean |
+
+---
+
+### **🆕 Notable New Matches:**
+
+Many **exact matches** found:
+- Arsenal → Arsenal FC
+- Cruz Azul → Cruz Azul
+- Ceramica Cleopatra → Ceramica Cleopatra
+- Doqarah FC → Doqarah FC
+- FC Kosice → FC Kosice
+- Bristol City → Bristol City
+
+And **high-confidence fuzzy matches**:
+- Bayern Munich (W) → FC Bayern Munchen (W) (84%)
+- Chelsea (W) → Chelsea LFC (W) (85%)
+- Club Brugge → Club Brugge KV (88%)
+- Eintracht Frankfurt → Eintracht Frankfurt (W) (90%)
+
+---
+
+### **📊 Current Coverage:**
+
+- **109 Oddswar teams matched** out of 814 (13.4%)
+- **109 Stoiximan teams matched** out of 297 (36.7%)
+- **188 Stoiximan orphans** remaining (63.3%)
+
+As the Stoiximan collector continues running toward the target of 814 teams, more matches will be found! 🚀
+
+---
+
+_**User (2025-12-10 11:43Z)**_
+
+Please confirm that this script does not overwrite teams that have already been matched and that it will only update lines that only have an Oddswar name.
+
+---
+
+_**Assistant (claude-4.5-sonnet-thinking)**_
+
+<think><details><summary>Thought Process</summary>The user wants to confirm that the script doesn't overwrite existing matches. Let me check the current logic in `create_matches_csv.py`.
+
+Looking at the code:
+1. It loads all Oddswar teams
+2. It loads all Stoiximan teams
+3. For each Oddswar team, it finds the best match from available Stoiximan teams
+4. It writes ALL matches to the CSV, overwriting the entire file
+
+So actually, the script DOES overwrite the entire CSV file each time. It doesn't preserve manual edits or previously confirmed matches. It regenerates the entire file from scratch based on the current team name lists.
+
+This could be a problem if the user manually reviews and corrects matches, because those corrections would be lost on the next run.
+
+I should:
+1. Confirm this behavior
+2. Explain that it currently DOES overwrite everything
+3. Offer to modify it to preserve existing matches (only update blank lines)</details></think>
+
+---
+
+Let me check the current behavior of the script:
+
+---
+
+Tool use: **read_file**
+
+Read file: /Users/giray/Desktop/harbi/create_matches_csv.py
+
+---
+
+<think><details><summary>Thought Process</summary>I need to see the part where it writes the CSV to confirm it overwrites:</details></think>
+
+---
+
+Tool use: **read_file**
+
+Read file: /Users/giray/Desktop/harbi/create_matches_csv.py
+
+---
+
+<think><details><summary>Thought Process</summary>I can see at line 88 it opens the file with `'w'` mode, which completely overwrites the file. The script does NOT preserve existing matches - it regenerates the entire CSV from scratch each time.
+
+I should:
+1. Confirm this behavior clearly
+2. Explain it rewrites everything
+3. Offer to modify it to preserve existing matches</details></think>
+
+---
+
+## ⚠️ **The Script DOES Overwrite Everything**
+
+Looking at line 88:
+
+```python
+with open('matches.csv', 'w', newline='', encoding='utf-8') as f:
+```
+
+The script uses `'w'` mode which **completely overwrites** `matches.csv` every time it runs. It does NOT:
+- ❌ Preserve existing matches
+- ❌ Only update blank lines
+- ❌ Keep manual corrections
+
+**Current behavior:**
+1. Loads all Oddswar teams from `oddswar_names_full.txt`
+2. Loads all Stoiximan teams from `stoiximan_names.txt`
+3. Runs fuzzy matching from scratch
+4. **Overwrites entire CSV** with new matches
+
+---
+
+### **Would you like me to modify it to:**
+
+1. ✅ **Preserve existing matches** (only update rows where Stoiximan column is empty)
+2. ✅ **Skip already-matched rows** (keeps your manual corrections)
+3. ✅ **Only fill in blanks** with new fuzzy matches
+
+This would be useful if you plan to manually review and correct matches, so your corrections don't get overwritten.
+
+**Should I update the script with this behavior?**
 
 ---
 
