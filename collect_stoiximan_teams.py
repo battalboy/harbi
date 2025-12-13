@@ -23,7 +23,7 @@ from datetime import datetime
 
 # Configuration
 OUTPUT_FILE = 'stoiximan_names.txt'
-TARGET_TEAM_COUNT = 814  # Stop when we reach Oddswar's team count
+TARGET_TEAM_COUNT = 1205  # Reference for progress percentage (Oddswar team count)
 MIN_INTERVAL = 60  # seconds
 MAX_INTERVAL = 120  # seconds
 API_URL = 'https://en.stoiximan.gr/danae-webapi/api/live/overview/latest'
@@ -117,12 +117,12 @@ def main():
     print("🔵 Stoiximan Team Name Collector (LIVE MATCHES)")
     print("=" * 60)
     print(f"📝 Output file: {OUTPUT_FILE}")
-    print(f"🎯 Target: {TARGET_TEAM_COUNT} teams (will auto-stop)")
+    print(f"📊 Reference: {TARGET_TEAM_COUNT} teams (Oddswar count)")
     print(f"⏱️  Interval: {MIN_INTERVAL}-{MAX_INTERVAL} seconds (random)")
     print(f"🇬🇷 Requires VPN connected to Greek IP")
     print(f"⚠️  Only collects from LIVE matches (builds up over time)")
     print(f"🚫 Esports automatically filtered out")
-    print(f"🛑 Press Ctrl+C to stop manually\n")
+    print(f"🛑 Press Ctrl+C to stop\n")
     
     # Load existing teams
     all_teams = load_existing_teams()
@@ -167,18 +167,6 @@ def main():
                         print(f"      + {team}")
                     if new_count > 10:
                         print(f"      ... and {new_count - 10} more")
-                
-                # Check if we've reached target
-                if len(all_teams) >= TARGET_TEAM_COUNT:
-                    print(f"\n{'='*60}")
-                    print(f"🎯 TARGET REACHED!")
-                    print(f"{'='*60}")
-                    print(f"✅ Collected {len(all_teams)} unique teams (target: {TARGET_TEAM_COUNT})")
-                    print(f"✅ Matches Oddswar team count!")
-                    print(f"✅ Teams saved to {OUTPUT_FILE}")
-                    print(f"\n💡 You can now proceed with team matching!")
-                    print(f"{'='*60}\n")
-                    sys.exit(0)
             else:
                 print("⚠ No data received (check VPN)")
             
