@@ -5,6 +5,7 @@ AC Bra
 AC Milan
 AC Monza
 AC Oulu
+AC Taipei
 ACS Dumbravita
 ACS Fotbal Club Bacau
 ACS Muscelul Campulung Elite
@@ -41,31 +42,43 @@ Agsu
 Airdrieonians
 Ajax
 Al Ahli
+Al Ahli (QAT)
 Al Ahly Cairo
 Al Arabi (JOR)
 Al Draih
+Al Faisaly ( KSA )
+Al Faisaly Amman
+Al Hussein SC
 Al Ittihad (EGY)
 Al Jabalain
 Al Jeel
 Al Najma Club
 Al Nassr
+Al Orubah
 Al Ramtha
 Al Riyadh SC
+Al Shahaniya
+Al Shamal
 Al Wahda (Abu Dhabi)
 Al-Akhdoud
+Al-Anwar Club
 Al-Baq'a
+Al-Duhail SC
 Al-Fateh (KSA)
 Al-Feiha
 Al-Hazm (KSA)
 Al-Hilal
 Al-Ittihad
 Al-Masry
+Al-Raed (KSA)
 Al-Shabab (KSA)
 Al-Taawoun Buraidah
+Al-Wahda (KSA)
 Alanyaspor
 Alaves
 Albacete
 Albinoleffe
+Albirex Niigata (SIN)
 Aldershot
 Alemannia Aachen
 Alfreton Town
@@ -137,8 +150,10 @@ Ayr
 Ayutthaya United
 Az Alkmaar
 BG Pathumthani United
+Balestier Khalsa
 Ballymena
 Bandirmaspor
+Bangkok FC
 Bangkok Utd
 Bangor
 Banik Ostrava
@@ -223,10 +238,12 @@ CA Osasuna II
 CD Aguila
 CD Cacahuatique
 CD Castellon
+CD Gualberto Villarroel
 CD Luis Angel Firpo
 CD Motagua
 CD Nacional Funchal
 CD Olimpia
+CDT Real Oruro
 CFR Cluj
 CS Afumati
 CS Cartagines
@@ -268,8 +285,10 @@ Celta Vigo
 Celtic
 Central Coast Marin
 Central Coast Mariners
+Central FC
 Ceramica Cleopatra
 Cercle Brugge
+Cerezo Osaka Sakai (W)
 Cesena
 Chapelton
 Charleroi
@@ -395,6 +414,7 @@ Entella
 Equatorial Guinea
 Erzgebirge
 Erzurum BB
+Esan Pattaya
 Esbjerg
 Espanyol
 Estoril Praia
@@ -414,6 +434,7 @@ FC Blau Weiss Linz
 FC Cartagena
 FC Copenhagen
 FC Dordrecht
+FC Eagles
 FC Eindhoven
 FC Giugliano
 FC Groningen
@@ -432,6 +453,7 @@ FC Midtjylland U19
 FC Noah
 FC Nordsjaelland
 FC Nurnberg (W)
+FC Osaka
 FC Oss
 FC Sabah
 FC Sellier & Bellot Vlasim
@@ -537,12 +559,14 @@ Gyori
 HJK Helsinki U19
 HNK Gorica
 Hacken
+Hafnarfjordur
 Haiti
 Hajduk Split
 Hamburger SV
 Hamilton
 Hampton and Richmond
 Hamrun Spartans FC
+Hang Yuen FC
 Hannover
 Hansa Rostock
 Hanwell
@@ -573,10 +597,13 @@ Hermannstadt
 Hertha Berlin
 Hibernian
 Hibernian U19
+Hiroshima Regina (W)
 Hoffenheim
 Hoffenheim (W)
 Hoffenheim II
 Holstein Kiel
+Hong Kong FC
+Hong Kong Rangers FC
 Hornchurch
 Horsham FC
 Hradec Kralove
@@ -598,6 +625,7 @@ Ivory Coast
 Jagiellonia Bialystock
 Jahn Regensburg
 Japan
+Jeddah Club
 Jef Utd Chiba
 Jerash
 Jerash SC
@@ -606,6 +634,7 @@ Jong Ajax Amsterdam
 Jong FC Utrecht
 Jong PSV Eindhoven
 Jordan
+Jorge Wilstermann
 Junior FC Barranquilla
 Juve Stabia
 Juventus
@@ -637,6 +666,7 @@ Kisvarda
 Kitchee SC
 Kocaelispor
 Konyaspor
+Kowloon City FC
 KuPS
 LKP Motor Lublin
 LR Vicenza Virtus
@@ -657,6 +687,7 @@ Lecce
 Lecce U20
 Lecco
 Lech Poznan
+Lee Man Warriors
 Leeds
 Leek Town FC
 Leganes
@@ -665,6 +696,7 @@ Leicester
 Leicester City (W)
 Leiria
 Leixoes
+Leixoes U23
 Lens
 Leonesa
 Levante
@@ -690,6 +722,7 @@ Lugano
 Lugazi FC
 Lugo
 Lumezzane
+Lusail
 Lusitania Futebol Clube
 Luton
 Luzern
@@ -712,6 +745,7 @@ Maccabi Herzliya
 Maccabi Netanya
 Maccabi Tel Aviv
 Macclesfield
+Mahasarakham Sam Bai Tao FC
 Maidenhead
 Maidstone Utd
 Mainz
@@ -733,7 +767,9 @@ Mara Sugar FC
 Marbella
 Marine FC
 Maritimo
+Marsaxlokk FC
 Marseille
+Melbourne City
 Melbourne City (W)
 Melbourne Victory
 Melbourne Victory (W)
@@ -744,6 +780,7 @@ Mgladbach
 Middlesbrough
 Midtjylland
 Millwall
+Ming Chuan University
 Mirandes
 Mlada Boleslav
 Mladost Lucani
@@ -769,6 +806,7 @@ NEOM Sports Club
 NK Celje
 NK Istra
 Nacional Potosi
+Nakhon Pathom
 Nakhon Ratchasima
 Nam Dinh
 Nancy
@@ -804,6 +842,7 @@ Oldham
 Olympiakos
 Olympic Charleroi
 Omonia
+Oriente Petrolero
 Orleans
 Osasuna
 Osijek
@@ -814,6 +853,7 @@ Oxford Utd
 PAOK
 PEC Zwolle
 PFK Turan Tovuz
+PSG U21
 PSV
 Pacos Ferreira
 Paderborn
@@ -850,6 +890,7 @@ Peterborough
 Peterborough Sports FC
 Peterhead
 Petrojet
+Phrae United
 Piast Gliwice
 Pisa
 Plateau United
@@ -859,6 +900,7 @@ Plzen
 Podbrezova
 Pohang Steelers
 Poli Iasi
+Police Tero
 Ponferradina
 Pontedera
 Port FC
@@ -904,6 +946,7 @@ Rangers
 Rapid Bucharest
 Rapid Vienna
 Rapperswil-Jona
+Rasi Salai United FC
 Ratchaburi
 Ravenna
 Rayo Vallecano
@@ -934,6 +977,7 @@ Roda JC
 Rodez
 Roma
 Ross Co
+Rot-Weiss Essen
 Rotherham
 Rouen
 Rudar Pljevlja
@@ -943,6 +987,7 @@ S.L. Benfica (W)
 S.S.D. Casarano Calcio
 SC Lokeren-Temse
 SC Telstar
+SC Uniao Torreense U23
 SC Villa
 SCR Altach
 SG Essen-Schonebeck (W)
@@ -984,8 +1029,10 @@ Servette
 Sevilla
 Sevilla B
 Shakhtar
+Sham Shui Po
 Shamakhi FK
 Shamrock Rovers
+Shatin SA
 Sheff Utd
 Sheff Wed
 Shelbourne
@@ -998,10 +1045,12 @@ Sint Truiden
 Sion
 Siracusa
 Siroki Brijeg
+Sisaket United
 Sivasspor
 Slaven Belupo
 Slavia Prague
 Slavia Sofia
+Sliema Wanderers FC
 Sloga Doboj
 Slovacko
 Slovan Bratislava
@@ -1028,10 +1077,12 @@ Spartak Varna
 Spartans
 Spennymoor Town
 Spezia
+Sporting Braga U23
 Sporting Cristal
 Sporting Gijon
 Sporting Lisbon
 Sporting Lisbon B
+Sporting Lisbon U23
 St Etienne
 St Gallen
 St Johnstone
@@ -1045,6 +1096,7 @@ Standard
 Stenhousemuir
 Stevenage
 Stirling
+Stjarnan
 Stockport
 Stoke
 Stranraer
@@ -1063,12 +1115,19 @@ Swindon
 Switzerland
 Sydney FC
 TSV Havelse
+Taichung Futuro FC
+Taichung Rock FC
+Taipower
+Taiwan Steel
 Tampines Rovers
 Tamworth FC
 Tanzania
 Tarxien Rainbows FC
 Tatran Presov
+Tatung FC
 Team Altamura
+Tegevajaro Miyazaki
+Tekstilac Odzaci
 Tenerife
 Teplice
 Terminix Rangers
@@ -1095,6 +1154,7 @@ Trencin
 Triestina
 Truro City
 Tunisia
+UAE
 UPDF FC
 US Cremonese
 US Latina Calcio
@@ -1108,6 +1168,7 @@ Uganda Police
 Uganda Revenue Authority
 Ujpest
 Ulinzi Stars
+Umm Salal
 Umraniyespor
 Union Berlin
 Union Brescia
@@ -1125,12 +1186,14 @@ Valencia
 Valenciennes
 Valerenga (W)
 Valladolid
+Valletta
 Van Buyuksehir Belediyespor
 Varazdin
 Vasco da Gama
 Vega Real
 Vejle
 Venezia
+Verl
 Verona
 Versailles 78 FC
 Viborg
@@ -1140,6 +1203,7 @@ Villefranche Beaujolais
 Vitesse Arnhem
 Vizela
 Vojvodina
+Vozdovac
 Vukovar
 WSG Wattens
 Waasland-Beveren
