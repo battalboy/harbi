@@ -5,8 +5,6 @@ Uses fuzzy matching (rapidfuzz) to find best matches.
 """
 
 import csv
-import re
-import unicodedata
 from rapidfuzz import fuzz, process
 
 
@@ -17,103 +15,30 @@ def load_team_names(filename):
     return teams
 
 
-def normalize_text(text):
-    """
-    Remove diacritics/accents from text for comparison purposes only.
-    
-    Examples:
-        Ümraniyespor → Umraniyespor
-        Beşiktaş → Besiktas
-        Fenerbahçe → Fenerbahce
-    
-    Returns:
-        Normalized text (ASCII, no diacritics)
-    """
-    # NFD = Canonical Decomposition (separates base char from diacritic)
-    nfd = unicodedata.normalize('NFD', text)
-    # Filter out combining characters (the diacritics)
-    return ''.join(char for char in nfd if unicodedata.category(char) != 'Mn')
-
-
-def extract_indicators(team_name):
-    """
-    Extract age/gender/reserve indicators from team name.
-    
-    Returns:
-        Set of indicators found (e.g., {'U19', '(W)', 'RESERVE'} or empty set)
-    """
-    indicators = set()
-    
-    # Check for age groups: U19, U20, U21, U23
-    age_pattern = r'\b(U19|U20|U21|U23)\b'
-    age_matches = re.findall(age_pattern, team_name, re.IGNORECASE)
-    indicators.update([m.upper() for m in age_matches])
-    
-    # Check for women's teams: (W)
-    if '(W)' in team_name or '(w)' in team_name:
-        indicators.add('(W)')
-    
-    # Check for reserve teams: II or B at the end
-    # Both "II" and "B" are treated as equivalent (same indicator)
-    # Examples: "Atletico Madrid B", "Atletico Madrid II", "Real Madrid FC B"
-    reserve_pattern = r'\s+(II|B)\s*$'
-    if re.search(reserve_pattern, team_name):
-        indicators.add('RESERVE')
-    
-    return indicators
-
-
 def find_best_match(oddswar_team, stoiximan_teams, threshold=80):
     """
     Find the best matching Stoiximan team name for an Oddswar team.
-    Uses normalized text (no diacritics) for comparison, but returns original names.
     
     Args:
-        oddswar_team: Team name from Oddswar (original with diacritics)
-        stoiximan_teams: List of team names from Stoiximan (original with diacritics)
+        oddswar_team: Team name from Oddswar
+        stoiximan_teams: List of team names from Stoiximan
         threshold: Minimum similarity score (0-100) to consider a match
     
     Returns:
         Tuple of (matched_team, score) or (None, 0) if no good match
-        The matched_team returned is the ORIGINAL name with diacritics intact
     """
     if not stoiximan_teams:
         return None, 0
     
-    # Extract indicators from the Oddswar team name
-    oddswar_indicators = extract_indicators(oddswar_team)
-    
-    # Filter Stoiximan teams to only those with matching indicators
-    indicator_filtered_teams = [
-        t for t in stoiximan_teams 
-        if extract_indicators(t) == oddswar_indicators
-    ]
-    
-    # If no teams match the indicator criteria, return no match
-    if not indicator_filtered_teams:
-        return None, 0
-    
-    # Create mapping: normalized_name → original_name
-    # This allows us to compare normalized but return originals
-    normalized_to_original = {
-        normalize_text(team): team 
-        for team in indicator_filtered_teams
-    }
-    
-    # Get list of normalized team names for comparison
-    normalized_teams = list(normalized_to_original.keys())
-    
-    # Compare using normalized text (better for diacritics)
+    # Use fuzz.ratio for overall similarity
     result = process.extractOne(
-        normalize_text(oddswar_team),
-        normalized_teams,
+        oddswar_team,
+        stoiximan_teams,
         scorer=fuzz.ratio
     )
     
     if result and result[1] >= threshold:
-        # Return the ORIGINAL name (with diacritics), not the normalized one
-        original_name = normalized_to_original[result[0]]
-        return original_name, result[1]
+        return result[0], result[1]
     
     return None, 0
 
@@ -156,9 +81,6 @@ def create_matches_csv():
     print("\n🔍 Matching teams (threshold: 80%)...")
     print("   ℹ️  Each Stoiximan team can only be matched once (prevents duplicates)")
     print("   ℹ️  Preserving existing matches - only filling in blanks")
-    print("   ℹ️  Enforcing indicator matching (U19/U20/U21/U23/(W)/II/B must match)")
-    print("   ℹ️  Reserve teams: II and B are equivalent (Atletico Madrid II = Atletico Madrid B)")
-    print("   ℹ️  Using diacritic-aware matching (Ü=U, ş=s, ç=c, etc.)")
     
     # Track which Stoiximan teams are available (not already used)
     available_stoiximan_teams = [t for t in stoiximan_teams if t not in already_used_stoiximan]

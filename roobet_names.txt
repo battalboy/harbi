@@ -1,0 +1,718 @@
+1 FC Kaiserslautern
+1 FC Nuremberg
+1. FC Cologne
+1. FC Heidenheim
+1. FC Magdeburg
+1. FC Union Berlin
+AC Bellinzona
+AC Milan
+AC Monza
+AC Omonia Nicosia
+ACF Fiorentina
+ACS Champions FC Arges
+AD Ceuta
+ADO Den Haag
+AE Kifisia FC
+AE Larissa FC
+AEK Athens
+AEK Larnaca
+AFC Bournemouth
+AFC Hermannstadt
+AJ Auxerre
+AO Egaleo 1931 PAE
+AO Kavala 1965
+APOEL Nikosia
+AS Monaco
+AS Roma
+ASC Otelul Galati
+AVS Futebol SAD
+AZ Alkmaar
+Aberdeen FC
+Academico de Viseu FC
+Accrington Stanley
+Adelaide United FC
+Africa Cup of Nations
+Ajax Amsterdam
+Akritas Chlorakas
+Al Ahli Saudi FC
+Al Hilal SFC
+Al Nassr Club
+Al-Fayha FC
+Al-Hazm
+Al-Ittihad FC
+Al-Khaldiya SC
+Al-Khaleej Club
+Al-Kholood
+Al-Muharraq SC
+Al-Najma
+Al-Riyadh SC
+Al-Shabab FC (SA)
+Al-Taawoun FC
+Albacete Balompie
+Albania
+Aldershot Town FC
+Algeria
+Almere City FC
+Altrincham FC
+Amsterdamsche FC
+Anagennisi Karditsas 1904
+Angers SCO
+Angola
+Anorthosis Famagusta
+Antalyaspor
+Apollon Limassol
+Argentina
+Aris Limassol FC
+Aris Thessaloniki
+Arminia Bielefeld
+Arsenal
+Arsenal FC
+Asd Pineto Calcio
+Asteras Tripolis
+Asteras Tripolis II
+Aston Villa FC
+Atalanta BC
+Athens Kallithea FC
+Athletic Bilbao
+Atlantico
+Atletico Madrid
+Atromitos Athinon
+Auckland FC
+Audace Cerignola
+Austria
+Aytemiz Alanyaspor
+Ballon d'Or
+Ballymena United
+Bangor FC
+Barcelona SC
+Barnet FC
+Barrow AFC
+Bayer Leverkusen
+Bayern Munich
+Beitar Jerusalem FC
+Belgium
+Benin
+Besiktas Istanbul
+Birmingham City
+Blackburn Rovers
+Bnei Sakhnin FC
+Bnei Yehuda Tel Aviv FC
+Bodoe/Glimt
+Bologna FC
+Boreham Wood FC
+Borussia Dortmund
+Borussia Monchengladbach
+Bosnia & Herzegovina
+Boston United FC
+Botswana
+Brackley Town FC
+Braintree Town FC
+Brasileiro Serie A
+Brazil
+Breidablik Kopavogur
+Brentford FC
+Brighton & Hove Albion
+Brisbane Roar FC
+Bristol City
+Bristol Rovers
+Briton Ferry
+Bromley FC
+Burgos CF
+Burkina Faso
+Burnley FC
+CA Belgrano de Cordoba
+CA Osasuna
+CD Castellon
+CD El Nacional
+CD Feirense
+CD Leganes
+CD Mirandes
+CD Tondela
+CD Universidad Catolica del Ecuador
+CR Flamengo RJ
+CR Vasco da Gama RJ
+CS Cartagines
+CS Emelec
+CS Universitatea Craiova
+CSD Independiente del Valle
+Cagliari Calcio
+Calcio Padova
+Cambridge United
+Cameroon
+Cape Verde
+Cardiff City
+Cardiff Metropolitan University FC
+Carlisle United
+Carrarese Calcio
+Carrick Rangers
+Casa Pia Lisbon
+Caykur Rizespor
+Celtic
+Central Coast Mariners
+Cercle Brugge
+Cesena FC
+Chador Malu Yazd
+Chania FC
+Charlton Athletic
+Chelsea FC
+Cheltenham Town
+Chesterfield FC
+Cibao CF
+Cliftonville FC
+Club Brugge
+Club NXT
+Colchester United
+Coleraine FC
+Colombia
+Como 1907
+Comoros
+Copa Libertadores
+Copa do Brasil
+Coppa Italia
+Coupe de France
+Coventry City
+Crawley Town
+Crewe Alexandra
+Croatia
+Crusaders FC
+Cruzeiro EC MG
+Crystal Palace
+Cultural Leonesa
+Curacao
+Cusco FC
+Cyprus Cup
+Czechia
+Czechia Cup
+DR Congo
+Damac FC
+De Graafschap
+De Treffers Groesbeek
+Debreceni VSC
+Delfino Pescara
+Denmark
+Denmark 1. Division
+Denmark Superliga
+Deportivo Alaves
+Deportivo Saprissa San Jose
+Deportivo Toluca FC
+Derby County
+Diosgyori VTK
+Dundee FC
+Dundee United
+Dungannon Swifts
+Dynamo Dresden
+ESTAC Troyes
+ETO FC Gyor
+Eastleigh FC
+Ecuador
+Egypt
+Eintracht Braunschweig
+Eintracht Frankfurt
+Elche CF
+Ellas Syros
+Empoli FC
+England
+England EFL Cup
+England FA Cup
+England National League
+Enosis Neon Paralimni FC
+Equatorial Guinea
+Espanyol Barcelona
+Esteghlal FC
+Esteghlal Khuzestan FC
+Estoril Praia
+Estrela Amadora
+Etoile Carouge FC
+Everton FC
+Excelsior Maassluis
+Excelsior Rotterdam
+Eyupspor
+FC Aarau
+FC Alverca SAD
+FC Andorra
+FC Arouca
+FC Arzignano Valchiampo
+FC Augsburg
+FC Barcelona
+FC Basel 1893
+FC Botosani
+FC CFR 1907 Cluj
+FC Copenhagen
+FC Den Bosch
+FC Dinamo Bucuresti 1948
+FC Dordrecht
+FC Dynamo Kyiv
+FC Eindhoven
+FC Emmen
+FC Farul Constanta
+FC Felgueiras 1932
+FC Groningen
+FC Halifax Town
+FC Lorient
+FC Lugano
+FC Luzern
+FC Metz
+FC Nantes
+FC Noah Yerevan
+FC Pacos Ferreira
+FC Penafiel
+FC Petrolul Ploiesti
+FC Porto
+FC Porto B
+FC Rapperswil-Jona
+FC Shakhtar Donetsk
+FC Sion
+FC St. Gallen 1879
+FC St. Pauli
+FC Stade Nyonnais
+FC Sudtirol Bolzano
+FC Thun
+FC Twente Enschede
+FC Unirea 2004 Slobozia
+FC Universitatea Cluj
+FC Uta Arad
+FC Utrecht
+FC Vaduz
+FC Vizela
+FC Volendam
+FC Wil 1900
+FC Winterthur
+FC Zurich
+FCV Dender EH
+FK Crvena Zvezda Belgrade
+FK Karvan Yevlakh
+FK TSC Backa Topola
+FSV Mainz
+Fajr Sepasi FC
+Falkirk FC
+Fatih Karagumruk
+Fenerbahce Istanbul
+Ferencvarosi Budapest
+Feyenoord Rotterdam
+Fleetwood Town
+Fluminense FC RJ
+Foolad KHouzestan FC
+Forest Green Rovers
+Fortuna Dusseldorf
+Fortuna Sittard
+Fotbal Club FCSB
+France
+Freedom 24 Krasava ENY
+Frosinone Calcio
+Fulham FC
+GD Chaves
+GKS Piast Gliwice
+GNK Dinamo Zagreb
+GS Ilioupoli
+Gabon
+Galatasaray Istanbul
+Gateshead FC
+Gaziantep FK
+Genk II
+Genoa CFC
+Germany
+Germany DFB Cup
+Getafe CF
+Ghana
+Gil Vicente Barcelos
+Gillingham FC
+Girona FC
+Glasgow Rangers
+Glenavon FC
+Glentoran FC
+Go Ahead Eagles
+Gol Gohar Sirjan FC
+Goztepe Izmir
+Granada CF
+Grasshopper Club Zurich
+Greece Cup
+Greuther Furth
+Grimsby Town
+HNK Gorica
+HNK Hajduk Split
+HNK Rijeka
+HNK Vukovar 1991
+HSK Zrinjski Mostar
+Hacken Gothenburg
+Haiti
+Hamburger SV
+Hamrun Spartans FC
+Hannover 96
+Hapoel Acre FC
+Hapoel Afula FC
+Hapoel Be`er Sheva FC
+Hapoel Haifa FC
+Hapoel Jerusalem FC
+Hapoel Kfar Saba FC
+Hapoel Petah Tikva FC
+Harrogate Town
+Hartlepool United
+Hatayspor Antakya
+Heart of Midlothian FC
+Hellas Verona
+Heracles Almelo
+Hertha BSC
+Hibernian FC
+Hoek
+Holstein Kiel
+Hull City
+Ikorodu City
+Imisli FK
+Inter Milano
+Ipswich Town
+Iraklis Thessaloniki
+Iran
+Ireland
+Ironi Tiberias
+Istanbul Basaksehir
+Italy
+Italy Supercoppa
+Ivory Coast
+Jagiellonia Bialystok
+Japan
+Jong AZ Alkmaar
+Jong PSV Eindhoven
+Jordan
+Juve Stabia
+Juventus
+K Beerschot VA
+KAA Gent
+KAA Gent B
+KAS Eupen
+KF Drita
+KKS Lech Poznan
+KRC Genk
+KSC Lokeren Temse
+KV Kortrijk
+KVC Westerlo
+Kampaniakos
+Karlsruher SC
+Kasimpasa Istanbul
+Katsina United FC
+Kayserispor
+Kazincbarcikai SC
+Kheybar Khorramabad FC
+Kilmarnock FC
+Kisvarda FC
+Kocaelispor
+Konyaspor
+Kosovo
+Kuopion Palloseura
+LDU Quito
+Larne FC
+Lausanne-Sport
+Lazio Rome
+Le Havre AC
+Leeds United
+Legia Warszawa
+Leicester City
+Leixoes SC
+Levante UD
+Libertad Loja
+Lierse Kempenzonen
+Lille OSC
+Lincoln Red Imps
+Linfield FC
+Liverpool FC
+Livingston FC
+Lommel SK
+Lusitania FC Lourosa
+MSK Kiryat Yam
+MTK Budapest
+MVV Maastricht
+Macarthur FC
+Maccabi Herzliya
+Maccabi Tel Aviv FC
+Makedonikos FC
+Malaga CF
+Malavan Bandar Anzali FC
+Mali
+Manchester City
+Manchester United
+Manchester United WFC
+Mantova 1911
+Maritimo Madeira
+Marko 1927
+Melbourne City FC
+Melbourne Victory
+Mes Rafsanjan FC
+Metaloglobus Bucuresti
+Mexico
+Middlesbrough FC
+Millwall FC
+Milton Keynes Dons
+Modena FC
+Morecambe FC
+Morocco
+Motherwell FC
+Mozambique
+NAC Breda
+NEC Nijmegen
+NK Celje
+NK Istra 1961
+NK Lokomotiva Zagreb
+NK Osijek
+NK Slaven Belupo
+NK Varazdin
+Nacional da Madeira
+Neftchi Baku PFC
+Neom SC
+Nestos Chrysoupoli FC
+Netherlands
+Netherlands KNVB beker
+Neuchatel Xamax
+New Zealand
+Newcastle United
+Newcastle United Jets FC
+Newport County
+Nigeria
+Niki Volou 1924 PAE
+North Macedonia
+Northern Ireland
+Norwich City
+Nottingham Forest
+Notts County
+Nyiregyhaza Spartacus FC
+OGC Nice
+Oldham Athletic
+Olympiacos B
+Olympiacos Piraeus
+Olympiakos Nicosia
+Olympique Lyon
+Olympique Marseille
+Omonia Aradippou
+Orense SC
+Oud-Heverlee Leuven
+Oxford United FC
+PAE PS Kalamata
+PAOK Thessaloniki
+PAOK Thessaloniki B
+PAS Giannina
+PEC Zwolle
+PSV Eindhoven
+Pafos FC
+Paksi FC
+Palermo FC
+Panaitolikos Agrinio
+Panama
+Panargiakos FC
+Panathinaikos Athens
+Panionios Athens
+Paraguay
+Paris FC
+Paris Saint-Germain
+Parma Calcio
+Patro Eisden Maasmechelen
+Perth Glory FC
+Pisa SC
+Poland
+Portadown FC
+Portimonense SC
+Portsmouth FC
+Portugal League Cup
+Preston North End
+Pro Patria Busto Arsizio
+Puskas Akademia FC Felcsut
+Qatar
+Queens Park Rangers
+RB Leipzig
+RC Celta de Vigo
+RC Deportivo La Coruna
+RC Lens
+RCD Mallorca
+RFC Liege
+RKS Rakow Czestochowa
+RSC Anderlecht
+RSC Anderlecht B
+RWD Molenbeek 47
+Raal La Louviere
+Racing Club Avellaneda
+Racing Santander
+Rapid Bucuresti 1923
+Ratchaburi FC
+Ravenna FC 1913
+Rayo Vallecano
+Rayong FC
+Real Betis Seville
+Real Madrid
+Real Oviedo
+Real Sociedad
+Real Sociedad B
+Real Valladolid
+Real Zaragoza
+Reggiana 1919
+Rio Ave FC
+Rivers United FC
+Rochdale AFC
+Roda JC Kerkrade
+Romania
+Romania Cup
+Royal Antwerp FC
+Royal Charleroi SC
+Royal Francs Borains
+Royal Olympic Charleroi Chatelet Farciennes
+Russia Premier League
+Russian Cup
+SC Braga
+SC Cambuur
+SC Corinthians SP
+SC Farense
+SC Freiburg
+SC Genemuiden
+SC Heerenveen
+SC Paderborn 07
+SC Preussen 06 Munster
+SC Telstar
+SCU Torreense
+SD Eibar
+SD Huesca
+SK Beveren
+SK Rapid
+SK Sigma Olomouc
+SK Slovan Bratislava
+SKN St. Polten
+SL Benfica
+SL Benfica B
+SS Arezzo
+SSC Bari
+SSC Napoli
+SV 07 Elversberg
+SV Darmstadt 98
+SV Spakenburg
+SV Zulte Waregem
+Sakaryaspor
+Salcedo FC
+Salford City
+Sampdoria Genoa
+Samsunspor
+Santa Clara Azores
+Sassuolo Calcio
+Saudi Arabia
+Saudi Pro League
+Schalke 04
+Scotland
+Scotland Premiership
+Scottish Cup
+Scunthorpe United
+Senegal
+Sepahan SC
+Sevilla FC
+Shamrock Rovers
+Sheffield United
+Sheffield Wednesday
+Shelbourne FC
+Shkendija Tetovo
+Shrewsbury Town
+Slavia Prague
+Slovakia
+Slovensky Pohar
+Solihull Moors FC
+South Africa
+Southampton FC
+Southend United
+Spain
+Spain Copa del Rey
+Spain Supercopa
+Sparta Prague
+Sparta Rotterdam
+Spezia Calcio
+Sporting Cristal
+Sporting Gijon
+Sporting Lisbon
+St Mirren FC
+St. Truidense VV
+Stade Brest 29
+Stade Lausanne Ouchy
+Stade Rennes
+Standard Liege
+Stoke City
+Strasbourg Alsace
+Sudan
+Sumgayit FK
+Sunderland AFC
+Sutton United
+Swansea City
+Sweden
+Swindon Town
+Switzerland
+Sydney FC
+TOP Oss
+TSG Hoffenheim
+Tamworth FC
+Tanzania
+Team Altamura
+Tigres UANL
+Torino FC
+Tottenham Hotspur
+Toulouse FC
+Tranmere Rovers FC
+Truro City
+Tunisia
+Turkiye
+UD Almeria
+UD Las Palmas
+UD Leiria
+UD Oliveirense
+UEFA Champions League
+UEFA Champions League Women
+UEFA Conference League
+UEFA Europa League
+US Avellino
+US Boulogne
+US Catanzaro
+US Cremonese
+US Lecce
+USA
+Udinese Calcio
+Uganda
+Ujpest FC Budapest
+Ukraine
+Union Berlin
+Union Saint-Gilloise
+United Arab Emirates
+Universidad O&M
+Uruguay
+Uzbekistan
+VV Katwijk
+VVV Venlo
+Vaalerenga Oslo
+Valencia CF
+Venezia FC
+VfB Stuttgart
+VfL Bochum
+VfL Wolfsburg
+Villarreal CF
+Virtus Entella
+Vis Pesaro 1898
+Vitesse Arnhem
+Volos NPS
+WC Qualification, UEFA
+Wales
+Wales Cymru Premier
+Walsall FC
+Watford FC
+Wealdstone FC
+Wellington Phoenix FC
+Werder Bremen
+West Bromwich Albion
+West Ham United
+Western Sydney Wanderers
+Wikki Tourists FC
+Willem II Tilburg
+Winner
+Winner 2025
+Winner 2026
+Winner 25/26
+Woking FC
+Wolverhampton Wanderers
+World Cup
+Wrexham AFC
+Yellow-Red KV Mechelen
+Yeovil Town
+York City FC
+Young Boys Bern
+Yverdon-Sport
+ZSV Sportlust 46
+Zalaegerszeg TE
+Zambia
+Zimbabwe

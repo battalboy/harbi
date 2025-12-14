@@ -1,0 +1,64 @@
+#!/usr/bin/env python3
+"""
+Calculate fuzzy matching confidence scores for team name matches.
+Updates the Confidence column in matches.csv with percentage scores.
+"""
+
+import csv
+from rapidfuzz import fuzz
+
+def calculate_confidence_scores():
+    """Calculate and update confidence scores for all matches."""
+    
+    print("📂 Loading matches.csv...")
+    
+    # Read existing matches
+    with open('matches.csv', 'r', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        fieldnames = reader.fieldnames
+        rows = list(reader)
+    
+    # Ensure Confidence column exists
+    if 'Confidence' not in fieldnames:
+        fieldnames.append('Confidence')
+    
+    print(f"📊 Processing {len(rows)} rows...")
+    
+    matched_count = 0
+    blank_count = 0
+    
+    # Calculate confidence for each row
+    for row in rows:
+        oddswar = row['Oddswar'].strip()
+        stoiximan = row['Stoiximan'].strip()
+        
+        if not stoiximan:
+            # Skip blank Stoiximan entries
+            row['Confidence'] = ''
+            blank_count += 1
+        else:
+            # Calculate fuzzy match score (0-100)
+            confidence = fuzz.ratio(oddswar, stoiximan)
+            row['Confidence'] = f"{confidence:.1f}"
+            matched_count += 1
+    
+    # Write updated data back to CSV
+    print("💾 Writing updated matches.csv...")
+    with open('matches.csv', 'w', encoding='utf-8', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+    
+    print("\n" + "="*60)
+    print("✅ Confidence scores calculated!")
+    print("="*60)
+    print(f"📊 Statistics:")
+    print(f"   Total rows: {len(rows)}")
+    print(f"   Matched teams (with confidence): {matched_count}")
+    print(f"   Blank entries (skipped): {blank_count}")
+    print(f"\n📄 Updated: matches.csv")
+    print("="*60)
+
+if __name__ == '__main__':
+    calculate_confidence_scores()
+

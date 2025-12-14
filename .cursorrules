@@ -1,0 +1,70 @@
+# Harbi - Arbitrage Betting System (Arbing Software)
+
+## Project Overview
+
+**Project Name**: Harbi
+
+This is **ARBING SOFTWARE**, not betting software. The goal is to identify and exploit odds discrepancies between:
+- **Oddswar** (betting exchange - where you can "sell" or lay odds)
+- **Stoiximan & Roobet** (traditional bookmakers - where you "buy" or back odds)
+
+### How Arbitrage Works
+1. Find the same event on both exchange and traditional bookmaker
+2. Compare odds
+3. When there's a profitable spread, "back" on the traditional site and "lay" on Oddswar
+4. Profit from the difference with **minimal risk** (not speculative betting)
+
+### Key Distinction
+- **Traditional Bookmaker** (Stoiximan/Roobet/Stake/Tumbet): You bet FOR an outcome
+- **Betting Exchange** (Oddswar): You can bet AGAINST an outcome (act as the bookmaker)
+- **Arbitrage Opportunity**: When backing + laying the same outcome creates guaranteed profit
+
+## Core Challenge: Two-Step Standardization
+
+### Step 1: Standardize Team Names
+The same team has different names across bookmakers.
+- Example: "Man United" vs "Manchester United FC" vs "Manchester Utd"
+- **Current focus**: Building team name mappings (`matches.csv`)
+- **Tools**: Fuzzy matching with special rules (indicators, diacritics)
+
+#### Team Collection Scripts
+- **Oddswar**: `collect_oddswar_teams.py` → outputs `oddswar_names.txt`
+- **Stoiximan**: `collect_stoiximan_teams.py` → outputs `stoiximan_names.txt`
+- **Roobet**: `collect_roobet_teams.py` → outputs `roobet_names.txt`
+
+#### Team Matching Scripts
+- **Stoiximan Matching**: `create_stoiximan_matches_csv.py` → creates `stoiximan_matches.csv` (Oddswar ↔ Stoiximan mappings with confidence scores)
+- **Roobet Matching**: `create_roobet_matches_csv.py` → creates `roobet_matches.csv` (Oddswar ↔ Roobet mappings with confidence scores)
+
+#### Future Traditional Sites
+- **Stake.com** - To be added for expanded arbitrage opportunities
+- **Tumbet.com** - To be added for expanded arbitrage opportunities
+
+#### **IMPORTANT: Oddswar as Master Key**
+- **Oddswar team names are the MASTER KEY** for all comparisons
+- All matching is structured as: **Oddswar ↔ Traditional Site** (not the reverse)
+- **If a team isn't on Oddswar, it won't appear in the software** - Oddswar defines the universe of possible arbitrage opportunities
+- This is because:
+  - Oddswar is the **exchange** (where you lay/sell odds)
+  - Stoiximan/Roobet are **traditional bookmakers** (where you back/buy odds)
+  - Arbitrage identification requires: "Is this Oddswar event also on traditional sites?"
+  - Teams/events that only exist on traditional sites (but not Oddswar) are irrelevant for arbitrage
+- CSV structure: `Oddswar` column is always first, followed by the traditional site column
+- Unmatched traditional site teams (no Oddswar equivalent) are not used
+
+### Step 2: Standardize Event Formats
+Events (two teams playing each other) are formatted differently across sites.
+- Example formats:
+  - "Manchester United vs Liverpool"
+  - "Liverpool v Man Utd"
+  - "Man United - Liverpool FC"
+- **Requirement**: Must identify that these represent the SAME event
+- **Critical**: Only after BOTH standardizations work can we compare odds
+
+### Why Both Matter
+- ❌ **Wrong team match** = Comparing different teams = False arbitrage
+- ❌ **Wrong event format** = Missing valid opportunities or wrong pairings
+- ✅ **Both correct** = Valid arbitrage opportunity identification
+
+## Important
+This system does NOT place bets automatically. It identifies opportunities for the user to manually execute.
