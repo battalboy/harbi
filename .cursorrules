@@ -6,7 +6,7 @@
 
 This is **ARBING SOFTWARE**, not betting software. The goal is to identify and exploit odds discrepancies between:
 - **Oddswar** (betting exchange - where you can "sell" or lay odds)
-- **Stoiximan & Roobet** (traditional bookmakers - where you "buy" or back odds)
+- **Stoiximan, Roobet & Tumbet** (traditional bookmakers - where you "buy" or back odds)
 
 ### How Arbitrage Works
 1. Find the same event on both exchange and traditional bookmaker
@@ -21,24 +21,41 @@ This is **ARBING SOFTWARE**, not betting software. The goal is to identify and e
 
 ## Core Challenge: Two-Step Standardization
 
+### Key Definitions
+- **Team Name**: A single team (e.g., "Manchester United", "Liverpool FC")
+- **Event**: When two teams are playing or have an upcoming match (e.g., "Manchester United vs Liverpool")
+- **Goal**: Match team names across sites → Match events across sites → Compare odds for arbitrage
+
 ### Step 1: Standardize Team Names
 The same team has different names across bookmakers.
 - Example: "Man United" vs "Manchester United FC" vs "Manchester Utd"
-- **Current focus**: Building team name mappings (`matches.csv`)
+- **Current focus**: Building team name mappings (`stoiximan_matches.csv`, `roobet_matches.csv`, `tumbet_matches.csv`)
 - **Tools**: Fuzzy matching with special rules (indicators, diacritics)
+- **Purpose**: Enable accurate event matching in Step 2
 
 #### Team Collection Scripts
 - **Oddswar**: `collect_oddswar_teams.py` → outputs `oddswar_names.txt`
 - **Stoiximan**: `collect_stoiximan_teams.py` → outputs `stoiximan_names.txt`
 - **Roobet**: `collect_roobet_teams.py` → outputs `roobet_names.txt`
+- **Tumbet**: `collect_tumbet_teams.py` → outputs `tumbet_names.txt`
 
 #### Team Matching Scripts
 - **Stoiximan Matching**: `create_stoiximan_matches_csv.py` → creates `stoiximan_matches.csv` (Oddswar ↔ Stoiximan mappings with confidence scores)
 - **Roobet Matching**: `create_roobet_matches_csv.py` → creates `roobet_matches.csv` (Oddswar ↔ Roobet mappings with confidence scores)
+- **Tumbet Matching**: `create_tumbet_matches_csv.py` → creates `tumbet_matches.csv` (Oddswar ↔ Tumbet mappings with confidence scores)
+
+#### Workflow: Proper Team Name Matching Sequence
+To perform a complete team name matching run, execute scripts in this order:
+1. `collect_oddswar_teams.py` - Collect Oddswar teams (master key)
+2. `collect_stoiximan_teams.py` - Collect Stoiximan teams
+3. `collect_roobet_teams.py` - Collect Roobet teams
+4. `collect_tumbet_teams.py` - Collect Tumbet teams
+5. `create_stoiximan_matches_csv.py` - Match Oddswar ↔ Stoiximan
+6. `create_roobet_matches_csv.py` - Match Oddswar ↔ Roobet
+7. `create_tumbet_matches_csv.py` - Match Oddswar ↔ Tumbet
 
 #### Future Traditional Sites
 - **Stake.com** - To be added for expanded arbitrage opportunities
-- **Tumbet.com** - To be added for expanded arbitrage opportunities
 
 #### **IMPORTANT: Oddswar as Master Key**
 - **Oddswar team names are the MASTER KEY** for all comparisons
@@ -46,7 +63,7 @@ The same team has different names across bookmakers.
 - **If a team isn't on Oddswar, it won't appear in the software** - Oddswar defines the universe of possible arbitrage opportunities
 - This is because:
   - Oddswar is the **exchange** (where you lay/sell odds)
-  - Stoiximan/Roobet are **traditional bookmakers** (where you back/buy odds)
+  - Stoiximan/Roobet/Tumbet are **traditional bookmakers** (where you back/buy odds)
   - Arbitrage identification requires: "Is this Oddswar event also on traditional sites?"
   - Teams/events that only exist on traditional sites (but not Oddswar) are irrelevant for arbitrage
 - CSV structure: `Oddswar` column is always first, followed by the traditional site column
@@ -59,12 +76,17 @@ Events (two teams playing each other) are formatted differently across sites.
   - "Liverpool v Man Utd"
   - "Man United - Liverpool FC"
 - **Requirement**: Must identify that these represent the SAME event
+- **Dependencies**: Requires Step 1 (team name matching) to be completed first
 - **Critical**: Only after BOTH standardizations work can we compare odds
 
 ### Why Both Matter
 - ❌ **Wrong team match** = Comparing different teams = False arbitrage
 - ❌ **Wrong event format** = Missing valid opportunities or wrong pairings
 - ✅ **Both correct** = Valid arbitrage opportunity identification
+
+### Current Status
+- ✅ **Step 1 Complete**: Team name matching working (88.8% Stoiximan, 26.7% Roobet, 8.8% Tumbet)
+- 🔜 **Step 2 Next**: Event matching across sites (not yet implemented)
 
 ## Important
 This system does NOT place bets automatically. It identifies opportunities for the user to manually execute.
