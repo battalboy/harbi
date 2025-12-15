@@ -165,8 +165,8 @@ def main():
             if oddswar_team in existing_matches:
                 existing_tumbet, existing_confidence = existing_matches[oddswar_team]
                 
-                # Skip if already matched (non-empty tumbet, non-zero confidence)
-                if existing_tumbet and existing_confidence not in ('', '0.0'):
+                # Skip if already matched (non-empty tumbet, non-blank confidence)
+                if existing_tumbet and existing_confidence:
                     writer.writerow([oddswar_team, existing_tumbet, existing_confidence])
                     matched_count += 1
                     continue
@@ -184,7 +184,7 @@ def main():
                     updated_count += 1
                     print(f"  UPDATED: {oddswar_team} → {matched_team} ({score:.1f})")
             else:
-                writer.writerow([oddswar_team, '', '0.0'])
+                writer.writerow([oddswar_team, '', ''])
     
     print(f"\n{'='*60}")
     print(f"Matching complete!")
