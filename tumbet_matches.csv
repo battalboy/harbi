@@ -1,4 +1,129 @@
 Oddswar,Tumbet,Confidence
+Barnsley,Burnley,0.0
+Boulogne,Bologna,0.0
+FC Twente,Twente,100.0
+Jong AZ Alkmaar,AZ Alkmaar,100.0
+Legia Warsaw,Legia Varşova,100.0
+Mallorca,RCD Mallorca,100.0
+NEC Nijmegen,Nijmegen,100.0
+Rapid Vienna,SK Rapid Vien,100.0
+St Pauli,FC St. Pauli,100.0
+Fatih Karagumruk Istanbul,Centone Karagümrük İstanbul,100.0
+Wolfsburg,VfL Wolfsburg,100.0
+FC Utrecht,Utrecht,100.0
+Levante,Levante UD,100.0
+Lincoln,Lincoln FC,100.0
+Osasuna,CA Osasuna,100.0
+Sevilla,Sevilla FC,100.0
+Nottm Forest,Nottingham Forest,100.0
+Sunderland,Sunderland AFC,100.0
+Augsburg,FC Augsburg,100.0
+Lech Poznan,KKS Lech Poznan,100.0
+Macarthur FC,Macarthur,100.0
+US Cremonese,Cremonese,100.0
+FC Heidenheim,Heidenheim,100.0
+Shelbourne,Shelbourne FC,100.0
+Villarreal,Villarreal CF,100.0
+Dynamo Kiev,FC Dynamo Kiev,100.0
+Kasimpasa,Kasımpaşa,100.0
+Az Alkmaar,AZ Alkmaar,100.0
+Melbourne City,Melbourne City FC,100.0
+Sparta Prague,Sparta Prag,100.0
+Wellington Phoenix,Wellington Phoenix FC,100.0
+Central Coast Marin,Central Coast Mariners,100.0
+Universitatea Craiova,CS Universitatea Craiova,100.0
+AEK Athens,AEK Athen,100.0
+Mgladbach,M'gladbach,100.0
+Bayern Munich,Bayern Münih,100.0
+AZ Alkmaar,AZ Alkmaar,100.0
+Aberdeen,Aberdeen,100.0
+Adelaide United,Adelaide United,100.0
+Ajax,Ajax,100.0
+Alanyaspor,Alanyaspor,100.0
+Alaves,Alaves,100.0
+Antalyaspor,Antalyaspor,100.0
+Arsenal,Arsenal,100.0
+Aston Villa,Aston Villa,100.0
+Atalanta,Atalanta,100.0
+Athletic Bilbao,Athletic Bilbao,100.0
+Atletico Baleares,Atletico Baleares,100.0
+Atletico Madrid,Atletico Madrid,100.0
+Auckland FC,Auckland FC,100.0
+Barcelona,Barcelona,100.0
+Besiktas,Beşiktaş,100.0
+Betis,Betis,100.0
+Bologna,Bologna,100.0
+Bournemouth,Bournemouth,100.0
+Brentford,Brentford,100.0
+Brighton,Brighton,100.0
+Brisbane Roar,Brisbane Roar,100.0
+Burnley,Burnley,100.0
+Cagliari,Cagliari,100.0
+Celta Vigo,Celta Vigo,100.0
+Central Coast Mariners,Central Coast Mariners,100.0
+Chelsea,Chelsea,100.0
+Crystal Palace,Crystal Palace,100.0
+Eintracht Frankfurt,Eintracht Frankfurt,100.0
+Elche,Elche,100.0
+Espanyol,Espanyol,100.0
+Everton,Everton,100.0
+Eyupspor,Eyüpspor,100.0
+Fenerbahce,Fenerbahçe,100.0
+Feyenoord,Feyenoord,100.0
+Fiorentina,Fiorentina,100.0
+Fortuna Sittard,Fortuna Sittard,100.0
+Freiburg,Freiburg,100.0
+Fulham,Fulham,100.0
+Galatasaray,Galatasaray,100.0
+Genoa,Genoa,100.0
+Getafe,Getafe,100.0
+Girona,Girona,100.0
+Goztepe,Göztepe,100.0
+Guadalajara,Guadalajara,100.0
+Hacken,Hacken,100.0
+Hamburger SV,Hamburger SV,100.0
+Hamrun Spartans FC,Hamrun Spartans FC,100.0
+Hoffenheim,Hoffenheim,100.0
+Juventus,Juventus,100.0
+KF Drita,KF Drita,100.0
+Kayserispor,Kayserispor,100.0
+Kocaelispor,Kocaelispor,100.0
+Konyaspor,Konyaspor,100.0
+Lausanne,Lausanne,100.0
+Lazio,Lazio,100.0
+Leeds,Leeds,100.0
+Liverpool,Liverpool,100.0
+Melbourne Victory,Melbourne Victory,100.0
+NK Celje,NK Celje,100.0
+Napoli,Napoli,100.0
+Newcastle,Newcastle,100.0
+Newcastle Jets,Newcastle Jets,100.0
+PSV,PSV,100.0
+Perth Glory,Perth Glory,100.0
+RB Leipzig,RB Leipzig,100.0
+Rakow Czestochowa,Rakow Czestochowa,100.0
+Rayo Vallecano,Rayo Vallecano,100.0
+Real Madrid,Real Madrid,100.0
+Real Sociedad,Real Sociedad,100.0
+Rijeka,Rijeka,100.0
+Rizespor,Rizespor,100.0
+Roma,Roma,100.0
+Samsunspor,Samsunspor,100.0
+Santa Clara,Santa Clara,100.0
+Sassuolo,Sassuolo,100.0
+Shamrock Rovers,Shamrock Rovers,100.0
+Sigma Olomouc,Sigma Olomouc,100.0
+Slovan Bratislava,Slovan Bratislava,100.0
+Strasbourg,Strasbourg,100.0
+Stuttgart,Stuttgart,100.0
+Sydney FC,Sydney FC,100.0
+Tondela,Tondela,100.0
+Torino,Torino,100.0
+Tottenham,Tottenham,100.0
+Udinese,Udinese,100.0
+Union Berlin,Union Berlin,100.0
+Valencia,Valencia,100.0
+Werder Bremen,Werder Bremen,100.0
 1860 Munich,,
 68 Aksaray Belediyespor,,
 76 Igdir Belediyespor,,
@@ -17,7 +142,6 @@ ACS Sepsi OSK,,
 AD Ceuta FC,,
 AD Municipal Liberia,,
 ADO Den Haag,,
-AEK Athens,AEK Athen,94.7
 AEK Larnaca,,
 AFC Fylde,,
 AFC Telford,,
@@ -33,11 +157,9 @@ ASD Alcione,,
 ASD Camaiore,,
 ASD Pineto Calcio,,
 AVS Futebol SAD,,
-AZ Alkmaar,AZ Alkmaar,100.0
 AZ Picerno ASD,,
 Aalesunds,,
 Aarau,,
-Aberdeen,Aberdeen,100.0
 Abia Warriors,,
 Academia de Balompie Boliviano,,
 Academico de Viseu,,
@@ -45,12 +167,10 @@ Academico de Viseu U23,,
 Accrington,,
 Achuapa FC,,
 Adana Demirspor,,
-Adelaide United,Adelaide United,100.0
 Adelaide United (W),,
 Admira Wacker,,
 Agsu,,
 Airdrieonians,,
-Ajax,Ajax,100.0
 Al Adalah U21,,
 Al Ahli,,
 Al Ahli (QAT),,
@@ -102,8 +222,6 @@ Al-Raed (KSA),,
 Al-Shabab (KSA),,
 Al-Taawoun Buraidah,,
 Al-Wahda (KSA),,
-Alanyaspor,Alanyaspor,100.0
-Alaves,Alaves,100.0
 Albacete,,
 Albinoleffe,,
 Albirex Niigata (SIN),,
@@ -133,7 +251,6 @@ Ankaragucu,,
 Annan,,
 Annecy,,
 Anstey Nomads,,
-Antalyaspor,Antalyaspor,100.0
 Antigua GFC,,
 Antwerp,,
 Araz Nakhchivan PFK,,
@@ -147,28 +264,20 @@ Aritma Praha,,
 Arminia Bielefeld,,
 Arnett Gardens FC,,
 Arouca,,
-Arsenal,Arsenal,100.0
 Arsenal (W),,
 Arsenal U19,,
 Arzignanochiampo,,
 Ascoli,,
-Aston Villa,Aston Villa,100.0
 Aston Villa (W),,
-Atalanta,Atalanta,100.0
 Atalanta B,,
-Athletic Bilbao,Athletic Bilbao,100.0
 Athletic Bilbao U19,,
 Atlantico FC,,
-Atletico Baleares,Atletico Baleares,100.0
-Atletico Madrid,Atletico Madrid,100.0
 Atletico Madrid (W),,
 Atletico Madrid II,,
 Atletico Nacional Medellin,,
 Atletico Sanluqueno CF,,
 Aubagne FC,,
-Auckland FC,Auckland FC,100.0
 Audace Cerignola,,
-Augsburg,FC Augsburg,84.2
 Aurora,,
 Aurora FC,,
 Aurora Pro Patria 1919,,
@@ -180,7 +289,6 @@ Austria Wien (A),,
 Auxerre,,
 Ayr,,
 Ayutthaya United,,
-Az Alkmaar,AZ Alkmaar,90.0
 BG Pathumthani United,,
 Balestier Khalsa,,
 Balestier Khalsa II,,
@@ -190,17 +298,14 @@ Bangkok FC,,
 Bangkok Utd,,
 Bangor,,
 Banik Ostrava,,
-Barcelona,Barcelona,100.0
 Barcelona (W),,
 Barnet,,
-Barnsley,Burnley,80.0
 Barrow,,
 Basaksehir,,
 Bastia,,
 Batavia FC,,
 Bath City,,
 Bayelsa United FC,,
-Bayern Munich,Bayern Münih,96.0
 Bayern Munich (W),,
 Bechem United,,
 Bedford Town,,
@@ -212,8 +317,6 @@ Benfica,,
 Benfica B,,
 Beni Mazar,,
 Benin,,
-Besiktas,Beşiktaş,100.0
-Betis,Betis,100.0
 Betis Sevilla U19,,
 Bihor Oradea,,
 Birmingham,,
@@ -229,7 +332,6 @@ Bodo/Glimt U19,,
 Bodrum Belediyesi Bodrumspor,,
 Bohemians 1905,,
 Bolivar,,
-Bologna,Bologna,100.0
 Bolton,,
 Boluspor,,
 Borac Banja Luka,,
@@ -239,9 +341,7 @@ Botev Plovdiv,,
 Botev Vratsa,,
 Botosani,,
 Botswana,,
-Boulogne,Bologna,80.0
 Bourg-en-Bresse,,
-Bournemouth,Bournemouth,100.0
 Brackley Town,,
 Bradford,,
 Braga,,
@@ -251,12 +351,9 @@ Braunschweig,,
 Brazil,,
 Bregenz,,
 Breidablik,,
-Brentford,Brentford,100.0
 Brest,,
-Brighton,Brighton,100.0
 Brighton (W),,
 Brighton U21,,
-Brisbane Roar,Brisbane Roar,100.0
 Brisbane Roar FC (W),,
 Bristol City,,
 Bristol City U21,,
@@ -271,7 +368,6 @@ Bul FC,,
 Burgos,,
 Buriram Utd,,
 Burkina Faso,,
-Burnley,Burnley,100.0
 Burnley U21,,
 Burton Albion,,
 Buxton,,
@@ -303,7 +399,6 @@ CSM Scolar Resita,,
 CSM Slatina,,
 Cacereno,,
 Cadiz,,
-Cagliari,Cagliari,100.0
 Cagliari U20,,
 Calcio Avellino SSD,,
 Caledonia AIA,,
@@ -326,10 +421,7 @@ Catanzaro,,
 Cavalier,,
 Cavese 1919,,
 Ceahlaul,,
-Celta Vigo,Celta Vigo,100.0
 Celtic,,
-Central Coast Marin,Central Coast Mariners,92.7
-Central Coast Mariners,Central Coast Mariners,100.0
 Central Coast Mariners (W),,
 Central FC,,
 Ceramica Cleopatra,,
@@ -343,7 +435,6 @@ Charlton U21,,
 Chateauroux,,
 Chatham Town,,
 Chelmsford,,
-Chelsea,Chelsea,100.0
 Chelsea (W),,
 Cheltenham,,
 Cherno More,,
@@ -391,7 +482,6 @@ Crusaders,,
 Cruz Azul,,
 Cruzeiro MG,,
 Crvena Zvezda,,
-Crystal Palace,Crystal Palace,100.0
 Csikszereda,,
 Cukaricki,,
 Curacao,,
@@ -439,7 +529,6 @@ Dunfermline,,
 Dungannon,,
 Dunkerque,,
 Dynamo Dresden,,
-Dynamo Kiev,FC Dynamo Kiev,88.0
 Dynamo Kyiv U19,,
 ENPPI,,
 ESM Kolea,,
@@ -455,12 +544,10 @@ Ecuador,,
 Edinburgh City,,
 Egypt,,
 Eibar,,
-Eintracht Frankfurt,Eintracht Frankfurt,100.0
 El Alameen,,
 El Geish,,
 El Gounah,,
 El Kanemi Warriors,,
-Elche,Elche,100.0
 Eldense,,
 Elgin City FC,,
 Elversberg,,
@@ -474,13 +561,11 @@ Erzgebirge,,
 Erzurum BB,,
 Esan Pattaya,,
 Esbjerg,,
-Espanyol,Espanyol,100.0
 Estoril Praia,,
 Estrela U23,,
 Estudiantes,,
 Etihad Al Ramtha,,
 Etoile Carouge,,
-Everton,Everton,100.0
 Everton (W),,
 Everton U21,,
 Excelsior,,
@@ -488,7 +573,6 @@ Excelsior Maassluis,,
 Exeter,,
 Exeter City U21,,
 Express,,
-Eyupspor,Eyüpspor,100.0
 FC Aragvi Dusheti,,
 FC Ashdod,,
 FC Basel,,
@@ -502,7 +586,6 @@ FC Giugliano,,
 FC Groningen,,
 FC Guidonia Montecelio 1937,,
 FC Halifax Town,,
-FC Heidenheim,Heidenheim,87.0
 FC Hunedoara,,
 FC Iberia 1999,,
 FC Iberia Tiblisi 1999 II,,
@@ -525,9 +608,7 @@ FC Sabah,,
 FC Sellier & Bellot Vlasim,,
 FC Talanta,,
 FC Telavi,,
-FC Twente,Twente,80.0
 FC Utd Manchester,,
-FC Utrecht,Utrecht,82.4
 FC Vaduz,,
 FC Volendam,,
 FC Voluntari,,
@@ -560,14 +641,10 @@ Famalicao U23,,
 Farense,,
 Farnborough FC,,
 Farul Constanta,,
-Fatih Karagumruk Istanbul,Centone Karagümrük İstanbul,80.8
 Fayoum FC,,
 Feirense,,
 Felgueiras,,
-Fenerbahce,Fenerbahçe,100.0
 Ferencvaros,,
-Feyenoord,Feyenoord,100.0
-Fiorentina,Fiorentina,100.0
 Fjolnir,,
 Fk Buducnost Podgorica,,
 Fk Jedinstvo Bijelo Polje,,
@@ -584,44 +661,36 @@ Forest Green,,
 Forfar,,
 Forli,,
 Fortuna Dusseldorf,,
-Fortuna Sittard,Fortuna Sittard,100.0
 Fram,,
 France,,
 Francs Borains,,
-Freiburg,Freiburg,100.0
 Freiburg (W),,
 Frosinone,,
 Frosinone Calcio U20,,
 Fuji University,,
-Fulham,Fulham,100.0
 G-Osaka,,
 GD Estoril Praia U23,,
 GVVV,,
 Gabon,,
-Galatasaray,Galatasaray,100.0
 Gateshead,,
 Gaziantep FK,,
 Genclerbirligi,,
 Genk,,
 Genk U19,,
-Genoa,Genoa,100.0
 Gent,,
 Germany,,
-Getafe,Getafe,100.0
 Ghana,,
 Giana Erminio,,
 Gil Vicente,,
 Gil Vicente U23,,
 Gillingham,,
 Gimnastic,,
-Girona,Girona,100.0
 Glenavon,,
 Glenavon (Res),,
 Glentoran,,
 Gloucester,,
 Go Ahead Eagles,,
 Golden Gate SC,,
-Goztepe,Göztepe,100.0
 Granada,,
 Granada (W),,
 Grasshoppers Zurich,,
@@ -630,21 +699,17 @@ Grenoble,,
 Greuther Furth,,
 Grimsby,,
 Guabira,,
-Guadalajara,Guadalajara,100.0
 Gubbio,,
 Guimaraes,,
 Guingamp,,
 Gyori,,
 HJK Helsinki U19,,
 HNK Gorica,,
-Hacken,Hacken,100.0
 Hafnarfjordur,,
 Haiti,,
 Hajduk Split,,
-Hamburger SV,Hamburger SV,100.0
 Hamilton,,
 Hampton and Richmond,,
-Hamrun Spartans FC,Hamrun Spartans FC,100.0
 Hang Yuen FC,,
 Hannover,,
 Hansa Rostock,,
@@ -678,7 +743,6 @@ Hertha Berlin,,
 Hibernian,,
 Hibernian U19,,
 Hiroshima Regina (W),,
-Hoffenheim,Hoffenheim,100.0
 Hoffenheim (W),,
 Hoffenheim II,,
 Holstein Kiel,,
@@ -715,7 +779,6 @@ Jeddah Club,,
 Jef Utd Chiba,,
 Jerash,,
 Jerash SC,,
-Jong AZ Alkmaar,AZ Alkmaar,80.0
 Jong Ajax Amsterdam,,
 Jong FC Utrecht,,
 Jong PSV Eindhoven,,
@@ -723,14 +786,12 @@ Jordan,,
 Jorge Wilstermann,,
 Junior FC Barranquilla,,
 Juve Stabia,,
-Juventus,Juventus,100.0
 Juventus B,,
 Juventus FC (W),,
 Juventus U19,,
 Juventus U20,,
 Jwaya SC,,
 KCB,,
-KF Drita,KF Drita,100.0
 KF Ferizaj,,
 KFC Komarno,,
 KFCO Beerschot Wilrijk,,
@@ -743,11 +804,9 @@ Kapaz Ganja,,
 Karaman Belediyespor,,
 Karlsruhe,,
 Karvan Evlakh,,
-Kasimpasa,Kasımpaşa,88.9
 Kastamonuspor,,
 Katsina United,,
 Kaya,,
-Kayserispor,Kayserispor,100.0
 Kazincbarcika,,
 Kelty Hearts,,
 Kfarsoum,,
@@ -756,8 +815,6 @@ Kilmarnock,,
 Kings Lynn,,
 Kisvarda,,
 Kitchee SC,,
-Kocaelispor,Kocaelispor,100.0
-Konyaspor,Konyaspor,100.0
 Kowloon City FC,,
 KuPS,,
 Kun Khalifat FC,,
@@ -768,9 +825,7 @@ Lamphun Warrior,,
 Larne,,
 Las Palmas,,
 Lask Linz,,
-Lausanne,Lausanne,100.0
 Laval,,
-Lazio,Lazio,100.0
 Lazio U20,,
 Ld Alajuelense,,
 Le Havre,,
@@ -781,12 +836,9 @@ Leatherhead FC,,
 Lecce,,
 Lecce U20,,
 Lecco,,
-Lech Poznan,KKS Lech Poznan,84.6
 Lee Man Warriors,,
-Leeds,Leeds,100.0
 Leek Town FC,,
 Leganes,,
-Legia Warsaw,Legia Varşova,80.0
 Leicester,,
 Leicester City (W),,
 Leicester U21,,
@@ -795,19 +847,16 @@ Leixoes,,
 Leixoes U23,,
 Lens,,
 Leonesa,,
-Levante,Levante UD,82.4
 Leverkusen,,
 Leverkusen U19,,
 Leyton Orient,,
 Lierse,,
 Lille,,
-Lincoln,Lincoln FC,82.4
 Lincoln Red Imps,,
 Linfield,,
 Linfield (Res),,
 Lion City Sailors FC,,
 Lion City Sailors II,,
-Liverpool,Liverpool,100.0
 Liverpool (W),,
 Livingston,,
 Lokomotiv Plovdiv,,
@@ -836,7 +885,6 @@ MSK Zilina U19,,
 MTK Budapest,,
 MVV Maastricht,,
 Ma'an,,
-Macarthur FC,Macarthur,85.7
 Maccabi Bnei Raina,,
 Maccabi Haifa,,
 Maccabi Haifa U19,,
@@ -851,7 +899,6 @@ Mainz,,
 Malacateco,,
 Malaga,,
 Mali,,
-Mallorca,RCD Mallorca,80.0
 Malmo FF,,
 Malut United,,
 Man City,,
@@ -869,14 +916,11 @@ Maritimo,,
 Maritimo U23,,
 Marsaxlokk FC,,
 Marseille,,
-Melbourne City,Melbourne City FC,90.3
 Melbourne City (W),,
-Melbourne Victory,Melbourne Victory,100.0
 Melbourne Victory (W),,
 Metalul Buzau,,
 Metz,,
 Mexico,,
-Mgladbach,M'gladbach,94.7
 Middlesbrough,,
 Midtjylland,,
 Millwall,,
@@ -904,9 +948,7 @@ Mozambique,,
 Muangthong Utd,,
 Muglaspor,,
 NAC Breda,,
-NEC Nijmegen,Nijmegen,80.0
 NEOM Sports Club,,
-NK Celje,NK Celje,100.0
 NK Istra,,
 Nacional Potosi,,
 Nakhon Pathom,,
@@ -915,14 +957,11 @@ Nam Dinh,,
 Nancy,,
 Nantes,,
 Nantes U19 FC,,
-Napoli,Napoli,100.0
 Napoli Calcio (W),,
 Neftchi Baku,,
 Neom SC U21,,
 Netherlands,,
 Neuchatel Xamax,,
-Newcastle,Newcastle,100.0
-Newcastle Jets,Newcastle Jets,100.0
 Newcastle Jets (W),,
 Newcastle United U19,,
 Newport County,,
@@ -936,7 +975,6 @@ North District,,
 Northampton,,
 Norwich,,
 Nottingham Forest U21,,
-Nottm Forest,Nottingham Forest,82.8
 Nottm Forest (W),,
 Notts Co,,
 Novara,,
@@ -954,7 +992,6 @@ Oman FC,,
 Omonia,,
 Oriente Petrolero,,
 Orleans,,
-Osasuna,CA Osasuna,82.4
 Osijek,,
 Otelul Galati,,
 Oud-Heverlee Leuven,,
@@ -966,7 +1003,6 @@ PEC Zwolle,,
 PFK Turan Tovuz,,
 PSDS Deli Serdang,,
 PSG U21,,
-PSV,PSV,100.0
 PSV Eindhoven U21,,
 Pacos Ferreira,,
 Paderborn,,
@@ -996,7 +1032,6 @@ Pendikspor,,
 Pergolettese,,
 Persib Bandung,,
 Persipa Pati,,
-Perth Glory,Perth Glory,100.0
 Perth Glory (W),,
 Perugia,,
 Pesaro,,
@@ -1046,7 +1081,6 @@ Queen of South,,
 Queens Park,,
 Quevilly Rouen,,
 RAAL La Louviere,,
-RB Leipzig,RB Leipzig,100.0
 RB Leipzig (W),,
 RKC Waalwijk,,
 RZ Pellets WAC,,
@@ -1059,26 +1093,21 @@ Radnicki Nis,,
 Radnik Bijeljina,,
 Radnik Surdulica,,
 Raith,,
-Rakow Czestochowa,Rakow Czestochowa,100.0
 Randers,,
 Rangers,,
 Rapid Bucharest,,
-Rapid Vienna,SK Rapid Vien,80.0
 Rapperswil-Jona,,
 Rasi Salai United FC,,
 Ratchaburi,,
 Ravenna,,
-Rayo Vallecano,Rayo Vallecano,100.0
 Rayong FC,,
 Reading,,
 Reading U21,,
 Real Aviles,,
 Real Espana,,
-Real Madrid,Real Madrid,100.0
 Real Madrid FC (W),,
 Real Madrid U19,,
 Real Murcia,,
-Real Sociedad,Real Sociedad,100.0
 Real Sociedad U21,,
 Real Tomayapo,,
 Red Bull Salzburg,,
@@ -1088,15 +1117,12 @@ Reims,,
 Remo Stars,,
 Renate,,
 Rennes,,
-Rijeka,Rijeka,100.0
 Rio Ave,,
 Rio Ave FC U23,,
 Rivers United FC,,
-Rizespor,Rizespor,100.0
 Rochdale,,
 Roda JC,,
 Rodez,,
-Roma,Roma,100.0
 Ross Co,,
 Rot-Weiss Essen,,
 Rotherham,,
@@ -1137,16 +1163,13 @@ Salisbury City,,
 Sambenedettese,,
 Samma,,
 Sampdoria,,
-Samsunspor,Samsunspor,100.0
 San Antonio Bulo Bulo,,
 San Juan Jabloteh,,
 Sanliurfaspor,,
-Santa Clara,Santa Clara,100.0
 Santa Clara U23,,
 Sarajevo,,
 Sariyer G.K.,,
 Sassari Torres,,
-Sassuolo,Sassuolo,100.0
 Saudi Arabia,,
 Scarborough Athletic,,
 Schalke 04,,
@@ -1158,23 +1181,19 @@ Senegal,,
 Septemvri,,
 Serik Belediyespor,,
 Servette,,
-Sevilla,Sevilla FC,82.4
 Sevilla B,,
 Shabab Al Ahli Dubai U19,,
 Shakhtar,,
 Sham Shui Po,,
 Shamakhi FK,,
-Shamrock Rovers,Shamrock Rovers,100.0
 Shatin SA,,
 Sheff Utd,,
 Sheff Utd U21,,
 Sheff Wed,,
 Sheff Wed U21,,
-Shelbourne,Shelbourne FC,87.0
 Shkendija,,
 Shrewsbury,,
 Siena,,
-Sigma Olomouc,Sigma Olomouc,100.0
 Sila SC,,
 Silkeborg,,
 Singapore (W),,
@@ -1192,7 +1211,6 @@ Sliema Wanderers FC,,
 Sloga Doboj,,
 Slough Town,,
 Slovacko,,
-Slovan Bratislava,Slovan Bratislava,100.0
 Slovan Liberec,,
 Smouha,,
 Sochaux,,
@@ -1209,7 +1227,6 @@ Southern District,,
 Southport,,
 Spain,,
 Spanish Town Police,,
-Sparta Prague,Sparta Prag,91.7
 Sparta Prague B,,
 Sparta Rotterdam,,
 Spartak Trnava,,
@@ -1227,7 +1244,6 @@ St Etienne,,
 St Gallen,,
 St Johnstone,,
 St Mirren,,
-St Pauli,FC St. Pauli,80.0
 St Polten,,
 Stade Briochin,,
 Stade Lausanne-Ouchy,,
@@ -1242,21 +1258,17 @@ Stockport County U21,,
 Stoke,,
 Stoke U21,,
 Stranraer,,
-Strasbourg,Strasbourg,100.0
 Sturm Graz,,
-Stuttgart,Stuttgart,100.0
 Stuttgart II,,
 Sudan,,
 Sudtirol,,
 Sukhothai,,
-Sunderland,Sunderland AFC,83.3
 Sutton Utd,,
 Swansea,,
 Swansea U21,,
 Swieqi United FC,,
 Swindon,,
 Switzerland,,
-Sydney FC,Sydney FC,100.0
 Sydney FC (W),,
 TSV Havelse,,
 Taichung Futuro FC,,
@@ -1292,11 +1304,8 @@ Tobago FC Phoenix,,
 Tokushima,,
 Tolima,,
 Toluca,,
-Tondela,Tondela,100.0
-Torino,Torino,100.0
 Torino U20,,
 Torreense,,
-Tottenham,Tottenham,100.0
 Tottenham (W),,
 Toulouse,,
 Trabzonspor,,
@@ -1311,13 +1320,11 @@ Twente (W),,
 UAE,,
 UNIVERSIDAD O&M,,
 UPDF FC,,
-US Cremonese,Cremonese,85.7
 US Latina Calcio,,
 US Pianese,,
 USA,,
 USM Khenchela,,
 UTA Arad,,
-Udinese,Udinese,100.0
 Uganda,,
 Uganda Police,,
 Uganda Revenue Authority,,
@@ -1325,19 +1332,16 @@ Ujpest,,
 Ulinzi Stars,,
 Umm Salal,,
 Umraniyespor,,
-Union Berlin,Union Berlin,100.0
 Union Brescia,,
 Union St Gilloise,,
 Unirea Slobozia,,
 Universitario de Vinto,,
 Universitatea Cluj,,
-Universitatea Craiova,CS Universitatea Craiova,93.3
 União de Leiria U23,,
 Uruguay,,
 Uthai Thani,,
 Uzbekistan,,
 VVV Venlo,,
-Valencia,Valencia,100.0
 Valenciennes,,
 Valerenga (W),,
 Valladolid,,
@@ -1353,7 +1357,6 @@ Verona,,
 Versailles 78 FC,,
 Viborg,,
 Viktoria Koln,,
-Villarreal,Villarreal CF,87.0
 Villefranche Beaujolais,,
 Vitesse Arnhem,,
 Vizela,,
@@ -1372,9 +1375,7 @@ Watford,,
 Watford U21,,
 Wealdstone,,
 Wehen Wiesbaden,,
-Wellington Phoenix,Wellington Phoenix FC,92.3
 Wellington Phoenix (W),,
-Werder Bremen,Werder Bremen,100.0
 West Brom,,
 West Brom U21,,
 West Ham,,
@@ -1391,7 +1392,6 @@ Willem II,,
 Winterthur,,
 Wofoo Tai Po,,
 Woking,,
-Wolfsburg,VfL Wolfsburg,81.8
 Wolfsburg (W),,
 Wolverhampton Wanderers (W),,
 Wolves,,
