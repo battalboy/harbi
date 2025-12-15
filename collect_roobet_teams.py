@@ -203,30 +203,27 @@ def main():
             new_teams = fetch_team_names()
             
             if new_teams:
-                # Find truly new teams
-                before_count = len(all_teams)
+                # Find truly new teams BEFORE merging
+                truly_new_teams = new_teams - all_teams
+                
+                # Merge with existing teams
                 all_teams.update(new_teams)
-                after_count = len(all_teams)
-                new_count = after_count - before_count
                 
                 # Save to file
                 save_teams(all_teams)
                 
                 # Report
                 print(f"✓ Found {len(new_teams)} teams", end="")
-                if new_count > 0:
-                    print(f" ({new_count} NEW!)", end="")
+                if truly_new_teams:
+                    print(f" ({len(truly_new_teams)} NEW!)", end="")
                 print(f" | Database: {len(all_teams)} unique teams")
                 
-                if new_count > 0:
+                if truly_new_teams:
                     # Show new teams (up to 10)
-                    new_list = sorted(all_teams - (all_teams - new_teams))
-                    actually_new = [t for t in new_list if t in new_teams][-new_count:]
-                    
-                    for team in actually_new[:10]:
+                    for team in sorted(truly_new_teams)[:10]:
                         print(f"      + {team}")
-                    if new_count > 10:
-                        print(f"      ... and {new_count - 10} more")
+                    if len(truly_new_teams) > 10:
+                        print(f"      ... and {len(truly_new_teams) - 10} more")
             else:
                 print("⚠ No data received (API may be restricted)")
             
