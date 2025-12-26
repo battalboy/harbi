@@ -63,8 +63,24 @@ def fetch_all_team_names() -> Set[str]:
         params['page'] = '0'
         
         response = requests.get(API_URL, params=params, headers=HEADERS, timeout=10)
-        response.raise_for_status()
+        
+        # Check for server errors
+        if response.status_code != 200:
+            print(f"\n\n❌ SERVER ERROR - Received HTTP {response.status_code}")
+            print(f"URL: {response.url}")
+            print(f"Response Headers: {dict(response.headers)}")
+            print(f"Response Body (first 500 chars):\n{response.text[:500]}")
+            print("\n🛑 Exiting due to server error...")
+            sys.exit(1)
+        
         data = response.json()
+        
+        # Check if we got valid data
+        if not data or 'lastPage' not in data:
+            print(f"\n\n❌ INVALID RESPONSE - No data or missing 'lastPage' field")
+            print(f"Response: {str(data)[:500]}")
+            print("\n🛑 Exiting due to invalid response...")
+            sys.exit(1)
         
         last_page = data.get('lastPage', 0)
         total_pages = last_page + 1
@@ -76,9 +92,15 @@ def fetch_all_team_names() -> Set[str]:
             params['page'] = str(page)
             
             response = requests.get(API_URL, params=params, headers=HEADERS, timeout=10)
-            response.raise_for_status()
-            data = response.json()
             
+            if response.status_code != 200:
+                print(f"\n\n❌ SERVER ERROR on page {page} - HTTP {response.status_code}")
+                print(f"URL: {response.url}")
+                print(f"Response: {response.text[:500]}")
+                print("\n🛑 Exiting due to server error...")
+                sys.exit(1)
+            
+            data = response.json()
             markets = data.get('exchangeMarkets', [])
             
             # Extract teams from this page
@@ -101,11 +123,16 @@ def fetch_all_team_names() -> Set[str]:
         return all_teams
     
     except requests.RequestException as e:
-        print(f"❌ Error fetching data: {e}")
-        return set()
+        print(f"\n\n❌ NETWORK ERROR: {e}")
+        print(f"URL: {API_URL}")
+        print("\n🛑 Exiting due to network error...")
+        sys.exit(1)
     except Exception as e:
-        print(f"❌ Error parsing data: {e}")
-        return set()
+        print(f"\n\n❌ UNEXPECTED ERROR: {e}")
+        import traceback
+        traceback.print_exc()
+        print("\n🛑 Exiting due to unexpected error...")
+        sys.exit(1)
 
 
 def signal_handler(sig, frame):

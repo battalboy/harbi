@@ -60,18 +60,41 @@ def save_teams(teams: Set[str]):
 
 
 def fetch_json(url):
-    """Fetch JSON data from URL."""
+    """Fetch JSON data from URL with proper error handling."""
     try:
         response = requests.get(url, timeout=10)
-        response.raise_for_status()
+        
+        # Check for server errors
+        if response.status_code != 200:
+            print(f"\n\n❌ SERVER ERROR - Received HTTP {response.status_code}")
+            print(f"URL: {response.url}")
+            print(f"Response Headers: {dict(response.headers)}")
+            print(f"Response Body (first 500 chars):\n{response.text[:500]}")
+            print("\n💡 Possible causes:")
+            print("   - Not using Turkish IP address")
+            print("   - Cloudflare blocking")
+            print("   - API endpoint changed")
+            print("\n🛑 Exiting due to server error...")
+            sys.exit(1)
         
         # The response is a JSON string, so we need to parse it twice
         data_str = response.json()
         if isinstance(data_str, str):
             return json.loads(data_str)
         return data_str
+    
+    except requests.RequestException as e:
+        print(f"\n\n❌ NETWORK ERROR: {e}")
+        print(f"URL: {url}")
+        print("\n💡 Check Turkish IP/VPN connection")
+        print("\n🛑 Exiting due to network error...")
+        sys.exit(1)
     except Exception as e:
-        return None
+        print(f"\n\n❌ UNEXPECTED ERROR: {e}")
+        import traceback
+        traceback.print_exc()
+        print("\n🛑 Exiting due to unexpected error...")
+        sys.exit(1)
 
 
 def get_top_prematch_games():
@@ -80,12 +103,21 @@ def get_top_prematch_games():
     data = fetch_json(url)
     
     if not data:
-        return []
+        print(f"\n\n❌ INVALID RESPONSE - getprematchtopgames returned empty data")
+        print(f"URL: {url}")
+        print("\n🛑 Exiting due to invalid response...")
+        sys.exit(1)
     
     game_ids = []
     for sport in data:
         if sport.get('id') == 1 and 'gms' in sport:  # Soccer = 1
             game_ids.extend(sport['gms'])
+    
+    if not game_ids:
+        print(f"\n\n❌ NO SOCCER GAMES - No soccer (id=1) games in 'getprematchtopgames'")
+        print(f"Response structure: {str(data)[:500]}")
+        print("\n🛑 Exiting - no soccer games available...")
+        sys.exit(1)
     
     return game_ids
 
@@ -93,7 +125,9 @@ def get_top_prematch_games():
 def get_game_details(game_ids):
     """Get detailed game information including team names."""
     if not game_ids:
-        return set()
+        print(f"\n\n❌ NO GAME IDS - Cannot fetch game details without game IDs")
+        print("\n🛑 Exiting...")
+        sys.exit(1)
     
     # Format game IDs for API (comma-separated with leading comma)
     games_param = "," + ",".join(map(str, game_ids))
@@ -102,7 +136,11 @@ def get_game_details(game_ids):
     data = fetch_json(url)
     
     if not data or 'teams' not in data:
-        return set()
+        print(f"\n\n❌ INVALID RESPONSE - getprematchgameall missing 'teams' field")
+        print(f"URL: {url}")
+        print(f"Response: {str(data)[:500]}")
+        print("\n🛑 Exiting due to invalid response...")
+        sys.exit(1)
     
     teams_data = data['teams']
     if isinstance(teams_data, str):
@@ -114,6 +152,12 @@ def get_game_details(game_ids):
             name = team.get('Name', '').strip()
             if name:
                 team_names.add(name)
+    
+    if not team_names:
+        print(f"\n\n❌ NO TEAMS FOUND - 'teams' field exists but no soccer teams extracted")
+        print(f"Teams data structure: {str(teams_data)[:500]}")
+        print("\n🛑 Exiting - no teams found...")
+        sys.exit(1)
     
     return team_names
 

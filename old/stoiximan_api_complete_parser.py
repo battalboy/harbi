@@ -1,25 +1,57 @@
 """
 Complete Stoiximan JSON API Parser with Odds
 Extracts soccer match data WITH 1X2 odds from Stoiximan JSON API responses
+Can fetch live data directly from API or parse from JSON file
 """
 
 import json
 import sys
+import requests
 
 
-def parse_json_matches_with_odds(json_file_path):
+def fetch_stoiximan_data():
     """
-    Parse matches with full odds data from Stoiximan JSON API file.
+    Fetch live match data directly from Stoiximan API.
+    
+    Returns:
+        dict: JSON response with events, markets, selections
+    """
+    api_url = 'https://en.stoiximan.gr/danae-webapi/api/live/overview/latest'
+    params = {
+        'includeVirtuals': 'false',
+        'queryLanguageId': '1',
+        'queryOperatorId': '2'
+    }
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+        'Accept': 'application/json'
+    }
+    
+    print("Fetching live data from Stoiximan API...", flush=True)
+    response = requests.get(api_url, params=params, headers=headers, timeout=15)
+    
+    if response.status_code != 200:
+        raise Exception(f"API returned status {response.status_code}: {response.text[:200]}")
+    
+    return response.json()
+
+
+def parse_json_matches_with_odds(json_data):
+    """
+    Parse matches with full odds data from Stoiximan JSON API data.
     
     Args:
-        json_file_path (str): Path to the JSON file
+        json_data (dict or str): JSON data dict (from API) or file path string
         
     Returns:
         list: List of dictionaries containing match data with odds
     """
-    # Load JSON
-    with open(json_file_path, 'r', encoding='utf-8') as f:
-        data = json.load(f)
+    # If json_data is a string, assume it's a file path and load it
+    if isinstance(json_data, str):
+        with open(json_data, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    else:
+        data = json_data
     
     events = data.get('events', {})
     markets = data.get('markets', {})
@@ -153,17 +185,28 @@ def save_formatted_matches(matches, output_file_path):
 
 def main():
     """Main function for command-line usage."""
-    if len(sys.argv) < 2:
-        print("Usage: python stoiximan_api_complete_parser.py <input_json_file> [output_file]")
-        print("\nExample:")
-        print("  python stoiximan_api_complete_parser.py stoiximan-api.json stoiximan-formatted.txt")
-        sys.exit(1)
-    
-    input_file = sys.argv[1]
-    output_file = sys.argv[2] if len(sys.argv) > 2 else 'stoiximan-formatted.txt'
-    
-    print(f"Reading {input_file}...")
-    matches = parse_json_matches_with_odds(input_file)
+    # Check if input file provided
+    if len(sys.argv) >= 2:
+        # Read from file mode
+        input_file = sys.argv[1]
+        output_file = sys.argv[2] if len(sys.argv) > 2 else 'old/stoiximan-formatted.txt'
+        
+        print(f"Reading from file: {input_file}...")
+        matches = parse_json_matches_with_odds(input_file)
+    else:
+        # Fetch from API mode
+        output_file = 'old/stoiximan-formatted.txt'
+        
+        try:
+            print("Fetching live data from Stoiximan API...")
+            data = fetch_stoiximan_data()
+            print(f"✓ Received data from API")
+            matches = parse_json_matches_with_odds(data)
+        except Exception as e:
+            print(f"\n❌ Error fetching from API: {e}")
+            print("\nAlternatively, you can provide a JSON file:")
+            print("  python stoiximan_api_complete_parser.py <input_json_file> [output_file]")
+            sys.exit(1)
     
     # Count matches with odds
     matches_with_odds = [m for m in matches if m['team1_odds'] != 'N/A']

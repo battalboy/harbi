@@ -1,65 +1,179 @@
+1 FC Cologne
+1 FC Heidenheim
 1 FC Kaiserslautern
+1 FC Magdeburg
 1 FC Nuremberg
+1 FC Nurnberg
 1. FC Cologne
 1. FC Heidenheim
 1. FC Magdeburg
+1. FC Nuremberg
 1. FC Union Berlin
+1. FFC Turbine Potsdam 71
+AC Ajaccio
 AC Bellinzona
+AC Bra
+AC Carpi
+AC Midtjylland
 AC Milan
+AC Modena
 AC Monza
 AC Omonia Nicosia
+AC Roma
+AC Vila Mea
+AC Vila Meã
+ACD Malaga
+ACD Potiguar RN
 ACF Fiorentina
 ACS Champions FC Arges
+AD Cariari Pococi
 AD Ceuta
+AD Cofutpa
 ADO Den Haag
 AE Kifisia FC
 AE Larissa FC
 AEK Athens
 AEK Larnaca
+AEL Limassol
 AFC Bournemouth
 AFC Hermannstadt
+AFC Wimbledon
+AFK Csikszereda Miercurea Ciuc
 AJ Auxerre
+AL Ahly SC
+AL Arabi (UAE)
+AL Bahrain
+AL Bataeh (UAE)
+AL Bidda SC
+AL Budaiya
+AL Hilal Riyadh
+AL Ittifaq
+AL Jazira AL Hamra
+AL Karma
+AL Markhiya
+AL Nasr SC (OMA)
+AL Shorta SC
+AL Suqoor
+AL Tadhamon
+AL Waab
+AL Wakrah SC
 AO Egaleo 1931 PAE
 AO Kavala 1965
+APO Levadiakos FC
+APOEL
 APOEL Nikosia
+AS Gubbio
 AS Monaco
 AS Monaco (E)
 AS Roma
+AS Saint-Etienne
+AS Sariyer
 ASC Otelul Galati
+ASO Chlef
 AVS Futebol SAD
 AZ Alkmaar
+Aali
 Aberdeen FC
+Abia Warriors FC
+Academia Puerto Cabello
 Academico de Viseu FC
 Accrington Stanley
+Adana Demirspor
 Adelaide United FC
 Africa Cup of Nations
+Agia Paraskevi FC
+Airdrieonians FC
 Ajax Amsterdam
+Ajman Club
 Akritas Chlorakas
+Al Ahli Doha SC
 Al Ahli Saudi FC
+Al Ahly Tripoli
+Al Ain FC
+Al Arabi
+Al Arabi Doha SC
+Al Dahra
+Al Dhafra SSC
+Al Duhail SC
+Al Gharafa SC
+Al Hidd
 Al Hilal SFC
+Al Jahra
+Al Jazira (UAE)
+Al Kharaitiyat SC
+Al Khmes
+Al Madina
+Al Madina Al Monawara SC
+Al Mesaimeer
+Al Nahda
 Al Nassr Club
+Al Rayyan SC
+Al Riffa
+Al Sadd SC
+Al Shabab
+Al Shabab Kuwait
+Al Taawun
+Al Tahaddi
+Al Talaba
+Al Urooba UAE
+Al Wahda FC
+Al Watan
+Al-Adalah
+Al-Ahli SC Manama
 Al-Akhdoud Club
+Al-Dhaid
+Al-Fahaheel
 Al-Fateh SC
+Al-Fayha
 Al-Fayha FC
+Al-Hamriyah
 Al-Hazm
 Al-Hilal (E)
+Al-Hilal Benghazi
 Al-Ittifaq FC
 Al-Ittihad FC
+Al-Khaboora
 Al-Khaldiya SC
 Al-Khaleej Club
 Al-Kholood
+Al-Khor SC
 Al-Muharraq SC
 Al-Najma
+Al-Najma Manama
+Al-Nasr Dubai CSC
+Al-Nasr SC Benghazi
+Al-Nassr Riyadh
+Al-Orobah
 Al-Qadisiyah
 Al-Riyadh SC
+Al-Rustaq
+Al-Sailiya SC
+Al-Salmiya SC
 Al-Shabab FC (SA)
+Al-Shabab Riyadh
+Al-Shabbab
+Al-Shamal
+Al-Taawoun Buraidah
 Al-Taawoun FC
+Al-Wehda
+Alaves
 Albacete Balompie
 Albania
+Alcala
+Alcoyano
 Aldershot Town FC
 Algeria
+Alianza Atletico
+Alianza Lima
 Almere City FC
+Almerehaven FC
+Almeria
+Alo Egypt Club
 Altrincham FC
+Aluminium Arak
+America FC RN
+America de Cali
+Amiens SC
 Amsterdamsche FC
 Anagennisi Karditsas 1904
 Angers SCO
@@ -67,6 +181,9 @@ Angola
 Anorthosis Famagusta
 Antalyaspor
 Apollon Limassol
+Ararat-Armenia
+Araz Nakhchivan PFK
+Arbroath FC
 Argentina
 Aris Limassol FC
 Aris Thessaloniki
@@ -75,55 +192,110 @@ Arsenal
 Arsenal FC
 Arsenal FC (E)
 As Dgssie
+Ascoli Calcio 1898
 Asd Pineto Calcio
+Asswehly
 Asteras Tripolis
 Asteras Tripolis II
+Aston Villa
 Aston Villa FC
 Atalanta BC
 Athens Kallithea FC
 Athletic Bilbao
 Atlantico
+Atlas FC
+Atletic Club d'Escaldes
+Atletico MG SP
 Atletico Madrid
+Atletico Mineiro MG
 Atletico Nacional Medellin
+Atletico San Luis
 Atlético Madrid (E)
 Atlético de Madrid (E)
 Atromitos Athinon
 Auckland FC
 Audace Cerignola
+Audax Italiano
+Australia
+Australia A-League
 Austria
+Austria Bundesliga
+Ayr United FC
 Aytemiz Alanyaspor
+Azerbaijan
+BB Bodrumspor
+BFB Pattaya City
+BG Pathum United
+BVV Vlaanderen
+Bahla Club
+Bala Town FC
+Bali United
 Ballon d'Or
 Ballymena United
+Bandirmaspor
+Banfield RJ
+Bangkok FC
+Bangkok United FC
 Bangor FC
+Baniyas Club
+Baqa Al-Gharbiyye
 Barcelona SC
 Barnet FC
+Barnsley
 Barrow AFC
+Barry Town United FC
+Basaksehir Istanbul
+Bassin D'Arcachon
+Bastia Avengers Football
 Bayer Leverkusen
+Bayern
 Bayern (E)
+Bayern Leverkusen
 Bayern Munich
 Beitar Jerusalem FC
+Belarus
 Belgium
+Belgium Pro League
+Ben Aknoun
+Bendel Insurance FC
+Benfica
 Benin
+Besiktas
 Besiktas Istanbul
+Betis
+Bhayangkara
+Birkirkara FC
 Birmingham City
 Blackburn Rovers
+Blackpool
+Bnei Jaffa Ortodoxim
 Bnei Sakhnin FC
 Bnei Yehuda Tel Aviv FC
+Boca Juniors
 Boca Juniors (E)
+Bodo/Glimt
 Bodoe/Glimt
 Bologna FC
+Bolton Wanderers
+Borac Banja Luka
 Boreham Wood FC
+Borneo Samarinda
 Borussia Dortmund
 Borussia Dortmund (E)
 Borussia Monchengladbach
 Bosnia & Herzegovina
 Boston United FC
+Botafogo FR RJ
 Botswana
+Bournemouth
 Brackley Town FC
+Bradford City
 Braintree Town FC
 Brasileiro Serie A
+Brasileiro Serie B
 Brazil
 Breidablik Kopavogur
+Brentford
 Brentford FC
 Brighton & Hove Albion
 Brisbane Roar FC
@@ -131,210 +303,366 @@ Bristol City
 Bristol Rovers
 Briton Ferry
 Bromley FC
+Bulgaria
 Burgos CF
+Buriram United
 Burkina Faso
 Burnley FC
+Burton Albion
 CA Belgrano de Cordoba
+CA Boston River
+CA Bucaramanga
+CA Juventud de Las Piedras
+CA Mineros Montevideo
 CA Osasuna
+CA Paranaense PR
+CA Pontevedra
+CA Rosario Montevideo
+CA Vega Real
+CA Victoria Montevideo
 CD Atletico Baleares
 CD Castellon
+CD Cuenca
 CD El Nacional
 CD Feirense
 CD Guadalajara
 CD Junior FC
 CD Leganes
 CD Mirandes
+CD Mirandés
+CD Palestino
+CD Recoleta
+CD Sociedad
 CD Tolima
 CD Tondela
 CD Universidad Catolica del Ecuador
+CE Carroi
+CE Carrol
+CF Cruz Azul
+CF Esperanca D Andorra
+CF Flamengo 97
+CF Pachuca
 CF Talavera de La Reina
+CR Belouizdad
+CR Benahavís
 CR Flamengo RJ
 CR Vasco da Gama RJ
+CS 2 de Mayo
 CS Cartagines
+CS Cienciano
+CS Constantine
 CS Emelec
+CS Sergipe SE
 CS Universitatea Craiova
 CSD Independiente del Valle
+CSD Macara
 Cadiz CF
+Caernarfon Town FC
 Cagliari Calcio
 Calcio Foggia
 Calcio Padova
 Cambridge United
 Cameroon
+Campobasso FC
 Canada (E)
+Canet Roussillon FC
+Canosa 1948
 Cape Verde
+Caracas FC
 Cardiff City
 Cardiff Metropolitan University FC
 Carlisle United
 Carrarese Calcio
 Carrick Rangers
+Cartagena
 Casa Pia Lisbon
+Casa Sport
 Caykur Rizespor
+Celta Vigo
 Celtic
 Central Coast Mariners
 Cercle Brugge
 Cesena FC
+Ceuta
 Chador Malu Yazd
 Chania FC
+Chapecoense SC
 Charlton Athletic
+Chelsea
 Chelsea (E)
 Chelsea FC
 Chelsea FC (E)
 Cheltenham Town
 Chesterfield FC
+Chiangrai United
 China (E)
 Cibao CF
+Cittadella FC
+City Football Club
+Clermont Foot 63
 Cliftonville FC
+Club Atletico Pantoja
 Club Brugge
+Club Brugge YLA
 Club Deportivo Eldense
+Club Leon
 Club NXT
+Club Necaxa
+Club Olimpia
+Club Puebla
+Club Santos Laguna
+Club U21
+Clube do Remo PA
+Cobresal
 Colchester United
 Coleraine FC
+Cologne
 Colombia
+Colwyn Bay
 Como 1907
 Comoros
+Cong An Ha Noi FC
+Connah's Quay Nomads FC
 Copa Libertadores
 Copa do Brasil
 Coppa Italia
 Cordoba CF
+Coritiba FC PR
+Cosenza FC
 Costa Rica (E)
 Coupe de France
 Coventry City
 Crawley Town
 Crewe Alexandra
 Croatia
+Croatia HNL
+Croix IC
+Crusaders
 Crusaders FC
+Cruzeiro Arapiraca AL
 Cruzeiro EC MG
 Crystal Palace
+Cuiaba EC
 Cultural Leonesa
 Curacao
 Curacao (E)
 Cusco FC
+Cyprus
+Cyprus 1st Division
 Cyprus Cup
+Czech Republic
 Czechia
+Czechia 1. Liga
 Czechia Cup
 DR Congo
+Dagenham and Redbridge
 Damac FC
+Darnes
 De Graafschap
 De Treffers Groesbeek
 Debreceni VSC
+Defensor Sporting
+Delfin SC
 Delfino Pescara
 Denmark
 Denmark 1. Division
+Denmark DBU Pokalen
 Denmark Superliga
 Deportivo Alaves
+Deportivo Garcilaso
+Deportivo La Coruna
 Deportivo Saprissa San Jose
 Deportivo Toluca FC
 Derby County
+Derry City
+Dewa United
+Dhofar SCSC
+Dibba
+Dibba Al-Hisn SC
+Dieppe FC
+Dijon FCO
+Dimona Sport Club
 Diosgyori VTK
+Djurgarden
+Doncaster Rovers
+Dubai United FC
 Dundee FC
 Dundee United
+Dunfermline Athletic FC
 Dungannon Swifts
 Dynamo Dresden
+EA Guingamp
+EC Bahia BA
+EC Juventude RS
+EC Vitoria BA
+ES Mostaganem
+ES Setif
 ESTAC Troyes
 ETO FC Gyor
 Eastleigh FC
+Ebbsfleet Wood FC
 Ecuador
 Egypt
 Eintracht Braunschweig
 Eintracht Frankfurt
+Eintracht Frankfurt II
+El Qanah FC
 El Salvador (E)
 Elche CF
+Elfsborg
 Ellas Syros
 Emat
+Emirates Club
 Empoli FC
 England
 England (E)
+England Championship
 England EFL Cup
 England FA Cup
+England League One
+England League Two
 England National League
 England Premier League
 Enosis Neon Paralimni FC
+Entente Feignies Aulnoye
+Enugu Rangers International FC
 Equatorial Guinea
+Esenler Erokspor
+Espanyol
 Espanyol Barcelona
+Esporte de Patos
 Esteghlal FC
 Esteghlal Khuzestan FC
+Estonia
 Estoril Praia
 Estrela Amadora
+Ethnikos Achnas FC
 Etoile Carouge FC
+Europa FC
+Everton
 Everton FC
 Everton FC (E)
 Excelsior Maassluis
 Excelsior Rotterdam
+Exeter City
 Eyupspor
+FBC Melgar
 FC Aarau
 FC Alverca SAD
 FC Andorra
+FC Annecy
 FC Arouca
 FC Arzignano Valchiampo
 FC Augsburg
+FC Averco SAD
 FC Barcelona
 FC Barcelona (E)
 FC Basel 1893
+FC Bayern Munich
 FC Bayern Munich (E)
+FC Beitar Yavne
 FC Botosani
 FC CFR 1907 Cluj
+FC Carl Zeiss Jena
 FC Copenhagen
 FC Crotone
 FC Den Bosch
 FC Dinamo Bucuresti 1948
 FC Dordrecht
+FC Dynamo Dresden
 FC Dynamo Kyiv
 FC Eindhoven
 FC Emmen
 FC Famalicao
+FC Fard
 FC Farul Constanta
 FC Felgueiras 1932
+FC Fleury
 FC Groningen
 FC Halifax Town
+FC Hauts Lyonnais
+FC Heidenheim
+FC Helder
+FC Heracles 88
+FC Holon Yirmiyahu
+FC Ingolstadt 04
+FC Jerusalem
+FC Juarez
+FC Kafr Qasim
+FC Kairat Almaty
+FC Koln
+FC Laval
 FC Lorient
+FC Ludogorets
 FC Lugano
 FC Luzern
+FC Maccabi Kiryat Gat Dudu
 FC Metz
 FC Midtjylland
 FC Nantes
 FC Noah Yerevan
+FC Ordino
+FC Oss Roerch
 FC Pacos Ferreira
 FC Penafiel
+FC Penya d`Andorra
+FC Penya ur Andorra
 FC Petrolul Ploiesti
 FC Porto
 FC Porto (E)
 FC Porto B
 FC RB Salzburg
+FC Rangers
 FC Rapperswil-Jona
+FC Saint-Cyr Collonges au Mont d'Or
+FC Santa Coloma
 FC Shakhtar Donetsk
+FC Sheriff
 FC Sion
 FC St. Gallen 1879
 FC St. Pauli
 FC Stade Nyonnais
+FC Stuttgart
 FC Sudtirol Bolzano
 FC Thun
+FC Twente
 FC Twente Enschede
+FC Tzeirey Tira
 FC Unirea 2004 Slobozia
 FC Universitatea Cluj
 FC Uta Arad
 FC Utrecht
 FC Vaduz
 FC Viktoria Plzen
+FC Viseu
 FC Vizela
 FC Volendam
 FC Wil 1900
 FC Winterthur
 FC Zurich
 FCV Dender EH
+FK Auda
+FK Ballkani
+FK Borac
 FK Crvena Zvezda Belgrade
 FK Cukaricki Belgrade
 FK IMT Novi Beograd
 FK Javor Ivanjica
+FK Kapaz
 FK Karvan Yevlakh
 FK Mladost Lucani
+FK Napredak Krusevac
 FK Novi Pazar
 FK Partizan Belgrade
 FK Radnicki 1923 Kragujevac
 FK Radnicki Nis
 FK Radnik Surdulica
 FK Spartak Subotica
+FK Suduva
 FK TSC Backa Topola
+FK UE Santa Coloma
 FK Vojvodina Novi Sad
+FK Zalgiris
 FK Zeleznicar Pancevo
 FSV Mainz
 Fajr Sepasi FC
@@ -344,43 +672,64 @@ Fehra
 Fenerbahce Istanbul
 Ferencvarosi Budapest
 Feyenoord Rotterdam
+Finland
 Flamengo (E)
+Flamengo RJ
 Fleetwood Town
+Flint Town United
+Floriana FC
 Fluminense (E)
 Fluminense FC RJ
+Fluminense SP
 Foolad KHouzestan FC
+Football Bourg-En-Bresse Peronnas 01
 Forest Green Rovers
+Forli FC
 Fortuna Dusseldorf
 Fortuna Sittard
 Fotbal Club FCSB
+Foullah Edifice
 France
 France (E)
 France Ligue 1
+France Ligue 2
 Freedom 24 Krasava ENY
+Freiburg
 Frosinone Calcio
+Fujairah FC
+Fulham
 Fulham FC
+Fylkir Reykjavik
 GD Chaves
+GD Victoria Guimaraes
 GKS Piast Gliwice
 GNK Dinamo Zagreb
 GS Ilioupoli
+GSVV Hondschesoots
 GVVV Veenendaal
+Gabala FK
 Gabon
 Galatasaray Istanbul
 Gateshead FC
 Gazelle
 Gaziantep FK
+Gaziantepspor
 Genclerbirligi SK
 Genk II
 Genoa CFC
+Georgia
 Germany
 Germany (E)
+Germany 2. Bundesliga
 Germany Bundesliga
 Germany DFB Cup
 Getafe CF
 Ghana
+Ghana B
 Gil Vicente Barcelos
 Gillingham FC
 Girona FC
+Girondins Bordeaux
 Glasgow Rangers
 Glenavon FC
 Glentoran FC
@@ -389,10 +738,22 @@ Gol Gohar Sirjan FC
 Goztepe Izmir
 Granada CF
 Grasshopper Club Zurich
+Greece
 Greece Cup
+Greece Super League
+Greenock Morton FC
+Gremio FB Porto Alegre RS
+Gremio FB Porto Alegrense RS
+Grenoble Foot
 Greuther Furth
 Grimsby Town
 Guatemala (E)
+Guediawaye FC
+Guidonia Montecelio 1937 FC
+Gulf United
+Gzira United FC
+HERA United Women
+HJK Helsinki
 HNK Gorica
 HNK Hajduk Split
 HNK Rijeka
@@ -407,139 +768,277 @@ Hamrun Spartans FC
 Hannover 96
 Hapoel Acre FC
 Hapoel Afula FC
+Hapoel Azor FC
 Hapoel Be`er Sheva FC
+Hapoel Beit Shean Mesilot
+Hapoel Bnei Musmus
+Hapoel Hadera FC
 Hapoel Haifa FC
+Hapoel Herzelia FC
+Hapoel Ironi Arraba
+Hapoel Ironi Karmiel
+Hapoel Ironi Kiryat Shmona FC
 Hapoel Jerusalem FC
+Hapoel Karmiel FC
 Hapoel Kfar Saba FC
+Hapoel Kfar Shalem FC
+Hapoel Marmorek FC
+Hapoel Migdal Haemeq
+Hapoel Nir Ramat Hasharon FC
+Hapoel Nof Hagalil FC
 Hapoel Petah Tikva FC
+Hapoel Ra`anana FC
+Hapoel Ramat Gan Givatayim FC
+Hapoel Rishon Lezion FC
 Hapoel Tel Aviv FC
+Hapoel Tirat HaCarmel
+Hapoel Umm AL Fahm
 Harrogate Town
+Hartlepool Town
 Hartlepool United
 Hatayspor Antakya
+Hatta SC
+Haverfordwest County AFC
 Heart of Midlothian FC
+Hearts
 Hellas Verona
 Helmond Sport
 Heracles Almelo
 Hertha BSC
 Hibernian FC
+Hibernians FC Paola
+Hoang Anh Gia Lai
 Hoek
+Hoffenheim
 Holstein Kiel
 Honduras (E)
+Huddersfield Town
+Huesca CF
 Hull City
+Hungary
+Hungary NB I
+Iceland
 Ikorodu City
 Imisli FK
 Independiente Medellin
+India
 India (E)
 Indonesia (E)
 Inter (E)
+Inter Benincasa
+Inter Club de Escaldes
 Inter Milano
+Inter San Carlos
+Inter Sassalo
+Ipswich
 Ipswich Town
 Iraklis Thessaloniki
 Iran
+Iraq
 Iraq (E)
 Ireland
+Ironi Modiin
+Ironi Nesher
 Ironi Tiberias
+Israel
 Istanbul Basaksehir
+Istanbulspor AS
+Istres FC
 Italy
 Italy (E)
 Italy Serie A
+Italy Serie A, Women
+Italy Serie B
 Italy Supercoppa
+Ittihad Kalba FC
 Ivory Coast
+JS Kabylie
+JS Saoura
 Jagiellonia Bialystok
 Jamaica (E)
 Japan
 Japan (E)
+Jarabacoa
 Jong AZ Alkmaar
+Jong Ajax
+Jong Den Haag
+Jong FC Utrecht
 Jong PSV Eindhoven
 Jordan
 Juve Stabia
 Juventus
 Juventus (E)
+Juventus Next Gen
 K Beerschot VA
 KAA Gent
 KAA Gent B
 KAS Eupen
+KE Trudontse KV
 KF Drita
+KFC Lierse
 KKS Lech Poznan
+KMSK Deinze 47
 KRC Genk
 KSC Lokeren Temse
 KV Kortrijk
 KVC Westerlo
+Kahrabaa Ismailia
 Kampaniakos
+Kanchanaburi Power FC
 Karlsruher SC
+Kasimpasa
 Kasimpasa Istanbul
 Katsina United FC
 Kayserispor
+Kazakhstan
 Kazakhstan (E)
 Kazincbarcikai SC
+Kenya
 Kheybar Khorramabad FC
+Khor Fakkan Club
 Kilmarnock FC
 Kisvarda FC
 Kocaelispor
 Konyaspor
 Korea Republic (E)
 Kosovo
+Kun Khalifat FC
 Kuopion Palloseura
+Kuwait SC
 LD Alajuelense
 LDU Quito
+La Havre AC
+La Mans FC
 Larne FC
+Las Palmas
 Lausanne-Sport
+Lazio
+Lazio Roma
 Lazio Rome
 Le Havre AC
+Le Mans FC
+Le Puy Foot 43 Auvergne
+Lecco Bari
 Leeds United
+Leganes CF
+Legia Warsaw
 Legia Warszawa
 Leicester City
 Leicester City (E)
 Leixoes SC
+Les Herbiers
+Les Sables FCOC
+Levante CF
 Levante UD
+Leyton Orient London
 Libertad Loja
 Lierse Kempenzonen
+Liga Deportiva Alajuelense
 Lille OSC
+Limassol
+Lincoln City
 Lincoln Red Imps
+Linfield
 Linfield FC
+Lion City Sailors FC
+Livermore 1891
+Liverpool
 Liverpool FC
 Liverpool FC (E)
 Livingston FC
+Llanelli Town
 Lommel SK
+Lopburi City
+Ludogorets Razgrad
+Lumezzane Women
+Lusail SC
 Lusitania FC Lourosa
+Luton Town
+Luxembourg
+Lyon La Duchere
+MB Rouisset
+MC Alger
+MC El Bayadh
+MC Oran
+MK Kfar Saba 1928
+MS Ashdod
+MS Tira
 MSK Kiryat Yam
 MTK Budapest
 MVV Maastricht
 Macarthur FC
+Maccabi Ahi Nazareth
 Maccabi Bney Reine
+Maccabi Haifa FC
 Maccabi Herzliya
+Maccabi Ironi Kiryat Malakhi
+Maccabi Kabilio Jaffa
+Maccabi Kiryat Ata-Bialik
+Maccabi Netanya FC
+Maccabi Neve Shaanan
+Maccabi Nujeidat Ahmad
+Maccabi Petah Tikva FC
 Maccabi Tel Aviv FC
+Maccabi Yavne
+Macclesfield FC
+Madura United
+Majd FC
 Makedonikos FC
 Malaga CF
 Malavan Bandar Anzali FC
 Malaysia
 Malaysia (E)
 Mali
+Malkiya Club
 Malmo FF
+Malut United
+Man City
 Man. United (E)
 Manchester City
 Manchester City (E)
 Manchester United
 Manchester United WFC
+Manisa Futbol Kulubu
+Mansfield Town
+Mansfield United
 Mantova 1911
+Marbella FC
 Maritimo Madeira
 Marko 1927
+Masfoot Sports Club
+Massafra 1963
+Mazatlan FC
 Melbourne City FC
 Melbourne Victory
 Mes Rafsanjan FC
+Mes Shahre Babak
+Mes Sungun Varzaghan
 Metaloglobus Bucuresti
+Metropolitanos FC
 Mexico
 Mexico (E)
 Middlesbrough FC
 Milan (E)
+Millonarios FC
 Millwall FC
 Milton Keynes Dons
+Mirassol FC SP
+Moca FC
 Modena FC
+Modern Sport FC
+Moldova
+Monagas SC
+Montenegro
+Montevideo City Torque
+Montpellier HSC
+Montreuil FC
 Morecambe FC
 Moreirense FC
 Morocco
 Motherwell FC
 Mozambique
+Muaither SC
+Muscat
 NAC Breda
 NEC Nijmegen
 NK Celje
@@ -548,40 +1047,58 @@ NK Lokomotiva Zagreb
 NK Osijek
 NK Slaven Belupo
 NK Varazdin
+Nacional Asuncion
 Nacional da Madeira
+Naft Gachsaran
+Nam Dinh FC
+Nancy-Lorraine
 Napoli (E)
+Nassaji Mazandaran FC
+Nees Atromitou
 Neftchi Baku PFC
 Neom SC
 Nestos Chrysoupoli FC
 Netherlands
 Netherlands (E)
+Netherlands Eerste Divisie
+Netherlands Eredivisie
 Netherlands KNVB beker
 Neuchatel Xamax
 New Zealand
 Newcastle United
 Newcastle United Jets FC
 Newport County
+Niger Tornadoes FC
 Nigeria
 Niki Volou 1924 PAE
 North Korea (E)
 North Macedonia
+Northampton Town
 Northern Ireland
+Northern Ireland Premiership
+Norway
 Norwich City
 Nottingham Forest
 Notts County
 Nyiregyhaza Spartacus FC
+OFI
 OFI Crete
 OFK Beograd
 OGC Nice
 Oldham Athletic
 Olympiacos B
 Olympiacos Piraeus
+Olympiakos Marseille
 Olympiakos Nicosia
+Olympique Akbou
 Olympique Lyon
 Olympique Marseille
+Olympique de Marseille Women
+Oman Club
 Omonia Aradippou
 Orense SC
 Oud-Heverlee Leuven
+Ourense CF
 Oxford United FC
 PAE PS Kalamata
 PAOK Thessaloniki
@@ -589,83 +1106,144 @@ PAOK Thessaloniki B
 PAS Giannina
 PEC Zwolle
 PFC Ludogorets 1945 Razgrad
+PFC Nasaf
+PSBS Biak
+PSM Makassar
 PSV Eindhoven
 Pafos FC
 Paksi FC
+Palayesh Naft Bandar Abbas FC
 Palermo FC
 Palestine (E)
 Palmeiras (E)
+Palmeiras FC RJ
 Panaitolikos Agrinio
 Panama
 Panama (E)
 Panargiakos FC
 Panathinaikos Athens
 Panionios Athens
+Panserraikos FC
+Paradou AC
 Paraguay
 Paris FC
 Paris SG (E)
 Paris Saint-Germain
 Paris Saint-Germain (E)
 Parma Calcio
+Partick Thistle FC
 Patro Eisden Maasmechelen
+Pau FC
+Paykan FC
+Pen-y-Bont FC
+Perigny
+Persebaya Surabaya
+Persepolis FC
+Persib Bandung
+Persija Jakarta
+Persijap Jepara
+Persik Kediri
+Persis Solo
+Persita Tangerang
 Perth Glory FC
+Peru
+Perugia Calcio Spa
+Peterborough United
+Petrocub Hincesti
 Philippines
 Pisa SC
+Plymouth Argyle
 Poland
+Poland Ekstraklasa
+Pontivy GSI
+Port Vale
 Portadown FC
 Portimonense SC
 Porto (E)
 Portsmouth FC
+Portugal
 Portugal (E)
 Portugal League Cup
+Portugal Primeira Liga
 Preston North End
+Prime Bangkok FC
 Pro Patria Busto Arsizio
+Pumas UNAM
 Puskas Akademia FC Felcsut
+Qadsia SC
+Qarabag FK
 Qatar
+Queens Park FC
 Queens Park Rangers
+Queretaro FC
 RB Leipzig
 RC Celta de Vigo
 RC Deportivo La Coruna
 RC Lens
+RC Lens Women
+RCD Espanyol
 RCD Mallorca
 RFC Liege
+RFC Seraing
 RKC Waalwijk
 RKS Rakow Czestochowa
 RSC Anderlecht
 RSC Anderlecht B
+RSC Genk
 RWD Molenbeek 47
+RWDM Brussels 47
+RX Europe
 Raal La Louviere
 Racing Club Avellaneda
+Racing Club Montevideo
 Racing Santander
+Raith Rovers FC
+Rangers FC
 Rapid Bucuresti 1923
 Ratchaburi FC
 Ravenna FC 1913
 Rayo Vallecano
 Rayong FC
+Reading FC
+Real Betis
 Real Betis Seville
 Real Madrid
 Real Madrid (E)
+Real Mallorca
+Real Murcia CF
 Real Oviedo
 Real Sociedad
 Real Sociedad (E)
 Real Sociedad B
 Real Valladolid
 Real Zaragoza
+Red Bull Bragantino SP
+Red Star FC
 Reggiana 1919
+Remo Stars
 Rio Ave FC
+Rio Negro RR
 River Plate (E)
 Rivers United FC
 Rochdale AFC
 Roda JC Kerkrade
 Romania
 Romania Cup
+Romania Superliga
+Ross County FC
+Rosso Calcio
+Rotherham United
 Royal Antwerp FC
 Royal Charleroi SC
 Royal Francs Borains
 Royal Olympic Charleroi Chatelet Farciennes
+Royal Thai Fleet FC
 Russia Premier League
 Russian Cup
+Rvsd La Louviere
 S.S.D. Casarano Calcio
+SA Merignac
+SC Bastia
 SC Braga
 SC Cambuur
 SC Corinthians SP
@@ -673,12 +1251,18 @@ SC Farense
 SC Freiburg
 SC Genemuiden
 SC Heerenveen
+SC Internacional RS
 SC Paderborn 07
 SC Preussen 06 Munster
 SC Telstar
+SC Utrecht
 SCU Torreense
+SD Aucas
 SD Eibar
 SD Huesca
+SE Palmeiras SP
+SEF Torres Sassari
+SGS Essen-Schonebeck 19/68
 SK Beveren
 SK Brann
 SK Rapid
@@ -695,133 +1279,252 @@ SSC Bari
 SSC Napoli
 SV 07 Elversberg
 SV Darmstadt 98
+SV Meppen
+SV Preussen 06 Munster
 SV Spakenburg
 SV Zulte Waregem
+Sabah Masazir
+Saham
+Saipa F.C.
 Sakaryaspor
 Salcedo FC
 Salford City
 Sampdoria Genoa
 Samsunspor
+San Marino
 Santa Clara Azores
+Santos FC SP
+Sao Paulo FC SP
+Sao Paulo SC SP
+Sao Raimundo Boa Vista
 Sassuolo Calcio
 Saudi Arabia
 Saudi Pro League
 Schalke 04
 Scotland
+Scotland Championship
 Scotland Premiership
 Scottish Cup
 Scunthorpe United
+Sderot FC
+Semen Padang FC
 Senegal
 Sepahan SC
+Serbia
+Serbia Superliga
+Serik Belediyespor
+Serra Branca
 Servette Geneva
 Sevilla FC
 Sevilla FC (E)
+Shabab Al Ahli Dubai
+Shahrdari Nowshahr
+Shakhtar Donetsk
+Shamakhi FK
 Shamrock Rovers
 Shams Azar Qazvin
+Shan United
+Sharjah FC
 Sheffield United
 Sheffield Wednesday
 Shelbourne FC
+Shimshon Tel Aviv
 Shkendija Tetovo
+Shooting Stars
+Shrewsbury FC
 Shrewsbury Town
+Sisaket United FC
+Sitra Club
+Sivasspor
 Slavia Prague
+Sliema Wanderers
 Slovakia
+Slovakia Superliga
+Slovan Bratislava
+Slovenia
 Slovensky Pohar
+Sochaux-Montbeliard
+Sohar
 Solihull Moors FC
+Songkhla United FC
+Sousa EC PB
 South Africa
+Southampton
 Southampton FC
 Southend United
+Southridge United
 Spain
 Spain (E)
 Spain Copa del Rey
 Spain LaLiga
+Spain LaLiga 2
 Spain Supercopa
+Sparta & Zahar
 Sparta Prague
 Sparta Rotterdam
 Spezia Calcio
 Sporting Cristal
 Sporting Gijon
 Sporting Lisbon
+Sporting Lisbon B
+Sportivo Trinidense
+St Johnstone FC
 St Mirren FC
+St. Benfica
+St. Bownon
+St. Mirren
 St. Truidense VV
+Stade Bethunois
 Stade Brest 29
+Stade Etiene
 Stade Lausanne Ouchy
+Stade Lavallois MFC
+Stade Reims
+Stade Rennais
 Stade Rennes
 Standard Liege
+Stars J. Talents
+Stevenage FC
+Stockport County FC
 Stoke City
 Strasbourg Alsace
+Strasbourg Women
 Sudan
+Sukhothai FC
 Sumgayit FK
 Sunderland AFC
+Super League 2
+Sur SC
 Sutton United
 Swansea City
 Sweden
 Swindon Town
 Switzerland
+Switzerland Super League
 Sydney FC
 TOP Oss
+TSC Hoffenheim
 TSG Hoffenheim
+Talaea El Gaish
 Tamworth FC
 Tanzania
+Tarxien Rainbows FC
 Team Altamura
+Telecom Egypt
+Tenerife
+Ternana Calcio
 Thailand
 Thailand (E)
+The New Saints
+The New Saints FC
 Tigres UANL
+Togo
 Torino FC
+Tottenham
 Tottenham Hotspur
 Tottenham Hotspur (E)
 Toulouse FC
 Trabzonspor
+Tractor Sport Club
 Tranmere Rovers FC
+Trikala 2011
 Truro City
 Tunisia
+Turan Tovuz
+Turkey
 Turkiye
+Turkiye Super Lig
+Twente City FC
+Tzeirey Tamra
+Tzeirey Um El Fahem
 UD Almeria
+UD Ibiza
 UD Las Palmas
 UD Leiria
 UD Oliveirense
+UE Santa Coloma
 UEFA Champions League
 UEFA Champions League Women
 UEFA Conference League
 UEFA Europa League
 US Avellino
+US Avranches
 US Boulogne
 US Catanzaro
+US Chauvigny
+US Citta Di Pontedera
+US Concarneau
 US Cremonese
 US Lecce
+US Livorno 1915
+US Orleans
+US Ouakam
+US Pianese
+US Raon L Etape
+US Salernitana 1919
+US Sambenedettese
 USA
+USC Cremonese
+USL Dunkerque
+USM Alger
+USM Khenchela
 Udinese Calcio
 Uganda
 Ujpest FC Budapest
 Ukraine
+Ukraine Premier League
+Umm-Salal SC
+Umraniyespor
 Union Berlin
 Union Saint-Gilloise
 United Arab Emirates
 United States (E)
 Universidad O&M
+Universidad de Chile
+Unye Gucu
 Urawa Red Diamonds (E)
 Uruguay
+Uttaradit FC
 Uzbekistan
+VV Heesch
 VV Hoogeveen
 VV Katwijk
+VV Koninkl
 VVV Venlo
+VVV-Venlo
 Vaalerenga Oslo
 Valencia CF
 Valencia CF (E)
+Vallecano CF
+Valur
+Van Spor FK
+Vendée Fontenay Foot
 Venezia FC
 VfB Stuttgart
 VfL Bochum
 VfL Wolfsburg
+VfL Wolfsburg II
 Vietnam
 Vietnam (E)
+Viking Stavanger
+Vikingur Reykjavik
 Villarreal CF
 Virtus Entella
+Virtus FC
 Vis Pesaro 1898
 Vitesse Arnhem
+Vitesse City FC
+Vitoria SC Guimaraes
+Volos NFC W
 Volos NPS
+Vorskla Poltava
+WB Aïn Benian
 WC Qualification, UEFA
 Wales
 Wales Cymru Premier
+Wally Daan
 Walsall FC
+Warri Wolves F.C.
 Watford FC
 Wealdstone FC
 Wellington Phoenix FC
@@ -829,8 +1532,11 @@ Werder Bremen
 West Bromwich Albion
 West Ham United
 Western Sydney Wanderers
+Weston Super Mare FC
+Wigan Athletic
 Wikki Tourists FC
 Willem II Tilburg
+William II Tilburg
 Winner
 Winner 2025
 Winner 2026
@@ -839,13 +1545,20 @@ Woking FC
 Wolverhampton Wanderers
 World Cup
 Wrexham AFC
+Wycombe AFC
+Wycombe Wanderers
 Yellow-Red KV Mechelen
 Yeovil Town
+York City
 York City FC
 Young Boys Bern
 Yverdon-Sport
 ZSV Sportlust 46
+Zabbar Saint Patrick FC
+Zakho FC
 Zalaegerszeg TE
 Zambia
+Zed FC
 Zimbabwe
+Zira FK
 Zob Ahan Isfahan FC

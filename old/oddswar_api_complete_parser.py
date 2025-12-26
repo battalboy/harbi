@@ -14,9 +14,13 @@ import requests
 from typing import List, Dict, Optional
 
 
-def fetch_markets() -> Dict:
+def fetch_markets(interval='inplay', size=50) -> Dict:
     """
-    Fetch the list of in-play soccer markets.
+    Fetch the list of soccer markets for a given time interval.
+    
+    Args:
+        interval: Time interval - 'inplay' for live, 'today' for today's matches, 'all' for all upcoming
+        size: Maximum number of markets to fetch (default 50)
     
     Returns:
         dict: JSON response containing market list
@@ -25,8 +29,8 @@ def fetch_markets() -> Dict:
     params = {
         'marketTypeId': 'MATCH_ODDS',
         'page': '0',
-        'interval': 'inplay',
-        'size': '50',
+        'interval': interval,
+        'size': str(size),
         'setCache': 'false'
     }
     headers = {
@@ -206,7 +210,7 @@ def format_match(match: Dict) -> str:
     )
 
 
-def save_formatted_matches(matches: List[Dict], output_file: str = 'oddswar-formatted.txt'):
+def save_formatted_matches(matches: List[Dict], output_file: str = 'old/oddswar-formatted.txt'):
     """
     Save formatted matches to a text file.
     File is overwritten each time to ensure only latest data.
@@ -225,35 +229,76 @@ def save_formatted_matches(matches: List[Dict], output_file: str = 'oddswar-form
 def main():
     """Main execution function."""
     try:
-        print("Fetching Oddswar live soccer matches...")
+        print("Fetching Oddswar live and upcoming soccer matches...")
         
-        # Step 1: Fetch market list
-        print("\n1. Fetching market list...")
-        markets_data = fetch_markets()
-        markets = markets_data.get('exchangeMarkets', [])
-        print(f"   Found {len(markets)} markets")
+        all_markets = []
+        all_market_ids = []
         
-        if not markets:
-            print("No markets found!")
+        # Step 1: Fetch LIVE (in-play) markets
+        print("\n1. Fetching LIVE (in-play) markets...")
+        try:
+            inplay_data = fetch_markets(interval='inplay', size=50)
+            inplay_markets = inplay_data.get('exchangeMarkets', [])
+            all_markets.extend(inplay_markets)
+            all_market_ids.extend([m['id'] for m in inplay_markets])
+            print(f"   Found {len(inplay_markets)} live markets")
+        except Exception as e:
+            print(f"   Error fetching live markets: {e}")
+        
+        # Step 2: Fetch TODAY's upcoming markets
+        print("\n2. Fetching TODAY's upcoming markets...")
+        try:
+            today_data = fetch_markets(interval='today', size=100)
+            today_markets = today_data.get('exchangeMarkets', [])
+            
+            # Filter out duplicates (markets already in live)
+            existing_ids = set(all_market_ids)
+            new_today_markets = [m for m in today_markets if m['id'] not in existing_ids]
+            
+            all_markets.extend(new_today_markets)
+            all_market_ids.extend([m['id'] for m in new_today_markets])
+            print(f"   Found {len(new_today_markets)} new today markets ({len(today_markets)} total, {len(today_markets) - len(new_today_markets)} duplicates)")
+        except Exception as e:
+            print(f"   Error fetching today markets: {e}")
+        
+        # Step 3: Fetch ALL upcoming markets (next few days)
+        print("\n3. Fetching ALL upcoming markets...")
+        try:
+            all_data = fetch_markets(interval='all', size=200)
+            all_upcoming = all_data.get('exchangeMarkets', [])
+            
+            # Filter out duplicates
+            existing_ids = set(all_market_ids)
+            new_upcoming = [m for m in all_upcoming if m['id'] not in existing_ids]
+            
+            all_markets.extend(new_upcoming)
+            all_market_ids.extend([m['id'] for m in new_upcoming])
+            print(f"   Found {len(new_upcoming)} new upcoming markets ({len(all_upcoming)} total, {len(all_upcoming) - len(new_upcoming)} duplicates)")
+        except Exception as e:
+            print(f"   Error fetching all markets: {e}")
+        
+        if not all_markets:
+            print("\n⚠️  No markets found!")
             return
         
-        # Step 2: Extract market IDs
-        market_ids = [m['id'] for m in markets]
-        print(f"\n2. Fetching odds for {len(market_ids)} markets...")
+        print(f"\n📊 Total unique markets: {len(all_markets)}")
         
-        # Fetch details (API can handle multiple market IDs)
-        details_data = fetch_market_details(market_ids)
+        # Step 4: Fetch odds for all markets
+        print(f"\n4. Fetching odds for {len(all_market_ids)} markets...")
+        details_data = fetch_market_details(all_market_ids)
         details = details_data.get('marketDetails', [])
         print(f"   Received odds for {len(details)} markets")
         
-        # Step 3: Parse and combine data
-        print("\n3. Parsing match data...")
-        matches = parse_matches(markets_data, details_data)
+        # Step 5: Parse and combine data
+        print("\n5. Parsing match data...")
+        # Combine all markets into a single structure
+        combined_data = {'exchangeMarkets': all_markets}
+        matches = parse_matches(combined_data, details_data)
         print(f"   Successfully parsed {len(matches)} soccer matches")
         
-        # Step 4: Save to file
-        print("\n4. Saving formatted output...")
-        save_formatted_matches(matches)
+        # Step 6: Save to file
+        print("\n6. Saving formatted output...")
+        save_formatted_matches(matches, 'old/oddswar-formatted.txt')
         
         print("\n✨ Done!")
         

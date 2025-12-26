@@ -67,19 +67,35 @@ def fetch_events_data(endpoint_type='live'):
         endpoint_type: 'live' or 'prematch'
     
     Returns:
-        Combined dict with all events, or None
+        Combined dict with all events, or None on error
     """
     try:
         # Step 1: Get version manifest
         manifest_url = f"{BASE_URL}/api/v4/{endpoint_type}/brand/{BRAND_ID}/en/0"
         response = requests.get(manifest_url, headers=HEADERS, timeout=10)
-        response.raise_for_status()
+        
+        # Check for server errors
+        if response.status_code != 200:
+            print(f"\n\n❌ SERVER ERROR ({endpoint_type}) - Received HTTP {response.status_code}")
+            print(f"URL: {response.url}")
+            print(f"Response Headers: {dict(response.headers)}")
+            print(f"Response Body (first 500 chars):\n{response.text[:500]}")
+            print("\n💡 Possible causes:")
+            print("   - VPN/IP blocked by Roobet")
+            print("   - API endpoint changed")
+            print("   - Betsby API down")
+            print("\n🛑 Exiting due to server error...")
+            sys.exit(1)
+        
         manifest = response.json()
         
         # Get all versions to fetch
         main_version = manifest.get('version')
         if not main_version:
-            return None
+            print(f"\n\n❌ INVALID RESPONSE ({endpoint_type}) - No 'version' field in manifest")
+            print(f"Manifest: {str(manifest)[:500]}")
+            print("\n🛑 Exiting due to invalid response...")
+            sys.exit(1)
         
         # For prematch, also get top_events_versions and rest_events_versions
         versions_to_fetch = [main_version]
@@ -104,19 +120,37 @@ def fetch_events_data(endpoint_type='live'):
             events_url = f"{BASE_URL}/api/v4/{endpoint_type}/brand/{BRAND_ID}/en/{version}"
             response = requests.get(events_url, headers=HEADERS, timeout=10)
             
-            if response.status_code == 200:
-                data = response.json()
-                # Merge events from this version
-                if 'events' in data:
-                    combined_events.update(data['events'])
+            if response.status_code != 200:
+                print(f"\n\n❌ SERVER ERROR fetching version {version} - HTTP {response.status_code}")
+                print(f"URL: {response.url}")
+                print(f"Response: {response.text[:500]}")
+                print("\n🛑 Exiting due to server error...")
+                sys.exit(1)
+            
+            data = response.json()
+            # Merge events from this version
+            if 'events' in data:
+                combined_events.update(data['events'])
         
         if combined_events:
             return {'events': combined_events}
         
+        # No events found at all
+        print(f"\n\n⚠️  WARNING: No events found in {endpoint_type} data")
+        print(f"   Manifest had {len(unique_versions)} versions but no events")
         return None
         
+    except requests.RequestException as e:
+        print(f"\n\n❌ NETWORK ERROR ({endpoint_type}): {e}")
+        print(f"URL: {manifest_url if 'manifest_url' in locals() else 'N/A'}")
+        print("\n🛑 Exiting due to network error...")
+        sys.exit(1)
     except Exception as e:
-        return None
+        print(f"\n\n❌ UNEXPECTED ERROR ({endpoint_type}): {e}")
+        import traceback
+        traceback.print_exc()
+        print("\n🛑 Exiting due to unexpected error...")
+        sys.exit(1)
 
 
 def extract_team_names_from_data(data):

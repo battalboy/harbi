@@ -1,26 +1,12 @@
-Team 1: Bursaspor U19 | Team 2: Sariyerspor U19 | Team 1 Win: 1.83 | Draw: 3.15 | Team 2 Win: 4.1 | Link: https://en.stoiximan.gr/live/bursaspor-u19-sariyerspor-u19/77531090/
-Team 1: Sepahan Novin Esfahan | Team 2: Naft Masjed Soleyman FC | Team 1 Win: 3.25 | Draw: 1.93 | Team 2 Win: 3.55 | Link: https://en.stoiximan.gr/live/sepahan-novin-esfahan-naft-masjed-soleyman-fc/77564260/
-Team 1: Iraq U23 | Team 2: United Arab Emirates U23 | Team 1 Win: 1.9 | Draw: 3.0 | Team 2 Win: 4.0 | Link: https://en.stoiximan.gr/live/iraq-u23-united-arab-emirates-u23/77536380/
-Team 1: Al Jeel | Team 2: Jerash | Team 1 Win: 1.82 | Draw: 2.95 | Team 2 Win: 4.45 | Link: https://en.stoiximan.gr/live/al-jeel-jerash/77264321/
-Team 1: Shillong Lajong FC II | Team 2: Meghalaya Police | Team 1 Win: 1.03 | Draw: 9.25 | Team 2 Win: 32.0 | Link: https://en.stoiximan.gr/live/shillong-lajong-fc-ii-meghalaya-police/77522621/
-Team 1: OFK Petrovac | Team 2: FK Bokelj Kotor | Team 1 Win: 1.62 | Draw: 3.3 | Team 2 Win: 5.4 | Link: https://en.stoiximan.gr/live/ofk-petrovac-fk-bokelj-kotor/75924542/
-Team 1: Beyoglu Yeni Carsi AS U19 | Team 2: Erokspor U19 | Team 1 Win: 32.0 | Draw: 10.0 | Team 2 Win: 1.02 | Link: https://en.stoiximan.gr/live/beyoglu-yeni-carsi-as-u19-erokspor-u19/77367253/
-Team 1: FC Sellier & Bellot Vlasim | Team 2: FC Vion Zlate Moravce | Team 1 Win: 1.98 | Draw: 4.15 | Team 2 Win: 2.75 | Link: https://en.stoiximan.gr/live/fc-sellier-&-bellot-vlasim-fc-vion-zlate-moravce/77522633/
-Team 1: Sakaryaspor U19 | Team 2: Istanbulspor U19 | Team 1 Win: 5.0 | Draw: 3.75 | Team 2 Win: 1.55 | Link: https://en.stoiximan.gr/live/sakaryaspor-u19-istanbulspor-u19/77531093/
-Team 1: Thailand (W) | Team 2: Singapore (W) | Team 1 Win: 1.001 | Draw: 50.0 | Team 2 Win: 250.0 | Link: https://en.stoiximan.gr/live/thailand-w-singapore-w/77536374/
-Team 1: Al Hussein SC | Team 2: Karbalaa | Team 1 Win: 2.4 | Draw: 2.22 | Team 2 Win: 4.1 | Link: https://en.stoiximan.gr/live/al-hussein-sc-karbalaa/77562574/
-Team 1: FK Rudar Pljevlja | Team 2: FK Podgorica | Team 1 Win: 1.04 | Draw: 9.5 | Team 2 Win: 25.0 | Link: https://en.stoiximan.gr/live/fk-rudar-pljevlja-fk-podgorica/77522634/
-Team 1: Persib Bandung | Team 2: Bangkok United | Team 1 Win: 1.75 | Draw: 3.1 | Team 2 Win: 5.1 | Link: https://en.stoiximan.gr/live/persib-bandung-bangkok-united/77537384/
-Team 1: Chainat FC | Team 2: Songkhla United FC | Team 1 Win: N/A | Draw: N/A | Team 2 Win: N/A | Link: https://en.stoiximan.gr/live/chainat-fc-songkhla-united-fc/77523604/
-Team 1: Selangor FC | Team 2: Lion City Sailors | Team 1 Win: 2.8 | Draw: 3.75 | Team 2 Win: 2.07 | Link: https://en.stoiximan.gr/live/selangor-fc-lion-city-sailors/77537385/
-Team 1: FC Robo (W) | Team 2: Delta Queens (W) | Team 1 Win: 1.39 | Draw: 4.0 | Team 2 Win: 7.2 | Link: https://en.stoiximan.gr/live/fc-robo-w-delta-queens-w/77534395/
-Team 1: FC Gareji | Team 2: FC Spaeri | Team 1 Win: 1.85 | Draw: 3.1 | Team 2 Win: 4.05 | Link: https://en.stoiximan.gr/live/fc-gareji-fc-spaeri/77462985/
-Team 1: SL Benfica U19 | Team 2: Napoli U19 | Team 1 Win: 1.1 | Draw: 7.9 | Team 2 Win: 22.0 | Link: https://en.stoiximan.gr/live/sl-benfica-u19-napoli-u19/77279646/
-Team 1: Reliance FYC | Team 2: Kalina Rangers CFF | Team 1 Win: N/A | Draw: N/A | Team 2 Win: N/A | Link: https://en.stoiximan.gr/live/reliance-fyc-kalina-rangers-cff/77521636/
-Team 1: Athletic Bilbao U19 | Team 2: Paris Saint-Germain U19 | Team 1 Win: 1.85 | Draw: 3.85 | Team 2 Win: 3.6 | Link: https://en.stoiximan.gr/live/athletic-bilbao-u19-paris-saint-germain-u19/77279667/
-Team 1: Moik Baku | Team 2: Simal | Team 1 Win: N/A | Draw: N/A | Team 2 Win: N/A | Link: https://en.stoiximan.gr/live/moik-baku-simal/77522467/
-Team 1: Pendikspor U19 | Team 2: Ümraniyespor U19 | Team 1 Win: 1.13 | Draw: 6.7 | Team 2 Win: 13.0 | Link: https://en.stoiximan.gr/live/pendikspor-u19-umraniyespor-u19/77367258/
-Team 1: Villarreal CF U19 | Team 2: FC Copenhagen U19 | Team 1 Win: 1.34 | Draw: 4.15 | Team 2 Win: 10.5 | Link: https://en.stoiximan.gr/live/villarreal-cf-u19-fc-copenhagen-u19/77279648/
-Team 1: GD Estoril Praia U23 | Team 2: UD Leiria U23 | Team 1 Win: 2.05 | Draw: 3.05 | Team 2 Win: 3.4 | Link: https://en.stoiximan.gr/live/gd-estoril-praia-u23-ud-leiria-u23/77067439/
-Team 1: Oman U23 | Team 2: Yemen U23 | Team 1 Win: 2.95 | Draw: 2.87 | Team 2 Win: 2.37 | Link: https://en.stoiximan.gr/live/oman-u23-yemen-u23/77536379/
-Team 1: Baku Sporting FC | Team 2: Sahdag Qusar | Team 1 Win: 1.36 | Draw: 3.5 | Team 2 Win: 11.25 | Link: https://en.stoiximan.gr/live/baku-sporting-fc-sahdag-qusar/77522469/
+Team 1: Al-Riyadh SC | Team 2: Al-Ettifaq | Team 1 Win: 3.7 | Draw: 2.65 | Team 2 Win: 2.45 | Link: https://en.stoiximan.gr/live/al-riyadh-sc-al-ettifaq/74151700/
+Team 1: Hapoel Yaffa | Team 2: Beitar Haifa Yaacov | Team 1 Win: 18.5 | Draw: 8.25 | Team 2 Win: 1.07 | Link: https://en.stoiximan.gr/live/hapoel-yaffa-beitar-haifa-yaacov/78255470/
+Team 1: Hapoel Petah Tikva | Team 2: Hapoel Ironi Karmiel | Team 1 Win: 1.04 | Draw: 8.25 | Team 2 Win: 35 | Link: https://en.stoiximan.gr/live/hapoel-petah-tikva-hapoel-ironi-karmiel/78255463/
+Team 1: Pyramids FC | Team 2: Ismaily SC | Team 1 Win: 11.75 | Draw: 5.5 | Team 2 Win: 1.19 | Link: https://en.stoiximan.gr/live/pyramids-fc-ismaily-sc/78218993/
+Team 1: SC Ramla | Team 2: MS Shikun Hamizrach | Team 1 Win: 7.6 | Draw: 3.6 | Team 2 Win: 1.42 | Link: https://en.stoiximan.gr/live/sc-ramla-ms-shikun-hamizrach/78101433/
+Team 1: El Zamalek | Team 2: Smouha SC | Team 1 Win: 2.1 | Draw: 2.8 | Team 2 Win: 3.65 | Link: https://en.stoiximan.gr/live/el-zamalek-smouha-sc/78218994/
+Team 1: Bnei Sakhnin FC | Team 2: Maccabi Kabilio Jaffa | Team 1 Win: 1.9 | Draw: 2.37 | Team 2 Win: 6.1 | Link: https://en.stoiximan.gr/live/bnei-sakhnin-fc-maccabi-kabilio-jaffa/78255464/
+Team 1: Bnei Yehuda Tel Aviv | Team 2: Maccabi Kiryat Ata Bialik | Team 1 Win: 1.18 | Draw: 4.85 | Team 2 Win: 17.5 | Link: https://en.stoiximan.gr/live/bnei-yehuda-tel-aviv-maccabi-kiryat-ata-bialik/78255466/
+Team 1: Beitar Kfar Saba Shlomi | Team 2: SC Hapoel Lod | Team 1 Win: 9.5 | Draw: 4.45 | Team 2 Win: 1.29 | Link: https://en.stoiximan.gr/live/beitar-kfar-saba-shlomi-sc-hapoel-lod/78052806/
+Team 1: Hapoel Tel Aviv FC | Team 2: FC Ashdod | Team 1 Win: 1.57 | Draw: 3.5 | Team 2 Win: 5.2 | Link: https://en.stoiximan.gr/live/hapoel-tel-aviv-fc-fc-ashdod/78255467/
+Team 1: Hapoel Raanana | Team 2: Maccabi Kiryat Gat | Team 1 Win: 2.4 | Draw: 2.32 | Team 2 Win: 3.85 | Link: https://en.stoiximan.gr/live/hapoel-raanana-maccabi-kiryat-gat/78255468/
+Team 1: Neom SC | Team 2: Al-Najma (KSA) | Team 1 Win: 1.52 | Draw: 3.4 | Team 2 Win: 9 | Link: https://en.stoiximan.gr/live/neom-sc-al-najma-ksa/74151728/

@@ -62,8 +62,28 @@ def fetch_team_names() -> Set[str]:
     """Fetch current team names from Stoiximan live API."""
     try:
         response = requests.get(API_URL, params=API_PARAMS, headers=HEADERS, timeout=10)
-        response.raise_for_status()
+        
+        # Check for server errors
+        if response.status_code != 200:
+            print(f"\n\n❌ SERVER ERROR - Received HTTP {response.status_code}")
+            print(f"URL: {response.url}")
+            print(f"Response Headers: {dict(response.headers)}")
+            print(f"Response Body (first 500 chars):\n{response.text[:500]}")
+            print("\n💡 Possible causes:")
+            print("   - VPN not connected to Greek IP")
+            print("   - Cloudflare blocking")
+            print("   - API endpoint changed")
+            print("\n🛑 Exiting due to server error...")
+            sys.exit(1)
+        
         data = response.json()
+        
+        # Check if we got valid data
+        if not data or 'events' not in data:
+            print(f"\n\n❌ INVALID RESPONSE - No data or missing 'events' field")
+            print(f"Response: {str(data)[:500]}")
+            print("\n🛑 Exiting due to invalid response...")
+            sys.exit(1)
         
         teams = set()
         events = data.get('events', {})
@@ -93,12 +113,17 @@ def fetch_team_names() -> Set[str]:
         return teams
     
     except requests.RequestException as e:
-        print(f"❌ Error fetching data: {e}")
-        print(f"   💡 Check VPN connection to Greece")
-        return set()
+        print(f"\n\n❌ NETWORK ERROR: {e}")
+        print(f"URL: {API_URL}")
+        print("\n💡 Check VPN connection to Greece")
+        print("\n🛑 Exiting due to network error...")
+        sys.exit(1)
     except Exception as e:
-        print(f"❌ Error parsing data: {e}")
-        return set()
+        print(f"\n\n❌ UNEXPECTED ERROR: {e}")
+        import traceback
+        traceback.print_exc()
+        print("\n🛑 Exiting due to unexpected error...")
+        sys.exit(1)
 
 
 def signal_handler(sig, frame):

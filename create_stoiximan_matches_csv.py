@@ -19,20 +19,22 @@ def load_team_names(filename):
 
 def normalize_text(text):
     """
-    Remove diacritics/accents from text for comparison purposes only.
+    Remove diacritics/accents and convert to lowercase for comparison purposes only.
     
     Examples:
-        Ümraniyespor → Umraniyespor
-        Beşiktaş → Besiktas
-        Fenerbahçe → Fenerbahce
+        Ümraniyespor → umraniyespor
+        Beşiktaş → besiktas
+        FENERBAHÇE → fenerbahce
     
     Returns:
-        Normalized text (ASCII, no diacritics)
+        Normalized text (ASCII, lowercase, no diacritics)
     """
     # NFD = Canonical Decomposition (separates base char from diacritic)
     nfd = unicodedata.normalize('NFD', text)
     # Filter out combining characters (the diacritics)
-    return ''.join(char for char in nfd if unicodedata.category(char) != 'Mn')
+    no_diacritics = ''.join(char for char in nfd if unicodedata.category(char) != 'Mn')
+    # Convert to lowercase for case-insensitive comparison
+    return no_diacritics.lower()
 
 
 def extract_indicators(team_name):
@@ -63,7 +65,7 @@ def extract_indicators(team_name):
     return indicators
 
 
-def find_best_match(oddswar_team, stoiximan_teams, threshold=80):
+def find_best_match(oddswar_team, stoiximan_teams, threshold=70):
     """
     Find the best matching Stoiximan team name for an Oddswar team.
     Uses normalized text (no diacritics) for comparison, but returns original names.
@@ -153,7 +155,7 @@ def create_matches_csv():
     except FileNotFoundError:
         print(f"\n📄 No existing stoiximan_matches.csv found - will create new file")
     
-    print("\n🔍 Matching teams (threshold: 80%)...")
+    print("\n🔍 Matching teams (threshold: 70%)...")
     print("   ℹ️  Each Stoiximan team can only be matched once (prevents duplicates)")
     print("   ℹ️  Preserving existing matches - only filling in blanks")
     print("   ℹ️  Enforcing indicator matching (U19/U20/U21/U23/(W)/II/B must match)")

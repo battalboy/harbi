@@ -1,5 +1,20 @@
 # Harbi - Arbitrage Betting System (Arbing Software)
 
+## Client Requirements
+
+**This is a commissioned software project.** The client requires that all traditional betting sites included in the project operate at **full capacity**, meaning:
+
+- **Maximum team coverage**: Each traditional betting site must have as many team names collected as possible
+- **Balanced coverage**: Having 150 teams for one site while another site has 1,000+ teams is **not acceptable**
+- **Quality standard**: All included sites must provide comparable and comprehensive team coverage to maximize arbitrage opportunities
+- **Implementation priority**: If a site cannot provide adequate team coverage through available API methods, alternative approaches (browser automation, etc.) must be implemented to meet the client's requirements
+
+**Current Coverage Status:**
+- Oddswar: ~1,874 teams ✅ (Master key - defines available opportunities)
+- Stoiximan: ~3,521 teams ✅ (Excellent coverage - 88.8% match rate)
+- Roobet: ~1,545 teams ✅ (Good coverage - ~38% match rate)
+- Tumbet: ~881 teams ⚠️ (Moderate coverage - ~49% match rate, API-based collection)
+
 ## Project Overview
 
 **Project Name**: Harbi
@@ -33,16 +48,65 @@ The same team has different names across bookmakers.
 - **Tools**: Fuzzy matching with special rules (indicators, diacritics)
 - **Purpose**: Enable accurate event matching in Step 2
 
+#### Matching Algorithm Details
+The matching system uses **indicator-first filtering** to ensure accurate matches:
+
+**Indicators Extracted:**
+- **Age groups**: U19, U20, U21, U23 (youth teams)
+- **Gender**: (W) (women's teams)
+- **Reserve teams**: II or B (treated as equivalent under 'RESERVE' indicator)
+
+**Matching Rules:**
+- Teams are filtered by indicators BEFORE fuzzy matching
+- Only teams with EXACT matching indicators can be compared
+- Examples:
+  - ✅ Arsenal U19 → can ONLY match teams with U19
+  - ✅ Arsenal (W) → can ONLY match teams with (W)
+  - ✅ Arsenal → can ONLY match teams WITHOUT indicators
+  - ❌ Arsenal U19 → CANNOT match Arsenal (no U19)
+  - ❌ Arsenal (W) → CANNOT match Arsenal FC (no W)
+  - ❌ Juventus U20 → CANNOT match Juventus U23 (different ages)
+
+**Normalization Process:**
+- **Diacritics removal**: Ümraniyespor → Umraniyespor, Beşiktaş → Besiktas
+- **Case-insensitive**: NEOM Sports Club → neom sports club (for comparison only)
+- **Original names preserved**: Output CSVs contain original team names with proper casing
+
+**Fuzzy Matching:**
+- Uses `rapidfuzz` library with `fuzz.ratio` scorer
+- **Current threshold**: 60% minimum similarity required for a match
+- Lower threshold allows catching abbreviations (e.g., "Sports Club" vs "SC" at 60.9%)
+- Accepts risk of false positives requiring manual review
+
 #### Team Collection Scripts
 - **Oddswar**: `collect_oddswar_teams.py` → outputs `oddswar_names.txt`
 - **Stoiximan**: `collect_stoiximan_teams.py` → outputs `stoiximan_names.txt`
 - **Roobet**: `collect_roobet_teams.py` → outputs `roobet_names.txt`
+  - Uses Betby API (sptpub.com) with two-step version system
+  - **Breakthrough discovery**: The `rest_events_versions` array in API manifest unlocks comprehensive coverage
+  - **Critical**: Fetches from multiple `rest_events_versions` endpoints (each contains ~160 matches)
+  - Changed collection from ~60 teams (main version only) to 700+ teams (all versions)
+  - Can collect comprehensive coverage in single run (~10 seconds) vs waiting days/weeks
+  - Fetches both LIVE and PREMATCH matches
+  - No geographic restrictions
 - **Tumbet**: `collect_tumbet_teams.py` → outputs `tumbet_names.txt`
+  - Uses SportWide API (analytics-sp.googleserv.tech)
+  - Fetches both live and prematch data
+  - No geographic restrictions on API (website requires Turkish VPN)
 
 #### Team Matching Scripts
 - **Stoiximan Matching**: `create_stoiximan_matches_csv.py` → creates `stoiximan_matches.csv` (Oddswar ↔ Stoiximan mappings with confidence scores)
 - **Roobet Matching**: `create_roobet_matches_csv.py` → creates `roobet_matches.csv` (Oddswar ↔ Roobet mappings with confidence scores)
 - **Tumbet Matching**: `create_tumbet_matches_csv.py` → creates `tumbet_matches.csv` (Oddswar ↔ Tumbet mappings with confidence scores)
+
+#### API Parser Scripts (in `old/` folder)
+These scripts fetch live and upcoming matches with full details (teams, odds, links):
+- `old/oddswar_api_complete_parser.py` → `old/oddswar-formatted.txt` (live + upcoming matches)
+- `old/stoiximan_api_complete_parser.py` → `old/stoiximan-formatted.txt` (live only - no prematch API available)
+- `old/roobet_api_complete_parser.py` → `old/roobet-formatted.txt` (live + prematch via Betby API)
+- `old/tumbet_api_complete_parser.py` → `old/tumbet-formatted.txt` (live + prematch via SportWide API)
+
+These can extract team names from formatted output and add them to `*_names.txt` files to discover new teams.
 
 #### Workflow: Proper Team Name Matching Sequence
 To perform a complete team name matching run, execute scripts in this order:
@@ -85,8 +149,13 @@ Events (two teams playing each other) are formatted differently across sites.
 - ✅ **Both correct** = Valid arbitrage opportunity identification
 
 ### Current Status
-- ✅ **Step 1 Complete**: Team name matching working (88.8% Stoiximan, 26.7% Roobet, 8.8% Tumbet)
+- ✅ **Step 1 Complete**: Team name matching working (88.8% Stoiximan, ~38% Roobet, ~49% Tumbet)
 - 🔜 **Step 2 Next**: Event matching across sites (not yet implemented)
 
 ## Important
 This system does NOT place bets automatically. It identifies opportunities for the user to manually execute.
+
+## Development Workflow Rules
+- **Git Commits & Pushes**: DO NOT commit to local git or push to GitHub unless the user explicitly requests it
+- Only perform git operations (add, commit, push) when the user gives express permission
+- **Documentation**: DO NOT create large markdown documentation files for small code fixes, bug fixes, or routine changes. Report changes concisely in the chat instead. Reserve documentation files for significant features, architectural decisions, or complex system explanations only.
