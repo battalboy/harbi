@@ -189,13 +189,13 @@ def main():
     if len(sys.argv) >= 2:
         # Read from file mode
         input_file = sys.argv[1]
-        output_file = sys.argv[2] if len(sys.argv) > 2 else 'old/stoiximan-formatted.txt'
+        output_file = sys.argv[2] if len(sys.argv) > 2 else 'stoiximan-formatted.txt'
         
         print(f"Reading from file: {input_file}...")
         matches = parse_json_matches_with_odds(input_file)
     else:
         # Fetch from API mode
-        output_file = 'old/stoiximan-formatted.txt'
+        output_file = 'stoiximan-formatted.txt'
         
         try:
             print("Fetching live data from Stoiximan API...")

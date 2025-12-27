@@ -65,7 +65,7 @@ def extract_indicators(team_name):
     return indicators
 
 
-def find_best_match(oddswar_team, stoiximan_teams, threshold=70):
+def find_best_match(oddswar_team, stoiximan_teams, threshold=80):
     """
     Find the best matching Stoiximan team name for an Oddswar team.
     Uses normalized text (no diacritics) for comparison, but returns original names.
@@ -155,7 +155,7 @@ def create_matches_csv():
     except FileNotFoundError:
         print(f"\n📄 No existing stoiximan_matches.csv found - will create new file")
     
-    print("\n🔍 Matching teams (threshold: 70%)...")
+    print("\n🔍 Matching teams (threshold: 80%)...")
     print("   ℹ️  Each Stoiximan team can only be matched once (prevents duplicates)")
     print("   ℹ️  Preserving existing matches - only filling in blanks")
     print("   ℹ️  Enforcing indicator matching (U19/U20/U21/U23/(W)/II/B must match)")

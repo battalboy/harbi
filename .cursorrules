@@ -99,12 +99,12 @@ The matching system uses **indicator-first filtering** to ensure accurate matche
 - **Roobet Matching**: `create_roobet_matches_csv.py` → creates `roobet_matches.csv` (Oddswar ↔ Roobet mappings with confidence scores)
 - **Tumbet Matching**: `create_tumbet_matches_csv.py` → creates `tumbet_matches.csv` (Oddswar ↔ Tumbet mappings with confidence scores)
 
-#### API Parser Scripts (in `old/` folder)
+#### API Parser Scripts
 These scripts fetch live and upcoming matches with full details (teams, odds, links):
-- `old/oddswar_api_complete_parser.py` → `old/oddswar-formatted.txt` (live + upcoming matches)
-- `old/stoiximan_api_complete_parser.py` → `old/stoiximan-formatted.txt` (live only - no prematch API available)
-- `old/roobet_api_complete_parser.py` → `old/roobet-formatted.txt` (live + prematch via Betby API)
-- `old/tumbet_api_complete_parser.py` → `old/tumbet-formatted.txt` (live + prematch via SportWide API)
+- `event_create_oddswar.py` → `oddswar-formatted.txt` (live + upcoming matches)
+- `event_create_stoiximan.py` → `stoiximan-formatted.txt` (live only - no prematch API available)
+- `event_create_roobet.py` → `roobet-formatted.txt` (live + prematch via Betby API)
+- `event_create_tumbet.py` → `tumbet-formatted.txt` (live + prematch via SportWide API)
 
 These can extract team names from formatted output and add them to `*_names.txt` files to discover new teams.
 

@@ -89,6 +89,7 @@ Al Faisaly ( KSA )
 Al Faisaly Amman
 Al Feiha U21
 Al Fujairah U19
+Al Gharafa
 Al Hamriyah
 Al Hidd
 Al Hikma
@@ -347,7 +348,6 @@ Bnei Yehuda
 Bochum
 Bodo Glimt
 Bodo/Glimt U19
-Bodrum Belediyesi Bodru
 Bodrum Belediyesi Bodrumspor
 Bodrumspor
 Bohemians 1905

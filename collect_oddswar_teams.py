@@ -2,8 +2,12 @@
 """
 Oddswar Team Name Collector
 
-Fetches ALL available soccer matches from Oddswar (all pages, interval=all)
-and collects unique team names. Runs every 60-120 seconds (random interval).
+Fetches ALL available soccer matches from Oddswar from three intervals:
+- LIVE (in-play) matches
+- TODAY's matches
+- ALL upcoming matches
+
+Collects unique team names. Runs every 60-120 seconds (random interval).
 Output: oddswar_names.txt (one team name per line, sorted, no duplicates)
 """
 
@@ -53,20 +57,31 @@ def save_teams(teams: Set[str]):
             f.write(team + '\n')
 
 
-def fetch_all_team_names() -> Set[str]:
-    """Fetch ALL team names from Oddswar API (paginated)."""
-    all_teams = set()
+def fetch_teams_from_interval(interval: str, size: int) -> Set[str]:
+    """
+    Fetch team names from a specific time interval.
+    
+    Args:
+        interval: 'inplay' (live), 'today', or 'all' (upcoming)
+        size: Number of matches to fetch per page
+    
+    Returns:
+        Set of team names from this interval
+    """
+    teams = set()
     
     try:
         # First, get page 0 to find total pages
         params = BASE_PARAMS.copy()
+        params['interval'] = interval
+        params['size'] = str(size)
         params['page'] = '0'
         
         response = requests.get(API_URL, params=params, headers=HEADERS, timeout=10)
         
         # Check for server errors
         if response.status_code != 200:
-            print(f"\n\n❌ SERVER ERROR - Received HTTP {response.status_code}")
+            print(f"\n\n❌ SERVER ERROR ({interval}) - Received HTTP {response.status_code}")
             print(f"URL: {response.url}")
             print(f"Response Headers: {dict(response.headers)}")
             print(f"Response Body (first 500 chars):\n{response.text[:500]}")
@@ -77,7 +92,7 @@ def fetch_all_team_names() -> Set[str]:
         
         # Check if we got valid data
         if not data or 'lastPage' not in data:
-            print(f"\n\n❌ INVALID RESPONSE - No data or missing 'lastPage' field")
+            print(f"\n\n❌ INVALID RESPONSE ({interval}) - No data or missing 'lastPage' field")
             print(f"Response: {str(data)[:500]}")
             print("\n🛑 Exiting due to invalid response...")
             sys.exit(1)
@@ -85,16 +100,14 @@ def fetch_all_team_names() -> Set[str]:
         last_page = data.get('lastPage', 0)
         total_pages = last_page + 1
         
-        print(f"   📄 Found {total_pages} pages to fetch", end=" ")
-        
-        # Fetch all pages
+        # Fetch all pages for this interval
         for page in range(0, total_pages):
             params['page'] = str(page)
             
             response = requests.get(API_URL, params=params, headers=HEADERS, timeout=10)
             
             if response.status_code != 200:
-                print(f"\n\n❌ SERVER ERROR on page {page} - HTTP {response.status_code}")
+                print(f"\n\n❌ SERVER ERROR ({interval}, page {page}) - HTTP {response.status_code}")
                 print(f"URL: {response.url}")
                 print(f"Response: {response.text[:500]}")
                 print("\n🛑 Exiting due to server error...")
@@ -112,27 +125,53 @@ def fetch_all_team_names() -> Set[str]:
                 if ' v ' in event_name:
                     parts = event_name.split(' v ')
                     if len(parts) == 2:
-                        all_teams.add(parts[0].strip())
-                        all_teams.add(parts[1].strip())
+                        teams.add(parts[0].strip())
+                        teams.add(parts[1].strip())
             
             # Small delay between pages
             if page < total_pages - 1:
                 time.sleep(0.1)
         
-        print(f"(fetched {total_pages} pages)")
-        return all_teams
+        return teams
     
     except requests.RequestException as e:
-        print(f"\n\n❌ NETWORK ERROR: {e}")
+        print(f"\n\n❌ NETWORK ERROR ({interval}): {e}")
         print(f"URL: {API_URL}")
         print("\n🛑 Exiting due to network error...")
         sys.exit(1)
     except Exception as e:
-        print(f"\n\n❌ UNEXPECTED ERROR: {e}")
+        print(f"\n\n❌ UNEXPECTED ERROR ({interval}): {e}")
         import traceback
         traceback.print_exc()
         print("\n🛑 Exiting due to unexpected error...")
         sys.exit(1)
+
+
+def fetch_all_team_names() -> Set[str]:
+    """Fetch ALL team names from Oddswar API (all intervals: live, today, upcoming)."""
+    all_teams = set()
+    
+    # Fetch from LIVE (in-play) matches
+    print(f"   📍 LIVE matches...", end=" ", flush=True)
+    inplay_teams = fetch_teams_from_interval('inplay', size=50)
+    all_teams.update(inplay_teams)
+    print(f"{len(inplay_teams)} teams")
+    
+    # Fetch from TODAY's matches
+    print(f"   📅 TODAY matches...", end=" ", flush=True)
+    today_teams = fetch_teams_from_interval('today', size=100)
+    new_today = today_teams - all_teams
+    all_teams.update(today_teams)
+    print(f"{len(today_teams)} teams ({len(new_today)} new)")
+    
+    # Fetch from ALL upcoming matches
+    print(f"   🔮 UPCOMING matches...", end=" ", flush=True)
+    upcoming_teams = fetch_teams_from_interval('all', size=200)
+    new_upcoming = upcoming_teams - all_teams
+    all_teams.update(upcoming_teams)
+    print(f"{len(upcoming_teams)} teams ({len(new_upcoming)} new)")
+    
+    return all_teams
 
 
 def signal_handler(sig, frame):
@@ -148,11 +187,13 @@ def main():
     signal.signal(signal.SIGINT, signal_handler)
     
     print("=" * 60)
-    print("🟠 Oddswar Team Name Collector (ALL MATCHES)")
+    print("🟠 Oddswar Team Name Collector (LIVE + TODAY + UPCOMING)")
     print("=" * 60)
     print(f"📝 Output file: {OUTPUT_FILE}")
     print(f"⏱️  Interval: {MIN_INTERVAL}-{MAX_INTERVAL} seconds (random)")
-    print(f"🌍 Fetches ALL available matches (not just live)")
+    print(f"📍 Fetches LIVE matches (in-play)")
+    print(f"📅 Fetches TODAY's matches")
+    print(f"🔮 Fetches UPCOMING matches")
     print(f"🛑 Press Ctrl+C to stop\n")
     
     # Load existing teams

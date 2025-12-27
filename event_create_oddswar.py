@@ -210,7 +210,7 @@ def format_match(match: Dict) -> str:
     )
 
 
-def save_formatted_matches(matches: List[Dict], output_file: str = 'old/oddswar-formatted.txt'):
+def save_formatted_matches(matches: List[Dict], output_file: str = 'oddswar-formatted.txt'):
     """
     Save formatted matches to a text file.
     File is overwritten each time to ensure only latest data.
@@ -298,7 +298,7 @@ def main():
         
         # Step 6: Save to file
         print("\n6. Saving formatted output...")
-        save_formatted_matches(matches, 'old/oddswar-formatted.txt')
+        save_formatted_matches(matches, 'oddswar-formatted.txt')
         
         print("\n✨ Done!")
         

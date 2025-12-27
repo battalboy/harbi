@@ -298,7 +298,7 @@ def format_match(match: Dict) -> str:
     )
 
 
-def save_formatted_matches(matches: List[Dict], output_file: str = 'old/tumbet-formatted.txt'):
+def save_formatted_matches(matches: List[Dict], output_file: str = 'tumbet-formatted.txt'):
     """
     Save formatted matches to a text file.
     File is overwritten each time to ensure only latest data.
