@@ -14,6 +14,7 @@
 - Stoiximan: ~3,521 teams ✅ (Excellent coverage - 88.8% match rate)
 - Roobet: ~1,545 teams ✅ (Good coverage - ~38% match rate)
 - Tumbet: ~881 teams ⚠️ (Moderate coverage - ~49% match rate, API-based collection)
+- Stake: ~203 teams ⚠️ (Growing - depends on active leagues, browser automation)
 
 ## Project Overview
 
@@ -21,7 +22,7 @@
 
 This is **ARBING SOFTWARE**, not betting software. The goal is to identify and exploit odds discrepancies between:
 - **Oddswar** (betting exchange - where you can "sell" or lay odds)
-- **Stoiximan, Roobet & Tumbet** (traditional bookmakers - where you "buy" or back odds)
+- **Stoiximan, Roobet, Stake & Tumbet** (traditional bookmakers - where you "buy" or back odds)
 
 ### How Arbitrage Works
 1. Find the same event on both exchange and traditional bookmaker
@@ -93,11 +94,23 @@ The matching system uses **indicator-first filtering** to ensure accurate matche
   - Uses SportWide API (analytics-sp.googleserv.tech)
   - Fetches both live and prematch data
   - No geographic restrictions on API (website requires Turkish VPN)
+- **Stake**: `collect_stake_teams.py` → outputs `stake_names.txt`
+  - Uses Sportradar (MTS - Managed Trading Services) for odds backend
+  - **No public API** - requires browser automation with DOM scraping
+  - Uses `undetected-chromedriver` to bypass Cloudflare protection
+  - **Geoblocked**: Requires VPN (Canada, Germany, Brazil recommended)
+  - **Key selector**: `span.ds-body-md-strong.truncate` (discovered via Browser MCP)
+  - Smart `/all` redirect detection: skips empty leagues (off-season)
+  - Scrapes 23+ major tournaments across multiple countries
+  - Coverage varies by season (leagues redirect to `/all` when no active matches)
+  - ~203 teams currently (grows as leagues come in season)
+  - **Alternative**: Paid scraping service available at https://scrappey.com/scrapers/finance/stake.com-scraper (may be considered for future use)
 
 #### Team Matching Scripts
 - **Stoiximan Matching**: `create_stoiximan_matches_csv.py` → creates `stoiximan_matches.csv` (Oddswar ↔ Stoiximan mappings with confidence scores)
 - **Roobet Matching**: `create_roobet_matches_csv.py` → creates `roobet_matches.csv` (Oddswar ↔ Roobet mappings with confidence scores)
 - **Tumbet Matching**: `create_tumbet_matches_csv.py` → creates `tumbet_matches.csv` (Oddswar ↔ Tumbet mappings with confidence scores)
+- **Stake Matching**: `create_stake_matches_csv.py` → creates `stake_matches.csv` (Oddswar ↔ Stake mappings with confidence scores) - **TO BE CREATED**
 
 #### API Parser Scripts
 These scripts fetch live and upcoming matches with full details (teams, odds, links):
@@ -105,6 +118,7 @@ These scripts fetch live and upcoming matches with full details (teams, odds, li
 - `event_create_stoiximan.py` → `stoiximan-formatted.txt` (live only - no prematch API available)
 - `event_create_roobet.py` → `roobet-formatted.txt` (live + prematch via Betby API)
 - `event_create_tumbet.py` → `tumbet-formatted.txt` (live + prematch via SportWide API)
+- `event_create_stake.py` → `stake-formatted.txt` (TO BE CREATED - will use browser automation like team collector)
 
 These can extract team names from formatted output and add them to `*_names.txt` files to discover new teams.
 
@@ -114,12 +128,11 @@ To perform a complete team name matching run, execute scripts in this order:
 2. `collect_stoiximan_teams.py` - Collect Stoiximan teams
 3. `collect_roobet_teams.py` - Collect Roobet teams
 4. `collect_tumbet_teams.py` - Collect Tumbet teams
-5. `create_stoiximan_matches_csv.py` - Match Oddswar ↔ Stoiximan
-6. `create_roobet_matches_csv.py` - Match Oddswar ↔ Roobet
-7. `create_tumbet_matches_csv.py` - Match Oddswar ↔ Tumbet
-
-#### Future Traditional Sites
-- **Stake.com** - To be added for expanded arbitrage opportunities
+5. `collect_stake_teams.py` - Collect Stake teams (requires VPN, browser automation)
+6. `create_stoiximan_matches_csv.py` - Match Oddswar ↔ Stoiximan
+7. `create_roobet_matches_csv.py` - Match Oddswar ↔ Roobet
+8. `create_tumbet_matches_csv.py` - Match Oddswar ↔ Tumbet
+9. `create_stake_matches_csv.py` - Match Oddswar ↔ Stake (TO BE CREATED)
 
 #### **IMPORTANT: Oddswar as Master Key**
 - **Oddswar team names are the MASTER KEY** for all comparisons
@@ -127,7 +140,7 @@ To perform a complete team name matching run, execute scripts in this order:
 - **If a team isn't on Oddswar, it won't appear in the software** - Oddswar defines the universe of possible arbitrage opportunities
 - This is because:
   - Oddswar is the **exchange** (where you lay/sell odds)
-  - Stoiximan/Roobet/Tumbet are **traditional bookmakers** (where you back/buy odds)
+  - Stoiximan/Roobet/Stake/Tumbet are **traditional bookmakers** (where you back/buy odds)
   - Arbitrage identification requires: "Is this Oddswar event also on traditional sites?"
   - Teams/events that only exist on traditional sites (but not Oddswar) are irrelevant for arbitrage
 - CSV structure: `Oddswar` column is always first, followed by the traditional site column
@@ -143,13 +156,44 @@ Events (two teams playing each other) are formatted differently across sites.
 - **Dependencies**: Requires Step 1 (team name matching) to be completed first
 - **Critical**: Only after BOTH standardizations work can we compare odds
 
+#### Date/Time Matching for Event Validation
+**Date/time information is available from all four sites** and will be used as an additional matching criterion:
+
+**Data Availability:**
+- **Oddswar**: `openDate` field (currently extracted, not displayed)
+- **Stoiximan**: `startTime` field (currently extracted, not displayed)
+- **Roobet**: `scheduled` field (Unix timestamp - NOT yet extracted)
+- **Tumbet**: `stunix` field (Unix timestamp - currently extracted, not displayed)
+
+**Event Matching Strategy:**
+- Extract and normalize date/time information from all sites to a common format
+- Use date/time matching as a **confidence booster** for event identification
+- **Matching Rule**: If team name match is ≥80% AND date/starttime matches exactly (within reasonable tolerance, e.g., ±15 minutes):
+  - → Mark as **100% event match** (high confidence)
+  - This handles cases where team names have slight variations but the match timing confirms it's the same event
+- **Example**: 
+  - Team match: "Man Utd vs Liverpool" ↔ "Manchester United vs Liverpool FC" (85% similarity)
+  - Date/time: Both show "2025-12-28 15:00:00"
+  - Result: 100% event match (date/time confirms same event despite name variations)
+
+**Implementation Notes:**
+- Unix timestamps (Roobet, Tumbet) need conversion to human-readable format for comparison
+- Time zone normalization may be required
+- Small time differences (±15 min) should be tolerated to account for slight API variations
+- Date/time matching helps reduce false positives in team name matching
+
 ### Why Both Matter
 - ❌ **Wrong team match** = Comparing different teams = False arbitrage
 - ❌ **Wrong event format** = Missing valid opportunities or wrong pairings
 - ✅ **Both correct** = Valid arbitrage opportunity identification
 
 ### Current Status
-- ✅ **Step 1 Complete**: Team name matching working (88.8% Stoiximan, ~38% Roobet, ~49% Tumbet)
+- ✅ **Step 1 In Progress**: Team name collection and matching
+  - Oddswar: ~1,874 teams ✅
+  - Stoiximan: ~3,521 teams ✅ (88.8% match rate with Oddswar)
+  - Roobet: ~1,545 teams ✅ (~38% match rate with Oddswar)
+  - Tumbet: ~881 teams ✅ (~49% match rate with Oddswar)
+  - Stake: ~203 teams ✅ (browser automation, match CSV pending)
 - 🔜 **Step 2 Next**: Event matching across sites (not yet implemented)
 
 ## Important

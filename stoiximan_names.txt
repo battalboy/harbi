@@ -156,6 +156,7 @@ AS Real Bamako
 AS Roma
 AS Roma (W)
 AS Saint Etienne (W)
+AS Saloum
 AS Sariyer
 AS Trencin
 AS Vointa Crevedia
@@ -246,6 +247,7 @@ Al Arabi Al Saudi
 Al Arabi Doha
 Al Arabi Irbid
 Al Bukiryah U21
+Al Dhaid U19
 Al Draih
 Al Etisalat
 Al Ettifaq U21
@@ -270,6 +272,7 @@ Al Ittifaq FC
 Al Ittifaq Maqaba
 Al Ittihad Alexandria
 Al Ittihad Kalba
+Al Ittihad Kalba U19
 Al Ittihad Kalba U23
 Al Jabalain
 Al Jandal
@@ -287,6 +290,7 @@ Al Mudhaibi
 Al Nahda Al-Buraimi
 Al Nasiriya
 Al Nasr SC Dubai
+Al Nasr SC U23
 Al Nasr Salalah
 Al Nejmeh
 Al Orooba U21
@@ -295,22 +299,28 @@ Al Raed U21
 Al Ramadi
 Al Ramtha SC II
 Al Rayan
+Al Rayyan
 Al Riffa
 Al Sailiya U23
 Al Salt
+Al Salt II
 Al Seeb
 Al Shabab
 Al Shahaniya
 Al Shahaniya U23
 Al Shamal
 Al Sharjah U21
+Al Sitra
 Al Tadamun Buri
 Al Ula
 Al Waab
 Al Wahda (Oman)
 Al Wahda (UAE)
+Al Wahda Abu Dhabi U23
 Al Wakrah Sports Club
 Al Wakrah U23
+Al Wasl Dubai U23
+Al Wasl U19
 Al Wasl U21
 Al Wehdat SC
 Al Wehdat SC II
@@ -331,8 +341,10 @@ Al-Jazeera Amman
 Al-Khaboora
 Al-Khor
 Al-Masry
+Al-Muharraq SC
 Al-Musannah SC
 Al-Najma (KSA)
+Al-Najma Manama
 Al-Nassr FC
 Al-Okhdood Club
 Al-Orobah FC
@@ -353,6 +365,7 @@ Alboraya U19
 Alcione Milano
 Alcione Milano U19
 Aldershot Town
+Algeria
 Alhama CF (W)
 Aliaga Bld.Spor
 Alianca/Goias (W) U20
@@ -598,7 +611,9 @@ Beykoz Anadolu
 Beykoz Ishakli
 Beyoglu Yeni Carsi AS U19
 Beyoglu Yeni Carsi FK
+Bhantal FC
 Bhayangkara FC U20
+Bhayangkara Solo FC
 Bidco United
 Biellese
 Biesheim Asc
@@ -666,6 +681,7 @@ Brightlingsea Regent
 Brighton & Hove Albion
 Brighton & Hove Albion (W)
 Brighton & Hove Albion U21
+Brikama United
 Brisbane Roar FC
 Brisbane Roar FC (W)
 Brisbane Strikers
@@ -696,6 +712,7 @@ Burgos CF
 Burgos CF Promesas
 Burgos CF U19
 Buriram United
+Burkina Faso
 Burnley FC
 Bursa Nilufer
 Bursaspor
@@ -1138,6 +1155,7 @@ Dhaka Abahani LTD
 Dhofar
 Diagoras
 Diamond Stars
+Dibba Al Fujairah U23
 Diegem Sport
 Diepkloof FC (W)
 Dieppe Bay Eagles
@@ -1506,11 +1524,13 @@ FSV Mainz 05
 Fafe
 Fakirapool Young Mens Club
 Falconets FC (W)
+Falcons FC
 Falkirk
 Fanja
 Farnborough
 Fatih Karagumruk SK
 Fatih Karagumrukspor U19
+Fayoum
 Fehervar FC U19
 Felixstowe & Walton United
 Fenerbahce SK
@@ -1549,6 +1569,7 @@ Forli
 Formartine United
 Fortis FC Limited
 Fortuna Dusseldorf
+Fortune FC
 Forver FC (W)
 Francs Borains
 Fraserburgh
@@ -1585,6 +1606,8 @@ Galatasaray SK (W)
 Galatasaray SK U19
 Gallia Lucciana
 Gamba Osaka
+Gambia Ports Authority
+Gambian Dutch Lions
 Gamo Chencha
 Gardnersville FC
 Gasogi United
@@ -1692,6 +1715,7 @@ Hapoel Azor
 Hapoel Beer Sheva
 Hapoel Beer Sheva U19
 Hapoel Beit Shean Mesilot
+Hapoel Beit Shean Mesilot U19
 Hapoel Bnei Ashdod
 Hapoel Bnei Biina
 Hapoel Bnei Jdaidie Makr
@@ -1742,6 +1766,7 @@ Harar FC
 Haras El Hodood
 Harbour View FC
 Harrogate Town
+Hart FC
 Hashtag United
 Hausing FC
 Havadar SC
@@ -1793,6 +1818,7 @@ Igea Virtus
 Ihud Bnei Baqa
 Ihud Tzeirey Abu Gosh
 Ijsselmeervogels
+Ikorodu City
 Ilioupoli
 Ilisiakos FC
 Ilkeston Town
@@ -1834,6 +1860,7 @@ Ironi Beit Shemesh
 Ironi Modiin
 Ironi Nesher
 Ironi Tiberias
+Ironi Tiberias U19
 Ischia
 Isidro Metapan II
 Ismaily SC
@@ -1920,6 +1947,7 @@ KVZ SC
 Kabati Youth
 Kabin United
 Kabwe Warriors
+Kadhimiya
 Kaedi
 Kagera Sugar
 Kahramanmarasspor
@@ -1964,6 +1992,7 @@ Kepez Belediyespor
 Kestel Cilekspor
 Kettering Town
 Khonkaen United FC
+Khor Fakkan U23
 Kia Academy
 Kibera Black Stars
 Kidderminster Harriers
@@ -2238,6 +2267,7 @@ Miroplast
 Mizoram Police FC
 Mladost DG
 Mladost Zdralovi U19
+Mlandege
 Modena FC
 Modern Sport (W)
 Mohammedan SC Dhaka
@@ -2293,6 +2323,7 @@ Mzuzu City Hammers
 N Zidane FC
 NA Hussein Dey U20
 NAC Breda
+NC Magra U20
 NEC Nijmegen
 NF Railway
 NK Celje
@@ -2361,6 +2392,7 @@ Newport City FC
 Newport County
 Newton Aycliffe
 Nib FC
+Nifas Silk Lafto Sub City
 Niger Tornadoes FC
 Niigata University H&W
 Niki Volos
@@ -2524,6 +2556,7 @@ Penybont
 Persepolis FC
 Persib Bandung
 Persib Bandung U20
+Persija Jakarta
 Persija Jakarta U20
 Persijap Jepara U20
 Persita Tangerang U20
@@ -2915,6 +2948,7 @@ Samail SC
 Sambenedettese
 Sambenedettese U19
 Sambiase
+Samger
 Samira FC
 Sammaurese
 Samsunspor
@@ -2974,6 +3008,7 @@ Sevilla FC (W)
 Sevilla FC C
 Sevilla FC U19
 Sfax Railways
+Shabab Al Ahli Dubai U19
 Shabab Al Ahli U21
 Shabab Al-Ordon
 Shabab Sahel
@@ -2991,6 +3026,7 @@ Sheffield United U21
 Sheffield Wednesday
 Sheger Ketema (W)
 Shelbourne Dublin
+Shenavar Sazi Qeshm
 Shepshed Dynamo FC
 Shifnal Town
 Shillong Lajong FC II
@@ -3011,6 +3047,7 @@ Sina Gerald AC
 Singapore (W)
 Singapore U22
 Singburi FC
+Singida BS
 Sintrense
 Siracusa Calcio 1924
 Sirens FC
@@ -3028,6 +3065,7 @@ Sol FC Abobo
 Solihull Moors
 Soma Zaferspor (W)
 Sonabel
+Sonacos
 Sondrio Calcio
 Soneja
 Songea United
@@ -3118,6 +3156,7 @@ Stoke City U21
 Stranraer
 Su 1 Dezembro
 Sukhothai
+Sululta Ketema
 Sunderland
 Sunderland AFC (W)
 Sunrise
@@ -3138,6 +3177,7 @@ Sydney FC
 Syria
 TEC
 TMA FC
+TMT FC
 TOP Oss
 TPS
 TSC Backa Topola
@@ -3167,7 +3207,9 @@ Tarxien Rainbows
 Tataouine
 Taunton Town
 Telecom Egypt
+Telephonaat Beni Suef
 Teramo Calcio
+Teranga SC
 Ternana (W)
 Ternana Calcio
 Ternana Calcio U19
@@ -3321,6 +3363,7 @@ USM Alger U20
 USM Blida U20
 USM FC
 USM Khenchela
+USM Khenchela U20
 USM Saran
 USV Hercules
 USV Hercules U21
@@ -3466,6 +3509,7 @@ Watford FC U21
 Wayside Celtic
 Wb Aiin Benian
 Wealdstone FC
+Welayta Dicha
 Welling United FC
 Wellington Olympic
 Wellington Phoenix (W)
