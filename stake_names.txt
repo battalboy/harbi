@@ -24,7 +24,9 @@ Antalyaspor AS
 Arsenal FC
 Aston Villa FC
 Atalanta BC
+Athletic Bilbao
 Atiker Konyaspor 1922
+Atletico Madrid
 Barnsley
 Bayer 04 Leverkusen
 Besiktas JK
@@ -40,6 +42,7 @@ Brentford FC
 Brighton & Hove Albion FC
 Bristol City
 Burnley FC
+CA Osasuna
 Cagliari Calcio
 Calcio Padova
 Cardiff City
@@ -54,6 +57,7 @@ Como 1907
 Coventry City
 Crystal Palace FC
 Delfino Pescara 1936
+Deportivo Alaves
 Derby County
 Doncaster Rovers
 Dundee United
@@ -61,10 +65,13 @@ Dunkerque
 EA Guingamp
 ES Troyes AC
 Eintracht Frankfurt
+Elche CF
+Espanyol Barcelona
 Everton FC
 Exeter City
 Eyupspor
 FC Augsburg
+FC Barcelona
 FC Bayern Munich
 FC Dundee
 FC Empoli
@@ -90,6 +97,8 @@ Galatasaray
 Gaziantep FK
 Genclerbirligi SK
 Genoa CFC
+Getafe CF
+Girona FC
 Glasgow Rangers
 Go Ahead Eagles
 Goztepe SK
@@ -112,6 +121,7 @@ Kocaelispor
 LOSC Lille
 Le Mans FC
 Leeds United
+Levante UD
 Leyton Orient
 Lincoln City
 Liverpool FC
@@ -148,8 +158,15 @@ Portsmouth FC
 Preston North End
 Queens Park Rangers
 RB Leipzig
+RC Celta de Vigo
 RC Lens
 RC Strasbourg Alsace
+RCD Mallorca
+Rayo Vallecano
+Real Betis Seville
+Real Madrid
+Real Oviedo
+Real Sociedad
 Red Star FC
 Rodez Aveyron
 Rotherham United
@@ -164,6 +181,7 @@ SS Lazio
 SSC Bari
 SSC Napoli
 Samsunspor
+Sevilla FC
 Sheffield Wednesday
 Southampton FC
 Sparta Rotterdam
@@ -189,9 +207,11 @@ US Lecce
 US Palermo
 US Sassuolo Calcio
 Udinese Calcio
+Valencia CF
 Venezia
 VfB Stuttgart
 VfL Wolfsburg
+Villarreal CF
 Virtus Entella
 Watford FC
 Werder Bremen

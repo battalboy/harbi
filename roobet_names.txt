@@ -8,6 +8,7 @@
 1. FC Heidenheim
 1. FC Magdeburg
 1. FC Nuremberg
+1. FC Schweinfurt 05
 1. FC Union Berlin
 1. FFC Turbine Potsdam 71
 AB Barika
@@ -71,6 +72,7 @@ AS Pikine
 AS Roma
 AS Saint-Etienne
 AS Sariyer
+ASC HLM Dakar
 ASC Otelul Galati
 ASO Chlef
 AVS Futebol SAD
@@ -116,11 +118,13 @@ Al Riffa
 Al Sadd SC
 Al Shabab
 Al Shabab Kuwait
+Al Shahaniya
 Al Taawun
 Al Tahaddi
 Al Talaba
 Al Urooba UAE
 Al Wahda FC
+Al Wasl FC
 Al Watan
 Al-Adalah
 Al-Ahli SC Manama
@@ -231,12 +235,14 @@ Austria
 Austria Bundesliga
 Ayr United FC
 Aytemiz Alanyaspor
+Ayutthaya United FC
 Azerbaijan
 BB Bodrumspor
 BFB Pattaya City
 BG Pathum United
 BVV Vlaanderen
 Bahla Club
+Baiano
 Bala Town FC
 Bali United
 Ballon d'Or
@@ -277,6 +283,7 @@ Birkirkara FC
 Birmingham City
 Blackburn Rovers
 Blackpool
+Blooming Santa Cruz
 Bnei Jaffa Ortodoxim
 Bnei Sakhnin FC
 Bnei Yehuda Tel Aviv FC
@@ -312,6 +319,7 @@ Bristol City
 Bristol Rovers
 Briton Ferry
 Bromley FC
+Brusque FC SC
 Bulgaria
 Burgos CF
 Buriram United
@@ -411,7 +419,10 @@ Chelsea FC (E)
 Cheltenham Town
 Chesterfield FC
 Chiangrai United
+Chile Primera Division
+China
 China (E)
+Chonburi FC
 Cibao CF
 Cittadella FC
 City Football Club
@@ -694,6 +705,7 @@ Fatih Karagumruk
 Fehra
 Fenerbahce Istanbul
 Ferencvarosi Budapest
+Ferroviario AC CE
 Feyenoord Rotterdam
 Finland
 Flamengo (E)
@@ -774,6 +786,7 @@ Gremio FB Porto Alegrense RS
 Grenoble Foot
 Greuther Furth
 Grimsby Town
+Guabira Montero
 Guatemala (E)
 Guediawaye FC
 Guidonia Montecelio 1937 FC
@@ -820,6 +833,7 @@ Hapoel Rishon Lezion FC
 Hapoel Tel Aviv FC
 Hapoel Tirat HaCarmel
 Hapoel Umm AL Fahm
+Haras El Hodood
 Harrogate Town
 Hartlepool Town
 Hartlepool United
@@ -851,6 +865,7 @@ Igdir FK
 Ikorodu City
 Imisli FK
 Independiente Medellin
+Independiente Petrolero
 India
 India (E)
 Indonesia (E)
@@ -868,6 +883,7 @@ Irapuato
 Iraq
 Iraq (E)
 Ireland
+Ireland Premier Division
 Ironi Modiin
 Ironi Nesher
 Ironi Tiberias
@@ -887,6 +903,7 @@ JS Kabylie
 JS Saoura
 Jaalan Club
 Jagiellonia Bialystok
+Jahn Regensburg
 Jamaica (E)
 Japan
 Japan (E)
@@ -896,12 +913,14 @@ Jong Ajax
 Jong Den Haag
 Jong FC Utrecht
 Jong PSV Eindhoven
+Jong Sparta Rotterdam
 Jordan
 Juve Stabia
 Juventus
 Juventus (E)
 Juventus Next Gen
 K Beerschot VA
+K.v.v. Quick Boys
 KAA Gent
 KAA Gent B
 KAS Eupen
@@ -918,6 +937,7 @@ Kahrabaa Ismailia
 Kampaniakos
 Kanchanaburi Power FC
 Karlsruher SC
+Kasetsart FC
 Kasimpasa
 Kasimpasa Istanbul
 Katsina United FC
@@ -930,6 +950,7 @@ Kenya
 Kheybar Khorramabad FC
 Khor Fakkan Club
 Kilmarnock FC
+Kings League World Cup 2026
 Kisvarda FC
 Kocaelispor
 Konyaspor
@@ -943,6 +964,7 @@ LDU Quito
 La Havre AC
 La Mans FC
 Lagarto FC SE
+Lamphun Warrior
 Larne FC
 Las Palmas
 Lausanne-Sport
@@ -952,6 +974,7 @@ Lazio Rome
 Le Havre AC
 Le Mans FC
 Le Puy Foot 43 Auvergne
+Lebanon
 Lecco Bari
 Leeds United
 Leganes CF
@@ -967,7 +990,10 @@ Levante UD
 Leyton Orient London
 Libertad Loja
 Lierse Kempenzonen
+Liga 1
 Liga Deportiva Alajuelense
+Liga MX
+Liga Profesional
 Lille OSC
 Limassol
 Lincoln City
@@ -1037,11 +1063,15 @@ Manisa Futbol Kulubu
 Mansfield Town
 Mansfield United
 Mantova 1911
+Maracana EC CE
 Marbella FC
+Maritimo
 Maritimo Madeira
 Marko 1927
+Marsaxlokk FC
 Masfoot Sports Club
 Massafra 1963
+Mato-Grossense
 Mazatlan FC
 Melbourne City FC
 Melbourne Victory
@@ -1075,6 +1105,7 @@ Morocco
 Motherwell FC
 Mozambique
 Muaither SC
+Muang Thong United
 Muscat
 Mwembe Makumbi City
 NAC Breda
@@ -1088,6 +1119,7 @@ NK Varazdin
 Nacional Asuncion
 Nacional da Madeira
 Naft Gachsaran
+Nakhon Ratchasima FC
 Nam Dinh FC
 Nancy-Lorraine
 Napoli (E)
@@ -1110,6 +1142,7 @@ Newport County
 Niger Tornadoes FC
 Nigeria
 Niki Volou 1924 PAE
+Nongbua Pitchaya FC
 North Korea (E)
 North Macedonia
 Northampton Town
@@ -1173,11 +1206,13 @@ Paris Saint-Germain (E)
 Parma Calcio
 Partick Thistle FC
 Patro Eisden Maasmechelen
+Pattani FC
 Pau FC
 Paulista
 Paykan FC
 Pen-y-Bont FC
 Perigny
+Pernambucano
 Persebaya Surabaya
 Persepolis FC
 Persib Bandung
@@ -1197,6 +1232,7 @@ Plymouth Argyle
 Poland
 Poland Ekstraklasa
 Pontivy GSI
+Port FC
 Port Vale
 Portadown FC
 Portimonense SC
@@ -1209,6 +1245,7 @@ Portugal Primeira Liga
 Prachuap FC
 Preston North End
 Prime Bangkok FC
+Primera A
 Pro Patria Busto Arsizio
 Psim Yogyakarta
 Pumas UNAM
@@ -1216,6 +1253,7 @@ Puskas Akademia FC Felcsut
 Qadsia SC
 Qarabag FK
 Qatar
+Qatar SC
 Queens Park FC
 Queens Park Rangers
 Queretaro FC
@@ -1264,6 +1302,7 @@ Red Bull Bragantino SP
 Red Star FC
 Reggiana 1919
 Remo Stars
+Republic of Korea
 Rio Ave FC
 Rio Negro RR
 River Plate (E)
@@ -1335,6 +1374,7 @@ Salcedo FC
 Salford City
 Sampdoria Genoa
 Samsunspor
+San Antonio Bulo Bulo
 San Marino
 Santa Clara Azores
 Santos FC SP
@@ -1389,6 +1429,7 @@ Slovakia Superliga
 Slovan Bratislava
 Slovenia
 Slovensky Pohar
+Smouha SC
 Sochaux-Montbeliard
 Sohar
 Solihull Moors FC
@@ -1396,6 +1437,7 @@ Sonacos
 Songkhla United FC
 Sousa EC PB
 South Africa
+South Africa Premiership
 Southampton
 Southampton FC
 Southend United
@@ -1447,13 +1489,16 @@ Sur SC
 Sutton United
 Swansea City
 Sweden
+Sweden Allsvenskan
 Swindon Town
 Switzerland
 Switzerland Super League
 Sydney FC
+Syria
 TOP Oss
 TSC Hoffenheim
 TSG Hoffenheim
+Tabora United FC
 Talaea El Gaish
 Tamworth FC
 Tanzania
@@ -1462,6 +1507,7 @@ Team Altamura
 Telecom Egypt
 Tenerife
 Ternana Calcio
+Teungueth FC
 Thailand
 Thailand (E)
 The New Saints
@@ -1507,6 +1553,7 @@ US Chauvigny
 US Citta Di Pontedera
 US Concarneau
 US Cremonese
+US Goree
 US Lecce
 US Livorno 1915
 US Orleans
@@ -1536,6 +1583,7 @@ Universidad de Chile
 Unye Gucu
 Urawa Red Diamonds (E)
 Uruguay
+Uthai Thani FC
 Uttaradit FC
 Uzbekistan
 VV Heesch
@@ -1545,9 +1593,11 @@ VV Koninkl
 VVV Venlo
 VVV-Venlo
 Vaalerenga Oslo
+Valadares Gaia FC
 Valencia CF
 Valencia CF (E)
 Vallecano CF
+Valletta FC
 Valur
 Van Spor FK
 Vendée Fontenay Foot
@@ -1572,6 +1622,7 @@ Volos NPS
 Vorskla Poltava
 WB Aïn Benian
 WC Qualification, UEFA
+WSG Tirol
 Wales
 Wales Cymru Premier
 Wally Daan
@@ -1603,6 +1654,7 @@ Yellow-Red KV Mechelen
 Yeovil Town
 York City
 York City FC
+Young Africans SC
 Young Boys Bern
 Yverdon-Sport
 ZSV Sportlust 46

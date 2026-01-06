@@ -10,6 +10,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+import os
 from datetime import datetime
 
 OUTPUT_FILE = "stake_names.txt"
@@ -208,19 +209,43 @@ def main():
             
             time.sleep(2)
         
-        # Save
-        print(f"\n💾 Saving {len(all_teams)} teams to {OUTPUT_FILE}...")
+        # Load existing teams from file (if exists)
+        existing_teams = set()
+        if os.path.exists(OUTPUT_FILE):
+            print(f"\n📖 Loading existing teams from {OUTPUT_FILE}...")
+            with open(OUTPUT_FILE, 'r', encoding='utf-8') as f:
+                existing_teams = {line.strip() for line in f if line.strip()}
+            print(f"   Found {len(existing_teams)} existing teams")
+        
+        # Merge with newly collected teams
+        print(f"   Collected {len(all_teams)} teams in this run")
+        all_teams.update(existing_teams)
+        
+        # Save combined list
+        print(f"\n💾 Saving {len(all_teams)} total unique teams to {OUTPUT_FILE}...")
         sorted_teams = sorted(all_teams)
         with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
             for team in sorted_teams:
                 f.write(f"{team}\n")
         
-        print(f"✅ Saved successfully!")
+        new_teams = len(all_teams) - len(existing_teams)
+        if new_teams > 0:
+            print(f"✅ Saved successfully! ({new_teams} new teams added)")
+        else:
+            print(f"✅ Saved successfully! (no new teams found)")
         
     except KeyboardInterrupt:
         print("\n\n⚠️  Interrupted")
         if all_teams:
-            print(f"💾 Saving {len(all_teams)} teams collected so far...")
+            # Load existing teams and merge
+            existing_teams = set()
+            if os.path.exists(OUTPUT_FILE):
+                with open(OUTPUT_FILE, 'r', encoding='utf-8') as f:
+                    existing_teams = {line.strip() for line in f if line.strip()}
+            
+            all_teams.update(existing_teams)
+            
+            print(f"💾 Saving {len(all_teams)} total teams...")
             with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
                 for team in sorted(all_teams):
                     f.write(f"{team}\n")

@@ -301,6 +301,7 @@ Al Ramtha SC II
 Al Rayan
 Al Rayyan
 Al Riffa
+Al Sailiya SC
 Al Sailiya U23
 Al Salt
 Al Salt II
@@ -355,6 +356,7 @@ Al-Shabab Riyadh U21
 Al-Wehda FC
 Al-Wehda FC U19
 Al-Yarmouk
+Alagoinhas Atletico Clube BA U20
 Alanya Kestelspor
 Alanyaspor
 Alanyaspor U19
@@ -738,6 +740,7 @@ CD Alfaro
 CD Alhaurino
 CD Anguiano
 CD Aoiz
+CD Arcangel San Miguel
 CD Arenteiro
 CD Atletico Baleares
 CD Atletico Mansilles
@@ -807,6 +810,7 @@ CD Mafra
 CD Mafra U19
 CD Marathon
 CD Marchamalo
+CD Marino
 CD Minera
 CD Mirandes II
 CD Montanas Del Pas
@@ -997,6 +1001,7 @@ Chainat FC
 Chalkanoras Dali
 Chania
 Chanthaburi
+Chapecoense SC U20
 Chapelton Maroons
 Charlton
 Charlton (W)
@@ -1112,6 +1117,7 @@ Cusco FC
 Customs United FC
 DBI
 DK Pharma
+DR Congo
 DUX Logrono (W)
 Dagenham & Redbridge
 Dakar University Club
@@ -1323,12 +1329,14 @@ FC Bayern Munchen (W)
 FC Beitar Yavne
 FC Bidezarra
 FC Blau Weiss Linz
+FC Bocholt
 FC Borgo
 FC Botosani
 FC CSKA 1948 Sofia
 FC Carl Zeiss Jena (W)
 FC Cartagena
 FC Cartagena II
+FC Cascavel PR U20
 FC Challans
 FC Chernihiv
 FC Chindia Targoviste
@@ -1668,6 +1676,7 @@ Grimsby Borough
 Grimsby Town
 Groningen (W)
 Guabira
+Guanabara City GO U20
 Guarani Antonio Franco
 Gubbio 1910
 Gucha Stars FC
@@ -1719,6 +1728,7 @@ Hapoel Beit Shean Mesilot U19
 Hapoel Bnei Ashdod
 Hapoel Bnei Biina
 Hapoel Bnei Jdaidie Makr
+Hapoel Bnei Musmus
 Hapoel Daliyat Al Karmel
 Hapoel Hadera
 Hapoel Hadera U19
@@ -2233,6 +2243,7 @@ Matlock Town
 Mazarron FC
 Mazidagi Fosfat Spor
 Mbale Heroes
+Mbarara City FC
 Mbeya Kwanza FC
 Mbuni
 Mechal SC (W)
@@ -2761,11 +2772,13 @@ Remo Stars
 Renate U19
 Renfrew FC
 Res Roma (W)
+Retro FC Brasil PE U20
 Rijnsburgse Boys
 Rines SS FC (W)
 Rio Ave FC
 Rio Ave FC (W)
 Rio Ave FC U19
+Rio Branco ES U20
 Rio Dulce
 Rivadavia Lincoln
 River EC RR (W)
@@ -2908,6 +2921,7 @@ SSV Jahn Regensburg
 SU Dives
 SUBT
 SV Austria Salzburg 1933
+SV Biemenhorst
 SV Britannia
 SV Broki
 SV Darmstadt 98
@@ -2969,6 +2983,7 @@ Sant Cugat FC (W)
 Sant Cugat FC U19
 Santa Amalia
 Santa Clara Sad U19
+Santa Cruz PE U20
 Santa Lucia FC
 Santos SP (W) U20
 Santutxu FC
@@ -3188,6 +3203,7 @@ TSV 1860 Munchen
 TSV Alemannia Aachen
 TSV Hartberg
 TSV Havelse
+Tabora United
 Tai Po FC
 Taichung Blue Whale (W)
 Taichung Futuro
@@ -3264,6 +3280,7 @@ Truro City FC
 Tsl FC (W)
 Tsukuba University
 Tuen Mun (W)
+Tuna Luso PA U20
 Turegano CF
 Turk Metal Kirikkale
 Tusker FC
@@ -3433,6 +3450,7 @@ Varazdin U19
 Varesina Calcio
 Varzim SC
 Vasco da Gama RJ
+Vasco da Gama RJ U20
 Vasco da Gama Vidigueira
 Vauxhall Motors
 Vejle Boldklub
@@ -3478,6 +3496,7 @@ Vision FC
 Vision JN FC
 Vitesse Arnhem
 Vitesse FC
+Vitoria BA U20
 Vitoria Guimaraes
 Vitoria Guimaraes U19
 Vitoria SC (W)
@@ -3554,6 +3573,7 @@ Yeni Mersin Idmanyurdu AS
 Yeovil
 Yesil Yalova
 Yirga Chefe Bunna (W)
+Young Africans
 Young Boys Diekirch (W)
 Yozgat Bld Bozokspor
 Yverdon-Sport FC
