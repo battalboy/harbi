@@ -191,6 +191,7 @@ Angers SCO
 Angola
 Anorthosis Famagusta
 Antalyaspor
+Apea Akrotiriou
 Apollon Limassol
 Ararat-Armenia
 Araz Nakhchivan PFK
@@ -930,6 +931,7 @@ KFC Lierse
 KKS Lech Poznan
 KMSK Deinze 47
 KRC Genk
+KS Polonia Bytom SA
 KSC Lokeren Temse
 KV Kortrijk
 KVC Westerlo

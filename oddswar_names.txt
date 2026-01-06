@@ -6,6 +6,7 @@
 76 Igdir Belediyespor
 A.C. Trento S.C.S.D.
 A.S. Gosier
+AA Portuguesa S U20
 AA Portuguesa U20
 AC Bra
 AC Milan
@@ -295,6 +296,7 @@ Atletico Sanluqueno CF
 Aubagne FC
 Auckland FC
 Audace Cerignola
+Audax U20
 Augsburg
 Aurora
 Aurora FC
@@ -306,6 +308,7 @@ Austria Klagenfurt
 Austria Wien
 Austria Wien (A)
 Auxerre
+Avai
 Avranches
 Ayeyawady United
 Ayr
@@ -339,6 +342,7 @@ Barcelona (W)
 Barnet
 Barnsley
 Barnsley U21
+Barra FC
 Barra SE U20
 Barrow
 Barry Town Utd
@@ -438,6 +442,7 @@ Bromley
 Bromley U21
 Brondby
 Brothers Union
+Brusque FC
 Bryne
 Bucaspor
 Buhimba Saints United
@@ -498,6 +503,7 @@ Cagliari U20
 Calcio Avellino SSD
 Caledonia AIA
 Calvary FC
+Camboriu
 Cambridge Utd
 Cambuur Leeuwarden
 Cameroon
@@ -536,6 +542,7 @@ Ceramica Cleopatra
 Cercle Brugge
 Cerezo Osaka Sakai (W)
 Cesena
+Chapecoense
 Chapecoense U20
 Chapelton
 Charleroi
@@ -606,6 +613,7 @@ Coventry City U21
 Cr Temouchent
 Crawley Town
 Crewe
+Criciuma
 Criciuma U20
 Croatia
 Croix Iris Club
@@ -688,6 +696,7 @@ Dynamo Dresden
 Dynamo Kiev
 Dynamo Kyiv U19
 EC Noroeste U20
+EC Sao Jose Porto Alegre
 EC Vitoria Salvador
 ENPPI
 ES Ben Aknoun
@@ -737,6 +746,7 @@ Esan Pattaya
 Esbjerg
 Eskisehirspor
 Espanyol
+Esporte Clube Avenida
 Esporte Clube de Patos
 Esporte de Patos U20
 Estoril Praia
@@ -849,6 +859,7 @@ Fenerbahce
 Ferencvaros
 Ferroviario CE U20
 Feyenoord
+Figueirense
 Fiorentina
 Fiorentina U20
 Fjolnir
@@ -930,6 +941,7 @@ Granada (W)
 Grasshoppers Zurich
 Grazer AK
 Gremio
+Gremio Desportivo Sao-Carl
 Gremio Prudente U20
 Gremio U20 (W)
 Grenoble
@@ -940,6 +952,7 @@ Guabira
 Guadalajara
 Guanabara City U20
 Guarani SP U20
+Guarany de Bage
 Gubbio
 Guimaraes
 Guingamp
@@ -1041,6 +1054,7 @@ Inter
 Inter Club Escaldes
 Inter Milan (Res)
 Inter Milan U20
+Inter de Santa Maria
 Internacional
 International Pacific U
 Inverness CT
@@ -1067,6 +1081,7 @@ Jef Utd Chiba
 Jerash
 Jerash SC
 Johor Darul Takzim
+Joinville
 Jong AZ Alkmaar
 Jong Ajax Amsterdam
 Jong FC Utrecht
@@ -1075,6 +1090,7 @@ Jordan
 Jorge Wilstermann
 Junior FC Barranquilla
 Juve Stabia
+Juventude
 Juventude U20
 Juventus
 Juventus B
@@ -1111,6 +1127,7 @@ Karaman Belediyespor
 Karlsruhe
 Karsiyaka
 Karvan Evlakh
+Kasem Bundit University
 Kasimpasa
 Kastamonuspor
 Katsina United
@@ -1281,6 +1298,7 @@ Mansfield
 Mantova
 Mara Sugar FC
 Marbella
+Marcilio
 Marcq en Baroeul
 Marica RJ U20
 Marine FC
@@ -1328,6 +1346,7 @@ Molynes United FC
 Mombasa United
 Monaco
 Monopoli
+Monsoon FC
 Montana
 Montego Bay United
 Monterrey
@@ -1356,6 +1375,7 @@ NK Celje
 NK Istra
 Nacional FC AM U20
 Nacional Potosi
+Nacional SP U20
 Nakhon Pathom
 Nakhon Ratchasima
 Nam Dinh
@@ -1401,6 +1421,7 @@ Notts Co
 Nouadhibou
 Nouakchott Kings
 Novara
+Novo Hamburgo
 Nuovo Campobasso
 Nurnberg
 Nyiregyhaza
@@ -1420,6 +1441,7 @@ Olympic El Qanal
 Olympique Akbou
 Oman FC
 Omonia
+Operario Ferroviario EC U20
 Orense Sporting Club
 Oriente Petrolero
 Orleans
@@ -1551,6 +1573,7 @@ Prachuap
 Preston
 Preston North End U21
 Preussen Munster
+Prime Bangkok
 Prisons FC
 Pro Vercelli
 Psbi Blitar
@@ -1610,6 +1633,7 @@ Rayong FC
 Reading
 Reading U21
 Real Aviles
+Real Brasilia FC U20
 Real De Banjul
 Real Espana
 Real Madrid
@@ -1666,6 +1690,7 @@ SC Uniao Torreense U23
 SC Villa
 SCR Altach
 SE Palmeiras
+SER Caxias do Sul
 SG Essen-Schonebeck (W)
 SKN St. Polten (W)
 SKU Amstetten
@@ -1696,17 +1721,20 @@ Sambenedettese
 Samma
 Sampdoria
 Samsunspor
+Samut Sakhon City FC
 Samut Songkhram City
 San Antonio Bulo Bulo
 San Juan FC
 San Juan Jabloteh
 Sang Maestro
 Sanliurfaspor
+Santa Catarina FC
 Santa Clara
 Santa Clara U23
 Santa Cruz FC U20
 Santos Laguna
 Santos U20 (W)
+Sao Luiz
 Sao Paulo
 Sao Paulo U20
 Sarajevo
@@ -1714,6 +1742,7 @@ Sariyer G.K.
 Sassari Torres
 Sassuolo
 Sassuolo U20
+Satun United FC
 Saudi Arabia
 Scarborough Athletic
 Schalke 04
@@ -1953,6 +1982,7 @@ Ulinzi Stars
 Umm Salal
 Umm-Salal U23
 Umraniyespor
+Uniao EC Rondonopolis (Res)
 Union Berlin
 Union Brescia
 Union St Gilloise
@@ -1990,6 +2020,7 @@ Versailles 78 FC
 VfL Osnabruck
 Viborg
 Viktoria Koln
+Vila Nova U20
 Villarreal
 Villarreal B
 Villarreal CF III
@@ -2060,6 +2091,7 @@ Yesil Yalova FK
 York City
 Young Africans
 Young Boys
+Ypiranga RS
 Yuen Long
 Yverdon Sport
 ZED FC

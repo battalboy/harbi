@@ -243,9 +243,10 @@ def parse_game_details(data: Dict, game_type: str = 'prematch') -> List[Dict]:
             game_ev = game.get('ev', {})
             team1_odds, draw_odds, team2_odds = extract_1x2_odds(game_ev)
             
-            # Build match URL
-            # Tumbet URL format: https://www.tumbet.com/tr/spor/mac/{game_id}
-            match_url = f"https://www.tumbet.com/tr/spor/mac/{game_id}"
+            # Build match URL (direct link to iframe content)
+            # Parent page URL doesn't work because iframe uses postMessage communication
+            # Direct iframe URL format: https://www.tumbet803.com/sportwide/index.html?lang=tr&brand=161&theme=default-dark-theme#/prematch?match={game_id}
+            match_url = f"https://www.tumbet803.com/sportwide/index.html?lang=tr&brand=161&theme=default-dark-theme#/prematch?match={game_id}"
             
             # Get additional info
             region_id = game.get('region', '')
