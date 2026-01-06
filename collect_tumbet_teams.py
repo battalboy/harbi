@@ -4,7 +4,10 @@ Tumbet Team Names Collector
 
 Continuously fetches Tumbet matches from:
 - LIVE matches (in-play)
-- TOP prematch matches (featured upcoming matches)
+- ALL prematch matches (comprehensive coverage via getheader endpoint)
+
+Uses the comprehensive /api/sport/getheader endpoint to get ALL soccer games,
+not just "top games". This provides ~1,700+ teams vs ~109 from top games only.
 
 Collects unique team names from both sources.
 Runs every 60-120 seconds (random interval).
@@ -123,26 +126,51 @@ def get_live_games():
     return game_ids
 
 
-def get_top_prematch_games():
-    """Get top prematch games with game IDs."""
-    url = f"{BASE_URL}/api/prematch/getprematchtopgames/{LANGUAGE}"
-    data = fetch_json(url, exit_on_error=True)  # Exit if prematch fails (critical)
+def get_all_prematch_games():
+    """Get ALL prematch games with game IDs using comprehensive getheader endpoint.
+    
+    This endpoint returns a hierarchical structure:
+    OT → Sports → Regions → Championships → GameSmallItems
+    
+    Returns ~1,239 games with ~1,700+ unique teams (vs ~69 games with ~109 teams from top games).
+    """
+    url = f"{BASE_URL}/api/sport/getheader/{LANGUAGE}"
+    data = fetch_json(url, exit_on_error=True)  # Exit if endpoint fails (critical)
     
     if not data:
-        print(f"\n\n❌ INVALID RESPONSE - getprematchtopgames returned empty data")
+        print(f"\n\n❌ INVALID RESPONSE - getheader returned empty data")
         print(f"URL: {url}")
         print("\n🛑 Exiting due to invalid response...")
         sys.exit(1)
     
+    # Navigate hierarchical structure to extract all soccer game IDs
     game_ids = []
-    for sport in data:
-        if sport.get('id') == 1 and 'gms' in sport:  # Soccer = 1
-            game_ids.extend(sport['gms'])
+    
+    if 'OT' in data:
+        ot_data = data['OT']
+        sports = ot_data.get('Sports', {})
+        
+        # Get soccer (Sport ID = 1)
+        soccer = sports.get('1', {})
+        if not soccer:
+            print(f"\n\n❌ NO SOCCER DATA - Soccer (id=1) not found in getheader")
+            print(f"Available sports: {list(sports.keys())}")
+            print("\n🛑 Exiting - no soccer data available...")
+            sys.exit(1)
+        
+        # Iterate through regions and championships to collect all game IDs
+        regions = soccer.get('Regions', {})
+        for region_data in regions.values():
+            champs = region_data.get('Champs', {})
+            for champ_data in champs.values():
+                games = champ_data.get('GameSmallItems', {})
+                if games:
+                    game_ids.extend(games.keys())
     
     if not game_ids:
-        print(f"\n\n❌ NO SOCCER GAMES - No soccer (id=1) games in 'getprematchtopgames'")
-        print(f"Response structure: {str(data)[:500]}")
-        print("\n🛑 Exiting - no soccer games available...")
+        print(f"\n\n❌ NO GAMES FOUND - getheader returned no soccer games")
+        print(f"Data structure: {str(data)[:500]}")
+        print("\n🛑 Exiting - no games found...")
         sys.exit(1)
     
     return game_ids
@@ -195,15 +223,48 @@ def get_game_details(game_ids, game_type='prematch'):
     return team_names
 
 
-def fetch_team_names() -> Tuple[Set[str], int, int]:
-    """Fetch current team names from Tumbet LIVE and TOP prematch games.
+def get_game_details_batched(game_ids, game_type='prematch', batch_size=100):
+    """Get game details in batches to avoid URL length limits.
+    
+    Args:
+        game_ids: List of game IDs to fetch
+        game_type: 'live' or 'prematch'
+        batch_size: Number of game IDs per batch (default 100)
     
     Returns:
-        tuple: (all_teams, live_count, prematch_count)
+        Set of team names from all batches
+    """
+    if not game_ids:
+        return set()
+    
+    all_teams = set()
+    total_batches = (len(game_ids) + batch_size - 1) // batch_size  # Ceiling division
+    
+    for i in range(0, len(game_ids), batch_size):
+        batch = game_ids[i:i + batch_size]
+        batch_num = (i // batch_size) + 1
+        
+        # Fetch teams for this batch
+        batch_teams = get_game_details(batch, game_type)
+        all_teams.update(batch_teams)
+        
+        # Show progress for large batches
+        if total_batches > 1:
+            print(f"      [Batch {batch_num}/{total_batches}: {len(batch)} games, {len(batch_teams)} teams]", flush=True)
+    
+    return all_teams
+
+
+def fetch_team_names() -> Tuple[Set[str], int, int, int]:
+    """Fetch current team names from Tumbet LIVE and ALL prematch games.
+    
+    Returns:
+        tuple: (all_teams, live_count, prematch_count, total_games)
     """
     all_teams = set()
     live_count = 0
     prematch_count = 0
+    total_games = 0
     
     # Step 1: Get LIVE game IDs and teams (optional)
     live_game_ids = get_live_games()
@@ -211,15 +272,18 @@ def fetch_team_names() -> Tuple[Set[str], int, int]:
         live_teams = get_game_details(live_game_ids, 'live')
         all_teams.update(live_teams)
         live_count = len(live_teams)
+        total_games += len(live_game_ids)
     
-    # Step 2: Get TOP prematch game IDs and teams (required)
-    prematch_game_ids = get_top_prematch_games()
+    # Step 2: Get ALL prematch game IDs and teams (comprehensive coverage)
+    prematch_game_ids = get_all_prematch_games()
     if prematch_game_ids:
-        prematch_teams = get_game_details(prematch_game_ids, 'prematch')
+        total_games += len(prematch_game_ids)
+        # Use batched fetching for large number of games
+        prematch_teams = get_game_details_batched(prematch_game_ids, 'prematch', batch_size=100)
         all_teams.update(prematch_teams)
         prematch_count = len(prematch_teams)
     
-    return all_teams, live_count, prematch_count
+    return all_teams, live_count, prematch_count, total_games
 
 
 def main():
@@ -230,7 +294,8 @@ def main():
     print(f"⏱️  Interval: {MIN_INTERVAL}-{MAX_INTERVAL} seconds (random)", flush=True)
     print(f"📡 API: SportWide (analytics-sp.googleserv.tech)", flush=True)
     print(f"📍 Fetches LIVE matches (if available)", flush=True)
-    print(f"📅 Fetches TOP prematch matches (main source)", flush=True)
+    print(f"📅 Fetches ALL prematch matches (comprehensive coverage)", flush=True)
+    print(f"🚀 Uses /api/sport/getheader for ~1,700+ teams", flush=True)
     print(f"🇹🇷 Requires Turkish IP address", flush=True)
     print(f"⚽ Soccer only (sport_id = 1)", flush=True)
     print(f"🛑 Press Ctrl+C to stop\n", flush=True)
@@ -248,8 +313,8 @@ def main():
             
             print(f"[{timestamp}] Fetch #{fetch_count}...", end=" ", flush=True)
             
-            # Fetch team names from LIVE and TOP prematch games
-            new_teams, live_count, prematch_count = fetch_team_names()
+            # Fetch team names from LIVE and ALL prematch games
+            new_teams, live_count, prematch_count, total_games = fetch_team_names()
             
             if new_teams:
                 # Find truly new teams
@@ -269,7 +334,7 @@ def main():
                     source_info.append(f"{prematch_count} prematch")
                 source_str = "+".join(source_info) if source_info else "0"
                 
-                print(f"✓ Found {len(new_teams)} teams ({source_str})", end="", flush=True)
+                print(f"✓ Found {len(new_teams)} teams from {total_games} games ({source_str})", end="", flush=True)
                 if new_count > 0:
                     print(f" ({new_count} NEW!)", end="", flush=True)
                 print(f" | Database: {len(all_teams)} unique teams", flush=True)

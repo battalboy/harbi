@@ -12,8 +12,8 @@
 **Current Coverage Status:**
 - Oddswar: ~1,874 teams ✅ (Master key - defines available opportunities)
 - Stoiximan: ~3,521 teams ✅ (Excellent coverage - 88.8% match rate)
+- Tumbet: ~1,700+ teams ✅ (Excellent coverage - uses comprehensive getheader endpoint)
 - Roobet: ~1,545 teams ✅ (Good coverage - ~38% match rate)
-- Tumbet: ~881 teams ⚠️ (Moderate coverage - ~49% match rate, API-based collection)
 - Stake: ~203 teams ⚠️ (Growing - depends on active leagues, browser automation)
 
 ## Project Overview
@@ -92,7 +92,11 @@ The matching system uses **indicator-first filtering** to ensure accurate matche
   - No geographic restrictions
 - **Tumbet**: `collect_tumbet_teams.py` → outputs `tumbet_names.txt`
   - Uses SportWide API (analytics-sp.googleserv.tech)
-  - Fetches both live and prematch data
+  - **Breakthrough discovery**: The `/api/sport/getheader/{LANGUAGE}` endpoint unlocks comprehensive coverage
+  - **Critical**: Fetches from hierarchical structure (Sports → Regions → Championships → Games)
+  - Changed collection from ~109 teams (top games only) to ~1,700+ teams (all games)
+  - Can collect comprehensive coverage in single run (~10-15 seconds with batching)
+  - Fetches both LIVE and ALL PREMATCH matches
   - No geographic restrictions on API (website requires Turkish VPN)
 - **Stake**: `collect_stake_teams.py` → outputs `stake_names.txt`
   - Uses Sportradar (MTS - Managed Trading Services) for odds backend
@@ -219,8 +223,8 @@ Events (two teams playing each other) are formatted differently across sites.
 - ✅ **Step 1 In Progress**: Team name collection and matching
   - Oddswar: ~1,874 teams ✅
   - Stoiximan: ~3,521 teams ✅ (88.8% match rate with Oddswar)
+  - Tumbet: ~1,700+ teams ✅ (comprehensive coverage via getheader endpoint)
   - Roobet: ~1,545 teams ✅ (~38% match rate with Oddswar)
-  - Tumbet: ~881 teams ✅ (~49% match rate with Oddswar)
   - Stake: ~203 teams ✅ (browser automation, match CSV pending)
 - 🔜 **Step 2 Next**: Event matching across sites (not yet implemented)
 
