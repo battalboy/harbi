@@ -112,7 +112,7 @@ The matching system uses **indicator-first filtering** to ensure accurate matche
 - **Tumbet Matching**: `create_tumbet_matches_csv.py` → creates `tumbet_matches.csv` (Oddswar ↔ Tumbet mappings with confidence scores)
 - **Stake Matching**: `create_stake_matches_csv.py` → creates `stake_matches.csv` (Oddswar ↔ Stake mappings with confidence scores) - **TO BE CREATED**
 
-#### API Parser Scripts
+#### API Parser Scripts (Event Creators)
 These scripts fetch live and upcoming matches with full details (teams, odds, links):
 - `event_create_oddswar.py` → `oddswar-formatted.txt` (live + upcoming matches)
 - `event_create_stoiximan.py` → `stoiximan-formatted.txt` (live only - no prematch API available)
@@ -121,6 +121,34 @@ These scripts fetch live and upcoming matches with full details (teams, odds, li
 - `event_create_stake.py` → `stake-formatted.txt` (TO BE CREATED - will use browser automation like team collector)
 
 These can extract team names from formatted output and add them to `*_names.txt` files to discover new teams.
+
+#### **CRITICAL: Collector Scripts vs Event Creator Scripts**
+
+**Two different purposes that should NOT be confused:**
+
+**1. Collector Scripts (`collect_*_teams.py`):**
+- **Purpose**: Build comprehensive team name databases for matching
+- **Goal**: Collect as many unique team names as possible (maximum coverage)
+- **Output**: `*_names.txt` files containing team names only
+- **What they need**: Team names from ALL available matches (including non-featured, lower leagues, etc.)
+- **What they DON'T need**: Odds, dates, links, or other match details
+- **Strategy**: Use comprehensive API endpoints that return ALL matches, even if they don't have featured odds
+- **Example**: For Tumbet, should use `/api/sport/getheader/ot` (1,239 games, 1,700+ teams) instead of `/api/prematch/getprematchtopgames/ot` (69 games, 109 teams)
+
+**2. Event Creator Scripts (`event_create_*.py`):**
+- **Purpose**: Fetch actual arbitrage-ready matches with complete details
+- **Goal**: Get live + upcoming matches that have active odds for comparison
+- **Output**: `*-formatted.txt` files with full match data (teams, odds, dates, links)
+- **What they need**: Only matches with featured/active odds that can be used for arbitrage
+- **What they DON'T need**: Every possible match in the database
+- **Strategy**: Use endpoints that return featured matches with complete odds data
+- **Example**: For Tumbet, using `/api/prematch/getprematchtopgames/ot` is fine here (these are the matches with active odds)
+
+**Why This Distinction Matters:**
+- Collector scripts maximize team name coverage for Step 1 (team name matching)
+- Event creator scripts provide actual arbitrage opportunities
+- A site can have 1,700+ teams in the database but only 100 matches with active featured odds
+- We want ALL teams for matching, but only featured matches for arbitrage detection
 
 #### Workflow: Proper Team Name Matching Sequence
 To perform a complete team name matching run, execute scripts in this order:
