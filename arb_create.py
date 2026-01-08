@@ -146,10 +146,11 @@ def generate_html(matched_events: List[Dict], output_file: str = 'results.html')
             border-collapse: collapse;
             background-color: white;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            table-layout: fixed;
+            border: 2px solid #555;
         }
         
         .event-table th {
-            background-color: #e0e0e0;
             padding: 10px;
             text-align: center;
             border: 1px solid #ccc;
@@ -159,15 +160,18 @@ def generate_html(matched_events: List[Dict], output_file: str = 'results.html')
             padding: 10px;
             text-align: center;
             border: 1px solid #ccc;
+            width: 15%;
         }
         
         .site-name {
             font-weight: bold;
             text-align: left;
+            width: 55%;
         }
         
-        .header-row {
-            background-color: #d0d0d0;
+        .header-row th {
+            background-color: #555;
+            color: white;
             font-size: 1.1em;
         }
         
@@ -320,6 +324,14 @@ def main():
     print("\n🔧 Consolidating results...")
     matched_events = []
     
+    # Diagnostic counters
+    stoiximan_with_arb = 0
+    stoiximan_without_arb = 0
+    roobet_with_arb = 0
+    roobet_without_arb = 0
+    tumbet_with_arb = 0
+    tumbet_without_arb = 0
+    
     for (team1, team2), oddswar_data in oddswar_events.items():
         event = {
             'team1': team1,
@@ -359,6 +371,9 @@ def main():
                         float(roobet['odds_x']) > oddswar_x or 
                         float(roobet['odds_2']) > oddswar_2):
                         has_arb_opportunity = True
+                        roobet_with_arb += 1
+                    else:
+                        roobet_without_arb += 1
                 
                 # Check Stoiximan
                 if 'stoiximan' in event:
@@ -367,6 +382,9 @@ def main():
                         float(stoiximan['odds_x']) > oddswar_x or 
                         float(stoiximan['odds_2']) > oddswar_2):
                         has_arb_opportunity = True
+                        stoiximan_with_arb += 1
+                    else:
+                        stoiximan_without_arb += 1
                 
                 # Check Tumbet
                 if 'tumbet' in event:
@@ -375,6 +393,9 @@ def main():
                         float(tumbet['odds_x']) > oddswar_x or 
                         float(tumbet['odds_2']) > oddswar_2):
                         has_arb_opportunity = True
+                        tumbet_with_arb += 1
+                    else:
+                        tumbet_without_arb += 1
                 
             except (ValueError, KeyError):
                 # If odds parsing fails, skip this event
@@ -385,6 +406,12 @@ def main():
                 matched_events.append(event)
     
     print(f"   ✅ Total events with arbitrage opportunities: {len(matched_events)}")
+    
+    # Diagnostic: Show matched events breakdown
+    print(f"\n🔍 DIAGNOSTIC - Matched Events Breakdown:")
+    print(f"   Stoiximan: {stoiximan_with_arb} with arb opportunities, {stoiximan_without_arb} without")
+    print(f"   Roobet: {roobet_with_arb} with arb opportunities, {roobet_without_arb} without")
+    print(f"   Tumbet: {tumbet_with_arb} with arb opportunities, {tumbet_without_arb} without")
     
     # Step 5: Generate HTML
     print("\n📝 Generating HTML output...")

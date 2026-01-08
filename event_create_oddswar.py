@@ -3,7 +3,7 @@ Oddswar Live Soccer Match Parser
 
 This script fetches live soccer matches from Oddswar's API and extracts:
 - Team names
-- Match odds (1X2 - only BACK/pink odds, ignoring LAY/blue odds)
+- Match odds (1X2 - only LAY/pink odds for arbitrage, ignoring BACK/blue odds)
 - Match links
 
 Output is formatted identically to stoiximan-formatted.txt for easy comparison.
@@ -67,20 +67,21 @@ def fetch_market_details(market_ids: List[str]) -> Dict:
     return response.json()
 
 
-def extract_back_odds(runner_prices: List[Dict]) -> Optional[float]:
+def extract_lay_odds(runner_prices: List[Dict]) -> Optional[float]:
     """
-    Extract the best (first) BACK odds from runner prices.
-    We only want BACK odds (pink), not LAY odds (blue).
+    Extract the best (first) LAY odds from runner prices.
+    For arbitrage, we need LAY odds (pink) from Oddswar where we act as bookmaker.
+    We ignore BACK odds (blue).
     
     Args:
         runner_prices: List of price dictionaries
     
     Returns:
-        float: Best back price, or None if not available
+        float: Best lay price, or None if not available
     """
-    back_prices = [p for p in runner_prices if p.get('bet_side') == 'back']
-    if back_prices:
-        return back_prices[0].get('price')
+    lay_prices = [p for p in runner_prices if p.get('bet_side') == 'lay']
+    if lay_prices:
+        return lay_prices[0].get('price')
     return None
 
 
@@ -145,17 +146,17 @@ def parse_matches(markets_data: Dict, details_data: Dict) -> List[Dict]:
             for runner in detail_runners:
                 selection_id = runner.get('selection_id')
                 prices = runner.get('prices', [])
-                back_odds = extract_back_odds(prices)
+                lay_odds = extract_lay_odds(prices)
                 
                 # Match selection_id to runner name
                 for name, sid in runner_map.items():
                     if sid == selection_id:
                         if name == team1_name:
-                            team1_odds = back_odds
+                            team1_odds = lay_odds
                         elif name == team2_name:
-                            team2_odds = back_odds
+                            team2_odds = lay_odds
                         elif 'Draw' in name:
-                            draw_odds = back_odds
+                            draw_odds = lay_odds
         
         # Build match link
         event_id = event.get('id', '')

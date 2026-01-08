@@ -1,11 +1,9 @@
-Team 1: AE Aracatuba SP U20 | Team 2: Oeste-SP U20 | Team 1 Win: 27 | Draw: 9.5 | Team 2 Win: 1.03 | Link: https://en.stoiximan.gr/live/ae-aracatuba-sp-u20-oeste-sp-u20/78850311/
-Team 1: West Ham United | Team 2: Nottingham Forest | Team 1 Win: 150 | Draw: 8.75 | Team 2 Win: 1.06 | Link: https://en.stoiximan.gr/live/west-ham-united-nottingham-forest/78213751/
-Team 1: Assisense U20 | Team 2: Guarani SP U20 | Team 1 Win: 9 | Draw: 4.65 | Team 2 Win: 1.28 | Link: https://en.stoiximan.gr/live/assisense-u20-guarani-sp-u20/78850321/
-Team 1: Rangers FC | Team 2: Aberdeen FC | Team 1 Win: N/A | Draw: N/A | Team 2 Win: N/A | Link: https://en.stoiximan.gr/live/rangers-fc-aberdeen-fc/78502012/
-Team 1: XV de Jau U20 | Team 2: Trindade GO U20 | Team 1 Win: 1.27 | Draw: 3.9 | Team 2 Win: 15 | Link: https://en.stoiximan.gr/live/xv-de-jau-u20-trindade-go-u20/78850162/
-Team 1: Chapecoense SC | Team 2: Brusque SC | Team 1 Win: 1.5 | Draw: 3.6 | Team 2 Win: 7.4 | Link: https://en.stoiximan.gr/live/chapecoense-sc-brusque-sc/78311233/
-Team 1: Francana U20 | Team 2: Barra U20 | Team 1 Win: 3.85 | Draw: 2.65 | Team 2 Win: 2.12 | Link: https://en.stoiximan.gr/live/francana-u20-barra-u20/78850314/
-Team 1: Sporting CP | Team 2: Vitoria Guimaraes | Team 1 Win: 1.12 | Draw: 6.7 | Team 2 Win: 60 | Link: https://en.stoiximan.gr/live/sporting-cp-vitoria-guimaraes/77304555/
-Team 1: Comercial SP U20 | Team 2: Noroeste SP U20 | Team 1 Win: 1.18 | Draw: 4.9 | Team 2 Win: 17.5 | Link: https://en.stoiximan.gr/live/comercial-sp-u20-noroeste-sp-u20/78850315/
-Team 1: Maracana CE | Team 2: Ferroviario | Team 1 Win: 1.85 | Draw: 3.2 | Team 2 Win: 4.45 | Link: https://en.stoiximan.gr/live/maracana-ce-ferroviario/78859827/
-Team 1: Sliema Wanderers | Team 2: Marsaxlokk FC | Team 1 Win: 7.1 | Draw: 1.17 | Team 2 Win: 9 | Link: https://en.stoiximan.gr/live/sliema-wanderers-marsaxlokk-fc/78506229/
+Team 1: AE Aracatuba SP U20 | Team 2: Oeste-SP U20 | Team 1 Win: 45 | Draw: 11.25 | Team 2 Win: 1.005 | Link: https://en.stoiximan.gr/live/ae-aracatuba-sp-u20-oeste-sp-u20/78850311/
+Team 1: Assisense U20 | Team 2: Guarani SP U20 | Team 1 Win: 37 | Draw: 7.3 | Team 2 Win: 1.06 | Link: https://en.stoiximan.gr/live/assisense-u20-guarani-sp-u20/78850321/
+Team 1: Luverdense EC U20 | Team 2: Corinthians SP U20 | Team 1 Win: 7.5 | Draw: 3.15 | Team 2 Win: 1.52 | Link: https://en.stoiximan.gr/live/luverdense-ec-u20-corinthians-sp-u20/78850322/
+Team 1: Santa Catarina Clube SC | Team 2: Camboriu | Team 1 Win: 2.85 | Draw: 3.15 | Team 2 Win: 2.27 | Link: https://en.stoiximan.gr/live/santa-catarina-clube-sc-camboriu/78311192/
+Team 1: Chapecoense SC | Team 2: Brusque SC | Team 1 Win: 1.85 | Draw: 2.37 | Team 2 Win: 8.5 | Link: https://en.stoiximan.gr/live/chapecoense-sc-brusque-sc/78311233/
+Team 1: CA Piauiense PI U20 | Team 2: America MG U20 | Team 1 Win: 6.8 | Draw: 5.1 | Team 2 Win: 1.3 | Link: https://en.stoiximan.gr/live/ca-piauiense-pi-u20-america-mg-u20/78850333/
+Team 1: Gremio Prudente U20 | Team 2: Olimpico EC SE U20 | Team 1 Win: N/A | Draw: N/A | Team 2 Win: N/A | Link: https://en.stoiximan.gr/live/gremio-prudente-u20-olimpico-ec-se-u20/78850324/
+Team 1: Maracana CE | Team 2: Ferroviario | Team 1 Win: 2.75 | Draw: 2.05 | Team 2 Win: 4.35 | Link: https://en.stoiximan.gr/live/maracana-ce-ferroviario/78859827/
+Team 1: Independente Futebol Sao Joseense PR | Team 2: Galo Maringa PR | Team 1 Win: 2.32 | Draw: 2.9 | Team 2 Win: 3.3 | Link: https://en.stoiximan.gr/live/independente-futebol-sao-joseense-pr-galo-maringa-pr/78840408/

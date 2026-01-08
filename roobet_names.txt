@@ -11,6 +11,8 @@
 1. FC Schweinfurt 05
 1. FC Union Berlin
 1. FFC Turbine Potsdam 71
+AA Ponte Preta SP
+AAD Vitoria Tabocas PE
 AB Barika
 AC Ajaccio
 AC Bellinzona
@@ -31,9 +33,11 @@ ACS Champions FC Arges
 AD Cariari Pococi
 AD Ceuta
 AD Cofutpa
+AD San Carlos
 ADO Den Haag
 AE Kifisia FC
 AE Larissa FC
+AE Velo Clube SP
 AEK Athens
 AEK Larnaca
 AEL Limassol
@@ -53,6 +57,10 @@ AL Ittifaq
 AL Jazira AL Hamra
 AL Karma
 AL Markhiya
+AL Minaa
+AL Mosul SC
+AL Naft
+AL Naft Maysan
 AL Nasr SC (OMA)
 AL Shorta SC
 AL Suqoor
@@ -68,11 +76,13 @@ AS Camberene
 AS Gubbio
 AS Monaco
 AS Monaco (E)
+AS Nordia Jerusalem
 AS Pikine
 AS Roma
 AS Saint-Etienne
 AS Sariyer
 ASC HLM Dakar
+ASC Jaraaf
 ASC Otelul Galati
 ASO Chlef
 AVS Futebol SAD
@@ -96,6 +106,7 @@ Al Ahli Doha SC
 Al Ahli Saudi FC
 Al Ahly Tripoli
 Al Ain FC
+Al Akhdar SC
 Al Arabi
 Al Arabi Doha SC
 Al Dahra
@@ -113,6 +124,7 @@ Al Madina Al Monawara SC
 Al Mesaimeer
 Al Nahda
 Al Nassr Club
+Al Quwa Al Jawiya
 Al Rayyan SC
 Al Riffa
 Al Sadd SC
@@ -126,6 +138,7 @@ Al Urooba UAE
 Al Wahda FC
 Al Wasl FC
 Al Watan
+Al Zawraa
 Al-Adalah
 Al-Ahli SC Manama
 Al-Akhdoud Club
@@ -140,6 +153,7 @@ Al-Hilal (E)
 Al-Hilal Benghazi
 Al-Ittifaq FC
 Al-Ittihad FC
+Al-Ittihad Tripoli
 Al-Khaboora
 Al-Khaldiya SC
 Al-Khaleej Club
@@ -165,6 +179,7 @@ Al-Shabbab
 Al-Shamal
 Al-Taawoun Buraidah
 Al-Taawoun FC
+Al-Tahaddi
 Al-Wehda
 Alaves
 Albacete Balompie
@@ -181,6 +196,7 @@ Almeria
 Alo Egypt Club
 Altrincham FC
 Aluminium Arak
+Amanat Baghdad SC
 Amed Sportif Faaliyetler
 America FC RN
 America de Cali
@@ -208,6 +224,7 @@ Arsenal FC (E)
 As Dgssie
 Ascoli Calcio 1898
 Asd Pineto Calcio
+Associacao Portuguesa de Desportos SP
 Asswehly
 Asteras Tripolis
 Asteras Tripolis II
@@ -237,6 +254,7 @@ Austria Bundesliga
 Ayr United FC
 Aytemiz Alanyaspor
 Ayutthaya United FC
+Azam FC
 Azerbaijan
 BB Bodrumspor
 BFB Pattaya City
@@ -294,6 +312,7 @@ Bodo/Glimt
 Bodoe/Glimt
 Bologna FC
 Bolton Wanderers
+Boluspor
 Borac Banja Luka
 Boreham Wood FC
 Borneo Samarinda
@@ -302,6 +321,7 @@ Borussia Dortmund (E)
 Borussia Monchengladbach
 Bosnia & Herzegovina
 Boston United FC
+Botafogo FC SP
 Botafogo FR RJ
 Botswana
 Bournemouth
@@ -373,6 +393,7 @@ CS Cartagines
 CS Cienciano
 CS Constantine
 CS Emelec
+CS Herediano
 CS Sergipe SE
 CS Universitatea Craiova
 CSD Independiente del Valle
@@ -389,6 +410,7 @@ Canada (E)
 Canet Roussillon FC
 Canosa 1948
 Cape Verde
+Capivariano FC SP
 Carabobo FC
 Caracas FC
 Cardiff City
@@ -494,6 +516,7 @@ De Graafschap
 De Treffers Groesbeek
 Debreceni VSC
 Decisao PE
+Defensa y Justicia
 Defensor Sporting
 Delfin SC
 Delfino Pescara
@@ -517,9 +540,11 @@ Dieppe FC
 Dijon FCO
 Dimona Sport Club
 Diosgyori VTK
+Diyala FC
 Djurgarden
 Doncaster Rovers
 Dubai United FC
+Duhok FC
 Dundee FC
 Dundee United
 Dunfermline Athletic FC
@@ -528,6 +553,8 @@ Dynamo Dresden
 EA Guingamp
 EC Bahia BA
 EC Juventude RS
+EC Noroeste SP
+EC Primavera SP
 EC Vitoria BA
 ES Bouakal
 ES Mostaganem
@@ -562,6 +589,7 @@ Enosis Neon Paralimni FC
 Entente Feignies Aulnoye
 Enugu Rangers International FC
 Equatorial Guinea
+Erbil SC
 Esenler Erokspor
 Espanyol
 Espanyol Barcelona
@@ -784,10 +812,13 @@ Greece Super League
 Greenock Morton FC
 Gremio FB Porto Alegre RS
 Gremio FB Porto Alegrense RS
+Gremio Novorizontino SP
 Grenoble Foot
 Greuther Furth
 Grimsby Town
 Guabira Montero
+Guadalupe FC
+Guarani FC SP
 Guatemala (E)
 Guediawaye FC
 Guidonia Montecelio 1937 FC
@@ -863,12 +894,14 @@ Hungary
 Hungary NB I
 Iceland
 Igdir FK
+Iguatu CE
 Ikorodu City
 Imisli FK
 Independiente Medellin
 Independiente Petrolero
 India
 India (E)
+Indonesia
 Indonesia (E)
 Inter (E)
 Inter Benincasa
@@ -961,6 +994,7 @@ Kosovo
 Kun Khalifat FC
 Kuopion Palloseura
 Kuwait SC
+Kyrgyzstan
 LD Alajuelense
 LDU Quito
 La Havre AC
@@ -1034,6 +1068,7 @@ Maccabi Ahi Nazareth
 Maccabi Bney Reine
 Maccabi Haifa FC
 Maccabi Herzliya
+Maccabi Ironi Ashdod FC
 Maccabi Ironi Kiryat Malakhi
 Maccabi Kabilio Jaffa
 Maccabi Kiryat Ata-Bialik
@@ -1045,6 +1080,7 @@ Maccabi Tel Aviv FC
 Maccabi Yavne
 Macclesfield FC
 Madura United
+Maguary PE
 Majd FC
 Makedonikos FC
 Malaga CF
@@ -1066,6 +1102,7 @@ Mansfield Town
 Mansfield United
 Mantova 1911
 Maracana EC CE
+Maranguape CE
 Marbella FC
 Maritimo
 Maritimo Madeira
@@ -1104,10 +1141,12 @@ Montreuil FC
 Morecambe FC
 Moreirense FC
 Morocco
+Mosta FC
 Motherwell FC
 Mozambique
 Muaither SC
 Muang Thong United
+Municipal Liberia
 Muscat
 Mwembe Makumbi City
 NAC Breda
@@ -1122,10 +1161,12 @@ Nacional Asuncion
 Nacional da Madeira
 Naft Gachsaran
 Nakhon Ratchasima FC
+Nakhon SI United
 Nam Dinh FC
 Nancy-Lorraine
 Napoli (E)
 Nassaji Mazandaran FC
+Nautico PE
 Nc Magra
 Nees Atromitou
 Neftchi Baku PFC
@@ -1164,6 +1205,7 @@ Olympiacos B
 Olympiacos Piraeus
 Olympiakos Marseille
 Olympiakos Nicosia
+Olympic Azzaweya
 Olympique Akbou
 Olympique Lyon
 Olympique Marseille
@@ -1213,6 +1255,7 @@ Pau FC
 Paulista
 Paykan FC
 Pen-y-Bont FC
+Perez Zeledon
 Perigny
 Pernambucano
 Persebaya Surabaya
@@ -1233,6 +1276,7 @@ Pisa SC
 Plymouth Argyle
 Poland
 Poland Ekstraklasa
+Police Tero FC
 Pontivy GSI
 Port FC
 Port Vale
@@ -1251,6 +1295,7 @@ Primera A
 Pro Patria Busto Arsizio
 Psim Yogyakarta
 Pumas UNAM
+Puntarenas FC
 Puskas Akademia FC Felcsut
 Qadsia SC
 Qarabag FK
@@ -1305,6 +1350,7 @@ Red Star FC
 Reggiana 1919
 Remo Stars
 Republic of Korea
+Retro FC PE
 Rio Ave FC
 Rio Negro RR
 River Plate (E)
@@ -1379,7 +1425,9 @@ Samsunspor
 San Antonio Bulo Bulo
 San Marino
 Santa Clara Azores
+Santa Cruz FC PE
 Santos FC SP
+Sao Bernardo FC
 Sao Paulo FC SP
 Sao Paulo SC SP
 Sao Raimundo Boa Vista
@@ -1420,6 +1468,7 @@ Shkendija Tetovo
 Shooting Stars
 Shrewsbury FC
 Shrewsbury Town
+Simba SC
 Singida Black Stars SC
 Sisaket United FC
 Sitra Club
@@ -1456,6 +1505,7 @@ Sparta Prague
 Sparta Rotterdam
 Spezia Calcio
 Sporting Cristal
+Sporting FC
 Sporting Gijon
 Sporting Lisbon
 Sporting Lisbon B

@@ -76,6 +76,7 @@ AD Sanjoanense U19
 AD Torrejon
 AD Union Adarve
 AD Union Adarve U19
+AE Aracatuba SP U20
 AE Larissa
 AE Larissa U19
 AE Lefkimmi
@@ -391,6 +392,7 @@ Amarante
 Amasyaspor 1968 FK
 Amed SK (W)
 Amedspor
+America MG U20
 Americano RJ U20
 Amiens SC II
 Amitie FC
@@ -466,6 +468,7 @@ Ashton Utd
 Aso Chlef
 Aspor FC
 Assam Police
+Assisense U20
 Asteras Tripolis
 Asteras Tripolis II
 Asti Calcio
@@ -695,6 +698,7 @@ Bristol Rovers (W)
 Bromley FC
 Bromley U21
 Bromsgrove Sporting
+Brusque SC
 Bryne FK
 Bubali SC
 Bucaspor
@@ -733,6 +737,7 @@ CA Nacional Potosi
 CA Osasuna
 CA Osasuna (W)
 CA Osasuna II
+CA Piauiense PI U20
 CA Talleres de Perico
 CAI Rivadavia
 CD Alcoyano
@@ -954,6 +959,7 @@ Calcio Padova
 Caldas SC
 Caledonian Braves FC
 Calvi Noale
+Camboriu
 Cambrian United
 Cambridge City
 Cambridge United
@@ -1001,6 +1007,7 @@ Chainat FC
 Chalkanoras Dali
 Chania
 Chanthaburi
+Chapecoense SC
 Chapecoense SC U20
 Chapelton Maroons
 Charlton
@@ -1085,6 +1092,7 @@ Coria CF
 Corinthians (W) U20
 Corinthians SP
 Corinthians SP (W)
+Corinthians SP U20
 Coritiba PR (W)
 Corum Belediyespor
 Coruxo FC
@@ -1106,6 +1114,7 @@ Crossing Schaerbeek
 Crusaders FC
 Cruz Azul
 Cruzeiro MG
+Cruzeiro MG U20
 Crvena Zvezda U19
 Crystal Palace (W)
 Crystal Palace FC
@@ -1280,6 +1289,7 @@ Eskisehirspor
 Esperanca D'Andorra
 Esperance
 Espoir FC
+Esporte Patos PB U20
 Este
 Esteghlal Tehran
 Estrela Amadora U23
@@ -1546,6 +1556,7 @@ Fenerbahce SK (W)
 Ferencvarosi TC
 Ferencvarosi TC U19
 Ferroviaria (W) U20
+Ferroviario
 Fethiyespor
 Feyenoord Rotterdam
 Feyenoord U21
@@ -1613,6 +1624,7 @@ Galatasaray SK
 Galatasaray SK (W)
 Galatasaray SK U19
 Gallia Lucciana
+Galo Maringa PR
 Gamba Osaka
 Gambia Ports Authority
 Gambian Dutch Lions
@@ -1668,6 +1680,7 @@ Grasshoppers
 Grazer AK
 Green Valley
 Greenock Morton
+Gremio Prudente U20
 Gremio RS U20
 Grenoble Foot 38
 Grenoble Foot 38 (W)
@@ -1678,6 +1691,7 @@ Groningen (W)
 Guabira
 Guanabara City GO U20
 Guarani Antonio Franco
+Guarani SP U20
 Gubbio 1910
 Gucha Stars FC
 Gudja United
@@ -1836,6 +1850,7 @@ Imisli FK
 Imolese Calcio
 Inchicore Athletic
 Indeni
+Independente Futebol Sao Joseense PR
 Independiente Del Valle U20
 Independiente Petrolero
 Independiente de Catamarca
@@ -2132,6 +2147,7 @@ Lusitania Lourosa FC U19
 Lusitania de Lourosa FC
 Lusitano Evora 1911
 Luton Town
+Luverdense EC U20
 MB Barika
 MBMB Warrior
 MC Alger
@@ -2227,6 +2243,7 @@ Manisa FK
 Mansfield Town
 Mantova FC U19
 Mara Sugar
+Maracana CE
 Marbella FC
 Marbelli
 Mardin BB
@@ -2448,9 +2465,11 @@ OLS Oulu
 Odense BK
 Odishi Zugdidi
 Odysseas Moschatou (W)
+Oeste-SP U20
 Oil India Limited
 Olancho FC
 Oldham
+Olimpico EC SE U20
 Olimpico Totana
 Olimpija Ljubljana (W)
 Oliveira Hospital
@@ -2982,6 +3001,7 @@ Sant Angelo 1907
 Sant Cugat FC (W)
 Sant Cugat FC U19
 Santa Amalia
+Santa Catarina Clube SC
 Santa Clara Sad U19
 Santa Cruz PE U20
 Santa Lucia FC
