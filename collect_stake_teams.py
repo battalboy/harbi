@@ -1,8 +1,9 @@
 """
 Stake.com Team Name Collector
-Uses undetected-chromedriver with correct selectors from Browser MCP inspection.
+Uses undetected-chromedriver in HEADLESS mode for remote server compatibility.
 
 Selector discovered: span.ds-body-md-strong.truncate
+Runs headless for command-line/SSH environments (remote server: 89.125.255.32)
 """
 
 import undetected_chromedriver as uc
@@ -43,8 +44,8 @@ TOURNAMENT_SLUGS = [
 ]
 
 def create_driver():
-    """Creates undetected ChromeDriver with mobile UA."""
-    print("🚀 Launching browser...")
+    """Creates undetected ChromeDriver with mobile UA in headless mode."""
+    print("🚀 Launching headless browser...")
     
     options = uc.ChromeOptions()
     mobile_ua = "Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5672.76 Mobile Safari/537.36"
@@ -53,12 +54,17 @@ def create_driver():
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     
+    # Headless mode (newer version, less detectable)
+    options.add_argument("--headless=new")
+    options.add_argument("--window-size=1920,1080")
+    options.add_argument("--disable-gpu")
+    
     driver = uc.Chrome(options=options, version_main=None)
     driver.execute_script(
         "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
     )
     
-    print("✅ Browser launched")
+    print("✅ Headless browser launched")
     return driver
 
 def accept_cookies(driver):

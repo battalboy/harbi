@@ -1,3 +1,18 @@
+# ⚠️ CRITICAL CONTEXT - READ THIS FIRST ⚠️
+
+**THIS IS COMMISSIONED CLIENT SOFTWARE - NOT A PERSONAL PROJECT**
+
+- **5-6 paying clients** will use this system
+- **Clients need web access from anywhere** (no Python knowledge required)
+- **Remote production server**: 89.125.255.32 (giray@)
+- **Clients CANNOT run scripts manually** - must access via web interface
+- **Production deployment is the END GOAL**, not just proof-of-concept
+- **Web server required**: Flask application for client access (not simple HTTP server)
+
+**EVERY decision must consider: "Will this work for non-technical clients accessing via web?"**
+
+---
+
 # Harbi - Arbitrage Betting System (Arbing Software)
 
 ## Client Requirements
@@ -235,3 +250,11 @@ This system does NOT place bets automatically. It identifies opportunities for t
 - **Git Commits & Pushes**: DO NOT commit to local git or push to GitHub unless the user explicitly requests it
 - Only perform git operations (add, commit, push) when the user gives express permission
 - **Documentation**: DO NOT create large markdown documentation files for small code fixes, bug fixes, or routine changes. Report changes concisely in the chat instead. Reserve documentation files for significant features, architectural decisions, or complex system explanations only.
+
+## Remote Server Information
+- **IP Address**: 89.125.255.32
+- **Username**: giray
+- **Authentication**: Passwordless SSH with public key (id_rsa)
+- **SSH Command**: `ssh giray@89.125.255.32`
+- **SCP Command Example**: `scp file.txt giray@89.125.255.32:~/path/to/destination/`
+- **Note**: The local machine's private key (id_rsa) has been copied to the remote for GitHub access
