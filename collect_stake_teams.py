@@ -87,14 +87,35 @@ def create_driver():
     
     mobile_ua = "Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5672.76 Mobile Safari/537.36"
     options.add_argument(f"user-agent={mobile_ua}")
-    options.add_argument("--disable-blink-features=AutomationControlled")
+    
+    # Stability and sandboxing
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--disable-setuid-sandbox")
     
-    # Headless mode (newer version, less detectable)
+    # Headless mode
     options.add_argument("--headless=new")
     options.add_argument("--window-size=1920,1080")
+    
+    # Disable features that can cause crashes in server environments
     options.add_argument("--disable-gpu")
+    options.add_argument("--disable-software-rasterizer")
+    options.add_argument("--disable-extensions")
+    options.add_argument("--disable-logging")
+    options.add_argument("--disable-web-security")
+    options.add_argument("--ignore-certificate-errors")
+    options.add_argument("--disable-blink-features=AutomationControlled")
+    
+    # Memory and performance
+    options.add_argument("--disable-background-networking")
+    options.add_argument("--disable-default-apps")
+    options.add_argument("--disable-sync")
+    options.add_argument("--metrics-recording-only")
+    options.add_argument("--no-first-run")
+    options.add_argument("--disable-crash-reporter")
+    
+    # Single process mode (more stable in containers/servers)
+    options.add_argument("--single-process")
     
     driver = uc.Chrome(options=options, version_main=None)
     driver.execute_script(
