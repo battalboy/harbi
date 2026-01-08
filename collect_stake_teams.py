@@ -43,11 +43,48 @@ TOURNAMENT_SLUGS = [
     "mexico/liga-mx",
 ]
 
+def find_chrome_binary():
+    """Find Chrome/Chromium binary on the system."""
+    import shutil
+    
+    # Common Chrome/Chromium binary locations on Linux
+    possible_paths = [
+        '/usr/bin/google-chrome',
+        '/usr/bin/google-chrome-stable',
+        '/usr/bin/chromium',
+        '/usr/bin/chromium-browser',
+        '/snap/bin/chromium',
+        shutil.which('google-chrome'),
+        shutil.which('google-chrome-stable'),
+        shutil.which('chromium'),
+        shutil.which('chromium-browser'),
+    ]
+    
+    for path in possible_paths:
+        if path and os.path.exists(path):
+            return path
+    
+    return None
+
 def create_driver():
     """Creates undetected ChromeDriver with mobile UA in headless mode."""
     print("🚀 Launching headless browser...")
     
+    # Find Chrome binary
+    chrome_binary = find_chrome_binary()
+    if not chrome_binary:
+        print("\n❌ ERROR: Chrome/Chromium not found on this system!")
+        print("\n📦 Please install Chrome or Chromium:")
+        print("   Ubuntu/Debian: sudo apt-get install chromium-browser")
+        print("   or: sudo apt-get install google-chrome-stable")
+        print("   CentOS/RHEL: sudo yum install chromium")
+        raise RuntimeError("Chrome/Chromium binary not found")
+    
+    print(f"   ✅ Found Chrome at: {chrome_binary}")
+    
     options = uc.ChromeOptions()
+    options.binary_location = chrome_binary
+    
     mobile_ua = "Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5672.76 Mobile Safari/537.36"
     options.add_argument(f"user-agent={mobile_ua}")
     options.add_argument("--disable-blink-features=AutomationControlled")
