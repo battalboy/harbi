@@ -88,34 +88,34 @@ def create_driver():
     mobile_ua = "Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.5672.76 Mobile Safari/537.36"
     options.add_argument(f"user-agent={mobile_ua}")
     
-    # Stability and sandboxing
+    # Critical for server environments
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-setuid-sandbox")
     
-    # Headless mode
-    options.add_argument("--headless=new")
+    # Use old headless mode (more stable than --headless=new)
+    options.add_argument("--headless")
+    options.add_argument("--disable-gpu")
     options.add_argument("--window-size=1920,1080")
     
-    # Disable features that can cause crashes in server environments
-    options.add_argument("--disable-gpu")
+    # Disable problematic features
     options.add_argument("--disable-software-rasterizer")
     options.add_argument("--disable-extensions")
-    options.add_argument("--disable-logging")
+    options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("--disable-web-security")
     options.add_argument("--ignore-certificate-errors")
-    options.add_argument("--disable-blink-features=AutomationControlled")
     
-    # Memory and performance
+    # Performance and stability
     options.add_argument("--disable-background-networking")
     options.add_argument("--disable-default-apps")
     options.add_argument("--disable-sync")
-    options.add_argument("--metrics-recording-only")
     options.add_argument("--no-first-run")
+    options.add_argument("--no-zygote")
     options.add_argument("--disable-crash-reporter")
     
-    # Single process mode (more stable in containers/servers)
-    options.add_argument("--single-process")
+    # Shared memory (important for headless)
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--disable-software-rasterizer")
     
     driver = uc.Chrome(options=options, version_main=None)
     driver.execute_script(
