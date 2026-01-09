@@ -37,4 +37,7 @@ wheels/
 .DS_Store
 Thumbs.db
 
+# Temporary files
+temp_*
+
 

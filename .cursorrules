@@ -250,10 +250,13 @@ This system does NOT place bets automatically. It identifies opportunities for t
 - **Git Commits & Pushes**: DO NOT commit to local git or push to GitHub unless the user explicitly requests it
 - Only perform git operations (add, commit, push) when the user gives express permission
 - **Documentation**: DO NOT create large markdown documentation files for small code fixes, bug fixes, or routine changes. Report changes concisely in the chat instead. Reserve documentation files for significant features, architectural decisions, or complex system explanations only.
+- **Temporary Files**: When creating temporary scripts (e.g., sanity checks, investigation scripts), use the `temp_` prefix naming convention (e.g., `temp_sanity_check_roobet.py`, `temp_investigate_api.py`). These files are gitignored and should be deleted after use.
 
 ## Remote Server Information
 - **IP Address**: 89.125.255.32
 - **Username**: giray
+- **Operating System**: Ubuntu (latest release)
+- **Location**: Frankfurt, Germany
 - **Authentication**: Passwordless SSH with public key (id_rsa)
 - **SSH Command**: `ssh giray@89.125.255.32`
 - **SCP Command Example**: `scp file.txt giray@89.125.255.32:~/path/to/destination/`
