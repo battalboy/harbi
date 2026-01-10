@@ -146,11 +146,10 @@ def generate_html(matched_events: List[Dict], output_file: str = 'results.html')
             border-collapse: collapse;
             background-color: white;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            table-layout: fixed;
-            border: 2px solid #555;
         }
         
         .event-table th {
+            background-color: #e0e0e0;
             padding: 10px;
             text-align: center;
             border: 1px solid #ccc;
@@ -160,18 +159,15 @@ def generate_html(matched_events: List[Dict], output_file: str = 'results.html')
             padding: 10px;
             text-align: center;
             border: 1px solid #ccc;
-            width: 15%;
         }
         
         .site-name {
             font-weight: bold;
             text-align: left;
-            width: 55%;
         }
         
-        .header-row th {
-            background-color: #555;
-            color: white;
+        .header-row {
+            background-color: #d0d0d0;
             font-size: 1.1em;
         }
         
@@ -324,14 +320,6 @@ def main():
     print("\n🔧 Consolidating results...")
     matched_events = []
     
-    # Diagnostic counters
-    stoiximan_with_arb = 0
-    stoiximan_without_arb = 0
-    roobet_with_arb = 0
-    roobet_without_arb = 0
-    tumbet_with_arb = 0
-    tumbet_without_arb = 0
-    
     for (team1, team2), oddswar_data in oddswar_events.items():
         event = {
             'team1': team1,
@@ -354,64 +342,11 @@ def main():
             event['tumbet'] = tumbet_matches[(team1, team2)]
             has_matches = True
         
-        # Only include if at least one traditional site matched AND has arbitrage opportunity
+        # Only include if at least one traditional site matched
         if has_matches:
-            has_arb_opportunity = False
-            
-            # Check if any traditional site has better odds than Oddswar
-            try:
-                oddswar_1 = float(oddswar_data['odds_1'])
-                oddswar_x = float(oddswar_data['odds_x'])
-                oddswar_2 = float(oddswar_data['odds_2'])
-                
-                # Check Roobet
-                if 'roobet' in event:
-                    roobet = event['roobet']
-                    if (float(roobet['odds_1']) > oddswar_1 or 
-                        float(roobet['odds_x']) > oddswar_x or 
-                        float(roobet['odds_2']) > oddswar_2):
-                        has_arb_opportunity = True
-                        roobet_with_arb += 1
-                    else:
-                        roobet_without_arb += 1
-                
-                # Check Stoiximan
-                if 'stoiximan' in event:
-                    stoiximan = event['stoiximan']
-                    if (float(stoiximan['odds_1']) > oddswar_1 or 
-                        float(stoiximan['odds_x']) > oddswar_x or 
-                        float(stoiximan['odds_2']) > oddswar_2):
-                        has_arb_opportunity = True
-                        stoiximan_with_arb += 1
-                    else:
-                        stoiximan_without_arb += 1
-                
-                # Check Tumbet
-                if 'tumbet' in event:
-                    tumbet = event['tumbet']
-                    if (float(tumbet['odds_1']) > oddswar_1 or 
-                        float(tumbet['odds_x']) > oddswar_x or 
-                        float(tumbet['odds_2']) > oddswar_2):
-                        has_arb_opportunity = True
-                        tumbet_with_arb += 1
-                    else:
-                        tumbet_without_arb += 1
-                
-            except (ValueError, KeyError):
-                # If odds parsing fails, skip this event
-                has_arb_opportunity = False
-            
-            # Only add event if there's at least one arbitrage opportunity
-            if has_arb_opportunity:
-                matched_events.append(event)
+            matched_events.append(event)
     
-    print(f"   ✅ Total events with arbitrage opportunities: {len(matched_events)}")
-    
-    # Diagnostic: Show matched events breakdown
-    print(f"\n🔍 DIAGNOSTIC - Matched Events Breakdown:")
-    print(f"   Stoiximan: {stoiximan_with_arb} with arb opportunities, {stoiximan_without_arb} without")
-    print(f"   Roobet: {roobet_with_arb} with arb opportunities, {roobet_without_arb} without")
-    print(f"   Tumbet: {tumbet_with_arb} with arb opportunities, {tumbet_without_arb} without")
+    print(f"   ✅ Total events with at least one match: {len(matched_events)}")
     
     # Step 5: Generate HTML
     print("\n📝 Generating HTML output...")
@@ -423,8 +358,8 @@ def main():
     print("SUMMARY")
     print("="*80)
     print(f"Total Oddswar events: {len(oddswar_events)}")
-    print(f"Events with arbitrage opportunities: {len(matched_events)}")
-    print(f"Events without arbitrage opportunities: {len(oddswar_events) - len(matched_events)}")
+    print(f"Events with matches: {len(matched_events)}")
+    print(f"Events without matches: {len(oddswar_events) - len(matched_events)}")
     print()
     
     # Breakdown by site combinations
