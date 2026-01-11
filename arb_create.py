@@ -348,6 +348,34 @@ def main():
     
     print(f"   ✅ Total events with at least one match: {len(matched_events)}")
     
+    # Step 4.5: Sort events - arbitrage opportunities first
+    print("\n🔀 Sorting events (arbitrage opportunities first)...")
+    
+    def has_arbitrage(event):
+        """Check if event has any arbitrage opportunities."""
+        try:
+            oddswar_1 = float(event['oddswar']['odds_1'])
+            oddswar_x = float(event['oddswar']['odds_x'])
+            oddswar_2 = float(event['oddswar']['odds_2'])
+            
+            # Check all traditional sites for higher odds
+            for site in ['roobet', 'stoiximan', 'tumbet']:
+                if site in event:
+                    site_data = event[site]
+                    if (float(site_data['odds_1']) > oddswar_1 or 
+                        float(site_data['odds_x']) > oddswar_x or 
+                        float(site_data['odds_2']) > oddswar_2):
+                        return True
+            return False
+        except (ValueError, KeyError):
+            return False
+    
+    # Sort: events with arbitrage first (True=1, False=0), reverse to get True first
+    matched_events.sort(key=lambda e: has_arbitrage(e), reverse=True)
+    
+    arb_count = sum(1 for e in matched_events if has_arbitrage(e))
+    print(f"   ✅ {arb_count} events with arbitrage at top, {len(matched_events) - arb_count} without at bottom")
+    
     # Step 5: Generate HTML
     print("\n📝 Generating HTML output...")
     generate_html(matched_events, 'results.html')

@@ -13,6 +13,8 @@
 1. FC Union Berlin
 1. FFC Turbine Potsdam 71
 1.SK Prostejov
+AA Anapolina GO
+AA Aparecidense GO
 AA Ponte Preta SP
 AA Portuguesa RJ
 AAD Vitoria Tabocas PE
@@ -21,6 +23,8 @@ AC Ajaccio
 AC Bellinzona
 AC Bra
 AC Carpi
+AC Goianiense GO
+AC Lumezzane
 AC Midtjylland
 AC Milan
 AC Modena
@@ -34,11 +38,14 @@ ACD Potiguar RN
 ACF Fiorentina
 ACS Champions FC Arges
 ACV Assen
+AD Bahia de Feira BA
 AD Cariari Pococi
 AD Ceuta
 AD Cofutpa
+AD Jequie BA
 AD San Carlos
 ADO Den Haag
+AE Jataiense GO
 AE Kifisia FC
 AE Larissa FC
 AE Velo Clube SP
@@ -56,6 +63,7 @@ AL Bahrain
 AL Bataeh (UAE)
 AL Bidda SC
 AL Budaiya
+AL Hala
 AL Hilal Riyadh
 AL Ittifaq
 AL Jazira AL Hamra
@@ -90,10 +98,12 @@ AS Sariyer
 ASC HLM Dakar
 ASC Jaraaf
 ASC Otelul Galati
+ASD Sorrento 1945
 ASO Chlef
 AVS Futebol SAD
 AZ Alkmaar
 Aali
+Abecat Ouvidorense GO
 Aberdeen FC
 Abia Warriors FC
 Academia Puerto Cabello
@@ -121,6 +131,8 @@ Al Duhail SC
 Al Gharafa SC
 Al Hidd
 Al Hilal SFC
+Al Ittifaq BHR
+Al Ittihad
 Al Jahra
 Al Jazira (UAE)
 Al Kahrabaa SC
@@ -130,6 +142,7 @@ Al Madina
 Al Madina Al Monawara SC
 Al Mesaimeer
 Al Nahda
+Al Naser
 Al Nassr Club
 Al Quwa Al Jawiya
 Al Rayyan SC
@@ -189,6 +202,7 @@ Al-Taawoun Buraidah
 Al-Taawoun FC
 Al-Tahaddi
 Al-Wehda
+Alagoinhas AC BA
 Alaves
 Albacete Balompie
 Albania
@@ -208,13 +222,16 @@ Altrincham FC
 Aluminium Arak
 Amanat Baghdad SC
 Amed Sportif Faaliyetler
+America FC MG
 America FC RN
 America de Cali
 Amiens SC
 Amsterdamsche FC
 Anagennisi Karditsas 1904
+Anapolis FC GO
 Angers SCO
 Angola
+Ankara Keciorengucu
 Anorthosis Famagusta
 Antalyaspor
 Apea Akrotiriou
@@ -243,6 +260,7 @@ Aston Villa FC
 Atalanta BC
 Athens Kallithea FC
 Athletic Bilbao
+Athletic Club MG
 Atlantico
 Atlas FC
 Atletic Club d'Escaldes
@@ -262,6 +280,7 @@ Australia
 Australia A-League
 Austria
 Austria Bundesliga
+Avai FC SC
 Ayr United FC
 Aytemiz Alanyaspor
 Ayutthaya United FC
@@ -287,8 +306,10 @@ Bangor FC
 Baniyas Club
 Baqa Al-Gharbiyye
 Barcelona SC
+Barcelona de Ilheus
 Barnet FC
 Barnsley
+Barra FC SC
 Barrow AFC
 Barry Town United FC
 Basaksehir Istanbul
@@ -309,6 +330,7 @@ Benfica
 Benin
 Besiktas
 Besiktas Istanbul
+Betim Futebol MG
 Betis
 Bhayangkara
 Birkirkara FC
@@ -365,12 +387,15 @@ CA Belgrano de Cordoba
 CA Boston River
 CA Bucaramanga
 CA Cerro
+CA Independiente Avellaneda
 CA Juventud de Las Piedras
 CA Mineros Montevideo
 CA Osasuna
 CA Paranaense PR
+CA Penarol Montevideo
 CA Pontevedra
 CA Progreso
+CA River Plate
 CA Rosario Montevideo
 CA Vega Real
 CA Victoria Montevideo
@@ -393,16 +418,19 @@ CD Tondela
 CD Universidad Catolica del Ecuador
 CE Carroi
 CE Carrol
+CF Atletas Do Tirol CE
 CF Cruz Azul
 CF Esperanca D Andorra
 CF Flamengo 97
 CF Monterrey
 CF Pachuca
 CF Talavera de La Reina
+CN Marcilio Dias SC
 CR Belouizdad
 CR Benahavís
 CR Flamengo RJ
 CR Vasco da Gama RJ
+CRA Catalano GO
 CS 2 de Mayo
 CS Alagoano AL
 CS Cartagines
@@ -419,6 +447,7 @@ Caernarfon Town FC
 Cagliari Calcio
 Calcio Foggia
 Calcio Padova
+Camboriu FC SC
 Cambridge United
 Cameroon
 Campobasso FC
@@ -433,6 +462,7 @@ Cardiff City
 Cardiff Metropolitan University FC
 Carioca
 Carlisle United
+Carlos Renaux SC
 Carrarese Calcio
 Carrick Rangers
 Cartagena
@@ -440,10 +470,14 @@ Casa Pia Lisbon
 Casa Sport
 Catarinense, Serie A
 Caykur Rizespor
+Cdef Logrono
+Ceara SC CE
 Cearense
 Celta Vigo
 Celtic
 Central Coast Mariners
+Central Espanol
+Centro Oeste GO
 Cercle Brugge
 Cerro Largo FC
 Cesena FC
@@ -451,6 +485,8 @@ Ceuta
 Chador Malu Yazd
 Chainat Hornbill FC
 Chania FC
+Chanthaburi
+Chantilly US
 Chapecoense SC
 Charlton Athletic
 Chelsea
@@ -459,7 +495,9 @@ Chelsea FC
 Chelsea FC (E)
 Cheltenham Town
 Chesterfield FC
+Chiangmai United
 Chiangrai United
+Chile
 Chile Primera Division
 China
 China (E)
@@ -492,6 +530,7 @@ Colombia
 Colwyn Bay
 Como 1907
 Comoros
+Concordia AC SC
 Confianca EC PB
 Cong An Ha Noi FC
 Connah's Quay Nomads FC
@@ -506,11 +545,13 @@ Coupe de France
 Coventry City
 Crawley Town
 Crewe Alexandra
+Criciuma EC SC
 Croatia
 Croatia HNL
 Croix IC
 Crusaders
 Crusaders FC
+Cruz Azul
 Cruzeiro Arapiraca AL
 Cruzeiro EC MG
 Crystal Palace
@@ -530,6 +571,7 @@ DR Congo
 Dagenham and Redbridge
 Dakar Sacre Coeur
 Damac FC
+Dandy Town Hornets
 Danubio FC
 Darnes
 De Graafschap
@@ -553,6 +595,7 @@ Deportivo Tachira
 Deportivo Toluca FC
 Derby County
 Derry City
+Devonshire Colts
 Dewa United
 Dhofar SCSC
 Dibba
@@ -576,15 +619,21 @@ EA Guingamp
 EC Avenida RS
 EC Bahia BA
 EC Democrata MG
+EC Internacional Santa Maria RS
+EC Jacuipense BA
 EC Juventude RS
 EC Noroeste SP
+EC Novo Hamburgo RS
 EC Primavera SP
+EC Sao Jose RS
+EC Sao Luiz RS
 EC Vitoria BA
 ES Bouakal
 ES Mostaganem
 ES Setif
 ESTAC Troyes
 ETO FC Gyor
+East Riffa
 Eastleigh FC
 Ebbsfleet Wood FC
 Ecuador
@@ -614,6 +663,7 @@ Entente Feignies Aulnoye
 Enugu Rangers International FC
 Equatorial Guinea
 Erbil SC
+Erzurumspor FK
 Esenler Erokspor
 Espanyol
 Espanyol Barcelona
@@ -774,19 +824,23 @@ Fenerbahce Istanbul
 Ferencvarosi Budapest
 Ferroviario AC CE
 Feyenoord Rotterdam
+Figueirense FC SC
 Finland
 Flamengo (E)
 Flamengo RJ
 Fleetwood Town
 Flint Town United
+Floresta EC CE
 Floriana FC
 Fluminense (E)
 Fluminense FC RJ
 Fluminense SP
+Foolad Hormozgan
 Foolad KHouzestan FC
 Football Bourg-En-Bresse Peronnas 01
 Forest Green Rovers
 Forli FC
+Fortaleza EC CE
 Fortuna Dusseldorf
 Fortuna Sittard
 Fotbal Club FCSB
@@ -814,6 +868,7 @@ GVVV Veenendaal
 Gabala FK
 Gabon
 Galatasaray Istanbul
+Galicia BA
 Galway United FC
 Gateshead FC
 Gaucho
@@ -842,6 +897,8 @@ Glenavon FC
 Glentoran FC
 Go Ahead Eagles
 Goiano
+Goias EC GO
+Goiatuba EC GO
 Gol Gohar Sirjan FC
 Gornik Zabrze
 Goztepe Izmir
@@ -949,6 +1006,7 @@ India
 India (E)
 Indonesia
 Indonesia (E)
+Inhumas EC GO
 Institute FC
 Inter (E)
 Inter Benincasa
@@ -956,6 +1014,7 @@ Inter Club de Escaldes
 Inter Milano
 Inter San Carlos
 Inter Sassalo
+Internazionale ll
 Ipswich
 Ipswich Town
 Iraklis Thessaloniki
@@ -986,11 +1045,13 @@ JS Kabylie
 JS Saoura
 Jaalan Club
 Jagiellonia Bialystok
+Jaguar PE
 Jahn Regensburg
 Jamaica (E)
 Japan
 Japan (E)
 Jarabacoa
+Joinville EC SC
 Jong AZ Alkmaar
 Jong Ajax
 Jong Almere City FC
@@ -1144,6 +1205,7 @@ Macclesfield FC
 Madrid CFF
 Madura United
 Maguary PE
+Mahasarakham United FC
 Majd FC
 Makedonikos FC
 Malaga CF
@@ -1156,6 +1218,7 @@ Malmo FF
 Malut United
 Man City
 Man. United (E)
+Manama Club
 Manchester City
 Manchester City (E)
 Manchester United
@@ -1274,6 +1337,7 @@ OFK Beograd
 OGC Nice
 OKS Swit Skolwin Szczecin
 Odense Boldklub
+Odysseas Glyfadas W
 Oldham Athletic
 Olympiacos B
 Olympiacos Piraeus
@@ -1298,10 +1362,12 @@ PAS Giannina
 PEC Zwolle
 PFC Ludogorets 1945 Razgrad
 PFC Nasaf
+PHC Zebras
 PSBS Biak
 PSM Makassar
 PSV Eindhoven
 Pafos FC
+Paget Lions
 Paksi FC
 Palayesh Naft Bandar Abbas FC
 Palermo FC
@@ -1325,6 +1391,7 @@ Parma Calcio
 Partick Thistle FC
 Patro Eisden Maasmechelen
 Pattani FC
+Pattaya Dolphins United
 Pau FC
 Paulista
 Paykan FC
@@ -1346,18 +1413,21 @@ Perugia Calcio Spa
 Peterborough United
 Petrocub Hincesti
 Philippines
+Phrae United
 Pisa SC
 Plymouth Argyle
 Pogon Szczecin
 Poland
 Poland Ekstraklasa
 Police Tero FC
+Pombal EC PB
 Pontivy GSI
 Port FC
 Port Vale
 Portadown FC
 Portimonense SC
 Porto (E)
+Porto SC BA
 Portsmouth FC
 Portugal
 Portugal (E)
@@ -1381,6 +1451,7 @@ Qatar SC
 Queens Park FC
 Queens Park Rangers
 Queretaro FC
+Quixada CE
 RB Leipzig
 RC Celta de Vigo
 RC Deportivo La Coruna
@@ -1407,6 +1478,7 @@ Racing Santander
 Raith Rovers FC
 Rangers FC
 Rapid Bucuresti 1923
+Rasisalai United
 Ratchaburi FC
 Ravenna FC 1913
 Rayo Vallecano
@@ -1429,6 +1501,7 @@ Red Star FC
 Reggiana 1919
 Remo Stars
 Republic of Korea
+Rethymniakis Enosos
 Retro FC PE
 Rijnsburgse Boys
 Rio Ave FC
@@ -1465,14 +1538,17 @@ SC Heerenveen
 SC Internacional RS
 SC Paderborn 07
 SC Preussen 06 Munster
+SC Recife PE
 SC Telstar
 SC Utrecht
 SCU Torreense
 SD Aucas
 SD Eibar
 SD Huesca
+SD Juazeirense BA
 SE Palmeiras SP
 SEF Torres Sassari
+SER Caxias do Sul
 SGS Essen-Schonebeck 19/68
 SK Beveren
 SK Brann
@@ -1506,6 +1582,7 @@ Sampdoria Genoa
 Samsunspor
 San Antonio Bulo Bulo
 San Marino
+Santa Catarina Clube SC
 Santa Clara Azores
 Santa Cruz FC PE
 Santos FC SP
@@ -1660,6 +1737,7 @@ Toulouse FC
 Trabzonspor
 Tractor Sport Club
 Tranmere Rovers FC
+Trat FC
 Treaty United
 Trikala 2011
 Truro City
@@ -1677,6 +1755,7 @@ UD Ibiza
 UD Las Palmas
 UD Leiria
 UD Oliveirense
+UD Tenerife
 UE Santa Coloma
 UEFA Champions League
 UEFA Champions League Women
@@ -1695,6 +1774,7 @@ US Lecce
 US Livorno 1915
 US Orleans
 US Ouakam
+US Pergolettese Crema
 US Pianese
 US Raon L Etape
 US Salernitana 1919
@@ -1703,6 +1783,7 @@ USA
 USC Cremonese
 USL Dunkerque
 USM Alger
+USM EL Harrach
 USM Khenchela
 Uberlandia EC MG
 Udinese Calcio
@@ -1710,6 +1791,7 @@ Uganda
 Ujpest FC Budapest
 Ukraine
 Ukraine Premier League
+Um Alhassam
 Umm-Salal SC
 Umraniyespor
 Union Berlin
@@ -1751,6 +1833,7 @@ Vietnam (E)
 Viimsi JK
 Viking Stavanger
 Vikingur Reykjavik
+Vila Nova FC GO
 Villarreal CF
 Virtus Entella
 Virtus FC
@@ -1758,6 +1841,7 @@ Vis Pesaro 1898
 Vitesse Arnhem
 Vitesse City FC
 Vitoria SC Guimaraes
+Volos 2004
 Volos NFC W
 Volos NPS
 Vorskla Poltava
@@ -1793,6 +1877,8 @@ World Cup
 Wrexham AFC
 Wycombe AFC
 Wycombe Wanderers
+X-Roads Warriors
+YMSC
 Yellow-Red KV Mechelen
 Yeovil Town
 York City

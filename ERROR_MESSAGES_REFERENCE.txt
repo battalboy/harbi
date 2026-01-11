@@ -1,0 +1,359 @@
+================================================================================
+HARBI - ERROR MESSAGES REFERENCE
+================================================================================
+
+This document lists all possible connection errors that may occur in event_create
+scripts and their corresponding human-readable Turkish error messages.
+
+================================================================================
+1. HTTP STATUS CODE ERRORS
+================================================================================
+
+400 - Bad Request
+Technical: Server cannot process the request due to invalid syntax
+Turkish: ❌ HATA: İstek formatı hatalı. API parametreleri kontrol edilmeli.
+
+401 - Unauthorized
+Technical: Authentication failed or credentials invalid
+Turkish: ❌ HATA: Izinsiz bağlantı. API anahtarı veya kimlik bilgileri geçersiz.
+
+403 - Forbidden
+Technical: Server refuses to authorize the request
+Turkish: ❌ HATA: Erişim engellendi. Ban yemiş olabiliriz.
+
+404 - Not Found
+Technical: Requested resource does not exist
+Turkish: ❌ HATA: İstenen sayfa bulunamadı. API endpoint'i değişmiş olabilir.
+
+429 - Too Many Requests
+Technical: Rate limit exceeded
+Turkish: ❌ HATA: Çok fazla istek gönderildi. Ban yemiş olabiliriz.
+
+500 - Internal Server Error
+Technical: Server encountered an unexpected condition
+Turkish: ❌ HATA: Sitenin sunucusunda bir hata oluştu. Site tarafında sorun var.
+
+502 - Bad Gateway
+Technical: Invalid response from upstream server
+Turkish: ❌ HATA: Sunucu geçidi hatası. Site geçici olarak erişilemez durumda.
+
+503 - Service Unavailable
+Technical: Server temporarily unavailable (maintenance or overload)
+Turkish: ❌ HATA: Servis şu anda kullanılamıyor. Site bakımda veya aşırı yüklü olabilir.
+
+504 - Gateway Timeout
+Technical: Upstream server did not respond in time
+Turkish: ❌ HATA: Sunucu zaman aşımına uğradı. Site yanıt vermiyor.
+
+================================================================================
+2. NETWORK/CONNECTION ERRORS
+================================================================================
+
+ConnectionError
+Technical: Cannot establish connection to server
+Turkish: ❌ HATA: Siteye bağlanılamıyor. İnternet bağlantınızı kontrol edin veya site çevrimdışı olabilir.
+
+ConnectionRefusedError
+Technical: Server actively refused the connection
+Turkish: ❌ HATA: Sunucu bağlantıyı reddetti. Site erişimi engelliyor olabilir.
+
+ConnectionResetError
+Technical: Connection forcibly closed by remote host
+Turkish: ❌ HATA: Bağlantı sunucu tarafından kesildi. VPN/Proxy ayarlarını kontrol edin.
+
+Timeout
+Technical: Request exceeded time limit (default 30 seconds)
+Turkish: ❌ HATA: İstek zaman aşımına uğradı (30 saniye). Site çok yavaş yanıt veriyor veya erişilemiyor.
+
+ReadTimeout
+Technical: Server did not send data in the allotted time
+Turkish: ❌ HATA: Veri okuma zaman aşımına uğradı. Site yanıt vermiyor.
+
+ConnectTimeout
+Technical: Connection could not be established in time
+Turkish: ❌ HATA: Bağlantı kurma zaman aşımına uğradı. Site erişilemiyor.
+
+DNSLookupError
+Technical: Failed to resolve domain name to IP address
+Turkish: ❌ HATA: Site adı çözümlenemedi (DNS hatası). İnternet bağlantınızı veya DNS ayarlarınızı kontrol edin.
+
+SSLError
+Technical: SSL/TLS certificate validation failed
+Turkish: ❌ HATA: SSL sertifika hatası. Site güvenlik sertifikası geçersiz veya süresi dolmuş.
+
+ProxyError
+Technical: Failed to connect through proxy server
+Turkish: ❌ HATA: Proxy bağlantısı başarısız. VPN/Gluetun container'ı çalışıyor mu kontrol edin.
+
+TooManyRedirects
+Technical: Exceeded maximum number of HTTP redirects
+Turkish: ❌ HATA: Çok fazla yönlendirme. Site yapılandırması hatalı.
+
+================================================================================
+3. RESPONSE/DATA ERRORS
+================================================================================
+
+EmptyResponse
+Technical: HTTP 200 OK but response body is empty
+Turkish: ⚠️ UYARI: Site yanıt verdi ama içerik boş. Maç ya da takım verisi bulunamadı.
+
+InvalidJSON
+Technical: Response content is not valid JSON
+Turkish: ❌ HATA: Geçersiz veri formatı. Site beklenmeyen bir yanıt gönderdi.
+
+JSONDecodeError
+Technical: Cannot parse response as JSON
+Turkish: ❌ HATA: JSON çözümleme hatası. Site'nin API yanıtı bozuk.
+
+MissingField
+Technical: Expected data field not present in response
+Turkish: ❌ HATA: Gerekli veri alanı eksik. API yapısı değişmiş olabilir.
+
+InvalidDataStructure
+Technical: Response structure differs from expected format
+Turkish: ❌ HATA: Veri yapısı beklenenden farklı. API güncellenmiş olabilir, yazılım güncellemese gerekebilir.
+
+NoEventsFound
+Technical: Valid response but zero events in data
+Turkish: ℹ️ BİLGİ: Bağlantı başarılı ama aktif maç bulunamadı (0 etkinlik).
+
+EncodingError
+Technical: Character encoding/decoding failed
+Turkish: ❌ HATA: Karakter kodlama hatası. Türkçe karakterler düzgün okunamıyor.
+
+================================================================================
+4. VPN/GEOBLOCKING ERRORS
+================================================================================
+
+GeoblockDetected
+Technical: Site returns geoblocking error page
+Turkish: ❌ HATA: Site coğrafi kısıtlama uyguluyor. VPN'i kontrol edin.
+
+VPNNotRunning
+Technical: Proxy connection refused (VPN not active)
+Turkish: ❌ HATA: VPN bağlantısı yok. Gluetun container'ları başlatın.
+
+WrongVPNLocation
+Technical: Connected but wrong geographic location
+Turkish: ⚠️ UYARI: Yanlış VPN konumu. Stake için Kanada, Stoiximan için Yunanistan gerekli.
+
+CloudflareChallenge
+Technical: Cloudflare bot protection activated
+Turkish: ❌ HATA: Cloudflare koruması algılandı. Manuel tarayıcı müdahalesi gerekebilir.
+
+================================================================================
+5. BROWSER AUTOMATION ERRORS (Stake.com specific)
+================================================================================
+
+ChromeNotFound
+Technical: Chrome/Chromium browser not installed
+Turkish: ❌ HATA: Chrome tarayıcı bulunamadı. Chromium kurulumu gerekli: `sudo apt install chromium-browser`
+
+ChromeDriverError
+Technical: Selenium Chrome driver failed to start
+Turkish: ❌ HATA: Chrome driver hatası. Tarayıcı başlatılamadı.
+
+ElementNotFound
+Technical: Selenium cannot locate specified DOM element
+Turkish: ❌ HATA: Sayfa öğesi bulunamadı. Site yapısı değişmiş olabilir, script güncelleme gerekli.
+
+PageLoadTimeout
+Technical: Browser page load exceeded timeout
+Turkish: ❌ HATA: Sayfa yükleme zaman aşımı. Site çok yavaş veya erişilemiyor.
+
+StaleElementError
+Technical: DOM element changed or removed during access
+Turkish: ❌ HATA: Sayfa öğesi değişti. Dinamik içerik yeniden yüklendi.
+
+================================================================================
+6. IP BAN / AUTOMATED ACCESS DETECTION INDICATORS
+================================================================================
+
+This section identifies which errors could indicate that your IP has been banned
+or your automated access has been detected by the betting sites.
+
+🔴 HIGH PROBABILITY - Direct IP Ban Indicators:
+------------------------------------------------
+
+403 - Forbidden
+- **MOST COMMON IP BAN SIGNAL**
+- Server knows who you are but actively refuses your request
+- Often accompanied by messages like "Access Denied" or "Forbidden"
+- If you get this after normal operation, likely banned
+
+429 - Too Many Requests
+- **Rate limit exceeded** - temporary ban that could become permanent
+- If you keep hitting this, it may escalate to a permanent IP ban
+- Usually has a `Retry-After` header indicating cooldown period
+- **WARNING**: Stop script immediately if you see this repeatedly
+
+CloudflareChallenge
+- **Bot detection** - Cloudflare has identified automated access patterns
+- Your requests look "non-human" (too fast, no browser fingerprint, etc.)
+- Could escalate to CAPTCHA requirement or IP ban
+- Common with browser automation (Stake.com)
+
+🟡 MEDIUM PROBABILITY - Possible Ban Indicators:
+------------------------------------------------
+
+401 - Unauthorized
+- **Could be API key ban** rather than IP ban
+- If API requires authentication and repeatedly fails, they might ban the key or IP
+- Less common for IP bans, more for credential issues
+
+ConnectionRefusedError
+- **Firewall blocking** - server actively rejects connection from your IP
+- Could indicate you're on a blacklist at the network level
+- Often combined with rate limiting or abuse detection
+
+ConnectionResetError
+- **Forcible disconnection** - server cuts connection mid-request
+- Could indicate IP is being actively blocked
+- Often seen when trying to reconnect after a ban
+
+🟢 LOW PROBABILITY - Unlikely to Be Ban:
+---------------------------------------
+
+GeoblockDetected
+- Primarily for **geographic restrictions**, not abuse detection
+- Could theoretically be used to block "suspicious" IPs
+- Usually VPN location issue, not a ban
+
+500/502/503/504 Server Errors
+- These are **server-side problems**, not client bans
+- Not related to your IP or behavior
+- Site infrastructure issues
+
+Timeout/DNS/SSL Errors
+- **Network infrastructure issues**, not bans
+- These would affect everyone, not just you
+
+WARNING SIGNS YOUR IP MIGHT BE BANNED:
+---------------------------------------
+
+1. **403 errors after period of normal operation** → Strong indicator
+2. **429 errors that never reset** → Rate limit escalated to ban
+3. **Cloudflare challenges that always fail** → Bot detection + possible ban
+4. **Sudden ConnectionRefused after working fine** → Firewall block
+
+WHAT TO DO IF YOU SUSPECT IP BAN:
+----------------------------------
+
+IMMEDIATE ACTIONS:
+1. **STOP ALL REQUESTS IMMEDIATELY**
+   - Don't keep retrying - this makes it worse!
+   - Comment out the script or kill the process
+
+2. **Test from different IP (VPN)**
+   - If it works from VPN, your original IP is likely banned
+   - Try switching VPN countries or restarting VPN container
+
+3. **Check if VPN/proxy is working**
+   Command: curl -x http://127.0.0.1:8889 https://ipinfo.io/ip
+   - Should show VPN IP, not your real IP
+
+4. **Wait before retrying**
+   - Wait at least 1 hour for temporary bans
+   - Wait 24 hours for more serious blocks
+   - Use exponential backoff: 1h → 6h → 24h
+
+PREVENTION STRATEGIES:
+----------------------
+
+1. **Add request delays** (2-5 seconds between calls)
+   Code: time.sleep(random.uniform(2, 5))
+
+2. **Use exponential backoff** when retrying failed requests
+   Code: time.sleep(2 ** attempt)  # 2s, 4s, 8s, 16s...
+
+3. **Respect 429 errors** - wait the specified time in Retry-After header
+   Code: retry_after = response.headers.get('Retry-After', 60)
+
+4. **Cache responses** - don't request same data repeatedly
+   - Store API responses locally
+   - Check cache before making new requests
+
+5. **Use browser user-agent headers** to look less "bot-like"
+   Code: headers = {'User-Agent': 'Mozilla/5.0 ...'}
+
+6. **Limit request frequency**
+   - Max 1 request per 2-3 seconds per site
+   - Spread requests across time instead of bulk fetching
+
+7. **Monitor response patterns**
+   - If you start seeing more errors than usual, slow down
+   - If you see 429, stop immediately and wait
+
+MOST LIKELY SCENARIO FOR THIS PROJECT:
+---------------------------------------
+
+For betting site APIs (Oddswar, Roobet, Stoiximan, Tumbet, Stake):
+
+- **403** = Most likely IP ban indicator
+- **429** = Rate limiting (warning sign - stop immediately)
+- **CloudflareChallenge** = Automated access detected (especially Stake.com)
+
+**CRITICAL**: If you start seeing 403s or persistent 429s, **STOP THE SCRIPT
+IMMEDIATELY** and wait at least 1 hour before retrying with delays added.
+
+For Stake.com (browser automation):
+- More sensitive to bot detection
+- Use random delays between page loads
+- Rotate VPN IPs if possible
+- Consider manual intervention for CAPTCHA
+
+================================================================================
+SITE-SPECIFIC VPN REQUIREMENTS
+================================================================================
+
+Stake.com:
+- VPN Required: YES
+- Country: Canada (Kanada)
+- Gluetun Container: docker-canada.yaml
+- Proxy Port: 8889
+- Command: sudo docker-compose -f docker-canada.yaml up -d
+
+Stoiximan:
+- VPN Required: YES (when outside Greece)
+- Country: Greece (Yunanistan)
+- Gluetun Container: docker-greece.yaml
+- Proxy Port: 8888
+- Command: sudo docker-compose -f docker-greece.yaml up -d
+
+Roobet:
+- VPN Required: NO (API accessible globally)
+- API: Betby (sptpub.com)
+
+Tumbet:
+- VPN Required: NO (API accessible globally)
+- API: SportWide (analytics-sp.googleserv.tech)
+- Note: Website requires Turkish VPN, but API does not
+
+Oddswar:
+- VPN Required: NO (API accessible globally)
+
+================================================================================
+USAGE NOTES
+================================================================================
+
+1. All error messages use Turkish for client-facing display
+2. Technical descriptions in English for developer reference
+3. Error symbols:
+   ❌ = Critical error (operation failed)
+   ⚠️ = Warning (operation succeeded with issues)
+   ℹ️ = Information (operation succeeded, but note this)
+
+4. When implementing error handling:
+   - Catch specific exceptions first, then general ones
+   - Log technical details to file (English)
+   - Display user-friendly messages (Turkish)
+   - Include actionable steps when possible
+
+5. VPN-related errors should:
+   - Identify which site requires VPN
+   - Specify correct country/location
+   - Provide docker command to start VPN
+
+================================================================================
+END OF DOCUMENT
+================================================================================

@@ -3,6 +3,7 @@
 **THIS IS COMMISSIONED CLIENT SOFTWARE - NOT A PERSONAL PROJECT**
 
 - **5-6 paying clients** will use this system
+- **Clients are Turkish** - all notifications, error messages, and UI text will eventually be in Turkish
 - **Clients need web access from anywhere** (no Python knowledge required)
 - **Remote production server**: 89.125.255.32 (giray@)
 - **Clients CANNOT run scripts manually** - must access via web interface
@@ -261,3 +262,160 @@ This system does NOT place bets automatically. It identifies opportunities for t
 - **SSH Command**: `ssh giray@89.125.255.32`
 - **SCP Command Example**: `scp file.txt giray@89.125.255.32:~/path/to/destination/`
 - **Note**: The local machine's private key (id_rsa) has been copied to the remote for GitHub access
+
+## VPN/Proxy Setup (Gluetun on Remote Server)
+
+**Purpose**: Connect to geoblocked betting sites (Stake.com, Stoiximan) that may require VPN access
+
+**Implementation**: Gluetun Docker containers running on remote server (89.125.255.32)
+
+**Configuration Files:**
+- `docker-greece.yaml` - ExpressVPN Greece server (for Stoiximan access)
+- `docker-canada.yaml` - ExpressVPN Canada server (for Stake.com access)
+- `my_expressvpn_greece_udp.ovpn` - Greece OpenVPN config
+- `my_expressvpn_canada_udp.ovpn` - Canada OpenVPN config
+
+**Port Mappings:**
+- **Greece Container**: HTTP proxy on 8888, SOCKS5/Shadowsocks on 8390
+- **Canada Container**: HTTP proxy on 8889, SOCKS5/Shadowsocks on 8391
+
+**Usage in Python Scripts:**
+```python
+# For scripts that need VPN access (e.g., collect_stake_teams.py, event_create_stoiximan.py)
+proxies = {
+    'http': 'http://127.0.0.1:8889',   # Canada VPN for Stake
+    'https': 'http://127.0.0.1:8889'
+}
+response = requests.get(url, proxies=proxies)
+```
+
+**Firefox Manual Configuration (for Cloudflare captchas, manual interventions):**
+
+*For Stake.com (Canada VPN):*
+- Firefox Settings → Network Settings → Manual proxy configuration
+- HTTP Proxy: `127.0.0.1`, Port: `8889`
+- ☑ Also use this proxy for HTTPS
+- Leave SOCKS Host empty
+- No proxy for: `localhost, 127.0.0.1`
+
+*For Stoiximan (Greece VPN):*
+- Same settings but use Port: `8888`
+
+*Alternative - Command-line launch:*
+```bash
+# For Stake (Canada)
+firefox --proxy-server="http://127.0.0.1:8889" https://stake.com/sports/home
+
+# For Stoiximan (Greece)
+firefox --proxy-server="http://127.0.0.1:8888" https://www.stoiximan.gr
+```
+
+**FoxyProxy Setup (Recommended - Automatic Proxy Switching):**
+
+*Why use FoxyProxy:*
+- Automatically routes Stake.com through Canada proxy (8889)
+- Automatically routes Stoiximan through Greece proxy (8888)
+- All other sites use direct connection (no proxy)
+- No manual proxy switching required
+
+*Installation:*
+1. In Firefox, go to: https://addons.mozilla.org/firefox/addon/foxyproxy-standard/
+2. Click "Add to Firefox" → "Add"
+
+*Configuration:*
+
+**Canada Proxy (for Stake.com):**
+1. Click FoxyProxy icon → "Options"
+2. Click "Add"
+3. **Title**: `Canada VPN (Stake)`
+4. **Type**: `HTTP`
+5. **Hostname**: `127.0.0.1`
+6. **Port**: `8889`
+7. Go to "Patterns" tab → "Add New Pattern"
+   - **Pattern Name**: `Stake.com`
+   - **Pattern**: `*stake.com*`
+   - **Type**: `Wildcard`
+8. Click "Save"
+
+**Greece Proxy (for Stoiximan):**
+1. Click "Add" again
+2. **Title**: `Greece VPN (Stoiximan)`
+3. **Type**: `HTTP`
+4. **Hostname**: `127.0.0.1`
+5. **Port**: `8888`
+6. Go to "Patterns" tab → "Add New Pattern"
+   - **Pattern Name**: `Stoiximan`
+   - **Pattern**: `*stoiximan.gr*`
+   - **Type**: `Wildcard`
+7. Click "Save"
+
+*Usage:*
+- Click FoxyProxy icon → Select "Proxy by Patterns"
+- Stake.com automatically uses Canada VPN
+- Stoiximan automatically uses Greece VPN
+- All other sites use direct connection
+- To disable: Click FoxyProxy icon → "Disable FoxyProxy"
+
+**Docker Management Commands:**
+```bash
+# Start containers
+sudo docker-compose -f docker-canada.yaml up -d
+sudo docker-compose -f docker-greece.yaml up -d
+
+# Stop containers
+sudo docker-compose -f docker-canada.yaml down
+sudo docker-compose -f docker-greece.yaml down
+
+# Check status
+sudo docker ps
+
+# View logs
+sudo docker logs gluetun_canada
+sudo docker logs gluetun_greece
+```
+
+**Notes:**
+- Gluetun provides HTTP proxy (port 8888/8889) and Shadowsocks encrypted proxy (port 8390/8391)
+- **HTTP proxy works for HTTPS sites** using HTTP CONNECT tunneling method (confirmed working)
+- Shadowsocks is NOT plain SOCKS5 - requires password or SSH tunnel for Firefox testing
+- Both containers can run simultaneously (different ports prevent conflicts)
+- We may not need these sites in production, but the option is available if required
+
+## Telegram Notification Formatting
+
+**Telegram supports basic HTML/Markdown but NO tables**
+
+**Client Telegram IDs:**
+- 1580648939 - James
+- 7530341430 - Ismail
+
+**Supported HTML tags:**
+- `<b>bold</b>` - **bold text**
+- `<i>italic</i>` - *italic text*
+- `<u>underline</u>` - underlined text
+- `<code>code</code>` - inline monospace
+- `<pre>code block</pre>` - monospace block (good for alignment)
+- `<a href="URL">link text</a>` - clickable links
+- `<tg-spoiler>hidden</tg-spoiler>` - spoiler text
+
+**Template for arbitrage notifications:**
+```python
+message = """
+🚨 *Arbitrage Alert - 3 Opportunities*
+
+<pre>
+Maç: Man United vs Liverpool
+Oddswar: 2.05 | 3.40 | 3.80
+Roobet:  <b><u>2.20</u></b> | <b><u>3.50</u></b> | 3.60
+Kar yüzdesi: 2.3% (odds 1 & X)
+</pre>
+
+<a href="https://oddswar.com/...">Oddswar Linki</a>
+<a href="https://roobet.com/...">Roobet Linki</a>
+"""
+```
+
+**Notes:**
+- Use `<pre>` tags with careful spacing for aligned columns (tables are not supported)
+- Use `<b><u>bold and underline</u></b>` tags to highlight odds that are higher than corresponding Oddswar odds (arbitrage opportunities)
+- Telegram does NOT support custom text colors, use bold and emojis for emphasis

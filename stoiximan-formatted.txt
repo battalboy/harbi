@@ -1,9 +1,21 @@
-Team 1: AE Aracatuba SP U20 | Team 2: Oeste-SP U20 | Team 1 Win: 45 | Draw: 11.25 | Team 2 Win: 1.005 | Link: https://en.stoiximan.gr/live/ae-aracatuba-sp-u20-oeste-sp-u20/78850311/
-Team 1: Assisense U20 | Team 2: Guarani SP U20 | Team 1 Win: 37 | Draw: 7.3 | Team 2 Win: 1.06 | Link: https://en.stoiximan.gr/live/assisense-u20-guarani-sp-u20/78850321/
-Team 1: Luverdense EC U20 | Team 2: Corinthians SP U20 | Team 1 Win: 7.5 | Draw: 3.15 | Team 2 Win: 1.52 | Link: https://en.stoiximan.gr/live/luverdense-ec-u20-corinthians-sp-u20/78850322/
-Team 1: Santa Catarina Clube SC | Team 2: Camboriu | Team 1 Win: 2.85 | Draw: 3.15 | Team 2 Win: 2.27 | Link: https://en.stoiximan.gr/live/santa-catarina-clube-sc-camboriu/78311192/
-Team 1: Chapecoense SC | Team 2: Brusque SC | Team 1 Win: 1.85 | Draw: 2.37 | Team 2 Win: 8.5 | Link: https://en.stoiximan.gr/live/chapecoense-sc-brusque-sc/78311233/
-Team 1: CA Piauiense PI U20 | Team 2: America MG U20 | Team 1 Win: 6.8 | Draw: 5.1 | Team 2 Win: 1.3 | Link: https://en.stoiximan.gr/live/ca-piauiense-pi-u20-america-mg-u20/78850333/
-Team 1: Gremio Prudente U20 | Team 2: Olimpico EC SE U20 | Team 1 Win: N/A | Draw: N/A | Team 2 Win: N/A | Link: https://en.stoiximan.gr/live/gremio-prudente-u20-olimpico-ec-se-u20/78850324/
-Team 1: Maracana CE | Team 2: Ferroviario | Team 1 Win: 2.75 | Draw: 2.05 | Team 2 Win: 4.35 | Link: https://en.stoiximan.gr/live/maracana-ce-ferroviario/78859827/
-Team 1: Independente Futebol Sao Joseense PR | Team 2: Galo Maringa PR | Team 1 Win: 2.32 | Draw: 2.9 | Team 2 Win: 3.3 | Link: https://en.stoiximan.gr/live/independente-futebol-sao-joseense-pr-galo-maringa-pr/78840408/
+Team 1: Clube Atletico MG | Team 2: Betim MG | Team 1 Win: 1.8 | Draw: 2.45 | Team 2 Win: 9.25 | Link: https://en.stoiximan.gr/live/clube-atletico-mg-betim-mg/78898441/
+Team 1: Neza FC | Team 2: Tapachula Soconusco FC | Team 1 Win: 3.95 | Draw: 3.65 | Team 2 Win: 1.72 | Link: https://en.stoiximan.gr/live/neza-fc-tapachula-soconusco-fc/78837631/
+Team 1: Molynes United | Team 2: Treasure Beach FC | Team 1 Win: 3.9 | Draw: 3.3 | Team 2 Win: 1.82 | Link: https://en.stoiximan.gr/live/molynes-united-treasure-beach-fc/79085401/
+Team 1: Club Atletico y Biblioteca Newell's Old Boys | Team 2: 9 de Julio Morteros | Team 1 Win: 1.91 | Draw: 3.1 | Team 2 Win: 3.8 | Link: https://en.stoiximan.gr/live/club-atletico-y-biblioteca-newells-old-boys-9-de-julio-morteros/78833562/
+Team 1: SD Juazeirense BA | Team 2: AD Bahia de Feira BA | Team 1 Win: 2.7 | Draw: 2.18 | Team 2 Win: 4 | Link: https://en.stoiximan.gr/live/sd-juazeirense-ba-ad-bahia-de-feira-ba/79100463/
+Team 1: Flamengo RJ | Team 2: Portuguesa RJ | Team 1 Win: 2 | Draw: 2.47 | Team 2 Win: 6 | Link: https://en.stoiximan.gr/live/flamengo-rj-portuguesa-rj/79005203/
+Team 1: Conaree FC | Team 2: Sandy Point | Team 1 Win: 1.33 | Draw: 4.4 | Team 2 Win: 7.8 | Link: https://en.stoiximan.gr/live/conaree-fc-sandy-point/79100873/
+Team 1: Noroeste SP | Team 2: Bragantino SP | Team 1 Win: 5.7 | Draw: 2.22 | Team 2 Win: 2.2 | Link: https://en.stoiximan.gr/live/noroeste-sp-bragantino-sp/78848233/
+Team 1: Ferroviario | Team 2: Fortaleza CE | Team 1 Win: 18 | Draw: 2.8 | Team 2 Win: 1.5 | Link: https://en.stoiximan.gr/live/ferroviario-fortaleza-ce/78859894/
+Team 1: CA Peñaflor | Team 2: CA Union Villa Krause de San Juan | Team 1 Win: 1.19 | Draw: 4.45 | Team 2 Win: 22 | Link: https://en.stoiximan.gr/live/ca-penaflor-ca-union-villa-krause-de-san-juan/78833694/
+Team 1: Cianorte FC PR | Team 2: Athletico PR | Team 1 Win: 10.25 | Draw: 1.19 | Team 2 Win: 7.2 | Link: https://en.stoiximan.gr/live/cianorte-fc-pr-athletico-pr/79100234/
+Team 1: Escobar FC | Team 2: Napoli Argentino | Team 1 Win: 1.03 | Draw: 7.8 | Team 2 Win: 90 | Link: https://en.stoiximan.gr/live/escobar-fc-napoli-argentino/78833695/
+Team 1: SV Leo Victor | Team 2: SV Robinhood | Team 1 Win: 90 | Draw: 7.8 | Team 2 Win: 1.03 | Link: https://en.stoiximan.gr/live/sv-leo-victor-sv-robinhood/78940765/
+Team 1: Atletico San Pedro | Team 2: CA Talleres de Perico | Team 1 Win: 2.42 | Draw: 2.82 | Team 2 Win: 2.9 | Link: https://en.stoiximan.gr/live/atletico-san-pedro-ca-talleres-de-perico/78833845/
+Team 1: Internacional RS | Team 2: Novo Hamburgo RS | Team 1 Win: 5.8 | Draw: 2.75 | Team 2 Win: 1.83 | Link: https://en.stoiximan.gr/live/internacional-rs-novo-hamburgo-rs/78898356/
+Team 1: Deportivo Mandiyu de Corrientes | Team 2: San Lorenzo de Monte Caseros | Team 1 Win: N/A | Draw: N/A | Team 2 Win: N/A | Link: https://en.stoiximan.gr/live/deportivo-mandiyu-de-corrientes-san-lorenzo-de-monte-caseros/78833657/
+Team 1: Criciuma SC | Team 2: Avai SC | Team 1 Win: 1.19 | Draw: 5.2 | Team 2 Win: 20 | Link: https://en.stoiximan.gr/live/criciuma-sc-avai-sc/78860197/
+Team 1: Sanjustino | Team 2: CA Maria Grande | Team 1 Win: 3.1 | Draw: 2.12 | Team 2 Win: 3.15 | Link: https://en.stoiximan.gr/live/sanjustino-ca-maria-grande/78833697/
+Team 1: Sao Jose RS | Team 2: EC Internacional Santa Maria RS | Team 1 Win: 1.98 | Draw: 2.77 | Team 2 Win: 4.75 | Link: https://en.stoiximan.gr/live/sao-jose-rs-ec-internacional-santa-maria-rs/78898379/
+Team 1: Juventud de Las Piedras | Team 2: Montevideo Wanderers | Team 1 Win: 1.57 | Draw: 3.7 | Team 2 Win: 6 | Link: https://en.stoiximan.gr/live/juventud-de-las-piedras-montevideo-wanderers/79014989/
+Team 1: Santa Cruz PE | Team 2: Decisao PE | Team 1 Win: N/A | Draw: N/A | Team 2 Win: N/A | Link: https://en.stoiximan.gr/live/santa-cruz-pe-decisao-pe/79100599/
