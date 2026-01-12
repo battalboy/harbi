@@ -1,5 +1,6 @@
 1 Dezembro
 1. FC Schweinfurt 05
+1. FC Tatran Presov
 1.SK Prostejov
 1860 Münih
 3 Sing FC
@@ -23,10 +24,12 @@ AC Renate
 ACF Fiorentina U20
 ACS Champions FC Arges
 AD Alcorcon B
+AD Cali
 AD Camacha
 AD Confianca SE
 AD Fafe
 AD Marco 09
+AD Pasto
 AD Torrejon
 AD Union Adarve U19
 AE Anagennisi Schimatariou
@@ -60,6 +63,7 @@ AL Karma
 AL Kawkab
 AL Khaleej Saihat
 AL Khalidiyah
+AL Khalidiyah U21
 AL Lewaa Club
 AL Mosul SC
 AL Nasr FC
@@ -68,11 +72,13 @@ AL Nassr FC
 AL Qala
 AL Quwa AL Jawiya
 AL Raed FC
+AL Riffa U21
 AL Riyadh
 AL Rustaq
 AL Safa
 AL Sahel SC
 AL Shabab FC
+AL Shorta (IRQ)
 AL Taawoun FC
 AL Tadamon
 AL Tai
@@ -106,7 +112,9 @@ AS Roma (Eros)
 AS Roma U20
 AS Roma W.
 AS Saint-Etienne
+AS Trencin
 ASC Diambars
+ASC Linguere
 ASC Niarry Tally
 ASD Torres Sassari
 ASO Chlef
@@ -124,6 +132,7 @@ Aberystwyth Town
 Abha
 Academia Puerto Cabello
 Academica Coimbra
+Academico Viseu U23
 Acatlan FC
 Accrington Stanley
 Acd Ospitaletto
@@ -178,6 +187,7 @@ Al Mokawloon Al Arab
 Al Nafit Maysan
 Al Naft
 Al Najma
+Al Oruba
 Al Qadisiyah FC
 Al Qadsia
 Al Saqer Fc
@@ -199,17 +209,20 @@ Al-Masry
 Al-Merrikh (Omdurman)
 Al-Nahda
 Al-Najaf
+Al-Najma Manama U21
 Al-Nasr SC
 Al-Rayyan
 Al-Sadd
 Al-Sailiya
 Al-Seeb
 Al-Shabab
+Al-Shabbab U21
 Al-Talaba
 Al-Wasl FC
 Al-Zlfe
 Al-taraji Club
 Alagoinhas AC BA
+Alagoinhas AC BA U20
 Alanyaspor
 Alaves
 Alaves (K.)
@@ -229,6 +242,7 @@ Algeciras CF
 Algeria
 Alhama CF Femenino W.
 Alianza Atletico
+Alianza FC Valledupar
 Alianza Lima
 Alloa Athletic FC
 Almanya
@@ -249,9 +263,11 @@ America FC Propria SE
 America MG U20
 America RJ U20
 America RN
+America RN U20
 Amiens
 Ammanford
 Amora FC
+Ampem Darkoa W.
 Amsterdam FC
 Anadia
 Anadolu Efes
@@ -305,9 +321,11 @@ Arouca
 Arsenal
 Arsenal (K.)
 Arsenal FC
+Arsenal FC (Arthur)
 Arsenal FC (Carlos)
 Arsenal FC (Jose)
 Arsenal FC (Miguel)
+Arsenal FC (Oliver)
 Arsenal FC (Rossi)
 Artesanos Metepec FC
 Artigas Capital
@@ -342,6 +360,7 @@ Atalanta Bergamo (SRL)
 Atherton Collieries
 Athletic Bilbao
 Athletic Bilbao (K.)
+Athletic Bilbao (Kevin)
 Athletic Bilbao B
 Athletic Carpi
 Athletic Club MG U20
@@ -365,12 +384,14 @@ Atletico Madrid (Jose)
 Atletico Madrid (K.)
 Atletico Madrid (Logan)
 Atletico Madrid (Luis)
+Atletico Madrid (Noah)
 Atletico Madrid B
 Atletico Madrid B W.
 Atletico Madrid U19
 Atletico Mineiro MG
 Atletico Morelia
 Atletico Nacional
+Atletico Petroleos de Luanda
 Atletico San Luis
 Atletico San Luis W.
 Atletico Sanluqueno CF
@@ -393,6 +414,7 @@ Avenida RS
 Avs Futebol Sad
 Avustralya U23
 Avusturya
+Ayeyawady United
 Ayia Napa
 Ayr United
 Ayutthaya United
@@ -405,10 +427,12 @@ BG Green Farmers FC
 BO Rangers FC
 BOTEV VRATSA
 BVV Barendrecht
+Baalo Sarr
 Backa Topola
 Baghdad SC
 Baglan Dragons
 Bahia BA
+Bahia BA U20
 Bahir Dar Kenema F.C.
 Bahira De Feira BA
 Bala Town
@@ -417,6 +441,7 @@ Bali United Pusam
 Ballinamallard United
 Ballon d`Or 2026
 Ballymena
+Ballymena United (Res.)
 Baltika Kaliningrad
 Balzan FC
 Bamber Bridge
@@ -511,6 +536,7 @@ Boeung Ket Angkor
 Bohemians 1905
 Bologna
 Bologna (SRL)
+Bologna FC (Carlos)
 Bologna FC (Eminem)
 Bologna FC U20
 Bolton Wanderers
@@ -520,12 +546,14 @@ Boreham Wood
 Borneo Samarinda
 Borussia Dortmund
 Borussia Dortmund (Fred)
+Borussia Dortmund (Hussein)
 Borussia Dortmund (Spiderman)
 Bosna Hersek
 Boston United
 Botafogo RJ
 Botafogo RJ U20
 Botafogo SP
+Botafogo SP U20
 Botev Plovdiv
 Botosani
 Botsvana
@@ -534,6 +562,7 @@ Bourgoin J
 Bournemouth
 Bournemouth (SRL)
 Bournemouth Reserve
+Boyaco Chico
 Brackley Town
 Bracknell Town
 Bradford
@@ -618,6 +647,7 @@ CD Diocesano
 CD El Nacional
 CD Eldense
 CD Estradense
+CD Everton Vina del Mar
 CD Gevora
 CD Gouveia
 CD Huetor Vega
@@ -628,6 +658,7 @@ CD Mirandes
 CD Mosquito U19
 CD Oberena Youth
 CD Olimpia
+CD Once Caldas
 CD Palestino
 CD Recoleta
 CD Ribeira Brava
@@ -667,6 +698,7 @@ CS 2 de Mayo
 CS Alagoano AL
 CS Cienciano
 CS Constantine
+CS Deportivo Pereira
 CS Emelec
 CS Esportiva AL
 CS Maritimo Madeira W.
@@ -709,6 +741,7 @@ Carabobo
 Caracas
 Carajas EC PA U20
 Cardiff City
+Cardiff City Academy
 Cardiff Draconians
 Cardiff Metropol Üniversitesi
 Carlisle United
@@ -717,6 +750,7 @@ Carlton Town
 Carmarthen
 Carrarese
 Carrick Rangers
+Carrick Rangers (Res.)
 Carshalton Ath
 Cartagena
 Cartagines
@@ -746,6 +780,7 @@ Celtiga CF
 Centone Karagümrük İstanbul
 Central Coast Mariners
 Central Coast Mariners W.
+Central Espanol
 Central and Western
 Centro Oeste GO
 Ceramica Cleopatra
@@ -811,6 +846,7 @@ Cittadella
 Cleethorpes Town
 Clermont
 Cliftonville
+Cliftonville (Res.)
 Clitheroe FC
 Club America (K.)
 Club America U21
@@ -842,6 +878,7 @@ Colchester United
 Coleraine
 Coleraine (Res.)
 Colima Fc
+Colley Stars FC
 Colmar
 Colo Colo
 Colombia
@@ -856,6 +893,7 @@ Compostela
 Concarneau
 Concordia AC
 Connah`s Quay Nomads FC
+Coquimbo Unido
 Cordoba
 Cordobes FC
 Corinthians SP
@@ -881,6 +919,7 @@ Criciuma EC SC
 Criciuma SC U20
 Crossing Schaerbeek Evere
 Crotone
+Crusaders (Res.)
 Crusaders Belfast
 Cruz Azul
 Cruz Azul (K.)
@@ -892,6 +931,7 @@ Crystal Palace (SRL)
 Crystal Palace FC U21
 Crystal Palace W.
 Cs Esportiva Al U20
+Cucuta Deportivo FC
 Cuiaba EC MT
 Cuiaba EC MT U20
 Cultural Leonesa
@@ -900,15 +940,19 @@ Curaçao
 Curzon Ashton
 Cwmbran Celtic
 Cyprus (SRL)
+D. La Equidad
+DAC Dunajska Streda
 DOBRUDZHA DOBRICH
 DPMM FC
 DR Congo
 Dagenham & Redbridge
 Dakar Sacre Coeur
+Dakar UC
 Damac
 Damaiense W.
 Danimarka
 Danok Bat U19
+Danubio
 Darajani Gogo FC
 Darlington
 Darmstadt
@@ -928,11 +972,14 @@ Den Haag
 Denbigh Town
 Denderleeuw
 Denmark (Noah)
+Dep. Concepcion
 Deportes Limache
+Deportes Union La Calera
 Deportivo (K.)
 Deportivo Alaves B
 Deportivo Alaves Youth
 Deportivo Garcilaso
+Deportivo Nacional
 Deportivo Riestra
 Deportivo Saprissa
 Deportivo Toluca FC
@@ -984,6 +1031,7 @@ Durham FC (K.)
 Dynamo Dresden
 Dynamo Kiev
 E Lefkimmi FC
+EAST RIFFA
 EC Agua Santa SP
 EC Agua Santa SP U20
 EC Democrata MG
@@ -1073,6 +1121,9 @@ FC Andorra
 FC Ashdod
 FC Augsburg
 FC Banik Ostrava
+FC Barcelona (Alexis)
+FC Barcelona (Delpiero)
+FC Barcelona (Fred)
 FC Barcelona (Razvan)
 FC Barcelona (Vangogh)
 FC Bari 1908 U19
@@ -1138,10 +1189,12 @@ FK Cukaricki
 FK Dinamo Moscow
 FK Jablonec
 FK Javor Matis
+FK Kosice
 FK Septemvri Sofia
 FK Sochi
 FK Spartak 1918 Varna
 FK Vora
+FK Zeleziarne Podbrezova
 FK Zeljeznicar Sarajevo
 FK Zenit Saint Petersburg
 FSV Mainz
@@ -1155,6 +1208,7 @@ Farnham Town
 Farul Constanta
 Fas
 Fasil Ketema
+Fc Bayeux
 Fc Unirea 2004 Slobozia
 Fc Vizela U23
 Feirense
@@ -1168,6 +1222,7 @@ Ferencvarosi Budapest
 Ferroviaria SP
 Ferroviario CE
 Ferroviario De Lichinga
+Fethiyespor
 Feyenoord
 Feyenoord Rotterdam (SRL)
 Figueirense SC
@@ -1195,11 +1250,13 @@ Forfar Athletic FC
 Forli
 Fortaleza CE U20
 Fortaleza EC CE
+Fortaleza Fc
 Forte Fc Es U20
 Fortuna Düsseldorf
 Fortuna Sittard
 Fortuna Sittard (SRL)
 Fortune Sacco
+Fosu Royal Ladies
 Fram Reykjavik
 Francana U20
 Francavilla 1931
@@ -1323,6 +1380,7 @@ Guarani FC SP
 Guarani SP U20
 Guarany FC RS
 Gucha Stars FC
+Guelson FC
 Guilsfield Athletic
 Guimaraes
 Guingamp
@@ -1435,9 +1493,11 @@ Howraah Hooghly Warriors
 Hradec Kralove
 Huachipato
 Huddersfield
+Huddersfield Town U21
 Huesca
 Huesca U19
 Hull
+Hull City
 Hungerford Town
 Huracanes Izcalli Fc
 Hyde United
@@ -1493,6 +1553,7 @@ Ironi Modiin
 Ironi Tiberias
 Isi Dangkor Senchey FC
 Ismaily Sc
+Ispe FC
 Istanbul Basaksehir (Mateo)
 Istres
 Itabaiana SE
@@ -1508,6 +1569,7 @@ JUVENTUDE DESPORTIVA LAJENSE
 Jacuipense BA
 Jagiellonia
 Jaguar PE
+Jaguares De Cordoba
 Jaguares de Chiapas FC
 Jahn Regensburg
 Japan
@@ -1551,6 +1613,7 @@ KR Reykjavik W.
 KS Burreli
 KSC Lokeren Temse
 KV Mechelen
+KV RS Waasland Beveren U21
 KVC Westerlo
 Kabylie
 Kahroba AL Ismailia
@@ -1596,6 +1659,7 @@ Kisvarda FC
 Kitchee SC
 Kocaelispor
 Kolombiya
+Komarno
 Komor Adaları
 Kongo Demokratik Cumhuriyeti
 Konyaspor
@@ -1629,6 +1693,7 @@ Lamas
 Lamphun Warrior
 Lancaster City
 Larne
+Larne Olympic (Res.)
 Las Palmas
 Las Rozas Cf U19
 Lausanne
@@ -1689,16 +1754,19 @@ Lincoln UTD
 Linfield
 Linfield Swifts (Res.)
 Lion City Sailors FC
+Lions Gibraltar
 Lithuania (SRL)
 Liverpool
 Liverpool (K.)
 Liverpool FC
 Liverpool FC (Lucas)
+Liverpool FC (Maverick)
 Liverpool Montevideo
 Livingston
 Livorno
 Llandudno FC
 Llanelli Town
+Llaneros Fc
 Llantwit Major
 Lobos Ulmx
 Locmine S Co
@@ -1729,11 +1797,14 @@ Lyon (K.)
 Lübnan U23
 M'gladbach
 MALKIYA CLUB
+MANAMA CLUB
 MC Alger
 MC Oran
 MEAP Nisou
 MFK Chrudim
 MFK Karniva
+MFK Ruzomberok
+MFK Skalica
 MSK Zilina
 MSV Duisburg
 MTK Budapest
@@ -1763,7 +1834,9 @@ Magdeburg
 Magesi FC Reserves
 Magpies
 Maguary PE
+Mahar United
 Mahasarakham Sam Bai Tao
+Makedonikos
 Makedonya
 Malaga CF
 Malaga U19
@@ -1776,6 +1849,8 @@ Malmö
 Malut United
 Mamelodi Sundowns (Res.)
 Manauara Ec Am
+Manaus Fc/Am
+Manchester 62 FC
 Manchester City
 Manchester City (K.)
 Manchester City (SRL)
@@ -1790,6 +1865,7 @@ Manchester City FC (Samuel)
 Manchester United
 Manchester United (K.)
 Manchester United (SRL)
+Manchester United FC (Andrew)
 Manchester United FC (Rossi)
 Manchester United FC (Stan)
 Manchester United FC (Vito)
@@ -1826,6 +1902,7 @@ Melbourne City FC
 Melbourne City W.
 Melbourne Victory
 Melgar
+Melksham Town FC
 Merida
 Merlbourne Victory (K.)
 Merthyr Town
@@ -1856,6 +1933,7 @@ Mlada Boleslav
 Moca FC
 Modena
 Mold Alexandra FC
+Molenbeek U21
 Molynes
 Mombasa Elite
 Monaco
@@ -1937,6 +2015,7 @@ Newcastle (SRL)
 Newcastle Jets
 Newcastle Jets (K.)
 Newcastle United (Cyclop)
+Newcastle United (Flash)
 Newcastle United (Lio)
 Newcastle United (Noah)
 Newcastle United (Vito)
@@ -1977,6 +2056,7 @@ Novara FC
 Novi Pazar
 Novo Hamburgo RS
 Novorizontino SP
+Nublense
 Nyiregyhaza FC
 Nzoia Sugar
 Nürnberg
@@ -2062,6 +2142,7 @@ Paradou
 Paraguay
 Paranoa EC DF
 Pardubice
+Parintins FC AM
 Paris
 Paris 13 Atletico
 Paris FC W.
@@ -2071,6 +2152,7 @@ Paris Saint Germain (Cyclop)
 Paris Saint Germain (Flash)
 Paris Saint Germain (K.)
 Paris Saint Germain (Noah)
+Paris Saint Germain (Odin)
 Parma
 Parma (SRL)
 Parma 1913
@@ -2091,6 +2173,7 @@ Pd Ergue Gaberic
 Pen-y-Bont
 Penafiel
 Penang
+Penarol Montevideo
 Penarol Montevideo (Res.)
 Pendikspor
 Penrhyncoch
@@ -2116,10 +2199,12 @@ Perth Glory (K.)
 Peru
 Perugia
 Pescara U19
+Peterborough United
 Peterborough Utd.
 Peterhead FC
 Petrojet FC
 Petrolul Ploiesti
+Pharco
 Philippines
 Phnom Penh Crown
 Phrae United
@@ -2139,6 +2224,7 @@ Polokwane City (res)
 Polonia Bytom
 Polonya
 Ponte Preta SP
+Ponte Preta SP U20
 Pontevedra
 Pontevedra CF U19
 Pontivy Gsi
@@ -2201,6 +2287,7 @@ Quixada FC CE
 Quorn FC
 RB Leipzig
 RB Leipzig (Lucas)
+RC Celta de Vigo (Kevin)
 RC Deportivo La Coruna
 RC Grasse
 RC Lens
@@ -2248,6 +2335,7 @@ Real Betis (Luis)
 Real Betis (Vendetta)
 Real Betis U19
 Real FC DF
+Real FC DF U20
 Real Madrid
 Real Madrid (A)
 Real Madrid (Bruno)
@@ -2255,6 +2343,7 @@ Real Madrid (Jack)
 Real Madrid (K.)
 Real Madrid (Kristof)
 Real Madrid (Logan)
+Real Madrid (Razvan)
 Real Madrid (VITO)
 Real Madrid II W.
 Real Madrid U19
@@ -2295,6 +2384,7 @@ Rijeka
 Rijnsburgse Boys
 Rio Ave
 Rio Ave U23
+Rionegro Aguilas
 Rivera Capital
 Rizespor
 Rkav Volendam
@@ -2325,6 +2415,7 @@ S.S.D. Casarano Calcio
 SC Beira Mar
 SC Braga
 SC Braga (Hulk)
+SC Braga (Sensei)
 SC Cambuur
 SC Covilha
 SC Farense
@@ -2369,6 +2460,7 @@ SS San Giovanni
 SSC Bari
 SSC Napoli (Crysis)
 SSC Napoli (Kevin)
+SSC Napoli (Lucas)
 SSC Napoli U20
 ST Albans City
 ST Andrew FC
@@ -2416,6 +2508,7 @@ Santiago Cf U19
 Santiago FC
 Santo Andre SP
 Santo Andre SP U20
+Santos AP U20
 Santos Laguna (K.)
 Santos Laguna U21
 Santos SP
@@ -2474,6 +2567,7 @@ Shkendija
 Shkendija Tetovo
 Sholing FC
 Shrewsbury Town
+Sibanor United
 Sidama Bunna SC
 Sigma Olomouc
 Silkeborg
@@ -2484,12 +2578,15 @@ Sion
 Siracusa
 Sirens FC
 Sisaket United Fc
+Sitra U21
 Sivasspor
 Siwelele (Res.)
 Skenderbeu
 Sl Benfica (Sensei)
+Sl Benfica (Vendetta)
 Sl16 Football Campus
 Slaven Koprivnica
+Slavia Kromeriz
 Slavia Prag
 Sliema Wanderers
 Slifa FC
@@ -2536,7 +2633,9 @@ Sport Dynamic
 Sport Recife PE U20
 Sport Sinop MT
 Sporting (K.)
+Sporting Aruba
 Sporting CP
+Sporting CP U23
 Sporting Canamy
 Sporting Charleroi B
 Sporting Gijon
@@ -2621,15 +2720,18 @@ Tanzanya
 Tapachula Soconusco FC
 Tarazona
 Tarxien Rainbows FC
+Tatran Mikulas
 Taubate SP U20
 Taunton Town
 Tayland U23
 Tecos
+Telecom Egypt
 Telford United
 Tenerife (K.)
 Teneriffe
 Tepatitlan FC
 Teplice
+Teranga SC
 Terengganu FC
 Ternana
 Teungueth
@@ -2658,6 +2760,7 @@ Torreense U23
 Tottenham
 Tottenham (K.)
 Tottenham (SRL)
+Tottenham Hotspur FC (Liam)
 Totton
 Toulouse
 Toulouse FC
@@ -2680,6 +2783,7 @@ Trival Valderas
 Trofense
 Troyes
 Truro City
+Tuna Luso Brasileira PA U20
 Tung Sing
 Tuntum Ma
 Tunus
@@ -2687,6 +2791,7 @@ Twente
 Türkiye
 U. Chile
 U. Cluj
+U. Concepcion
 U. Craiova
 UCD Canada Atletico U19
 UD Cornella
@@ -2724,6 +2829,7 @@ US Salernitana
 USA
 USFAS Bamako
 USM Alger
+USM EL Harrach
 UTA Arad
 Uberlandia MG
 Ucam Murcia U19
@@ -2738,6 +2844,7 @@ Ukrayna
 Ulinzi Stars FC
 Ulm 1846
 Um Damansara United
+Umm AL Hassam U21
 Umm-Salal SC
 Uniao EC MT
 Uniao EC Rondonopolis MT U20
@@ -2794,6 +2901,7 @@ Verona (SRL)
 Versailles 78
 VfB Stuttgart (Baba)
 VfB Stuttgart (Eduardo)
+VfB Stuttgart (Razvan)
 VfL 1899 Osnabruck
 VfL Bochum
 VfL Wolfsburg
@@ -2811,6 +2919,7 @@ Vilaverdense
 Villarreal (SRL)
 Villarreal B
 Villarreal CF
+Villarreal CF (Carlos)
 Virtus Entella
 Virtus Vecomp Verona
 Vis Pesaro 1898
@@ -2832,6 +2941,7 @@ Vukovar 91
 WKW ETO FC Gyor
 Waalwijk
 Wadi Degla Sc
+Wagadou
 Wales (SRL)
 Walidaan Dkr
 Walsall
@@ -2842,6 +2952,7 @@ Warrington Town
 Wasquehal
 Waterhouse FC
 Watford
+Watford FC
 Wealdstone
 Wehen
 Welling United
@@ -2854,6 +2965,7 @@ West Bromwich
 West Bromwich Albion (Res.)
 West Ham United
 West Ham United (Logan)
+West Ham United (Matrix)
 West Ham United FC (Res.)
 West Ham United W.
 Western Sydney
@@ -2864,6 +2976,7 @@ Whitehawk
 Wigan Athletic
 Wil 1900
 Wilberforce Strikers FC
+Willand Rovers FC
 Willem II Tilburg
 Wimbledon
 Wimborne Town
@@ -2886,6 +2999,7 @@ Ws Wanderers FC K.
 Wycombe
 XV De Piracicaba SP
 Xamax
+Yadanarbon
 Yague CF
 Yarmouk
 Yate Town

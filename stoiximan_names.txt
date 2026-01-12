@@ -91,6 +91,7 @@ AFAD Djekanou
 AFC ASA Targu Mures
 AFC Ajax
 AFC Bournemouth
+AFC Bournemouth U21
 AFC Dunstable
 AFC Fylde
 AFC Fylde (W)
@@ -158,6 +159,7 @@ AS Police Niamey
 AS Real Bamako
 AS Roma
 AS Roma (W)
+AS Roma U20
 AS Saint Etienne (W)
 AS Saloum
 AS Sariyer
@@ -359,6 +361,7 @@ Al-Qadsiah FC U21
 Al-Raed SFC
 Al-Riyadh SC
 Al-Shabab Riyadh U21
+Al-Tai
 Al-Wehda FC
 Al-Wehda FC U19
 Al-Yarmouk
@@ -672,6 +675,7 @@ Bologna FC U20
 Bolton Wanderers
 Boluspor
 Borac Banja Luka
+Bordj Bou Arreridj U20
 Boreham Wood
 Borneo Samarinda U20
 Borussia Dortmund
@@ -1033,6 +1037,7 @@ Chapecoense SC U20
 Chapelton Maroons
 Charlton
 Charlton (W)
+Charlton U21
 Cheadle Town Stingers (W)
 Chelmsford City
 Chelsea FC
@@ -1270,10 +1275,15 @@ Eintracht Frankfurt
 Eintracht Frankfurt (W)
 Ejoheza
 Ekhaya FC
+Ekiti United
+El Alameen
+El Daklyeh
 El Gancho CF (W)
 El Gouna FC
 El Kanemi Warriors
+El Madina El Monowara
 El Merriekh Bentiu
+El Minya
 El Palmar CF
 El Palo FC
 El Qanah
@@ -1591,6 +1601,7 @@ Feyenoord Rotterdam
 Feyenoord U21
 Fgura United FC
 Fiorentina FC (W)
+First Bank
 First Vienna FC 1894
 Flackwell Heath
 Flambeau du Centre
@@ -2186,6 +2197,7 @@ Lusitano Evora 1911
 Luton Town
 Luverdense EC U20
 MB Barika
+MB Barika U20
 MBMB Warrior
 MC Alger
 MC Alger U20
@@ -2271,6 +2283,7 @@ Malaysia U22
 Mali
 Malindi SC
 Malisheva
+Mallawi SC
 Malmo FF
 Manchester City
 Manchester City (W)
@@ -2332,6 +2345,7 @@ Ming Chuan Desafio
 Ming Chuan University
 Ministry of Interior FA
 Miroplast
+Misr Lel Makasa
 Mizoram Police FC
 Mladost DG
 Mladost Zdralovi U19
@@ -2471,6 +2485,7 @@ Nimes Olympique
 Nissa FC
 Nizwa
 Nkombo FC
+Nogoom FC
 Nong Bua Pitchaya
 Nongkseh SCC
 Nordsjaelland
@@ -2707,6 +2722,7 @@ Pro Vercelli U19
 Progresso Zola Predosa
 Progresul Spartac
 Proodos Rogon
+Proxy SC
 Ptl Bazar Brothers FC
 Puente Genil FC
 Puskas Akademia
@@ -2723,6 +2739,7 @@ Queensland Lions FC U23
 Queensland Lions SC
 Quick Boys
 Quorn FC
+Qus
 RB Leipzig
 RB Leipzig (W)
 RBC Roosendaal
@@ -3098,6 +3115,7 @@ Sevilla FC C
 Sevilla FC U19
 Sfax Railways
 Shabab Al Ahli Dubai U19
+Shabab Al Ahli Dubai U23
 Shabab Al Ahli U21
 Shabab Al-Ordon
 Shabab Sahel

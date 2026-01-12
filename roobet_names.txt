@@ -102,6 +102,7 @@ ASD Sorrento 1945
 ASO Chlef
 AVS Futebol SAD
 AZ Alkmaar
+AZ Picerno
 Aali
 Abecat Ouvidorense GO
 Aberdeen FC
@@ -264,11 +265,13 @@ Athletic Club MG
 Atlantico
 Atlas FC
 Atletic Club d'Escaldes
+Atletico Lanus
 Atletico MG SP
 Atletico Madrid
 Atletico Mineiro MG
 Atletico Nacional Medellin
 Atletico San Luis
+Atletico Tucuman
 Atlético Madrid (E)
 Atlético de Madrid (E)
 Atromitos Athinon
@@ -303,6 +306,7 @@ Banfield RJ
 Bangkok FC
 Bangkok United FC
 Bangor FC
+Bangu AC RJ
 Baniyas Club
 Baqa Al-Gharbiyye
 Barcelona SC
@@ -320,6 +324,7 @@ Bayern
 Bayern (E)
 Bayern Leverkusen
 Bayern Munich
+Bayeux
 Beitar Jerusalem FC
 Belarus
 Belgium
@@ -342,6 +347,7 @@ Blooming Santa Cruz
 Bnei Jaffa Ortodoxim
 Bnei Sakhnin FC
 Bnei Yehuda Tel Aviv FC
+Boavista SC RJ
 Boca Juniors
 Boca Juniors (E)
 Bodo/Glimt
@@ -384,9 +390,11 @@ Burkina Faso
 Burnley FC
 Burton Albion
 CA Belgrano de Cordoba
+CA Bordj Bou Arreridj
 CA Boston River
 CA Bucaramanga
 CA Cerro
+CA Estudiantes
 CA Independiente Avellaneda
 CA Juventud de Las Piedras
 CA Mineros Montevideo
@@ -397,6 +405,7 @@ CA Pontevedra
 CA Progreso
 CA River Plate
 CA Rosario Montevideo
+CA Sarmiento de la Banda
 CA Vega Real
 CA Victoria Montevideo
 CD Atletico Baleares
@@ -512,6 +521,7 @@ Club Atletico Pantoja
 Club Brugge
 Club Brugge YLA
 Club Deportivo Eldense
+Club Deportivo Sport
 Club Leon
 Club NXT
 Club Nacional de Football
@@ -539,6 +549,7 @@ Copa do Brasil
 Coppa Italia
 Cordoba CF
 Coritiba FC PR
+Cosenza Calcio
 Cosenza FC
 Costa Rica (E)
 Coupe de France
@@ -759,6 +770,7 @@ FC Saint-Cyr Collonges au Mont d'Or
 FC Santa Coloma
 FC Shakhtar Donetsk
 FC Sheriff
+FC Silon Taborsko
 FC Sion
 FC Slovan Liberec
 FC Slovan Liberec B
@@ -798,6 +810,7 @@ FK IMT Novi Beograd
 FK Javor Ivanjica
 FK Kapaz
 FK Karvan Yevlakh
+FK Mlada Boleslav
 FK Mladost Lucani
 FK Napredak Krusevac
 FK Novi Pazar
@@ -856,6 +869,7 @@ Fufuni
 Fujairah FC
 Fulham
 Fulham FC
+Future Soccer
 Fylkir Reykjavik
 GD Chaves
 GD Victoria Guimaraes
@@ -892,6 +906,7 @@ Gil Vicente Barcelos
 Gillingham FC
 Girona FC
 Girondins Bordeaux
+Giugliano Calcio 1928
 Glasgow Rangers
 Glenavon FC
 Glentoran FC
@@ -1001,6 +1016,7 @@ Ikorodu City
 Imisli FK
 Independiente Medellin
 Independiente Petrolero
+Independiente Rivadavia
 Independiente Santa Fe
 India
 India (E)
@@ -1093,6 +1109,7 @@ Kazakhstan (E)
 Kazincbarcikai SC
 Kazma SC
 Kenya
+Khaleej Sirte
 Kheybar Khorramabad FC
 Khon Kaen United FC
 Khor Fakkan Club
@@ -1204,6 +1221,7 @@ Maccabi Yavne
 Macclesfield FC
 Madrid CFF
 Madura United
+Madureira RJ
 Maguary PE
 Mahasarakham United FC
 Majd FC
@@ -1230,6 +1248,7 @@ Mantova 1911
 Maracana EC CE
 Maranguape CE
 Marbella FC
+Marica FC RJ
 Maritimo
 Maritimo Madeira
 Marko 1927
@@ -1238,6 +1257,7 @@ Masfoot Sports Club
 Massafra 1963
 Mato-Grossense
 Mazatlan FC
+Mb Barika
 Melbourne City FC
 Melbourne Victory
 Mes Rafsanjan FC
@@ -1249,6 +1269,7 @@ Mexico
 Mexico (E)
 Middlesbrough FC
 Milan (E)
+Military Union
 Millonarios FC
 Millwall FC
 Milton Keynes Dons
@@ -1313,6 +1334,7 @@ Neuchatel Xamax
 New Zealand
 Newcastle United
 Newcastle United Jets FC
+Newington YC
 Newport County
 Newroz SC
 Niger Tornadoes FC
@@ -1330,6 +1352,7 @@ Norway
 Norwich City
 Nottingham Forest
 Notts County
+Nova Iguacu RJ
 Nyiregyhaza Spartacus FC
 OFI
 OFI Crete
@@ -1412,6 +1435,7 @@ Peru
 Perugia Calcio Spa
 Peterborough United
 Petrocub Hincesti
+Pharco FC
 Philippines
 Phrae United
 Pisa SC
@@ -1578,6 +1602,7 @@ Saipa F.C.
 Sakaryaspor
 Salcedo FC
 Salford City
+Sampaio Correa FE RJ
 Sampdoria Genoa
 Samsunspor
 San Antonio Bulo Bulo
@@ -1777,6 +1802,7 @@ US Ouakam
 US Pergolettese Crema
 US Pianese
 US Raon L Etape
+US Salernitana
 US Salernitana 1919
 US Sambenedettese
 USA
@@ -1844,6 +1870,7 @@ Vitoria SC Guimaraes
 Volos 2004
 Volos NFC W
 Volos NPS
+Volta Redonda FC RJ
 Vorskla Poltava
 WB Aïn Benian
 WC Qualification, UEFA
