@@ -83,28 +83,47 @@ def fetch_live_games() -> List[int]:
     return game_ids
 
 
-def fetch_prematch_top_games() -> List[int]:
+def fetch_prematch_all_games() -> List[int]:
     """
-    Fetch top prematch game IDs from Tumbet API.
+    Fetch ALL prematch game IDs from Tumbet API using comprehensive getheader endpoint.
+    
+    This provides ~868+ matches vs ~69 from getprematchtopgames endpoint.
+    Filters out negative IDs (outrights/season-long bets) to get only actual matches.
     
     Returns:
-        List of prematch game IDs
+        List of prematch game IDs (positive IDs only = actual matches)
     """
-    url = f"{BASE_URL}/api/prematch/getprematchtopgames/{LANGUAGE}"
+    url = f"{BASE_URL}/api/sport/getheader/{LANGUAGE}"
     
-    print(f"Fetching top prematch games...", flush=True)
+    print(f"Fetching ALL prematch games from getheader...", flush=True)
     data = fetch_json(url)
     
-    if not data:
+    if not data or 'OT' not in data:
         print("  No prematch data")
         return []
     
     game_ids = []
-    for sport in data:
-        if sport.get('id') == 1 and 'gms' in sport:  # Soccer = 1
-            game_ids.extend(sport['gms'])
     
-    print(f"  Found {len(game_ids)} top prematch soccer games")
+    # Navigate: OT -> Sports -> Soccer (ID=1) -> Regions -> Champs -> GameSmallItems
+    ot_data = data['OT']
+    sports = ot_data.get('Sports', {})
+    soccer = sports.get('1', {})  # Soccer = Sport ID 1
+    
+    if not soccer:
+        print("  No soccer data found")
+        return []
+    
+    regions = soccer.get('Regions', {})
+    for region_data in regions.values():
+        champs = region_data.get('Champs', {})
+        for champ_data in champs.values():
+            games = champ_data.get('GameSmallItems', {})
+            if games:
+                # Only include positive IDs (actual matches), not negative IDs (outrights)
+                positive_ids = [gid for gid in games.keys() if int(gid) > 0]
+                game_ids.extend(positive_ids)
+    
+    print(f"  Found {len(game_ids)} prematch soccer games (comprehensive coverage)")
     return game_ids
 
 
@@ -345,17 +364,27 @@ def main():
         else:
             print("    No live games available")
         
-        # Step 2: Fetch PREMATCH matches (top games)
-        print("\n2. Fetching PREMATCH (top) matches...")
-        prematch_game_ids = fetch_prematch_top_games()
+        # Step 2: Fetch PREMATCH matches (ALL games using comprehensive getheader)
+        print("\n2. Fetching ALL PREMATCH matches (comprehensive coverage)...")
+        prematch_game_ids = fetch_prematch_all_games()
         if prematch_game_ids:
-            prematch_data = fetch_game_details(prematch_game_ids, 'prematch')
-            if prematch_data:
-                prematch_matches = parse_game_details(prematch_data, 'prematch')
-                all_matches.extend(prematch_matches)
-                print(f"    Parsed {len(prematch_matches)} prematch matches")
-            else:
-                print("    No prematch data received")
+            # Batch processing for large number of games (URL length limits)
+            batch_size = 100
+            total_batches = (len(prematch_game_ids) + batch_size - 1) // batch_size
+            print(f"   Processing {len(prematch_game_ids)} games in {total_batches} batches...")
+            
+            for i in range(0, len(prematch_game_ids), batch_size):
+                batch = prematch_game_ids[i:i + batch_size]
+                batch_num = (i // batch_size) + 1
+                print(f"   Batch {batch_num}/{total_batches}: Fetching {len(batch)} games...", flush=True)
+                
+                prematch_data = fetch_game_details(batch, 'prematch')
+                if prematch_data:
+                    prematch_matches = parse_game_details(prematch_data, 'prematch')
+                    all_matches.extend(prematch_matches)
+                    print(f"      ✅ Parsed {len(prematch_matches)} matches from batch {batch_num}")
+                else:
+                    print(f"      ⚠️  No data received for batch {batch_num}")
         else:
             print("    No prematch games available")
         
