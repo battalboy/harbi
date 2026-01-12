@@ -6,71 +6,32 @@ Can fetch live data directly from API or parse from JSON file
 
 import json
 import sys
-import platform
 import requests
-from error_handler import handle_request_error, success_response, is_ban_indicator
 
 
-# Constants
-SITE_NAME = 'Stoiximan'
-OUTPUT_FILE = 'stoiximan-formatted.txt'
-ERROR_LOG_FILE = 'stoiximan-error.json'
-
-
-def fetch_stoiximan_data(league_id):
+def fetch_stoiximan_data():
     """
-    Fetch match data directly from Stoiximan API.
-    
-    Args:
-        league_id (str): Stoiximan internal league ID
+    Fetch live match data directly from Stoiximan API.
     
     Returns:
         dict: JSON response with events, markets, selections
     """
-    # Use Gluetun proxy on Linux, direct connection on macOS
-    proxies = None
-    if platform.system() == 'Linux':
-        proxies = {
-            'http': 'http://127.0.0.1:8888',   # Greece VPN for Stoiximan
-            'https': 'http://127.0.0.1:8888'
-        }
-        print("Using Gluetun Greece proxy (Linux)...", flush=True)
-    else:
-        print("Using direct connection (macOS/ExpressVPN app)...", flush=True)
-    
-    # Create a session to maintain cookies
-    session = requests.Session()
-    session.proxies.update(proxies if proxies else {})
-    
-    # First, visit the main page to get cookies
-    print("Getting session cookies...", flush=True)
-    session.get('https://en.stoiximan.gr/', timeout=10)
-    
-    # Now fetch the API with cookies
-    api_url = f'https://en.stoiximan.gr/api/league/hot/upcoming?leagueId={league_id}&req=s,stnf,c,mb'
-    
+    api_url = 'https://en.stoiximan.gr/danae-webapi/api/live/overview/latest'
+    params = {
+        'includeVirtuals': 'false',
+        'queryLanguageId': '1',
+        'queryOperatorId': '2'
+    }
     headers = {
-        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'Accept': 'application/json, text/plain, */*',
-        'Accept-Language': 'en-US,en;q=0.9,el;q=0.8',
-        'Accept-Encoding': 'gzip, deflate, br',
-        'Referer': f'https://en.stoiximan.gr/sport/soccer/competitions/champions-league/{league_id}/',
-        'Origin': 'https://en.stoiximan.gr',
-        'DNT': '1',
-        'Connection': 'keep-alive',
-        'Sec-Fetch-Dest': 'empty',
-        'Sec-Fetch-Mode': 'cors',
-        'Sec-Fetch-Site': 'same-origin',
-        'sec-ch-ua': '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Linux"'
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+        'Accept': 'application/json'
     }
     
-    print(f"Fetching prematch data from Stoiximan API for league {league_id}...", flush=True)
-    response = session.get(api_url, headers=headers, timeout=15)
+    print("Fetching live data from Stoiximan API...", flush=True)
+    response = requests.get(api_url, params=params, headers=headers, timeout=15)
     
-    # Raise HTTPError for bad status codes (will be caught with status_code)
-    response.raise_for_status()
+    if response.status_code != 200:
+        raise Exception(f"API returned status {response.status_code}: {response.text[:200]}")
     
     return response.json()
 
@@ -92,29 +53,26 @@ def parse_json_matches_with_odds(json_data):
     else:
         data = json_data
     
-    # Adjusted parsing for the new API structure
-    events_data = data.get('data', {}).get('events', [])
+    events = data.get('events', {})
+    markets = data.get('markets', {})
+    selections = data.get('selections', {})
     
     matches = []
     
     # Extract all events
-    for event in events_data:
+    for event_id, event in events.items():
         try:
             # Filter for soccer/football
             if event.get('sportId') != 'FOOT':
                 continue
             
-            # Get team names from event name (format: "Team 1 - Team 2")
-            event_name = event.get('name', '')
-            if ' - ' not in event_name:
+            # Get participants
+            participants = event.get('participants', [])
+            if len(participants) < 2:
                 continue
             
-            parts = event_name.split(' - ', 1)
-            if len(parts) < 2:
-                continue
-            
-            team1 = parts[0].strip()
-            team2 = parts[1].strip()
+            team1 = participants[0].get('name', 'Unknown')
+            team2 = participants[1].get('name', 'Unknown')
             
             # Skip esports matches
             if '(Esports)' in team1 or '(Esports)' in team2 or \
@@ -122,26 +80,54 @@ def parse_json_matches_with_odds(json_data):
                 continue
             
             # Find Match Result market for this event
+            market_ids = event.get('marketIdList', [])
             team1_odds = 'N/A'
             draw_odds = 'N/A'
             team2_odds = 'N/A'
             
-            for market in event.get('markets', []):
-                if market.get('type') == 'MRES':  # Match Result market
-                    for sel in market.get('selections', []):
+            for market_id in market_ids:
+                market_id_str = str(market_id)
+                if market_id_str not in markets:
+                    continue
+                
+                market = markets[market_id_str]
+                market_name = market.get('name', '')
+                
+                # Look for Match Result market
+                if market_name == 'Match Result':
+                    selection_ids = market.get('selectionIdList', [])
+                    
+                    # Match Result typically has 3 selections: Team1, Draw, Team2
+                    for sel_id in selection_ids:
+                        sel_id_str = str(sel_id)
+                        if sel_id_str not in selections:
+                            continue
+                        
+                        sel = selections[sel_id_str]
                         sel_name = sel.get('name', '').lower()
                         price = sel.get('price', 'N/A')
                         
-                        if sel_name == '1':
-                            team1_odds = price
-                        elif sel_name == 'x':
+                        # Map selection to team or draw
+                        if 'draw' in sel_name or sel_name == 'x':
                             draw_odds = price
-                        elif sel_name == '2':
+                        elif team1.lower() in sel_name:
+                            team1_odds = price
+                        elif team2.lower() in sel_name:
                             team2_odds = price
-                    break  # Found MRES, no need to check other markets
+                        else:
+                            # If we can't determine, assign in order (1, X, 2)
+                            if team1_odds == 'N/A':
+                                team1_odds = price
+                            elif draw_odds == 'N/A':
+                                draw_odds = price
+                            elif team2_odds == 'N/A':
+                                team2_odds = price
+                    
+                    # Found the Match Result market, no need to check others
+                    break
             
             match = {
-                'event_id': event.get('id'),
+                'event_id': event_id,
                 'team1': team1,
                 'team2': team2,
                 'team1_odds': team1_odds,
@@ -149,14 +135,14 @@ def parse_json_matches_with_odds(json_data):
                 'team2_odds': team2_odds,
                 'league_id': event.get('leagueId', ''),
                 'url': event.get('url', ''),
-                'is_live': False,  # Prematch endpoint
+                'is_live': event.get('isLive', False),
                 'start_time': event.get('startTime', '')
             }
             
             matches.append(match)
             
         except Exception as e:
-            print(f"Error parsing event {event.get('id')}: {e}", file=sys.stderr)
+            print(f"Error parsing event {event_id}: {e}", file=sys.stderr)
             continue
     
     return matches
@@ -198,98 +184,28 @@ def save_formatted_matches(matches, output_file_path):
 
 
 def main():
-    """Main function for command-line usage with comprehensive error handling."""
-    # Default league ID for testing (Champions League)
-    default_league_id = "182748"
-    
+    """Main function for command-line usage."""
     # Check if input file provided
     if len(sys.argv) >= 2:
         # Read from file mode
         input_file = sys.argv[1]
-        output_file = sys.argv[2] if len(sys.argv) > 2 else OUTPUT_FILE
+        output_file = sys.argv[2] if len(sys.argv) > 2 else 'stoiximan-formatted.txt'
         
         print(f"Reading from file: {input_file}...")
-        try:
-            matches = parse_json_matches_with_odds(input_file)
-        except Exception as e:
-            error_info = handle_request_error(SITE_NAME, e)
-            print(f"\n❌ Error parsing file: {error_info['error_message']}")
-            with open(ERROR_LOG_FILE, 'w', encoding='utf-8') as f:
-                json.dump(error_info, f, ensure_ascii=False, indent=2)
-            sys.exit(1)
+        matches = parse_json_matches_with_odds(input_file)
     else:
         # Fetch from API mode
-        output_file = OUTPUT_FILE
+        output_file = 'stoiximan-formatted.txt'
         
         try:
-            print(f"Fetching prematch data from {SITE_NAME} API...")
-            data = fetch_stoiximan_data(default_league_id)
+            print("Fetching live data from Stoiximan API...")
+            data = fetch_stoiximan_data()
             print(f"✓ Received data from API")
             matches = parse_json_matches_with_odds(data)
-            
-        except requests.exceptions.HTTPError as e:
-            # HTTP error with status code
-            status_code = e.response.status_code if (e.response is not None) else None
-            error_info = handle_request_error(SITE_NAME, e, status_code)
-            
-            print(f"\n❌ HTTP Error {status_code}: {error_info['error_message']}")
-            
-            # Check for ban indicators
-            if is_ban_indicator(error_info['error_type'], status_code):
-                print(f"\n⚠️  WARNING: Possible IP ban detected for {SITE_NAME}!")
-                print(f"   Consider stopping all requests and waiting before retrying.")
-            
-            # Write error log and empty output
-            with open(ERROR_LOG_FILE, 'w', encoding='utf-8') as f:
-                json.dump(error_info, f, ensure_ascii=False, indent=2)
-            with open(output_file, 'w', encoding='utf-8') as f:
-                f.write('')
-            
-            sys.exit(1)
-            
-        except requests.exceptions.ConnectionError as e:
-            error_info = handle_request_error(SITE_NAME, e)
-            print(f"\n❌ Connection Error: {error_info['error_message']}")
-            
-            with open(ERROR_LOG_FILE, 'w', encoding='utf-8') as f:
-                json.dump(error_info, f, ensure_ascii=False, indent=2)
-            with open(output_file, 'w', encoding='utf-8') as f:
-                f.write('')
-            
-            sys.exit(1)
-            
-        except requests.exceptions.Timeout as e:
-            error_info = handle_request_error(SITE_NAME, e)
-            print(f"\n❌ Timeout Error: {error_info['error_message']}")
-            
-            with open(ERROR_LOG_FILE, 'w', encoding='utf-8') as f:
-                json.dump(error_info, f, ensure_ascii=False, indent=2)
-            with open(output_file, 'w', encoding='utf-8') as f:
-                f.write('')
-            
-            sys.exit(1)
-            
-        except json.JSONDecodeError as e:
-            error_info = handle_request_error(SITE_NAME, e)
-            print(f"\n❌ JSON Parse Error: {error_info['error_message']}")
-            
-            with open(ERROR_LOG_FILE, 'w', encoding='utf-8') as f:
-                json.dump(error_info, f, ensure_ascii=False, indent=2)
-            with open(output_file, 'w', encoding='utf-8') as f:
-                f.write('')
-            
-            sys.exit(1)
-            
         except Exception as e:
-            error_info = handle_request_error(SITE_NAME, e)
-            print(f"\n❌ Unexpected Error: {error_info['error_message']}")
-            print(f"   Technical details: {str(e)}")
-            
-            with open(ERROR_LOG_FILE, 'w', encoding='utf-8') as f:
-                json.dump(error_info, f, ensure_ascii=False, indent=2)
-            with open(output_file, 'w', encoding='utf-8') as f:
-                f.write('')
-            
+            print(f"\n❌ Error fetching from API: {e}")
+            print("\nAlternatively, you can provide a JSON file:")
+            print("  python stoiximan_api_complete_parser.py <input_json_file> [output_file]")
             sys.exit(1)
     
     # Count matches with odds
@@ -302,12 +218,6 @@ def main():
     if matches:
         print(f"\nWriting to {output_file}...")
         save_formatted_matches(matches, output_file)
-        
-        # Write success status
-        success_info = success_response(SITE_NAME)
-        with open(ERROR_LOG_FILE, 'w', encoding='utf-8') as f:
-            json.dump(success_info, f, ensure_ascii=False, indent=2)
-        
         print(f"✅ Done! {len(matches)} matches saved to {output_file}")
         
         # Show preview of matches WITH odds
@@ -316,14 +226,7 @@ def main():
         for i, match in enumerate([m for m in matches if m['team1_odds'] != 'N/A'][:5], 1):
             print(f"{i}. {format_match(match)}")
     else:
-        print("⚠️ No soccer matches found!")
-        # Write empty output file
-        with open(output_file, 'w', encoding='utf-8') as f:
-            f.write('')
-        # Write NoEventsFound status
-        error_info = handle_request_error(SITE_NAME, Exception("NoEventsFound"))
-        with open(ERROR_LOG_FILE, 'w', encoding='utf-8') as f:
-            json.dump(error_info, f, ensure_ascii=False, indent=2)
+        print("No soccer matches found!")
         sys.exit(1)
 
 
