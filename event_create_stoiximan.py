@@ -27,28 +27,6 @@ def fetch_stoiximan_data(league_id):
     Returns:
         dict: JSON response with events, markets, selections
     """
-    api_url = f'https://en.stoiximan.gr/api/league/hot/upcoming?leagueId={league_id}&req=s,stnf,c,mb'
-    params = {
-        'includeVirtuals': 'false',
-        'queryLanguageId': '1',
-        'queryOperatorId': '2'
-    }
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'Accept': 'application/json, text/plain, */*',
-        'Accept-Language': 'en-US,en;q=0.9',
-        'Accept-Encoding': 'gzip, deflate, br',
-        'Referer': 'https://en.stoiximan.gr/',
-        'Origin': 'https://en.stoiximan.gr',
-        'DNT': '1',
-        'Connection': 'keep-alive',
-        'Sec-Fetch-Dest': 'empty',
-        'Sec-Fetch-Mode': 'cors',
-        'Sec-Fetch-Site': 'same-origin',
-        'Cache-Control': 'no-cache',
-        'Pragma': 'no-cache'
-    }
-    
     # Use Gluetun proxy on Linux, direct connection on macOS
     proxies = None
     if platform.system() == 'Linux':
@@ -60,8 +38,36 @@ def fetch_stoiximan_data(league_id):
     else:
         print("Using direct connection (macOS/ExpressVPN app)...", flush=True)
     
+    # Create a session to maintain cookies
+    session = requests.Session()
+    session.proxies.update(proxies if proxies else {})
+    
+    # First, visit the main page to get cookies
+    print("Getting session cookies...", flush=True)
+    session.get('https://en.stoiximan.gr/', timeout=10)
+    
+    # Now fetch the API with cookies
+    api_url = f'https://en.stoiximan.gr/api/league/hot/upcoming?leagueId={league_id}&req=s,stnf,c,mb'
+    
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'application/json, text/plain, */*',
+        'Accept-Language': 'en-US,en;q=0.9,el;q=0.8',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Referer': f'https://en.stoiximan.gr/sport/soccer/competitions/champions-league/{league_id}/',
+        'Origin': 'https://en.stoiximan.gr',
+        'DNT': '1',
+        'Connection': 'keep-alive',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-origin',
+        'sec-ch-ua': '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Linux"'
+    }
+    
     print(f"Fetching prematch data from Stoiximan API for league {league_id}...", flush=True)
-    response = requests.get(api_url, headers=headers, timeout=15, proxies=proxies)
+    response = session.get(api_url, headers=headers, timeout=15)
     
     # Raise HTTPError for bad status codes (will be caught with status_code)
     response.raise_for_status()
