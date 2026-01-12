@@ -135,7 +135,11 @@ The matching system uses **indicator-first filtering** to ensure accurate matche
 #### API Parser Scripts (Event Creators)
 These scripts fetch live and upcoming matches with full details (teams, odds, links):
 - `event_create_oddswar.py` → `oddswar-formatted.txt` (live + upcoming matches)
-- `event_create_stoiximan.py` → `stoiximan-formatted.txt` (live only - no prematch API available)
+- `event_create_stoiximan.py` → `stoiximan-formatted.txt` (prematch matches via league-specific endpoint)
+  - **API Discovery**: Uses `/api/league/hot/upcoming?leagueId={ID}&req=s,stnf,c,mb` endpoint
+  - **League IDs**: Currently hardcoded to Champions League (`182748`)
+  - **Coverage**: Returns matches with full 1X2 odds for specified league
+  - **Future Work**: Discover and fetch from multiple league IDs to get comprehensive coverage
 - `event_create_roobet.py` → `roobet-formatted.txt` (live + prematch via Betby API)
 - `event_create_tumbet.py` → `tumbet-formatted.txt` (live + prematch via SportWide API)
 - `event_create_stake.py` → `stake-formatted.txt` (TO BE CREATED - will use browser automation like team collector)
@@ -388,6 +392,10 @@ sudo docker logs gluetun_greece
 **Client Telegram IDs:**
 - 1580648939 - James
 - 7530341430 - Ismail
+- 588354800 - @Hidden_Tomi
+- 5387409105 - @Totti34x (Totti)
+- 977623500 - @AbelardoZ5
+- 403609484 - @cassiolincoln10
 
 **Supported HTML tags:**
 - `<b>bold</b>` - **bold text**

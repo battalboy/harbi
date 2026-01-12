@@ -12,6 +12,13 @@ Output is formatted identically to stoiximan-formatted.txt for easy comparison.
 import json
 import requests
 from typing import List, Dict, Optional
+from error_handler import handle_request_error, success_response, is_ban_indicator
+
+
+# Constants
+SITE_NAME = 'Oddswar'
+OUTPUT_FILE = 'oddswar-formatted.txt'
+ERROR_LOG_FILE = 'oddswar-error.json'
 
 
 def fetch_markets(interval='inplay', size=50) -> Dict:
@@ -38,7 +45,7 @@ def fetch_markets(interval='inplay', size=50) -> Dict:
         'Accept': 'application/json'
     }
     
-    response = requests.get(url, params=params, headers=headers)
+    response = requests.get(url, params=params, headers=headers, timeout=30)
     response.raise_for_status()
     return response.json()
 
@@ -62,7 +69,7 @@ def fetch_market_details(market_ids: List[str]) -> Dict:
         'Accept': 'application/json'
     }
     
-    response = requests.get(url, params=params, headers=headers)
+    response = requests.get(url, params=params, headers=headers, timeout=30)
     response.raise_for_status()
     return response.json()
 
@@ -228,9 +235,9 @@ def save_formatted_matches(matches: List[Dict], output_file: str = 'oddswar-form
 
 
 def main():
-    """Main execution function."""
+    """Main execution function with comprehensive error handling."""
     try:
-        print("Fetching Oddswar live and upcoming soccer matches...")
+        print(f"Fetching {SITE_NAME} live and upcoming soccer matches...")
         
         all_markets = []
         all_market_ids = []
@@ -280,7 +287,14 @@ def main():
         
         if not all_markets:
             print("\n⚠️  No markets found!")
-            return
+            # Write empty output file
+            with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+                f.write('')
+            # Write NoEventsFound status
+            error_info = handle_request_error(SITE_NAME, Exception("NoEventsFound"))
+            with open(ERROR_LOG_FILE, 'w', encoding='utf-8') as f:
+                json.dump(error_info, f, ensure_ascii=False, indent=2)
+            return error_info
         
         print(f"\n📊 Total unique markets: {len(all_markets)}")
         
@@ -299,18 +313,87 @@ def main():
         
         # Step 6: Save to file
         print("\n6. Saving formatted output...")
-        save_formatted_matches(matches, 'oddswar-formatted.txt')
+        save_formatted_matches(matches, OUTPUT_FILE)
+        
+        # Write success status
+        success_info = success_response(SITE_NAME)
+        with open(ERROR_LOG_FILE, 'w', encoding='utf-8') as f:
+            json.dump(success_info, f, ensure_ascii=False, indent=2)
         
         print("\n✨ Done!")
+        return success_info
         
-    except requests.RequestException as e:
-        print(f"\n❌ Error fetching data: {e}")
+    except requests.exceptions.HTTPError as e:
+        # HTTP error with status code
+        status_code = e.response.status_code if (e.response is not None) else None
+        error_info = handle_request_error(SITE_NAME, e, status_code)
+        
+        print(f"\n❌ HTTP Error {status_code}: {error_info['error_message']}")
+        
+        # Check for ban indicators
+        if is_ban_indicator(error_info['error_type'], status_code):
+            print(f"\n⚠️  WARNING: Possible IP ban detected for {SITE_NAME}!")
+            print(f"   Consider stopping all requests and waiting before retrying.")
+        
+        # Write error log and empty output
+        with open(ERROR_LOG_FILE, 'w', encoding='utf-8') as f:
+            json.dump(error_info, f, ensure_ascii=False, indent=2)
+        with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+            f.write('')
+        
+        return error_info
+        
+    except requests.exceptions.ConnectionError as e:
+        error_info = handle_request_error(SITE_NAME, e)
+        print(f"\n❌ Connection Error: {error_info['error_message']}")
+        
+        with open(ERROR_LOG_FILE, 'w', encoding='utf-8') as f:
+            json.dump(error_info, f, ensure_ascii=False, indent=2)
+        with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+            f.write('')
+        
+        return error_info
+        
+    except requests.exceptions.Timeout as e:
+        error_info = handle_request_error(SITE_NAME, e)
+        print(f"\n❌ Timeout Error: {error_info['error_message']}")
+        
+        with open(ERROR_LOG_FILE, 'w', encoding='utf-8') as f:
+            json.dump(error_info, f, ensure_ascii=False, indent=2)
+        with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+            f.write('')
+        
+        return error_info
+        
+    except json.JSONDecodeError as e:
+        error_info = handle_request_error(SITE_NAME, e)
+        print(f"\n❌ JSON Parse Error: {error_info['error_message']}")
+        
+        with open(ERROR_LOG_FILE, 'w', encoding='utf-8') as f:
+            json.dump(error_info, f, ensure_ascii=False, indent=2)
+        with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+            f.write('')
+        
+        return error_info
+        
     except Exception as e:
-        print(f"\n❌ Error: {e}")
-        import traceback
-        traceback.print_exc()
+        error_info = handle_request_error(SITE_NAME, e)
+        print(f"\n❌ Unexpected Error: {error_info['error_message']}")
+        print(f"   Technical details: {str(e)}")
+        
+        with open(ERROR_LOG_FILE, 'w', encoding='utf-8') as f:
+            json.dump(error_info, f, ensure_ascii=False, indent=2)
+        with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+            f.write('')
+        
+        return error_info
 
 
 if __name__ == '__main__':
-    main()
+    result = main()
+    # Exit with error code if there was an error
+    if result and result.get('error', False):
+        exit(1)
+    else:
+        exit(0)
 

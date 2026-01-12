@@ -9,8 +9,43 @@ Uses team name mappings from CSV files and event data from formatted text files.
 """
 
 import csv
+import json
 from typing import Dict, List, Tuple, Optional
 from pathlib import Path
+
+
+def load_error_status(site_name: str) -> Optional[Dict]:
+    """
+    Load error status from error log file.
+    
+    Args:
+        site_name: Name of site (lowercase, e.g., 'oddswar', 'roobet')
+    
+    Returns:
+        Error dict if error occurred, None if success or file doesn't exist
+    """
+    error_file = f"{site_name}-error.json"
+    
+    try:
+        with open(error_file, 'r', encoding='utf-8') as f:
+            error_data = json.load(f)
+            
+            # Return error data if there was an error
+            if error_data.get('error', False):
+                return error_data
+            else:
+                return None
+    except FileNotFoundError:
+        # No error file = assume success (backward compatibility)
+        return None
+    except Exception as e:
+        # If we can't read error file, return generic error
+        return {
+            'site': site_name.capitalize(),
+            'error': True,
+            'error_type': 'FileReadError',
+            'error_message': f"❌ HATA: Error dosyası okunamadı - {str(e)}"
+        }
 
 
 def load_team_mappings(csv_file: str) -> Dict[str, str]:
@@ -117,14 +152,62 @@ def find_matching_events(
     return matches
 
 
-def generate_html(matched_events: List[Dict], output_file: str = 'results.html'):
+def generate_error_banner(error_statuses: Dict[str, Optional[Dict]]) -> str:
+    """
+    Generate HTML for error banner showing site connection errors.
+    Returns empty string if no errors.
+    
+    Args:
+        error_statuses: Dict of error statuses {'oddswar': error_dict, 'roobet': error_dict, ...}
+    
+    Returns:
+        HTML string for error banner or empty string
+    """
+    # Check if there are any errors
+    errors = {site: error for site, error in error_statuses.items() if error is not None}
+    
+    if not errors:
+        return ""
+    
+    # Special heading if Oddswar failed (master key site)
+    if 'oddswar' in errors:
+        heading = "⚠️ UYARI - Oddswar Site Bağlantı Hatalası var. Oddswar ana arbing sitesi olduğu için hiç bir oran gözükmeyecek."
+    else:
+        heading = "⚠️ UYARI - Site Bağlantı Hataları var. Aşağıdaki sitelerin oranları gözükmeyecek."
+    
+    # Build error banner HTML
+    banner = f"""
+    <div style="width: 80%; margin: 20px auto; padding: 20px; background-color: #fff3cd; border: 2px solid #ffc107; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); box-sizing: border-box;">
+        <h2 style="margin-top: 0; color: #856404;">{heading}</h2>
+"""
+    
+    for site_name, error_data in errors.items():
+        site_display = site_name.capitalize()
+        error_msg = error_data.get('error_message', '❌ HATA: Bilinmeyen hata')
+        
+        banner += f"""        <div style="margin: 10px 0; padding: 10px; background-color: #ffe8a1; border-left: 4px solid #ff6b6b; border-radius: 3px;">
+            <strong style="color: #721c24;">{site_display}:</strong> <span style="color: #856404;">{error_msg}</span>
+        </div>
+"""
+    
+    banner += """    </div>
+"""
+    
+    return banner
+
+
+def generate_html(matched_events: List[Dict], output_file: str = 'results.html', 
+                  error_statuses: Dict[str, Optional[Dict]] = None):
     """
     Generate HTML file with matched events in table format.
     
     Args:
         matched_events: List of dicts containing event data and matches
         output_file: Path to output HTML file
+        error_statuses: Dict of error statuses {'oddswar': error_dict, 'roobet': error_dict, ...}
     """
+    if error_statuses is None:
+        error_statuses = {}
     
     # HTML header
     html = """<!DOCTYPE html>
@@ -182,6 +265,9 @@ def generate_html(matched_events: List[Dict], output_file: str = 'results.html')
     <h1 style="text-align: center;">H.Ar.B.İ. - Arbitrage Oran Sonuçları</h1>
 """
     
+    # Add error banner if there are any errors
+    html += generate_error_banner(error_statuses)
+    
     # Add event tables
     for event in matched_events:
         team1 = event['team1']
@@ -198,7 +284,10 @@ def generate_html(matched_events: List[Dict], output_file: str = 'results.html')
             </tr>
         </thead>
         <tbody>
-            <tr>
+"""
+        
+        # Oddswar row (always shown - it's the master)
+        html += f"""            <tr>
                 <td class="site-name"><a href="{oddswar['link']}" target="_blank">Oddswar oranları</a></td>
                 <td>{oddswar['odds_1']}</td>
                 <td>{oddswar['odds_x']}</td>
@@ -209,7 +298,6 @@ def generate_html(matched_events: List[Dict], output_file: str = 'results.html')
         # Add Tumbet row if matched
         if 'tumbet' in event:
             tumbet = event['tumbet']
-            # Compare odds and highlight arbitrage opportunities
             try:
                 odds_1_class = ' class="arb-opportunity"' if float(tumbet['odds_1']) > float(oddswar['odds_1']) else ''
                 odds_x_class = ' class="arb-opportunity"' if float(tumbet['odds_x']) > float(oddswar['odds_x']) else ''
@@ -228,7 +316,6 @@ def generate_html(matched_events: List[Dict], output_file: str = 'results.html')
         # Add Stoiximan row if matched
         if 'stoiximan' in event:
             stoiximan = event['stoiximan']
-            # Compare odds and highlight arbitrage opportunities
             try:
                 odds_1_class = ' class="arb-opportunity"' if float(stoiximan['odds_1']) > float(oddswar['odds_1']) else ''
                 odds_x_class = ' class="arb-opportunity"' if float(stoiximan['odds_x']) > float(oddswar['odds_x']) else ''
@@ -247,7 +334,6 @@ def generate_html(matched_events: List[Dict], output_file: str = 'results.html')
         # Add Roobet row if matched
         if 'roobet' in event:
             roobet = event['roobet']
-            # Compare odds and highlight arbitrage opportunities
             try:
                 odds_1_class = ' class="arb-opportunity"' if float(roobet['odds_1']) > float(oddswar['odds_1']) else ''
                 odds_x_class = ' class="arb-opportunity"' if float(roobet['odds_x']) > float(oddswar['odds_x']) else ''
@@ -294,17 +380,41 @@ def main():
     print(f"   ✅ Stoiximan: {len(oddswar_to_stoiximan)} team mappings")
     print(f"   ✅ Tumbet: {len(oddswar_to_tumbet)} team mappings")
     
-    # Step 2: Load events
+    # Step 2: Load events and check for errors
     print("\n📂 Loading events from formatted files...")
+    
+    # Load error statuses
+    oddswar_error = load_error_status('oddswar')
+    roobet_error = load_error_status('roobet')
+    stoiximan_error = load_error_status('stoiximan')
+    tumbet_error = load_error_status('tumbet')
+    
+    # Load events (will be empty if there was an error)
     oddswar_events = parse_formatted_file('oddswar-formatted.txt')
     roobet_events = parse_formatted_file('roobet-formatted.txt')
     stoiximan_events = parse_formatted_file('stoiximan-formatted.txt')
     tumbet_events = parse_formatted_file('tumbet-formatted.txt')
     
-    print(f"   ✅ Oddswar: {len(oddswar_events)} events")
-    print(f"   ✅ Roobet: {len(roobet_events)} events")
-    print(f"   ✅ Stoiximan: {len(stoiximan_events)} events")
-    print(f"   ✅ Tumbet: {len(tumbet_events)} events")
+    # Print status
+    if oddswar_error:
+        print(f"   ❌ Oddswar: ERROR - {oddswar_error['error_type']}")
+    else:
+        print(f"   ✅ Oddswar: {len(oddswar_events)} events")
+    
+    if roobet_error:
+        print(f"   ❌ Roobet: ERROR - {roobet_error['error_type']}")
+    else:
+        print(f"   ✅ Roobet: {len(roobet_events)} events")
+    
+    if stoiximan_error:
+        print(f"   ❌ Stoiximan: ERROR - {stoiximan_error['error_type']}")
+    else:
+        print(f"   ✅ Stoiximan: {len(stoiximan_events)} events")
+    
+    if tumbet_error:
+        print(f"   ❌ Tumbet: ERROR - {tumbet_error['error_type']}")
+    else:
+        print(f"   ✅ Tumbet: {len(tumbet_events)} events")
     
     # Step 3: Find matching events
     print("\n🔍 Matching events across sites...")
@@ -378,7 +488,16 @@ def main():
     
     # Step 5: Generate HTML
     print("\n📝 Generating HTML output...")
-    generate_html(matched_events, 'results.html')
+    
+    # Pass error statuses to HTML generator
+    error_statuses = {
+        'oddswar': oddswar_error,
+        'roobet': roobet_error,
+        'stoiximan': stoiximan_error,
+        'tumbet': tumbet_error
+    }
+    
+    generate_html(matched_events, 'results.html', error_statuses)
     print(f"   ✅ Written to results.html")
     
     # Summary

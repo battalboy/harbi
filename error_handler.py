@@ -13,48 +13,48 @@ from typing import Dict, Optional, Tuple
 # Error message mappings from ERROR_MESSAGES_REFERENCE.txt
 ERROR_MESSAGES = {
     # HTTP Status Codes
-    400: "❌ HATA 400: İstek formatı hatalı. API parametreleri kontrol edilmeli.",
-    401: "❌ HATA 401: Izinsiz bağlantı. API anahtarı veya kimlik bilgileri geçersiz.",
-    403: "❌ HATA 403: Erişim engellendi. Ban yemiş olabiliriz.",
-    404: "❌ HATA 404: İstenen sayfa bulunamadı. API endpoint'i değişmiş olabilir.",
-    429: "❌ HATA 429: Çok fazla istek gönderildi. Ban yemiş olabiliriz.",
-    500: "❌ HATA 500: Sitenin sunucusunda bir hata oluştu. Site tarafında sorun var.",
-    502: "❌ HATA 502: Sunucu geçidi hatası. Site geçici olarak erişilemez durumda.",
-    503: "❌ HATA 503: Servis şu anda kullanılamıyor. Site bakımda veya aşırı yüklü olabilir.",
-    504: "❌ HATA 504: Sunucu zaman aşımına uğradı. Site yanıt vermiyor.",
+    400: "HATA 400: İstek formatı hatalı. API parametreleri kontrol edilmeli.",
+    401: "HATA 401: Izinsiz bağlantı. API anahtarı veya kimlik bilgileri geçersiz.",
+    403: "HATA 403: Erişim engellendi. Ban yemiş olabiliriz.",
+    404: "HATA 404: İstenen sayfa bulunamadı. API endpoint'i değişmiş olabilir.",
+    429: "HATA 429: Çok fazla istek gönderildi. Ban yemiş olabiliriz.",
+    500: "HATA 500: Sitenin sunucusunda bir hata oluştu. Site tarafında sorun var.",
+    502: "HATA 502: Sunucu geçidi hatası. Site geçici olarak erişilemez durumda.",
+    503: "HATA 503: Servis şu anda kullanılamıyor. Site bakımda veya aşırı yüklü olabilir.",
+    504: "HATA 504: Sunucu zaman aşımına uğradı. Site yanıt vermiyor.",
     
     # Network/Connection Errors
-    'ConnectionError': "❌ HATA: Siteye bağlanılamıyor. İnternet bağlantınızı kontrol edin veya site çevrimdışı olabilir.",
-    'ConnectionRefusedError': "❌ HATA: Sunucu bağlantıyı reddetti. Site erişimi engelliyor olabilir.",
-    'ConnectionResetError': "❌ HATA: Bağlantı sunucu tarafından kesildi. VPN/Proxy ayarlarını kontrol edin.",
-    'Timeout': "❌ HATA: İstek zaman aşımına uğradı (30 saniye). Site çok yavaş yanıt veriyor veya erişilemiyor.",
-    'ReadTimeout': "❌ HATA: Veri okuma zaman aşımına uğradı. Site yanıt vermiyor.",
-    'ConnectTimeout': "❌ HATA: Bağlantı kurma zaman aşımına uğradı. Site erişilemiyor.",
-    'SSLError': "❌ HATA: SSL sertifika hatası. Site güvenlik sertifikası geçersiz veya süresi dolmuş.",
-    'ProxyError': "❌ HATA: Proxy bağlantısı başarısız. VPN/Gluetun container'ı çalışıyor mu kontrol edin.",
-    'TooManyRedirects': "❌ HATA: Çok fazla yönlendirme. Site yapılandırması hatalı.",
+    'ConnectionError': "HATA: Siteye bağlanılamıyor. İnternet bağlantınızı kontrol edin veya site çevrimdışı olabilir.",
+    'ConnectionRefusedError': "HATA: Sunucu bağlantıyı reddetti. Site erişimi engelliyor olabilir.",
+    'ConnectionResetError': "HATA: Bağlantı sunucu tarafından kesildi. VPN/Proxy ayarlarını kontrol edin.",
+    'Timeout': "HATA: İstek zaman aşımına uğradı (30 saniye). Site çok yavaş yanıt veriyor veya erişilemiyor.",
+    'ReadTimeout': "HATA: Veri okuma zaman aşımına uğradı. Site yanıt vermiyor.",
+    'ConnectTimeout': "HATA: Bağlantı kurma zaman aşımına uğradı. Site erişilemiyor.",
+    'SSLError': "HATA: SSL sertifika hatası. Site güvenlik sertifikası geçersiz veya süresi dolmuş.",
+    'ProxyError': "HATA: Proxy bağlantısı başarısız. VPN/Gluetun container'ı çalışıyor mu kontrol edin.",
+    'TooManyRedirects': "HATA: Çok fazla yönlendirme. Site yapılandırması hatalı.",
     
     # Response/Data Errors
-    'EmptyResponse': "⚠️ UYARI: Site yanıt verdi ama içerik boş. Maç ya da takım verisi bulunamadı.",
-    'InvalidJSON': "❌ HATA: Geçersiz veri formatı. Site beklenmeyen bir yanıt gönderdi.",
-    'JSONDecodeError': "❌ HATA: JSON çözümleme hatası. Site'nin API yanıtı bozuk.",
-    'MissingField': "❌ HATA: Gerekli veri alanı eksik. API yapısı değişmiş olabilir.",
-    'InvalidDataStructure': "❌ HATA: Veri yapısı beklenenden farklı. API güncellenmiş olabilir, yazılım güncellemese gerekebilir.",
-    'NoEventsFound': "ℹ️ BİLGİ: Bağlantı başarılı ama aktif maç bulunamadı (0 etkinlik).",
-    'EncodingError': "❌ HATA: Karakter kodlama hatası. Türkçe karakterler düzgün okunamıyor.",
+    'EmptyResponse': "UYARI: Site yanıt verdi ama içerik boş. Maç ya da takım verisi bulunamadı.",
+    'InvalidJSON': "HATA: Geçersiz veri formatı. Site beklenmeyen bir yanıt gönderdi.",
+    'JSONDecodeError': "HATA: JSON çözümleme hatası. Site'nin API yanıtı bozuk.",
+    'MissingField': "HATA: Gerekli veri alanı eksik. API yapısı değişmiş olabilir.",
+    'InvalidDataStructure': "HATA: Veri yapısı beklenenden farklı. API güncellenmiş olabilir, yazılım güncellemese gerekebilir.",
+    'NoEventsFound': "BİLGİ: Bağlantı başarılı ama aktif maç bulunamadı (0 etkinlik).",
+    'EncodingError': "HATA: Karakter kodlama hatası. Türkçe karakterler düzgün okunamıyor.",
     
     # VPN/Geoblocking Errors
-    'GeoblockDetected': "❌ HATA: Site coğrafi kısıtlama uyguluyor. VPN'i kontrol edin.",
-    'VPNNotRunning': "❌ HATA: VPN bağlantısı yok. Gluetun container'ları başlatın.",
-    'WrongVPNLocation': "⚠️ UYARI: Yanlış VPN konumu. Stake için Kanada, Stoiximan için Yunanistan gerekli.",
-    'CloudflareChallenge': "❌ HATA: Cloudflare koruması algılandı. Manuel tarayıcı müdahalesi gerekebilir.",
+    'GeoblockDetected': "HATA: Site coğrafi kısıtlama uyguluyor. VPN'i kontrol edin.",
+    'VPNNotRunning': "HATA: VPN bağlantısı yok. Gluetun container'ları başlatın.",
+    'WrongVPNLocation': "UYARI: Yanlış VPN konumu. Stake için Kanada, Stoiximan için Yunanistan gerekli.",
+    'CloudflareChallenge': "HATA: Cloudflare koruması algılandı. Manuel tarayıcı müdahalesi gerekebilir.",
     
     # Browser Automation Errors
-    'ChromeNotFound': "❌ HATA: Chrome tarayıcı bulunamadı. Chromium kurulumu gerekli: `sudo apt install chromium-browser`",
-    'ChromeDriverError': "❌ HATA: Chrome driver hatası. Tarayıcı başlatılamadı.",
-    'ElementNotFound': "❌ HATA: Sayfa öğesi bulunamadı. Site yapısı değişmiş olabilir, yazılım güncelleme gerekli.",
-    'PageLoadTimeout': "❌ HATA: Sayfa yükleme zaman aşımı. Site çok yavaş veya erişilemiyor.",
-    'StaleElementError': "❌ HATA: Sayfa öğesi değişti. Dinamik içerik yeniden yüklendi.",
+    'ChromeNotFound': "HATA: Chrome tarayıcı bulunamadı. Chromium kurulumu gerekli: `sudo apt install chromium-browser`",
+    'ChromeDriverError': "HATA: Chrome driver hatası. Tarayıcı başlatılamadı.",
+    'ElementNotFound': "HATA: Sayfa öğesi bulunamadı. Site yapısı değişmiş olabilir, yazılım güncelleme gerekli.",
+    'PageLoadTimeout': "HATA: Sayfa yükleme zaman aşımı. Site çok yavaş veya erişilemiyor.",
+    'StaleElementError': "HATA: Sayfa öğesi değişti. Dinamik içerik yeniden yüklendi.",
 }
 
 
@@ -75,7 +75,7 @@ def get_error_message(error: Exception, status_code: Optional[int] = None) -> Tu
     # Check for HTTP status code first
     if status_code is not None:
         error_type = f"HTTP_{status_code}"
-        error_message = ERROR_MESSAGES.get(status_code, f"❌ HATA {status_code}: Bilinmeyen sunucu hatası.")
+        error_message = ERROR_MESSAGES.get(status_code, f"HATA {status_code}: Bilinmeyen sunucu hatası.")
         return (error_type, error_message)
     
     # Check for specific exception types
@@ -107,7 +107,7 @@ def get_error_message(error: Exception, status_code: Optional[int] = None) -> Tu
     
     # Generic error message for unknown errors
     else:
-        return (error_type, f"❌ HATA: Beklenmeyen hata - {str(error)[:100]}")
+        return (error_type, f"HATA: Beklenmeyen hata - {str(error)[:100]}")
 
 
 def handle_request_error(site_name: str, error: Exception, status_code: Optional[int] = None) -> Dict:
