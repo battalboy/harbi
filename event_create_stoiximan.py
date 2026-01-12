@@ -8,6 +8,7 @@ import json
 import sys
 import requests
 import platform
+import error_handler
 
 
 def fetch_stoiximan_data():
@@ -39,8 +40,8 @@ def fetch_stoiximan_data():
     print("Fetching live data from Stoiximan API...", flush=True)
     response = requests.get(api_url, params=params, headers=headers, timeout=15, proxies=proxies)
     
-    if response.status_code != 200:
-        raise Exception(f"API returned status {response.status_code}: {response.text[:200]}")
+    # Raise HTTPError for bad status codes
+    response.raise_for_status()
     
     return response.json()
 
@@ -205,13 +206,32 @@ def main():
     else:
         # Fetch from API mode
         output_file = 'stoiximan-formatted.txt'
+        error_file = 'stoiximan-error.json'
         
         try:
             print("Fetching live data from Stoiximan API...")
             data = fetch_stoiximan_data()
             print(f"✓ Received data from API")
             matches = parse_json_matches_with_odds(data)
+        except requests.exceptions.HTTPError as e:
+            status_code = e.response.status_code if (e.response is not None) else None
+            error_info = error_handler.handle_request_error('Stoiximan', e, status_code)
+            
+            with open(error_file, 'w', encoding='utf-8') as f:
+                json.dump(error_info, f, ensure_ascii=False, indent=2)
+            with open(output_file, 'w', encoding='utf-8') as f:
+                f.write('')
+            
+            print(f"\n❌ Error fetching from API: {e}")
+            sys.exit(1)
         except Exception as e:
+            error_info = error_handler.handle_request_error('Stoiximan', e)
+            
+            with open(error_file, 'w', encoding='utf-8') as f:
+                json.dump(error_info, f, ensure_ascii=False, indent=2)
+            with open(output_file, 'w', encoding='utf-8') as f:
+                f.write('')
+            
             print(f"\n❌ Error fetching from API: {e}")
             print("\nAlternatively, you can provide a JSON file:")
             print("  python stoiximan_api_complete_parser.py <input_json_file> [output_file]")
@@ -229,6 +249,12 @@ def main():
         save_formatted_matches(matches, output_file)
         print(f"✅ Done! {len(matches)} matches saved to {output_file}")
         
+        # Write success status to error file
+        error_file = 'stoiximan-error.json'
+        success_info = error_handler.success_response('Stoiximan')
+        with open(error_file, 'w', encoding='utf-8') as f:
+            json.dump(success_info, f, ensure_ascii=False, indent=2)
+        
         # Show preview of matches WITH odds
         print("\nPreview (matches with odds):")
         print("-" * 80)
@@ -236,6 +262,13 @@ def main():
             print(f"{i}. {format_match(match)}")
     else:
         print("No soccer matches found!")
+        
+        # Write error for no events
+        error_file = 'stoiximan-error.json'
+        error_info = error_handler.handle_request_error('Stoiximan', Exception("NoEventsFound"))
+        with open(error_file, 'w', encoding='utf-8') as f:
+            json.dump(error_info, f, ensure_ascii=False, indent=2)
+        
         sys.exit(1)
 
 
