@@ -1,7 +1,4 @@
 {
   "site": "Tumbet",
-  "error": true,
-  "error_type": "Exception",
-  "error_message": "HATA: Beklenmeyen hata - NoEventsFound",
-  "technical_error": "NoEventsFound"
+  "error": false
 }

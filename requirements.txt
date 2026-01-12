@@ -11,4 +11,5 @@ cloudscraper
 undetected-chromedriver
 selenium
 curl-cffi
+flask
 

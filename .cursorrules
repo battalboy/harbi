@@ -257,6 +257,13 @@ This system does NOT place bets automatically. It identifies opportunities for t
   - Do NOT run git commands via SSH on the remote server
   - Only perform git operations when the user gives express permission for that specific operation
   - When user says "commit to git", wait for explicit confirmation before also pushing
+- **Flask/Web Development**: When creating Flask applications, ensure maximum cross-platform compatibility between macOS (development) and Linux (production server)
+  - Use relative paths, not absolute paths (`./file.txt` not `/Users/giray/...`)
+  - Use `os.path.join()` for path construction
+  - Use `platform.system()` for any OS-specific logic (like proxy selection)
+  - Bind to `0.0.0.0` for remote access, not `127.0.0.1`
+  - Test that all file operations work with relative paths
+  - Ensure all dependencies are cross-platform (avoid macOS-only or Linux-only packages)
 - **Documentation**: DO NOT create large markdown documentation files for small code fixes, bug fixes, or routine changes. Report changes concisely in the chat instead. Reserve documentation files for significant features, architectural decisions, or complex system explanations only.
 - **Temporary Files**: When creating temporary scripts (e.g., sanity checks, investigation scripts), use the `temp_` prefix naming convention (e.g., `temp_sanity_check_roobet.py`, `temp_investigate_api.py`). These files are gitignored and should be deleted after use.
 
