@@ -395,6 +395,48 @@ sudo docker logs gluetun_greece
 - Both containers can run simultaneously (different ports prevent conflicts)
 - We may not need these sites in production, but the option is available if required
 
+## Automated Event Fetching System (Remote Server)
+
+**Purpose**: Continuously fetch live odds from all sites with randomized intervals to avoid bot detection
+
+**Implementation Plan**: Python daemon service running on remote server
+
+**Script Location**: `/home/giray/harbi/run_event_loop.py`
+
+**Features:**
+- Runs all `event_create_*.py` scripts sequentially
+- Randomized interval: 3-5 minutes between cycles
+- Runs `arb_create.py` after each cycle
+- Comprehensive logging
+- Auto-restart on crash
+- systemd service management
+
+**Configuration File**: `/etc/systemd/system/harbi-events.service`
+
+**Service Commands:**
+```bash
+sudo systemctl start harbi-events    # Start service
+sudo systemctl stop harbi-events     # Stop service
+sudo systemctl restart harbi-events  # Restart service
+sudo systemctl status harbi-events   # Check status
+sudo systemctl enable harbi-events   # Auto-start on boot
+
+# View logs
+tail -f /home/giray/harbi/logs/event_loop.log
+```
+
+**Why This Approach:**
+- ✅ Centralized timing control (randomized 3-5 min intervals)
+- ✅ Scripts run sequentially (no overlapping requests to same site)
+- ✅ Proper error handling and logging
+- ✅ Auto-restart on crash (systemd manages process)
+- ✅ Easy monitoring via systemctl
+- ✅ Better than cron for continuous services
+
+**Status**: TO BE IMPLEMENTED
+
+---
+
 ## Telegram Notification Formatting
 
 **Telegram supports basic HTML/Markdown but NO tables**

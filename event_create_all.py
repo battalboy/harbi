@@ -15,9 +15,10 @@ import subprocess
 import sys
 from pathlib import Path
 import time
+from typing import Tuple
 
 
-def run_script(script_name: str, description: str) -> tuple[bool, float]:
+def run_script(script_name: str, description: str) -> Tuple[bool, float]:
     """
     Run a Python script and return success status and execution time.
     

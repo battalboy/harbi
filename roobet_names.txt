@@ -10,6 +10,7 @@
 1. FC Nuremberg
 1. FC Schweinfurt 05
 1. FC Slovacko Uherske Hradiste
+1. FC Tatran Presov
 1. FC Union Berlin
 1. FFC Turbine Potsdam 71
 1.SK Prostejov
@@ -30,6 +31,7 @@ AC Milan
 AC Modena
 AC Monza
 AC Omonia Nicosia
+AC Renate
 AC Roma
 AC Vila Mea
 AC Vila Meã
@@ -42,6 +44,7 @@ AD Bahia de Feira BA
 AD Cariari Pococi
 AD Ceuta
 AD Cofutpa
+AD Fafe
 AD Jequie BA
 AD San Carlos
 ADO Den Haag
@@ -56,6 +59,7 @@ AFC Bournemouth
 AFC Hermannstadt
 AFC Wimbledon
 AFK Csikszereda Miercurea Ciuc
+AGF Aarhus
 AJ Auxerre
 AL Ahly SC
 AL Arabi (UAE)
@@ -78,6 +82,7 @@ AL Najaf
 AL Nasr SC (OMA)
 AL Shorta SC
 AL Suqoor
+AL Tadamun Buri
 AL Tadhamon
 AL Waab
 AL Wakrah SC
@@ -95,10 +100,12 @@ AS Pikine
 AS Roma
 AS Saint-Etienne
 AS Sariyer
+AS Trencin
 ASC HLM Dakar
 ASC Jaraaf
 ASC Otelul Galati
 ASD Sorrento 1945
+ASM Oran
 ASO Chlef
 AVS Futebol SAD
 AZ Alkmaar
@@ -249,6 +256,7 @@ Arminia Bielefeld
 Arsenal
 Arsenal FC
 Arsenal FC (E)
+As Cotonchad
 As Dgssie
 Ascoli Calcio 1898
 Asd Pineto Calcio
@@ -337,6 +345,7 @@ Besiktas
 Besiktas Istanbul
 Betim Futebol MG
 Betis
+Beyoglu Yeni Carsi
 Bhayangkara
 Birkirkara FC
 Birmingham City
@@ -383,12 +392,14 @@ Bristol Rovers
 Briton Ferry
 Bromley FC
 Brusque FC SC
+Budafoki Mte
 Bulgaria
 Burgos CF
 Buriram United
 Burkina Faso
 Burnley FC
 Burton Albion
+CA Batna
 CA Belgrano de Cordoba
 CA Bordj Bou Arreridj
 CA Boston River
@@ -405,6 +416,7 @@ CA Pontevedra
 CA Progreso
 CA River Plate
 CA Rosario Montevideo
+CA San Lorenzo de Almagro
 CA Sarmiento de la Banda
 CA Vega Real
 CA Victoria Montevideo
@@ -547,6 +559,7 @@ Connah's Quay Nomads FC
 Copa Libertadores
 Copa do Brasil
 Coppa Italia
+Coquimbo Unido
 Cordoba CF
 Coritiba FC PR
 Cosenza Calcio
@@ -566,6 +579,7 @@ Cruz Azul
 Cruzeiro Arapiraca AL
 Cruzeiro EC MG
 Crystal Palace
+Cucuta Deportivo FC
 Cuiaba EC
 Cultural Leonesa
 Curacao
@@ -597,6 +611,7 @@ Denmark
 Denmark 1. Division
 Denmark DBU Pokalen
 Denmark Superliga
+Deportes Concepcion
 Deportivo Alaves
 Deportivo Garcilaso
 Deportivo La Coruna
@@ -672,6 +687,7 @@ England Premier League
 Enosis Neon Paralimni FC
 Entente Feignies Aulnoye
 Enugu Rangers International FC
+Enyimba
 Equatorial Guinea
 Erbil SC
 Erzurumspor FK
@@ -684,6 +700,7 @@ Esteghlal Khuzestan FC
 Estonia
 Estoril Praia
 Estrela Amadora
+Estudiantes de La Plata
 Ethnikos Achnas FC
 Etoile Carouge FC
 Europa FC
@@ -696,6 +713,7 @@ Exeter City
 Eyupspor
 FBC Melgar
 FC Aarau
+FC Ajka
 FC Alverca SAD
 FC Andorra
 FC Annecy
@@ -712,6 +730,7 @@ FC Bayern Munich (E)
 FC Beitar Yavne
 FC Botosani
 FC CFR 1907 Cluj
+FC CSKA 1948
 FC Carl Zeiss Jena
 FC Copenhagen
 FC Crotone
@@ -792,6 +811,7 @@ FC Viktoria Plzen
 FC Viseu
 FC Vizela
 FC Volendam
+FC Vysocina Jihlava
 FC Wil 1900
 FC Winterthur
 FC Zlin
@@ -805,8 +825,10 @@ FK Borac
 FK Crvena Zvezda Belgrade
 FK Cukaricki Belgrade
 FK Dukla Praha B
+FK Gjoevik-Lyn
 FK Hodonin
 FK IMT Novi Beograd
+FK Jablonec
 FK Javor Ivanjica
 FK Kapaz
 FK Karvan Yevlakh
@@ -815,16 +837,19 @@ FK Mladost Lucani
 FK Napredak Krusevac
 FK Novi Pazar
 FK Panevezys
+FK Pardubice
 FK Partizan Belgrade
 FK Radnicki 1923 Kragujevac
 FK Radnicki Nis
 FK Radnik Surdulica
+FK Rigas Futbola Skola
 FK Riteriai
 FK Spartak Subotica
 FK Suduva
 FK TSC Backa Topola
 FK Teplice
 FK UE Santa Coloma
+FK Velez Mostar
 FK Vojvodina Novi Sad
 FK Zalgiris
 FK Zeleznicar Pancevo
@@ -873,6 +898,7 @@ Future Soccer
 Fylkir Reykjavik
 GD Chaves
 GD Victoria Guimaraes
+GKS Katowice
 GKS Piast Gliwice
 GKS Tychy
 GNK Dinamo Zagreb
@@ -946,6 +972,7 @@ HNK Hajduk Split
 HNK Rijeka
 HNK Vukovar 1991
 HSC 21
+HSK Posusje
 HSK Zrinjski Mostar
 Hacken Gothenburg
 Haiti
@@ -998,6 +1025,7 @@ Hertha BSC
 Hibernian FC
 Hibernians FC Paola
 Hoang Anh Gia Lai
+Hobro IK
 Hoek
 Hoffenheim
 Holstein Kiel
@@ -1043,6 +1071,7 @@ Ireland Premier Division
 Ironi Modiin
 Ironi Nesher
 Ironi Tiberias
+Isa Town
 Israel
 Istanbul Basaksehir
 Istanbulspor AS
@@ -1055,6 +1084,7 @@ Italy Serie A, Women
 Italy Serie B
 Italy Supercoppa
 Ittihad Kalba FC
+Ituzaingo
 Ivory Coast
 JIPPO
 JS Kabylie
@@ -1067,6 +1097,8 @@ Jamaica (E)
 Japan
 Japan (E)
 Jarabacoa
+Jeugd Lommel SK
+Jeugd Royal Francs Borains 
 Joinville EC SC
 Jong AZ Alkmaar
 Jong Ajax
@@ -1096,6 +1128,7 @@ KSC Lokeren Temse
 KV Kortrijk
 KVC Westerlo
 Kahrabaa Ismailia
+Kaizer Chiefs
 Kampaniakos
 Kanchanaburi Power FC
 Karlsruher SC
@@ -1120,6 +1153,7 @@ Kocaelispor
 Koninklijke HFC
 Konyaspor
 Korea Republic (E)
+Korona Kielce
 Kosovo
 Kozakken Boys Werkendam
 Krefelder FC Uerdingen 05
@@ -1128,15 +1162,18 @@ Kun Khalifat FC
 Kuopion Palloseura
 Kuwait SC
 Kyrgyzstan
+LASK Linz
 LD Alajuelense
 LDU Quito
 LKS Goczalkowice-Zdroj
 La Havre AC
 La Mans FC
 Lagarto FC SE
+Lamontville Golden Arrows
 Lamphun Warrior
 Larne FC
 Las Palmas
+Latina Calcio
 Lausanne-Sport
 Lazio
 Lazio Roma
@@ -1179,6 +1216,7 @@ Liverpool FC (E)
 Liverpool Montevideo
 Livingston FC
 Llanelli Town
+Lokomotive Sofia
 Lommel SK
 Lopburi City
 Ludogorets Razgrad
@@ -1195,6 +1233,7 @@ MC Oran
 MFK Chrudim
 MFK Skalica
 MFK Zemplin Michalovce
+MFK Zvolen
 MK Kfar Saba 1928
 MS Ashdod
 MS Tira
@@ -1234,6 +1273,7 @@ Mali
 Malkiya Club
 Malmo FF
 Malut United
+Mamelodi Sundowns
 Man City
 Man. United (E)
 Manama Club
@@ -1304,7 +1344,9 @@ NEC Nijmegen
 NK Celje
 NK Istra 1961
 NK Lokomotiva Zagreb
+NK Maribor
 NK Osijek
+NK Radomlje
 NK Sesvete
 NK Slaven Belupo
 NK Varazdin
@@ -1357,6 +1399,7 @@ Nyiregyhaza Spartacus FC
 OFI
 OFI Crete
 OFK Beograd
+OFK Dynamo Malzenice
 OGC Nice
 OKS Swit Skolwin Szczecin
 Odense Boldklub
@@ -1373,6 +1416,7 @@ Olympique Marseille
 Olympique de Marseille Women
 Oman Club
 Omonia Aradippou
+Orbit College FC
 Orense SC
 Oud-Heverlee Leuven
 Ourense CF
@@ -1383,6 +1427,9 @@ PAOK Thessaloniki
 PAOK Thessaloniki B
 PAS Giannina
 PEC Zwolle
+PFC CSKA Sofia
+PFC Cherno More Varna
+PFC Dobrudzha Dobrich
 PFC Ludogorets 1945 Razgrad
 PFC Nasaf
 PHC Zebras
@@ -1391,6 +1438,7 @@ PSM Makassar
 PSV Eindhoven
 Pafos FC
 Paget Lions
+Paide Linnameeskond
 Paksi FC
 Palayesh Naft Bandar Abbas FC
 Palermo FC
@@ -1439,6 +1487,7 @@ Pharco FC
 Philippines
 Phrae United
 Pisa SC
+Plateau United
 Plymouth Argyle
 Pogon Szczecin
 Poland
@@ -1504,6 +1553,7 @@ Rangers FC
 Rapid Bucuresti 1923
 Rasisalai United
 Ratchaburi FC
+Raufoss IL
 Ravenna FC 1913
 Rayo Vallecano
 Rayong FC
@@ -1565,6 +1615,7 @@ SC Preussen 06 Munster
 SC Recife PE
 SC Telstar
 SC Utrecht
+SCR Altach
 SCU Torreense
 SD Aucas
 SD Eibar
@@ -1581,6 +1632,7 @@ SK Rapid
 SK Sigma Olomouc
 SK Slovan Bratislava
 SK Sturm Graz
+SK Super Nova
 SKN St. Polten
 SL Benfica
 SL Benfica (E)
@@ -1602,6 +1654,7 @@ Saipa F.C.
 Sakaryaspor
 Salcedo FC
 Salford City
+Samail SC
 Sampaio Correa FE RJ
 Sampdoria Genoa
 Samsunspor
@@ -1625,6 +1678,7 @@ Scotland Premiership
 Scottish Cup
 Scunthorpe United
 Sderot FC
+Sekhukhune United
 Semen Padang FC
 Senegal
 Sepahan SC
@@ -1633,6 +1687,7 @@ Serbia Superliga
 Serik Belediyespor
 Serra Branca
 Servette Geneva
+Servette II
 Sevilla FC
 Sevilla FC (E)
 Shabab Al Ahli Dubai
@@ -1657,6 +1712,7 @@ Singida Black Stars SC
 Sisaket United FC
 Sitra Club
 Sivasspor
+Skive IK
 Slavia Prague
 Sliema Wanderers
 Slovakia
@@ -1666,6 +1722,7 @@ Slovenia
 Slovensky Pohar
 Smouha SC
 Sochaux-Montbeliard
+Soenderjyske
 Sohar
 Solihull Moors FC
 Sonacos
@@ -1711,6 +1768,7 @@ Stade Rennes
 Stade de Mbour
 Standard Liege
 Stars J. Talents
+Stellenbosch FC
 Stevenage FC
 Stockport County FC
 Stoke City
@@ -1735,10 +1793,12 @@ TOP Oss
 TSC Hoffenheim
 TSG 1881 Sprockhovel
 TSG Hoffenheim
+TSV Hartberg
 Tabora United FC
 Talaea El Gaish
 Tamworth FC
 Tanzania
+Tartu JK Welco
 Tarxien Rainbows FC
 Team Altamura
 Telecom Egypt
@@ -1822,6 +1882,7 @@ Umm-Salal SC
 Umraniyespor
 Union Berlin
 Union Saint-Gilloise
+Union de Santa Fe
 United Arab Emirates
 United States (E)
 Universidad O&M
@@ -1889,6 +1950,7 @@ West Bromwich Albion
 West Ham United
 Western Sydney Wanderers
 Weston Super Mare FC
+Wieczysta Krakow
 Wigan Athletic
 Wikki Tourists FC
 Willem II Tilburg
@@ -1914,8 +1976,10 @@ Young Africans SC
 Young Boys Bern
 Ypiranga FC RS
 Yverdon-Sport
+Yves
 ZSV Sportlust 46
 Zabbar Saint Patrick FC
+Zaglebie Sosnowiec
 Zakho FC
 Zalaegerszeg TE
 Zambia
