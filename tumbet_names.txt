@@ -188,6 +188,7 @@ Akritas Chlorakas
 Akron Tolyatti
 Al Adalah FC
 Al Ahli Doha SC
+Al Ain
 Al Arabi Doha SC
 Al Badii
 Al Bataeh
@@ -199,6 +200,7 @@ Al Ittihad Jeddah
 Al Ittihad Kalba
 Al Jahra
 Al Jandal
+Al Jazira (UAE)
 Al Kahraba
 Al Karkh
 Al Khlood
@@ -210,6 +212,7 @@ Al Mokawloon Al Arab
 Al Nafit Maysan
 Al Naft
 Al Najma
+Al Nasr SC Dubai CSC
 Al Oruba
 Al Qadisiyah FC
 Al Qadsia
@@ -222,6 +225,7 @@ Al Waab
 Al Wahda FC
 Al Zawraa
 Al İttifak
+Al İttihad Al Sakandary
 Al-Ahli SC Manama
 Al-Arabi (KW)
 Al-Faysaly
@@ -397,6 +401,7 @@ Atherton Collieries
 Athletic Bilbao
 Athletic Bilbao (K.)
 Athletic Bilbao (Kevin)
+Athletic Bilbao (Lio)
 Athletic Bilbao B
 Athletic Carpi
 Athletic Club MG U20
@@ -416,6 +421,8 @@ Atletico Linense SP
 Atletico MG U20
 Atletico Madrid
 Atletico Madrid (Baba)
+Atletico Madrid (Furious)
+Atletico Madrid (Iron)
 Atletico Madrid (Jose)
 Atletico Madrid (K.)
 Atletico Madrid (Logan)
@@ -444,6 +451,7 @@ Auchinleck Talbot
 Auckland FC
 Audace Cerignola
 Audax Italiano
+Augsburg (SRL)
 Austria Vienna
 Autol
 Avai SC
@@ -477,6 +485,7 @@ Bahia BA
 Bahia BA U20
 Bahir Dar Kenema F.C.
 Bahira De Feira BA
+Bahla
 Bala Town
 Baladiyyat Al Mehalla
 Bali United Pusam
@@ -550,6 +559,7 @@ Benin
 Berkhamsted FC
 Beroe Stara Zagora
 Besa
+Besiktas Istanbul (Alexis)
 Betim
 Betis
 Betis (SRL)
@@ -585,6 +595,7 @@ Bologna
 Bologna (SRL)
 Bologna FC (Carlos)
 Bologna FC (Eminem)
+Bologna FC (Vendetta)
 Bologna FC U20
 Bolton Wanderers
 Boluspor
@@ -629,6 +640,7 @@ Brazil
 Breda
 Brentford
 Brentford (SRL)
+Brentwood Town
 Brest
 Brezilya
 Brickfield Rangers
@@ -796,6 +808,7 @@ Canvey Island
 Cape Verde
 Capital CF DF
 Capivariano SP
+Capixaba ES
 Carabobo
 Caracas
 Carajas EC PA U20
@@ -1119,6 +1132,8 @@ Eagles
 East Fife FC
 East Kilbride
 Eastbourne Borough
+Eastern District
+Eastern SC
 Eastleigh
 Ebbsfleed United
 Edinburgh City
@@ -1204,7 +1219,9 @@ FC Barcelona (Alexis)
 FC Barcelona (Delpiero)
 FC Barcelona (Fred)
 FC Barcelona (Furious)
+FC Barcelona (Miguel)
 FC Barcelona (Razvan)
+FC Barcelona (Spiderman)
 FC Barcelona (Vangogh)
 FC Bari 1908 U19
 FC Bayern Munich (Adriano)
@@ -1213,6 +1230,7 @@ FC Bayern Munich (David)
 FC Bayern Munich (Dominic)
 FC Bayern Munich (Maverick)
 FC Bayern Munich (Rossi)
+FC Bayern Munich (Thomas)
 FC Beitar Yavne
 FC Bekasi City
 FC Blau-Weiß Linz
@@ -1300,6 +1318,7 @@ Fc Vizela U23
 Feirense
 Felgueiras
 Fenerbahce Istanbul (Conde)
+Fenerbahce Istanbul (Misterx)
 Fenerbahce Istanbul (Moby)
 Fenerbahçe
 Feralpisalo U19
@@ -1339,6 +1358,7 @@ Forli
 Fortaleza CE U20
 Fortaleza EC CE
 Fortaleza Fc
+Forte FC ES
 Forte Fc Es U20
 Fortuna Düsseldorf
 Fortuna Sittard
@@ -1376,6 +1396,7 @@ GVVV Veenendaal
 Gabon
 Galatasaray
 Galatasaray (Kai)
+Galatasaray (Logan)
 Galicia BA
 Galler
 Gallos Blancos de Queretaro U19
@@ -1664,6 +1685,7 @@ Isa Town
 Isi Dangkor Senchey FC
 Ismaily Sc
 Ispe FC
+Istanbul Basaksehir (Donatello)
 Istanbul Basaksehir (Mateo)
 Istres
 Itabaiana SE
@@ -1695,6 +1717,7 @@ Jeugd Royal Francs Borains
 Johor Darul Ta'zim FC
 Joinville EC SC
 Jong KRC Genk
+Jong Sparta Rotterdam
 Jong Utrecht
 Jove Espanol de San Vicente
 Js Kairouanaise
@@ -1768,6 +1791,7 @@ Kenya Police FC
 Kettering Forest
 Keçiörengücü
 Khon Kaen United
+Khor Fakkan
 Khorfakkan U23
 Kibera Black Stars
 Kidderminster
@@ -1786,6 +1810,7 @@ Kolombiya
 Komarno
 Komor Adaları
 Kongo Demokratik Cumhuriyeti
+Koninklijke HFC
 Konyaspor
 Kopa Tigers Birbhum
 Kopenhag
@@ -1877,6 +1902,7 @@ Life FC
 Lille
 Lille (K.)
 Lille OSC (Conde)
+Lille OSC (Delpiero)
 Lille OSC (Ken)
 Lille OSC (Leonardo)
 Lille OSC (Oliver)
@@ -1975,6 +2001,8 @@ Magpies
 Maguary PE
 Mahar United
 Mahasarakham Sam Bai Tao
+Maidenhead United
+Maidstone United
 Makedonikos
 Makedonya
 Malaga CF
@@ -2302,6 +2330,7 @@ Paris Saint Germain (Conde)
 Paris Saint Germain (Cyclop)
 Paris Saint Germain (Flash)
 Paris Saint Germain (K.)
+Paris Saint Germain (Lucas)
 Paris Saint Germain (Noah)
 Paris Saint Germain (Odin)
 Parma
@@ -2393,6 +2422,7 @@ Portmore United FC
 Porto
 Porto Caravel
 Porto SC BA
+Porto Vitoria ES
 Portsmouth
 Portsmouth FC W.
 Portugal (Cleo)
@@ -2437,6 +2467,7 @@ Queens Park
 Queens Üniversitesi
 Queretaro FC
 Queretaro FC (K.)
+Quick Boys
 Quinho FC Saf
 Quixada CE
 Quixada FC CE
@@ -2445,6 +2476,7 @@ RB Leipzig
 RB Leipzig (Lucas)
 RB Leipzig U21
 RB Linense
+RC Celta de Vigo (Arthur)
 RC Celta de Vigo (Kevin)
 RC Deportivo La Coruna
 RC Grasse
@@ -2501,17 +2533,20 @@ Real FC DF U20
 Real Madrid
 Real Madrid (A)
 Real Madrid (Bruno)
+Real Madrid (Haidan)
 Real Madrid (Jack)
 Real Madrid (K.)
 Real Madrid (Kristof)
 Real Madrid (Logan)
 Real Madrid (Razvan)
+Real Madrid (Stan)
 Real Madrid (VITO)
 Real Madrid II W.
 Real Madrid U19
 Real Madrid W.
 Real Murcia (A)
 Real Murcia CF
+Real Noroestes ES
 Real Oviedo
 Real Oviedo Srl
 Real Oviedo U19
@@ -2568,6 +2603,7 @@ Rouen
 Royal Antwerp
 Royal Charleroi
 Royal Excelsior Virton
+Royal Knokke FC
 Royston Town
 Rp Fc
 Rrc Stockay-Warfusee
@@ -2583,6 +2619,7 @@ S.S.D. Casarano Calcio
 SC Beira Mar
 SC Braga
 SC Braga (Hulk)
+SC Braga (Hussein)
 SC Braga (Sensei)
 SC Cambuur
 SC Covilha
@@ -2790,6 +2827,7 @@ Southampton
 Southampton (K.)
 Southampton FC (Res.)
 Southend
+Southern District Football Club
 Southport
 Soy United
 Sp Villafranca
@@ -2927,6 +2965,7 @@ The New Saints FC
 The Strongest
 Thies Fc
 Throttur Reykjavik
+Tienen
 Tigres UANL
 Tigres UANL (K.)
 Tigres de Alica FC
@@ -2955,6 +2994,7 @@ Toulouse
 Toulouse FC
 Trabzonspor
 Trabzonspor (Beckham)
+Trabzonspor (Noah)
 Tractor Sport Club
 Tranmere Rovers FC
 Trapani Calcio
@@ -2977,6 +3017,7 @@ Tuna Luso Brasileira PA U20
 Tung Sing
 Tuntum Ma
 Tunus
+Tusker
 Tuwaiq
 Twente
 Türkiye
@@ -3052,6 +3093,7 @@ Uniao EC Rondonopolis MT U20
 Uniao FC U20
 Uniao Serra
 Union Berlin
+Union Berlin (SRL)
 Union Brescia
 Union De Santa Fe
 Union Rochefortoise
@@ -3104,6 +3146,7 @@ Verona (SRL)
 Versailles 78
 VfB Stuttgart (Baba)
 VfB Stuttgart (Eduardo)
+VfB Stuttgart (Lucas)
 VfB Stuttgart (Razvan)
 VfL 1899 Osnabruck
 VfL Bochum
@@ -3173,6 +3216,7 @@ Werder Bremen (Eduardo)
 Werder Bremen (Gael)
 West Bromwich
 West Bromwich Albion (Res.)
+West Bromwich Albion Wfc W.
 West Ham United
 West Ham United (Logan)
 West Ham United (Matrix)

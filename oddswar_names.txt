@@ -25,6 +25,7 @@ ACS Sepsi OSK
 AD Bahia de Feira
 AD Centro Olimpico U20 (W)
 AD Ceuta FC
+AD Iguatu
 AD Municipal Liberia
 ADO Den Haag
 AEK Athens
@@ -205,12 +206,14 @@ Al-Jazira Club U21
 Al-Jndal
 Al-Kawkab
 Al-Khaboora
+Al-Khaleej Khor Fakkan
 Al-Khaleej Saihat
 Al-Kholood Club
 Al-Lewaa
 Al-Masry
 Al-Mudhaibi
 Al-Muharraq
+Al-Nasr
 Al-Nassr Riyadh U21
 Al-Nojoom
 Al-Qadsia
@@ -317,6 +320,7 @@ Ascoli
 Aston Villa
 Aston Villa (W)
 Aston Villa U21
+Aswan FC
 Asyut Petroleum
 Atalanta
 Atalanta B
@@ -401,6 +405,7 @@ Banik Ostrava
 Barakaldo
 Barcelona
 Barcelona (W)
+Barcelona B
 Barcelona Futebol Clube
 Barnet
 Barnsley
@@ -531,6 +536,7 @@ Bulancakspor
 Bulvarspor
 Bunga Raya FC
 Burgos
+Burgos B
 Buriram Utd
 Burkina Faso
 Burnley
@@ -558,6 +564,7 @@ CA Votuporanguense U20
 CD Aguila
 CD Cacahuatique
 CD Castellon
+CD Castellon II
 CD Gualberto Villarroel
 CD Luis Angel Firpo
 CD Marathon
@@ -569,8 +576,11 @@ CD Tepatitlan De Morelos
 CD Teruel
 CD Villegas
 CDT Real Oruro
+CE Andratx
+CE Atletic Lleida
 CE Carroi
 CE Europa
+CEFAT Tirol
 CF America
 CF America (W)
 CF Bihorul Beius
@@ -694,6 +704,7 @@ Clitheroe FC
 Club Atletico La Paz
 Club Atletico Morelia
 Club Atletico Pantoja
+Club Atletico Saguntino
 Club Brugge
 Club Brugge B
 Club Brugge U19
@@ -1066,6 +1077,7 @@ Fontenay Vendee
 Forest Green
 Forfar
 Forli
+Fortaleza EC
 Fortaleza FC
 Fortaleza FC U20
 Fortis FC Limited
@@ -1902,6 +1914,7 @@ Prime Bangkok
 Prisons FC
 Pro Vercelli
 Progreso
+Proxy Work Club
 Psbi Blitar
 Psgc Ciamis
 Psim Yogyakarta
@@ -2370,6 +2383,7 @@ Tunisia
 Turk Metal 1963
 Twente (W)
 UAE
+UD Alzira
 UD Poblense
 UD Samano
 UE Santa Coloma
@@ -2487,6 +2501,7 @@ Welwalo Adigrat University
 Werder Bremen
 Werder Bremen (W)
 West Brom
+West Brom (W)
 West Brom U21
 West Ham
 West Ham U21

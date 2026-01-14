@@ -92,6 +92,7 @@ APO Levadiakos FC
 APOEL
 APOEL Nikosia
 AS Camberene
+AS Gosier
 AS Gubbio
 AS Monaco
 AS Monaco (E)
@@ -116,6 +117,7 @@ Aberdeen FC
 Abia Warriors FC
 Academia Puerto Cabello
 Academico de Viseu FC
+Academy Eagles
 Accrington Stanley
 Adana Demirspor
 Adelaide United FC
@@ -304,6 +306,7 @@ BVV Barendrecht
 BVV Vlaanderen
 Bahla Club
 Baiano
+Baie-Mahaul
 Bala Town FC
 Bali United
 Ballinamallard United
@@ -334,6 +337,7 @@ Bayern Leverkusen
 Bayern Munich
 Bayeux
 Beitar Jerusalem FC
+Beker van Belgie
 Belarus
 Belgium
 Belgium Pro League
@@ -500,6 +504,7 @@ Central Coast Mariners
 Central Espanol
 Centro Oeste GO
 Cercle Brugge
+Cerfa FC
 Cerro Largo FC
 Cesena FC
 Ceuta
@@ -547,6 +552,7 @@ Clube do Remo PA
 Cobresal
 Colchester United
 Coleraine FC
+Colo-Colo
 Cologne
 Colombia
 Colwyn Bay
@@ -585,6 +591,7 @@ Cultural Leonesa
 Curacao
 Curacao (E)
 Cusco FC
+Cygne Noir
 Cyprus
 Cyprus 1st Division
 Cyprus Cup
@@ -640,6 +647,7 @@ Dundee United
 Dunfermline Athletic FC
 Dungannon Swifts
 Dynamo Dresden
+Dynamo Le Moule
 Dziugas
 EA Guingamp
 EC Avenida RS
@@ -701,6 +709,7 @@ Estonia
 Estoril Praia
 Estrela Amadora
 Estudiantes de La Plata
+Etehad Alreef
 Ethnikos Achnas FC
 Etoile Carouge FC
 Europa FC
@@ -866,6 +875,7 @@ Figueirense FC SC
 Finland
 Flamengo (E)
 Flamengo RJ
+Flamingo FC
 Fleetwood Town
 Flint Town United
 Floresta EC CE
@@ -944,6 +954,7 @@ Gol Gohar Sirjan FC
 Gornik Zabrze
 Goztepe Izmir
 Granada CF
+Granite
 Grasshopper Club Zurich
 Greece
 Greece Cup
@@ -1098,6 +1109,7 @@ Japan
 Japan (E)
 Jarabacoa
 Jeugd Lommel SK
+Jeugd Royal Francs Borains
 Jeugd Royal Francs Borains 
 Joinville EC SC
 Jong AZ Alkmaar
@@ -1162,6 +1174,7 @@ Kun Khalifat FC
 Kuopion Palloseura
 Kuwait SC
 Kyrgyzstan
+L'Etoile
 LASK Linz
 LD Alajuelense
 LDU Quito
@@ -1871,6 +1884,7 @@ USL Dunkerque
 USM Alger
 USM EL Harrach
 USM Khenchela
+USR
 Uberlandia EC MG
 Udinese Calcio
 Uganda

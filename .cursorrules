@@ -450,6 +450,16 @@ TELEGRAM_USERS = [
 - Daemon consults harbi-config.py every cycle (can enable/disable sites without restart)
 - If all sites are commented out, daemon does nothing until next trigger
 
+**Config Reloading Implementation:**
+```python
+# At the start of each cycle, reload config fresh from file
+config = {}
+with open('harbi-config.py') as f:
+    exec(f.read(), config)
+
+# Use: config['ENABLED_SITES'], config['RUN_ARB_CREATE'], config['TELEGRAM_USERS']
+```
+
 **Timing Behavior:**
 - **Truly random intervals** between cycles (for anti-detection)
 - **NOT configurable** - hardcoded randomization logic in daemon itself
@@ -472,6 +482,13 @@ TELEGRAM_USERS = [
 - Comprehensive logging
 - Auto-restart on crash
 - systemd service management
+
+**arb_create.py Modifications Required:**
+- Must read `harbi-config.py` to get `TELEGRAM_USERS` list
+- Send Telegram notifications after generating `results.html`
+- Only send notifications if arbitrage opportunities found
+- Use HTML formatting template for messages (see Telegram Notification Formatting section)
+- Reuse Telegram bot token and sending function from `telegram_notification.py`
 
 **systemd Service File**: `/etc/systemd/system/harbi-events.service`
 
