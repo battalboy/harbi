@@ -471,10 +471,6 @@ def build_telegram_block(event: Dict, site_name: str) -> str:
         site_x_str = f"<b><u>{site_data['odds_x']}</u></b>" if site_x > oddswar_x else site_data['odds_x']
         site_2_str = f"<b><u>{site_data['odds_2']}</u></b>" if site_2 > oddswar_2 else site_data['odds_2']
         
-        # Calculate profit percentage (simplified - just show that arb exists)
-        # TODO: Implement proper arbitrage profit calculation formula
-        arb_percentage = 2.5  # Placeholder
-        
     except (ValueError, KeyError):
         # Fallback if conversion fails
         oddswar_1_str = oddswar['odds_1']
@@ -483,15 +479,11 @@ def build_telegram_block(event: Dict, site_name: str) -> str:
         site_1_str = site_data['odds_1']
         site_x_str = site_data['odds_x']
         site_2_str = site_data['odds_2']
-        arb_percentage = 0.0
     
-    # Build the block
-    block = f"""<pre>
-Maç: {team1} vs {team2}
+    # Build the block (without <pre> so HTML formatting works)
+    block = f"""Maç: {team1} vs {team2}
 Oddswar: {oddswar_1_str} | {oddswar_x_str} | {oddswar_2_str}
 {site_display[site_name]}:  {site_1_str} | {site_x_str} | {site_2_str}
-Kar yüzdesi: {arb_percentage:.1f}%
-</pre>
 
 <a href="{oddswar['link']}">Oddswar Linki</a>
 <a href="{site_data['link']}">{site_display[site_name]} Linki</a>
