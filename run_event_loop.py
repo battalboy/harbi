@@ -72,27 +72,19 @@ def load_config():
 
 def get_varied_random_interval(cycle_num):
     """
-    Get random interval with varied patterns to avoid detection.
-    Alternates between different ranges and distributions.
+    Get a truly random interval between 3-5 minutes.
+    Simple and unpredictable - no patterns to detect.
     
     Args:
-        cycle_num: Current cycle number
+        cycle_num: Current cycle number (unused, kept for compatibility)
     
     Returns:
-        int: Random interval in seconds
+        int: Random interval in seconds (180-300)
     """
-    # Vary the pattern based on cycle number
-    pattern = cycle_num % 3
-    
-    if pattern == 0:
-        # Short intervals: 2-4 minutes
-        return random.randint(120, 240)
-    elif pattern == 1:
-        # Medium intervals: 3-6 minutes
-        return random.randint(180, 360)
-    else:
-        # Longer intervals: 4-8 minutes
-        return random.randint(240, 480)
+    # 3 minutes = 180 seconds
+    # 5 minutes = 300 seconds
+    # Completely random every time
+    return random.randint(180, 300)
 
 
 def run_script(script_name, site_name):
