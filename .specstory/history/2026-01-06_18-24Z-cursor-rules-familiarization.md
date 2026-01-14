@@ -34265,7 +34265,644 @@ Lines added: 21, lines removed: 21
 - Deportivo Maldonado: 83.3 → 100.0
 - Al Arabi Kuwait: 83.9 → 100.0
 - Paris FC: 84.2 → 100.0
-- Gremio FB
+- Gremio FBPA U20: 84.6 → 100.0
+- IR Reykjavik: 84.6 → 100.0
+- Achuapa FC: 85.7 → 100.0
+- Al Hala: 85.7 → 100.0
+- Ankaraspor: 85.7 → 100.0
+- FC Juarez: 85.7 → 100.0
+- Al Msnaa: 87.5 → 100.0
+- Club Atletico Saguntino: 87.8 → 100.0
+- Mazatlan FC: 88.0 → 100.0
+- Fortaleza EC: 88.9 → 100.0
+- Marica RJ U20: 88.9 → 100.0
+- Maidstone Utd: 89.7 → 100.0
+- Tersana SC: 90.0 → 100.0
+- Eastern District SA: 91.4 → 100.0
+
+All confidence values in the file are now either 100.0 or empty (for unmatched teams).
+
+---
+
+_**User (2026-01-14 12:52Z)**_
+
+Please commit all to local and live git.
+
+---
+
+_**Assistant (claude-4.5-sonnet-thinking)**_
+
+<think><details><summary>Thought Process</summary>The user wants me to commit all changes to both local and live git repositories. I can see that the user has made changes to `tumbet_matches.csv` - they moved some rows that had no Tumbet match (empty second column) to the end of the file, keeping only rows with actual matches at the top with 100.0 confidence.
+
+Let me:
+1. Check git status to see what files have changed
+2. Add all changes
+3. Commit with a descriptive message
+4. Push to remote (live git)
+
+I should use the terminal to run git commands.</details></think>
+
+---
+
+I'll commit all changes to local and live git repositories.
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && git status
+```
+
+```
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .cursorrules
+	modified:   .specstory/history/2026-01-06_18-24Z-cursor-rules-familiarization.md
+	modified:   oddswar_names.txt
+	modified:   roobet_matches.csv
+	modified:   roobet_names.txt
+	modified:   stoiximan_matches.csv
+	modified:   stoiximan_names.txt
+	modified:   tumbet_matches.csv
+	modified:   tumbet_names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Good, I can see the files that have been modified. Now I'll add all changes, commit with a descriptive message, and push to remote.</details></think>
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && git add -A
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Now I'll commit with a descriptive message about updating confidence values to 100.0 in the match CSV files.</details></think>
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && git commit -m "Update all confidence values to 100.0 in match CSV files (Stoiximan, Tumbet); reorganize unmatched teams in Tumbet CSV"
+```
+
+```
+[main e3e6477] Update all confidence values to 100.0 in match CSV files (Stoiximan, Tumbet); reorganize unmatched teams in Tumbet CSV
+ 9 files changed, 6903 insertions(+), 5145 deletions(-)
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Good, commit is done. Now I'll push to the remote repository (live git).</details></think>
+
+---
+
+Tool use: **run_terminal_cmd**
+
+```bash
+cd /Users/giray/Desktop/harbi && git push
+```
+
+```
+To github.com:battalboy/harbi.git
+   c2dc7c8..e3e6477  main -> main
+
+```
+
+---
+
+<think><details><summary>Thought Process</summary>Perfect! All changes have been committed to local git and pushed to the remote repository. Let me summarize what was done.</details></think>
+
+---
+
+✅ **All changes committed to local and live git!**
+
+**Commit details:**
+- **Commit message**: "Update all confidence values to 100.0 in match CSV files (Stoiximan, Tumbet); reorganize unmatched teams in Tumbet CSV"
+- **Files changed**: 9 files
+- **Insertions**: 6,903 lines
+- **Deletions**: 5,145 lines
+
+**Modified files:**
+1. `.cursorrules`
+2. `.specstory/history/2026-01-06_18-24Z-cursor-rules-familiarization.md`
+3. `oddswar_names.txt`
+4. `roobet_matches.csv`
+5. `roobet_names.txt`
+6. `stoiximan_matches.csv`
+7. `stoiximan_names.txt`
+8. `tumbet_matches.csv` (reorganized to move unmatched teams to the end)
+9. `tumbet_names.txt`
+
+**Remote push**: Successfully pushed to `origin/main` on GitHub (commits c2dc7c8..e3e6477)
+
+---
+
+_**User (2026-01-14 12:52Z)**_
+
+Let's start writing the full daemon @run_event_loop.py. For now let's not touch @arb_create.py , Please read and review the specs for this daemon from @.cursorrules and conform to these specs. 
+
+---
+
+_**Assistant (claude-4.5-sonnet-thinking)**_
+
+<think><details><summary>Thought Process</summary>Let me review the specs from `.cursorrules` for the daemon:
+
+**Key requirements:**
+1. Read `harbi-config.py` to get `ENABLED_SITES`, `RUN_ARB_CREATE`, and other settings
+2. Oddswar ALWAYS runs first
+3. All sites run sequentially in the same cycle (no staggering)
+4. Randomization applies only to intervals between complete cycles
+5. Truly random intervals (3-5 minutes mentioned earlier)
+6. Vary the randomness pattern to be less predictable
+7. Config reloading every cycle (no restart needed)
+8. If all sites commented out, do nothing until next trigger
+9. Run `arb_create.py` after each cycle if `RUN_ARB_CREATE = True`
+10. Error handling: log error, continue to next site, track failure patterns
+11. Comprehensive logging
+12. Should work with systemd service
+
+Looking at the current `run_event_loop.py`, it's just a test script that sends "Trigger!" messages. I need to implement the full daemon functionality.
+
+I should:
+1. Load config from `harbi-config.py` at the start of each cycle
+2. Run enabled site scripts in order (Oddswar first if enabled)
+3. Run `arb_create.py` if configured
+4. Implement proper error handling
+5. Add comprehensive logging
+6. Implement varied randomization patterns
+7. Track consecutive failures
+
+Let me write the complete daemon implementation.</details></think>
+
+---
+
+I'll review the specs from `.cursorrules` and implement the full daemon according to those requirements.
+
+---
+
+Tool use: **read_file**
+
+Read file: /Users/giray/Desktop/harbi/harbi-config.py
+
+---
+
+<think><details><summary>Thought Process</summary>Good, now I understand the config structure. Let me implement the full daemon based on the specs:
+
+1. Load config at start of each cycle using `exec()`
+2. Run Oddswar first if enabled, then other sites in order
+3. Run arb_create.py if RUN_ARB_CREATE = True
+4. Error handling with logging
+5. Varied randomization patterns
+6. Comprehensive logging
+7. Track consecutive failures
+
+Let me write the complete implementation.</details></think>
+
+---
+
+Now I'll implement the full daemon according to the specs:
+
+---
+
+Tool use: **search_replace**
+
+
+<details><summary>Edit file: /Users/giray/Desktop/harbi/run_event_loop.py</summary>
+
+**Chunk 1**
+Lines added: 207, lines removed: 28
+
+```diff
+@@ -9,41 +9,220 @@
+  import time
+  import random
+- import requests
++ import subprocess
+  import os
++ import sys
+  from datetime import datetime
+- 
+- 
+- # Telegram configuration
+- TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN', '8272624197:AAEHXPYrE0E9-hjazYJrcogUTYSH-FM5_SA')
+- JAMES_CHAT_ID = 1580648939
+- 
+- 
+- def send_telegram_message(chat_id: int, message: str):
+-     """Send a Telegram message to a specific chat ID."""
+-     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+-     
+-     try:
+-         payload = {
+-             'chat_id': chat_id,
+-             'text': message,
+-             'parse_mode': 'Markdown'
+-         }
+-         response = requests.post(url, json=payload, timeout=10)
++ from pathlib import Path
++ 
++ 
++ # Site script mapping
++ SITE_SCRIPTS = {
++     'oddswar': 'event_create_oddswar.py',
++     'roobet': 'event_create_roobet.py',
++     'stoiximan': 'event_create_stoiximan.py',
++     'tumbet': 'event_create_tumbet.py',
++     'stake': 'event_create_stake.py'
++ }
++ 
++ # Failure tracking
++ site_failures = {}
++ 
++ 
++ def load_config():
++     """
++     Load configuration from harbi-config.py.
++     Uses exec() to dynamically reload config each cycle.
++     
++     Returns:
++         dict: Configuration dictionary with ENABLED_SITES, RUN_ARB_CREATE, etc.
++     """
++     config = {}
++     config_file = Path('harbi-config.py')
++     
++     if not config_file.exists():
++         print(f"⚠️  WARNING: harbi-config.py not found, using defaults")
++         return {
++             'ENABLED_SITES': ['oddswar', 'roobet', 'tumbet'],
++             'RUN_ARB_CREATE': True,
++             'NOTIFY_ON_ERROR': False,
++             'TELEGRAM_USERS': []
++         }
++     
++     try:
++         with open(config_file, 'r', encoding='utf-8') as f:
++             exec(f.read(), config)
++         
++         # Extract only the config variables we need
++         return {
++             'ENABLED_SITES': config.get('ENABLED_SITES', []),
++             'RUN_ARB_CREATE': config.get('RUN_ARB_CREATE', True),
++             'NOTIFY_ON_ERROR': config.get('NOTIFY_ON_ERROR', False),
++             'TELEGRAM_USERS': config.get('TELEGRAM_USERS', [])
++         }
++     except Exception as e:
++         print(f"❌ ERROR loading config: {e}")
++         print(f"   Using defaults")
++         return {
++             'ENABLED_SITES': ['oddswar', 'roobet', 'tumbet'],
++             'RUN_ARB_CREATE': True,
++             'NOTIFY_ON_ERROR': False,
++             'TELEGRAM_USERS': []
++         }
++ 
++ 
++ def get_varied_random_interval(cycle_num):
++     """
++     Get random interval with varied patterns to avoid detection.
++     Alternates between different ranges and distributions.
++     
++     Args:
++         cycle_num: Current cycle number
++     
++     Returns:
++         int: Random interval in seconds
++     """
++     # Vary the pattern based on cycle number
++     pattern = cycle_num % 3
++     
++     if pattern == 0:
++         # Short intervals: 2-4 minutes
++         return random.randint(120, 240)
++     elif pattern == 1:
++         # Medium intervals: 3-6 minutes
++         return random.randint(180, 360)
++     else:
++         # Longer intervals: 4-8 minutes
++         return random.randint(240, 480)
++ 
++ 
++ def run_script(script_name, site_name):
++     """
++     Run a Python script and return success status.
++     
++     Args:
++         script_name: Name of script to run (e.g., 'event_create_oddswar.py')
++         site_name: Human-readable site name for logging
++     
++     Returns:
++         bool: True if successful, False if failed
++     """
++     script_path = Path(script_name)
++     
++     if not script_path.exists():
++         print(f"      ⚠️  Script not found: {script_name}")
++         return False
++     
++     try:
++         # Get Python interpreter from virtual environment or system
++         python_exe = sys.executable
++         
++         # Run script and capture output
++         result = subprocess.run(
++             [python_exe, str(script_path)],
++             capture_output=True,
++             text=True,
++             timeout=300  # 5 minute timeout
++         )
+          
+-         if response.status_code == 200:
+-             print(f"✅ Message sent to {chat_id}")
++         if result.returncode == 0:
++             print(f"      ✅ {site_name} completed successfully")
+              return True
+          else:
+-             print(f"❌ Failed to send message (status: {response.status_code})")
+-             return False
++             print(f"      ❌ {site_name} failed (exit code: {result.returncode})")
++             if result.stderr:
++                 # Print first 200 chars of error
++                 error_preview = result.stderr[:200].replace('\n', ' ')
++                 print(f"         Error: {error_preview}...")
++             return False
++             
++     except subprocess.TimeoutExpired:
++         print(f"      ⏱️  {site_name} timed out (>5 minutes)")
++         return False
+      except Exception as e:
+-         print(f"❌ Error sending message: {e}")
++         print(f"      ❌ {site_name} exception: {str(e)[:100]}")
+          return False
+  
+  
+- def get_random_interval():
+-     """Get random interval between 3 and 5 minutes (in seconds)."""
+-     # Random between 180 and 300 seconds (3 to 5 minutes)
+-     return random.randint(180, 300)
++ def run_cycle(cycle_num):
++     """
++     Run one complete cycle: fetch events from all enabled sites, then run arb_create.
++     
++     Args:
++         cycle_num: Current cycle number
++     
++     Returns:
++         dict: Results summary
++     """
++     print(f"\n{'='*80}")
++     print(f"CYCLE #{cycle_num} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
++     print(f"{'='*80}")
++     
++     # Step 1: Load config
++     print("\n📂 Loading configuration from harbi-config.py...")
++     config = load_config()
++     
++     enabled_sites = config['ENABLED_SITES']
++     run_arb = config['RUN_ARB_CREATE']
++     
++     if not enabled_sites:
++         print("   ⚠️  No sites enabled in config - skipping cycle")
++         return {'sites_run': 0, 'sites_succeeded': 0, 'arb_run': False}
++     
++     print(f"   ✅ Enabled sites: {', '.join(enabled_sites)}")
++     print(f"   ✅ Run arb_create: {run_arb}")
++     
++     # Step 2: Ensure Oddswar runs first if enabled
++     sites_to_run = []
++     if 'oddswar' in enabled_sites:
++         sites_to_run.append('oddswar')
++         sites_to_run.extend([s for s in enabled_sites if s != 'oddswar'])
++     else:
++         sites_to_run = enabled_sites.copy()
++     
++     # Step 3: Run site scripts
++     print(f"\n📊 Fetching events from {len(sites_to_run)} sites...")
++     
++     sites_succeeded = 0
++     for idx, site in enumerate(sites_to_run, 1):
++         script = SITE_SCRIPTS.get(site)
++         
++         if not script:
++             print(f"   {idx}. {site.capitalize()}: ⚠️  No script mapping found")
++             continue
++         
++         print(f"   {idx}. {site.capitalize()}:")
++         
++         success = run_script(script, site.capitalize())
++         
++         if success:
++             sites_succeeded += 1
++             # Reset failure counter on success
++             site_failures[site] = 0
++         else:
++             # Track consecutive failures
++             site_failures[site] = site_failures.get(site, 0) + 1
++             print(f"         (Consecutive failures: {site_failures[site]})")
++     
++     # Step 4: Run arb_create.py if configured
++     arb_success = False
++     if run_arb:
++         print(f"\n🔍 Running arbitrage detection...")
++         arb_success = run_script('arb_create.py', 'Arb Create')
++     else:
++         print(f"\n⏭️  Skipping arbitrage detection (disabled in config)")
++     
++     # Step 5: Summary
++     print(f"\n📈 Cycle Summary:")
++     print(f"   Sites attempted: {len(sites_to_run)}")
++     print(f"   Sites succeeded: {sites_succeeded}")
++     print(f"   Sites failed: {len(sites_to_run) - sites_succeeded}")
++     print(f"   Arbitrage detection: {'✅ Success' if arb_success else '❌ Failed/Skipped'}")
++     
++     return {
++         'sites_run': len(sites_to_run),
++         'sites_succeeded': sites_succeeded,
++         'arb_run': run_arb,
++         'arb_success': arb_success
++     }
+  
+  
+```
+
+**Chunk 2**
+Lines added: 25, lines removed: 16
+
+```diff
+@@ -53,29 +232,38 @@
+      print("HARBI EVENT LOOP DAEMON - STARTED")
+      print("="*80)
+-     print(f"Bot Token: {TELEGRAM_BOT_TOKEN[:20]}...")
+-     print(f"Target: James (Chat ID: {JAMES_CHAT_ID})")
++     print(f"Working directory: {os.getcwd()}")
++     print(f"Python: {sys.executable}")
+      print("\nPress Ctrl+C to stop\n")
+      
+      cycle_count = 0
++     total_stats = {
++         'total_cycles': 0,
++         'total_sites_run': 0,
++         'total_sites_succeeded': 0,
++         'total_arb_runs': 0
++     }
+      
+      try:
+          while True:
+              cycle_count += 1
+-             timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+-             
+-             print(f"\n{'='*80}")
+-             print(f"CYCLE #{cycle_count} - {timestamp}")
+-             print(f"{'='*80}")
+-             
+-             # Send trigger message
+-             print("📱 Sending trigger message to James...")
+-             send_telegram_message(JAMES_CHAT_ID, "Trigger!")
+-             
+-             # Get random interval
+-             interval_seconds = get_random_interval()
++             
++             # Run cycle
++             results = run_cycle(cycle_count)
++             
++             # Update stats
++             total_stats['total_cycles'] += 1
++             total_stats['total_sites_run'] += results['sites_run']
++             total_stats['total_sites_succeeded'] += results['sites_succeeded']
++             if results['arb_run']:
++                 total_stats['total_arb_runs'] += 1
++             
++             # Get varied random interval
++             interval_seconds = get_varied_random_interval(cycle_count)
+              interval_minutes = interval_seconds / 60
++             next_time = datetime.fromtimestamp(time.time() + interval_seconds)
+              
+-             print(f"\n⏱️  Next trigger in {interval_minutes:.1f} minutes ({interval_seconds} seconds)")
+-             print(f"   Waiting until: {datetime.fromtimestamp(time.time() + interval_seconds).strftime('%H:%M:%S')}")
++             print(f"\n⏱️  Next cycle in {interval_minutes:.1f} minutes ({interval_seconds} seconds)")
++             print(f"   Waiting until: {next_time.strftime('%H:%M:%S')}")
++             print(f"{'='*80}\n")
+              
+              # Wait for random interval
+```
+
+**Chunk 3**
+Lines added: 17, lines removed: 1
+
+```diff
+@@ -86,6 +274,22 @@
+          print("DAEMON STOPPED BY USER")
+          print("="*80)
+-         print(f"Total cycles completed: {cycle_count}")
++         print(f"\n📊 Final Statistics:")
++         print(f"   Total cycles: {total_stats['total_cycles']}")
++         print(f"   Total sites run: {total_stats['total_sites_run']}")
++         print(f"   Total sites succeeded: {total_stats['total_sites_succeeded']}")
++         print(f"   Total arb runs: {total_stats['total_arb_runs']}")
++         
++         if site_failures:
++             print(f"\n⚠️  Site Failure Summary:")
++             for site, failures in site_failures.items():
++                 if failures > 0:
++                     print(f"   {site}: {failures} consecutive failures")
++         
+          print("\nGoodbye!")
++     
++     except Exception as e:
++         print(f"\n\n❌ FATAL ERROR: {e}")
++         print("="*80)
++         raise
+  
+  
+```
+
+</details>
+
+---
+
+<think><details><summary>Thought Process</summary>Good! I've implemented the full daemon according to the specs. Let me verify what I've implemented:
+
+1. ✅ Loads config from `harbi-config.py` using `exec()` at start of each cycle
+2. ✅ Oddswar runs first if enabled
+3. ✅ All sites run sequentially in same cycle
+4. ✅ Varied randomization patterns (3 different ranges alternating)
+5. ✅ Config reloading every cycle (no restart needed)
+6. ✅ Handles empty ENABLED_SITES gracefully
+7. ✅ Runs `arb_create.py` if `RUN_ARB_CREATE = True`
+8. ✅ Error handling: logs errors, continues to next site
+9. ✅ Tracks consecutive failures per site
+10. ✅ Comprehensive logging
+11. ✅ Works with systemd (uses subprocess, proper exit codes)
+12. ✅ Statistics tracking
+
+The implementation follows all the specs from `.cursorrules`. Let me check for any linter errors.</details></think>
+
+---
+
+Perfect! I've implemented the full daemon according to the specs from `.cursorrules`. Here's what I've built:
+
+## Key Features Implemented:
+
+### 1. **Config Reloading (No Restart Needed)**
+- Reads `harbi-config.py` at the start of each cycle using `exec()`
+- Can enable/disable sites or change settings without restarting daemon
+
+### 2. **Execution Order**
+- **Oddswar ALWAYS runs first** if enabled (master key site)
+- Other sites run in config list order
+- All sites run sequentially in the same cycle
+
+### 3. **Varied Randomization (Anti-Detection)**
+- Alternates between 3 different interval patterns:
+  - Pattern 0: 2-4 minutes
+  - Pattern 1: 3-6 minutes
+  - Pattern 2: 4-8 minutes
+- Makes timing unpredictable
+
+### 4. **Error Handling**
+- Logs errors with details
+- Continues to next site on failure (doesn't stop cycle)
+- Tracks consecutive failures per site
+- 5-minute timeout per script
+
+### 5. **Comprehensive Logging**
+- Shows which sites are enabled
+- Success/failure status for each site
+- Error previews (first 200 chars)
+- Cycle summaries
+- Final statistics on exit
+
+### 6. **Arbitrage Detection**
+- Runs `arb_create.py` after all sites if `RUN_ARB_CREATE = True`
+- Can be disabled in config
+
+### 7. **Graceful Handling**
+- If no sites enabled, skips cycle
+- Handles missing scripts
+- Handles missing config file (uses defaults)
+- Clean KeyboardInterrupt handling
+
+### 8. **Statistics Tracking**
+- Total cycles run
+- Sites attempted/succeeded
+- Arbitrage runs
+- Consecutive failure tracking per site
+
+The daemon is now ready for testing locally before deploying to the remote server!
 
 ---
 
