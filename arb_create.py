@@ -12,6 +12,7 @@ import csv
 import json
 import os
 import requests
+from datetime import datetime
 from typing import Dict, List, Tuple, Optional
 from pathlib import Path
 
@@ -211,56 +212,59 @@ def generate_html(matched_events: List[Dict], output_file: str = 'results.html',
     if error_statuses is None:
         error_statuses = {}
     
+    # Generate timestamp in GMT
+    timestamp = datetime.utcnow().strftime('%b %d %Y - %H:%M:%S')
+    
     # HTML header
-    html = """<!DOCTYPE html>
+    html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harbi - Arbitrage Results</title>
+    <title>Harbi - Arbitrage Results - {timestamp}</title>
     <style>
-        body {
+        body {{
             font-family: Arial, sans-serif;
             margin: 20px;
             background-color: #f5f5f5;
-        }
+        }}
         
-        .event-table {
+        .event-table {{
             width: 80%;
             margin: 20px auto;
             border-collapse: collapse;
             background-color: white;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+        }}
         
-        .event-table th {
+        .event-table th {{
             background-color: #e0e0e0;
             padding: 10px;
             text-align: center;
             border: 1px solid #ccc;
-        }
+        }}
         
-        .event-table td {
+        .event-table td {{
             padding: 10px;
             text-align: center;
             border: 1px solid #ccc;
-        }
+        }}
         
-        .site-name {
+        .site-name {{
             font-weight: bold;
             text-align: left;
-        }
+        }}
         
-        .header-row {
+        .header-row {{
             background-color: #d0d0d0;
             font-size: 1.1em;
-        }
+        }}
         
-        .arb-opportunity {
+        .arb-opportunity {{
             background-color: #dc3545;
             color: white;
             font-weight: bold;
-        }
+        }}
     </style>
 </head>
 <body>
