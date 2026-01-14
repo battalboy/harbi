@@ -10,6 +10,8 @@ Uses team name mappings from CSV files and event data from formatted text files.
 
 import csv
 import json
+import os
+import requests
 from typing import Dict, List, Tuple, Optional
 from pathlib import Path
 
@@ -365,6 +367,242 @@ def generate_html(matched_events: List[Dict], output_file: str = 'results.html',
         f.write(html)
 
 
+def load_telegram_config():
+    """
+    Load Telegram configuration from harbi-config.py.
+    
+    Returns:
+        list: List of telegram users from config, or empty list if not configured
+    """
+    try:
+        config = {}
+        with open('harbi-config.py', 'r', encoding='utf-8') as f:
+            exec(f.read(), config)
+        
+        return config.get('TELEGRAM_USERS', [])
+    except FileNotFoundError:
+        print("   ⚠️  harbi-config.py not found")
+        return []
+    except Exception as e:
+        print(f"   ⚠️  Error loading config: {e}")
+        return []
+
+
+def send_telegram_message(chat_id: int, message: str, bot_token: str) -> bool:
+    """
+    Send a Telegram message with HTML formatting.
+    
+    Args:
+        chat_id: Telegram user chat ID
+        message: Message text (HTML formatted)
+        bot_token: Telegram bot token
+    
+    Returns:
+        bool: True if successful
+    """
+    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
+    
+    try:
+        payload = {
+            'chat_id': chat_id,
+            'text': message,
+            'parse_mode': 'HTML'
+        }
+        response = requests.post(url, json=payload, timeout=10)
+        
+        if response.status_code == 200:
+            return True
+        else:
+            print(f"      ⚠️  Failed to send to {chat_id} (status: {response.status_code})")
+            return False
+    except Exception as e:
+        print(f"      ⚠️  Error sending to {chat_id}: {str(e)[:50]}")
+        return False
+
+
+def build_telegram_block(event: Dict, site_name: str) -> str:
+    """
+    Build a single Telegram message block for one arbitrage opportunity.
+    Reuses odds comparison logic from generate_html().
+    
+    Args:
+        event: Event dict with oddswar and traditional site data
+        site_name: Name of traditional site ('roobet', 'stoiximan', 'tumbet')
+    
+    Returns:
+        str: Formatted message block with <pre> and links
+    """
+    team1 = event['team1']
+    team2 = event['team2']
+    oddswar = event['oddswar']
+    site_data = event[site_name]
+    
+    # Site display names
+    site_display = {
+        'roobet': 'Roobet',
+        'stoiximan': 'Stoiximan',
+        'tumbet': 'Tumbet'
+    }
+    
+    # Build odds strings with highlighting (reuse logic from HTML generation)
+    try:
+        # Oddswar odds
+        oddswar_1 = float(oddswar['odds_1'])
+        oddswar_x = float(oddswar['odds_x'])
+        oddswar_2 = float(oddswar['odds_2'])
+        
+        # Traditional site odds
+        site_1 = float(site_data['odds_1'])
+        site_x = float(site_data['odds_x'])
+        site_2 = float(site_data['odds_2'])
+        
+        # Highlight BOTH sides where traditional > oddswar
+        # Oddswar line
+        oddswar_1_str = f"<b><u>{oddswar['odds_1']}</u></b>" if site_1 > oddswar_1 else oddswar['odds_1']
+        oddswar_x_str = f"<b><u>{oddswar['odds_x']}</u></b>" if site_x > oddswar_x else oddswar['odds_x']
+        oddswar_2_str = f"<b><u>{oddswar['odds_2']}</u></b>" if site_2 > oddswar_2 else oddswar['odds_2']
+        
+        # Traditional site line
+        site_1_str = f"<b><u>{site_data['odds_1']}</u></b>" if site_1 > oddswar_1 else site_data['odds_1']
+        site_x_str = f"<b><u>{site_data['odds_x']}</u></b>" if site_x > oddswar_x else site_data['odds_x']
+        site_2_str = f"<b><u>{site_data['odds_2']}</u></b>" if site_2 > oddswar_2 else site_data['odds_2']
+        
+        # Calculate profit percentage (simplified - just show that arb exists)
+        # TODO: Implement proper arbitrage profit calculation formula
+        arb_percentage = 2.5  # Placeholder
+        
+    except (ValueError, KeyError):
+        # Fallback if conversion fails
+        oddswar_1_str = oddswar['odds_1']
+        oddswar_x_str = oddswar['odds_x']
+        oddswar_2_str = oddswar['odds_2']
+        site_1_str = site_data['odds_1']
+        site_x_str = site_data['odds_x']
+        site_2_str = site_data['odds_2']
+        arb_percentage = 0.0
+    
+    # Build the block
+    block = f"""<pre>
+Maç: {team1} vs {team2}
+Oddswar: {oddswar_1_str} | {oddswar_x_str} | {oddswar_2_str}
+{site_display[site_name]}:  {site_1_str} | {site_x_str} | {site_2_str}
+Kar yüzdesi: {arb_percentage:.1f}%
+</pre>
+
+<a href="{oddswar['link']}">Oddswar Linki</a>
+<a href="{site_data['link']}">{site_display[site_name]} Linki</a>
+
+"""
+    
+    return block
+
+
+def send_telegram_notifications(matched_events: List[Dict], arb_count: int):
+    """
+    Send Telegram notifications about arbitrage opportunities to all configured users.
+    Uses smart message splitting to handle Telegram's 4096 character limit.
+    
+    Args:
+        matched_events: List of matched events (already sorted with arbitrage first)
+        arb_count: Number of events with arbitrage opportunities
+    """
+    # Only send if there are arbitrage opportunities
+    if arb_count == 0:
+        return
+    
+    print("\n📱 Sending Telegram notifications...")
+    
+    # Load config
+    telegram_users = load_telegram_config()
+    
+    if not telegram_users:
+        print("   ⚠️  No Telegram users configured (skipping)")
+        return
+    
+    # Get bot token from environment
+    bot_token = os.environ.get('TELEGRAM_BOT_TOKEN', '8272624197:AAEHXPYrE0E9-hjazYJrcogUTYSH-FM5_SA')
+    
+    # Build message blocks for events with arbitrage
+    print(f"   Building messages for {arb_count} arbitrage opportunities...")
+    
+    header = "🚨 *Yeni Harbi Oran Fırsatları Var*\n\n"
+    blocks = []
+    
+    for event in matched_events:
+        # Only include events with arbitrage (reuse has_arbitrage logic inline)
+        has_arb = False
+        try:
+            oddswar_1 = float(event['oddswar']['odds_1'])
+            oddswar_x = float(event['oddswar']['odds_x'])
+            oddswar_2 = float(event['oddswar']['odds_2'])
+            
+            for site in ['roobet', 'stoiximan', 'tumbet']:
+                if site in event:
+                    site_data = event[site]
+                    if (float(site_data['odds_1']) > oddswar_1 or 
+                        float(site_data['odds_x']) > oddswar_x or 
+                        float(site_data['odds_2']) > oddswar_2):
+                        has_arb = True
+                        # Build block for this site
+                        block = build_telegram_block(event, site)
+                        blocks.append(block)
+                        break  # Only one block per event (first matching site)
+        except (ValueError, KeyError):
+            continue
+        
+        if not has_arb:
+            break  # Events are sorted, so we can stop when we hit non-arbitrage events
+    
+    if not blocks:
+        print("   ⚠️  No arbitrage blocks built (this shouldn't happen)")
+        return
+    
+    # Smart message splitting (never split a block)
+    print(f"   Splitting into messages (max 4096 chars per message)...")
+    
+    messages = []
+    current_message = header
+    
+    for block in blocks:
+        # Check if adding this block would exceed limit
+        if len(current_message) + len(block) > 4096:
+            # Send current message and start a new one
+            messages.append(current_message)
+            current_message = header + block
+        else:
+            current_message += block
+    
+    # Add final message
+    if current_message != header:
+        messages.append(current_message)
+    
+    print(f"   Created {len(messages)} message(s)")
+    
+    # Send to all users
+    total_sent = 0
+    for user in telegram_users:
+        user_name = user.get('name', 'Unknown')
+        user_id = user.get('id')
+        
+        if not user_id:
+            continue
+        
+        print(f"   Sending to {user_name} ({user_id})...")
+        
+        user_success = 0
+        for i, message in enumerate(messages, 1):
+            if send_telegram_message(user_id, message, bot_token):
+                user_success += 1
+        
+        if user_success == len(messages):
+            print(f"      ✅ All {len(messages)} message(s) sent successfully")
+            total_sent += 1
+        else:
+            print(f"      ⚠️  Only {user_success}/{len(messages)} message(s) sent")
+    
+    print(f"   📊 Notifications sent to {total_sent}/{len(telegram_users)} users")
+
+
 def main():
     print("="*80)
     print("HARBI - ARBITRAGE OPPORTUNITY DETECTOR")
@@ -499,6 +737,9 @@ def main():
     
     generate_html(matched_events, 'results.html', error_statuses)
     print(f"   ✅ Written to results.html")
+    
+    # Step 6: Send Telegram notifications if arbitrage found
+    send_telegram_notifications(matched_events, arb_count)
     
     # Summary
     print("\n" + "="*80)

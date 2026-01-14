@@ -538,24 +538,119 @@ tail -f /home/giray/harbi/logs/event_loop.log
 - `<a href="URL">link text</a>` - clickable links
 - `<tg-spoiler>hidden</tg-spoiler>` - spoiler text
 
+**Message Structure:**
+- Show **ALL arbitrage opportunities** in text message(s)
+- Each match gets its own `<pre>` block with links
+- If message exceeds 4096 chars, split into multiple messages
+- **CRITICAL**: Never split a `<pre>` block in the middle - each match is atomic
+
 **Template for arbitrage notifications:**
 ```python
+# Single message with multiple opportunities:
 message = """
-🚨 *Arbitrage Alert - 3 Opportunities*
+🚨 *Yeni Harbi Oran Fırsatları Var*
 
 <pre>
 Maç: Man United vs Liverpool
-Oddswar: 2.05 | 3.40 | 3.80
+Oddswar: <b><u>2.05</u></b> | 3.40 | 3.80
 Roobet:  <b><u>2.20</u></b> | <b><u>3.50</u></b> | 3.60
-Kar yüzdesi: 2.3% (odds 1 & X)
+Kar yüzdesi: 2.3%
 </pre>
 
 <a href="https://oddswar.com/...">Oddswar Linki</a>
 <a href="https://roobet.com/...">Roobet Linki</a>
+
+<pre>
+Maç: Barcelona vs Real Madrid
+Oddswar: 1.95 | <b><u>3.20</u></b> | 4.10
+Stoiximan: 1.88 | <b><u>3.45</u></b> | 4.20
+Kar yüzdesi: 1.8%
+</pre>
+
+<a href="https://oddswar.com/...">Oddswar Linki</a>
+<a href="https://stoiximan.gr/...">Stoiximan Linki</a>
+
+<pre>
+Maç: PSG vs Lyon
+Oddswar: <b><u>1.85</u></b> | 3.60 | <b><u>4.50</u></b>
+Tumbet:  <b><u>1.92</u></b> | 3.55 | <b><u>4.75</u></b>
+Kar yüzdesi: 3.1%
+</pre>
+
+<a href="https://oddswar.com/...">Oddswar Linki</a>
+<a href="https://tumbet.com/...">Tumbet Linki</a>
 """
 ```
 
-**Notes:**
-- Use `<pre>` tags with careful spacing for aligned columns (tables are not supported)
-- Use `<b><u>bold and underline</u></b>` tags to highlight odds that are higher than corresponding Oddswar odds (arbitrage opportunities)
-- Telegram does NOT support custom text colors, use bold and emojis for emphasis
+**Smart Message Splitting Algorithm:**
+```python
+# Pseudocode for implementation:
+1. Build each match as atomic block (pre + links)
+2. Start with header: "🚨 *Yeni Harbi Oran Fırsatları Var*\n\n"
+3. For each arbitrage opportunity:
+   - If adding block would exceed 4096 chars:
+     * Send current message
+     * Start new message with same header
+   - Add block to current message
+4. Send final message
+```
+
+**Highlighting Rules:**
+- Use `<b><u>bold and underline</u></b>` for **BOTH sides** of arbitrage:
+  - **Oddswar odds** where you LAY (sell)
+  - **Traditional site odds** where you BACK (buy)
+- Only highlight when traditional site odds > Oddswar odds
+- Example: If Roobet 2.20 > Oddswar 2.05, highlight BOTH 2.05 and 2.20
+- Telegram does NOT support custom text colors, use bold+underline and emojis only
+
+**Profit Calculation:**
+- Show "Kar yüzdesi" (profit percentage) for each match
+- Format: "Kar yüzdesi: 2.3%" (one decimal place)
+- Calculate based on arbitrage formula
+
+**Implementation Notes:**
+- Read `TELEGRAM_USERS` from `harbi-config.py` (not environment variables)
+- Only send if arbitrage opportunities found (arb_count > 0)
+- Use HTML parse mode (not Markdown)
+- Send after generating `results.html`
+- Handle Telegram API errors gracefully (log and continue)
+
+**Reuse Existing Logic (Don't Reinvent the Wheel):**
+
+When implementing Telegram notifications in `arb_create.py`, **reuse existing functions and data structures**:
+
+**Already Available in arb_create.py:**
+1. **Line 464-481**: `has_arbitrage(event)` function - detects arbitrage opportunities
+2. **Line 484**: `matched_events` already sorted (arbitrage opportunities first)
+3. **Line 486**: `arb_count` variable - count of arbitrage opportunities  
+4. **Lines 302-350**: Odds comparison logic in `generate_html()`:
+   ```python
+   odds_1_class = ' class="arb-opportunity"' if float(tumbet['odds_1']) > float(oddswar['odds_1']) else ''
+   ```
+   **This is the SAME logic needed for Telegram highlighting!**
+5. **Event structure**: Each event already has:
+   - `event['oddswar']` with `odds_1`, `odds_x`, `odds_2`, `link`
+   - `event['roobet']` (if matched) with same structure
+   - `event['stoiximan']` (if matched) with same structure
+   - `event['tumbet']` (if matched) with same structure
+
+**What to Add (Minimal Implementation):**
+1. **Config loader** - read `TELEGRAM_USERS` from `harbi-config.py`
+2. **Message builder** - convert events to Telegram text format
+   - Reuse odds comparison pattern from HTML generation (lines 302-350)
+   - Just change output format: HTML class → Telegram `<b><u>` tags
+3. **Message splitter** - handle 4096 char limit (atomic blocks)
+4. **Telegram sender** - API calls to send messages
+5. **Integration point** - call after line 500 (after HTML generated), only if `arb_count > 0`
+
+**Smart Approach:**
+- Take the **same `matched_events` list** (already filtered and sorted)
+- Take the **same `arb_count`** (already calculated)
+- Reuse the **same odds comparison pattern** from HTML generation
+- Just format differently (HTML → Telegram text)
+
+**DO NOT:**
+- Duplicate arbitrage detection logic
+- Recalculate which events have arbitrage
+- Re-sort the events list
+- Create new data structures for the same data
