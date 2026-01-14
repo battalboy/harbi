@@ -252,6 +252,14 @@ Events (two teams playing each other) are formatted differently across sites.
 This system does NOT place bets automatically. It identifies opportunities for the user to manually execute.
 
 ## Development Workflow Rules
+- **Remote Server Operations**: DO NOT make ANY changes to the remote production server (89.125.255.32) without the user's express permission
+  - DO NOT create, modify, or delete files on the remote server
+  - DO NOT generate SSH keys or modify SSH configuration on the remote server
+  - DO NOT install packages or change system settings on the remote server
+  - DO NOT run any commands via SSH that modify the remote server state
+  - ONLY perform read-only operations (checking status, reading files, testing connections) unless explicitly authorized
+  - When troubleshooting, propose solutions and ask for permission before implementing them on the production server
+  - This is a LIVE PRODUCTION SERVER serving paying clients - treat it with extreme caution
 - **Git Operations**: DO NOT perform ANY git operations (add, commit, push, pull, stash, etc.) unless the user explicitly requests it
   - This applies to BOTH local machine AND remote server git commands
   - Do NOT run git commands via SSH on the remote server
@@ -403,15 +411,69 @@ sudo docker logs gluetun_greece
 
 **Script Location**: `/home/giray/harbi/run_event_loop.py`
 
+**Configuration File (harbi-config.py)**:
+```python
+# harbi-config.py - Runtime configuration for event fetching daemon
+
+# Sites to fetch (comment out to disable)
+ENABLED_SITES = [
+    'oddswar',
+    'roobet',
+    # 'stoiximan',  # Disabled - comment explains why
+    'tumbet',
+    # 'stake',      # Not ready yet
+]
+
+# Run arbitrage detection after each cycle
+RUN_ARB_CREATE = True
+
+# Notification settings (for errors/issues)
+NOTIFY_ON_ERROR = False  # Future: enable when notification method decided
+
+# Telegram user notifications (comment out to disable)
+# Note: arb_create.py will read harbi-config.py to send arbitrage alerts
+TELEGRAM_USERS = [
+    {'name': 'James', 'id': 1580648939},
+    {'name': 'Ismail', 'id': 7530341430},
+    # {'name': 'Hidden_Tomi', 'id': 588354800},  # Disabled temporarily
+    {'name': 'Totti', 'id': 5387409105},
+    {'name': 'AbelardoZ5', 'id': 977623500},
+    {'name': 'cassiolincoln10', 'id': 403609484},
+]
+```
+
+**Script Execution Order:**
+- **Oddswar ALWAYS runs first** (it's the master key - defines available arbitrage opportunities)
+- After Oddswar, run other enabled sites in config list order
+- **All sites run sequentially in the same cycle** (no staggering between sites)
+- Randomization applies only to the interval between complete cycles, not between individual sites
+- Daemon consults harbi-config.py every cycle (can enable/disable sites without restart)
+- If all sites are commented out, daemon does nothing until next trigger
+
+**Timing Behavior:**
+- **Truly random intervals** between cycles (for anti-detection)
+- **NOT configurable** - hardcoded randomization logic in daemon itself
+- **Vary the randomness pattern to be less predictable**:
+  - Don't use same min/max range every time
+  - Alternate between different ranges (e.g., 2-4 min, 3-6 min, 4-8 min)
+  - Use different probability distributions (not just uniform random)
+
+**Error Handling Strategy:**
+1. **Log the error** - write to daemon's log file with timestamp
+2. **Continue to next site** - don't let one failure stop the whole cycle
+3. **Track failure patterns** - simple counter for consecutive failures
+4. **Notification method TBD** - options include Telegram, email, or log file only
+
 **Features:**
-- Runs all `event_create_*.py` scripts sequentially
-- Randomized interval: 3-5 minutes between cycles
-- Runs `arb_create.py` after each cycle
+- Runtime site enable/disable via harbi-config.py (no restart needed)
+- Runs all enabled `event_create_*.py` scripts sequentially
+- Runs `arb_create.py` after each cycle (if RUN_ARB_CREATE = True)
+- `arb_create.py` reads same harbi-config.py for Telegram user notifications (comment out users to disable)
 - Comprehensive logging
 - Auto-restart on crash
 - systemd service management
 
-**Configuration File**: `/etc/systemd/system/harbi-events.service`
+**systemd Service File**: `/etc/systemd/system/harbi-events.service`
 
 **Service Commands:**
 ```bash
@@ -426,7 +488,8 @@ tail -f /home/giray/harbi/logs/event_loop.log
 ```
 
 **Why This Approach:**
-- ✅ Centralized timing control (randomized 3-5 min intervals)
+- ✅ Runtime configuration without restart (comment out sites in harbi-config.py)
+- ✅ Unpredictable timing patterns (anti-bot detection)
 - ✅ Scripts run sequentially (no overlapping requests to same site)
 - ✅ Proper error handling and logging
 - ✅ Auto-restart on crash (systemd manages process)
@@ -442,7 +505,7 @@ tail -f /home/giray/harbi/logs/event_loop.log
 **Telegram supports basic HTML/Markdown but NO tables**
 
 **Client Telegram IDs:**
-- 1580648939 - James
+- 1580648939 - James (me - the developer/owner)
 - 7530341430 - Ismail
 - 588354800 - @Hidden_Tomi
 - 5387409105 - @Totti34x (Totti)
