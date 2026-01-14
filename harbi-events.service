@@ -1,0 +1,16 @@
+[Unit]
+Description=Harbi Event Fetching Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=giray
+WorkingDirectory=/home/giray/harbi
+ExecStart=/home/giray/harbi/venv/bin/python3 /home/giray/harbi/run_event_loop.py
+Restart=always
+RestartSec=10
+StandardOutput=append:/home/giray/harbi/logs/event_loop.log
+StandardError=append:/home/giray/harbi/logs/event_loop.log
+
+[Install]
+WantedBy=multi-user.target
