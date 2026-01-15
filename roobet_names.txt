@@ -13,6 +13,7 @@
 1. FC Tatran Presov
 1. FC Union Berlin
 1. FFC Turbine Potsdam 71
+1. Wiener Neustadter SC
 1.SK Prostejov
 AA Anapolina GO
 AA Aparecidense GO
@@ -204,6 +205,7 @@ Al-Rustaq
 Al-Sailiya SC
 Al-Salmiya SC
 Al-Seeb
+Al-Shabab FC
 Al-Shabab FC (SA)
 Al-Shabab Riyadh
 Al-Shabbab
@@ -223,6 +225,7 @@ Aldershot Town FC
 Algeria
 Alhama CF
 Alianza Atletico
+Alianza FC Valledupar
 Alianza Lima
 Almere City FC
 Almerehaven FC
@@ -242,6 +245,7 @@ Anapolis FC GO
 Angers SCO
 Angola
 Ankara Keciorengucu
+Annan Athletic FC
 Anorthosis Famagusta
 Antalyaspor
 Apea Akrotiriou
@@ -286,6 +290,7 @@ Atlético Madrid (E)
 Atlético de Madrid (E)
 Atromitos Athinon
 Atus Velden
+Auchinleck Talbot
 Auckland FC
 Audace Cerignola
 Audax Italiano
@@ -378,6 +383,7 @@ Bosnia & Herzegovina
 Boston United FC
 Botafogo FC SP
 Botafogo FR RJ
+Botev Plovdiv
 Botswana
 Bournemouth
 Brackley Town FC
@@ -440,6 +446,7 @@ CD Recoleta
 CD Sociedad
 CD Tolima
 CD Tondela
+CD Universidad Catolica
 CD Universidad Catolica del Ecuador
 CE Carroi
 CE Carrol
@@ -461,6 +468,7 @@ CS Alagoano AL
 CS Cartagines
 CS Cienciano
 CS Constantine
+CS Deportivo Pereira
 CS Emelec
 CS Herediano
 CS Sergipe SE
@@ -572,6 +580,7 @@ Cosenza Calcio
 Cosenza FC
 Costa Rica (E)
 Coupe de France
+Cove Rangers FC
 Coventry City
 Crawley Town
 Crewe Alexandra
@@ -619,6 +628,7 @@ Denmark 1. Division
 Denmark DBU Pokalen
 Denmark Superliga
 Deportes Concepcion
+Deportes Limache
 Deportivo Alaves
 Deportivo Garcilaso
 Deportivo La Coruna
@@ -726,6 +736,7 @@ FC Ajka
 FC Alverca SAD
 FC Andorra
 FC Annecy
+FC Arda Kardzhali
 FC Arouca
 FC Arzignano Valchiampo
 FC Augsburg
@@ -755,6 +766,7 @@ FC Fard
 FC Farul Constanta
 FC Felgueiras 1932
 FC Fleury
+FC Fratria Varna
 FC Fredericia
 FC Groningen
 FC Halifax Town
@@ -763,18 +775,21 @@ FC Heidenheim
 FC Helder
 FC Heracles 88
 FC Holon Yirmiyahu
+FC Hradec Kralove B
 FC Ingolstadt 04
 FC Jerusalem
 FC Juarez
 FC Kafr Qasim
 FC Kairat Almaty
 FC Koln
+FC Kryvbas Kriviy Rih
 FC Laval
 FC Lorient
 FC Ludogorets
 FC Lugano
 FC Luzern
 FC Maccabi Kiryat Gat Dudu
+FC Maritsa Plovdiv
 FC Metz
 FC Midtjylland
 FC Nantes
@@ -826,7 +841,9 @@ FC Winterthur
 FC Zlin
 FC Zurich
 FCV Dender EH
+FK AP Brera Strumica
 FK Auda
+FK Austria Vienna II
 FK Austria Wien
 FK Ballkani
 FK Banga Gargzdai
@@ -853,6 +870,7 @@ FK Radnicki Nis
 FK Radnik Surdulica
 FK Rigas Futbola Skola
 FK Riteriai
+FK Spartak 1918 Varna
 FK Spartak Subotica
 FK Suduva
 FK TSC Backa Topola
@@ -866,13 +884,16 @@ FSV Mainz
 Fajr Sepasi FC
 Falkirk FC
 Fatih Karagumruk
+Favoritner AC
 Fehra
 Fenerbahce Istanbul
 Ferencvarosi Budapest
+Ferrocarril Midland
 Ferroviario AC CE
 Feyenoord Rotterdam
 Figueirense FC SC
 Finland
+First Vienna FC
 Flamengo (E)
 Flamengo RJ
 Flamingo FC
@@ -888,6 +909,7 @@ Foolad KHouzestan FC
 Football Bourg-En-Bresse Peronnas 01
 Forest Green Rovers
 Forli FC
+Fortaleza Ceif FC
 Fortaleza EC CE
 Fortuna Dusseldorf
 Fortuna Sittard
@@ -1109,6 +1131,8 @@ Japan
 Japan (E)
 Jarabacoa
 Jeugd Lommel SK
+Jeugd Patro Eisden Maasmechelen
+Jeugd RWD Molenbeek
 Jeugd Royal Francs Borains
 Jeugd Royal Francs Borains 
 Joinville EC SC
@@ -1153,6 +1177,7 @@ Kazakhstan
 Kazakhstan (E)
 Kazincbarcikai SC
 Kazma SC
+Kelty Hearts FC
 Kenya
 Khaleej Sirte
 Kheybar Khorramabad FC
@@ -1208,6 +1233,7 @@ Les Sables FCOC
 Levante CF
 Levante Las Planas FC
 Levante UD
+Levski Karlovo
 Leyton Orient London
 Libertad Loja
 Lierse Kempenzonen
@@ -1229,6 +1255,7 @@ Liverpool FC (E)
 Liverpool Montevideo
 Livingston FC
 Llanelli Town
+Llaneros FC
 Lokomotive Sofia
 Lommel SK
 Lopburi City
@@ -1243,6 +1270,7 @@ MB Rouisset
 MC Alger
 MC El Bayadh
 MC Oran
+MC Saida
 MFK Chrudim
 MFK Skalica
 MFK Zemplin Michalovce
@@ -1306,6 +1334,7 @@ Maritimo
 Maritimo Madeira
 Marko 1927
 Marsaxlokk FC
+Marumo Gallants FC
 Masfoot Sports Club
 Massafra 1963
 Mato-Grossense
@@ -1320,6 +1349,7 @@ Metaloglobus Bucuresti
 Metropolitanos FC
 Mexico
 Mexico (E)
+Mezokovesd Zsory SE
 Middlesbrough FC
 Milan (E)
 Military Union
@@ -1340,6 +1370,7 @@ Montevideo City Torque
 Montevideo Wanderers
 Montpellier HSC
 Montreuil FC
+Montrose FC
 Morecambe FC
 Moreirense FC
 Morocco
@@ -1423,6 +1454,7 @@ Olympiacos Piraeus
 Olympiakos Marseille
 Olympiakos Nicosia
 Olympic Azzaweya
+Olympic Charleroi U21
 Olympique Akbou
 Olympique Lyon
 Olympique Marseille
@@ -1655,8 +1687,11 @@ SS Arezzo
 SS Monopoli
 SSC Bari
 SSC Napoli
+SSVg Velbert
 SV 07 Elversberg
 SV Darmstadt 98
+SV Lebring
+SV Leobendorf
 SV Meppen
 SV Preussen 06 Munster
 SV Spakenburg
@@ -1695,6 +1730,7 @@ Sekhukhune United
 Semen Padang FC
 Senegal
 Sepahan SC
+Seraing United
 Serbia
 Serbia Superliga
 Serik Belediyespor
@@ -1782,6 +1818,7 @@ Stade de Mbour
 Standard Liege
 Stars J. Talents
 Stellenbosch FC
+Stenhousemuir FC
 Stevenage FC
 Stockport County FC
 Stoke City
@@ -1803,6 +1840,7 @@ Switzerland Super League
 Sydney FC
 Syria
 TOP Oss
+TS Galaxy FC
 TSC Hoffenheim
 TSG 1881 Sprockhovel
 TSG Hoffenheim
@@ -1825,6 +1863,7 @@ The New Saints FC
 The Strongest
 Tigres UANL
 Tlaxcala FC
+Tobol Kostanay
 Togo
 Tombense FC MG
 Torino FC
@@ -1905,6 +1944,7 @@ Unye Gucu
 Urawa Red Diamonds (E)
 Urt MG
 Uruguay
+Usv Halbturn
 Uthai Thani FC
 Uttaradit FC
 Uzbekistan
@@ -1927,6 +1967,7 @@ Venezia FC
 VfB Stuttgart
 VfL 1899 Osnabruck
 VfL Bochum
+VfL Sportfreunde Lotte 1929
 VfL Wolfsburg
 VfL Wolfsburg II
 Vietnam
@@ -1951,6 +1992,7 @@ WB Aïn Benian
 WC Qualification, UEFA
 WSC Hertha Wels
 WSG Tirol
+Waasland Beveren
 Wales
 Wales Cymru Premier
 Wally Daan
@@ -1958,6 +2000,7 @@ Walsall FC
 Warri Wolves F.C.
 Watford FC
 Wealdstone FC
+Weindorf St. Anna/Aigen
 Wellington Phoenix FC
 Werder Bremen
 West Bromwich Albion
