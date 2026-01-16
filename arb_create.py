@@ -15,6 +15,7 @@ import requests
 from datetime import datetime
 from typing import Dict, List, Tuple, Optional
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 
 def load_error_status(site_name: str) -> Optional[Dict]:
@@ -521,7 +522,12 @@ def send_telegram_notifications(matched_events: List[Dict], arb_count: int):
     # Build message blocks for events with arbitrage
     print(f"   Building messages for {arb_count} arbitrage opportunities...")
     
-    header = "🚨 *Yeni Harbi Oran Fırsatları Var*\n\n"
+    # Get current time in Athens timezone
+    now = datetime.now(ZoneInfo('Europe/Athens'))
+    turkish_months = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 
+                      'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
+    timestamp = f"{now.day} {turkish_months[now.month-1]} {now.year} - {now.hour:02d}:{now.minute:02d}"
+    header = f"🚨 *Yeni Harbi Oran Fırsatları Var*\n📅 {timestamp}\n\n"
     blocks = []
     
     for event in matched_events:
