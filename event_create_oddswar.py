@@ -247,6 +247,15 @@ def main():
         try:
             inplay_data = fetch_markets(interval='inplay', size=50)
             inplay_markets = inplay_data.get('exchangeMarkets', [])
+            
+            # DEBUG: Save sample to check timestamp format
+            if inplay_markets:
+                import json
+                sample = {'sample_market': inplay_markets[0]}
+                with open('debug_oddswar_timestamp_sample.json', 'w') as f:
+                    json.dump(sample, f, indent=2)
+                print(f"   [DEBUG] Saved timestamp sample to debug_oddswar_timestamp_sample.json")
+            
             all_markets.extend(inplay_markets)
             all_market_ids.extend([m['id'] for m in inplay_markets])
             print(f"   Found {len(inplay_markets)} live markets")
