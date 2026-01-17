@@ -6,7 +6,7 @@
 - **Clients are Turkish** - all notifications, error messages, and UI text will eventually be in Turkish
 - **Clients need web access from anywhere** (no Python knowledge required)
 - **Remote production server**: 89.125.255.32 (giray@)
-- **Clients CANNOT run scripts manually** - must access via web interface
+- **Clients CANNOT run scripts manually** - must access via web interface or receive Telegram messages
 - **Production deployment is the END GOAL**, not just proof-of-concept
 - **Web server required**: Flask application for client access (not simple HTTP server)
 
@@ -97,9 +97,24 @@ The matching system uses **indicator-first filtering** to ensure accurate matche
 
 #### Team Collection Scripts
 - **Oddswar**: `collect_oddswar_teams.py` → outputs `oddswar_names.txt`
+  - **Sport IDs**: 
+    - Soccer: `1` (API: `/api/brand/1oddswar/exchange/soccer-1` or `/exchange/1`)
+    - Tennis: `2` (API: `/api/brand/1oddswar/exchange/tennis-2` or `/exchange/2`)
+    - Basketball: `7522` (API: `/api/brand/1oddswar/exchange/7522`)
+  - **API Requirements**: Minimum `size=50` parameter required
+  - Soccer: 3-way odds (Team 1, Draw, Team 2)
+  - Tennis: 2-way odds (Player 1, Player 2 - no draw)
+  - Basketball: 2-way odds (Team 1, Team 2 - no draw)
 - **Stoiximan**: `collect_stoiximan_teams.py` → outputs `stoiximan_names.txt`
 - **Roobet**: `collect_roobet_teams.py` → outputs `roobet_names.txt`
   - Uses Betby API (sptpub.com) with two-step version system
+  - **Sport IDs**:
+    - Soccer: `1` (API filter: `desc.get('sport') == '1'`)
+    - Basketball: `2` (API filter: `desc.get('sport') == '2'`)
+    - Tennis: `5` (API filter: `desc.get('sport') == '5'`)
+  - Soccer: 3-way odds (Team 1, Draw, Team 2)
+  - Tennis: 2-way odds (Player 1, Player 2 - no draw)
+  - Basketball: 2-way odds (Team 1, Team 2 - no draw)
   - **Breakthrough discovery**: The `rest_events_versions` array in API manifest unlocks comprehensive coverage
   - **Critical**: Fetches from multiple `rest_events_versions` endpoints (each contains ~160 matches)
   - Changed collection from ~60 teams (main version only) to 700+ teams (all versions)
@@ -108,6 +123,13 @@ The matching system uses **indicator-first filtering** to ensure accurate matche
   - No geographic restrictions
 - **Tumbet**: `collect_tumbet_teams.py` → outputs `tumbet_names.txt`
   - Uses SportWide API (analytics-sp.googleserv.tech)
+  - **Sport IDs**:
+    - Soccer: `1` (API filter: `sport.get('id') == 1`)
+    - Basketball: `2` (API filter: `sport.get('id') == 2`)
+    - Tennis: `5` (API filter: `sport.get('id') == 5`)
+  - Soccer: 3-way odds (Team 1, Draw, Team 2)
+  - Tennis: 2-way odds (Player 1, Player 2 - no draw)
+  - Basketball: 2-way odds (Team 1, Team 2 - no draw)
   - **Breakthrough discovery**: The `/api/sport/getheader/{LANGUAGE}` endpoint unlocks comprehensive coverage
   - **Critical**: Fetches from hierarchical structure (Sports → Regions → Championships → Games)
   - Changed collection from ~109 teams (top games only) to ~1,700+ teams (all games)
@@ -212,10 +234,10 @@ Events (two teams playing each other) are formatted differently across sites.
 **Date/time information is available from all four sites** and will be used as an additional matching criterion:
 
 **Data Availability:**
-- **Oddswar**: `openDate` field (currently extracted, not displayed)
+- **Oddswar**: `openDate` field - ✅ **Verified format**: ISO 8601 string `"2026-01-17T17:45:00.000Z"` (includes milliseconds, UTC timezone with Z suffix)
 - **Stoiximan**: `startTime` field (currently extracted, not displayed)
-- **Roobet**: `scheduled` field (Unix timestamp - NOT yet extracted)
-- **Tumbet**: `stunix` field (Unix timestamp - currently extracted, not displayed)
+- **Roobet**: `scheduled` field (format unknown - needs verification)
+- **Tumbet**: `stunix` field (Unix timestamp integer - needs verification)
 
 **Event Matching Strategy:**
 - Extract and normalize date/time information from all sites to a common format
@@ -241,12 +263,59 @@ Events (two teams playing each other) are formatted differently across sites.
 
 ### Current Status
 - ✅ **Step 1 In Progress**: Team name collection and matching
-  - Oddswar: ~1,874 teams ✅
-  - Stoiximan: ~3,521 teams ✅ (88.8% match rate with Oddswar)
-  - Tumbet: ~1,700+ teams ✅ (comprehensive coverage via getheader endpoint)
-  - Roobet: ~1,545 teams ✅ (~38% match rate with Oddswar)
-  - Stake: ~203 teams ✅ (browser automation, match CSV pending)
+  - Oddswar: ~1,874 teams ✅ (Soccer only)
+  - Stoiximan: ~3,521 teams ✅ (88.8% match rate with Oddswar - Soccer only)
+  - Tumbet: ~1,700+ teams ✅ (comprehensive coverage via getheader endpoint - Soccer only)
+  - Roobet: ~1,545 teams ✅ (~38% match rate with Oddswar - Soccer only)
+  - Stake: ~203 teams ✅ (browser automation, match CSV pending - Soccer only)
 - 🔜 **Step 2 Next**: Event matching across sites (not yet implemented)
+
+### Adding Tennis and Basketball Support
+
+**Client Requirement**: Expand system to support Tennis and Basketball in addition to Soccer.
+
+**What's Already Reusable:**
+- ✅ Fuzzy matching algorithm (name standardization)
+- ✅ Error handling system
+- ✅ Telegram notification system
+- ✅ Remote daemon infrastructure
+- ✅ HTML results generation
+- ✅ Git workflow
+
+**What Needs Sport-Specific Changes:**
+
+**1. Odds Structure:**
+- **Soccer**: 3-way odds (Team 1 Win / Draw / Team 2 Win) - e.g., 2.05 / 3.40 / 3.80
+- **Tennis**: 2-way odds (Player 1 Win / Player 2 Win - NO DRAW) - e.g., 1.85 / 2.10
+- **Basketball**: 2-way odds (Team 1 Win / Team 2 Win - overtime decides, no draw) - e.g., 1.95 / 2.05
+
+**2. Implementation Status:**
+- **Oddswar**: ✅ Tennis (ID 2) and Basketball (ID 7522) confirmed working
+- **Roobet**: ✅ Tennis (ID 5) and Basketball (ID 2) confirmed working
+- **Tumbet**: ✅ Tennis (ID 5) and Basketball (ID 2) confirmed working
+- **Stoiximan**: ❌ Ignoring for now (per client instruction)
+- **Stake**: ❌ Ignoring for now (per client instruction)
+
+**3. Collection Scripts to Create:**
+- `collect_oddswar_tennis.py` and `collect_oddswar_basketball.py`
+- `collect_roobet_tennis.py` and `collect_roobet_basketball.py`
+- `collect_tumbet_tennis.py` and `collect_tumbet_basketball.py`
+
+**4. Event Creator Scripts to Create:**
+- `event_create_oddswar_tennis.py` and `event_create_oddswar_basketball.py`
+- `event_create_roobet_tennis.py` and `event_create_roobet_basketball.py`
+- `event_create_tumbet_tennis.py` and `event_create_tumbet_basketball.py`
+
+**5. Matching CSVs to Create:**
+- `roobet_tennis_matches.csv` and `roobet_basketball_matches.csv`
+- `tumbet_tennis_matches.csv` and `tumbet_basketball_matches.csv`
+
+**6. Arbitrage Detection:**
+- Modify `arb_create.py` to handle 2-way odds (Tennis/Basketball) in addition to 3-way odds (Soccer)
+- Update HTML template to display 2-way odds correctly
+- Update Telegram notifications to format 2-way odds
+
+**Status**: ⏳ Investigation phase - discovering sport IDs for Roobet and Tumbet
 
 ## Important
 This system does NOT place bets automatically. It identifies opportunities for the user to manually execute.
@@ -279,6 +348,7 @@ This system does NOT place bets automatically. It identifies opportunities for t
 - **IP Address**: 89.125.255.32
 - **Username**: giray
 - **Operating System**: Ubuntu (latest release)
+- **Python Version**: 3.10.11
 - **Location**: Frankfurt, Germany
 - **Authentication**: Passwordless SSH with public key (id_rsa)
 - **SSH Command**: `ssh giray@89.125.255.32`
