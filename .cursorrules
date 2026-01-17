@@ -236,8 +236,9 @@ Events (two teams playing each other) are formatted differently across sites.
 **Data Availability:**
 - **Oddswar**: `openDate` field - ✅ **Verified format**: ISO 8601 string `"2026-01-17T17:45:00.000Z"` (includes milliseconds, UTC timezone with Z suffix)
 - **Stoiximan**: `startTime` field (currently extracted, not displayed)
-- **Roobet**: `scheduled` field (format unknown - needs verification)
-- **Tumbet**: `stunix` field (Unix timestamp integer - needs verification)
+- **Roobet**: `scheduled` field - ✅ **Verified format**: Unix timestamp integer `1768818600` (seconds since epoch, UTC)
+- **Tumbet**: `stunix` field - ✅ **Verified format**: Unix timestamp integer `1768938300` (seconds since epoch, UTC)
+  - **Bonus**: `st` field also available - ISO 8601 string `"2026-01-20T19:45:00"` (no milliseconds or timezone suffix)
 
 **Event Matching Strategy:**
 - Extract and normalize date/time information from all sites to a common format
