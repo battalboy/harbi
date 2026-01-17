@@ -1,12 +1,9 @@
 """
-Oddswar Live Soccer Match Parser
+EXPERIMENTAL: Oddswar Timestamp Format Debug Script
 
-This script fetches live soccer matches from Oddswar's API and extracts:
-- Team names
-- Match odds (1X2 - only LAY/pink odds for arbitrage, ignoring BACK/blue odds)
-- Match links
-
-Output is formatted identically to stoiximan-formatted.txt for easy comparison.
+This is a DEBUG VERSION of event_create_oddswar.py
+Purpose: Check the format of openDate timestamps from Oddswar API
+DO NOT USE IN PRODUCTION - This is for testing only
 """
 
 import json
@@ -247,6 +244,29 @@ def main():
         try:
             inplay_data = fetch_markets(interval='inplay', size=50)
             inplay_markets = inplay_data.get('exchangeMarkets', [])
+            
+            # DEBUG: Save sample and analyze timestamp format
+            if inplay_markets:
+                print("\n" + "=" * 70)
+                print("DEBUG: TIMESTAMP FORMAT ANALYSIS")
+                print("=" * 70)
+                
+                # Save full sample to JSON
+                sample = {'sample_market': inplay_markets[0]}
+                with open('debug_oddswar_sample.json', 'w') as f:
+                    json.dump(sample, f, indent=2)
+                print(f"✅ Saved full sample to: debug_oddswar_sample.json")
+                
+                # Analyze first 3 markets
+                for i, market in enumerate(inplay_markets[:3]):
+                    event = market.get('event', {})
+                    open_date = event.get('openDate', 'N/A')
+                    print(f"\nMatch {i+1}: {event.get('name', 'N/A')}")
+                    print(f"  openDate value: {open_date}")
+                    print(f"  openDate type: {type(open_date)}")
+                
+                print("=" * 70 + "\n")
+            
             all_markets.extend(inplay_markets)
             all_market_ids.extend([m['id'] for m in inplay_markets])
             print(f"   Found {len(inplay_markets)} live markets")
