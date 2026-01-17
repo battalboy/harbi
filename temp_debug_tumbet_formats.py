@@ -409,20 +409,27 @@ def main():
                 prematch_data = fetch_game_details(batch, 'prematch')
                 if prematch_data:
                     # DEBUG: Show timestamp format from first batch only
-                    if not debug_shown and len(prematch_data) > 0:
+                    if not debug_shown and prematch_data:
                         try:
                             print("\n" + "=" * 70)
                             print("DEBUG: TIMESTAMP FORMAT ANALYSIS")
                             print("=" * 70)
                             
+                            # prematch_data is a dict, get first few games
+                            if isinstance(prematch_data, dict):
+                                games_list = list(prematch_data.values())[:3] if prematch_data else []
+                            else:
+                                games_list = prematch_data[:3] if len(prematch_data) > 0 else []
+                            
                             # Save first game to JSON
-                            sample = {'sample_game': prematch_data[0]}
-                            with open('debug_tumbet_sample.json', 'w') as f:
-                                json.dump(sample, f, indent=2)
-                            print(f"✅ Saved full sample to: debug_tumbet_sample.json")
+                            if games_list:
+                                sample = {'sample_game': games_list[0]}
+                                with open('debug_tumbet_sample.json', 'w') as f:
+                                    json.dump(sample, f, indent=2)
+                                print(f"✅ Saved full sample to: debug_tumbet_sample.json")
                             
                             # Analyze first 3 games
-                            for j, game in enumerate(prematch_data[:3]):
+                            for j, game in enumerate(games_list):
                                 game_id = game.get('id', 'N/A')
                                 game_name = game.get('name', 'N/A')
                                 stunix = game.get('stunix')
