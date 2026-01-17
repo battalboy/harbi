@@ -1,18 +1,17 @@
 Oddswar,Roobet,Confidence
-Novara,Novara FC,100.0
-Don Bosco Garelli,Don Bosco Garelli United,100.0
-Giana Erminio,AS Giana Erminio,100.0
-Siroki Brijeg,NK Siroki Brijeg,100.0
-SSD Dolomiti Bellunesi,Dolomiti Bellunesi,100.0
-Philippine Army FC,Philippine Army,100.0
-AC Ospitaletto,Acd Ospitaletto,100.0
+UMECIT,Umecit FC,100.0
+Arabe Unido,CD Arabe Unido,100.0
+Spartak Trnava,FC Spartak Trnava,100.0
+Municipal Santa Ana,AD Municipal Santa Ana,100.0
 A.D. Cofutpa,AD Cofutpa,100.0
 A.S. Gosier,AS Gosier,100.0
 AC Bra,AC Bra,100.0
 AC Milan,AC Milan,100.0
 AC Monza,AC Monza,100.0
+AC Ospitaletto,Acd Ospitaletto,100.0
 ACS Petrolul 52,FC Petrolul Ploiesti,100.0
 AD Bahia de Feira,AD Bahia de Feira BA,100.0
+AD Cariari Pococi,AD Cariari Pococi,100.0
 AD Ceuta FC,AD Ceuta,100.0
 AD Jequie,AD Jequie BA,100.0
 AD Municipal Liberia,Municipal Liberia,100.0
@@ -337,6 +336,7 @@ Dibba Al-Hisn,Dibba Al-Hisn SC,100.0
 Dieppe,Dieppe FC,100.0
 Dinamo Zagreb,GNK Dinamo Zagreb,100.0
 Diosgyori,Diosgyori VTK,100.0
+Don Bosco Garelli,Don Bosco Garelli United,100.0
 Doncaster,Doncaster Rovers,100.0
 Dortmund,Borussia Dortmund,100.0
 Dundee,Dundee FC,100.0
@@ -375,6 +375,7 @@ Estoril Praia,Estoril Praia,100.0
 Estudiantes,CA Estudiantes,100.0
 Etoile Carouge,Etoile Carouge FC,100.0
 Eupen,KAS Eupen,100.0
+Europa FC,Europa FC,100.0
 Everton,Everton FC,100.0
 Excelsior,Excelsior Rotterdam,100.0
 Excelsior Maassluis,Excelsior Maassluis,100.0
@@ -464,6 +465,7 @@ Gent,KAA Gent,100.0
 Germany,Germany,100.0
 Getafe,Getafe CF,100.0
 Ghana,Ghana,100.0
+Giana Erminio,AS Giana Erminio,100.0
 Gil Vicente,Gil Vicente Barcelos,100.0
 Gillingham,Gillingham FC,100.0
 Girona,Girona FC,100.0
@@ -741,6 +743,7 @@ Norwich,Norwich City,100.0
 Nottm Forest,Nottingham Forest,100.0
 Notts Co,Notts County,100.0
 Nova Iguacu,Nova Iguacu RJ,100.0
+Novara,Novara FC,100.0
 Novo Hamburgo,EC Novo Hamburgo RS,100.0
 Nurnberg,1 FC Nurnberg,100.0
 Nyiregyhaza,Nyiregyhaza Spartacus FC,100.0
@@ -794,6 +797,7 @@ Peru,Peru,100.0
 Pescara,Delfino Pescara,100.0
 Peterborough,Peterborough United,100.0
 Pharco FC,Pharco FC,100.0
+Philippine Army FC,Philippine Army,100.0
 Phrae United,Phrae United,100.0
 Piast Gliwice,GKS Piast Gliwice,100.0
 Pisa,Pisa SC,100.0
@@ -873,6 +877,7 @@ SER Caxias do Sul,SER Caxias do Sul,100.0
 SK Sturm Graz II,SK Sturm Graz II,100.0
 SKU Amstetten,SKU Amstetten,100.0
 SSD Bari,SSC Bari,100.0
+SSD Dolomiti Bellunesi,Dolomiti Bellunesi,100.0
 SV Darmstadt,SV Darmstadt 98,100.0
 SV Donau,SV Donau,100.0
 SV Lafnitz,SV Lafnitz,100.0
@@ -923,6 +928,7 @@ Silkeborg,Silkeborg IF,100.0
 Singida Black Stars SC,Singida Black Stars SC,100.0
 Sint Truiden,St. Truidense VV,100.0
 Sion,FC Sion,100.0
+Siroki Brijeg,NK Siroki Brijeg,100.0
 Sisaket United,Sisaket United FC,100.0
 Sivasspor,Sivasspor,100.0
 Siwelele FC,Siwelele FC,100.0
@@ -1089,7 +1095,6 @@ Zeleznicar Pancevo,FK Zeleznicar Pancevo,100.0
 Zimbabwe,Zimbabwe,100.0
 Zulte-Waregem,SV Zulte Waregem,100.0
 Bayelsa United FC,,
-Deportivo Cali,,
 FC Osaka,,
 FK Vora,,
 Galicia EC,,
@@ -1114,6 +1119,7 @@ Al Msnaa,,
 Club Deportivo Ayense,,
 Cork City,,
 Aali Club,,
+Deportivo Alaves C,,
 1 Dezembro,,
 1461 Trabzon,,
 1860 Munich,,
@@ -1148,6 +1154,7 @@ AL Dhaid U19,,
 AL Taawon Buraidah U21,,
 AL Wakrah U23,,
 AL Wasl U19,,
+AS Ariana,,
 AS Dakar SC,,
 AS Douanes Nouakchott,,
 AS Gabes,,
@@ -1287,6 +1294,7 @@ Alfreton Town," ",
 Algeciras,,
 Alhashemyya,,
 Aliaga Futbol AS,,
+Alianza FC (Pan),,
 Alianza FC (SLV),,
 Alloa,,
 Altay,,
@@ -1481,6 +1489,7 @@ CA Votuporanguense U20,,
 CD Aguila,,
 CD Cacahuatique,,
 CD Castellon II,,
+CD Cuarte,,
 CD Fas,,
 CD Gualberto Villarroel,,
 CD Ibiza Islas Pitiusas,,
@@ -1494,6 +1503,7 @@ CD Tepatitlan De Morelos,,
 CD Teruel,,
 CD Universitario,,
 CD Villegas,,
+CDJ Tamarite,,
 CDT Real Oruro,,
 CE Andratx,,
 CE Atletic Lleida,,
@@ -1641,11 +1651,13 @@ Dejan FC,,
 Delfines Del Este,,
 Deportiva Venados,,
 Deportivo,,
+Deportivo Cali,,
 Deportivo Irapuato FC,,
 Deportivo Mictlan,,
 Deportivo Mixco,,
 Deportivo Pasto,,
 Deportivo Riestra,,
+Deportivo San Pedro,,
 Deportivo Toluca U21,,
 Derby,,
 Derby (Res),,
@@ -1987,6 +1999,7 @@ Kahramanmaras Istiklal Spor,,
 Kahramanmarasspor,,
 Kairouan,,
 Kakamega Homeboyz,,
+Kalaa Sport,,
 Kalba U23,,
 Kampala City Council,,
 Kanchanaburi Power,,
@@ -2211,6 +2224,7 @@ OB,,
 OFK Petrovac,,
 OLS,,
 Oeste,,
+Oeste FC,,
 Oeste U20,,
 Olancho,,
 Oldham,,
@@ -2344,6 +2358,7 @@ Queens University,,
 Queretaro (W),,
 Queretaro U21,,
 Quevilly Rouen,,
+Quiche FC,,
 RANS Nusantara FC,,
 RB Leipzig (W),,
 RB Leipzig U21,,
@@ -2409,6 +2424,7 @@ SC Kiyovu,,
 SC Uniao Torreense U23,,
 SC Villa,,
 SC Wiener Neustadt,,
+SD Deusto,,
 SG Essen-Schonebeck (W),,
 SKN St. Polten (W),,
 SS Virtus Verona 1921,,
@@ -2516,7 +2532,6 @@ Southern District,,
 Southport,,
 Spain U19,,
 Spanish Town Police,,
-Spartak Trnava,,
 Spartak Varna,,
 Spennymoor Town,,
 Spezia,,
@@ -2575,6 +2590,7 @@ Tapatio,,
 Tatung FC,,
 Taubate,,
 Taubate U20,,
+Tauro FC,,
 Team FC,,
 Team Rhino FC,,
 Techiman Eleven Wonders,,
