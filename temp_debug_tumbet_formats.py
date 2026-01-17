@@ -399,6 +399,8 @@ def main():
             total_batches = (len(prematch_game_ids) + batch_size - 1) // batch_size
             print(f"   Processing {len(prematch_game_ids)} games in {total_batches} batches...")
             
+            debug_shown = False  # Only show debug for first batch
+            
             for i in range(0, len(prematch_game_ids), batch_size):
                 batch = prematch_game_ids[i:i + batch_size]
                 batch_num = (i // batch_size) + 1
@@ -406,6 +408,36 @@ def main():
                 
                 prematch_data = fetch_game_details(batch, 'prematch')
                 if prematch_data:
+                    # DEBUG: Show timestamp format from first batch only
+                    if not debug_shown and len(prematch_data) > 0:
+                        print("\n" + "=" * 70)
+                        print("DEBUG: TIMESTAMP FORMAT ANALYSIS")
+                        print("=" * 70)
+                        
+                        # Save first game to JSON
+                        sample = {'sample_game': prematch_data[0]}
+                        with open('debug_tumbet_sample.json', 'w') as f:
+                            json.dump(sample, f, indent=2)
+                        print(f"✅ Saved full sample to: debug_tumbet_sample.json")
+                        
+                        # Analyze first 3 games
+                        for j, game in enumerate(prematch_data[:3]):
+                            game_id = game.get('id', 'N/A')
+                            game_name = game.get('name', 'N/A')
+                            stunix = game.get('stunix')
+                            
+                            print(f"\nMatch {j+1}: {game_name}")
+                            print(f"  Game ID: {game_id}")
+                            print(f"  'stunix' value: {stunix}")
+                            print(f"  'stunix' type: {type(stunix)}")
+                            
+                            # Show all game keys for first match
+                            if j == 0:
+                                print(f"\n  All game keys: {list(game.keys())}")
+                        
+                        print("=" * 70 + "\n")
+                        debug_shown = True
+                    
                     prematch_matches = parse_game_details(prematch_data, 'prematch')
                     all_matches.extend(prematch_matches)
                     print(f"      ✅ Parsed {len(prematch_matches)} matches from batch {batch_num}")
