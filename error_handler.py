@@ -147,7 +147,7 @@ def is_ban_indicator(error_type: str, status_code: Optional[int] = None) -> bool
     # High probability ban indicators
     if status_code in [403, 429]:
         return True
-    if error_type in ['CloudflareChallenge', 'ConnectionRefusedError', 'ConnectionResetError']:
+    if error_type and error_type in ['CloudflareChallenge', 'ConnectionRefusedError', 'ConnectionResetError']:
         return True
     
     return False
