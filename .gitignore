@@ -40,4 +40,13 @@ Thumbs.db
 # Temporary files
 temp_*
 
+# Generated output files (regenerated on each run)
+*-formatted.txt
+*_names.txt
+*-error.json
+results.html
+
+# Terminal files
+terminals/
+
 
