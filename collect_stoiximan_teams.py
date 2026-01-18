@@ -12,7 +12,7 @@ Output: stoiximan_names.txt (one team name per line, sorted, no duplicates)
 Note: Requires VPN connected to Greek IP address.
 """
 
-import requests
+import cloudscraper
 import time
 import random
 import signal
@@ -76,7 +76,9 @@ def fetch_team_names() -> Set[str]:
     """Fetch current team names from Stoiximan live API."""
     try:
         proxies = get_proxies()
-        response = requests.get(API_URL, params=API_PARAMS, headers=HEADERS, proxies=proxies, timeout=10)
+        # Use cloudscraper to bypass Cloudflare protection
+        scraper = cloudscraper.create_scraper()
+        response = scraper.get(API_URL, params=API_PARAMS, headers=HEADERS, proxies=proxies, timeout=30)
         
         # Check for server errors
         if response.status_code != 200:
@@ -127,10 +129,10 @@ def fetch_team_names() -> Set[str]:
         
         return teams
     
-    except requests.RequestException as e:
+    except Exception as e:
         print(f"\n\n❌ NETWORK ERROR: {e}")
         print(f"URL: {API_URL}")
-        print("\n💡 Check VPN connection to Greece")
+        print("\n💡 Check VPN connection to Greece or Cloudflare protection")
         print("\n🛑 Exiting due to network error...")
         sys.exit(1)
     except Exception as e:
