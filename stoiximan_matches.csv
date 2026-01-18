@@ -1,10 +1,27 @@
 Oddswar,Stoiximan,Confidence
-Bombada FC,Bombada,100.0
-Maguary,Maguary PE,100.0
-Club Atletico Saguntino,Atletico Saguntino,100.0
-Al-Thaid,Al-Tai,100.0
-Ceara SC U20,Ceara SC CE U20,100.0
-Mirassol U20,Mirassol SP U20,100.0
+Budafoki,Budafoki MTE,100.0
+Shabab Al Ahli Dubai FC U21,Shabab Al Ahli U21,100.0
+Al-Qadsia,Al-Qadsiah FC,100.0
+Itabirito FC,Itabirito MG,100.0
+Alcoyano,CD Alcoyano,100.0
+Terrassa,Terrassa FC,100.0
+Arnavutkoy Belediyesi GVS,Arnavutköy Belediye Spor,100.0
+Grand Ouest Association Lyo,Grand Ouest Association Lyonnaise FC,100.0
+Botafogo FR U20,Botafogo SP U20,100.0
+Celtic (W),Celtic FC (W),100.0
+CD Cuarte,CD Huarte,100.0
+Glasgow City (W),Glasgow City LFC (W),100.0
+Kabati Youth FC,Kabati Youth,100.0
+Nongbua Pitchaya FC,Nong Bua Pitchaya,100.0
+Palestino,Palestine,100.0
+Al-Ain U21,Al Ain U21,100.0
+Motherwell (W),Motherwell FC (W),100.0
+Al-Wasl U21,Al Wasl U21,100.0
+Gulf United U21,Gulf United FC U21,100.0
+Middlesbrough (W),Middlesbrough FC (W),100.0
+CF Esperanca d'Andorra,Esperanca D'Andorra,100.0
+Falcon FC,Falcons FC,100.0
+FC Ranger's,FC Rangers,100.0
 1 Dezembro,Su 1 Dezembro,100.0
 1860 Munich,TSV 1860 Munchen,100.0
 1926 Polatli Belediye Spor,Polatli Belediye Spor,100.0
@@ -40,8 +57,10 @@ AGF,Aarhus GF,100.0
 AL Dhaid U19,Al Dhaid U19,100.0
 AL Wakrah U23,Al Wakrah U23,100.0
 AL Wasl U19,Al Wasl U19,100.0
+AS Ariana,AS Ariana,100.0
 AS Camberene,AS Camberene,100.0
 AS Douanes Nouakchott,AS Douanes Nouakchott,100.0
+AS Khroub,AS Khroub,100.0
 AS Pikine,AS Pikine,100.0
 AS Roma (W),AS Roma (W),100.0
 AS Saint Priest,Saint Priest,100.0
@@ -70,6 +89,7 @@ Adana Demirspor,Adana Demirspor,100.0
 Adelaide United,Adelaide United,100.0
 Adelaide United (W),Adelaide United (W),100.0
 Admira Wacker,FC Admira Wacker Modling,100.0
+Afrique Football Elite,Afrique Football Elite,100.0
 Agsu,Difai Agsu,100.0
 Airdrieonians,Airdrieonians,100.0
 Airtel Kitara FC,Kitara FC,100.0
@@ -101,6 +121,7 @@ Al Madina Al Monawara SC,El Madina El Monowara,100.0
 Al Najma Club,Al-Najma (KSA),100.0
 Al Nasr U23,Al Nasr SC U23,100.0
 Al Nassr,Al Nasr SC Dubai,100.0
+Al Orooba U21,Al Orooba U21,100.0
 Al Oruba,Al Oruba,100.0
 Al Orubah,Al-Orobah FC,100.0
 Al Orubah U21,AL Orobah U21,100.0
@@ -116,6 +137,7 @@ Al Shabab,Al Shabab,100.0
 Al Shahaniya,Al Shahaniya,100.0
 Al Shahaniya U23,Al Shahaniya U23,100.0
 Al Shamal,Al Shamal,100.0
+Al Tadamun Buri,Al Tadamun Buri,100.0
 Al Tadhamon,AL Tadamon Sour,100.0
 Al Wahda (Abu Dhabi),Al Wahda (UAE),100.0
 Al-Adalh,Al-Adalah FC,100.0
@@ -148,6 +170,7 @@ Al-Sailiya U23,Al Sailiya U23,100.0
 Al-Shabab (KSA),Al-Shabab FC,100.0
 Al-Sharjah U21,Al Sharjah U21,100.0
 Al-Taawoun Buraidah,Al-Taawoun FC,100.0
+Al-Thaid,Al-Tai,100.0
 Al-Wehdat,Al-Wehda FC,100.0
 Alanyaspor,Alanyaspor,100.0
 Alaves,Deportivo Alaves,100.0
@@ -297,6 +320,7 @@ Beyoglu Yeni Carsi,Beyoglu Yeni Carsi FK,100.0
 Bhayangkara FC,Bhayangkara Solo FC,100.0
 Biesheim,Biesheim Asc,100.0
 Bihor Oradea,FC Bihor Oradea,100.0
+Binga FC,Binga FC,100.0
 Birkirkara,Birkirkara FC,100.0
 Birmingham,Birmingham,100.0
 Birmingham (W),Birmingham (W),100.0
@@ -316,6 +340,7 @@ Bolivar,Bolivar La Paz,100.0
 Bologna,Bologna FC,100.0
 Bolton,Bolton,100.0
 Boluspor,Boluspor,100.0
+Bombada FC,Bombada,100.0
 Borac Banja Luka,Borac Banja Luka,100.0
 Boreham Wood,Boreham Wood,100.0
 Boston Utd,Boston United,100.0
@@ -366,6 +391,7 @@ Burnley,Burnley FC,100.0
 Bursa Nilufer 2021 FK,Bursa Nilufer,100.0
 Bursaspor,Bursaspor,100.0
 Burton Albion,Burton Albion,100.0
+Busaiteen Club,Busaiteen Club,100.0
 Buxton,Buxton FC,100.0
 CA Assisense U20,Assisense U20,100.0
 CA Batna,CA Batna,100.0
@@ -376,6 +402,7 @@ CD Aguila,CD Anguiano,100.0
 CD Cacahuatique,CD Cacahuatique,100.0
 CD Castellon,CD Castellon,100.0
 CD Castellon II,CD Castellon II,100.0
+CD Ibiza Islas Pitiusas,CD Ibiza Islas Pitiusas,100.0
 CD Luis Angel Firpo,CD Luis Angel Firpo,100.0
 CD Marathon,CD Marathon,100.0
 CD Motagua,CD Motagua,100.0
@@ -432,6 +459,7 @@ Catanzaro,Catanzaro,100.0
 Cavalier,Cavalier FC,100.0
 Cavese 1919,Cairese 1919,100.0
 Ceahlaul,CSM Ceahlaul Piatra Neamt,100.0
+Ceara SC U20,Ceara SC CE U20,100.0
 Celta Vigo,RC Celta de Vigo,100.0
 Celta Vigo B,RC Celta de Vigo II,100.0
 Celtic,Celtic FC,100.0
@@ -471,6 +499,7 @@ Clermont,Clermont Foot,100.0
 Cliftonville,Cliftonville FC,100.0
 Clitheroe FC,Clitheroe FC,100.0
 Club Atletico Pantoja,Atletico Pantoja,100.0
+Club Atletico Saguntino,Atletico Saguntino,100.0
 Club Brugge,Club Brugge KV,100.0
 Club Brugge B,Club Brugge II,100.0
 Club Brugge U19,Club Brugge KV U19,100.0
@@ -601,6 +630,7 @@ Elche,Elche CF,100.0
 Eldense,CD Eldense,100.0
 Elgin City FC,Elgin City,100.0
 Elversberg,SV Elversberg,100.0
+Emirates Club U21,Emirates Club U21,100.0
 Emmen,FC Emmen,100.0
 Empoli,Empoli FC,100.0
 Enfield Town,Enfield Town,100.0
@@ -629,6 +659,7 @@ Etihad Al Ramtha,Ittihad Al Ramtha,100.0
 Etimesgut Belediyespor,Etimesgut Bld Spor,100.0
 Etoile Carouge,Etoile Carouge,100.0
 Eupen,KAS Eupen,100.0
+Europa FC,Europa FC,100.0
 Everton,Everton FC,100.0
 Everton (W),Everton FC (W),100.0
 Everton U21,Everton U21,100.0
@@ -668,6 +699,7 @@ FC Midtjylland U19,FC Midtjylland U19,100.0
 FC Noah,FC Noah,100.0
 FC Nordsjaelland,Nordsjaelland,100.0
 FC Nurnberg (W),FC Nurnberg (W),100.0
+FC Ordino,FC Ordino,100.0
 FC Osaka,FC Osaka,100.0
 FC Oss,TOP Oss,100.0
 FC Sabah,FC Sabah,100.0
@@ -720,6 +752,7 @@ Ferroviaria,Ferroviario,100.0
 Fethiyespor,Fethiyespor,100.0
 Feyenoord,Feyenoord Rotterdam,100.0
 Fiorentina,AC Fiorentina,100.0
+First Vienna Fc 1894,First Vienna FC 1894,100.0
 Fk Buducnost Podgorica,FK Buducnost Podgorica,100.0
 Fk Jedinstvo Bijelo Polje,Jedinstvo Bijelo Polje,100.0
 Fk Velez Mostar,FK Velez Mostar,100.0
@@ -848,6 +881,7 @@ Hereford FC,Hereford United,100.0
 Hermannstadt,AFC Hermannstadt,100.0
 Hertha Berlin,Hertha BSC Berlin,100.0
 Hibernian,Hibernian FC,100.0
+Hibernian (W),Hibernian (W),100.0
 Hibernian U19,Hibernian FC U19,100.0
 Hoffenheim,TSG 1899 Hoffenheim,100.0
 Hoffenheim (W),TSG 1899 Hoffenheim (W),100.0
@@ -930,6 +964,7 @@ Karaman Belediyespor,Karaman Belediyespor,100.0
 Karlsruhe,Karlsruher SC,100.0
 Karsiyaka,Karsiyaka,100.0
 Karvan Evlakh,FK Karvan,100.0
+Kasetsart FC,Kasetsart FC,100.0
 Kasimpasa,Kasimpasa SK,100.0
 Kastamonuspor,Kastamonuspor,100.0
 Katsina United,Katsina United FC,100.0
@@ -958,6 +993,7 @@ KuPS,Kuopion Palloseura,100.0
 Kuching FA,Kuching FA,100.0
 Kucukcekmece Sinop Spor,Kucukcekmece Sinopspor,100.0
 Kun Khalifat FC,Kun Khalifat FC,100.0
+Kwara United,Kwara United,100.0
 Kyoto Sangyo University,Kyoto Sangyo University,100.0
 LKP Motor Lublin,Motor Lublin,100.0
 LR Vicenza Virtus,LR Vicenza,100.0
@@ -1027,9 +1063,11 @@ Lyon,Olympique Lyonnais,100.0
 Lyon (W),Olympique Lyonnais (W),100.0
 MC Alger,MC Alger,100.0
 MC Oran,ASM Oran,100.0
+MC Saida,MC Saida,100.0
 MFK Karvina,MFK Karvina,100.0
 MFK Skalica,MFK Skalica,100.0
 MK Dons,MK Dons,100.0
+MO Constantine,MO Constantine,100.0
 MOIK Baku,Moik Baku,100.0
 MS Bnie Jaffa Ortodoxim,MS Bnei Jaffa Ortodoxim,100.0
 MSK Zilina U19,MSK Zilina U19,100.0
@@ -1048,6 +1086,7 @@ Maccabi Netanya,Maccabi Netanya,100.0
 Maccabi Petach Tikva,Maccabi Petah Tikva,100.0
 Maccabi Tel Aviv,Maccabi Tel Aviv,100.0
 Macclesfield,Macclesfield FC,100.0
+Maguary,Maguary PE,100.0
 Mahasarakham Sam Bai Tao FC,Mahasarakham Sam Bai Tao FC,100.0
 Maidenhead,Maidenhead United,100.0
 Maidstone Utd,Maidstone United,100.0
@@ -1097,7 +1136,9 @@ Middlesbrough,Middlesbrough FC,100.0
 Midtjylland,FC Midtjylland,100.0
 Millwall,Millwall FC,100.0
 Ming Chuan University,Ming Chuan University,100.0
+Ministry of Interior FA,Ministry of Interior FA,100.0
 Mirandes,CD Mirandes,100.0
+Mirassol U20,Mirassol SP U20,100.0
 Misr El Makasa,Misr Lel Makasa,100.0
 Mlada Boleslav,FK Mlada Boleslav,100.0
 Mladost Lucani,FK Mladost Lucani,100.0
@@ -1153,6 +1194,7 @@ Newcastle Utd (W),Newcastle United (W),100.0
 Newport City,Newport City FC,100.0
 Newport County,Newport County,100.0
 Newton Aycliffe,Newton Aycliffe,100.0
+Neza FC,Neza FC,100.0
 Nice,OGC Nice,100.0
 Niger Tornadoes,Niger Tornadoes FC,100.0
 Nigeria,Nigeria,100.0
@@ -1218,6 +1260,7 @@ Paris St-G (W),Paris Saint-Germain (W),100.0
 Paris St-G U19,Paris Saint-Germain U19,100.0
 Parma,Parma Calcio 1913,100.0
 Partick,Partick Thistle,100.0
+Partick Thistle (W),Partick Thistle (W),100.0
 Partizan Belgrade,FK Partizan Belgrade,100.0
 Patro Eisden Maasmechelen,Patro Eisden Maasmechelen,100.0
 Pattani FC,Pattani,100.0
@@ -1363,6 +1406,7 @@ SC Telstar,SC Telstar,100.0
 SC Uniao Torreense U23,SCU Torreense U23,100.0
 SC Villa,SC Villa,100.0
 SCR Altach,SCR Altach,100.0
+SD Deusto,SD Deusto,100.0
 SD Juazeirense,SD Juazeirense BA,100.0
 SG Essen-Schonebeck (W),SG Essen-Schonebeck (W),100.0
 SKU Amstetten,SKU Amstetten,100.0
@@ -1517,6 +1561,7 @@ Sunderland,Sunderland,100.0
 Sunderland (W),Sunderland AFC (W),100.0
 Sutton Utd,Sutton United,100.0
 Suvermez Kapadokya Spor,Suvermez Kapadokya Spor,100.0
+Svay Rieng FC,Svay Rieng FC,100.0
 Swansea,Swansea City,100.0
 Swansea U21,Swansea City U21,100.0
 Swedru All Blacks FC,Swedru All Blacks,100.0
@@ -1535,6 +1580,7 @@ Tampines Rovers,Tampines Rovers FC,100.0
 Tampines Rovers II,Tampines Rovers FC II,100.0
 Tamworth FC,Tamworth FC,100.0
 Tanzania,Tanzania,100.0
+Tapachula Soconusco FC,Tapachula Soconusco FC,100.0
 Tarxien Rainbows FC,Tarxien Rainbows,100.0
 Tatran Presov,1. FC Tatran Presov,100.0
 Team Altamura,ASD Team Altamura,100.0
@@ -1580,8 +1626,11 @@ Turk Metal 1963,Turk Metal Kirikkale,100.0
 Twente (W),FC Twente Enschede (W),100.0
 UAE,United Arab Emirates,100.0
 UD Alzira,UD Alzira,100.0
+UD Barbastro,UD Barbastro,100.0
 UD Poblense,UD Poblense,100.0
 UD Samano,UD Samano,100.0
+UD Torre del Mar,UD Torre Del Mar,100.0
+UE Porreres,UE Porreres,100.0
 UE Santa Coloma,UE Santa Coloma,100.0
 UNIVERSIDAD O&M,Universidad O&M,100.0
 UPDF FC,UPDF FC,100.0
@@ -1713,11 +1762,10 @@ Zonguldakspor,Zonguldak Komurspor,100.0
 Zrinjski,Zrinjski Mostar,100.0
 Zulte-Waregem,SV Zulte Waregem,100.0
 Zurrieq,Zurrieq,100.0
-Botafogo FR U20,,
 Al Msnaa,,
-Atlas U21,,
-Barra FC,,
+Al Sharjah,,
 Club Atletico La Paz,,
+Deportivo Gomerano,,
 FC Atlas (W),,
 FK Qabala,,
 KR Reykjavik,,
@@ -1737,40 +1785,54 @@ United FC,,
 Ajman U23,,
 Al Jahra,,
 FC Masar,,
-Mus Spor,,
+Mus Spor,Usak Spor,
 Marica RJ U20,,
 Nzoia United FC,,
 Al Feiha U21,,
+Mo Bejaia,,
 Carlton Town,,
 Apr FC,,
 Dewa United FC,,
 Mahar United FC,,
 Shan United,,
+Barra FC,,
 Colima FC,,
 Oeste,,
 Internacional,,
 1461 Trabzon,,
 3 Sing FC,,
+A.D. Cofutpa,,
 A.S. Gosier,,
 AA Portuguesa S U20,,
 AA Portuguesa U20,,
+AD Aserri,,
+AD Cariari Pococi,,
 AD Centro Olimpico U20 (W),,
 AD Iguatu,,
+AD Isidro Metapan,,
+AD Jequie,,
+AD Sarchi,,
+ADJG Jaguar,,
 AFC Amsterdam,,
 AFC Sudbury,,
 AL Taawon Buraidah U21,,
 AS Dakar SC,,
+AS Gabes,,
 AS Monaco U21,,
 AS Pompier,,
+AS Solimane,,
 ASC Walidaan,,
 ASM Oran,,
+Aarhus Fremad,,
 Abha,,
 Academica Vitoria,,
 Acatlan,,
 Ad San Carlos,,
+Adama Kenema fc,,
 Adhyaksa FC,,
 Agua Santa,,
 Agua Santa U20,,
+Aguacatan FC,,
 Aguia de Maraba FC U20,,
 Aguilas Doradas,,
 Akor FC Jombang,,
@@ -1800,14 +1862,16 @@ Al Najma (BRN),,
 Al Nasar (KUW),,
 Al Nasr (UAE),,
 Al Nasr SC U19,,
+Al Njoom,,
 Al Rams U19,,
 Al Ramtha,,
 Al Rayyan Ar Rawdah,,
 Al Safa,,
 Al Sahel,,
+Al Salibikhaet,,
 Al Salmiyah,,
 Al Saqr,,
-Al Sharjah,,
+Al Shamiya,,
 Al Taee,,
 Al Wahda Abu Dhabi U19,,
 Al Wakrah U23,,
@@ -1819,24 +1883,26 @@ Al-Duhail SC U23,,
 Al-Feiha,,
 Al-Fujairah FC,,
 Al-Ittihad (BRN),,
+Al-Jazira (Kuwait),,
 Al-Jazira Club U21,,
 Al-Khaleej Khor Fakkan,,
 Al-Khaleej Saihat,,
 Al-Lewaa,,
 Al-Nasr,,
 Al-Nojoom,,
-Al-Qadsia,,
 Al-Quadisiya (KSA),,
 Al-Rustaq,,
 Al-Sadd,,
 Al-Saqer FC,,
 Al-Shabab,,
 Al-Shabbab (BRN),,
+Al-Shoulla Al-Kharj,,
 Al-Ula FC,,
 Al-Wahda (KSA),,
 Al-Wakra,,
 Al-Washm,,
 Al-Zulfi SC,,
+Alacranes de Durango,,
 Alagoinhas AC,,
 Alagoinhas BA U20,,
 Alagoinhas U20,,
@@ -1844,6 +1910,8 @@ Albion FC,,
 Alcorcon,,
 Aldosivi,,
 Alebrijes De Oaxaca,,
+Alianza FC (Pan),,
+Alianza FC Panama,,
 Alianza FC Valledupar,,
 Altay,,
 Amed Sportif Faaliyetle,,
@@ -1852,19 +1920,26 @@ America de Cali S.A,,
 Ammanford AFC,,
 Anderlecht (Res),,
 Andraus Brasil,,
+Andrezieux Boutheon,,
 Anstey Nomads,,
+Arabe Unido,,
+Arabe Unido (Res),,
 Arema Cronus,,
 Argentinos Juniors,,
 Arsenal U21,,
+Artesanos Metepec F.C.,,
 Aston Villa U21,,
 Atalanta B,,
+Ateneo Blue Eagles,,
 Athletic Club,,
 Athletic Club MG U20,,
 Atl Tucuman,,
 Atlante,,
 Atlas,,
+Atlas U21,,
 Atletico Bucaramanga,,
 Atletico Hidalgo,,
+Atletico Independiente,,
 Atletico MG U20,,
 Atletico PI U20,,
 Atletico Paranaense U20,,
@@ -1873,6 +1948,7 @@ Atletico San Luis (W),,
 Auchinleck Talbot,,
 Audax U20,,
 Avai,,
+Avenir S Marsa,,
 Avranches,,
 Ayeyawady United,,
 Azuriz FC,,
@@ -1904,6 +1980,7 @@ Bench Maji Bunna,,
 Benfica B,,
 Benfica U21,,
 Benfica U23,,
+Beni Oualbane,,
 Beroe Stara Za,,
 Betim Futebol,,
 Betis B,,
@@ -1912,21 +1989,30 @@ Biggleswade FC,,
 Bihar,,
 Bishops Stortford,,
 Blackburn U21,,
+Blackrock College AFC,,
 Boavista RJ,,
+Bobigny AC,,
 Boca Juniors,,
+Boeung Ket,,
 Bolivia,,
 Boston River,,
 Botafogo SP,,
 Botafogo SP U20,,
+Bournemouth (W),,
 Boyaca Chico,,
+Brentford U21,,
 Brothers Union,,
 Brunei DPMM FC,,
 Bunga Raya FC,,
+Burgan SC,,
 Burgos B,,
+Burnley (W),,
 Burnley U21,,
 Bursa Yildirim Spor,,
 Bylis Ballsh,,
+CA Bizertin,,
 CA Carlos Renaux,,
+CA Huracan,,
 CA Independiente,,
 CA Ituzaingo,,
 CA Juventus,,
@@ -1935,21 +2021,31 @@ CA Linense,,
 CA Penarol de Parana,,
 CA Union de Crespo,,
 CA Votuporanguense U20,,
+CD Fas,,
 CD Gualberto Villarroel,,
+CD Municipal Limeno,,
 CD Nacional Funchal,,
 CD Pioneros de Cancun,,
 CD Tepatitlan De Morelos,,
+CD Universitario,,
+CDJ Tamarite,,
 CEFAT Tirol,,
 CF America,,
 CF America (W),,
 CF Bihorul Beius,,
+CR Beni Thour,,
+CS Herediano,,
+CSD Sacachispas,,
 Caen,,
 Cafe Sidama,,
+Cafetaleros de Chiapas,,
+Caja Oblatos C.FD,,
 Calor de San Pedro,,
 Calvary FC,,
 Camelon Juniors,,
 Canaa Esporte Clube U20,,
 Cancun FC,,
+Canoneros Marina,,
 Capivariano SP,,
 Carajas EC U20,,
 Cardiff City U21,,
@@ -1968,19 +2064,26 @@ Cerro Porteno,,
 Chainat Hornbill,,
 Charleroi,,
 Chaves,,
+Chelghoum Laid,,
 Chelsea U21,,
 Chesterfield (Res),,
 Chilpancingo,,
+Chimaltenango FC,,
+Chorrillo FC,,
 Cimarrones De Sonora,,
 Citizen AA,,
 City FC,,
+Club Africain,,
 Club Atletico Morelia,,
 Club CDM,,
+Club Deportivo Ayense,,
 Club Leon FC (W),,
 Club Necaxa (W),,
+Club Olimpia,,
 Club Sporting Canamy,,
 Club Tijuana (W),,
 Coleraine (Res),,
+Colo Colo,,
 Comercial FC Tiete U20,,
 Comercial FC U20,,
 Concordia CA,,
@@ -1995,6 +2098,7 @@ Corlu 1947 Spor,,
 Cormontreuil,,
 Correcaminos (Premier),,
 Correcaminos UAT,,
+Courts Young Lions,,
 Criciuma U20,,
 Croix Iris Club,,
 Cruz Azul (W),,
@@ -2002,6 +2106,7 @@ Crystal Palace U21,,
 Cs Cartagines,,
 Cs Herediano,,
 Cuiaba EC U20,,
+DLS Green Archers,,
 Dagon FC,,
 Dagon Port FC,,
 Danubio,,
@@ -2010,15 +2115,22 @@ De Treffers,,
 Defensa y Justicia,,
 Defensor Sporting,,
 Democrata GV,,
+Deportes Concepcion,,
+Deportiva Venados,,
 Deportivo,,
+Deportivo Alaves C,,
 Deportivo Cali,,
+Deportivo Coatepeque,,
 Deportivo Irapuato FC,,
 Deportivo Maldonado,,
 Deportivo Mictlan,,
+Deportivo Nueva Concepcion,,
 Deportivo Pasto,,
 Deportivo Pereira,,
 Deportivo Riestra,,
+Deportivo San Pedro,,
 Deportivo Toluca U21,,
+Deportivo Upala,,
 Derby (Res),,
 Derby U21,,
 Dibba Al-Hisn,,
@@ -2026,6 +2138,8 @@ Dieppe,,
 Dinamo Tirana,,
 Dire Dawa Kima FC,,
 Diyarbekirspor,,
+Dodoma FC,,
+Don Bosco Garelli,,
 Dong Nai U19,,
 Dorados,,
 Dragones Toluca,,
@@ -2033,21 +2147,27 @@ EC Noroeste U20,,
 EC Santo Andre U20,,
 EC Sao Jose Porto Alegre,,
 EC Vitoria Salvador,,
+ES Metlaoui,,
 East Riffa,,
 Edirnespor,,
 Egnatia Rrogozhine,,
+Eik-Tonsberg,,
 El Mansurah,,
 El Qusiya SC,,
+El Seka Elhadeed,,
 Emirates Club,,
 Ensenada FC,,
 Erokspor A.S,,
 Erzincanspor,,
 Esan Pattaya,,
+Espanyol B,,
 Esporte Clube Avenida,,
 Esporte Clube Primavera,,
 Esporte Clube de Patos,,
 Estudiantes Rio Cuarto,,
+Estudiantes de Caseros,,
 Ethiopian Coffee,,
+Etoile Sportive Sahel,,
 Exeter City U21,,
 F.C. Racing,,
 FC Eagles,,
@@ -2055,17 +2175,22 @@ FC Fastav Zlin B,,
 FC Juarez,,
 FC Juarez (W),,
 FC Liege,,
+FC Marchfeld Donauauen,,
 FC Midland,,
 FC Odishi 1919,,
 FC Real Koyari,,
+FCM TQS Traiskirchen,,
 FK Mladost Donja Gorica,,
 FK Spartak,,
 FK Vora,,
 Famalicao U23,,
 Fasil Kenema,,
 Fatsa Belediyespor,,
+Favoritner AC,,
 Ferroviaria DE U20,,
+Ferroviario,,
 Ferroviario CE U20,,
+Feu Tamaraws,,
 Figueirense,,
 Figueirense U20,,
 Fiorentina U20,,
@@ -2081,6 +2206,10 @@ Fortune Sacco,,
 Foz Do Iguacu,,
 Fram,,
 Francana U20,,
+Fredericia,,
+Frejus St-Raphael,,
+Fuerte San Francisco,,
+Fulham U21,,
 Fylkir,,
 GDL FC,,
 Galicia EC,,
@@ -2089,11 +2218,13 @@ Garudayaksa FC,,
 Gavilanes Matamoros,,
 Genemuiden,,
 Genoa U20,,
+Geylang International,,
 Geylang International II,,
 Ghazl El Mahallah,,
 Gil Vicente U23,,
 Glenavon (Res),,
 Goias U20,,
+Golden Arrows,,
 Green Eagles,,
 Gremio,,
 Gremio Desportivo Sao-Carl,,
@@ -2101,12 +2232,14 @@ Gremio FBPA U20,,
 Gremio Novorizontino U20,,
 Gremio Prudente,,
 Gremio U20 (W),,
+Grenada,,
 Guadalajara (W),,
 Guadalupe F.C,,
 Guarani,,
 Guarani (Par),,
 Guarany de Bage,,
 Gulf United,,
+HB Koge,,
 HK Rangers U22,,
 HOEK,,
 Hadiah Hosanna FC,,
@@ -2125,16 +2258,23 @@ Hearts,,
 Hearts B,,
 Hellas Verona U20,,
 Hercules CF II,,
+Heroes de Zaci FC,,
+Herrera FC,,
 Hiroshima Regina (W),,
 Hoang Anh Gia Lai,,
 Hobro,,
 Hoi King SA,,
 Hong Kong FC,,
 Hoogeveen,,
+Horizonte,,
+Hougang Utd,,
+Hradec Kralove B,,
 Huddersfield Town U21,,
 Hull City U21,,
 Hungerford,,
 Huracan,,
+IB Khemis El Khechna,,
+ISI Dangkor Senchey FC,,
 Ibiza Eivissa,,
 Ibrachina FC U20,,
 Imigresen FC,,
@@ -2147,20 +2287,30 @@ Inter Limeira,,
 Inter Limeira U20,,
 Inter Milan (Res),,
 Inter Playa Del Carmen,,
+Inter San Carlos,,
 Inter de Santa Maria,,
+Internacional U20,,
+Ipswich (W),,
 Ipswich Town U21,,
+Isa Town FC,,
 Iskenderunspor,,
 Ispe FC,,
-Itabirito FC,,
+Itabaiana,,
 Italy U19,,
+Itaqua Athletico Clube U20,,
 Ituano,,
 Ituano FC U20,,
+JS Bordj Menaiel,,
+JS Omrane,,
+JSD Jijel,,
 Jaguares de Cordoba,,
+Jamaica,,
 Japan U23,,
 Jerash SC,,
 Joinville,,
 Jong Ajax Amsterdam,,
 Junior FC Barranquilla,,
+Juventud Copalera,,
 Juventude,,
 Juventude U20,,
 Juventus B,,
@@ -2171,22 +2321,29 @@ KSV 1919,,
 KaPa,,
 Kaedi FC,,
 Kahraba Ismailia,,
+Kairouan,,
+Kaizer Chiefs,,
+Kalaa Sport,,
 Kalba U23,,
 Kampala City Council,,
 Kanchanaburi Power,,
 Kano Pillars FC,,
 Karabuk Idmanyurdu,,
 Karakopru Belediyespor,,
+Karcagi SE,,
 Kazma SC,,
 Kelantan Red Warrior FC,,
 Kelantan United,,
 Khonkaen,,
 Kilis Bld.Spor,,
 Kingstonian,,
+Kirivong Sok Sen Chey,,
 Kirklarelispor,,
 Kirsehir Belediyespor,,
+Kolding IF,,
 Korabi Peshkopi,,
 Korona Kielce,,
+Kremser SC,,
 Kuala Lumpur,,
 Kuwait SC,,
 Kwun Tong,,
@@ -2194,6 +2351,7 @@ Kyrgyzstan U23,,
 LD Alajuelense,,
 LDU,,
 La Equidad,,
+La Serena,,
 Lanus,,
 Lazio U20,,
 Leatherhead FC,,
@@ -2206,21 +2364,26 @@ Leon,,
 Leones Negros Udg II,,
 Leyton Orient U21,,
 Libertad,,
+Life FC SihanoukVille,,
 Linfield (Res),,
 Lion City Sailors II,,
 Liverpool Montevideo,,
+Liverpool U21,,
 Livorno,,
 Llaneros FC,,
 Lobos ULMX,,
 Lommel,,
+London Bees (W),,
 London City Lionesses,,
 Londrina,,
 Lopburi City FC,,
 Lucky Mile,,
 Lugazi FC,,
+Lyn,,
 Lyon Duchere,,
 MB Rouissat,,
 MC El Bayadh,,
+MFK Chrudim,,
 MFk Skalica,,
 MK Kfar Saba 1928,,
 MS Kfar Kasem,,
@@ -2229,8 +2392,11 @@ Macara,,
 Madura Utd,,
 Madureira,,
 Mafra,,
+Maharlika Manila FC,,
 Majd FC,,
 Malkiya,,
+Malzenice,,
+Mamelodi Sundowns,,
 Man City U21,,
 Man Utd U21,,
 Manama Club,,
@@ -2246,6 +2412,8 @@ Mebrat Hayl,,
 Meia Noite U20,,
 Mekelle 70 Enderta,,
 Melaka FC,,
+Mendiola FC,,
+Mezokovesd-Zsory,,
 Middlesbrough U21,,
 Migori (Res),,
 Millonarios,,
@@ -2261,14 +2429,22 @@ Monte Roraima U20,,
 Monterrey,,
 Monterrey (W),,
 Mosta,,
+Motril CF,,
+Msp Batna,,
 Municipal Perez Zeledon,,
+Municipal Santa Ana,,
 Mwatate,,
+NC Magra,,
 NEC FC,,
+NK Brinje Grosuplje,,
 NK Maribor,,
 NK Radomlje,,
+NRB Teleghma,,
 Nacional (Uru),,
 Nacional FC AM U20,,
 Nacional SP U20,,
+Naestved,,
+Nagaworld FC,,
 Napoli U20,,
 Napsa Stars,,
 Nautico PE,,
@@ -2285,11 +2461,16 @@ North District U22,,
 North Esporte Clube,,
 Norwich U21,,
 Nottingham Forest U21,,
+Nova Iguacu,,
 Novorizontino,,
+Nublense,,
+OHiggins,,
 OLS,,
+Oeste FC,,
 Olimpia,,
 Olimpico Itabaianinha U20,,
 Oliveirense,,
+Olot,,
 Olympiakos,,
 Olympic Charleroi,,
 Olympic El Qanal,,
@@ -2297,8 +2478,11 @@ Olympique Akbou,,
 Once Caldas,,
 Operario Ferroviario EC U20,,
 Operario PR,,
+Orbit College FC,,
 Orense Sporting Club,,
+Oxford United (W),,
 PDRM,,
+PS Barito Putera,,
 PS Hizbul Wathan,,
 PSBS Biak Numfor,,
 PSDS Deli Serdang,,
@@ -2313,15 +2497,18 @@ Pachuca,,
 Pachuca (W),,
 Paks,,
 Palmeiras U20,,
+Panama City FC,,
 Paulinia FC U20,,
 Pekanbaru FC,,
 Penafiel,,
 Penarol,,
+Perak,,
 Perigny,,
 Persebata Lembata,,
 Persebaya Surabaya,,
 Perseden Denpasar,,
 Persedikab Kediri,,
+Persekat Kabupaten Tegal,,
 Persema Malang,,
 Persenga Nganjuk,,
 Persepon Ponorogo,,
@@ -2333,6 +2520,7 @@ Persibo Bojonegoro,,
 Persida Sidoarjo,,
 Persijap Jepara,,
 Persik Kediri,,
+Persikad Depok,,
 Persikota Tangerang,,
 Persiku Kudus,,
 Persikutim United,,
@@ -2347,13 +2535,17 @@ Persitara Jakarta Utara,,
 Peru,,
 Peterborough United U21,,
 Pharco FC,,
+Philippine Army FC,,
+Phnom Penh,,
 Platense FC,,
+Plaza Amador,,
 Plymouth Parkway,,
 Ponte Preta,,
 Ponte Preta U20,,
 Pontedera,,
 Portadown (Res),,
 Porto B,,
+Porto Sport Club,,
 Portuguesa SP,,
 Potiguar,,
 Pouso Alegre,,
@@ -2373,12 +2565,14 @@ Pumas UNAM,,
 Pumas UNAM (W),,
 Puntarenas F.C.,,
 Pusamania Borneo FC,,
+Pusta Polom,,
 Qatar SC,,
 Queens Park Rangers U21,,
 Queens University,,
 Queretaro,,
 Queretaro (W),,
 Queretaro U21,,
+Quiche FC,,
 Quixada FC,,
 RANS Nusantara FC,,
 RB Leipzig U21,,
@@ -2387,7 +2581,10 @@ Racing Club (Uru),,
 Racing FC Porto Palmeiras,,
 Railways FC,,
 Rakhine Utd,,
+Rangers LFC (W),,
 Raon l'Etape,,
+Rapid Vienna (Am),,
+Raya Sporting FC,,
 Real Brasilia FC U20,,
 Real Murcia,,
 Reboceros De La Piedad,,
@@ -2398,6 +2595,8 @@ Remo,,
 Resources Capital FC,,
 Retro FC Brasil,,
 Retro U20,,
+Reus FC Reddis,,
+Richards Bay FC,,
 Rio Branco ES Youth,,
 River Plate,,
 Roma U20,,
@@ -2407,18 +2606,29 @@ Runcorn Linnets FC,,
 SA Merignac,,
 SC Internacional PA U20 (W),,
 SC Kiyovu,,
+SC Weiz,,
+SC Wiener Neustadt,,
 SE Palmeiras,,
 SER Caxias do Sul,,
+SK Sturm Graz II,,
 SKN St. Polten (W),,
 SSV Ulm,,
 SV Caiquetio,,
 SV Deportivo Nacional,,
+SV Donau,,
 SV Estrella,,
+SV Lafnitz,,
+SV Lebring,,
+SV Leobendorf,,
+SV Schwechat,,
+SV Tillmitsch,,
 Sabah FA,,
+Sampaio Correa FE RJ,,
 Samut Sakhon City FC,,
 Samut Songkhram City,,
 San Juan FC,,
 San Lorenzo,,
+Sandefjord,,
 Sang Maestro,,
 Sanliurfaspor,,
 Santa Fe,,
@@ -2438,6 +2648,7 @@ Sassari Torres,,
 Sassuolo U20,,
 Satun United FC,,
 Sderot FC,,
+Sekhukhune United,,
 Semen Padang,,
 Seraing Utd,,
 Sertaozinho,,
@@ -2455,12 +2666,15 @@ Silifke Belediye Spor,,
 Singida Black Stars SC,,
 Siracusa,,
 Sitra,,
+Siwelele FC,,
+Skive,,
 Sociedad B,,
 Soke 1970 Spor Kulubu,,
 Somaspor Spor Kulubu,,
 Sonderjyske,,
 South China,,
 South Korea U23,,
+Southampton (W),,
 Southampton U21,,
 Spain U19,,
 Sport Club do Recife U20,,
@@ -2469,13 +2683,20 @@ Sporting Braga U23,,
 Sporting CP U21,,
 Sporting Lisbon B,,
 Sporting Lisbon U23,,
+Sporting San Miguelito,,
+Sportive De Tunis,,
 Sportlust 46,,
+Sporty FC,,
+Sriwijaya,,
 St Andrew Lions,,
 St. Patrick F.C.,,
+St.Anna,,
 Stamford,,
+Stellenbosch FC,,
 Steve Biko FC,,
 Stockport County U21,,
 Stoke U21,,
+Suchitepequez,,
 Suhul Shire,,
 Sumset United,,
 Sunderland U21,,
@@ -2489,18 +2710,22 @@ Taiwan Steel,,
 Talavera CF,,
 Talleres,,
 Tampico Madero,,
+Tanjong Pagar United,,
 Tanjong Pagar United II,,
 Tanta,,
 Tapatio,,
 Tatung FC,,
 Taubate,,
 Taubate U20,,
+Tauro FC,,
 Tecos FC,,
 Tel Bani Swaif,,
 Terengganu,,
 Terminix Rangers,,
 The New Saints,,
+Thisted,,
 Thitsar Arman FC,,
+Tiffy Army FC,,
 Tigre,,
 Tigres (W),,
 Tigres de Alica FC,,
@@ -2515,17 +2740,25 @@ Torino U20,,
 Torquay,,
 Torque,,
 Torrent CF,,
+Tottenham U21,,
 Tractor Sazi FC,,
 Trat,,
 Trefelin,,
 Trethomas Bluebirds AFC,,
 Trindade AC U20,,
 Tritones Vallarta MFC,,
+Tromso,,
+Tuloy FC,,
 Tung Sing,,
+Tuwaiq,,
+UE Sant Andreu,,
 UM das Cruzes U20,,
+UMECIT,,
 URT,,
+US Biskra,,
 US Lusitanos Saint Maur,,
 USM El Harrach,,
+USV Halbturn,,
 Uberlandia MG,,
 Udon Banjan United,,
 Umm-Salal U23,,
@@ -2533,18 +2766,26 @@ Uniao EC Rondonopolis (Res),,
 Union Santa Fe,,
 Univ Catolica (Chile),,
 Universidad Guadalajara,,
+Universidad de Chile,,
+Up Fighting Maroons,,
+Uruguay de Coronado,,
+Usm Annaba,,
 Uzbekistan U23,,
+Valencia-Mestalla,,
 Velez Mostar,,
 Velez Sarsfield,,
 Velo Clube Rioclarense U20,,
 Venados FC,,
 Vendee Les Herbiers,,
+Veraguas FC,,
 VfL Osnabruck,,
 Vietnam U23,,
 Vikingur Reykjavik,,
 Vila Nova U20,,
 Villarreal CF III,,
 Villefranche Beaujolais,,
+Visakha FC,,
+Vitkovice,,
 Vizela U23,,
 Volta Redonda,,
 Votuporanguense,,
@@ -2558,6 +2799,8 @@ Welwalo Adigrat University,,
 Werder Bremen (W),,
 West Brom U21,,
 West Ham U21,,
+Western Sydney (W),,
+Western Sydney Wanderers (,,
 Western Sydney Wanderers (W),,
 Wigan Athletic U21,,
 Wolves U21,,
@@ -2569,6 +2812,7 @@ Yangon United,,
 Yeka Kifle Ketema,,
 Ypiranga RS,,
 Yuen Long,,
+Zacatecoluca FC,,
 Zanaco FC,,
 Zaqatala,,
 Zitacuaro CF,,
