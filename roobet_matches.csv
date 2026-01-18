@@ -1,9 +1,6 @@
 Oddswar,Roobet,Confidence
-Pro Vercelli,Pro Vercelli 1892,100.0
-Casertana,Casertana FC,100.0
-Albinoleffe,US Albinoleffe,100.0
-Once Caldas,CD Once Caldas,100.0
-Rosario Central,CA Rosario Central,100.0
+Budafoki,Budafoki Mte,100.0
+Vitkovice,MFK Vitkovice,100.0
 A.D. Cofutpa,AD Cofutpa,100.0
 A.S. Gosier,AS Gosier,100.0
 AC Bra,AC Bra,100.0
@@ -102,6 +99,7 @@ Alagoinhas AC,Alagoinhas AC BA,100.0
 Alanyaspor,Aytemiz Alanyaspor,100.0
 Alaves,Alaves,100.0
 Albacete,Albacete Balompie,100.0
+Albinoleffe,US Albinoleffe,100.0
 Albion FC,Albion FC,100.0
 Alcoyano,Alcoyano,100.0
 Aldershot,Aldershot Town FC,100.0
@@ -262,6 +260,7 @@ Cardiff Metropolitan,Cardiff Metropolitan University FC,100.0
 Carlisle,Carlisle United,100.0
 Carrarese,Carrarese Calcio,100.0
 Carrick Rangers,Carrick Rangers,100.0
+Casertana,Casertana FC,100.0
 Catanzaro,US Catanzaro,100.0
 Cavese 1919,Cavese 1919,100.0
 Celta Vigo,Celta Vigo,100.0
@@ -731,6 +730,7 @@ Municipal Santa Ana,AD Municipal Santa Ana,100.0
 NAC Breda,NAC Breda,100.0
 NC Magra,Nc Magra,100.0
 NEC Nijmegen,NEC Nijmegen,100.0
+NK Brinje Grosuplje,NK Brinje Grosuplje,100.0
 NK Celje,NK Celje,100.0
 NK Istra,NK Istra 1961,100.0
 NK Maribor,NK Maribor,100.0
@@ -768,6 +768,7 @@ OHiggins,CD O´Higgins,100.0
 Oliveirense,UD Oliveirense,100.0
 Olympique Akbou,Olympique Akbou,100.0
 Oman FC,Oman Club,100.0
+Once Caldas,CD Once Caldas,100.0
 Orbit College FC,Orbit College FC,100.0
 Orleans,US Orleans,100.0
 Osasuna,CA Osasuna,100.0
@@ -834,11 +835,13 @@ Portuguesa RJ,AA Portuguesa RJ,100.0
 Pouso Alegre,Pouso Alegre MG,100.0
 Preussen Munster,SC Preussen 06 Munster,100.0
 Prime Bangkok,Prime Bangkok FC,100.0
+Pro Vercelli,Pro Vercelli 1892,100.0
 Progreso,CA Progreso,100.0
 Psim Yogyakarta,Psim Yogyakarta,100.0
 Pumas UNAM,Pumas UNAM,100.0
 Puntarenas F.C.,Puntarenas FC,100.0
 Puskas Akademia,Puskas Akademia FC Felcsut,100.0
+Pusta Polom,Pusta Polom,100.0
 Qarabag FK,Qarabag FK,100.0
 Qatar,Qatar,100.0
 Qatar SC,Qatar SC,100.0
@@ -881,6 +884,7 @@ Rizespor,Caykur Rizespor,100.0
 Rochdale,Rochdale AFC,100.0
 Roda JC,Roda JC Kerkrade,100.0
 Roma,AC Roma,100.0
+Rosario Central,CA Rosario Central,100.0
 Ruzomberok,MFK Ruzomberok,100.0
 S.S.D. Casarano Calcio,S.S.D. Casarano Calcio,100.0
 SA Merignac,SA Merignac,100.0
@@ -1060,6 +1064,7 @@ Union Santa Fe,Union de Santa Fe,100.0
 Union St Gilloise,Union Saint-Gilloise,100.0
 Unirea Slobozia,FC Unirea 2004 Slobozia,100.0
 Univ Catolica (Ecu),CD Universidad Catolica del Ecuador,100.0
+Universidad de Chile,Universidad de Chile,100.0
 Universitatea Cluj,FC Universitatea Cluj,100.0
 Universitatea Craiova,CS Universitatea Craiova,100.0
 Uruguay,Uruguay,100.0
@@ -1200,6 +1205,7 @@ Academia de Balompie Boliviano,,
 Academica Vitoria,,
 Academico de Viseu U23,,
 Acatlan,,
+Adama Kenema fc,,
 Adana 1954 FK,,
 Adelaide United (W),,
 Adhyaksa FC,,
@@ -1466,6 +1472,7 @@ Botafogo FR U20,,
 Botafogo SP U20,,
 Botev Vratsa,,
 Bourg-en-Bresse,,
+Bournemouth (W),,
 Bournemouth U21,,
 Bregenz,,
 Brentford U21,,
@@ -1554,6 +1561,7 @@ Caerau Ely,,
 Cafe Sidama,,
 Cafetaleros de Chiapas,,
 Cagliari U20,,
+Caja Oblatos C.FD,,
 Calcio Avellino SSD,,
 Caledonia AIA,,
 Calor de San Pedro,,
@@ -2028,6 +2036,7 @@ KS Skenderbeu Korce,,
 KS Teuta Durres,,
 KSV 1919,,
 KaPa,,
+Kabati Youth FC,,
 Kaedi FC,,
 Kahramanmaras Istiklal Spor,,
 Kahramanmarasspor,,
@@ -2126,6 +2135,7 @@ Lugazi FC,,
 Lugo,,
 Luton,,
 Luverdense U20,,
+Lyn,,
 Lyon,,
 Lyon (W),,
 MFk Skalica,,
@@ -2679,6 +2689,7 @@ Trethomas Bluebirds AFC,,
 Triestina,,
 Trindade AC U20,,
 Tritones Vallarta MFC,,
+Tromso,,
 Tuna Luso U20,,
 Tung Sing,,
 Turk Metal 1963,,
