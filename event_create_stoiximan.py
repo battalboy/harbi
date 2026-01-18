@@ -6,7 +6,8 @@ Can fetch live data directly from API or parse from JSON file
 
 import json
 import sys
-import requests
+import cloudscraper
+import requests  # Keep for exception handling
 import platform
 import error_handler
 
@@ -38,7 +39,9 @@ def fetch_stoiximan_data():
         }
     
     print("Fetching live data from Stoiximan API...", flush=True)
-    response = requests.get(api_url, params=params, headers=headers, timeout=15, proxies=proxies)
+    # Use cloudscraper to bypass Cloudflare protection
+    scraper = cloudscraper.create_scraper()
+    response = scraper.get(api_url, params=params, headers=headers, timeout=30, proxies=proxies)
     
     # Raise HTTPError for bad status codes
     response.raise_for_status()
