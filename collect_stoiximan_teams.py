@@ -17,6 +17,7 @@ import time
 import random
 import signal
 import sys
+import platform
 from typing import Set
 from datetime import datetime
 
@@ -36,6 +37,19 @@ HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
     'Accept': 'application/json'
 }
+
+# Proxy configuration (only used on Linux remote server)
+def get_proxies():
+    """Return proxy configuration if on Linux (remote server), None if macOS (local)."""
+    if platform.system() == 'Linux':
+        # Remote server - use Gluetun Greece proxy
+        return {
+            'http': 'http://127.0.0.1:8888',
+            'https': 'http://127.0.0.1:8888'
+        }
+    else:
+        # macOS - using system-wide ExpressVPN
+        return None
 
 
 def load_existing_teams() -> Set[str]:
@@ -61,7 +75,8 @@ def save_teams(teams: Set[str]):
 def fetch_team_names() -> Set[str]:
     """Fetch current team names from Stoiximan live API."""
     try:
-        response = requests.get(API_URL, params=API_PARAMS, headers=HEADERS, timeout=10)
+        proxies = get_proxies()
+        response = requests.get(API_URL, params=API_PARAMS, headers=HEADERS, proxies=proxies, timeout=10)
         
         # Check for server errors
         if response.status_code != 200:
@@ -138,6 +153,10 @@ def main():
     # Register Ctrl+C handler
     signal.signal(signal.SIGINT, signal_handler)
     
+    # Detect environment
+    proxies = get_proxies()
+    env_info = "🔌 Using Gluetun proxy (127.0.0.1:8888)" if proxies else "🌐 Using system-wide VPN"
+    
     print("=" * 60)
     print("🔵 Stoiximan Team Name Collector (LIVE MATCHES)")
     print("=" * 60)
@@ -145,6 +164,7 @@ def main():
     print(f"📊 Reference: {TARGET_TEAM_COUNT} teams (Oddswar count)")
     print(f"⏱️  Interval: {MIN_INTERVAL}-{MAX_INTERVAL} seconds (random)")
     print(f"🇬🇷 Requires VPN connected to Greek IP")
+    print(f"{env_info}")
     print(f"⚠️  Only collects from LIVE matches (builds up over time)")
     print(f"🚫 Esports automatically filtered out")
     print(f"🛑 Press Ctrl+C to stop\n")
