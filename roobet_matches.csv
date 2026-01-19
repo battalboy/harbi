@@ -1,5 +1,4 @@
 Oddswar,Roobet,Confidence
-Central Cordoba (SdE),CA Central Cordoba SE,100.0
 A.D. Cofutpa,AD Cofutpa,100.0
 A.S. Gosier,AS Gosier,100.0
 AC Bra,AC Bra,100.0
@@ -268,6 +267,7 @@ Cavese 1919,Cavese 1919,100.0
 Celta Vigo,Celta Vigo,100.0
 Celtic,Celtic,100.0
 Central Coast Marin,Central Coast Mariners,100.0
+Central Cordoba (SdE),CA Central Cordoba SE,100.0
 Central Espanol,Central Espanol,100.0
 Cercle Brugge,Cercle Brugge,100.0
 Cerro Largo FC,Cerro Largo FC,100.0
@@ -337,6 +337,7 @@ Deportes Concepcion,Deportes Concepcion,100.0
 Deportes Limache,Deportes Limache,100.0
 Deportivo Maldonado,Deportivo Maldonado,100.0
 Deportivo Pereira,CS Deportivo Pereira,100.0
+Deportivo Riestra,Deportivo Riestra,100.0
 Deportivo Saprissa,Deportivo Saprissa San Jose,100.0
 Deportivo Upala,Deportivo Upala FC,100.0
 Dewa United FC,Dewa United,100.0
@@ -1600,6 +1601,7 @@ Celaya,,
 Celta Vigo B,,
 Celtic (W),,
 Central & West DR & SA,,
+Central Coast (W),,
 Central Coast Mariners,,
 Central Coast Mariners (W),,
 Central FC,,
@@ -1649,12 +1651,14 @@ Club Rivadavia Lincoln,,
 Club Sporting Canamy,,
 Club Tijuana (W),,
 Clyde,,
+Coban Imperial,,
 Colchester United U21,,
 Coleraine (Res),,
 Colima FC,,
 Comercial FC Tiete U20,,
 Comercial FC U20,,
 Comillas,,
+Comunicaciones,,
 Concordia Chiajna,,
 Cong an TP HCM U19,,
 Connahs Quay,,
@@ -1704,7 +1708,6 @@ Deportivo Mictlan,,
 Deportivo Mixco,,
 Deportivo Nueva Concepcion,,
 Deportivo Pasto,,
-Deportivo Riestra,,
 Deportivo San Pedro,,
 Deportivo Toluca U21,,
 Derby,,
@@ -2191,6 +2194,7 @@ Maringa,,
 Maritimo U23,,
 Maroons FC,,
 Masfut,,
+Mashujaa FC,,
 Mathare United FC,,
 Matlock Town,,
 Mazatlan FC(W),,
@@ -2620,6 +2624,7 @@ Sriwijaya,,
 St Andrew Lions,,
 St. Patrick F.C.,,
 St.Anna,,
+Stade Tunisien,,
 Stamford,,
 Steve Biko FC,,
 Stirling,,
@@ -2727,6 +2732,7 @@ UD Torre del Mar,,
 UE Porreres,,
 UE Sant Andreu,,
 UM das Cruzes U20,,
+UM-Damansara United,,
 UPDF FC,,
 URT,,
 US Biskra,,

@@ -1,9 +1,6 @@
 Oddswar,Tumbet,Confidence
-US Monastirienne,US Monastir,100.0
-CSD Municipal,Municipal,100.0
-Ad Carmelita,Carmelita,100.0
-Central Cordoba (SdE),CA Central Cordoba SE,100.0
-Kirklarelispor,Kırklarelispor,100.0
+Marumo Gallants FC,Marumo Gallants,100.0
+UM-Damansara United,Um Damansara United,100.0
 1 Dezembro,1 Dezembro,100.0
 1461 Trabzon,1461 Trabzon FK,100.0
 1860 Munich,1860 Münih,100.0
@@ -52,6 +49,7 @@ Abo Qair Semads,Abo Qir Semads,100.0
 Academico de Viseu U23,Academico Viseu U23,100.0
 Acatlan,Acatlan FC,100.0
 Accrington,Accrington Stanley,100.0
+Ad Carmelita,Carmelita,100.0
 Ad San Carlos,San Carlos,100.0
 Adana 1954 FK,Adana 1954 FK,100.0
 Adana Demirspor,Adana Demirspor,100.0
@@ -172,6 +170,7 @@ Annecy,Annecy FC,100.0
 Anstey Nomads,Anstey Nomads,100.0
 Antalyaspor,Antalyaspor,100.0
 Antequera CF,Antequera,100.0
+Antigua GFC,Antigua GFC,100.0
 Antwerp,Royal Antwerp,100.0
 Apr FC,Apr FC,100.0
 Arabe Unido,Arabe Unido,100.0
@@ -386,6 +385,7 @@ CS Cartagines,Cartagines,100.0
 CS Constantine,CS Constantine,100.0
 CS FC Dinamo Bucuresti,Dinamo Bükreş,100.0
 CSA Steaua Bucuresti,Steaua Bucuresti,100.0
+CSD Municipal,Municipal,100.0
 CSD Sacachispas,CSD Sacachispas,100.0
 CSKA 1948 Sofia,CSKA 1948,100.0
 CSKA Sofia,PFC CSKA Sofia,100.0
@@ -422,6 +422,7 @@ Celta Vigo B,Celta Vigo B,100.0
 Celtic,Celtic,100.0
 Central Coast Marin,Central Coast Mariners,100.0
 Central Coast Mariners,Central Coast Mariners,100.0
+Central Cordoba (SdE),CA Central Cordoba SE,100.0
 Central Espanol,Central Espanol,100.0
 Ceramica Cleopatra,Ceramica Cleopatra,100.0
 Cercle Brugge,Cercle Brugge,100.0
@@ -470,6 +471,7 @@ Club Independiente Petro,Independiente Petrolero,100.0
 Club Olimpia,Club Olimpia,100.0
 Club Sporting Canamy,Sporting Canamy,100.0
 Clyde,Clyde,100.0
+Coban Imperial,Coban Imperial,100.0
 Colchester,Colchester United,100.0
 Coleraine,Coleraine,100.0
 Coleraine (Res),Coleraine (Res.),100.0
@@ -480,6 +482,7 @@ Colwyn Bay,Colwyn Bay,100.0
 Comercial FC Tiete U20,Comercial FC SP U20,100.0
 Comillas,Comillas CF,100.0
 Como,Como,100.0
+Comunicaciones,Comunicaciones,100.0
 Concarneau,Concarneau,100.0
 Concordia CA,Concordia AC,100.0
 Coquimbo Unido,Coquimbo Unido,100.0
@@ -945,6 +948,7 @@ Kilmarnock,Kilmarnock,100.0
 Kings Lynn,Kings Lynn FC,100.0
 Kingstonian,Kingstonian,100.0
 Kirivong Sok Sen Chey,Kirivong Soksen Chey,100.0
+Kirklarelispor,Kırklarelispor,100.0
 Kisvarda,Kisvarda FC,100.0
 Kitchee SC,Kitchee SC,100.0
 Kitchee U22,Kitchee SC U22,100.0
@@ -1081,6 +1085,7 @@ Maritimo,Maritimo,100.0
 Maritimo U23,CS Maritimo U23,100.0
 Marsaxlokk FC,Marsaxlokk,100.0
 Marseille,Marsilya,100.0
+Mashujaa FC,Mashujaa Fc,100.0
 Mathare United FC,Mathare United FC,100.0
 Matlock Town,Matlock Town,100.0
 Mazatlan FC,Mazatlan,100.0
@@ -1517,6 +1522,7 @@ St Mirren,St Mirren,100.0
 St Pauli,FC St. Pauli,100.0
 Stade Lausanne-Ouchy,Stade Ls Ouchy,100.0
 Stade Nyonnais,Stade Nyonnis,100.0
+Stade Tunisien,Stade Tunisien,100.0
 Stamford,Stamford,100.0
 Stellenbosch FC,Stellenbosch FC,100.0
 Stenhousemuir,Stenhousemuir,100.0
@@ -1615,6 +1621,7 @@ US Cremonese,Cremonese,100.0
 US Goree,US Goree,100.0
 US Latina Calcio,US Latina Calcio,100.0
 US Lusitanos Saint Maur,Lusitanos Saint-Maur,100.0
+US Monastirienne,US Monastir,100.0
 US Ouakam,US Ouakam,100.0
 US Pianese,Pianese,100.0
 USA,USA,100.0
@@ -1741,7 +1748,6 @@ Cavese 1919,,
 Club Deportivo Ayense,,
 Deportivo Cali,,
 Kilis Bld.Spor,,
-Marumo Gallants FC,,
 Parma U20,,
 Persipa Pati,,
 Racing Club,,
@@ -1768,6 +1774,7 @@ Al Nasr SC U19,,
 Paulinia FC U20,,
 Deportivo Maldonado,,
 Al Arabi Kuwait,,
+BST Galaxy,,
 Paris FC,,
 Serik Belediyespor,,
 Gremio FBPA U20,,
@@ -1928,7 +1935,6 @@ Amman,,
 Anderlecht B,,
 Andraus Brasil,,
 Annan,,
-Antigua GFC,,
 Araz Nakhchivan PFK,,
 Arda,,
 Arema Cronus,,
@@ -1961,7 +1967,6 @@ Austria Wien (A),,
 Avai,,
 Ayr,,
 Azuriz FC,,
-BST Galaxy,,
 Bahir Dar FC,,
 Baku Sporting,,
 Baladeyet Al-Mahalla,,
@@ -2073,6 +2078,7 @@ Cebrayil FK,,
 Celaya,,
 Celtic (W),,
 Central & West DR & SA,,
+Central Coast (W),,
 Central Coast Mariners (W),,
 Central FC,,
 Cerezo Osaka Sakai (W),,
