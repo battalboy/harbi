@@ -1,139 +1,283 @@
 #!/usr/bin/env python3
 """
-Basketball Event Loop Daemon
-Continuously fetches basketball events and runs arbitrage detection
+Harbi Basketball Event Fetching Daemon
+
+Continuously fetches basketball odds from betting sites with randomized intervals.
+Reads harbi-config.py for runtime configuration (no restart needed).
 """
 
 import time
 import random
 import subprocess
-import logging
-from datetime import datetime
+import os
+import sys
+from datetime import datetime, timedelta
 from pathlib import Path
 
-# Setup logging
-log_dir = Path('/home/giray/harbi/logs')
-log_dir.mkdir(exist_ok=True)
 
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler(log_dir / 'basketball_event_loop.log'),
-        logging.StreamHandler()
-    ]
-)
+# Basketball site script mapping
+BASKETBALL_SITE_SCRIPTS = {
+    'oddswar': 'event_create_oddswar_basketball.py',
+    'roobet': 'event_create_roobet_basketball.py',
+    'stoiximan': 'event_create_stoiximan_basketball.py',
+    'tumbet': 'event_create_tumbet_basketball.py'
+}
 
-logger = logging.getLogger(__name__)
-
-# Configuration
-ENABLED_SITES = [
-    'oddswar',
-    'roobet',
-    'stoiximan',
-    'tumbet'
-]
-
-RUN_ARB_CREATE = True
+# Failure tracking
+site_failures = {}
 
 
-def run_script(script_name: str) -> bool:
-    """Run a Python script and return success status."""
+def load_config():
+    """
+    Load basketball configuration from harbi-config.py.
+    Uses exec() to dynamically reload config each cycle.
+    
+    Returns:
+        dict: Configuration dictionary with ENABLED_BASKETBALL_SITES, etc.
+    """
+    config = {}
+    config_file = Path('harbi-config.py')
+    
+    if not config_file.exists():
+        print(f"⚠️  WARNING: harbi-config.py not found, using defaults")
+        return {
+            'ENABLED_BASKETBALL_SITES': ['oddswar', 'roobet', 'stoiximan', 'tumbet'],
+            'RUN_BASKETBALL_ARB_CREATE': True,
+            'TELEGRAM_USERS': []
+        }
+    
     try:
-        logger.info(f"Running {script_name}...")
+        with open(config_file, 'r', encoding='utf-8') as f:
+            exec(f.read(), config)
+        
+        # Extract only the config variables we need
+        return {
+            'ENABLED_BASKETBALL_SITES': config.get('ENABLED_BASKETBALL_SITES', ['oddswar', 'roobet', 'stoiximan', 'tumbet']),
+            'RUN_BASKETBALL_ARB_CREATE': config.get('RUN_BASKETBALL_ARB_CREATE', True),
+            'TELEGRAM_USERS': config.get('TELEGRAM_USERS', [])
+        }
+    except Exception as e:
+        print(f"❌ ERROR loading config: {e}")
+        print(f"   Using defaults")
+        return {
+            'ENABLED_BASKETBALL_SITES': ['oddswar', 'roobet', 'stoiximan', 'tumbet'],
+            'RUN_BASKETBALL_ARB_CREATE': True,
+            'TELEGRAM_USERS': []
+        }
+
+
+def get_varied_random_interval(cycle_num):
+    """
+    Get a truly random interval between 3-5 minutes.
+    Simple and unpredictable - no patterns to detect.
+    
+    Args:
+        cycle_num: Current cycle number (unused, kept for compatibility)
+    
+    Returns:
+        int: Random interval in seconds (180-300)
+    """
+    # 3 minutes = 180 seconds
+    # 5 minutes = 300 seconds
+    # Completely random every time
+    return random.randint(180, 300)
+
+
+def run_script(script_name, site_name):
+    """
+    Run a Python script and return success status.
+    
+    Args:
+        script_name: Name of script to run (e.g., 'event_create_oddswar_basketball.py')
+        site_name: Human-readable site name for logging
+    
+    Returns:
+        bool: True if successful, False if failed
+    """
+    script_path = Path(script_name)
+    
+    if not script_path.exists():
+        print(f"      ⚠️  Script not found: {script_name}")
+        return False
+    
+    try:
+        # Get Python interpreter from virtual environment or system
+        python_exe = sys.executable
+        
+        # Run script and capture output
         result = subprocess.run(
-            ['python3', script_name],
-            cwd='/home/giray/harbi',
+            [python_exe, str(script_path)],
             capture_output=True,
             text=True,
-            timeout=120
+            timeout=300  # 5 minute timeout
         )
         
         if result.returncode == 0:
-            logger.info(f"✅ {script_name} completed successfully")
+            print(f"      ✅ {site_name} completed successfully")
             return True
         else:
-            logger.error(f"❌ {script_name} failed with code {result.returncode}")
-            logger.error(f"Error output: {result.stderr[:500]}")
+            print(f"      ❌ {site_name} failed (exit code: {result.returncode})")
+            if result.stderr:
+                # Print first 200 chars of error
+                error_preview = result.stderr[:200].replace('\n', ' ')
+                print(f"         Error: {error_preview}...")
             return False
             
     except subprocess.TimeoutExpired:
-        logger.error(f"❌ {script_name} timed out after 120 seconds")
+        print(f"      ⏱️  {site_name} timed out (>5 minutes)")
         return False
     except Exception as e:
-        logger.error(f"❌ {script_name} error: {str(e)}")
+        print(f"      ❌ {site_name} exception: {str(e)[:100]}")
         return False
 
 
-def run_cycle():
-    """Run one complete cycle of basketball event fetching."""
-    logger.info("="*80)
-    logger.info("STARTING BASKETBALL EVENT FETCH CYCLE")
-    logger.info("="*80)
+def run_cycle(cycle_num):
+    """
+    Run one complete basketball cycle: fetch events from all enabled sites, then run arb_basketball_create.
     
-    # Always run Oddswar first (master key)
-    run_script('event_create_oddswar_basketball.py')
+    Args:
+        cycle_num: Current cycle number
     
-    # Run other enabled sites
-    for site in ENABLED_SITES:
-        if site == 'oddswar':
-            continue  # Already ran
+    Returns:
+        dict: Results summary
+    """
+    print(f"\n{'='*80}")
+    print(f"🏀 BASKETBALL CYCLE #{cycle_num} - {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC")
+    print(f"{'='*80}")
+    
+    # Step 1: Load config
+    print("\n📂 Loading configuration from harbi-config.py...")
+    config = load_config()
+    
+    enabled_sites = config['ENABLED_BASKETBALL_SITES']
+    run_arb = config['RUN_BASKETBALL_ARB_CREATE']
+    
+    if not enabled_sites:
+        print("   ⚠️  No basketball sites enabled in config - skipping cycle")
+        return {'sites_run': 0, 'sites_succeeded': 0, 'arb_run': False}
+    
+    print(f"   ✅ Enabled basketball sites: {', '.join(enabled_sites)}")
+    print(f"   ✅ Run arb_basketball_create: {run_arb}")
+    
+    # Step 2: Ensure Oddswar runs first if enabled
+    sites_to_run = []
+    if 'oddswar' in enabled_sites:
+        sites_to_run.append('oddswar')
+        sites_to_run.extend([s for s in enabled_sites if s != 'oddswar'])
+    else:
+        sites_to_run = enabled_sites.copy()
+    
+    # Step 3: Run site scripts
+    print(f"\n📊 Fetching basketball events from {len(sites_to_run)} sites...")
+    
+    sites_succeeded = 0
+    for idx, site in enumerate(sites_to_run, 1):
+        script = BASKETBALL_SITE_SCRIPTS.get(site)
         
-        script_name = f'event_create_{site}_basketball.py'
-        run_script(script_name)
+        if not script:
+            print(f"   {idx}. {site.capitalize()}: ⚠️  No script mapping found")
+            continue
+        
+        print(f"   {idx}. {site.capitalize()}:")
+        
+        success = run_script(script, site.capitalize())
+        
+        if success:
+            sites_succeeded += 1
+            # Reset failure counter on success
+            site_failures[site] = 0
+        else:
+            # Track consecutive failures
+            site_failures[site] = site_failures.get(site, 0) + 1
+            print(f"         (Consecutive failures: {site_failures[site]})")
     
-    # Run arbitrage detection
-    if RUN_ARB_CREATE:
-        logger.info("Running basketball arbitrage detection...")
-        run_script('arb_basketball_create.py')
+    # Step 4: Run arb_basketball_create.py if configured
+    arb_success = False
+    if run_arb:
+        print(f"\n🔍 Running basketball arbitrage detection...")
+        arb_success = run_script('arb_basketball_create.py', 'Basketball Arb Create')
+    else:
+        print(f"\n⏭️  Skipping basketball arbitrage detection (disabled in config)")
     
-    logger.info("="*80)
-    logger.info("BASKETBALL CYCLE COMPLETE")
-    logger.info("="*80)
-
-
-def get_next_interval():
-    """Generate random interval with varied patterns for anti-detection."""
-    # Randomly choose between different interval patterns
-    pattern = random.choice([
-        (120, 240),   # 2-4 minutes
-        (180, 360),   # 3-6 minutes
-        (240, 480),   # 4-8 minutes
-    ])
+    # Step 5: Summary
+    print(f"\n📈 Basketball Cycle Summary:")
+    print(f"   Sites attempted: {len(sites_to_run)}")
+    print(f"   Sites succeeded: {sites_succeeded}")
+    print(f"   Sites failed: {len(sites_to_run) - sites_succeeded}")
+    print(f"   Arbitrage detection: {'✅ Success' if arb_success else '❌ Failed/Skipped'}")
     
-    return random.uniform(pattern[0], pattern[1])
+    return {
+        'sites_run': len(sites_to_run),
+        'sites_succeeded': sites_succeeded,
+        'arb_run': run_arb,
+        'arb_success': arb_success
+    }
 
 
 def main():
-    """Main event loop."""
-    logger.info("🏀 Basketball Event Loop Daemon Started")
+    """Main daemon loop."""
+    print("="*80)
+    print("🏀 HARBI BASKETBALL EVENT LOOP DAEMON - STARTED")
+    print("="*80)
+    print(f"Working directory: {os.getcwd()}")
+    print(f"Python: {sys.executable}")
+    print("\nPress Ctrl+C to stop\n")
     
     cycle_count = 0
+    total_stats = {
+        'total_cycles': 0,
+        'total_sites_run': 0,
+        'total_sites_succeeded': 0,
+        'total_arb_runs': 0
+    }
     
     try:
         while True:
             cycle_count += 1
-            logger.info(f"\n{'='*80}")
-            logger.info(f"BASKETBALL CYCLE #{cycle_count}")
-            logger.info(f"{'='*80}\n")
             
-            # Run the cycle
-            run_cycle()
+            # Run cycle
+            results = run_cycle(cycle_count)
             
-            # Calculate next interval
-            interval = get_next_interval()
-            minutes = interval / 60
-            next_time = datetime.now()
-            logger.info(f"\n⏱️  Next basketball cycle in {minutes:.1f} minutes")
-            logger.info(f"💤 Sleeping...\n")
+            # Update stats
+            total_stats['total_cycles'] += 1
+            total_stats['total_sites_run'] += results['sites_run']
+            total_stats['total_sites_succeeded'] += results['sites_succeeded']
+            if results['arb_run']:
+                total_stats['total_arb_runs'] += 1
             
-            # Sleep
-            time.sleep(interval)
+            # Get varied random interval
+            interval_seconds = get_varied_random_interval(cycle_count)
+            interval_minutes = interval_seconds / 60
+            next_time = datetime.utcnow() + timedelta(seconds=interval_seconds)
             
+            print(f"\n⏱️  Next basketball cycle in {interval_minutes:.1f} minutes ({interval_seconds} seconds)")
+            print(f"   Waiting until: {next_time.strftime('%H:%M:%S')} UTC")
+            print(f"{'='*80}\n")
+            
+            # Wait for random interval
+            time.sleep(interval_seconds)
+    
     except KeyboardInterrupt:
-        logger.info("\n🛑 Basketball Event Loop stopped by user")
+        print("\n\n" + "="*80)
+        print("🏀 BASKETBALL DAEMON STOPPED BY USER")
+        print("="*80)
+        print(f"\n📊 Final Statistics:")
+        print(f"   Total cycles: {total_stats['total_cycles']}")
+        print(f"   Total sites run: {total_stats['total_sites_run']}")
+        print(f"   Total sites succeeded: {total_stats['total_sites_succeeded']}")
+        print(f"   Total arb runs: {total_stats['total_arb_runs']}")
+        
+        if site_failures:
+            print(f"\n⚠️  Site Failure Summary:")
+            for site, failures in site_failures.items():
+                if failures > 0:
+                    print(f"   {site}: {failures} consecutive failures")
+        
+        print("\nGoodbye!")
+    
     except Exception as e:
-        logger.error(f"\n❌ Fatal error in basketball event loop: {str(e)}")
+        print(f"\n\n❌ FATAL ERROR: {e}")
+        print("="*80)
         raise
 
 
