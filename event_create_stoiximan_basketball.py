@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Stoiximan Basketball Complete API Parser with Timestamps
 Extracts basketball match data WITH 2-way odds and timestamps from Stoiximan JSON API

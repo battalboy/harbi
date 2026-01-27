@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Roobet Live Basketball Match Parser
 
