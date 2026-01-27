@@ -591,29 +591,45 @@ This system does NOT place bets automatically. It identifies opportunities for t
 
 **Purpose**: Serve HTML results files to clients via web browser
 
-**Implementation**: Python's built-in HTTP server (simple, lightweight)
+**Implementation**: Python's built-in HTTP server as systemd service
 
 **Configuration:**
 - **Port**: 8080
-- **Command**: `nohup python3 -m http.server 8080 > http_server.log 2>&1 &`
+- **Service File**: `harbi-http-server.service`
 - **Working Directory**: `/home/giray/harbi/` (serves files from this directory)
-- **Log File**: `http_server.log`
+- **Log File**: `/home/giray/harbi/logs/http_server.log`
 
 **URLs:**
 - Soccer results: `http://89.125.255.32:8080/results.html`
 - Basketball results: `http://89.125.255.32:8080/results_basketball.html`
 
-**Management:**
+**Service Management:**
 ```bash
-# Check if running
-ps aux | grep "http.server 8080"
+# Start
+sudo systemctl start harbi-http-server
 
-# Stop server (find PID first)
-kill <PID>
+# Stop
+sudo systemctl stop harbi-http-server
 
-# Restart server
-cd /home/giray/harbi
-nohup python3 -m http.server 8080 > http_server.log 2>&1 &
+# Restart
+sudo systemctl restart harbi-http-server
+
+# Check status
+sudo systemctl status harbi-http-server
+
+# Enable auto-start on boot
+sudo systemctl enable harbi-http-server
+
+# View logs
+tail -f /home/giray/harbi/logs/http_server.log
+```
+
+**Installation (first time only):**
+```bash
+sudo cp /home/giray/harbi/harbi-http-server.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable harbi-http-server
+sudo systemctl start harbi-http-server
 ```
 
 **Additional Services:**

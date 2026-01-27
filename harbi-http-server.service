@@ -1,0 +1,16 @@
+[Unit]
+Description=Harbi HTTP Server for Results Pages
+After=network.target
+
+[Service]
+Type=simple
+User=giray
+WorkingDirectory=/home/giray/harbi
+ExecStart=/usr/bin/python3 -u -m http.server 8080
+Restart=always
+RestartSec=10
+StandardOutput=append:/home/giray/harbi/logs/http_server.log
+StandardError=append:/home/giray/harbi/logs/http_server.log
+
+[Install]
+WantedBy=multi-user.target
