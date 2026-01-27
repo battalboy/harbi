@@ -529,7 +529,7 @@ def send_telegram_notifications(matched_events: List[Dict], arb_count: int):
     timestamp = f"{now.day} {turkish_months[now.month-1]} {now.year} - {now.hour:02d}:{now.minute:02d}"
     
     # Web URL for soccer results page (adjust domain/port as needed)
-    web_url = "http://89.125.255.32/results.html"
+    web_url = "http://89.125.255.32:8080/results.html"
     
     header = f"""🚨 *Yeni Harbi Oran Fırsatları Var*
 📅 {timestamp}

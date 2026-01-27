@@ -587,6 +587,38 @@ This system does NOT place bets automatically. It identifies opportunities for t
 - **SCP Command Example**: `scp file.txt giray@89.125.255.32:~/path/to/destination/`
 - **Note**: The local machine's private key (id_rsa) has been copied to the remote for GitHub access
 
+## Web Server Setup (Remote Server)
+
+**Purpose**: Serve HTML results files to clients via web browser
+
+**Implementation**: Python's built-in HTTP server (simple, lightweight)
+
+**Configuration:**
+- **Port**: 8080
+- **Command**: `nohup python3 -m http.server 8080 > http_server.log 2>&1 &`
+- **Working Directory**: `/home/giray/harbi/` (serves files from this directory)
+- **Log File**: `http_server.log`
+
+**URLs:**
+- Soccer results: `http://89.125.255.32:8080/results.html`
+- Basketball results: `http://89.125.255.32:8080/results_basketball.html`
+
+**Management:**
+```bash
+# Check if running
+ps aux | grep "http.server 8080"
+
+# Stop server (find PID first)
+kill <PID>
+
+# Restart server
+cd /home/giray/harbi
+nohup python3 -m http.server 8080 > http_server.log 2>&1 &
+```
+
+**Additional Services:**
+- **Port 5001**: Flask app (`tg_app.py`) - Telegram bot interface at `/tgbot` endpoint
+
 ## VPN/Proxy Setup (Gluetun on Remote Server)
 
 **Purpose**: Connect to geoblocked betting sites (Stake.com, Stoiximan) that may require VPN access
