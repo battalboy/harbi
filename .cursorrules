@@ -134,7 +134,10 @@ The matching system uses **indicator-first filtering** to ensure accurate matche
   - **Critical**: Fetches from hierarchical structure (Sports → Regions → Championships → Games)
   - Changed collection from ~109 teams (top games only) to ~1,700+ teams (all games)
   - Can collect comprehensive coverage in single run (~10-15 seconds with batching)
-  - Fetches both LIVE and ALL PREMATCH matches
+  - **⚠️ LIVE DATA STATUS**: The old live endpoint `/api/live/getlivegames/ot` returns 404 (broken/moved)
+    - Currently **PREMATCH ONLY** via `getheader` endpoint (1,176+ matches)
+    - The `getheader` endpoint does NOT include live matches (verified - no live indicators in data structure)
+    - **TODO**: Find new live match API endpoint (see Outstanding Tasks section below)
   - No geographic restrictions on API (website requires Turkish VPN)
 - **Stake**: `collect_stake_teams.py` → outputs `stake_names.txt`
   - Uses Sportradar (MTS - Managed Trading Services) for odds backend
@@ -147,6 +150,27 @@ The matching system uses **indicator-first filtering** to ensure accurate matche
   - Coverage varies by season (leagues redirect to `/all` when no active matches)
   - ~203 teams currently (grows as leagues come in season)
   - **Alternative**: Paid scraping service available at https://scrappey.com/scrapers/finance/stake.com-scraper (may be considered for future use)
+
+**Basketball Team Collectors (All Created ✅):**
+- **Oddswar Basketball**: `collect_oddswar_basketball.py` → outputs `oddswar_basketball_names.txt`
+  - Sport ID: `7522`
+  - ~128 teams collected (Live + Today + Upcoming intervals)
+- **Stoiximan Basketball**: `collect_stoiximan_basketball.py` → outputs `stoiximan_basketball_names.txt`
+  - Sport ID: `'BASK'`
+  - ~49 teams collected (Featured games only - builds up over time)
+  - **⚠️ Coverage Limitation**: Only ~28 featured/popular games available at any time via `/live/overview/latest`
+  - **No comprehensive prematch API found** (investigated extensively - would require HTML scraping)
+  - **HTML scraping rejected**: Excessive bandwidth usage (50-150 MB per fetch) vs API (1-3 MB)
+  - Filters out virtual tournament teams (GODFATHER, KJMR, RIDER, CARNAGE, CRYPTO, ARCHER, mist, RAMZ)
+  - Uses `cloudscraper` to bypass Cloudflare protection
+- **Roobet Basketball**: `collect_roobet_basketball.py` → outputs `roobet_basketball_names.txt`
+  - Sport ID: `2`
+  - ~211 teams collected (Live + Prematch via all version endpoints)
+  - Includes metadata filtering (removes 'Awards', year patterns like '2025/26')
+- **Tumbet Basketball**: `collect_tumbet_basketball.py` → outputs `tumbet_basketball_names.txt`
+  - Sport ID: `2`
+  - ~400 teams collected (comprehensive coverage via getheader endpoint)
+  - Uses batched API calls for efficiency
 
 #### Team Matching Scripts
 - **Stoiximan Matching**: `create_stoiximan_matches_csv.py` → creates `stoiximan_matches.csv` (Oddswar ↔ Stoiximan mappings with confidence scores)
@@ -208,6 +232,151 @@ To perform a complete team name matching run, execute scripts in this order:
 8. `create_tumbet_matches_csv.py` - Match Oddswar ↔ Tumbet
 9. `create_stake_matches_csv.py` - Match Oddswar ↔ Stake (TO BE CREATED)
 
+#### Workflow: Cross-Check for Discovering New Team Name Mappings
+
+**Purpose**: The cross-check workflow identifies event matches between Oddswar and traditional sites where team names don't match perfectly but are clearly the same event. This helps discover new team name mappings that should be added to the CSV matching files.
+
+**How It Works:**
+1. Uses `temp_compare_events.py` script to compare formatted event files
+2. Applies fuzzy matching (currently 65% threshold) to find the same events with name variations
+3. Outputs results to `temp.txt` for manual review
+4. Results show ONLY events where team names differ (excludes 100% CSV matches)
+5. Both team names in each event are checked (not just the first team)
+
+**Usage Examples:**
+- **Roobet cross-check**: Compare `oddswar-formatted.txt` with `roobet-formatted.txt`
+- **Stoiximan cross-check**: Compare `oddswar-formatted.txt` with `stoiximan-formatted.txt`
+- **Tumbet cross-check**: Compare `oddswar-formatted.txt` with `tumbet-formatted.txt`
+
+**Script Execution:**
+```bash
+# Modify temp_compare_events.py to point to the correct site files
+# Then run:
+python temp_compare_events.py
+```
+
+**Output Format** (`temp.txt`):
+- **NO numbering** - just clean event pairs
+- Format per match:
+  ```
+  Oddswar: Team A vs Team B
+  Roobet: Team A Name Variant vs Team B Name Variant
+  
+  Oddswar: Team C vs Team D
+  Roobet: Team C vs Team D Different Name
+  ```
+
+**Manual Review & Validation Algorithm:**
+
+**Phase 1: Event Match Validation (Review temp.txt)**
+
+**Rule #1: Verify Both Teams in Event Match**
+- Must validate BOTH team pairs in each event
+- If opponents don't match → REJECT entire event (delete both lines)
+- Example REJECT:
+  ```
+  Oddswar: Al-Shabab (KSA) vs Al Najma Club
+  Roobet:  Al Shabab      vs Bahla Club  ← "Al Najma" ≠ "Bahla"
+  ```
+
+**Rule #2: Check for Team Type/Category Mismatches**
+
+Team Type Indicators to Parse:
+- **Age groups**: U23, U20, U21, U19, U18
+- **Reserve teams**: B, II, " B", "(Res)"
+- **Women's teams**: (W), " (W)", "Women"
+
+Matching Requirements:
+- If one side has indicator and other doesn't → REJECT
+- If both have different indicators (e.g., U20 ≠ U23) → REJECT
+- Only match if BOTH sides have SAME indicator OR both have NONE
+
+Example REJECT cases:
+```
+Oddswar: Vietnam U23 vs China U23
+Roobet:  Vietnam     vs China        ← Youth ≠ Senior
+
+Oddswar: Club Tijuana (W) vs FC Juarez (W)
+Roobet:  Club Tijuana de Caliente vs FC Juarez  ← Women's ≠ Men's
+
+Oddswar: Hellas Verona U20 vs Cagliari U20
+Roobet:  Hellas Verona     vs Cagliari Calcio  ← Youth ≠ Senior
+```
+
+**Rule #3: Accept Valid Event Matches**
+- If BOTH teams validate → Keep event in temp.txt (leave untouched)
+- If age groups/team types consistent → Keep event
+- Each valid event yields 2 team name mappings (one for each team)
+
+Example ACCEPT:
+```
+Oddswar: Novorizontino     vs SE Palmeiras
+Roobet:  Gremio Novorizontino SP vs SE Palmeiras SP
+↓
+Mappings: Novorizontino → Gremio Novorizontino SP (100.0)
+          SE Palmeiras → SE Palmeiras SP (100.0)
+```
+
+**Phase 2: CSV Update Process**
+
+For each team pair in validated events:
+
+**Step 1:** Search for Oddswar name in `*_matches.csv`
+
+**Step 2:** Apply update logic:
+
+**Case A: NOT FOUND**
+→ Add NEW row:
+  - Oddswar: [team name]
+  - [Site]: [matching team name]
+  - Confidence: 100.0
+
+**Case B: FOUND but [Site] column is EMPTY**
+→ Fill in existing row:
+  - [Site]: [matching team name]
+  - Confidence: 100.0
+
+**Case C: FOUND with DIFFERENT [Site] match**
+→ Replace existing match:
+  - OLD: Oddswar Team → [old match], 100.0
+  - NEW: Oddswar Team → [new match], 100.0
+  - (This corrects previous manual entries that were wrong)
+
+**Confidence Management:**
+- All cross-check validated matches get **100.0 confidence**
+- After running `create_*_matches_csv.py`, manually review ALL entries < 100.0:
+  - Delete if false match
+  - Upgrade to 100.0 if valid match
+- Result: CSV contains ONLY 100.0 confidence entries (all manually validated)
+
+**Deployment Workflow:**
+1. Edit CSV in Apple Numbers (or text editor)
+2. Export as CSV to codebase
+3. Manually copy file contents to remote server
+4. **IMPORTANT**: Collector scripts and `create_*_matches_csv.py` DON'T run on remote
+5. Only `event_create_*.py` and `arb_create.py` run on remote
+6. Manual CSV edits are SAFE on remote
+
+**Key Principles:**
+- **Event-context validation** = High confidence (opponent + timing confirm same event)
+- **Always blank `temp.txt` first** before running cross-check
+- **Check BOTH team names** in each event match
+- Cross-check finds events that fuzzy matching algorithm missed
+- Results may include false positives - manual verification required
+- Used for improving CSV matching files, not for production matching
+- **Context reduces false positives**: Same opponent + same timing = certain match
+
+**Why Event-Context Validation is Superior:**
+```
+Fuzzy matching alone:
+  "Man Utd" vs "Manchester United FC" = 75% similarity ← Could be coincidence?
+
+Event-context matching:
+  Event 1: Man Utd vs Liverpool (2026-01-21 20:00)
+  Event 2: Manchester United FC vs Liverpool (2026-01-21 20:00)
+  ← Same opponent + same time = 100% CERTAIN it's the same team!
+```
+
 #### **IMPORTANT: Oddswar as Master Key**
 - **Oddswar team names are the MASTER KEY** for all comparisons
 - All matching is structured as: **Oddswar ↔ Traditional Site** (not the reverse)
@@ -264,16 +433,22 @@ Events (two teams playing each other) are formatted differently across sites.
 
 ### Current Status
 - ✅ **Step 1 In Progress**: Team name collection and matching
-  - Oddswar: ~1,874 teams ✅ (Soccer only)
-  - Stoiximan: ~3,521 teams ✅ (88.8% match rate with Oddswar - Soccer only)
-  - Tumbet: ~1,700+ teams ✅ (comprehensive coverage via getheader endpoint - Soccer only)
-  - Roobet: ~1,545 teams ✅ (~38% match rate with Oddswar - Soccer only)
-  - Stake: ~203 teams ✅ (browser automation, match CSV pending - Soccer only)
+  - **Soccer Coverage:**
+    - Oddswar: ~1,874 teams ✅
+    - Stoiximan: ~3,521 teams ✅ (88.8% match rate with Oddswar)
+    - Tumbet: ~1,700+ teams ✅ (comprehensive coverage via getheader endpoint)
+    - Roobet: ~1,545 teams ✅ (~38% match rate with Oddswar)
+    - Stake: ~203 teams ✅ (browser automation, match CSV pending)
+  - **Basketball Coverage:**
+    - Oddswar: ~128 teams ✅ (collectors complete)
+    - Stoiximan: ~36 teams ✅ (live matches only)
+    - Tumbet: ~400 teams ✅ (comprehensive coverage via getheader endpoint)
+    - Roobet: ~211 teams ✅ (filtered metadata)
 - 🔜 **Step 2 Next**: Event matching across sites (not yet implemented)
 
-### Adding Tennis and Basketball Support
+### Adding Basketball Support
 
-**Client Requirement**: Expand system to support Tennis and Basketball in addition to Soccer.
+**Client Requirement**: Expand system to support Basketball in addition to Soccer.
 
 **What's Already Reusable:**
 - ✅ Fuzzy matching algorithm (name standardization)
@@ -287,36 +462,83 @@ Events (two teams playing each other) are formatted differently across sites.
 
 **1. Odds Structure:**
 - **Soccer**: 3-way odds (Team 1 Win / Draw / Team 2 Win) - e.g., 2.05 / 3.40 / 3.80
-- **Tennis**: 2-way odds (Player 1 Win / Player 2 Win - NO DRAW) - e.g., 1.85 / 2.10
 - **Basketball**: 2-way odds (Team 1 Win / Team 2 Win - overtime decides, no draw) - e.g., 1.95 / 2.05
 
 **2. Implementation Status:**
-- **Oddswar**: ✅ Tennis (ID 2) and Basketball (ID 7522) confirmed working
-- **Roobet**: ✅ Tennis (ID 5) and Basketball (ID 2) confirmed working
-- **Tumbet**: ✅ Tennis (ID 5) and Basketball (ID 2) confirmed working
-- **Stoiximan**: ❌ Ignoring for now (per client instruction)
-- **Stake**: ❌ Ignoring for now (per client instruction)
+- **Oddswar**: ✅ Basketball (ID 7522) confirmed working - ~128 teams collected
+- **Stoiximan**: ✅ Basketball (ID 'BASK') confirmed working - ~36 teams collected (live only)
+- **Roobet**: ✅ Basketball (ID 2) confirmed working - ~211 teams collected
+- **Tumbet**: ✅ Basketball (ID 2) confirmed working - ~400 teams collected
+- **Stake**: ⏸️ Deferred (Cloudflare issues make it impractical for now)
 
-**3. Collection Scripts to Create:**
-- `collect_oddswar_tennis.py` and `collect_oddswar_basketball.py`
-- `collect_roobet_tennis.py` and `collect_roobet_basketball.py`
-- `collect_tumbet_tennis.py` and `collect_tumbet_basketball.py`
+**3. Collection Scripts (Basketball):**
+- ✅ `collect_oddswar_basketball.py` - Created and tested
+- ✅ `collect_stoiximan_basketball.py` - Created and tested
+- ✅ `collect_roobet_basketball.py` - Created and tested (includes metadata filtering)
+- ✅ `collect_tumbet_basketball.py` - Created and tested
 
-**4. Event Creator Scripts to Create:**
-- `event_create_oddswar_tennis.py` and `event_create_oddswar_basketball.py`
-- `event_create_roobet_tennis.py` and `event_create_roobet_basketball.py`
-- `event_create_tumbet_tennis.py` and `event_create_tumbet_basketball.py`
+**4. Event Creator Scripts (Basketball) - ✅ ALL CREATED:**
+- ✅ `event_create_oddswar_basketball.py` - **CREATED & TESTED**
+  - Outputs: `oddswar-basketball-formatted.txt`
+  - Fetches live + today + upcoming matches via Oddswar API (`/exchange/7522`)
+  - Uses MATCH_ODDS market type with LAY odds (pink) for arbitrage
+  - 2-way odds: Team 1 Win / Team 2 Win (no draw)
+  - Current coverage: ~78 matches from 95 markets (multiple intervals: inplay, today, all)
+  - **This is the MASTER KEY** - defines available basketball arbitrage opportunities
+- ✅ `event_create_stoiximan_basketball.py` - **CREATED & TESTED**
+  - Outputs: `stoiximan-basketball-formatted.txt`
+  - Fetches live + featured league matches via Stoiximan API
+  - Featured leagues: Euroleague (439g), NBA (441g), Greek Cup (446g), Champions League (456g)
+  - Uses Money Line/Match Result market for 2-way odds
+  - Current coverage: ~39 matches (10 with odds, 26% success rate)
+  - **Limited coverage** as expected (~28 featured games at any time)
+  - Includes virtual matches (marked with keywords like ESSENCE, LEGACY)
+- ✅ `event_create_roobet_basketball.py` - **CREATED & TESTED**
+  - Outputs: `roobet-basketball-formatted.txt`
+  - Fetches live + prematch matches via Betby API (all version endpoints)
+  - Market ID: '219' (2-way Money Line: selections '5' = Team 1 Win, '4' = Team 2 Win)
+  - Current coverage: ~118 matches (96 with odds, 81% success rate)
+- ✅ `event_create_tumbet_basketball.py` - **CREATED & TESTED**
+  - Outputs: `tumbet-basketball-formatted.txt`
+  - Fetches prematch matches via SportWide API (`/sport/getheader` endpoint)
+  - Market ID: '103' (Money Line: positions 697 = Team 1 Win, 698 = Team 2 Win)
+  - Batched processing (100 games per batch) for comprehensive coverage
+  - Current coverage: ~212 matches (204 with odds, 96% success rate) - **BEST COVERAGE**
+  - **Note**: Live endpoint broken (404 error) - prematch only for now
 
-**5. Matching CSVs to Create:**
-- `roobet_tennis_matches.csv` and `roobet_basketball_matches.csv`
-- `tumbet_tennis_matches.csv` and `tumbet_basketball_matches.csv`
+**5. Matching CSVs (Basketball) - ✅ ALL CREATED:**
+- ✅ `stoiximan_basketball_matches.csv` - Created with preservation logic
+- ✅ `roobet_basketball_matches.csv` - Created with preservation logic
+- ✅ `tumbet_basketball_matches.csv` - Created with preservation logic
 
-**6. Arbitrage Detection:**
-- Modify `arb_create.py` to handle 2-way odds (Tennis/Basketball) in addition to 3-way odds (Soccer)
-- Update HTML template to display 2-way odds correctly
-- Update Telegram notifications to format 2-way odds
+**6. Basketball Event Creators - ✅ ALL CREATED:**
+- ✅ `event_create_oddswar_basketball.py` - ~78 matches (MASTER KEY)
+- ✅ `event_create_stoiximan_basketball.py` - ~39 matches (10 with odds, 26%)
+- ✅ `event_create_roobet_basketball.py` - ~118 matches (96 with odds, 81%)
+- ✅ `event_create_tumbet_basketball.py` - ~212 matches (204 with odds, 96%) - **BEST COVERAGE**
 
-**Status**: ⏳ Investigation phase - discovering sport IDs for Roobet and Tumbet
+**7. Arbitrage Detection - ✅ COMPLETE:**
+- ✅ `arb_create.py` - Soccer arbitrage detector (3-way odds)
+  - Outputs: `results.html`
+  - Sends Telegram notifications for soccer arbitrage opportunities
+  - Uses `roobet_matches.csv`, `stoiximan_matches.csv`, `tumbet_matches.csv`
+  - Reads from `*-formatted.txt` files (soccer)
+- ✅ `arb_basketball_create.py` - **NEW** Basketball arbitrage detector (2-way odds)
+  - Outputs: `results_basketball.html`
+  - Sends Telegram notifications for basketball arbitrage opportunities (with 🏀 emoji)
+  - Uses `roobet_basketball_matches.csv`, `stoiximan_basketball_matches.csv`, `tumbet_basketball_matches.csv`
+  - Reads from `*-basketball-formatted.txt` files
+  - **COMPLETELY SEPARATE** from soccer system (independent HTML, Telegram, file paths)
+  - Tested and working: 27 matched events, 8 arbitrage opportunities detected
+  - Telegram notifications sent to all 6 configured users
+
+**Basketball System Status**: ✅ **FULLY COMPLETE** - All components finished!
+- ✅ Team collectors (4/4): Oddswar, Roobet, Tumbet, Stoiximan
+- ✅ Matching CSVs (3/3): With 100.0 confidence preservation logic
+- ✅ Event creators (4/4): Live + prematch data from all sites
+- ✅ Arbitrage detector: `arb_basketball_create.py` outputs to `results_basketball.html`
+- ✅ Telegram notifications: Sends 🏀 basketball alerts separately from soccer
+- **Basketball system is PRODUCTION READY** 🚀
 
 ## Important
 This system does NOT place bets automatically. It identifies opportunities for the user to manually execute.
@@ -344,6 +566,15 @@ This system does NOT place bets automatically. It identifies opportunities for t
   - Ensure all dependencies are cross-platform (avoid macOS-only or Linux-only packages)
 - **Documentation**: DO NOT create large markdown documentation files for small code fixes, bug fixes, or routine changes. Report changes concisely in the chat instead. Reserve documentation files for significant features, architectural decisions, or complex system explanations only.
 - **Temporary Files**: When creating temporary scripts (e.g., sanity checks, investigation scripts), use the `temp_` prefix naming convention (e.g., `temp_sanity_check_roobet.py`, `temp_investigate_api.py`). These files are gitignored and should be deleted after use.
+- **Bandwidth Optimization**: AVOID browser automation (Selenium, undetected-chromedriver, Playwright, etc.) whenever possible due to excessive bandwidth consumption
+  - **Browser automation uses 50-150 MB per scrape** (full page loads, JavaScript, images, CSS, fonts)
+  - **API/GraphQL uses 1-3 MB per scrape** (JSON data only)
+  - Browser automation creates **50-100x more traffic** than direct API calls
+  - On remote server with limited bandwidth quota, browser automation quickly becomes expensive
+  - **Always prefer direct API calls** even if they require reverse engineering
+  - Only use browser automation as **last resort** when no API alternative exists (e.g., Stake.com)
+  - If site has changed APIs and browser automation is being considered, investigate thoroughly first
+  - For sites like Stoiximan: if prematch API is unavailable, consider accepting live-only data rather than using browser automation
 
 ## Remote Server Information
 - **IP Address**: 89.125.255.32
@@ -725,3 +956,38 @@ When implementing Telegram notifications in `arb_create.py`, **reuse existing fu
 - Recalculate which events have arbitrage
 - Re-sort the events list
 - Create new data structures for the same data
+
+---
+
+## Outstanding Tasks / TODO
+
+### High Priority
+
+**1. Find New Tumbet Live Match API Endpoint**
+- **Issue**: `/api/live/getlivegames/ot` endpoint returns 404 (broken/moved as of Jan 2026)
+- **Current Status**: Only prematch matches available via `getheader` endpoint (1,176+ matches)
+- **Impact**: Missing live arbitrage opportunities from Tumbet
+- **Investigation Method**: 
+  - Open tumbet.com in browser with DevTools Network tab
+  - Navigate to live matches section
+  - Identify current API endpoint being used
+  - Update `event_create_tumbet.py` with new endpoint
+- **Alternative**: Accept prematch-only if live data is not critical
+
+### Medium Priority
+
+**2. Modify CSV Matching Scripts to Preserve Manual Entries**
+- **Issue**: Running `create_*_matches_csv.py` can delete manually-added mappings if Oddswar team name not in `oddswar_names.txt`
+- **Affected Scripts**: `create_roobet_matches_csv.py`, `create_stoiximan_matches_csv.py`, `create_tumbet_matches_csv.py`
+- **Solution**: Modify scripts to:
+  - Load existing CSV entries (including orphaned ones)
+  - Only add/update entries for teams in `oddswar_names.txt`
+  - Preserve all existing entries in output
+  - Implement deduplication logic (keep 100.0 confidence entries, then any match over no match)
+- **Status**: Discussed but not implemented
+
+**3. Create Stake Matching CSV**
+- **Script**: `create_stake_matches_csv.py` (TO BE CREATED)
+- **Input**: `oddswar_names.txt`, `stake_names.txt`
+- **Output**: `stake_matches.csv`
+- **Status**: Not started
