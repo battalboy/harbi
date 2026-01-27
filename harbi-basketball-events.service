@@ -1,0 +1,19 @@
+[Unit]
+Description=Harbi Basketball Arbitrage Event Loop
+After=network.target
+
+[Service]
+Type=simple
+User=giray
+WorkingDirectory=/home/giray/harbi
+ExecStart=/usr/bin/python3 /home/giray/harbi/run_basketball_event_loop.py
+Restart=always
+RestartSec=10
+StandardOutput=append:/home/giray/harbi/logs/basketball_event_loop.log
+StandardError=append:/home/giray/harbi/logs/basketball_event_loop.log
+
+# Environment
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
