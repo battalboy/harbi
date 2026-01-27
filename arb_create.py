@@ -527,7 +527,15 @@ def send_telegram_notifications(matched_events: List[Dict], arb_count: int):
     turkish_months = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 
                       'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
     timestamp = f"{now.day} {turkish_months[now.month-1]} {now.year} - {now.hour:02d}:{now.minute:02d}"
-    header = f"🚨 *Yeni Harbi Oran Fırsatları Var*\n📅 {timestamp}\n\n"
+    
+    # Web URL for soccer results page (adjust domain/port as needed)
+    web_url = "http://89.125.255.32/results.html"
+    
+    header = f"""🚨 *Yeni Harbi Oran Fırsatları Var*
+📅 {timestamp}
+Bu sayfanın web versiyonunu görmek için <a href="{web_url}">tıklayın</a>...
+
+"""
     blocks = []
     
     for event in matched_events:
