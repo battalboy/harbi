@@ -531,7 +531,7 @@ def send_telegram_notifications(matched_events: List[Dict], arb_count: int):
     # Web URL for soccer results page (adjust domain/port as needed)
     web_url = "http://89.125.255.32:8080/results.html"
     
-    header = f"""🚨 *Yeni Harbi Oran Fırsatları Var*
+    header = f"""⚽ *Yeni Futbol Harbi Oran Fırsatları Var*
 📅 {timestamp}
 Bu sayfanın web versiyonunu görmek için <a href="{web_url}">tıklayın</a>...
 
