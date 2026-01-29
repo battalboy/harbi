@@ -81,10 +81,10 @@ def load_team_mappings(csv_file: str) -> Dict[str, str]:
 def parse_formatted_file(file_path: str) -> Dict[Tuple[str, str], Dict]:
     """
     Parse formatted basketball event file (pipe-separated format).
-    Returns dict: {(team1, team2): {odds_1, odds_2, link, status, league}}
+    Returns dict: {(team1, team2): {odds_1, odds_2, link, status, league, start_time}}
 
     Basketball has 2-way odds (no draw).
-    Status and league fields are optional (only present in Oddswar files).
+    Status, league, and start_time fields are optional (only present in Oddswar files).
     """
     events = {}
 
@@ -94,7 +94,7 @@ def parse_formatted_file(file_path: str) -> Dict[Tuple[str, str], Dict]:
             if not line:
                 continue
 
-            # Parse: Team 1: X | Team 2: Y | Team 1 Win: Z | Team 2 Win: Z | Link: URL [| Status: Canlı Maç/Gelen Maç] [| League: League Name]
+            # Parse: Team 1: X | Team 2: Y | Team 1 Win: Z | Team 2 Win: Z | Link: URL [| Status: Canlı Maç/Gelen Maç] [| League: League Name] [| Start Time: ISO8601]
             parts = [p.strip() for p in line.split('|')]
 
             if len(parts) < 5:
@@ -116,6 +116,11 @@ def parse_formatted_file(file_path: str) -> Dict[Tuple[str, str], Dict]:
                 league = None
                 if len(parts) >= 7:
                     league = parts[6].split(':', 1)[1].strip()
+                
+                # Optional start_time field (only for Oddswar)
+                start_time = None
+                if len(parts) >= 8:
+                    start_time = parts[7].split(':', 1)[1].strip()
 
                 # Skip if any odds are N/A
                 if odds_1 == 'N/A' or odds_2 == 'N/A':
@@ -134,6 +139,10 @@ def parse_formatted_file(file_path: str) -> Dict[Tuple[str, str], Dict]:
                 # Add league if present
                 if league:
                     event_data['league'] = league
+                
+                # Add start_time if present
+                if start_time:
+                    event_data['start_time'] = start_time
                 
                 events[(team1, team2)] = event_data
             except (IndexError, ValueError):
@@ -310,13 +319,23 @@ def generate_html(matched_events: List[Dict], output_file: str = 'results_basket
         # Get league from Oddswar data
         league = oddswar.get('league', 'N/A')  # Default to "N/A" if not present
         
+        # Get start time and format in Turkish (optional field)
+        start_time = oddswar.get('start_time')
+        datetime_str = format_turkish_datetime(start_time) if start_time and start_time != 'N/A' else None
+        
+        # Build header with league and optionally datetime
+        if datetime_str:
+            header_content = f"{team1} VS {team2} ({status})<br><span style=\"font-weight: normal; font-size: 0.9em;\">Lig: {league}<br>{datetime_str}</span>"
+        else:
+            header_content = f"{team1} VS {team2} ({status})<br><span style=\"font-weight: normal; font-size: 0.9em;\">Lig: {league}</span>"
+        
         # Start table (3 columns for 2-way odds)
         html += f"""
     <!-- Event: {team1} vs {team2} -->
     <table class="event-table">
         <thead>
             <tr class="header-row">
-                <th colspan="3">{team1} VS {team2} ({status})<br><span style="font-weight: normal; font-size: 0.9em;">Lig: {league}</span></th>
+                <th colspan="3">{header_content}</th>
             </tr>
         </thead>
         <tbody>
@@ -447,6 +466,52 @@ def send_telegram_message(chat_id: int, message: str, bot_token: str) -> bool:
         return False
 
 
+def format_turkish_datetime(iso_timestamp: str) -> str:
+    """
+    Format ISO 8601 timestamp to Turkish date/time format.
+    Example: "2026-01-29T23:30:00.000Z" -> "Tarih: <b>29 Ocak 2026</b> - Saat: <b>23:30</b>"
+    
+    Args:
+        iso_timestamp: ISO 8601 formatted timestamp (e.g., "2026-01-29T23:30:00.000Z")
+    
+    Returns:
+        str: Formatted Turkish date/time string
+    """
+    # Turkish month names
+    turkish_months = {
+        1: 'Ocak',
+        2: 'Şubat',
+        3: 'Mart',
+        4: 'Nisan',
+        5: 'Mayıs',
+        6: 'Haziran',
+        7: 'Temmuz',
+        8: 'Ağustos',
+        9: 'Eylül',
+        10: 'Ekim',
+        11: 'Kasım',
+        12: 'Aralık'
+    }
+    
+    try:
+        # Parse ISO 8601 timestamp (no timezone conversion - use as-is)
+        dt = datetime.fromisoformat(iso_timestamp.replace('Z', '+00:00'))
+        
+        # Format date: "29 Ocak 2026"
+        day = dt.day
+        month = turkish_months[dt.month]
+        year = dt.year
+        date_str = f"{day} {month} {year}"
+        
+        # Format time: "23:30"
+        time_str = dt.strftime('%H:%M')
+        
+        return f"Tarih: <b>{date_str}</b> - Saat: <b>{time_str}</b>"
+    except Exception:
+        # Fallback if parsing fails
+        return f"Tarih: <b>N/A</b> - Saat: <b>N/A</b>"
+
+
 def build_telegram_block(event: Dict, site_name: str) -> str:
     """
     Build a single Telegram message block for one basketball arbitrage opportunity.
@@ -503,10 +568,29 @@ def build_telegram_block(event: Dict, site_name: str) -> str:
     # Get league from Oddswar data (optional field)
     league = oddswar.get('league', 'N/A')  # Default to "N/A" if not present
     
+    # Get start time and format in Turkish (optional field)
+    start_time = oddswar.get('start_time')
+    datetime_str = format_turkish_datetime(start_time) if start_time and start_time != 'N/A' else None
+    
     # Build the block (without <pre> so HTML formatting works)
-    block = f"""🏀 Maç: <b>{team1} vs {team2}</b>
+    if datetime_str:
+        block = f"""🏀 Maç: <b>{team1} vs {team2}</b>
+({status})
+{datetime_str}
+Lig: <b>{league}</b>
+
+Oddswar: {oddswar_1_str} | {oddswar_2_str}
+{site_display[site_name]}:  {site_1_str} | {site_2_str}
+
+<a href="{oddswar['link']}">Oddswar Linki</a>
+<a href="{site_data['link']}">{site_display[site_name]} Linki</a>
+
+"""
+    else:
+        block = f"""🏀 Maç: <b>{team1} vs {team2}</b>
 ({status})
 Lig: <b>{league}</b>
+
 Oddswar: {oddswar_1_str} | {oddswar_2_str}
 {site_display[site_name]}:  {site_1_str} | {site_2_str}
 

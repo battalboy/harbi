@@ -215,11 +215,12 @@ def format_match(match: Dict) -> str:
     link_url = match.get('full_url', 'N/A')
     status = match.get('status', 'Gelen Maç')
     league = match.get('competition', 'N/A')
+    start_time = match.get('start_time', 'N/A')
     
     return (
         f"Team 1: {team1} | Team 2: {team2} | "
         f"Team 1 Win: {team1_odds} | Team 2 Win: {team2_odds} | "
-        f"Link: {link_url} | Status: {status} | League: {league}"
+        f"Link: {link_url} | Status: {status} | League: {league} | Start Time: {start_time}"
     )
 
 
