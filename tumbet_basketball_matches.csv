@@ -1,6 +1,10 @@
 Oddswar,Tumbet,Confidence
 BMS Herlev,Herlev Wolfpack,100.0
+Shanghai Sharks,Shanghai Sharks,100.0
+Limoges CSP,Limoges Csp,100.0
+Shenzhen Leopards,Shenzhen Aviators,100.0
 Dubai Basketball,BC Dubai,100.0
+Saint Quentin,Saint Quentin,100.0
 Club Atletico Cordon,CA Cordon,100.0
 Ciclista Olimpico de La Ban,Olimpico LB,100.0
 Peristeri BC,Peristeri Athens,100.0
@@ -136,7 +140,9 @@ Olimpia Milano,Milano,100.0
 Olympiacos BC,Olympiacos,100.0
 Ostrow Wielkopolski,Stal Ostrow Wielkopolski,100.0
 PAOK BC,PAOK BC,100.0
+Skyliners Frankfurt,Skyliners Frankfurt,100.0
 Pallacanestro Trieste,Trieste 2004,100.0
+SIG Strasbourg,Strasbourg IG,100.0
 Panathinaikos BC,Panathinaikos,100.0
 Panionios BC Athens,Panionios BC,100.0
 Paris Basketball,Paris Basketball,100.0
@@ -191,10 +197,11 @@ Xinjiang Flying Tigers,Xinjiang Flying Tigers,100.0
 Yokohama B-Corsairs,Yokohama B Corsairs,100.0
 Zhejiang Golden Bulls,Zhejiang Golden Bulls,100.0
 Zhejiang Lions,Zhejiang Guangsha Lions,100.0
+JDA Dijon Basket,JDA Dijon Basket,100.0
 Union Atletica,,
 Alliance Sport Alsace,,
 Vrlse BBK,,
-Panionios BC,,
+Panionios BC,Panionios BC,100.0
 Caledonia Gladiators,,
 Club Malvin,,
 Club Atletico Welcome,,
@@ -203,13 +210,13 @@ BC Slovan Bratislava,,
 CA Platense,,
 Flammes Carolo Basket Ardenne,,
 Atletico Goes,,
-KK FMP Belgrade,Mega Belgrade,
+KK FMP Belgrade,FMP Belgrade,100.0
 Champagne Basketball,,
 KK Crvena zvezda Belgrade,,
 BC Olympiakos Piraeus,,
 Busan Sum Women,,
 BK Vejen,,
-Sydney Flames W,,
+Sydney Flames W,Sydney Uni Flames,100.0
 Asociacion Hebraica y Macabi,,
 BC Lietkabelis Panevezys,,
 CB Tizona,,
