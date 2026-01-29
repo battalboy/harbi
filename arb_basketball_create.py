@@ -81,24 +81,25 @@ def load_team_mappings(csv_file: str) -> Dict[str, str]:
 def parse_formatted_file(file_path: str) -> Dict[Tuple[str, str], Dict]:
     """
     Parse formatted basketball event file (pipe-separated format).
-    Returns dict: {(team1, team2): {odds_1, odds_2, link}}
-    
+    Returns dict: {(team1, team2): {odds_1, odds_2, link, status, league}}
+
     Basketball has 2-way odds (no draw).
+    Status and league fields are optional (only present in Oddswar files).
     """
     events = {}
-    
+
     with open(file_path, 'r', encoding='utf-8') as f:
         for line in f:
             line = line.strip()
             if not line:
                 continue
-            
-            # Parse: Team 1: X | Team 2: Y | Team 1 Win: Z | Team 2 Win: Z | Link: URL
+
+            # Parse: Team 1: X | Team 2: Y | Team 1 Win: Z | Team 2 Win: Z | Link: URL [| Status: Canlı Maç/Gelen Maç] [| League: League Name]
             parts = [p.strip() for p in line.split('|')]
-            
+
             if len(parts) < 5:
                 continue
-            
+
             try:
                 team1 = parts[0].split(':', 1)[1].strip()
                 team2 = parts[1].split(':', 1)[1].strip()
@@ -106,18 +107,38 @@ def parse_formatted_file(file_path: str) -> Dict[Tuple[str, str], Dict]:
                 odds_2 = parts[3].split(':', 1)[1].strip()
                 link = parts[4].split(':', 1)[1].strip()
                 
+                # Optional status field (only for Oddswar)
+                status = None
+                if len(parts) >= 6:
+                    status = parts[5].split(':', 1)[1].strip()
+                
+                # Optional league field (only for Oddswar)
+                league = None
+                if len(parts) >= 7:
+                    league = parts[6].split(':', 1)[1].strip()
+
                 # Skip if any odds are N/A
                 if odds_1 == 'N/A' or odds_2 == 'N/A':
                     continue
-                
-                events[(team1, team2)] = {
+
+                event_data = {
                     'odds_1': odds_1,
                     'odds_2': odds_2,
                     'link': link
                 }
+                
+                # Add status if present
+                if status:
+                    event_data['status'] = status
+                
+                # Add league if present
+                if league:
+                    event_data['league'] = league
+                
+                events[(team1, team2)] = event_data
             except (IndexError, ValueError):
                 continue
-    
+
     return events
 
 
@@ -283,13 +304,19 @@ def generate_html(matched_events: List[Dict], output_file: str = 'results_basket
         team2 = event['team2']
         oddswar = event['oddswar']
         
+        # Get status from Oddswar data
+        status = oddswar.get('status', 'Gelen Maç')  # Default to "Gelen Maç" if not present
+        
+        # Get league from Oddswar data
+        league = oddswar.get('league', 'N/A')  # Default to "N/A" if not present
+        
         # Start table (3 columns for 2-way odds)
         html += f"""
     <!-- Event: {team1} vs {team2} -->
     <table class="event-table">
         <thead>
             <tr class="header-row">
-                <th colspan="3">{team1} VS {team2}</th>
+                <th colspan="3">{team1} VS {team2} ({status})<br><span style="font-weight: normal; font-size: 0.9em;">Lig: {league}</span></th>
             </tr>
         </thead>
         <tbody>
@@ -470,8 +497,16 @@ def build_telegram_block(event: Dict, site_name: str) -> str:
         site_1_str = site_data['odds_1']
         site_2_str = site_data['odds_2']
     
+    # Get status from Oddswar data (optional field)
+    status = oddswar.get('status', 'Gelen Maç')  # Default to "Gelen Maç" if not present
+    
+    # Get league from Oddswar data (optional field)
+    league = oddswar.get('league', 'N/A')  # Default to "N/A" if not present
+    
     # Build the block (without <pre> so HTML formatting works)
-    block = f"""🏀 Maç: {team1} vs {team2}
+    block = f"""🏀 Maç: <b>{team1} vs {team2}</b>
+({status})
+Lig: <b>{league}</b>
 Oddswar: {oddswar_1_str} | {oddswar_2_str}
 {site_display[site_name]}:  {site_1_str} | {site_2_str}
 
