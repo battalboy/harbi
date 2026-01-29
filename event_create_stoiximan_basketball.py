@@ -10,7 +10,9 @@ import sys
 import cloudscraper
 import requests  # Keep for exception handling
 import platform
+import time
 from datetime import datetime, timezone
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from error_handler import handle_request_error, success_response, is_ban_indicator
 
 
@@ -19,8 +21,8 @@ SITE_NAME = 'Stoiximan'
 OUTPUT_FILE = 'stoiximan-basketball-formatted.txt'
 ERROR_LOG_FILE = 'stoiximan-basketball-error.json'
 
-# Basketball league IDs (discovered via browser investigation)
-BASKETBALL_LEAGUE_IDS = ['439g', '441g', '446g', '456g']  # Euroleague, NBA, Greek Cup, Champions League
+# Basketball league discovery endpoint
+DISCOVERY_URL = 'https://en.stoiximan.gr/api/sport/basketball/competitions/greece/10021/?req=la,s,stnf,c,mb'
 
 # Turkish month names for timestamp formatting
 TURKISH_MONTHS = [
@@ -101,20 +103,71 @@ def fetch_live_matches():
     return response.json()
 
 
-def fetch_league_matches(league_id: str):
+def discover_all_leagues():
+    """
+    Discover all basketball leagues from Stoiximan dropdown list.
+    
+    Returns:
+        list: List of tuples (region_name, region_id, league_id, display_name)
+    """
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:147.0) Gecko/20100101 Firefox/147.0',
+        'Accept': 'application/json, text/plain, */*',
+        'Referer': 'https://en.stoiximan.gr/sport/basketball/'
+    }
+    
+    proxies = get_proxy_config()
+    scraper = cloudscraper.create_scraper()
+    
+    try:
+        response = scraper.get(DISCOVERY_URL, headers=headers, proxies=proxies, timeout=30)
+        response.raise_for_status()
+        
+        data = response.json()
+        
+        if 'data' not in data or 'dropdownList' not in data['data']:
+            return []
+        
+        dropdown = data['data']['dropdownList']
+        all_leagues = []
+        
+        for region in dropdown:
+            region_id = region.get('id')
+            region_name_display = region.get('name')
+            region_url = region.get('url', '')
+            
+            # Extract region name from URL
+            region_name = region_url.split('/')[4] if len(region_url.split('/')) > 4 else region_name_display.lower().replace(' ', '-')
+            
+            leagues = region.get('leagues', [])
+            
+            for league in leagues:
+                league_id = league.get('id')
+                league_name = league.get('text')
+                
+                display_name = f"{region_name_display} - {league_name}"
+                all_leagues.append((region_name, region_id, league_id, display_name))
+        
+        return all_leagues
+    
+    except Exception as e:
+        print(f"   Error discovering leagues: {e}")
+        return []
+
+
+def fetch_league_matches(region_name: str, region_id: str, league_id: str):
     """
     Fetch matches for a specific basketball league from Stoiximan API.
     
     Args:
-        league_id: Basketball league ID (e.g., '439g' for Euroleague)
+        region_name: Region slug (e.g., 'greece', 'romania')
+        region_id: Region ID (e.g., '10021', '188503')
+        league_id: League ID (e.g., '439g', '562g')
     
     Returns:
         list: List of event objects from the API
     """
-    api_url = f'https://en.stoiximan.gr/api/sports/BASK/hot/trending/leagues/{league_id}/events'
-    params = {
-        'req': 'la,s,stnf,c,mb'
-    }
+    api_url = f'https://en.stoiximan.gr/api/sport/basketball/competitions/{region_name}/{region_id}/?sl={league_id}&req=la,s,stnf,c,mb'
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:147.0) Gecko/20100101 Firefox/147.0',
         'Accept': 'application/json, text/plain, */*',
@@ -124,33 +177,82 @@ def fetch_league_matches(league_id: str):
     proxies = get_proxy_config()
     
     scraper = cloudscraper.create_scraper()
-    response = scraper.get(api_url, params=params, headers=headers, timeout=30, proxies=proxies)
+    response = scraper.get(api_url, headers=headers, timeout=15, proxies=proxies)
     response.raise_for_status()
     
     data = response.json()
-    events = data.get('data', {}).get('events', [])
+    
+    # Extract events from blocks structure
+    events = []
+    if 'data' in data and 'blocks' in data['data']:
+        blocks = data['data']['blocks']
+        for block in blocks:
+            events.extend(block.get('events', []))
     
     return events
 
 
+def fetch_league_matches_wrapper(league_info):
+    """
+    Wrapper function for parallel fetching.
+    
+    Args:
+        league_info: Tuple of (region_name, region_id, league_id, display_name)
+    
+    Returns:
+        list: Events from this league, or empty list on error
+    """
+    region_name, region_id, league_id, display_name = league_info
+    try:
+        return fetch_league_matches(region_name, region_id, league_id)
+    except Exception:
+        # Silently continue on errors (some leagues may have no data)
+        return []
+
+
 def fetch_all_league_matches():
     """
-    Fetch matches from all featured basketball leagues.
+    Fetch matches from ALL basketball leagues worldwide (comprehensive approach with parallel fetching).
     
     Returns:
         list: Combined list of all events from all leagues
     """
     all_events = []
     
-    print(f"Fetching {SITE_NAME} FEATURED league matches ({len(BASKETBALL_LEAGUE_IDS)} leagues)...", flush=True)
+    print(f"Fetching {SITE_NAME} basketball leagues (comprehensive + parallel)...", flush=True)
     
-    for league_id in BASKETBALL_LEAGUE_IDS:
-        try:
-            events = fetch_league_matches(league_id)
-            all_events.extend(events)
-            print(f"   League {league_id}: {len(events)} events")
-        except Exception as e:
-            print(f"   League {league_id}: Error - {e}")
+    # Discover all leagues
+    all_leagues = discover_all_leagues()
+    
+    if not all_leagues:
+        print("   ⚠️  No leagues discovered, falling back to empty list")
+        return []
+    
+    print(f"   Discovered {len(all_leagues)} leagues")
+    print(f"   Fetching with 10 parallel workers...")
+    
+    leagues_with_matches = 0
+    
+    # Fetch from all leagues in parallel (10 workers)
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        # Submit all fetch tasks
+        future_to_league = {
+            executor.submit(fetch_league_matches_wrapper, league_info): league_info 
+            for league_info in all_leagues
+        }
+        
+        # Collect results as they complete
+        for future in as_completed(future_to_league):
+            try:
+                events = future.result()
+                if events:
+                    all_events.extend(events)
+                    leagues_with_matches += 1
+            except Exception:
+                # Silently continue on errors
+                pass
+    
+    print(f"   Fetched {len(all_events)} total events from {leagues_with_matches} leagues")
     
     return all_events
 
@@ -193,6 +295,19 @@ def parse_live_matches(json_data):
             virtual_keywords = ['(Esports)', '(esports)', '(E)', '(GODFATHER)', '(KJMR)', 
                               '(RIDER)', '(CARNAGE)', '(CRYPTO)', '(ARCHER)', '(mist)', '(RAMZ)']
             if any(keyword in team1_name or keyword in team2_name for keyword in virtual_keywords):
+                continue
+            
+            # Skip tournament outright betting markets (continent/region vs generic groups)
+            generic_regions = ['Europe', 'USA', 'Asia', 'Africa', 'Americas']
+            group_pattern_matches = any(
+                name.startswith('Group ') and len(name) == 7  # "Group A", "Group B", etc.
+                for name in [team1_name, team2_name]
+            )
+            continent_matches = any(
+                name in generic_regions
+                for name in [team1_name, team2_name]
+            )
+            if group_pattern_matches or (continent_matches and group_pattern_matches):
                 continue
             
             # Find 2-way odds (Money Line) using marketIdList and selectionIdList
@@ -288,6 +403,19 @@ def parse_league_matches(events):
             virtual_keywords = ['(Esports)', '(esports)', '(E)', '(GODFATHER)', '(KJMR)', 
                               '(RIDER)', '(CARNAGE)', '(CRYPTO)', '(ARCHER)', '(mist)', '(RAMZ)']
             if any(keyword in team1_name or keyword in team2_name for keyword in virtual_keywords):
+                continue
+            
+            # Skip tournament outright betting markets (continent/region vs generic groups)
+            generic_regions = ['Europe', 'USA', 'Asia', 'Africa', 'Americas']
+            group_pattern_matches = any(
+                name.startswith('Group ') and len(name) == 7  # "Group A", "Group B", etc.
+                for name in [team1_name, team2_name]
+            )
+            continent_matches = any(
+                name in generic_regions
+                for name in [team1_name, team2_name]
+            )
+            if group_pattern_matches or (continent_matches and group_pattern_matches):
                 continue
             
             # Find 2-way odds from markets
