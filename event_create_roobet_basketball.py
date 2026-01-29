@@ -184,11 +184,11 @@ def extract_2way_odds(event: Dict) -> tuple:
         # Get the selections (usually under "" key)
         selections = market_2way.get('', {})
         
-        # Selection IDs: "5" = Team 1 (Home), "4" = Team 2 (Away)
-        if '5' in selections:
-            team1_odds = selections['5'].get('k')
+        # Selection IDs: "4" = Team 1 (Home), "5" = Team 2 (Away)
         if '4' in selections:
-            team2_odds = selections['4'].get('k')
+            team1_odds = selections['4'].get('k')
+        if '5' in selections:
+            team2_odds = selections['5'].get('k')
     
     return team1_odds, team2_odds
 
