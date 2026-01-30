@@ -23,14 +23,23 @@
 - **Maximum team coverage**: Each traditional betting site must have as many team names collected as possible
 - **Balanced coverage**: Having 150 teams for one site while another site has 1,000+ teams is **not acceptable**
 - **Quality standard**: All included sites must provide comparable and comprehensive team coverage to maximize arbitrage opportunities
-- **Implementation priority**: If a site cannot provide adequate team coverage through available API methods, alternative approaches (browser automation, etc.) must be implemented to meet the client's requirements
+- **CRITICAL: NO LIMITATIONS ACCEPTED**: Limitations are not tolerated. If a site appears limited, investigate deeper to find the proper API solution
+- **CRITICAL: NO BROWSER AUTOMATION/SCRAPING**: Browser automation and web scraping are forbidden due to excessive bandwidth costs (50-150 MB per run vs 1-3 MB for APIs)
+- **API-ONLY REQUIREMENT**: All data collection MUST use direct API calls. If an API appears unavailable, investigate further - there is always an API solution
+- **Implementation priority**: When facing apparent API limitations, the solution is to find the correct comprehensive API endpoint, NOT to use browser automation or accept reduced coverage
 
-**Current Coverage Status:**
+**Current Coverage Status (Soccer):**
 - Oddswar: ~1,874 teams ✅ (Master key - defines available opportunities)
 - Stoiximan: ~3,521 teams ✅ (Excellent coverage - 88.8% match rate)
 - Tumbet: ~1,700+ teams ✅ (Excellent coverage - uses comprehensive getheader endpoint)
 - Roobet: ~1,545 teams ✅ (Good coverage - ~38% match rate)
 - Stake: ~203 teams ⚠️ (Growing - depends on active leagues, browser automation)
+
+**Current Coverage Status (Basketball):**
+- Oddswar Basketball: ~1,600+ teams ✅ (Master key - 2-way odds)
+- Stoiximan Basketball: ~712 teams ✅ (Excellent coverage - 110 leagues worldwide via comprehensive API)
+- Roobet Basketball: ~211 teams ✅ (Good coverage - all version endpoints)
+- Tumbet Basketball: ~400 teams ✅ (Excellent coverage - getheader endpoint)
 
 ## Project Overview
 
@@ -157,10 +166,17 @@ The matching system uses **indicator-first filtering** to ensure accurate matche
   - ~128 teams collected (Live + Today + Upcoming intervals)
 - **Stoiximan Basketball**: `collect_stoiximan_basketball.py` → outputs `stoiximan_basketball_names.txt`
   - Sport ID: `'BASK'`
-  - ~49 teams collected (Featured games only - builds up over time)
-  - **⚠️ Coverage Limitation**: Only ~28 featured/popular games available at any time via `/live/overview/latest`
-  - **No comprehensive prematch API found** (investigated extensively - would require HTML scraping)
-  - **HTML scraping rejected**: Excessive bandwidth usage (50-150 MB per fetch) vs API (1-3 MB)
+  - **✅ Comprehensive API discovered**: `/api/sport/basketball/competitions/{region}/{regionId}/?sl={leagueId}&req=la,s,stnf,c,mb`
+  - **Discovery endpoint**: `/api/sport/basketball/competitions/greece/10021/?req=la,s,stnf,c,mb` (returns dropdown list with ALL leagues)
+  - **Response structure**: `data.dropdownList[]` contains all regions and leagues, `data.blocks[].events[]` contains matches
+  - **Coverage**: ~712 unique teams from 111 leagues worldwide (94+ leagues with active matches)
+  - **Runtime**: ~56 seconds (comprehensive one-time fetch)
+  - **Key parameters**: 
+    - `region_name`: URL slug (e.g., 'greece', 'romania', 'usa')
+    - `region_id`: Numeric region ID (e.g., '10021', '188503', '11326')
+    - `league_id`: Specific league ID with 'g' suffix (e.g., '439g' for Euroleague, '562g' for Romanian Liga Nationala Men, '182187' for Romanian Liga Nationala Women)
+    - `req=la,s,stnf,c,mb`: Required parameter for full match data
+  - **Women's leagues**: Explicitly marked with "(W)" in league names (e.g., "Greece - A1 (W)", "Romania - Liga Nationala (W)")
   - Filters out virtual tournament teams (GODFATHER, KJMR, RIDER, CARNAGE, CRYPTO, ARCHER, mist, RAMZ)
   - Uses `cloudscraper` to bypass Cloudflare protection
 - **Roobet Basketball**: `collect_roobet_basketball.py` → outputs `roobet_basketball_names.txt`
@@ -485,14 +501,21 @@ Events (two teams playing each other) are formatted differently across sites.
   - 2-way odds: Team 1 Win / Team 2 Win (no draw)
   - Current coverage: ~78 matches from 95 markets (multiple intervals: inplay, today, all)
   - **This is the MASTER KEY** - defines available basketball arbitrage opportunities
-- ✅ `event_create_stoiximan_basketball.py` - **CREATED & TESTED**
+  - **Enhanced output format** (pipe-separated):
+    - Team names, odds, link, status, league, start time
+    - Status: "Canlı Maç" (live, from inplay interval) or "Gelen Maç" (upcoming, from today/all intervals)
+    - League: Competition name (e.g., "Euroleague Men", "NBA", "Uruguayan LUB")
+    - Start Time: ISO 8601 timestamp (e.g., "2026-01-29T23:30:00.000Z")
+- ✅ `event_create_stoiximan_basketball.py` - **CREATED & TESTED (COMPREHENSIVE)**
   - Outputs: `stoiximan-basketball-formatted.txt`
-  - Fetches live + featured league matches via Stoiximan API
-  - Featured leagues: Euroleague (439g), NBA (441g), Greek Cup (446g), Champions League (456g)
-  - Uses Money Line/Match Result market for 2-way odds
-  - Current coverage: ~39 matches (10 with odds, 26% success rate)
-  - **Limited coverage** as expected (~28 featured games at any time)
-  - Includes virtual matches (marked with keywords like ESSENCE, LEGACY)
+  - Fetches live + ALL league matches via comprehensive Stoiximan API
+  - **Auto-discovers all 110 leagues worldwide** (no hardcoded IDs required)
+  - Uses same API pattern as collector: `/api/sport/basketball/competitions/{region}/{regionId}/?sl={leagueId}&req=la,s,stnf,c,mb`
+  - Response structure: `data.blocks[].events[]` for prematch, plus `/danae-webapi/api/live/overview/latest` for live
+  - Uses Money Line/Match Result/Winner markets for 2-way odds
+  - **Coverage**: ~400 matches (16 live + 384 prematch, ~97% with complete odds)
+  - **Runtime**: ~90 seconds sequential (can be optimized to ~10-15s with parallel fetching)
+  - **Performance Note**: Sequential fetching of 110 leagues takes time; parallel fetching with `ThreadPoolExecutor` recommended for production
 - ✅ `event_create_roobet_basketball.py` - **CREATED & TESTED**
   - Outputs: `roobet-basketball-formatted.txt`
   - Fetches live + prematch matches via Betby API (all version endpoints)
@@ -513,9 +536,9 @@ Events (two teams playing each other) are formatted differently across sites.
 
 **6. Basketball Event Creators - ✅ ALL CREATED:**
 - ✅ `event_create_oddswar_basketball.py` - ~78 matches (MASTER KEY)
-- ✅ `event_create_stoiximan_basketball.py` - ~39 matches (10 with odds, 26%)
+- ✅ `event_create_stoiximan_basketball.py` - ~400 matches (387 with odds, 97%) - **BEST COVERAGE**
 - ✅ `event_create_roobet_basketball.py` - ~118 matches (96 with odds, 81%)
-- ✅ `event_create_tumbet_basketball.py` - ~212 matches (204 with odds, 96%) - **BEST COVERAGE**
+- ✅ `event_create_tumbet_basketball.py` - ~212 matches (204 with odds, 96%)
 
 **7. Arbitrage Detection - ✅ COMPLETE:**
 - ✅ `arb_create.py` - Soccer arbitrage detector (3-way odds)
@@ -531,6 +554,16 @@ Events (two teams playing each other) are formatted differently across sites.
   - **COMPLETELY SEPARATE** from soccer system (independent HTML, Telegram, file paths)
   - Tested and working: 27 matched events, 8 arbitrage opportunities detected
   - Telegram notifications sent to all 6 configured users
+  - **Enhanced display features**:
+    - Parses status, league, and start_time from Oddswar formatted output
+    - Telegram messages show:
+      - Match status: "(Canlı Maç)" or "(Gelen Maç)"
+      - League: "Lig: **League Name**" (bold)
+      - Date/Time in Turkish: "Tarih: **DD Month YYYY** - Saat: **HH:MM**" (bold)
+      - Team names in bold
+    - HTML results show same information in table headers (status, league, Turkish date/time)
+    - Turkish month names: Ocak, Şubat, Mart, Nisan, Mayıs, Haziran, Temmuz, Ağustos, Eylül, Ekim, Kasım, Aralık
+    - No timezone conversion - displays exact time from Oddswar API
 
 **Basketball System Status**: ✅ **FULLY COMPLETE** - All components finished!
 - ✅ Team collectors (4/4): Oddswar, Roobet, Tumbet, Stoiximan
