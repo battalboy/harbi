@@ -7,10 +7,11 @@ Maroussi BC,Marousi,100.0
 AO Mykonos BC,AO Mykonou,100.0
 BK Vejen,KIF Vejen,100.0
 CB Tizona,UBU Tizona,100.0
-Ciclista Olimpico de La Ban,Club Ciclista Olimpico,100.0
+Ciclista Olimpico de La Ban,Ciclista Olimpico LDD,100.0
 Wonju DB Promy,Wonju Dongbu Promy,100.0
 Bayern Munich,Bayern Munchen,100.0
 ADA Blois Basket 41,Ada Blois Basket 41,100.0
+Pinar Karsiyaka,Karsiyaka,100.0
 AEK Athens,AEK Athens,100.0
 ALBA Berlin,Alba Berlin,100.0
 AS Monaco,Monaco,100.0
@@ -35,6 +36,7 @@ BK Amager,BK Amager,100.0
 BMS Herlev,BMS Herlev Wolfpack,100.0
 Bakken Bears,Bakken Bears,100.0
 Bamberg Baskets,Bamberg,100.0
+Limoges CSP,Limoges,100.0
 Basketball Nymburk,Nymburk,100.0
 Baskonia Vitoria-Gasteiz,Baskonia,100.0
 Basquet Manresa,Manresa,100.0
@@ -51,6 +53,7 @@ CB Gran Canaria,Gran Canaria,100.0
 CSM Corona Brasov,CSM Corona Brasov,100.0
 CSM Targu Jiu,CSM Targu Jiu,100.0
 Caen Basket Calvados,Caen Basket Calvados,100.0
+Gladiators Trier,Gladiators Trier,100.0
 Cairns Taipans,Cairns Taipans,100.0
 Caledonia Gladiators,Caledonia Gladiators,100.0
 Cheshire Phoenix,Cheshire Phoenix,100.0
@@ -61,10 +64,13 @@ Dabrowa Gornicza,MKS Dabrowa Gornicza,100.0
 Defensor Sporting,Defensor Sporting,100.0
 Elan Chalon,Elan Chalon,100.0
 FC Barcelona,Barcelona,100.0
+Kauhajoki Karhu,Kauhajoen Karhu,100.0
+Fenerbahce SK,Fenerbahce,100.0
 Fenerbahce Istanbul,Fenerbahce,100.0
+KTP Basket,KTP Basket Kotka,100.0
 Galatasaray SK,Galatasaray,100.0
 Hamburg Towers,Hamburg Towers,100.0
-Spartak Pleven,Spartak Pleven,100.0
+BC Spartak Pleven,Spartak Pleven,100.0
 Hermine Nantes Basket,Nantes,100.0
 Shumen,Shumen,100.0
 Hyeres Toulon,Hyeres Toulon Var Basket,100.0
@@ -89,7 +95,7 @@ Panathinaikos BC,Panathinaikos,100.0
 Panionios BC,Panionios,100.0
 Peristeri BC,Peristeri,100.0
 Poitiers Basket 86,Poitiers,100.0
-Racing de Chivilcoy,Racing de Chivilcoy,100.0
+Racing de Chivilcoy,Racing Chivilcoy LDD,100.0
 Randers Cimbria,Randers Cimbria,100.0
 Rasta Vechta,Rasta Vechta,100.0
 Real Madrid,Real Madrid,100.0
@@ -101,11 +107,22 @@ San Martin Corrientes,San Martin Corrientes,100.0
 San Miguel Beermen,San Miguel Beermen,100.0
 Slask Wroclaw,Slask Wroclaw,100.0
 Sloga Uppsala,Sloga Uppsala,100.0
+Obradoiro CAB,Obradoiro,100.0
 Svendborg Rabbits,Svendborg Rabbits,100.0
+Basketball Lowen Braunschw,Basketball Lowen Braunschweig,100.0
+Academics Heidelberg,USC Heidelberg,100.0
+Union de Santa Fe,Union Santa Fe,100.0
+Vanoli Cremona,Cremona,100.0
+Dinamo Sassari,Dinamo Sassari,100.0
+Obera Tenis Club,Obera Tenis Club,100.0
+Basket Cartagena,Cartagena,100.0
+Oviedo BC,Oviedo,100.0
+CD Estela,Estela,100.0
 Tasmania JackJumpers,Tasmania Jackjumpers,100.0
 Tofas SK,Tofas,100.0
 Tropang Giga,TNT Tropang Giga,100.0
 Turk Telekom,Turk Telekom,100.0
+Turk Telekom BK,Turk Telekom,100.0
 Union Atletica,Union Atletica,100.0
 Uppsala Basket,Uppsala Basket,100.0
 Urunday Universitario,Urunday Universitario,100.0
@@ -115,7 +132,10 @@ Virtus Bologna,Virtus Bologna,100.0
 Wurzburg Baskets,Wurzburg,100.0
 Manchester Basketball,Manchester Giants,100.0
 Surrey 89ers,Surrey Scorchers,100.0
+CB Zamora,Zamorano,100.0
 SE Melbourne Phoenix,South East Melbourne Phoenix,100.0
+Palmer Basquet Mallorca Palma,Palmer Basket Mallorca,100.0
+Boulazac Basket Dordogne,Boulazac Dordogne Pro,100.0
 Paris Basketball,Paris Basketball,100.0
 Adelaide Lightning W,Adelaide Lightning (W),100.0
 Bourges Women,Bourges (W),100.0
@@ -125,10 +145,27 @@ Galatasaray Cagdas Women,Galatasaray (W),100.0
 Hapoel Tel-Aviv,Hapoel Tel Aviv,100.0
 Southside Flyers W,Southside Flyers (W),100.0
 Townsville Fire W,Townsville Fire (W),100.0
+Nanterre 92,Nanterre,100.0
+APU Udine,AP Udine,100.0
+Derthona Basket,Derthona Basket,100.0
+Koping Stars,Koping Stars,100.0
+Norrkoeping Dolphins,Norrkoping Dolphins,100.0
+Kosice Wolves,Kosice Wolves,100.0
+BC Komarno,MBK Komarno,100.0
+Botev 2012 Vratsa,Botev 2012 Vratsa,100.0
+Rilski Sportist,Rilski Sportist Samokov,100.0
+BC Prievidza,HBK Prievidza,100.0
+BC Slovan Bratislava,BK Inter Bratislava,100.0
+BK Iskra Svit,BK Iskra Svit,100.0
+KD Ilirija,Ilirija,100.0
+CB Coruna,Basquet Coruna,100.0
+Club Melilla Baloncesto,Club Melilla Baloncesto,100.0
+BKM Lucenec,MBK Lucenec,100.0
+MBK Handlova,MBK Handlova,100.0
+Spisski Rytieri,Spisskí Rytieri,100.0
 Hapoel Holon BC,,
 Obras Sanitarias,,
 CSM Ploiesti,,
-Koping Stars,,
 SCM Timisoara,,
 La Union Formosa,,
 BC Olympiakos Piraeus,,
@@ -137,11 +174,9 @@ Alliance Sport Alsace,,
 LG Sakers,,
 Xinjiang Flying Tigers,,
 Liaoning Flying Leopards,,
-Norrkoeping Dolphins,,
 Illawarra Hawks,,
 Brisbane Bullets,,
 Jiangsu Dragons,,
-Kosice Wolves,,
 Ningbo Rockets,,
 Spartak Subotica,,
 Umea BSKT,,
@@ -159,15 +194,10 @@ Nassjo Basket,,
 Dubai Basketball,,
 Ulm Basketball,,
 Anyang Jungkwanjang Red Booste,,
-BC Komarno,,
-BC Prievidza,,
-BC Slovan Bratislava,,
 BCMU Arges Pitesti,,
-BK Iskra Svit,,
 BK Patrioti Levice,,
 Baloncesto Malaga,,
 Bendigo Spirit W,,
-Bkm Lucenec,,
 Busan Sum Women,,
 CA Platense,,
 CB Bahia San Agustin,,
@@ -192,7 +222,6 @@ Holbaek-Stenhus,,
 KK Borac Cacak,,
 KK Buducnost Voli,,
 KK FMP Belgrade,,
-MBK Handlova,,
 Nitra Blue Wings,,
 Panionios BC Athens,,
 Quimsa Santiogo Del Estero,,
@@ -201,7 +230,6 @@ Samsung Thunders,,
 Shandong Kirin,,
 Shanxi Loongs,,
 Spar Girona Women,,
-Spisski Rytieri,,
 Steaua CSM Bucuresti,,
 Sydney Kings,,
 Vrlse BBK,,
