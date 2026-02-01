@@ -254,7 +254,7 @@ def generate_html(matched_events: List[Dict], output_file: str = 'results_basket
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harbi - Basketball Arbitrage Results - {timestamp}</title>
+    <title>Harbi - Basketball Arbitrage Results</title>
     <style>
         body {{
             font-family: Arial, sans-serif;
@@ -301,7 +301,7 @@ def generate_html(matched_events: List[Dict], output_file: str = 'results_basket
     </style>
 </head>
 <body>
-    <h1 style="text-align: center;">H.Ar.B.İ. - Basketball Arbitrage Oran Sonuçları</h1>
+    <h1 style="text-align: center;">H.Ar.B.İ. - Basketball Arbitrage Oran Sonuçları - {timestamp}</h1>
 """
     
     # Add error banner if there are any errors
