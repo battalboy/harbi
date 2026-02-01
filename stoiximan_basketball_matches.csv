@@ -1,4 +1,13 @@
 Oddswar,Stoiximan,Confidence
+Trabzonspor BK,Trabzonspor MP,100.0
+Bursaspor,Bursaspor,100.0
+Jilin Northeast Tigers,Jilin Northeast Tigers,100.0
+KK Vrsac,KK Vrsac,100.0
+Bkk Radnicki Belgrade,Radnicki Belgrade,100.0
+KK Samobor,KK Samobor,100.0
+GKK Sibenka,GKK Sibenik,100.0
+UCAM Murcia,Murcia,100.0
+Argentino Junin,Argentino Junin,100.0
 BC Neptunas Klaipeda,Klaipedos Neptunas Akvaservis,100.0
 Ostrow Wielkopolski,Stal Ostrow,100.0
 AO Kolossos Rodou,Kolossos Rhodes,100.0
@@ -8,6 +17,7 @@ AO Mykonos BC,AO Mykonou,100.0
 BK Vejen,KIF Vejen,100.0
 CB Tizona,UBU Tizona,100.0
 Ciclista Olimpico de La Ban,Ciclista Olimpico LDD,100.0
+Ciclista Olimpico de La Banda,Club Ciclista Olimpico,100.0
 Wonju DB Promy,Wonju Dongbu Promy,100.0
 Bayern Munich,Bayern Munchen,100.0
 ADA Blois Basket 41,Ada Blois Basket 41,100.0
@@ -165,8 +175,13 @@ MBK Handlova,MBK Handlova,100.0
 Spisski Rytieri,Spisskí Rytieri,100.0
 Spartak Subotica,Spartak Subotica,100.0
 KK Buducnost Voli,Buducnost,100.0
+Obras Sanitarias,Club Atletico Obras Sanitarias,100.0
+BCMU Arges Pitesti,BCM U Pitesti,100.0
+CA Platense,Platense,100.0
+CSU Sibiu,BC CSU Sibiu,100.0
+Csm Targu Mures,CSM Targu Mures,100.0
+Zhejiang Lions,Zhejiang Guangsha Lions,100.0
 Hapoel Holon BC,,
-Obras Sanitarias,,
 CSM Ploiesti,,
 SCM Timisoara,,
 La Union Formosa,,
@@ -195,12 +210,10 @@ Nassjo Basket,,
 Dubai Basketball,,
 Ulm Basketball,,
 Anyang Jungkwanjang Red Booste,,
-BCMU Arges Pitesti,,
 BK Patrioti Levice,,
 Baloncesto Malaga,,
 Bendigo Spirit W,,
 Busan Sum Women,,
-CA Platense,,
 CB Bahia San Agustin,,
 CB Canarias,,
 CS Dinamo Bucuresti,,
@@ -208,10 +221,8 @@ CS Municipal Galati,,
 CS Rapid Bucuresti,,
 CS Valcea 1924 Rm Valcea,,
 CSM CSU Oradea,,
-CSU Sibiu,,
 Cheongju KB Stars Women,,
 Club Joventut Badalona,,
-Csm Targu Mures,,
 Elan Bearnais Pau-Lacq-Ort,,
 FC Universitatea Cluj,,
 Fujian Sturgeons,,
@@ -236,4 +247,3 @@ Vrlse BBK,,
 Woori WON Women,,
 Zaragoza,,
 Zhejiang Golden Bulls,,
-Zhejiang Lions,,
