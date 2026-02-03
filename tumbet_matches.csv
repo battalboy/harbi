@@ -718,7 +718,7 @@ Excelsior,Excelsior,100.0
 Excelsior Maassluis,Excelsior Maassluis,100.0
 Exeter,Exeter City,100.0
 Express,Express FC,100.0
-Eyupspor,Eyüpspor,100.0
+Eyupspor,Eyupspor,100.0
 Eyupspor U19,Eyüpspor U19,100.0
 F.C. Racing,FC Racing,100.0
 Falcon FC,Falcon Se,100.0
@@ -730,7 +730,7 @@ Farense U23,Sc Farense U23,100.0
 Farnborough FC,Farnborough Town,100.0
 Farul Constanta,Farul Constanta,100.0
 Fasil Kenema,Fasil Ketema,100.0
-Fatih Karagumruk Istanbul,Centone Karagümrük İstanbul,100.0
+Fatih Karagumruk Istanbul,Karagümrük,100.0
 Fatsa Belediyespor,Fatsa Belediyespor,100.0
 FC Ashdod,FC Ashdod,100.0
 FC Atlas (W),Atlas (K.),100.0
@@ -824,9 +824,9 @@ Garudayaksa FC,Garuda Yaksa,100.0
 Gasogi United,Gasogi United,100.0
 Gateshead,Gateshead,100.0
 Gavilanes Matamoros,Gavilanes de Matamoros,100.0
-Gaziantep FK,Gaziantep,100.0
+Gaziantep FK,Gaziantep FK,100.0
 GD Estoril Praia U23,Estoril Praia U23,100.0
-Genclerbirligi,Gençlerbirliği,100.0
+Genclerbirligi,Genclerbirligi SK,100.0
 Genemuiden,Genemuiden,100.0
 Genk,Genk,100.0
 Genoa,Genoa,100.0
@@ -852,7 +852,7 @@ Goias U20,Goias Go U20,100.0
 Golden Arrows,L. Golden Arrows,100.0
 Gor Mahia FC,Gor Mahia FC,100.0
 Gorilla FC,Gorilla FC,100.0
-Goztepe,Göztepe,100.0
+Goztepe,Goztepe SK,100.0
 Goztepe U19,Goztepe U19,100.0
 Granada,Granada,100.0
 Grasshoppers Zurich,Grasshoppers,100.0
@@ -1525,7 +1525,7 @@ Rijeka,Rijeka,100.0
 Rio Ave,Rio Ave,100.0
 Rio Ave FC U23,Rio Ave U23,100.0
 Rivers United FC,Rivers United FC,100.0
-Rizespor,Rizespor,100.0
+Rizespor,Çaykur Rizespor,100.0
 RKC Waalwijk,Waalwijk,100.0
 Rochdale,Rochdale,100.0
 Roda JC,Roda,100.0
@@ -1961,6 +1961,8 @@ Sporting Braga U23,SP. Braga U23,100.0
 Tigre,CA Tigre,100.0
 Veraguas FC,Veraguas United FC,100.0
 Willem II,Willem II Tilburg,100.0
+Bodrum Belediyesi Bodrumspor,Bodrumspor,100.0
+Fenerbahce Istanbul,Fenerbahçe,
 Al-Shabab (KSA),,
 Canberra United (W),,
 Neftchi Baku,,
@@ -2163,7 +2165,6 @@ Blooming Santa Cruz,,
 Bnei Sakhnin,,
 Bnei Yehuda,,
 Bodo/Glimt U19,,
-Bodrum Belediyesi Bodrumspor,,
 Boeung Ket,,
 Bolton,,
 Borac Banja Luka,,
