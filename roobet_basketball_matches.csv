@@ -1,6 +1,5 @@
 Oddswar,Roobet,Confidence
-Hogsbo Basket,Hogsbo Basket,100.0
-Gladiators Trier,TBB Trier,100.0
+Sporting CP,Sporting CP,100.0
 AEK Athens,BC AEK Athens,100.0
 ALBA Berlin,Alba Berlin,100.0
 AO Kolossos Rodou,BC Kolossos Rhodes,100.0
@@ -18,9 +17,11 @@ BC Lietkabelis Panevezys,BC Lietkabelis Panevezys,100.0
 BC Lulea,BC Lulea,100.0
 BC Neptunas Klaipeda,BC Neptunas Klaipeda,100.0
 BC Olympiakos Piraeus,BC Olympiakos Piraeus,100.0
+BC Prievidza,BC Prievidza,100.0
 BC Vienna,BC Vienna,100.0
 BC Zalgiris Kaunas,BC Zalgiris Kaunas,100.0
 BK Olomoucko,BK Olomoucko,100.0
+Bahcesehir Koleji,Bahcesehir Koleji,100.0
 Baloncesto Malaga,CB Malaga,100.0
 Bamberg Baskets,Brose Bamberg,100.0
 Basketball Lowen Braunschw,Basketball Lowen Braunschweig,100.0
@@ -28,7 +29,10 @@ Basketball Nymburk,Basketball Nymburk,100.0
 Baskonia Vitoria-Gasteiz,Baskonia Vitoria-Gasteiz,100.0
 Basquet Manresa,Basquet Manresa,100.0
 Bayern Munich,Bayern Munich,100.0
+Beijing Ducks,Beijing Ducks,100.0
+Beijing Royal Fighters,Beijing Royal Fighters,100.0
 Besiktas JK,Besiktas JK,100.0
+Bilbao Basket,Bilbao Basket,100.0
 Boras Basket,Boras Basket,100.0
 Brisbane Bullets,Brisbane Bullets,100.0
 Bursaspor,Bursaspor,100.0
@@ -37,6 +41,7 @@ CB Breogan,CB Breogan,100.0
 CB Canarias,CB 1939 Canarias,100.0
 CB Gran Canaria,CB Gran Canaria,100.0
 CB Granada,Granada,100.0
+CSM CSU Oradea,CSM CSU Oradea,100.0
 Cairns Taipans,Cairns Taipans,100.0
 Chiba Jets,Chiba Jets Funabashi,100.0
 Club Joventut Badalona,Club Joventut Badalona,100.0
@@ -47,25 +52,31 @@ Elan Chalon,Elan Chalon,100.0
 FC Barcelona,FC Barcelona,100.0
 FC Bayern Munchen,Bayern Munich,100.0
 FC Universitatea Cluj,CS Universitatea Cluj-Napoca,100.0
+Falco Szombathely,Falco KC Szombathely,100.0
 Fenerbahce Istanbul,Fenerbahce Istanbul,100.0
 Flammes Carolo Basket Ardenne,Flammes Carolo Basket,100.0
 Fujian Sturgeons,Fujian Sturgeons,100.0
 GTK Gliwice,GTK Gliwice,100.0
 Galatasaray SK,Galatasaray SK,100.0
 Gargzdu Gargzdai SC,Gargzdai SC,100.0
+Gladiators Trier,TBB Trier,100.0
+Guangdong Southern Tigers,Guangdong Southern Tigers,100.0
 Guangzhou Loong Lions,Guangzhou Loong Lions,100.0
 Hamburg Towers,Hamburg Towers,100.0
 Hapoel Holon BC,Hapoel Holon BC,100.0
 Hapoel Jerusalem,Hapoel Jerusalem,100.0
 Hapoel Tel-Aviv,Hapoel Tel-Aviv,100.0
 Hiroshima Dragonflies,Hiroshima Dragonflies,100.0
+Hogsbo Basket,Hogsbo Basket,100.0
 Illawarra Hawks,Illawarra Hawks,100.0
 Iraklis Thessaloniki,GS Iraklis Thessaloniki,100.0
 JL Bourg Basket,JL Bourg Basket,100.0
 Jamtland Basket,Jamtland Basket,100.0
 Jiangsu Dragons,Jiangsu Dragons,100.0
 Jilin Northeast Tigers,Jilin Northeast Tigers,100.0
+KK Bosna,KK Bosna Royal Sarajevo,100.0
 KK Buducnost Voli,KK Buducnost Voli,100.0
+KK Cedevita Junior,Kk Cedevita Zagreb Junior,100.0
 KK Cedevita Olimpija Ljubljana,KK Cedevita Olimpija Ljubljana,100.0
 KK Crvena zvezda Belgrade,KK Crvena Zvezda Belgrade,100.0
 KK Partizan Belgrade,KK Partizan Belgrade,100.0
@@ -82,6 +93,7 @@ Maccabi Tel-Aviv,Maccabi Tel-Aviv,100.0
 Maroussi BC,BC Maroussi Athens,100.0
 Melbourne United,Melbourne United,100.0
 Nagasaki,Nagasaki Velca,100.0
+Nanjing Monkey Kings,Nanjing Monkey Kings,100.0
 Nassjo Basket,Nassjo Basket,100.0
 New Zealand Breakers,New Zealand Breakers,100.0
 Niners Chemnitz,Niners Chemnitz,100.0
@@ -91,6 +103,7 @@ Okinawa Ryukyu Golden Kings,Ryukyu Golden Kings Okinawa,100.0
 Olimpia Milano,Olimpia Milano,100.0
 Ostrow Wielkopolski,Stal Ostrow Wielkopolski,100.0
 Pallacanestro Brescia,Pallacanestro Brescia,100.0
+Pallacanestro Reggiana,Pallacanestro Reggiana,100.0
 Pallacanestro Trieste,Trieste 2004,100.0
 Panathinaikos BC,Panathinaikos BC,100.0
 Panionios BC Athens,Panionios BC Athens,100.0
@@ -98,6 +111,7 @@ Paris Basketball,Paris Basketball,100.0
 Peristeri BC,Peristeri Athens,100.0
 Perth Wildcats,Perth Wildcats,100.0
 Petkim Spor,Petkim Spor Aliaga,100.0
+Qingdao Eagles,Qingdao Eagles,100.0
 Rasta Vechta,Rasta Vechta,100.0
 Real Madrid,Real Madrid,100.0
 Reyer Venezia,Reyer Venezia,100.0
@@ -109,8 +123,11 @@ Saga Ballooners,Saga Ballooners,100.0
 San Miguel Beermen,San Miguel Beermen,100.0
 Sendai 89ERS,Sendai 89Ers,100.0
 Shandong Kirin,Shandong Kirin,100.0
+Shanghai Sharks,Shanghai Sharks,100.0
 Shanxi Loongs,Shanxi Loongs,100.0
+Shenzhen Leopards,Shenzhen Leopards,100.0
 Shiga Lakes,Shiga Lakestars,100.0
+Sichuan Blue Whales,Sichuan Blue Whales,100.0
 Slask Wroclaw,Slask Wroclaw,100.0
 Sloga Uppsala,Sloga Uppsala,100.0
 Soedertaelje BBK,Sodertalje BBK,100.0
@@ -119,8 +136,10 @@ Tasmania JackJumpers,Tasmania Jackjumpers,100.0
 Tianjin Pioneers,Tianjin Pioneers,100.0
 Tofas SK,Tofas SK Bursa,100.0
 Trabzonspor BK,Trabzonspor Basketbol,100.0
+Trefl Sopot,Trefl Sopot,100.0
 Tropang Giga,Tropang Giga,100.0
 Turk Telekom,Turk Telekom,100.0
+UCAM Murcia,UCAM Murcia,100.0
 USK Praha,USK Prague,100.0
 Ulm Basketball,Ulm Basketball,100.0
 Ulm Baskets,Ulm Basketball,100.0
@@ -136,62 +155,74 @@ Zaragoza,Basket Zaragoza 2002,100.0
 Zastal BC Zielona Gora,Basket Zielona Gora,100.0
 Zhejiang Golden Bulls,Zhejiang Golden Bulls,100.0
 Zhejiang Lions,Zhejiang Lions,100.0
+CA Paulistano,,
 CS Dinamo Bucuresti,,
-Defensor Sporting,,
-Spar Girona Women,,
+Olympiacos BC,,
+Club Ourense Baloncesto,,
 BK Amager,,
 CSM Ploiesti,,
 SCM Timisoara,,
+Tampereen Pyrinto,,
 Boca Juniors,,
 Hyeres Toulon,,
 BK Vejen,,
+Sao Jose Basketball,,
 Aix Maurienne Savoie Basket,,
 BC Komarno,,
 Caen Basket Calvados,,
-Hermine Nantes Basket,,
-Poitiers Basket 86,,
 CB Tizona,,
 MBK Handlova,,
 Club Malvin,,
+Tapiolan Honka,,
+Brasilia Basquete,,
 Leicester Riders,,
-Manchester Basketball,,
 Caledonia Gladiators,,
 Bears Academy,,
 Bristol Flyers,,
 Kosice Wolves,,
 Lokomotiv Plovdiv 1926,,
+Osasco Basket,,
 Samsung Thunders,,
 Bakken Bears,,
 Bourges Women,,
 ADA Blois Basket 41,,
 Cheshire Phoenix,,
+Manchester Basketball,,
 Antibes Sharks,,
 Sydney Flames W,,
 Champagne Basketball,,
 Seoul SK Knights,,
+Rostock Seawolves,,
+Defensor Sporting,,
 Club de Regatas Vasco da Gama,,
+ACBD Rio Claro,,
+AD Atenas Cordoba,,
 Adelaide Lightning W,,
 Aguada,,
 Akademik Bulteks 99,,
+Alkar Sinj,,
 Alliance Sport Alsace,,
 Anyang Jungkwanjang Red Booste,,
 Argentino Junin,,
+Asa Koroivos,,
 Asc Denain Voltaire PH,,
 Asociacion Hebraica y Macabi,,
 Atletico Goes,,
+BC Aris Thessaloniki,,
 BC Copenhagen,,
-BC Prievidza,,
 BC Slovan Bratislava,,
 BCMU Arges Pitesti,,
 BK Iskra Svit,,
 BK Patrioti Levice,,
 BKM Lucenec,,
 BMS Herlev,,
+Baloncesto Fuenlabrada,,
 Beliers de Kemper - UJAP,,
 Bendigo Spirit W,,
 Bigua,,
 Bkk Radnicki Belgrade,,
 Bkm Lucenec,,
+Bnei Herzliya,,
 Busan Sum Women,,
 CA Penarol,,
 CA Platense,,
@@ -200,24 +231,35 @@ CB Bahia San Agustin,,
 CS Municipal Galati,,
 CS Rapid Bucuresti,,
 CS Valcea 1924 Rm Valcea,,
-CSM CSU Oradea,,
 CSM Corona Brasov,,
 CSM Targu Jiu,,
 CSO Voluntari,,
 CSU Sibiu,,
 Canberra Capitals W,,
+Caxias do Sul,,
 Cheongju KB Stars Women,,
+Cibona,,
+Ciclista Olimpico de La B,,
 Ciclista Olimpico de La Ban,,
 Ciclista Olimpico de La Banda,,
 Club Atletico Cordon,,
 Club Atletico Welcome,,
 Csm Targu Mures,,
+Dinamo Sassari,,
+EC Pinheiros,,
 Elan Bearnais Pau-Lacq-Ort,,
+Esporte Clube Uniao Corinthia,,
+Ferro Carril Oeste,,
+Flamengo Rio De Janeiro,,
+Fortaleza Basquete Cearense,,
 GKK Sibenka,,
 Galatasaray Cagdas Women,,
 Geelong United W,,
 Gimnasia de Comodoro,,
+Goyang Skygunners,,
 Hana Bank Women,,
+Hapoel Beer Sheva,,
+Hermine Nantes Basket,,
 Holbaek-Stenhus,,
 Independiente de Oliva,,
 KCC Egis,,
@@ -226,8 +268,11 @@ KK Borac Cacak,,
 KK Bosna Royal Sarajevo,,
 KK FMP Belgrade,,
 KK Krka Novo Mesto,,
+KK Rogaska,,
 KK Samobor,,
 KK Vrsac,,
+KT Sonicboom,,
+Kansai Helios Domzale,,
 Kk Split,,
 LG Sakers,,
 La Union Formosa,,
@@ -235,19 +280,22 @@ Nacional,,
 Nitra Blue Wings,,
 Obera Tenis Club,,
 Obras Sanitarias,,
-Olympiacos BC,,
 PAOK BC,,
 Panionios BC,,
 Pato,,
 Penarol Mar Del Plata,,
+Poitiers Basket 86,,
 Quimsa Santiogo Del Estero,,
 Racing de Chivilcoy,,
 Randers Cimbria,,
 Regatas Corrientes,,
+Roanne Chorale,,
 Rouen Metropole Basket,,
 SCM Universitatea Craiova,,
 San Martin Corrientes,,
+Sesi SP/Franca BC,,
 Southside Flyers W,,
+Spar Girona Women,,
 Spartak Subotica,,
 Spisski Rytieri,,
 Steaua CSM Bucuresti,,
@@ -257,6 +305,8 @@ Townsville Fire W,,
 Union Atletica,,
 Urunday Universitario,,
 Vendee Challans Basket,,
+Vikos Falcon BC,,
 Vrlse BBK,,
 Wonju DB Promy,,
 Woori WON Women,,
+Yongin Blueminx Women,,

@@ -1,4 +1,9 @@
 Oddswar,Tumbet,Confidence
+Boca Juniors de Cali,Boca Juniors de Cali,100.0
+Gazelle de Garoua,Gazelle FA de Garoua,100.0
+PWD Bamenda,PWD Bamenda,100.0
+Jeonbuk Motors,Jeonbuk Hyundai Motors,100.0
+Vancouver Whitecaps,Vancouver Whitecaps,100.0
 Coton S De Garoua,COTON SPORT DE GAROUA,100.0
 Victoria United Limbe,Victoria United Limbe,100.0
 AS Fortuna Mfou,AS Fortuna,100.0
@@ -79,7 +84,7 @@ Al Ain,Al Ain,100.0
 Al Ain U19,Al Ain U19,100.0
 Al Ain U23,AL Ain FC U23,100.0
 Al Arabi (JOR),AL Arabi (SA),100.0
-Al Arabi (QAT),Al Arabi Doha,100.0
+AL Arabi (Qat),Al Arabi Doha,100.0
 Al Arabi Kuwait,Al-Arabi (KW),100.0
 Al Bataeh,Al Bataeh,100.0
 Al Bataeh U23,AL Bataeh U23,100.0
@@ -120,7 +125,7 @@ Al Salmiyah,Al-Salmiya,100.0
 Al Seeb,Al-Seeb,100.0
 Al Shabab,Al-Shabab,100.0
 Al Shahaniya,Al Shahaniya,100.0
-Al Shamal,Al Shamal,100.0
+AL Shamal,Al Shamal,100.0
 Al Shamiya,AL Shamiya FC,100.0
 Al Tadamun Buri,AL Tadamun Buri,100.0
 Al Tadhamon,AL Tadamon,100.0
@@ -500,7 +505,7 @@ Cerro Largo FC,Cerro Largo FC,100.0
 Cerro Porteno,Cerro Porteno,100.0
 Cesena,Cesena,100.0
 CF America,CF America,100.0
-CF America (W),America (K.),100.0
+CF America (W),Club America (K.),100.0
 CF Esperanca d'Andorra,CF Esperanca D Andorra,100.0
 CFR Cluj,CFR Cluj,100.0
 Chabab Atlas Khenifra,Chabab Atlas Khenifra,100.0
@@ -1140,7 +1145,7 @@ Llaneros FC,Llaneros Fc,100.0
 Lobos ULMX,Lobos Ulmx,100.0
 Lokomotiv Plovdiv,PFC Lokomotiv Plovdiv,100.0
 Lokomotiv Sofia,Lokomotive Sofia,100.0
-Lokomotiva,Lokomotive Sofia,100.0
+Lokomotiva,NK Lokomotiva Zagreb,100.0
 Lokomotiva Zvolen,Lokomotiva Zvolen,100.0
 Lommel,Lommel SK,100.0
 Londrina,Londrina PR,100.0
@@ -1990,6 +1995,10 @@ Southampton U21,Southampton FC (Res.),100.0
 St. Patrick F.C.,Zabbar Saint Patrick FC,100.0
 Tanta,Tanta Fc,100.0
 Zaqatala,Pfk Zaqatala,100.0
+ENPPI,Enppi Club,100.0
+FC Juarez (W),FC Juarez W.,100.0
+Perth Glory (W),Perth Glory (K.),100.0
+Sydney FC (W),Sydney FC (K.),100.0
 Fenerbahce Istanbul,Fenerbahçe,
 Al-Shabab (KSA),,
 Canberra United (W),,
@@ -2347,7 +2356,6 @@ Elazigspor,,
 Emirates Club,,
 Emirates Club U21,,
 England,,
-ENPPI,,
 Entebbe FC,,
 Entente Feignies Aulnoye FC,,
 Erciyes 38 FSK,,
@@ -2378,7 +2386,6 @@ FC Guidonia Montecelio 1937,,
 FC Hunedoara,,
 FC Iberia 1999,,
 FC Iberia Tiblisi 1999 II,,
-FC Juarez (W),,
 FC Koln U19,,
 FC Lokomotivi Tbilisi,,
 FC Maccabi Kiryat Gat Dudu,,
@@ -2703,7 +2710,6 @@ Persipa Pati,,
 Persipal FC,,
 Persita Tangerang,,
 Persitara Jakarta Utara,,
-Perth Glory (W),,
 Pesaro,,
 Pescara,,
 Peterborough United U21,,
@@ -2869,7 +2875,6 @@ SV Schwechat,,
 SV Tillmitsch,,
 Swansea U21,,
 Switzerland,,
-Sydney FC (W),,
 Tabora United FC,,
 Tai Po U22,,
 Taichung Futuro FC,,
