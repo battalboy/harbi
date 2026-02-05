@@ -1,4 +1,23 @@
 Oddswar,Tumbet,Confidence
+Cerezo Osaka,Cerezo Osaka,100.0
+Internacional de Bogotá,Internacional de Bogota.,100.0
+Univ de Concepcion,U. Concepcion,100.0
+Audax Italiano,Audax Italiano,100.0
+Drogheda,Drogheda,100.0
+Galway Utd,Galway United FC,100.0
+Cracovia Krakow,MKS Cracovia Krakow,100.0
+GKS Tychy,GKS Tychy 71,100.0
+Wisla Krakow,Wisla Krakow,100.0
+HK Kopavogur,Kopavogur,100.0
+Keflavik,Keflavik,100.0
+Tanzania Prisons,Tanzania Prisons,100.0
+Dayrout,Dayrout,100.0
+Coastal Union,Coastal Union,100.0
+Pamba FC,Pamba,100.0
+AA Guarany,AA Guarany SE,100.0
+Confianca,AD Confianca SE ,100.0
+Botafogo PB,Botafogo PB,100.0
+Nacional de Patos,Nacional PB,100.0
 Boca Juniors de Cali,Boca Juniors de Cali,100.0
 Gazelle de Garoua,Gazelle FA de Garoua,100.0
 PWD Bamenda,PWD Bamenda,100.0
@@ -52,7 +71,7 @@ Accrington,Accrington Stanley,100.0
 AD Aserri,AD Aserri,100.0
 AD Bahia de Feira,Bahira De Feira BA,100.0
 AD Cariari Pococi,AD Cariari Pococi,100.0
-Ad Carmelita,Carmelita,100.0
+AD Carmelita,Carmelita,100.0
 AD Isidro Metapan,Isidro Metapan,100.0
 AD Municipal Liberia,Municipal Liberia,100.0
 Ad San Carlos,San Carlos,100.0
@@ -123,7 +142,7 @@ Al Sailiya,Al-Sailiya,100.0
 Al Salibikhaet,Al-Salibikhaet,100.0
 Al Salmiyah,Al-Salmiya,100.0
 Al Seeb,Al-Seeb,100.0
-Al Shabab,Al-Shabab,100.0
+Al Shabab,AL Shabab FC,100.0
 Al Shahaniya,Al Shahaniya,100.0
 AL Shamal,Al Shamal,100.0
 Al Shamiya,AL Shamiya FC,100.0
@@ -882,7 +901,6 @@ Greuther Furth,Greuther Furth,100.0
 Grimsby,Grimsby,100.0
 Grindavik,Grindavik,100.0
 Guadalajara,Guadalajara Chivas,100.0
-Guadalajara,Guadalajara,100.0
 Guadalajara (W),Guadalajara W.,100.0
 Guadalupe F.C,Guadelupe FC,100.0
 Guanabara City U20,Guanabara City GO U20,100.0
@@ -1999,6 +2017,21 @@ ENPPI,Enppi Club,100.0
 FC Juarez (W),FC Juarez W.,100.0
 Perth Glory (W),Perth Glory (K.),100.0
 Sydney FC (W),Sydney FC (K.),100.0
+Al-Ittifaq Maqaba,Al Ittifaq,100.0
+Al-Khaleej Khor Fakkan,Khor Fakkan,100.0
+Baladeyet Al-Mahalla,Baladiyyat Al Mehalla,100.0
+Connahs Quay,Connah`s Quay Nomads FC,100.0
+G-Osaka,Gamba Osaka,100.0
+Gulf United,Gulf United,100.0
+Lechia Gdansk,Lechia Gdansk,100.0
+Pachuca (W),Pachuca (K.),100.0
+Persik Kediri,Persik Kediri,100.0
+Shabab Al Ordon,Shabab AL Ordun,100.0
+Sheffield United (W),Sheffield United Community LFC (K.),100.0
+Sunderland (W),Sunderland (K.),100.0
+Tecos FC,Tecos,100.0
+Waterford,Waterford FC,100.0
+Welayta Dicha,Wolaita Dicha SC,100.0
 Fenerbahce Istanbul,Fenerbahçe,
 Al-Shabab (KSA),,
 Canberra United (W),,
@@ -2100,9 +2133,7 @@ Al-Fujairah FC,,
 Al-Gharafa SC U23,,
 Al-Hazm (KSA),,
 Al-Hilal Riyadh U21,,
-Al-Ittifaq Maqaba,,
 Al-Jazira Club U21,,
-Al-Khaleej Khor Fakkan,,
 Al-Lewaa,,
 Al-Mudhaibi,,
 Al-Nassr Riyadh U21,,
@@ -2166,7 +2197,6 @@ Ayr,,
 Azuriz FC,,
 Bahir Dar FC,,
 Baku Sporting,,
-Baladeyet Al-Mahalla,,
 Bandari FC (Kenya),,
 Bangu,,
 Banha,,
@@ -2281,7 +2311,6 @@ Comercial FC U20,,
 Comoros,,
 Concordia Chiajna,,
 Cong an TP HCM U19,,
-Connahs Quay,,
 Consett,,
 Cordobes Futbol Club,,
 Cork City,,
@@ -2445,7 +2474,6 @@ Frejus St-Raphael,,
 Fuji University,,
 Fulham U21,,
 Fylkir,,
-G-Osaka,,
 GDL FC,,
 Genk U19,,
 Geylang International II,,
@@ -2468,7 +2496,6 @@ Guarani,,
 Guarani (Par),,
 Guarany de Bage,,
 Guastatoya,,
-Gulf United,,
 GVVV,,
 Gyori,,
 Hafnarfjordur,,
@@ -2561,7 +2588,6 @@ Lask Linz,,
 LDU,,
 Le Havre AC (W),,
 Lebanon U23,,
-Lechia Gdansk,,
 Lee Man Warriors,,
 Leeds United U21,,
 Leicester U21,,
@@ -2677,7 +2703,6 @@ Orense Sporting Club,,
 Oriente Petrolero,,
 Oud-Heverlee Leuven (W),,
 Oxford United (W),,
-Pachuca (W),,
 Pafos U19,,
 Paris FC (W),,
 Paris St-G,,
@@ -2703,7 +2728,6 @@ Perseta Tulungagung,,
 Persiba Bantul,,
 Persibo Bojonegoro,,
 Persida Sidoarjo,,
-Persik Kediri,,
 Persikutim United,,
 Persinga Ngawi,,
 Persipa Pati,,
@@ -2815,13 +2839,11 @@ Sevilla B,,
 SG Essen-Schonebeck (W),,
 Shabab Al Ahli Dubai U19,,
 Shabab Al Ahli U23,,
-Shabab Al Ordon,,
 Shafa Baku FC,,
 Shan United,,
 Sheff Utd U21,,
 Sheff Wed,,
 Sheff Wed U21,,
-Sheffield United (W),,
 Siena,,
 Sighetu Marmatiei,,
 Sila SC,,
@@ -2860,7 +2882,6 @@ Stuttgart II,,
 Sudtirol,,
 Suhag,,
 Suhul Shire,,
-Sunderland (W),,
 Sunderland U21,,
 Sur Club,,
 SV Britannia,,
@@ -2888,7 +2909,6 @@ Tatung FC,,
 Taubate,,
 Team FC,,
 Techiman Eleven Wonders,,
-Tecos FC,,
 Tegevajaro Miyazaki,,
 Tekstilac Odzaci,,
 Tel Bani Swaif,,
@@ -2949,10 +2969,8 @@ VST Volkermarkt,,
 Vysocina Jihlava,,
 Waanal Brothers FC,,
 Wanderers (Uru),,
-Waterford,,
 Watford U21,,
 Wehen Wiesbaden,,
-Welayta Dicha,,
 Werder Bremen (W),,
 West Brom (W),,
 West Brom U21,,
