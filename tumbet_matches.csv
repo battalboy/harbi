@@ -1,4 +1,16 @@
 Oddswar,Tumbet,Confidence
+Al-Shabab (KSA),AL Shabab FC,100.0
+Arka Gdynia,MKS Arka Gdynia,100.0
+IF Vestri,Vestri,100.0
+Aegir,Aegir,100.0
+Lazio (W),Lazio (K.),100.0
+Genoa (W),Genoa W.,100.0
+SD Eibar (W),SD Eibar W.,100.0
+Njardvik,Njardvik,100.0
+Energetik Mingechevir,ENERGETIK MINGECHEVIR,100.0
+Dai Hoc Van Hien,DH van Hien,100.0
+Than Quang Ninh FC,Quang Ninh FC,100.0
+Deportivo Recoleta,CD Recoleta,100.0
 Cerezo Osaka,Cerezo Osaka,100.0
 Internacional de Bogotá,Internacional de Bogota.,100.0
 Univ de Concepcion,U. Concepcion,100.0
@@ -166,7 +178,7 @@ Al-Jndal,Al Jandal,100.0
 Al-Kawkab,AL Kawkab,100.0
 Al-Khaboora,Al-Khaboora,100.0
 Al-Khaleej Saihat,AL Khaleej Saihat,100.0
-Al-Kholood Club,Al Khlood,100.0
+Al-Kholood Club,AL KHLOOD,100.0
 Al-Masry,Al-Masry,100.0
 Al-Muharraq,AL-MUHARRAQ SC,100.0
 Al-Nasr,Al-Nasr SC,100.0
@@ -194,7 +206,7 @@ Alcorcon,Alcorcon,100.0
 Alcoyano,Alcoyano,100.0
 Aldershot,Aldershot Town,100.0
 Aldosivi,CA Aldosivi,100.0
-Alebrijes De Oaxaca,Alebrijes De Oaxaca,100.0
+Alebrijes de Oaxaca,Alebrijes De Oaxaca,100.0
 Alemannia Aachen,Alemannia Aachen,100.0
 Alfreton Town,Alfreton Town,100.0
 Algeciras,Algeciras CF,100.0
@@ -1101,7 +1113,7 @@ Konyaspor U19,Konyaspor U19,100.0
 Korona Kielce,Korona Kielce,100.0
 Kortrijk,Kortrijk,100.0
 Kowloon City FC,Kowloon City,100.0
-KR Reykjavik,IR Reykjavik,100.0
+KR Reykjavik,Reykjavik,100.0
 Kremser SC,Kremser SC,100.0
 KS Burreli,KS Burreli,100.0
 Kuala Lumpur,Kuala Lumpur City,100.0
@@ -1871,7 +1883,7 @@ USM Alger,USM Alger,100.0
 Usm Annaba,USM Annaba,100.0
 USM El Harrach,USM EL Harrach,100.0
 USM Khenchela,Usm Khenchela,100.0
-UTA Arad,UTA Arad,100.0
+Uta Arad,UTA Arad,100.0
 Uthai Thani,Uthai Thani FC,100.0
 Uzbekistan,Özbekistan,100.0
 Uzbekistan U23,Özbekistan U23,100.0
@@ -2446,7 +2458,7 @@ FK Bokelj,,
 Fk Buducnost Podgorica,,
 FK Crvena Zvezda U19,,
 FK Decic,,
-FK Javor Ivanjica,,
+FK Javor Ivanjica,FK Javor Matis,100.0
 Fk Jedinstvo Bijelo Polje,,
 Fk Jezero,,
 FK Mladost Donja Gorica,,
@@ -2849,7 +2861,7 @@ Sighetu Marmatiei,,
 Sila SC,,
 Silifke Belediye Spor,,
 Silsden AFC,,
-Simal FK,,
+Simal FK,Simal,100.0
 Singapore (W),,
 Sitra,,
 SK Sturm Graz II,,
