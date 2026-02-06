@@ -1,4 +1,12 @@
 Oddswar,Stoiximan,Confidence
+Sligo Rovers,Sligo Rovers FC,100.0
+Derry City,Derry City,100.0
+UTC Cajamarca,UTC De Cajamarca,100.0
+Cesar Vallejo Moquegua,Cesar Vallejo Moquegua,100.0
+Drogheda,Drogheda United,100.0
+Galway Utd,Galway United,100.0
+GKS Tychy,GKS Tychy 71,100.0
+Wisla Krakow,Wisla Krakow,100.0
 Real Soacha Cundinamarca FC,Real Cundinamarca,100.0
 Boca Juniors de Cali,Boca Juniors de Cali,100.0
 Atletico FC Cali,Atletico Cali,100.0
@@ -717,7 +725,7 @@ FC Giugliano,AS Giugliano Calcio 1928,100.0
 FC Groningen,FC Groningen,100.0
 FC Guidonia Montecelio 1937,Guidonia Montecelio 1937,100.0
 FC Halifax Town,Halifax Town,100.0
-FC Heidenheim,FC Heidenheim,100.0
+FC Heidenheim,1. FC Heidenheim,100.0
 FC Holon Yermiyahu,FC Holon Yirmiyahu,100.0
 FC Hunedoara,Corvinul 1921 Hunedoara,100.0
 FC Iberia 1999,FC Iberia 1999 Tbilisi,100.0
@@ -1293,7 +1301,7 @@ Nova Iguacu,Nova Iguacu RJ,100.0
 Novara,Novara Calcio 1908,100.0
 Novo Hamburgo,Novo Hamburgo RS,100.0
 Nuovo Campobasso,Nuovo Campobasso Calcio,100.0
-Nurnberg,FC Nurnberg,100.0
+Nurnberg,1. FC Nurnberg,100.0
 Nyiregyhaza,Nyiregyhaza Spartacus FC,100.0
 OB,Odense BK,100.0
 OFK Beograd,OFK Beograd,100.0
@@ -1885,6 +1893,18 @@ Charleroi,Royal Charleroi SC,100.0
 Gremio,Gremio RS,100.0
 St. Patrick F.C.,Zabbar Saint Patrick FC,100.0
 Stoke U21,Stoke City U21,100.0
+Penafiel,FC Penafiel,100.0
+Aston Villa U21,Aston Villa U21,100.0
+Chaves,GD Chaves,100.0
+Connahs Quay,Connah's Quay Nomads FC,100.0
+Derby U21,Derby County U21,100.0
+Fulham U21,Fulham FC U21,100.0
+Haverfordwest County,Haverfordwest County,100.0
+Man Utd U21,Manchester United U21,100.0
+Newcastle U21,Newcastle United U21,100.0
+Sociedad B,Real Sociedad II,100.0
+Villefranche Beaujolais,Villefranche,100.0
+Waterford,Waterford FC,100.0
 Abha,,
 Al Dhafra,,
 Al Fahaheel FC,,
@@ -1900,7 +1920,6 @@ Juventud Copalera,,
 Mosta,,
 Oeste FC,,
 Oxford United (W),,
-Penafiel,,
 Queens University,,
 Santa Fe,,
 Sao Bernardo,,
@@ -2096,7 +2115,6 @@ Arema Cronus,,
 Argentinos Juniors,,
 Arsenal U21,,
 Artesanos Metepec F.C.,,
-Aston Villa U21,,
 Atalanta B,,
 Ateneo Blue Eagles,,
 Athletic Club,,
@@ -2225,7 +2243,6 @@ Cerro,,
 Cerro Largo FC,,
 Cerro Porteno,,
 Chainat Hornbill,,
-Chaves,,
 Chelghoum Laid,,
 Chesterfield (Res),,
 Chilpancingo,,
@@ -2249,7 +2266,6 @@ Comercial FC U20,,
 Comunicaciones,,
 Concordia CA,,
 Cong an TP HCM U19,,
-Connahs Quay,,
 Consett,,
 Coquimbo Unido,,
 Cordobes Futbol Club,,
@@ -2289,7 +2305,6 @@ Deportivo Pereira,,
 Deportivo Riestra,,
 Deportivo Toluca U21,,
 Derby (Res),,
-Derby U21,,
 Dewa United FC,Akwa United FC,
 Dibba Al-Hisn,,
 Dieppe,,
@@ -2368,7 +2383,6 @@ Foz Do Iguacu,,
 Fram,,
 Francana U20,,
 Fredericia,,
-Fulham U21,,
 Fylkir,,
 GDL FC,,
 Galicia EC,,
@@ -2406,7 +2420,6 @@ Harborough Town,,
 Harrow Borough FC,,
 Hatta,,
 Hauts Lyonnais,,
-Haverfordwest County,,
 Hearts,,
 Hearts B,,
 Hellas Verona U20,,
@@ -2533,7 +2546,6 @@ Malkiya,,
 Malzenice,,
 Mamelodi Sundowns,,
 Man City U21,,
-Man Utd U21,,
 Manama Club,,
 Maranguape CE,,
 Marcq en Baroeul,,
@@ -2581,7 +2593,6 @@ Nchanga Rangers,,
 Necaxa,,
 Negeri Sembilan,,
 Neom SC U21,,
-Newcastle U21,,
 Newells,,
 Nogoom El Mostakbal,,
 Nogoom Masr,,
@@ -2779,7 +2790,6 @@ Singida Black Stars SC,,
 Siracusa,,
 Siwelele FC,,
 Skive,,
-Sociedad B,,
 Soke 1970 Spor Kulubu,,
 Somaspor Spor Kulubu,,
 Sonderjyske,,
@@ -2888,7 +2898,6 @@ Veraguas FC,,
 VfL Osnabruck,,
 Vila Nova U20,,
 Villarreal CF III,,
-Villefranche Beaujolais,,
 Visakha FC,,
 Vitkovice,,
 Volta Redonda,,
@@ -2898,7 +2907,6 @@ WSE,,
 WSG Wattens,,
 Waanal Brothers FC,,
 Wanderers (Uru),,
-Waterford,,
 Welwalo Adigrat University,,
 Werder Bremen (W),,
 West Brom U21,,
