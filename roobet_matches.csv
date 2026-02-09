@@ -1,4 +1,14 @@
 Oddswar,Roobet,Confidence
+Shanghai Port FC,Shanghai Port FC,100.0
+Gangwon,Gangwon FC,100.0
+Polokwane City,Polokwane City,100.0
+Al Zawraa,Al Zawraa,100.0
+Chengdu Rongcheng,Chengdu Rongcheng,100.0
+Consultants Desamparados,Futbol Consultants Desamparados,100.0
+Cobresal,Cobresal,100.0
+Union La Calera,Deportes Union La Calera,100.0
+Stal Rzeszow,ZKS Stal Rzeszow,100.0
+Chrobry Glogow,Chrobry Glogow,100.0
 Stade Malien de Bamako,Stade Malien de Bamako,100.0
 Warri Wolves,Warri Wolves F.C.,100.0
 Slask Wroclaw,WKS Slask Wroclaw,100.0
@@ -1146,7 +1156,7 @@ Tombense MG,Tombense FC MG,100.0
 Tondela,CD Tondela,100.0
 Torino,Torino FC,100.0
 Torreense,SCU Torreense,100.0
-Tottenham,Tottenham,100.0
+Tottenham,Tottenham Hotspur,100.0
 Toulouse,Toulouse FC,100.0
 Trabzonspor,Trabzonspor,100.0
 Trencin,AS Trencin,100.0
@@ -1325,6 +1335,23 @@ Al Salmiyah,Al-Salmiya SC,100.0
 Banik Ostrava,FC Banik Ostrava,100.0
 Benevento,Benevento Calcio,100.0
 Luton,Luton Town,100.0
+Cerro,CA Cerro,100.0
+CS Herediano,CS Herediano,100.0
+Dukla Prague,Dukla Prague,100.0
+EC Sao Jose Porto Alegre,EC Sao Jose RS,100.0
+El Kanemi Warriors,El Kanemi Warriors,100.0
+Ismaily,Ismaily SC,100.0
+Juventude,EC Juventude RS,100.0
+LR Vicenza Virtus,L.R. Vicenza,100.0
+Nuovo Campobasso,Campobasso FC,100.0
+Persita Tangerang,Persita Tangerang,100.0
+SV Ried,SV Ried,100.0
+Tauro FC,Tauro FC,100.0
+Tegevajaro Miyazaki,Tegevajaro Miyazaki,100.0
+Tractor Sazi FC,Tractor Sport Club,100.0
+Viborg,Viborg FF,100.0
+Zesco United,Zesco United,100.0
+Zilina,MSK Zilina,100.0
 Al Arabi Kuwait,,
 1 Dezembro,,
 1461 Trabzon,,
@@ -1759,7 +1786,6 @@ Central Coast (W),,
 Central Coast Mariners (W),,
 Central FC,,
 Cerezo Osaka Sakai (W),,
-Cerro,,
 CF America (W),,
 CF Bihorul Beius,,
 Chapecoense U20,,
@@ -1844,7 +1870,6 @@ Crystal Palace U21,,
 CS Afumati,,
 Cs Cartagines,,
 CS Gloria 2018 Bistrita-Na,,
-CS Herediano,CS Herediano,100.0
 CS Tunari,,
 CSA Steaua Bucuresti,,
 CSC 1599 Selimbar,,
@@ -1905,7 +1930,6 @@ Dover,,
 Dragones Toluca,,
 Drenica Skenderaj,,
 Duisburg,,
-Dukla Prague,Dukla Prague,100.0
 Dulwich Hamlet,,
 Dumbarton,,
 Dunajska Streda,,
@@ -1921,7 +1945,6 @@ Eastern Company SC,,
 Eastern District SA,,
 EC Noroeste U20,,
 EC Santo Andre U20,,
-EC Sao Jose Porto Alegre,,
 Edinburgh City,,
 Edirnespor,,
 Egnatia Rrogozhine,,
@@ -1930,7 +1953,6 @@ El Alameen,,
 El Daklyeh,,
 El Entag El Harby,,
 El Geish,,
-El Kanemi Warriors,El Kanemi Warriors,100.0
 El Mansurah,,
 El Minya,,
 El Qusiya SC,,
@@ -2176,7 +2198,6 @@ IR Reykjavik,,
 Iraq U23,,
 ISI Dangkor Senchey FC,,
 Iskenderunspor,,
-Ismaily,,
 Isparta 32 Spor,,
 Ispe FC,,
 Itabaiana,,
@@ -2202,7 +2223,6 @@ JSD Jijel,,
 Junior FC Barranquilla,,
 Juventud Copalera,,
 Juventud Torremolinos,,
-Juventude,,
 Juventude U20,,
 Juventus B,,
 Juventus FC (W),,
@@ -2310,7 +2330,6 @@ Lokomotiva Zvolen,,
 London Bees (W),,
 London City Lionesses,,
 Londrina,,
-LR Vicenza Virtus,L.R. Vicenza,100.0
 Luanda Villa FC,,
 Lucky Mile,,
 Lugazi FC,,
@@ -2453,7 +2472,6 @@ Nottm Forest (W),,
 Nouadhibou,,
 Nouakchott Kings,,
 NRB Teleghma,,
-Nuovo Campobasso,Campobasso FC,100.0
 Nzoia United FC,,
 OB,,
 Oeste,,
@@ -2522,7 +2540,6 @@ Persipa Pati,,
 Persipal FC,,
 Persipura Jayapura,,
 Persiraja Banda Aceh,,
-Persita Tangerang,Persita Tangerang,100.0
 Persitara Jakarta Utara,,
 Perth Glory (W),,
 Perugia,,
@@ -2791,7 +2808,6 @@ SV Caiquetio,,
 SV Deportivo Nacional,,
 SV Estrella,,
 SV La Fama,,
-SV Ried,SV Ried,100.0
 SV Sporting Aruba,,
 Svay Rieng FC,,
 Swansea U21,,
@@ -2819,12 +2835,10 @@ Tapatio,,
 Tatung FC,,
 Taubate,,
 Taubate U20,,
-Tauro FC,Tauro FC,100.0
 Team FC,,
 Team Rhino FC,,
 Techiman Eleven Wonders,,
 Tecos FC,,
-Tegevajaro Miyazaki,Tegevajaro Miyazaki,100.0
 Tekstilac Odzaci,,
 Tel Bani Swaif,,
 Terengganu,,
@@ -2856,7 +2870,6 @@ Torrent CF,,
 Tottenham (W),,
 Tottenham U21,,
 TPS,,
-Tractor Sazi FC,,
 Tranent Juniors,,
 Tranmere,,
 Trapani,,
@@ -2916,7 +2929,6 @@ Velo Clube Rioclarense U20,,
 Venados FC,,
 Verl,,
 Verona,,
-Viborg,Viborg FF,100.0
 Vietnam U23,,
 Vikingur Reykjavik,,
 Viktoria Koln,,
@@ -2983,8 +2995,6 @@ Zaqatala,,
 Zebbug Rangers FC,,
 Zeljeznicar,,
 Zemplin,,
-Zesco United,Zesco United,100.0
-Zilina,MSK Zilina,100.0
 Zira,,
 Zitacuaro CF,,
 Zlate Moravce,,
