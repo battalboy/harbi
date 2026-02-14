@@ -1,4 +1,24 @@
 Oddswar,Tumbet,Confidence
+Covilha,SC Covilha,100.0
+Moghreb Tetouan,Maghreb Athletic Tetouan,100.0
+Stade Marocain du Rabat,Stade Marocain,100.0
+Kriens,SC Kriens,100.0
+Biel Bienne,FC Biel-Bienne,100.0
+Stallion Penson FC,Stallion FC,100.0
+Fukuoka,Avispa Fukuoka,100.0
+Persela Lamongan,Persela Lamongan,100.0
+Tokyo-V,Tokyo Verdy,100.0
+Kashiwa,Kashiwa Reysol,100.0
+Kochi Univ,Kochi United SC,100.0
+Mio Biwako Shiga,MIO Biwako Shiga,100.0
+Renofa Yamaguchi,Renofa Yamaguchi,100.0
+FC Ryukyu,FC Ryukyu,100.0
+Ehime,Ehime,100.0
+Club 2 de Mayo,CS 2 de Mayo,100.0
+Academia Anzoategui FC,Academia Anzoategui FC,100.0
+Portuguesa FC,Portuguesa,100.0
+Atletico Grau,Atletico Grau,100.0
+Sport Boys (Per),Sport Boys,100.0
 FK Sahdag Qusar,FC SAHDAG QUSAR,100.0
 Chiquimulilla FC,Csd Chiquimulilla,100.0
 Gimnasia Jujuy,Gimnasia Jujuy,100.0
@@ -930,7 +950,7 @@ Garudayaksa FC,Garuda Yaksa,100.0
 Gasogi United,Gasogi United,100.0
 Gateshead,Gateshead,100.0
 Gavilanes Matamoros,Gavilanes de Matamoros,100.0
-Gaziantep FK,Gaziantep FK,100.0
+Gaziantep FK,Gaziantep,100.0
 GD Estoril Praia U23,Estoril Praia U23,100.0
 Genclerbirligi,Gençlerbirliği,100.0
 Genemuiden,Genemuiden,100.0
@@ -958,7 +978,7 @@ Goias U20,Goias Go U20,100.0
 Golden Arrows,L. Golden Arrows,100.0
 Gor Mahia FC,Gor Mahia FC,100.0
 Gorilla FC,Gorilla FC,100.0
-Goztepe,Goztepe SK,100.0
+Goztepe,Göztepe,100.0
 Goztepe U19,Goztepe U19,100.0
 Granada,Granada,100.0
 Grasshoppers Zurich,Grasshoppers,100.0
@@ -2030,7 +2050,7 @@ Zaglebie Lubin,Zaglebie Lubin,100.0
 Zalaegerszeg,Zalaegerszeg,100.0
 Zamalek,El Zamalek,100.0
 Zambia,Zambiya,100.0
-Zamora,Zamora,100.0
+Zamora FC,Zamora,100.0
 Zanaco FC,Zanaco,100.0
 Zaragoza,Real Zaragoza,100.0
 Zebbug Rangers FC,Zebbug Rangers FC,100.0
@@ -2146,6 +2166,13 @@ Real Espana,Real CD Espana,100.0
 River Plate,CA River Plate (ARG),100.0
 SE Palmeiras,Palmeiras SP,100.0
 Taubate,EC Taubate SP,100.0
+FC Osaka,FC Osaka,100.0
+Guastatoya,Deportivo Guastatoya,100.0
+Hougang Utd,Hougang United FC,100.0
+Nk Posusje,Posusje,100.0
+Radnik Bijeljina,Radnik Bijeljina,100.0
+Sarajevo,Sarajevo,100.0
+URT,Urt MG,100.0
 Fenerbahce Istanbul,Fenerbahçe,
 Al-Shabab (KSA),,
 Canberra United (W),,
@@ -2520,7 +2547,6 @@ FC Midtjylland U19,,
 FC Noah,,
 FC Nurnberg (W),,
 FC Odishi 1919,,
-FC Osaka,,
 FC Oss,,
 FC Real Koyari,,
 FC Sabah,,
@@ -2587,7 +2613,6 @@ Guabira,,
 Guarani,,
 Guarani (Par),,
 Guarany de Bage,,
-Guastatoya,,
 GVVV,,
 Gyori,,
 Hafnarfjordur,,
@@ -2611,7 +2636,6 @@ HK Rangers U22,,
 Hobro,,
 Hoffenheim (W),,
 Hougang United II,,
-Hougang Utd,,
 Hradec Kralove B,,
 Hull City U21,,
 IB Khemis El Khechna,,
@@ -2762,7 +2786,6 @@ Newells,,
 Niigata University H&W FC,,
 Nizwa,,
 NK Brinje Grosuplje,,
-Nk Posusje,,
 Nogoom El Mostakbal,,
 Nogoom Masr,,
 North District U22,,
@@ -2854,7 +2877,6 @@ Queretaro U21,,
 Racing Beirut,,
 Racing Club (Uru),,
 Racing Genk B,,
-Radnik Bijeljina,,
 Rahmatganj MFS,,
 Railways FC,,
 Raith,,
@@ -2896,7 +2918,6 @@ Sang Maestro,,
 Santa Fe,,
 Santos U20 (W),,
 Sao Bento U20,,
-Sarajevo,,
 Sariyer G.K.,,
 Sars Allian SC,,
 Sassari Torres,,
@@ -3019,7 +3040,6 @@ Universidad de Chile,,
 Universitario de Vinto,,
 Universitatea Cluj,,
 Up Fighting Maroons,,
-URT,,
 US Biskra,,
 US Chaouia,,
 USV Halbturn,,
