@@ -531,8 +531,31 @@ def build_telegram_block(event: Dict, site_name: str) -> str:
         site_x_str = site_data['odds_x']
         site_2_str = site_data['odds_2']
     
+    # Get status, league, start time from Oddswar data (aligned with arb_basketball_create)
+    status = oddswar.get('status', 'Gelen Maç')
+    league = oddswar.get('league', 'N/A')
+    start_time = oddswar.get('start_time')
+    datetime_str = format_turkish_datetime(start_time) if start_time and start_time != 'N/A' else None
+    
     # Build the block (without <pre> so HTML formatting works)
-    block = f"""Maç: {team1} vs {team2}
+    if datetime_str:
+        block = f"""⚽ Maç: <b>{team1} vs {team2}</b>
+({status})
+{datetime_str}
+Lig: <b>{league}</b>
+
+Oddswar: {oddswar_1_str} | {oddswar_x_str} | {oddswar_2_str}
+{site_display[site_name]}:  {site_1_str} | {site_x_str} | {site_2_str}
+
+<a href="{oddswar['link']}">Oddswar Linki</a>
+<a href="{site_data['link']}">{site_display[site_name]} Linki</a>
+
+"""
+    else:
+        block = f"""⚽ Maç: <b>{team1} vs {team2}</b>
+({status})
+Lig: <b>{league}</b>
+
 Oddswar: {oddswar_1_str} | {oddswar_x_str} | {oddswar_2_str}
 {site_display[site_name]}:  {site_1_str} | {site_x_str} | {site_2_str}
 
@@ -570,7 +593,7 @@ def send_telegram_notifications(matched_events: List[Dict], arb_count: int):
     bot_token = os.environ.get('TELEGRAM_BOT_TOKEN', '8272624197:AAEHXPYrE0E9-hjazYJrcogUTYSH-FM5_SA')
     
     # Build message blocks for events with arbitrage
-    print(f"   Building messages for {arb_count} arbitrage opportunities...")
+    print(f"   Building messages for {arb_count} futbol arbitrage opportunities...")
     
     # Get current time in Athens timezone
     now = datetime.now(ZoneInfo('Europe/Athens'))
