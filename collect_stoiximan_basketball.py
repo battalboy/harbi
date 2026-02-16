@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """
-Stoiximan Basketball Team Name Collector
+Stoiximan Basketball Team Name Collector (COMPREHENSIVE)
 
-Continuously fetches Stoiximan LIVE basketball matches and collects unique team names.
-Since Stoiximan only provides live events (no "all matches" endpoint),
-we need to collect over time as different matches go live.
+Fetches Stoiximan basketball matches from ALL available leagues worldwide.
+Uses the /api/sport/basketball/competitions/ endpoint with dropdown discovery.
 
-Runs every 60-120 seconds (random interval).
+This is a ONE-TIME comprehensive fetch (not continuous collection).
 Output: stoiximan_basketball_names.txt (one team name per line, sorted, no duplicates)
 
 Note: Requires VPN connected to Greek IP address.
@@ -14,27 +13,18 @@ Note: Requires VPN connected to Greek IP address.
 
 import cloudscraper
 import time
-import random
-import signal
-import sys
 import platform
-from typing import Set
+from typing import Set, List, Tuple
 from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 # Configuration
 OUTPUT_FILE = 'stoiximan_basketball_names.txt'
-MIN_INTERVAL = 60  # seconds
-MAX_INTERVAL = 120  # seconds
-API_URL = 'https://en.stoiximan.gr/danae-webapi/api/live/overview/latest'
-API_PARAMS = {
-    'includeVirtuals': 'false',
-    'queryLanguageId': '1',
-    'queryOperatorId': '2'
-}
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
-    'Accept': 'application/json'
+    'Accept': 'application/json, text/plain, */*',
+    'Referer': 'https://en.stoiximan.gr/sport/basketball/'
 }
 
 # Proxy configuration (only used on Linux remote server)
@@ -51,15 +41,138 @@ def get_proxies():
         return None
 
 
-def load_existing_teams() -> Set[str]:
-    """Load existing team names from file."""
+def discover_all_leagues() -> List[Tuple[str, str, str, str]]:
+    """
+    Fetch dropdown list to discover all available basketball leagues.
+    
+    Returns:
+        List of tuples: (region_name, region_id, league_id, display_name)
+    """
+    print("🔍 Discovering all basketball leagues...")
+    
+    # Use a sample region to fetch the dropdown list (contains ALL leagues globally)
+    url = 'https://en.stoiximan.gr/api/sport/basketball/competitions/greece/10021/?req=la,s,stnf,c,mb'
+    
+    proxies = get_proxies()
+    scraper = cloudscraper.create_scraper()
+    
     try:
-        with open(OUTPUT_FILE, 'r', encoding='utf-8') as f:
-            teams = set(line.strip() for line in f if line.strip())
-        print(f"📂 Loaded {len(teams)} existing team names from {OUTPUT_FILE}")
+        response = scraper.get(url, headers=HEADERS, proxies=proxies, timeout=30)
+        
+        if response.status_code != 200:
+            print(f"❌ Failed to fetch dropdown: HTTP {response.status_code}")
+            return []
+        
+        data = response.json()
+        
+        if 'data' not in data or 'dropdownList' not in data['data']:
+            print(f"❌ Invalid response structure")
+            return []
+        
+        dropdown = data['data']['dropdownList']
+        print(f"✅ Found {len(dropdown)} regions with basketball leagues\n")
+        
+        # Extract all region/league combinations
+        all_leagues = []
+        
+        for region in dropdown:
+            region_id = region.get('id')
+            region_name_display = region.get('name')
+            region_url = region.get('url', '')
+            
+            # Extract region name from URL (e.g., /sport/basketball/competitions/greece/10021/)
+            region_name = region_url.split('/')[4] if len(region_url.split('/')) > 4 else region_name_display.lower().replace(' ', '-')
+            
+            leagues = region.get('leagues', [])
+            
+            for league in leagues:
+                league_id = league.get('id')
+                league_name = league.get('text')
+                
+                display_name = f"{region_name_display} - {league_name}"
+                all_leagues.append((region_name, region_id, league_id, display_name))
+        
+        print(f"📊 Total leagues to fetch: {len(all_leagues)}\n")
+        return all_leagues
+    
+    except Exception as e:
+        print(f"❌ Error discovering leagues: {e}")
+        return []
+
+
+def fetch_teams_from_league(league_info: Tuple[str, str, str, str], scraper, proxies) -> Set[str]:
+    """
+    Fetch team names from a specific league.
+    
+    Args:
+        league_info: Tuple of (region_name, region_id, league_id, display_name)
+        scraper: cloudscraper instance
+        proxies: proxy configuration
+    
+    Returns:
+        Set of team names
+    """
+    region_name, region_id, league_id, display_name = league_info
+    url = f'https://en.stoiximan.gr/api/sport/basketball/competitions/{region_name}/{region_id}/?sl={league_id}&req=la,s,stnf,c,mb'
+    
+    try:
+        response = scraper.get(url, headers=HEADERS, proxies=proxies, timeout=15)
+        
+        if response.status_code != 200:
+            return set()
+        
+        data = response.json()
+        
+        if 'data' not in data or 'blocks' not in data['data']:
+            return set()
+        
+        teams = set()
+        blocks = data['data']['blocks']
+        
+        for block in blocks:
+            events = block.get('events', [])
+            
+            for event in events:
+                participants = event.get('participants', [])
+                
+                if len(participants) < 2:
+                    continue
+                
+                team1 = participants[0].get('name', '')
+                team2 = participants[1].get('name', '')
+                
+                # Skip esports/virtual matches
+                esports_keywords = ['(Esports)', '(esports)', '(E)']
+                virtual_tournaments = ['(GODFATHER)', '(KJMR)', '(RIDER)', '(CARNAGE)', 
+                                      '(CRYPTO)', '(ARCHER)', '(mist)', '(RAMZ)']
+                
+                skip_team1 = any(keyword in team1 for keyword in esports_keywords + virtual_tournaments)
+                skip_team2 = any(keyword in team2 for keyword in esports_keywords + virtual_tournaments)
+                
+                if skip_team1 or skip_team2:
+                    continue
+                
+                # Skip tournament outright betting markets (continent/region vs generic groups)
+                generic_regions = ['Europe', 'USA', 'Asia', 'Africa', 'Americas']
+                group_pattern = any(
+                    name.startswith('Group ') and len(name) == 7  # "Group A", "Group B", etc.
+                    for name in [team1, team2]
+                )
+                continent = any(
+                    name in generic_regions
+                    for name in [team1, team2]
+                )
+                if group_pattern or (continent and group_pattern):
+                    continue
+                
+                if team1:
+                    teams.add(team1)
+                if team2:
+                    teams.add(team2)
+        
         return teams
-    except FileNotFoundError:
-        print(f"📝 Creating new file: {OUTPUT_FILE}")
+    
+    except Exception as e:
         return set()
 
 
@@ -71,154 +184,73 @@ def save_teams(teams: Set[str]):
             f.write(team + '\n')
 
 
-def fetch_team_names() -> Set[str]:
-    """Fetch current team names from Stoiximan live basketball API."""
-    try:
-        proxies = get_proxies()
-        # Use cloudscraper to bypass Cloudflare protection
-        scraper = cloudscraper.create_scraper()
-        response = scraper.get(API_URL, params=API_PARAMS, headers=HEADERS, proxies=proxies, timeout=30)
-        
-        # Check for server errors
-        if response.status_code != 200:
-            print(f"\n\n❌ SERVER ERROR - Received HTTP {response.status_code}")
-            print(f"URL: {response.url}")
-            print(f"Response Headers: {dict(response.headers)}")
-            print(f"Response Body (first 500 chars):\n{response.text[:500]}")
-            print("\n💡 Possible causes:")
-            print("   - VPN not connected to Greek IP")
-            print("   - Cloudflare blocking")
-            print("   - API endpoint changed")
-            print("\n🛑 Exiting due to server error...")
-            sys.exit(1)
-        
-        data = response.json()
-        
-        # Check if we got valid data
-        if not data or 'events' not in data:
-            print(f"\n\n❌ INVALID RESPONSE - No data or missing 'events' field")
-            print(f"Response: {str(data)[:500]}")
-            print("\n🛑 Exiting due to invalid response...")
-            sys.exit(1)
-        
-        teams = set()
-        events = data.get('events', {})
-        
-        # Only get basketball events
-        for event_id, event in events.items():
-            if event.get('sportId') != 'BASK':
-                continue
-            
-            participants = event.get('participants', [])
-            if len(participants) < 2:
-                continue
-            
-            team1 = participants[0].get('name', '')
-            team2 = participants[1].get('name', '')
-            
-            # Skip esports/virtual matches
-            # - Esports keyword
-            # - Virtual NBA tournament indicators (GODFATHER, KJMR, RIDER, CARNAGE, etc.)
-            esports_keywords = ['(Esports)', '(esports)', '(E)']
-            virtual_tournaments = ['(GODFATHER)', '(KJMR)', '(RIDER)', '(CARNAGE)', 
-                                  '(CRYPTO)', '(ARCHER)', '(mist)', '(RAMZ)']
-            
-            skip_team1 = any(keyword in team1 for keyword in esports_keywords + virtual_tournaments)
-            skip_team2 = any(keyword in team2 for keyword in esports_keywords + virtual_tournaments)
-            
-            if skip_team1 or skip_team2:
-                continue
-            
-            if team1:
-                teams.add(team1)
-            if team2:
-                teams.add(team2)
-        
-        return teams
-    
-    except Exception as e:
-        print(f"\n\n❌ NETWORK ERROR: {e}")
-        print(f"URL: {API_URL}")
-        print("\n💡 Check VPN connection to Greece or Cloudflare protection")
-        print("\n🛑 Exiting due to network error...")
-        sys.exit(1)
-
-
-def signal_handler(sig, frame):
-    """Handle Ctrl+C gracefully."""
-    print("\n\n🛑 Stopping collection...")
-    print(f"✅ Team names saved to {OUTPUT_FILE}")
-    sys.exit(0)
-
-
 def main():
-    """Main collection loop."""
-    # Register Ctrl+C handler
-    signal.signal(signal.SIGINT, signal_handler)
+    """Main collection function."""
+    print("=" * 70)
+    print("🏀 Stoiximan Basketball Team Name Collector (COMPREHENSIVE)")
+    print("=" * 70)
+    print(f"📝 Output file: {OUTPUT_FILE}")
+    print(f"🇬🇷 Requires VPN connected to Greek IP")
     
-    # Detect environment
     proxies = get_proxies()
     env_info = "🔌 Using Gluetun proxy (127.0.0.1:8888)" if proxies else "🌐 Using system-wide VPN"
+    print(f"{env_info}\n")
     
-    print("=" * 60)
-    print("🏀 Stoiximan Basketball Team Name Collector (LIVE MATCHES)")
-    print("=" * 60)
-    print(f"📝 Output file: {OUTPUT_FILE}")
-    print(f"⏱️  Interval: {MIN_INTERVAL}-{MAX_INTERVAL} seconds (random)")
-    print(f"🇬🇷 Requires VPN connected to Greek IP")
-    print(f"{env_info}")
-    print(f"⚠️  Only collects from LIVE matches (builds up over time)")
-    print(f"🚫 Esports and virtual tournaments filtered out")
-    print(f"🛑 Press Ctrl+C to stop\n")
+    # Discover all leagues
+    start_time = datetime.now()
+    all_leagues = discover_all_leagues()
     
-    # Load existing teams
-    all_teams = load_existing_teams()
-    initial_count = len(all_teams)
+    if not all_leagues:
+        print("❌ Failed to discover leagues. Exiting.")
+        return
     
-    fetch_count = 0
+    # Fetch teams from all leagues in parallel
+    scraper = cloudscraper.create_scraper()
+    all_teams = set()
+    leagues_with_matches = 0
     
-    try:
-        while True:
-            fetch_count += 1
-            timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print("🔄 Fetching teams from all leagues (parallel)...")
+    print("=" * 70)
+    
+    # Use ThreadPoolExecutor for parallel fetching (10 workers)
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        # Submit all fetch tasks
+        future_to_league = {
+            executor.submit(fetch_teams_from_league, league_info, scraper, proxies): league_info 
+            for league_info in all_leagues
+        }
+        
+        # Collect results as they complete
+        completed = 0
+        for future in as_completed(future_to_league):
+            completed += 1
+            league_info = future_to_league[future]
+            display_name = league_info[3]
             
-            print(f"[{timestamp}] Fetch #{fetch_count}...", end=" ")
+            print(f"[{completed}/{len(all_leagues)}] {display_name[:50]:<50}", end=" ", flush=True)
             
-            # Fetch team names from live basketball matches
-            new_teams = fetch_team_names()
-            
-            if new_teams:
-                # Find truly new teams BEFORE merging
-                truly_new_teams = new_teams - all_teams
-                
-                # Merge with existing teams
-                all_teams.update(new_teams)
-                
-                # Save to file
-                save_teams(all_teams)
-                
-                # Report
-                print(f"✓ Found {len(new_teams)} teams in live matches", end="")
-                if truly_new_teams:
-                    print(f" ({len(truly_new_teams)} NEW!)", end="")
-                print(f" | Database: {len(all_teams)} unique teams")
-                
-                if truly_new_teams:
-                    # Show new teams (up to 10)
-                    for team in sorted(truly_new_teams)[:10]:
-                        print(f"      + {team}")
-                    if len(truly_new_teams) > 10:
-                        print(f"      ... and {len(truly_new_teams) - 10} more")
-            else:
-                print("⚠ No basketball games currently live (check VPN)")
-            
-            # Random wait interval
-            wait_time = random.randint(MIN_INTERVAL, MAX_INTERVAL)
-            print(f"   💤 Waiting {wait_time}s until next fetch...\n")
-            time.sleep(wait_time)
+            try:
+                teams = future.result()
+                if teams:
+                    all_teams.update(teams)
+                    leagues_with_matches += 1
+                    print(f"✅ {len(teams)} teams")
+                else:
+                    print("⚠️  0 matches")
+            except Exception:
+                print("❌ Error")
     
-    except KeyboardInterrupt:
-        signal_handler(None, None)
+    # Save results
+    save_teams(all_teams)
+    
+    # Summary
+    elapsed = (datetime.now() - start_time).total_seconds()
+    print("=" * 70)
+    print(f"\n✅ COLLECTION COMPLETE!")
+    print(f"📊 Unique teams collected: {len(all_teams)}")
+    print(f"🏆 Leagues with matches: {leagues_with_matches}/{len(all_leagues)}")
+    print(f"⏱️  Time elapsed: {elapsed:.1f} seconds")
+    print(f"💾 Saved to: {OUTPUT_FILE}\n")
 
 
 if __name__ == '__main__':
