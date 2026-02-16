@@ -72,7 +72,7 @@ def extract_indicators(team_name):
     return indicators
 
 
-def find_best_match(oddswar_team, roobet_teams, threshold=80):
+def find_best_match(oddswar_team, roobet_teams, threshold=60):
     """
     Find the best matching Roobet team name for an Oddswar team.
     Uses normalized text (no diacritics) for comparison, but returns original names.
@@ -113,10 +113,11 @@ def find_best_match(oddswar_team, roobet_teams, threshold=80):
     normalized_teams = list(normalized_to_original.keys())
     
     # Compare using normalized text (better for diacritics)
+    # Use token_set_ratio for better handling of shortened names and word reordering
     result = process.extractOne(
         normalize_text(oddswar_team),
         normalized_teams,
-        scorer=fuzz.ratio
+        scorer=fuzz.token_set_ratio
     )
     
     if result and result[1] >= threshold:
@@ -152,9 +153,8 @@ def create_matches_csv():
     print(f"   Roobet basketball teams: {len(roobet_teams)}")
     
     # Load existing matches if CSV already exists
-    existing_entries = {}  # Maps Oddswar -> {'Roobet': name, 'Confidence': score}
+    existing_matches = {}  # Maps Oddswar -> {'Roobet': name, 'Confidence': score}
     preserved_100_confidence = {}  # Tracks 100.0 entries to preserve
-    already_used_roobet = set()
     csv_exists = False
     
     try:
@@ -164,26 +164,20 @@ def create_matches_csv():
                 oddswar = row['Oddswar']
                 roobet = row.get('Roobet', '')
                 confidence = row.get('Confidence', '')
-                
-                existing_entries[oddswar] = {
+                existing_matches[oddswar] = {
                     'Roobet': roobet,
                     'Confidence': confidence
                 }
-                
-                # Track 100.0 confidence entries for preservation
                 if confidence == '100.0' and roobet:
                     preserved_100_confidence[oddswar] = {
                         'Roobet': roobet,
                         'Confidence': confidence
                     }
-                
-                if roobet:  # Track already-used Roobet teams
-                    already_used_roobet.add(roobet)
         
         csv_exists = True
         print(f"\n📄 Found existing roobet_basketball_matches.csv")
-        print(f"   Total existing entries: {len(existing_entries)}")
-        print(f"   Entries with matches: {len([e for e in existing_entries.values() if e['Roobet']])}")
+        print(f"   Total existing entries: {len(existing_matches)}")
+        print(f"   Entries with matches: {len([m for m in existing_matches.values() if m['Roobet']])}")
         print(f"   🔒 100.0 confidence entries (will be preserved): {len(preserved_100_confidence)}")
         
     except FileNotFoundError:
@@ -202,16 +196,16 @@ def create_matches_csv():
     
     print(f"\n   Final Oddswar team count: {len(all_oddswar_teams_list)}")
     
-    print("\n🔍 Matching teams (threshold: 80%)...")
+    print("\n🔍 Matching teams (threshold: 60%)...")
     print("   ℹ️  Each Roobet team can only be matched once (prevents duplicates)")
     print("   ℹ️  Preserving 100.0 confidence entries (manual validations)")
     print("   ℹ️  Re-matching entries without 100.0 confidence")
     print("   ℹ️  Enforcing indicator matching (U19/U20/U21/U23/(W)/II/B must match)")
-    print("   ℹ️  Reserve teams: II and B are equivalent")
+    print("   ℹ️  Reserve teams: II and B are equivalent (Atletico Madrid II = Atletico Madrid B)")
     print("   ℹ️  Using diacritic-aware matching (Ü=U, ş=s, ç=c, etc.)")
     
-    # Track which Roobet teams are available (not already used by 100.0 entries)
-    roobet_used_by_preserved = set([e['Roobet'] for e in preserved_100_confidence.values()])
+    # Track which Roobet teams are available (not used by 100.0 entries)
+    roobet_used_by_preserved = set(e['Roobet'] for e in preserved_100_confidence.values())
     available_roobet_teams = [t for t in roobet_teams if t not in roobet_used_by_preserved]
     
     print(f"   ℹ️  Roobet teams reserved by 100.0 entries: {len(roobet_used_by_preserved)}")
@@ -234,10 +228,10 @@ def create_matches_csv():
         # Check if this team is in current oddswar_basketball_names.txt
         elif oddswar_team in oddswar_teams:
             # Check if it has an existing non-100.0 match
-            if csv_exists and oddswar_team in existing_entries and existing_entries[oddswar_team]['Roobet']:
+            if csv_exists and oddswar_team in existing_matches and existing_matches[oddswar_team]['Roobet']:
                 # Has existing match but not 100.0 confidence - we can re-match
-                old_match = existing_entries[oddswar_team]['Roobet']
-                old_confidence = existing_entries[oddswar_team]['Confidence']
+                old_match = existing_matches[oddswar_team]['Roobet']
+                old_confidence = existing_matches[oddswar_team]['Confidence']
                 
                 # Try to find a better match
                 roobet_match, score = find_best_match(oddswar_team, available_roobet_teams)
@@ -285,7 +279,7 @@ def create_matches_csv():
         })
         
         # Progress indicator
-        if i % 50 == 0:
+        if i % 100 == 0:
             print(f"   Processed {i}/{len(all_oddswar_teams_list)} teams...")
     
     print(f"\n📝 Writing to roobet_basketball_matches.csv...")

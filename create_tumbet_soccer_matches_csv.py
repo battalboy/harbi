@@ -2,6 +2,9 @@
 """
 Create tumbet_matches.csv with Oddswar team names and their probable Tumbet matches.
 Uses fuzzy matching (rapidfuzz) to find best matches.
+
+KEY FEATURE: Preserves 100.0 confidence entries (manually validated) even if the Oddswar team
+is no longer in oddswar_names.txt. This prevents manual entries from being deleted.
 """
 
 import csv
@@ -12,9 +15,13 @@ from rapidfuzz import fuzz, process
 
 def load_team_names(filename):
     """Load team names from a text file."""
-    with open(filename, 'r', encoding='utf-8') as f:
-        teams = [line.strip() for line in f if line.strip()]
-    return teams
+    try:
+        with open(filename, 'r', encoding='utf-8') as f:
+            teams = [line.strip() for line in f if line.strip()]
+        return teams
+    except FileNotFoundError:
+        print(f"⚠️  Warning: {filename} not found, using empty list")
+        return []
 
 
 def normalize_text(text):
@@ -122,31 +129,24 @@ def find_best_match(oddswar_team, tumbet_teams, threshold=80):
     return None, 0
 
 
-def load_existing_matches():
+def create_matches_csv():
     """
-    Load existing matches from CSV if it exists.
-    Returns tuple of (existing_matches dict, already_used_tumbet set)
+    Create tumbet_matches.csv with Oddswar and probable Tumbet matches.
+
+    PRESERVATION LOGIC:
+    - Load existing CSV if it exists
+    - Preserve ALL 100.0 confidence entries (manually validated)
+    - Only re-match entries that:
+      1. Are in oddswar_names.txt (current teams)
+      2. Don't have 100.0 confidence (not manually validated)
+    - Result: Manual validations are never deleted, even if team disappears from oddswar_names.txt
     """
-    try:
-        with open('tumbet_matches.csv', 'r', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
-            existing = {}
-            already_used = set()
-            for row in reader:
-                oddswar = row['Oddswar'].strip()
-                tumbet = row['Tumbet'].strip()
-                confidence = row.get('Confidence', '').strip()
-                if oddswar:
-                    existing[oddswar] = {'Tumbet': tumbet, 'Confidence': confidence}
-                    if tumbet:  # Track already-used Tumbet teams
-                        already_used.add(tumbet)
-            return existing, already_used
-    except FileNotFoundError:
-        return {}, set()
+    
+    print("=" * 60)
+    print("⚽ Creating Tumbet Soccer Matches CSV")
+    print("=" * 60)
 
-
-def main():
-    print("📂 Loading team names...")
+    print("\n📂 Loading team names...")
     oddswar_teams = load_team_names('oddswar_names.txt')
     tumbet_teams = load_team_names('tumbet_names.txt')
     
@@ -154,54 +154,110 @@ def main():
     print(f"   Tumbet teams: {len(tumbet_teams)}")
     
     # Load existing matches if CSV already exists
-    existing_matches, already_used_tumbet = load_existing_matches()
-    csv_exists = len(existing_matches) > 0
+    existing_matches = {}
+    preserved_100_confidence = {}
+    csv_exists = False
     
-    if csv_exists:
+    try:
+        with open('tumbet_matches.csv', 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                oddswar = row['Oddswar']
+                tumbet = row.get('Tumbet', '')
+                confidence = row.get('Confidence', '')
+                existing_matches[oddswar] = {
+                    'Tumbet': tumbet,
+                    'Confidence': confidence
+                }
+                if confidence == '100.0' and tumbet:
+                    preserved_100_confidence[oddswar] = {
+                        'Tumbet': tumbet,
+                        'Confidence': confidence
+                    }
+        csv_exists = True
         print(f"\n📄 Found existing tumbet_matches.csv")
-        print(f"   Preserving {len([m for m in existing_matches.values() if m['Tumbet']])} existing matches")
-        print(f"   {len(already_used_tumbet)} Tumbet teams already matched")
-    else:
+        print(f"   Total existing entries: {len(existing_matches)}")
+        print(f"   Entries with matches: {len([m for m in existing_matches.values() if m['Tumbet']])}")
+        print(f"   🔒 100.0 confidence entries (will be preserved): {len(preserved_100_confidence)}")
+    except FileNotFoundError:
         print(f"\n📄 No existing tumbet_matches.csv found - will create new file")
+    
+    # Create union of teams: oddswar_names.txt + preserved 100.0 entries
+    all_oddswar_teams = set(oddswar_teams)
+    for oddswar_team in preserved_100_confidence.keys():
+        all_oddswar_teams.add(oddswar_team)
+    all_oddswar_teams_list = sorted(all_oddswar_teams)
+    
+    if len(all_oddswar_teams_list) > len(oddswar_teams):
+        preserved_count = len(all_oddswar_teams_list) - len(oddswar_teams)
+        print(f"   ✅ Including {preserved_count} orphaned 100.0 confidence entries")
+    print(f"\n   Final Oddswar team count: {len(all_oddswar_teams_list)}")
     
     print("\n🔍 Matching teams (threshold: 80%)...")
     print("   ℹ️  Each Tumbet team can only be matched once (prevents duplicates)")
-    print("   ℹ️  Preserving existing matches - only filling in blanks")
+    print("   ℹ️  Preserving 100.0 confidence entries (manual validations)")
+    print("   ℹ️  Re-matching entries without 100.0 confidence")
     print("   ℹ️  Enforcing indicator matching (U19/U20/U21/U23/(W)/II/B must match)")
     print("   ℹ️  Reserve teams: II and B are equivalent (Atletico Madrid II = Atletico Madrid B)")
     print("   ℹ️  Using diacritic-aware matching (Ü=U, ş=s, ç=c, etc.)")
     
-    # Track which Tumbet teams are available (not already used)
-    available_tumbet_teams = [t for t in tumbet_teams if t not in already_used_tumbet]
+    tumbet_used_by_preserved = set(e['Tumbet'] for e in preserved_100_confidence.values())
+    available_tumbet_teams = [t for t in tumbet_teams if t not in tumbet_used_by_preserved]
+    print(f"   ℹ️  Tumbet teams reserved by 100.0 entries: {len(tumbet_used_by_preserved)}")
     print(f"   ℹ️  Available for new matches: {len(available_tumbet_teams)} Tumbet teams")
     
     matches = []
     new_match_count = 0
-    preserved_count = 0
+    preserved_100_count = 0
+    updated_match_count = 0
     
-    for i, oddswar_team in enumerate(oddswar_teams, 1):
-        # Check if this Oddswar team already has a match
-        if csv_exists and oddswar_team in existing_matches and existing_matches[oddswar_team]['Tumbet']:
-            # Preserve existing match AND confidence
-            match_data = existing_matches[oddswar_team]
+    for i, oddswar_team in enumerate(all_oddswar_teams_list, 1):
+        # Check if this is a preserved 100.0 confidence entry
+        if oddswar_team in preserved_100_confidence:
+            # ALWAYS preserve 100.0 confidence entries
+            match_data = preserved_100_confidence[oddswar_team]
             tumbet_match = match_data['Tumbet']
             confidence = match_data['Confidence']
-            preserved_count += 1
-        else:
-            # Only search among teams that haven't been matched yet
-            tumbet_match, score = find_best_match(oddswar_team, available_tumbet_teams)
-            
-            if tumbet_match:
-                new_match_count += 1
-                confidence = f"{score:.1f}"
-                if score < 100:  # Show non-exact matches
-                    print(f"   [{score:.0f}%] {oddswar_team} → {tumbet_match}")
-                
-                # Remove the matched team from available pool
-                available_tumbet_teams.remove(tumbet_match)
+            preserved_100_count += 1
+        # Check if this team is in current oddswar_names.txt
+        elif oddswar_team in oddswar_teams:
+            # Check if it has an existing non-100.0 match
+            if csv_exists and oddswar_team in existing_matches and existing_matches[oddswar_team]['Tumbet']:
+                # Has existing match but not 100.0 confidence - we can re-match
+                old_match = existing_matches[oddswar_team]['Tumbet']
+                old_confidence = existing_matches[oddswar_team]['Confidence']
+                # Try to find a better match
+                tumbet_match, score = find_best_match(oddswar_team, available_tumbet_teams)
+                if tumbet_match:
+                    confidence = f"{score:.1f}"
+                    updated_match_count += 1
+                    if tumbet_match != old_match:
+                        print(f"   [UPDATED] {oddswar_team}")
+                        print(f"      Old: {old_match} ({old_confidence})")
+                        print(f"      New: {tumbet_match} ({confidence})")
+                    # Remove from available pool
+                    available_tumbet_teams.remove(tumbet_match)
+                else:
+                    # No match found - leave blank
+                    tumbet_match = None
+                    confidence = ''
             else:
-                tumbet_match = None
-                confidence = ''
+                # No existing match or blank existing match - search for new match
+                tumbet_match, score = find_best_match(oddswar_team, available_tumbet_teams)
+                if tumbet_match:
+                    new_match_count += 1
+                    confidence = f"{score:.1f}"
+                    if score < 100:
+                        print(f"   [{score:.0f}%] {oddswar_team} → {tumbet_match}")
+                    # Remove the matched team from available pool
+                    available_tumbet_teams.remove(tumbet_match)
+                else:
+                    tumbet_match = None
+                    confidence = ''
+        else:
+            # Orphaned entry (not in oddswar_names.txt and not 100.0 confidence)
+            tumbet_match = None
+            confidence = ''
         
         matches.append({
             'Oddswar': oddswar_team,
@@ -211,7 +267,7 @@ def main():
         
         # Progress indicator
         if i % 100 == 0:
-            print(f"   Processed {i}/{len(oddswar_teams)} teams...")
+            print(f"   Processed {i}/{len(all_oddswar_teams_list)} teams...")
     
     print(f"\n📝 Writing to tumbet_matches.csv...")
     
@@ -220,24 +276,25 @@ def main():
         writer.writeheader()
         writer.writerows(matches)
     
-    total_matches = preserved_count + new_match_count
+    total_matches = len([m for m in matches if m['Tumbet']])
     
     print(f"\n✅ Done!")
     print(f"{'='*60}")
     print(f"📊 Results:")
-    print(f"   Total Oddswar teams: {len(oddswar_teams)}")
+    print(f"   Total Oddswar teams: {len(all_oddswar_teams_list)}")
     print(f"   Total matches: {total_matches}")
     if csv_exists:
-        print(f"     - Preserved existing: {preserved_count}")
-        print(f"     - New matches found: {new_match_count}")
+        print(f"     - 🔒 Preserved 100.0 confidence: {preserved_100_count}")
+        print(f"     - 🔄 Updated existing matches: {updated_match_count}")
+        print(f"     - ✨ New matches found: {new_match_count}")
     else:
         print(f"   Matches found: {total_matches}")
-    print(f"   No match: {len(oddswar_teams) - total_matches}")
-    print(f"   Match rate: {(total_matches/len(oddswar_teams)*100):.1f}%")
+    print(f"   No match: {len(all_oddswar_teams_list) - total_matches}")
+    print(f"   Match rate: {(total_matches/len(all_oddswar_teams_list)*100):.1f}%")
     print(f"\n📄 Output: tumbet_matches.csv")
     print(f"{'='*60}")
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    create_matches_csv()
 
