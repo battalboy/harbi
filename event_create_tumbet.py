@@ -13,7 +13,8 @@ import json
 import requests
 import os
 from pathlib import Path
-from typing import List, Dict, Optional
+from datetime import datetime, timezone
+from typing import List, Dict, Optional, Tuple
 from error_handler import handle_request_error, success_response, is_ban_indicator
 
 
@@ -58,6 +59,18 @@ def fetch_json(url: str) -> Dict:
         return {}
 
 
+def format_timestamp_iso(unix_seconds: int) -> str:
+    """
+    Convert Unix timestamp (seconds) to ISO 8601 format.
+    Matches oddswar/roobet/stoiximan output.
+    """
+    try:
+        dt = datetime.fromtimestamp(unix_seconds, tz=timezone.utc)
+        return dt.strftime('%Y-%m-%dT%H:%M:%S.000Z')
+    except (ValueError, OSError):
+        return "N/A"
+
+
 def fetch_live_games() -> List[int]:
     """
     Fetch live game IDs from Tumbet API.
@@ -83,15 +96,12 @@ def fetch_live_games() -> List[int]:
     return game_ids
 
 
-def fetch_prematch_all_games() -> List[int]:
+def fetch_prematch_all_games() -> Tuple[List[int], Dict[str, str]]:
     """
-    Fetch ALL prematch game IDs from Tumbet API using comprehensive getheader endpoint.
-    
-    This provides ~868+ matches vs ~69 from getprematchtopgames endpoint.
-    Filters out negative IDs (outrights/season-long bets) to get only actual matches.
+    Fetch ALL prematch game IDs and champ_id->league_name mapping from getheader.
     
     Returns:
-        List of prematch game IDs (positive IDs only = actual matches)
+        Tuple of (game_ids, champ_names). champ_names maps championship ID to league name.
     """
     url = f"{BASE_URL}/api/sport/getheader/{LANGUAGE}"
     
@@ -100,31 +110,36 @@ def fetch_prematch_all_games() -> List[int]:
     
     if not data or 'OT' not in data:
         print("  No prematch data")
-        return []
+        return [], {}
     
     game_ids = []
+    champ_names = {}
     
-    # Navigate: OT -> Sports -> Soccer (ID=1) -> Regions -> Champs -> GameSmallItems
     ot_data = data['OT']
+    if isinstance(ot_data, str):
+        ot_data = json.loads(ot_data)
     sports = ot_data.get('Sports', {})
     soccer = sports.get('1', {})  # Soccer = Sport ID 1
     
     if not soccer:
         print("  No soccer data found")
-        return []
+        return [], {}
     
     regions = soccer.get('Regions', {})
     for region_data in regions.values():
         champs = region_data.get('Champs', {})
-        for champ_data in champs.values():
-            games = champ_data.get('GameSmallItems', {})
+        for cid, champ in champs.items():
+            if isinstance(champ, dict):
+                name = champ.get('Name', champ.get('KeyName', ''))
+                if name:
+                    champ_names[str(cid)] = name
+            games = champ.get('GameSmallItems', {}) if isinstance(champ, dict) else {}
             if games:
-                # Only include positive IDs (actual matches), not negative IDs (outrights)
                 positive_ids = [gid for gid in games.keys() if int(gid) > 0]
                 game_ids.extend(positive_ids)
     
-    print(f"  Found {len(game_ids)} prematch soccer games (comprehensive coverage)")
-    return game_ids
+    print(f"  Found {len(game_ids)} prematch soccer games, {len(champ_names)} leagues")
+    return game_ids, champ_names
 
 
 def fetch_game_details(game_ids: List[int], game_type: str = 'prematch') -> Optional[Dict]:
@@ -212,17 +227,20 @@ def extract_1x2_odds(game_ev: Dict) -> tuple:
     return team1_odds, draw_odds, team2_odds
 
 
-def parse_game_details(data: Dict, game_type: str = 'prematch') -> List[Dict]:
+def parse_game_details(data: Dict, game_type: str = 'prematch', champ_names: Optional[Dict[str, str]] = None) -> List[Dict]:
     """
     Parse game details into match dictionaries.
     
     Args:
         data: Game details response from API
         game_type: 'live' or 'prematch'
+        champ_names: championship ID -> league name (from getheader)
     
     Returns:
         List of match dictionaries
     """
+    if champ_names is None:
+        champ_names = {}
     matches = []
     
     if not data:
@@ -267,13 +285,14 @@ def parse_game_details(data: Dict, game_type: str = 'prematch') -> List[Dict]:
             team1_odds, draw_odds, team2_odds = extract_1x2_odds(game_ev)
             
             # Build match URL (direct link to iframe content)
-            # Parent page URL doesn't work because iframe uses postMessage communication
-            # Direct iframe URL format: https://www.tumbet803.com/sportwide/index.html?lang=tr&brand=161&theme=default-dark-theme#/prematch?match={game_id}
             match_url = f"https://www.tumbet803.com/sportwide/index.html?lang=tr&brand=161&theme=default-dark-theme#/prematch?match={game_id}"
             
-            # Get additional info
-            region_id = game.get('region', '')
-            start_time_unix = game.get('stunix', '')
+            # Status, league, start time (aligned with oddswar/roobet/stoiximan)
+            status = 'Canlı Maç' if game_type == 'live' else 'Gelen Maç'
+            champ_id = game.get('ch')
+            league = champ_names.get(str(champ_id), champ_names.get(champ_id, 'N/A')) if champ_id else 'N/A'
+            stunix = game.get('stunix', 0)
+            start_time = format_timestamp_iso(stunix) if stunix else 'N/A'
             
             match = {
                 'id': game_id,
@@ -282,9 +301,10 @@ def parse_game_details(data: Dict, game_type: str = 'prematch') -> List[Dict]:
                 'team1_odds': team1_odds if team1_odds else 'N/A',
                 'draw_odds': draw_odds if draw_odds else 'N/A',
                 'team2_odds': team2_odds if team2_odds else 'N/A',
-                'region_id': region_id,
-                'start_time_unix': start_time_unix,
                 'url': match_url,
+                'status': status,
+                'league': league,
+                'start_time': start_time,
                 'is_live': game_type == 'live'
             }
             
@@ -300,13 +320,7 @@ def parse_game_details(data: Dict, game_type: str = 'prematch') -> List[Dict]:
 def format_match(match: Dict) -> str:
     """
     Format a match dictionary into a human-readable string.
-    Format matches other formatted.txt files exactly.
-    
-    Args:
-        match: A dictionary containing match data
-    
-    Returns:
-        str: A formatted string representing the match
+    Includes Status, League, Start Time (aligned with oddswar/roobet/stoiximan).
     """
     team1 = match.get('team1', 'N/A')
     team2 = match.get('team2', 'N/A')
@@ -314,11 +328,14 @@ def format_match(match: Dict) -> str:
     draw_odds = match.get('draw_odds', 'N/A')
     team2_odds = match.get('team2_odds', 'N/A')
     link_url = match.get('url', 'N/A')
+    status = match.get('status', 'Gelen Maç')
+    league = match.get('league', 'N/A')
+    start_time = match.get('start_time', 'N/A')
     
     return (
         f"Team 1: {team1} | Team 2: {team2} | "
         f"Team 1 Win: {team1_odds} | Draw: {draw_odds} | Team 2 Win: {team2_odds} | "
-        f"Link: {link_url}"
+        f"Link: {link_url} | Status: {status} | League: {league} | Start Time: {start_time}"
     )
 
 
@@ -349,14 +366,19 @@ def main():
         print("=" * 60)
         
         all_matches = []
+        champ_names = {}
         
-        # Step 1: Fetch LIVE matches
-        print("\n1. Fetching LIVE matches...")
+        # Step 1: Fetch getheader (prematch game IDs + league names for both live and prematch)
+        print("\n1. Fetching prematch header (game IDs + league names)...")
+        prematch_game_ids, champ_names = fetch_prematch_all_games()
+        
+        # Step 2: Fetch LIVE matches
+        print("\n2. Fetching LIVE matches...")
         live_game_ids = fetch_live_games()
         if live_game_ids:
             live_data = fetch_game_details(live_game_ids, 'live')
             if live_data:
-                live_matches = parse_game_details(live_data, 'live')
+                live_matches = parse_game_details(live_data, 'live', champ_names)
                 all_matches.extend(live_matches)
                 print(f"    Parsed {len(live_matches)} live matches")
             else:
@@ -364,9 +386,8 @@ def main():
         else:
             print("    No live games available")
         
-        # Step 2: Fetch PREMATCH matches (ALL games using comprehensive getheader)
-        print("\n2. Fetching ALL PREMATCH matches (comprehensive coverage)...")
-        prematch_game_ids = fetch_prematch_all_games()
+        # Step 3: Fetch PREMATCH matches (ALL games using comprehensive getheader)
+        print("\n3. Fetching ALL PREMATCH matches (comprehensive coverage)...")
         if prematch_game_ids:
             # Batch processing for large number of games (URL length limits)
             batch_size = 100
@@ -380,7 +401,7 @@ def main():
                 
                 prematch_data = fetch_game_details(batch, 'prematch')
                 if prematch_data:
-                    prematch_matches = parse_game_details(prematch_data, 'prematch')
+                    prematch_matches = parse_game_details(prematch_data, 'prematch', champ_names)
                     all_matches.extend(prematch_matches)
                     print(f"      ✅ Parsed {len(prematch_matches)} matches from batch {batch_num}")
                 else:
@@ -388,16 +409,16 @@ def main():
         else:
             print("    No prematch games available")
         
-        # Step 3: Report statistics
-        print(f"\n3. Processing results...")
+        # Step 4: Report statistics
+        print(f"\n4. Processing results...")
         matches_with_odds = [m for m in all_matches if m['team1_odds'] != 'N/A']
         print(f"   Total matches: {len(all_matches)}")
         print(f"   Matches with 1X2 odds: {len(matches_with_odds)}")
         print(f"   Matches missing odds: {len(all_matches) - len(matches_with_odds)}")
         
-        # Step 4: Save to file
+        # Step 5: Save to file
         if all_matches:
-            print("\n4. Saving formatted output...")
+            print("\n5. Saving formatted output...")
             save_formatted_matches(all_matches)
             
             # Write success status

@@ -11,6 +11,7 @@ Output is formatted identically to stoiximan-formatted.txt and oddswar-formatted
 
 import json
 import requests
+from datetime import datetime, timezone
 from typing import List, Dict, Optional
 from error_handler import handle_request_error, success_response, is_ban_indicator
 
@@ -37,12 +38,14 @@ def extract_categories_and_tournaments_from_data(data: Dict) -> tuple:
         data: Prematch API response containing categories and tournaments
     
     Returns:
-        tuple: (categories_dict, tournaments_dict) where:
+        tuple: (categories_dict, tournaments_dict, tournament_names_dict) where:
             - categories_dict: {category_id: category_slug}
             - tournaments_dict: {tournament_id: tournament_slug}
+            - tournament_names_dict: {tournament_id: tournament_display_name}
     """
     categories = {}
     tournaments = {}
+    tournament_names = {}
     
     try:
         # Extract categories from response
@@ -58,13 +61,15 @@ def extract_categories_and_tournaments_from_data(data: Dict) -> tuple:
         if 'tournaments' in data:
             for tour_id, tour_data in data['tournaments'].items():
                 slug = tour_data.get('slug', tour_data.get('name', ''))
+                name = tour_data.get('name', slug)
                 if slug:
                     tournaments[tour_id] = slug
+                    tournament_names[tour_id] = name
                     
     except Exception as e:
         print(f"Warning: Error extracting categories/tournaments: {e}")
     
-    return categories, tournaments
+    return categories, tournaments, tournament_names
 
 
 def fetch_events_data(endpoint_type='live') -> Optional[Dict]:
@@ -128,12 +133,13 @@ def fetch_events_data(endpoint_type='live') -> Optional[Dict]:
             if 'events' in data:
                 combined_events.update(data['events'])
             
-            # For prematch, also get categories and tournaments from first version (main)
-            if endpoint_type == 'prematch' and idx == 0:
+            # For prematch, merge categories and tournaments from ALL versions
+            # (each version may have different tournaments not in the main version)
+            if endpoint_type == 'prematch':
                 if 'categories' in data:
-                    categories = data['categories']
+                    categories.update(data['categories'])
                 if 'tournaments' in data:
-                    tournaments = data['tournaments']
+                    tournaments.update(data['tournaments'])
         
         if combined_events:
             result = {'events': combined_events}
@@ -196,7 +202,7 @@ def extract_1x2_odds(event: Dict) -> tuple:
     return team1_odds, draw_odds, team2_odds
 
 
-def parse_matches(data: Dict, endpoint_type: str = 'live', categories: Dict = None, tournaments: Dict = None) -> List[Dict]:
+def parse_matches(data: Dict, endpoint_type: str = 'live', categories: Dict = None, tournaments: Dict = None, tournament_names: Dict = None) -> List[Dict]:
     """
     Parse match data from Betsby API response and extract match information.
     
@@ -205,6 +211,7 @@ def parse_matches(data: Dict, endpoint_type: str = 'live', categories: Dict = No
         endpoint_type: 'live' or 'prematch' (for URL construction)
         categories: Dict mapping category IDs to slugs
         tournaments: Dict mapping tournament IDs to slugs
+        tournament_names: Dict mapping tournament IDs to display names
     
     Returns:
         List of match dictionaries with team names, odds, and links
@@ -219,6 +226,8 @@ def parse_matches(data: Dict, endpoint_type: str = 'live', categories: Dict = No
         categories = {}
     if tournaments is None:
         tournaments = {}
+    if tournament_names is None:
+        tournament_names = {}
     
     # Betsby API structure: events[event_id]
     events = data.get('events', {})
@@ -262,8 +271,18 @@ def parse_matches(data: Dict, endpoint_type: str = 'live', categories: Dict = No
                 # Last resort fallback
                 match_url = f"https://roobet.com/sports/event/{event_id}"
             
-            # Get competition/league info if available (just for display, not used in URL)
-            competition = desc.get('tournament', '')
+            # Get scheduled timestamp (Unix seconds) and convert to ISO 8601
+            scheduled = desc.get('scheduled', 0)
+            if scheduled:
+                try:
+                    start_time = datetime.fromtimestamp(scheduled, tz=timezone.utc).strftime('%Y-%m-%dT%H:%M:%S.000Z')
+                except (ValueError, OSError):
+                    start_time = 'N/A'
+            else:
+                start_time = 'N/A'
+            
+            status = 'Canlı Maç' if endpoint_type == 'live' else 'Gelen Maç'
+            league = tournament_names.get(tournament_id, 'N/A')
             
             match = {
                 'id': event_id,
@@ -272,9 +291,11 @@ def parse_matches(data: Dict, endpoint_type: str = 'live', categories: Dict = No
                 'team1_odds': team1_odds if team1_odds else 'N/A',
                 'draw_odds': draw_odds if draw_odds else 'N/A',
                 'team2_odds': team2_odds if team2_odds else 'N/A',
-                'competition': competition,
+                'competition': league,
                 'url': match_url,
-                'is_live': endpoint_type == 'live'
+                'is_live': endpoint_type == 'live',
+                'status': status,
+                'start_time': start_time
             }
             
             matches.append(match)
@@ -289,7 +310,7 @@ def parse_matches(data: Dict, endpoint_type: str = 'live', categories: Dict = No
 def format_match(match: Dict) -> str:
     """
     Format a match dictionary into a human-readable string.
-    Format matches stoiximan-formatted.txt and oddswar-formatted.txt exactly.
+    Includes Status, League, and Start Time (aligned with oddswar-formatted.txt).
     
     Args:
         match: A dictionary containing match data
@@ -303,11 +324,14 @@ def format_match(match: Dict) -> str:
     draw_odds = match.get('draw_odds', 'N/A')
     team2_odds = match.get('team2_odds', 'N/A')
     link_url = match.get('url', 'N/A')
+    status = match.get('status', 'Gelen Maç')
+    league = match.get('competition', 'N/A')
+    start_time = match.get('start_time', 'N/A')
     
     return (
         f"Team 1: {team1} | Team 2: {team2} | "
         f"Team 1 Win: {team1_odds} | Draw: {draw_odds} | Team 2 Win: {team2_odds} | "
-        f"Link: {link_url}"
+        f"Link: {link_url} | Status: {status} | League: {league} | Start Time: {start_time}"
     )
 
 
@@ -335,16 +359,17 @@ def main():
         all_matches = []
         categories = {}
         tournaments = {}
+        tournament_names = {}
         
         # Step 1: Fetch PREMATCH matches (this includes categories/tournaments metadata)
         print("\n1. Fetching PREMATCH matches...")
         prematch_data = fetch_events_data('prematch')
         if prematch_data:
             # Extract categories and tournaments from the prematch data
-            categories, tournaments = extract_categories_and_tournaments_from_data(prematch_data)
+            categories, tournaments, tournament_names = extract_categories_and_tournaments_from_data(prematch_data)
             print(f"   Found {len(categories)} soccer categories and {len(tournaments)} tournaments")
             
-            prematch_matches = parse_matches(prematch_data, 'prematch', categories, tournaments)
+            prematch_matches = parse_matches(prematch_data, 'prematch', categories, tournaments, tournament_names)
             all_matches.extend(prematch_matches)
             print(f"   Found {len(prematch_matches)} prematch matches")
         else:
@@ -354,7 +379,7 @@ def main():
         print("\n2. Fetching LIVE matches...")
         live_data = fetch_events_data('live')
         if live_data:
-            live_matches = parse_matches(live_data, 'live', categories, tournaments)
+            live_matches = parse_matches(live_data, 'live', categories, tournaments, tournament_names)
             all_matches.extend(live_matches)
             print(f"   Found {len(live_matches)} live matches")
         else:

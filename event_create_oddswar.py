@@ -92,17 +92,20 @@ def extract_lay_odds(runner_prices: List[Dict]) -> Optional[float]:
     return None
 
 
-def parse_matches(markets_data: Dict, details_data: Dict) -> List[Dict]:
+def parse_matches(markets_data: Dict, details_data: Dict, market_status: Dict = None) -> List[Dict]:
     """
     Parse match data from both API responses and extract match information.
     
     Args:
         markets_data: Response from markets list API
         details_data: Response from market details API
+        market_status: Dictionary mapping market_id -> status ('Canlı Maç' or 'Gelen Maç')
     
     Returns:
         List of match dictionaries with team names, odds, and links
     """
+    if market_status is None:
+        market_status = {}
     matches = []
     
     # Create a lookup map of market_id -> market_details
@@ -175,6 +178,9 @@ def parse_matches(markets_data: Dict, details_data: Dict) -> List[Dict]:
         match_url = f"/brand/1oddswar/exchange/soccer-1/{comp_name}-{comp_id}/{event_slug}-{event_id}/{market_id}"
         full_url = f"https://www.oddswar.com{match_url}"
         
+        # Get status from market_status dict (Canlı Maç = live, Gelen Maç = upcoming)
+        status = market_status.get(market_id, 'Gelen Maç')
+        
         match = {
             'id': market_id,
             'team1': team1_name,
@@ -185,7 +191,8 @@ def parse_matches(markets_data: Dict, details_data: Dict) -> List[Dict]:
             'competition': competition.get('name', ''),
             'url': match_url,
             'full_url': full_url,
-            'start_time': event.get('openDate', '')
+            'start_time': event.get('openDate', ''),
+            'status': status
         }
         
         matches.append(match)
@@ -196,7 +203,7 @@ def parse_matches(markets_data: Dict, details_data: Dict) -> List[Dict]:
 def format_match(match: Dict) -> str:
     """
     Format a match dictionary into a human-readable string.
-    Format matches stoiximan-formatted.txt exactly.
+    Includes Status, League, and Start Time (aligned with basketball script).
     
     Args:
         match: A dictionary containing match data
@@ -210,11 +217,14 @@ def format_match(match: Dict) -> str:
     draw_odds = match.get('draw_odds', 'N/A')
     team2_odds = match.get('team2_odds', 'N/A')
     link_url = match.get('full_url', 'N/A')
+    status = match.get('status', 'Gelen Maç')
+    league = match.get('competition', 'N/A')
+    start_time = match.get('start_time', 'N/A')
     
     return (
         f"Team 1: {team1} | Team 2: {team2} | "
         f"Team 1 Win: {team1_odds} | Draw: {draw_odds} | Team 2 Win: {team2_odds} | "
-        f"Link: {link_url}"
+        f"Link: {link_url} | Status: {status} | League: {league} | Start Time: {start_time}"
     )
 
 
@@ -241,6 +251,7 @@ def main():
         
         all_markets = []
         all_market_ids = []
+        market_status = {}  # market_id -> 'Canlı Maç' or 'Gelen Maç'
         
         # Step 1: Fetch LIVE (in-play) markets
         print("\n1. Fetching LIVE (in-play) markets...")
@@ -249,6 +260,8 @@ def main():
             inplay_markets = inplay_data.get('exchangeMarkets', [])
             all_markets.extend(inplay_markets)
             all_market_ids.extend([m['id'] for m in inplay_markets])
+            for m in inplay_markets:
+                market_status[m['id']] = 'Canlı Maç'
             print(f"   Found {len(inplay_markets)} live markets")
         except Exception as e:
             print(f"   Error fetching live markets: {e}")
@@ -265,6 +278,8 @@ def main():
             
             all_markets.extend(new_today_markets)
             all_market_ids.extend([m['id'] for m in new_today_markets])
+            for m in new_today_markets:
+                market_status[m['id']] = 'Gelen Maç'
             print(f"   Found {len(new_today_markets)} new today markets ({len(today_markets)} total, {len(today_markets) - len(new_today_markets)} duplicates)")
         except Exception as e:
             print(f"   Error fetching today markets: {e}")
@@ -281,6 +296,8 @@ def main():
             
             all_markets.extend(new_upcoming)
             all_market_ids.extend([m['id'] for m in new_upcoming])
+            for m in new_upcoming:
+                market_status[m['id']] = 'Gelen Maç'
             print(f"   Found {len(new_upcoming)} new upcoming markets ({len(all_upcoming)} total, {len(all_upcoming) - len(new_upcoming)} duplicates)")
         except Exception as e:
             print(f"   Error fetching all markets: {e}")
@@ -308,7 +325,7 @@ def main():
         print("\n5. Parsing match data...")
         # Combine all markets into a single structure
         combined_data = {'exchangeMarkets': all_markets}
-        matches = parse_matches(combined_data, details_data)
+        matches = parse_matches(combined_data, details_data, market_status)
         print(f"   Successfully parsed {len(matches)} soccer matches")
         
         # Step 6: Save to file

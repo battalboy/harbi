@@ -21,38 +21,21 @@ ERROR_LOG_FILE = 'stoiximan-error.json'
 # All 181 specific league IDs for comprehensive coverage (2.7x better than region IDs)
 ALL_LEAGUE_IDS = "1,2,4,5,215,216,217,218,527,1630,1635,1636,1647,1672,1673,1697,1698,10000,10008,10016,10017,10067,10210,10215,10346,10392,10467,10486,10815,11962,11963,15285,16765,16816,16823,16842,16849,16872,16880,16882,16884,16887,16888,16893,16894,16896,16901,16905,16918,16921,16932,16940,16941,16946,16947,16952,16954,16955,17024,17026,17041,17067,17069,17073,17078,17079,17080,17083,17087,17088,17093,17103,17108,17113,17118,17122,17123,17126,17158,17160,17166,17223,17246,17264,17313,17315,17370,17377,17383,17385,17405,17407,17412,17427,17439,17491,17496,17524,17530,17572,17611,17714,17727,17766,17788,17796,17802,17816,17837,17839,17877,17901,17906,17917,18092,18369,18443,181553,181647,181734,181739,181792,181811,181988,182086,182181,182215,183321,183456,184596,184721,184866,185364,186905,186962,187246,187259,187416,187589,187668,188482,188880,189547,190848,190985,191713,191910,191912,192991,192992,193121,193969,193989,194429,194430,195435,195785,195867,196183,196214,197272,197335,197549,197789,198734,201034,201720,202042,203472,203500,203860,203862,204604,205799,432g,433g,434g,435g,436g,474g,493g"
 
-# Turkish month names for timestamp formatting
-TURKISH_MONTHS = [
-    'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
-    'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'
-]
-
-
-def format_timestamp_turkish(unix_timestamp_ms: int) -> str:
+def format_timestamp_iso(unix_timestamp_ms: int) -> str:
     """
-    Convert Unix timestamp (in MILLISECONDS) to Turkish format.
-    Stoiximan uses milliseconds, not seconds!
+    Convert Unix timestamp (in MILLISECONDS) to ISO 8601 format.
+    Stoiximan uses milliseconds. Output matches oddswar/roobet format.
     
     Args:
         unix_timestamp_ms: Unix timestamp in milliseconds (e.g., 1768770000000)
     
     Returns:
-        str: Turkish formatted timestamp (e.g., "17 Ocak 2026 saat 17:45 UTC")
+        str: ISO 8601 string (e.g., "2026-01-17T17:45:00.000Z")
     """
     try:
-        # Convert milliseconds to seconds, then to datetime (UTC)
         dt = datetime.fromtimestamp(unix_timestamp_ms / 1000, tz=timezone.utc)
-        
-        # Format: "17 Ocak 2026 saat 17:45 UTC"
-        day = dt.day
-        month = TURKISH_MONTHS[dt.month - 1]
-        year = dt.year
-        hour = dt.hour
-        minute = dt.minute
-        
-        return f"{day} {month} {year} saat {hour:02d}:{minute:02d} UTC"
-    except Exception as e:
-        # If conversion fails, return N/A
+        return dt.strftime('%Y-%m-%dT%H:%M:%S.000Z')
+    except (ValueError, OSError):
         return "N/A"
 
 
@@ -137,17 +120,18 @@ def parse_live_matches(json_data):
     Parse LIVE matches with full odds data from Stoiximan live API.
     
     Args:
-        json_data: JSON data from live API endpoint
+        json_data: JSON data from live API endpoint (includes top-level leagues dict)
         
     Returns:
         list: List of dictionaries containing match data with odds
     """
     matches = []
     
-    # Extract events, markets, and selections from the JSON
+    # Extract events, markets, selections, and leagues from the JSON
     events = json_data.get('events', {})
     markets_data = json_data.get('markets', {})
     selections_data = json_data.get('selections', {})
+    leagues = json_data.get('leagues', {})
     
     for event_id, event in events.items():
         try:
@@ -155,8 +139,14 @@ def parse_live_matches(json_data):
             if event.get('sportId') != 'FOOT':
                 continue
             
-            # Get start time
-            start_time = event.get('startTime', 0)
+            # Get start time (Unix ms) and convert to ISO 8601
+            start_time_ms = event.get('startTime', 0)
+            start_time = format_timestamp_iso(start_time_ms) if start_time_ms else 'N/A'
+            
+            # Get league name from top-level leagues dict
+            league_id = event.get('leagueId')
+            league_info = leagues.get(str(league_id), {}) if league_id else {}
+            league = league_info.get('name', 'N/A')
             
             # Get participants (teams)
             participants = event.get('participants', [])
@@ -231,6 +221,8 @@ def parse_live_matches(json_data):
                 'team2_odds': team2_odds,
                 'url': match_url,
                 'start_time': start_time,
+                'status': 'Canlı Maç',
+                'league': league,
                 'is_live': True
             }
             
@@ -261,8 +253,12 @@ def parse_upcoming_matches(events):
             if event.get('sportId') != 'FOOT':
                 continue
             
-            # Get start time
-            start_time = event.get('startTime', 0)
+            # Get start time (Unix ms) and convert to ISO 8601
+            start_time_ms = event.get('startTime', 0)
+            start_time = format_timestamp_iso(start_time_ms) if start_time_ms else 'N/A'
+            
+            # Get league name (directly on event in upcoming API)
+            league = event.get('leagueName', 'N/A')
             
             # Get participants (teams)
             participants = event.get('participants', [])
@@ -311,6 +307,8 @@ def parse_upcoming_matches(events):
                 'team2_odds': team2_odds if team2_odds else 'N/A',
                 'url': match_url,
                 'start_time': start_time,
+                'status': 'Gelen Maç',
+                'league': league,
                 'is_live': False
             }
             
@@ -326,6 +324,7 @@ def parse_upcoming_matches(events):
 def format_match(match):
     """
     Format a match dictionary into the standard output format.
+    Includes Status, League, and Start Time (aligned with oddswar/roobet).
     
     Args:
         match: Dictionary containing match data
@@ -339,16 +338,14 @@ def format_match(match):
     draw_odds = match.get('draw_odds', 'N/A')
     team2_odds = match.get('team2_odds', 'N/A')
     link_url = match.get('url', 'N/A')
-    
-    # Format timestamp to Turkish format
-    start_time_ms = match.get('start_time', 0)
-    start_time_formatted = format_timestamp_turkish(start_time_ms) if start_time_ms else 'N/A'
+    status = match.get('status', 'Gelen Maç')
+    league = match.get('league', 'N/A')
+    start_time = match.get('start_time', 'N/A')
     
     return (
         f"Team 1: {team1} | Team 2: {team2} | "
         f"Team 1 Win: {team1_odds} | Draw: {draw_odds} | Team 2 Win: {team2_odds} | "
-        f"Link: {link_url} | "
-        f"Start Time: {start_time_formatted}"
+        f"Link: {link_url} | Status: {status} | League: {league} | Start Time: {start_time}"
     )
 
 

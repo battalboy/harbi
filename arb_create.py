@@ -80,7 +80,9 @@ def load_team_mappings(csv_file: str) -> Dict[str, str]:
 def parse_formatted_file(file_path: str) -> Dict[Tuple[str, str], Dict]:
     """
     Parse formatted event file (pipe-separated format).
-    Returns dict: {(team1, team2): {odds_1, odds_x, odds_2, link}}
+    Returns dict: {(team1, team2): {odds_1, odds_x, odds_2, link, status, league, start_time}}
+    
+    Status, league, and start_time are optional (only present in Oddswar files).
     """
     events = {}
     
@@ -90,7 +92,7 @@ def parse_formatted_file(file_path: str) -> Dict[Tuple[str, str], Dict]:
             if not line:
                 continue
             
-            # Parse: Team 1: X | Team 2: Y | Team 1 Win: Z | Draw: Z | Team 2 Win: Z | Link: URL
+            # Parse: Team 1: X | Team 2: Y | Team 1 Win: Z | Draw: Z | Team 2 Win: Z | Link: URL [| Status: ...] [| League: ...] [| Start Time: ISO8601]
             parts = [p.strip() for p in line.split('|')]
             
             if len(parts) < 6:
@@ -104,16 +106,35 @@ def parse_formatted_file(file_path: str) -> Dict[Tuple[str, str], Dict]:
                 odds_2 = parts[4].split(':', 1)[1].strip()
                 link = parts[5].split(':', 1)[1].strip()
                 
+                # Optional status, league, start_time (only in Oddswar files)
+                status = None
+                if len(parts) >= 7:
+                    status = parts[6].split(':', 1)[1].strip()
+                league = None
+                if len(parts) >= 8:
+                    league = parts[7].split(':', 1)[1].strip()
+                start_time = None
+                if len(parts) >= 9:
+                    start_time = parts[8].split(':', 1)[1].strip()
+                
                 # Skip if any odds are N/A
                 if odds_1 == 'N/A' or odds_x == 'N/A' or odds_2 == 'N/A':
                     continue
                 
-                events[(team1, team2)] = {
+                event_data = {
                     'odds_1': odds_1,
                     'odds_x': odds_x,
                     'odds_2': odds_2,
                     'link': link
                 }
+                if status:
+                    event_data['status'] = status
+                if league:
+                    event_data['league'] = league
+                if start_time:
+                    event_data['start_time'] = start_time
+                
+                events[(team1, team2)] = event_data
             except (IndexError, ValueError):
                 continue
     
@@ -154,6 +175,24 @@ def find_matching_events(
             matches[(oddswar_team1, oddswar_team2)] = traditional_events[(trad_team1, trad_team2)]
     
     return matches
+
+
+def format_turkish_datetime(iso_timestamp: str) -> str:
+    """
+    Format ISO 8601 timestamp to Turkish date/time format.
+    Example: "2026-01-29T23:30:00.000Z" -> "Tarih: <b>29 Ocak 2026</b> - Saat: <b>23:30</b>"
+    """
+    turkish_months = {
+        1: 'Ocak', 2: 'Şubat', 3: 'Mart', 4: 'Nisan', 5: 'Mayıs', 6: 'Haziran',
+        7: 'Temmuz', 8: 'Ağustos', 9: 'Eylül', 10: 'Ekim', 11: 'Kasım', 12: 'Aralık'
+    }
+    try:
+        dt = datetime.fromisoformat(iso_timestamp.replace('Z', '+00:00'))
+        date_str = f"{dt.day} {turkish_months[dt.month]} {dt.year}"
+        time_str = dt.strftime('%H:%M')
+        return f"Tarih: <b>{date_str}</b> - Saat: <b>{time_str}</b>"
+    except Exception:
+        return f"Tarih: <b>N/A</b> - Saat: <b>N/A</b>"
 
 
 def generate_error_banner(error_statuses: Dict[str, Optional[Dict]]) -> str:
@@ -222,7 +261,7 @@ def generate_html(matched_events: List[Dict], output_file: str = 'results.html',
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harbi - Arbitrage Results</title>
+    <title>Harbi - Soccer Arbitrage Results</title>
     <style>
         body {{
             font-family: Arial, sans-serif;
@@ -269,7 +308,7 @@ def generate_html(matched_events: List[Dict], output_file: str = 'results.html',
     </style>
 </head>
 <body>
-    <h1 style="text-align: center;">H.Ar.B.İ. - Arbitrage Oran Sonuçları - {timestamp}</h1>
+    <h1 style="text-align: center;">H.Ar.B.İ. - Futbol Arbitrage Oran Sonuçları - {timestamp}</h1>
 """
     
     # Add error banner if there are any errors
@@ -281,13 +320,24 @@ def generate_html(matched_events: List[Dict], output_file: str = 'results.html',
         team2 = event['team2']
         oddswar = event['oddswar']
         
+        # Get status, league, start time from Oddswar data (aligned with arb_basketball_create)
+        status = oddswar.get('status', 'Gelen Maç')
+        league = oddswar.get('league', 'N/A')
+        start_time = oddswar.get('start_time')
+        datetime_str = format_turkish_datetime(start_time) if start_time and start_time != 'N/A' else None
+        
+        if datetime_str:
+            header_content = f"{team1} VS {team2} ({status})<br><span style=\"font-weight: normal; font-size: 0.9em;\">Lig: {league}<br>{datetime_str}</span>"
+        else:
+            header_content = f"{team1} VS {team2} ({status})<br><span style=\"font-weight: normal; font-size: 0.9em;\">Lig: {league}</span>"
+        
         # Start table
         html += f"""
     <!-- Event: {team1} vs {team2} -->
     <table class="event-table">
         <thead>
             <tr class="header-row">
-                <th colspan="4">{team1} VS {team2}</th>
+                <th colspan="4">{header_content}</th>
             </tr>
         </thead>
         <tbody>
