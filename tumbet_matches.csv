@@ -1,4 +1,12 @@
 Oddswar,Tumbet,Confidence
+Barcelona (ECU),Barcelona SC,100.0
+Ciudad de Bolivar,Ciudad DE Bolivar,100.0
+CA Claypole,Claypole,100.0
+Carabobo FC,Carabobo,100.0
+CA San Miguel,San Miguel,100.0
+Shanghai Shenhua,Shanghai Shenhua,100.0
+Anapolis GO,Anapolis GO,100.0
+Vila Nova,Vila Nova FC GO,100.0
 Covilha,SC Covilha,100.0
 Moghreb Tetouan,Maghreb Athletic Tetouan,100.0
 Stade Marocain du Rabat,Stade Marocain,100.0
@@ -243,7 +251,7 @@ Al Wehdat,Al Wehdat Jor,100.0
 Al-Akhdoud,AL Akhdood,100.0
 Al-Anwar Club,AL ANWAR,100.0
 Al-Arabi Al-Saudi,AL Arabi (SA),100.0
-Al-Ettifaq,Al Ittifaq,100.0
+Al-Ettifaq,Al İttifak,100.0
 Al-Fateh (KSA),Al Fateh SC,100.0
 Al-Feiha,AL Faiha,100.0
 Al-Feiha,AL Faiha,100.0
@@ -256,7 +264,7 @@ Al-Jndal,Al Jandal,100.0
 Al-Kawkab,AL Kawkab,100.0
 Al-Khaboora,Al-Khaboora,100.0
 Al-Khaleej Saihat,AL Khaleej Saihat,100.0
-Al-Kholood Club,AL KHLOOD,100.0
+Al-Kholood Club,Al Khlood,100.0
 Al-Masry,Al-Masry,100.0
 Al-Muharraq,AL-MUHARRAQ SC,100.0
 Al-Nasr,Al-Nasr SC,100.0
@@ -709,7 +717,7 @@ CS Cartagines,Cartagines,100.0
 CS Constantine,CS Constantine,100.0
 CS FC Dinamo Bucuresti,Dinamo Bükreş,100.0
 CS Herediano,Herediano,100.0
-CSA Steaua Bucuresti,Steaua Bucuresti,100.0
+CSA Steaua Bucuresti,CSA Steaua Bukarest,100.0
 CSD Municipal,Municipal,100.0
 CSD Sacachispas,CSD Sacachispas,100.0
 Csikszereda,AFK Csikszereda,100.0
@@ -1456,7 +1464,7 @@ OFK Beograd,Belgrade,100.0
 OHiggins,O'higgins,100.0
 Olancho,Olancho FC,100.0
 Oliveirense,Oliveirense,100.0
-Olympiakos,Olympiacos,100.0
+Olympiakos,Olympiacos Piraus,100.0
 Olympic Charleroi,OC Charleroi,100.0
 Olympique Akbou,Olympique Akbou,100.0
 Olympique De Beja,Olypique De Beja,100.0
@@ -1893,7 +1901,7 @@ Tonbridge Angels,Tonbridge Angels,100.0
 Tondela,Tondela,100.0
 Torino,Torino,100.0
 Tornado FC,Tornado FC,100.0
-Torque,Torque,100.0
+Torque,CA Torque,100.0
 Torreense,Torreense,100.0
 Torrent CF,Torrent CF,100.0
 Tottenham,Tottenham,100.0
@@ -2106,7 +2114,7 @@ ENPPI,Enppi Club,100.0
 FC Juarez (W),FC Juarez W.,100.0
 Perth Glory (W),Perth Glory (K.),100.0
 Sydney FC (W),Sydney FC (K.),100.0
-Al-Ittifaq Maqaba,Al Ittifaq,100.0
+Al-Ittifaq Maqaba,AL ITTIFAQ BHR,100.0
 Al-Khaleej Khor Fakkan,Khor Fakkan,100.0
 Baladeyet Al-Mahalla,Baladiyyat Al Mehalla,100.0
 Connahs Quay,Connah`s Quay Nomads FC,100.0
@@ -2374,11 +2382,11 @@ Bromley U21,,
 Brothers Union,,
 Bryne,,
 Budafoki,,
-Buhimba Saints United,,
+Buhimba Saints United,Buhimba United Saints FC,100.0
 Burgos B,,
 Burnley (W),,
 Burnley U21,,
-Busaiteen Club,,
+Busaiteen Club,Busaiteen,100.0
 CA Juventus,,
 CA Osasuna II,,
 CA Penarol de Parana,,
@@ -2513,7 +2521,7 @@ Entente Feignies Aulnoye FC,,
 Erciyes 38 FSK,,
 Erokspor A.S,,
 Erzincanspor,,
-Erzurum BB,,
+Erzurum BB,Erzurumspor FK,100.0
 ES Setif,,
 Esan Pattaya,,
 Esbjerg,,
@@ -2553,7 +2561,7 @@ FC Sabah,,
 FC Santiago,,
 FC Sellier & Bellot Vlasim,,
 FC Telavi,,
-FC Voluntari,,
+FC Voluntari,CS Voluntari,100.0
 FC Wil,,
 FCM TQS Traiskirchen,,
 FCSB,,
