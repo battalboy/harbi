@@ -11,7 +11,7 @@ Output is formatted identically to stoiximan-formatted.txt for easy comparison.
 
 import json
 import requests
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from typing import List, Dict, Optional
 from error_handler import handle_request_error, success_response, is_ban_indicator
 
@@ -181,13 +181,16 @@ def parse_matches(markets_data: Dict, details_data: Dict, market_status: Dict = 
         
         # Get status: use start time as source of truth. Oddswar's 'inplay' API returns
         # upcoming matches too, so we override: if start_time is in the future → Gelen Maç
+        # Use 5-min grace period to avoid clock skew / API latency: only override when
+        # match is clearly upcoming (>5 min away). Keeps live status if clock is slow.
         status = market_status.get(market_id, 'Gelen Maç')
         open_date = event.get('openDate', '')
         if open_date:
             try:
                 dt = datetime.fromisoformat(open_date.replace('Z', '+00:00'))
-                if dt > datetime.now(timezone.utc):
-                    status = 'Gelen Maç'  # Match hasn't started yet
+                now = datetime.now(timezone.utc)
+                if dt > now + timedelta(minutes=5):
+                    status = 'Gelen Maç'  # Match hasn't started yet (with buffer)
             except (ValueError, TypeError):
                 pass
         
