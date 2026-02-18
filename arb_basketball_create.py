@@ -662,7 +662,6 @@ Bu sayfanın web versiyonunu görmek için <a href="{web_url}">tıklayın</a>...
                         # Build block for this site
                         block = build_telegram_block(event, site)
                         blocks.append(block)
-                        break  # Only one block per event (first matching site)
         except (ValueError, KeyError):
             continue
         
