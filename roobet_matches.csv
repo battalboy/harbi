@@ -1,4 +1,14 @@
 Oddswar,Roobet,Confidence
+SV Austria Salzburg,Austria Salzburg,100.0
+Guapore RO,Guapore de Rondonia,100.0
+Galvez EC,Galvez EC,100.0
+Monte Roraima FC,Monte Roraima RR,100.0
+Gama,Gama DF,100.0
+Bare RR,Bare EC RR,100.0
+Serra Branca EC,Serra Branca,100.0
+Tatran Lip Mikulas,MFK Tatran Liptovsky Mikulas,100.0
+Stromsgodset,Stroemsgodset IF,100.0
+Odds BK,Odds BK,100.0
 Widzew Lodz,Widzew Lodz,100.0
 Barcelona (ECU),Barcelona SC,100.0
 Ciudad de Bolivar,Club Ciudad de Bolivar,100.0
@@ -428,7 +438,7 @@ Comoros,Comoros,100.0
 Concarneau,US Concarneau,100.0
 Ha Noi FC,Hanoi FC,100.0
 Concordia CA,Concordia AC SC,100.0
-Cong An Nhan Dan,Cong An Ha Noi FC,100.0
+Cong An Ha Noi,Cong An Ha Noi FC,100.0
 Coquimbo Unido,Coquimbo Unido,100.0
 Cordoba,Cordoba CF,100.0
 Corinthians,SC Corinthians SP,100.0
@@ -533,7 +543,7 @@ Farul Constanta,FC Farul Constanta,100.0
 Fatih Karagumruk Istanbul,Fatih Karagumruk,100.0
 Favoritner AC,Favoritner AC,100.0
 FC Ashdod,MS Ashdod,100.0
-FC Basel,FC Basel 1893,100.0
+FC Basel,FC Basel,100.0
 FC Blau Weiss Linz,Blau-Weiss Linz,100.0
 FC Cartagena,Cartagena,100.0
 FC Copenhagen,FC Copenhagen,100.0
@@ -798,7 +808,7 @@ Lugano,FC Lugano,100.0
 Lumezzane,AC Lumezzane,100.0
 Lusail,Lusail SC,100.0
 Lusitania Futebol Clube,Lusitania FC Lourosa,100.0
-Luzern,FC Luzern,100.0
+FC Luzern,FC Luzern,100.0
 Lyon Duchere,Lyon La Duchere,100.0
 Macara,CSD Macara,100.0
 Macarthur FC,Macarthur FC,100.0
@@ -1058,7 +1068,7 @@ San Antonio Bulo Bulo,San Antonio Bulo Bulo,100.0
 Santa Catarina FC,Santa Catarina Clube SC,100.0
 Santa Clara,Santa Clara Azores,100.0
 Santa Cruz PE,Santa Cruz FC PE,100.0
-Santos Laguna,Club Santos Laguna,100.0
+Santos Laguna,Club Laguna Saf,100.0
 Sao Bernardo,Sao Bernardo FC,100.0
 Sao Paulo,Sao Paulo FC SP,100.0
 Sarmiento de Junin,CA Sarmiento Junin,100.0
@@ -1401,6 +1411,16 @@ Tokushima,Tokushima Vortis,100.0
 URT,Urt MG,100.0
 Nacional Potosi,CA Nacional Potosi,100.0
 Rotherham,Rotherham United,100.0
+Admira Wacker,FC Admira Wacker Modling,100.0
+Austria Wien (A),FK Austria Vienna II,100.0
+Catania,Calcio Catania,100.0
+CSA Steaua Bucuresti,Csa Steaua Bucuresti,100.0
+FC Voluntari,SC FC Voluntari,100.0
+Mosta,Mosta FC,100.0
+Porto Sport Club,Porto SC BA,100.0
+Rapid Vienna (Am),Rapid Wien II,100.0
+Tampines Rovers,BG Tampines Rovers,100.0
+Trapani,Trapani Calcio,100.0
 Al Arabi Kuwait,,
 1 Dezembro,,
 1461 Trabzon,,
@@ -1436,7 +1456,6 @@ Adana 1954 FK,,
 Adelaide United (W),,
 Adhyaksa FC,,
 ADJG Jaguar,,
-Admira Wacker,,
 AFC Dunstable,,
 AFC Fylde,,
 AFC Leopards SC (Kenya),,
@@ -1647,7 +1666,6 @@ Aurora,,
 Aurora FC,,
 Aurora Pro Patria 1919,,
 Australia U23,,
-Austria Wien (A),,
 Avai,,
 Aveley,,
 Avenir S Marsa,,
@@ -1792,7 +1810,6 @@ Cascada SC,,
 Cascavel PR,,
 Cascavel PR U20,,
 Casric FC,,
-Catania,,
 Cavalier,,
 Caykur Rizespor U19,,
 CD Aguila,,
@@ -1915,7 +1932,6 @@ CS Afumati,,
 Cs Cartagines,,
 CS Gloria 2018 Bistrita-Na,,
 CS Tunari,,
-CSA Steaua Bucuresti,,
 CSC 1599 Selimbar,,
 CSD Municipal,,
 CSD Sacachispas,,
@@ -2072,7 +2088,6 @@ FC Sellier & Bellot Vlasim,,
 FC Talanta,,
 FC Telavi,,
 FC Utd Manchester,,
-FC Voluntari,,
 FCSB,,
 FCSB U19,,
 Ferroviaria,,
@@ -2457,7 +2472,6 @@ Monterrey (W),,
 Montpellier (W),,
 Monza U20,,
 Morton,,
-Mosta,,
 Motherwell (W),,
 Motril CF,,
 Mount Pleasant FC,,
@@ -2605,7 +2619,6 @@ Pontypridd Town,,
 Portadown (Res),,
 Portimonense SC U23,,
 Portmore Utd,,
-Porto Sport Club,,
 Porto U19,,
 Portsmouth (W),,
 Portuguesa SP,,
@@ -2663,7 +2676,6 @@ Rakhine Utd,,
 Rangers LFC (W),,
 RANS Nusantara FC,,
 Rapid Vienna,,
-Rapid Vienna (Am),,
 Raya Sporting FC,,
 Rayon Sports FC,,
 RB Leipzig (W),,
@@ -2862,7 +2874,6 @@ Taiwan Steel,,
 Talavera CF,,
 Talleres,,
 Tampico Madero,,
-Tampines Rovers,,
 Tampines Rovers II,,
 Tanjong Pagar United,,
 Tanjong Pagar United II,,
@@ -2908,7 +2919,6 @@ Tottenham U21,,
 TPS,,
 Tranent Juniors,,
 Tranmere,,
-Trapani,,
 Treasure Beach FC,,
 Trefelin,,
 Trethomas Bluebirds AFC,,
