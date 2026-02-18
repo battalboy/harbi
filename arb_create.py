@@ -804,6 +804,9 @@ def main():
     # Sort: events with arbitrage first (True=1, False=0), reverse to get True first
     matched_events.sort(key=lambda e: has_arbitrage(e), reverse=True)
     
+    # Exclude live matches per client request (oddswar status = source of truth)
+    matched_events = [e for e in matched_events if e.get('oddswar', {}).get('status') != 'Canlı Maç']
+    
     arb_count = sum(1 for e in matched_events if has_arbitrage(e))
     print(f"   ✅ {arb_count} events with arbitrage at top, {len(matched_events) - arb_count} without at bottom")
     
