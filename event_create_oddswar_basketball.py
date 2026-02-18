@@ -177,10 +177,10 @@ def parse_matches(markets_data: Dict, details_data: Dict, market_status: Dict = 
         match_url = f"/brand/1oddswar/exchange/7522/{comp_name}-{comp_id}/{event_slug}-{event_id}/{market_id}"
         full_url = f"https://www.oddswar.com{match_url}"
         
-        # Get status: use start time as source of truth. Oddswar's 'inplay' API returns
-        # upcoming matches too, so we override: if start_time is in the future → Gelen Maç
-        # Use 5-min grace period to avoid clock skew / API latency: only override when
-        # match is clearly upcoming (>5 min away). Keeps live status if clock is slow.
+        # Get status: use openDate as source of truth. Oddswar's 'inplay' API can return
+        # upcoming matches, while actually-live matches may appear in 'today' feed. So we
+        # derive status from start time: started (openDate <= now) → Canlı, future → Gelen.
+        # Use 5-min grace period to avoid clock skew: only treat as live when clearly started.
         status = market_status.get(market_id, 'Gelen Maç')
         open_date = event.get('openDate', '')
         if open_date:
@@ -189,6 +189,8 @@ def parse_matches(markets_data: Dict, details_data: Dict, market_status: Dict = 
                 now = datetime.now(timezone.utc)
                 if dt > now + timedelta(minutes=5):
                     status = 'Gelen Maç'  # Match hasn't started yet (with buffer)
+                elif dt <= now:
+                    status = 'Canlı Maç'   # Match has started (from any feed: inplay, today, all)
             except (ValueError, TypeError):
                 pass
         
