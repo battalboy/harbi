@@ -10,7 +10,8 @@ These rules apply to all work on this codebase.
 - Only perform git operations when the user gives express permission for that specific operation
 - When user says "commit to git", wait for explicit confirmation before also pushing
 - The user will explicitly state whether the commit is to local and/or live git.
-- The user may have asked for a series of procedures without mentioning git at all and it may seem like a natural or logical step to commit to git or to use the git command as part of these procedures but DO NOT do so. Ask the user for permission.
+- The user may have asked for a series of procedures without mentioning git at all and it may seem like a natural or logical step to commit to git or to use the git command as part of these procedures but DO NOT do so. Ask the user for permission
+- Do not use -A for git agent forwarding as this may push unwanted updates to the live server. The user will do git pull manually on the production server when needed.
 
 ## Code Debugging
 
@@ -34,6 +35,7 @@ These rules apply to all work on this codebase.
 - DO NOT create large markdown documentation files for small code fixes, bug fixes, or routine changes
 - Report changes concisely in the chat instead
 - Reserve documentation files for significant features, architectural decisions, or complex system explanations only
+- Use README.md for documentation
 
 ## Temporary Files
 
