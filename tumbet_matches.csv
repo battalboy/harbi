@@ -61,8 +61,6 @@ AFC Totton,Totton,100.0
 AFC Wimbledon,Wimbledon,100.0
 AFF Guatemala,Aff Guatemala,100.0
 AIK,AIK,100.0
-AL Arabi (Qat),Al Arabi Doha,100.0
-AL Dhaid U19,AL Duhail U19,100.0
 AL Shamal,Al Shamal,100.0
 AL Wakrah U23,AL Wakrah SC U23,100.0
 AS Ariana,As.ariana,100.0
@@ -183,9 +181,9 @@ Al Zawraa,Al Zawraa,100.0
 Al-Adalh,Al Adalah FC,100.0
 Al-Ahli Doha U23,AL Ahli Doha U23,100.0
 Al-Akhdoud,AL Akhdood,100.0
-Al-Anwar Club,AL ANWAR,100.0
+Al-Anwar Club,Al Anwar,100.0
 Al-Arabi Al-Saudi,AL Arabi (SA),100.0
-Al-Duhail SC U23,AL Duhail U23,100.0
+Al Duhail U23,AL Duhail U23,100.0
 Al-Ettifaq,Al İttifak,100.0
 Al-Fateh (KSA),Al Fateh SC,100.0
 Al-Feiha,AL Faiha,100.0
@@ -2424,6 +2422,23 @@ Zonguldakspor,Zonguldak Kömürspor,100.0
 Zrinjski,Zrinjski Mostar,100.0
 Zulte-Waregem,Zulte Waregem,100.0
 Zurrieq,Zurrieq,100.0
+Nacional (Par),Nacional FC,100.0
+Bray Wanderers,Bray Wanderers AFC,100.0
+Al Sharjah,Sharjah FC,100.0
+Al Taee,AL Tai,100.0
+Al-Ula FC,AL Ula ,100.0
+Bohemians,Bohemians Dublin,100.0
+Bragantino Clube do Para,Bragantino C.P. PA,100.0
+Central Coast Mariners (W),Central Coast Mariners W.,100.0
+ES Setif,Setif,100.0
+First Vienna Fc 1894,First Vienna,100.0
+Joinville,Joinville EC SC,100.0
+Middlesbrough U21,Middlesbrough FC (Res.),100.0
+Primavera MT,C Primavera,100.0
+Umm Salal,Umm-Salal SC,100.0
+Wexford F.C,Wexford,100.0
+AL Arabi (Qat),,
+AL Dhaid U19,,
 Al Saqr,,
 Al Shahaniya U23,,
 America SE,,
@@ -2433,7 +2448,6 @@ Kayserispor U19,,
 Kilis Bld.Spor,,
 Leones FC,,
 Mura,,
-Nacional (Par),,
 Notts County FC (Res),,
 Persipa Pati,,
 Sila SC,,
@@ -2463,7 +2477,6 @@ Oeste,,
 Satun United FC,,
 Austria Wien (A),,
 Modern Sport FC,,
-Bray Wanderers,,
 1. FC Union Berlin (W),,
 76 Igdir Belediyespor,,
 A.C. Trento S.C.S.D.,,
@@ -2538,8 +2551,6 @@ Al Rams U19,,
 Al Rayyan Ar Rawdah,,
 Al Riyadi Al Abassiya,,
 Al Shamal,,
-Al Sharjah,,
-Al Taee,,
 Al Waab Sports Club,,
 Al Wahda (Abu Dhabi),,
 Al Wahda Abu Dhabi U19,,
@@ -2563,7 +2574,6 @@ Al-Sailiya U23,,
 Al-Shabbab (BRN),,
 Al-Shoulla Al-Kharj,,
 Al-Taawoun Buraidah,,
-Al-Ula FC,,
 Al-Wahda (KSA),,
 Al-Washm,,
 Al-Wehdat,,
@@ -2639,14 +2649,12 @@ Blooming Santa Cruz,,
 Bnei Sakhnin,,
 Bodo/Glimt U19,,
 Bodrum Belediyesi Bodru,,
-Bohemians,,
 Bolton,,
 Borac Banja Luka,,
 Borussia Dortmund U21,,
 Bourg-en-Bresse,,
 Bournemouth (W),,
 Bournemouth U21,,
-Bragantino Clube do Para,,
 Brann U19,,
 Brighton U21,,
 Bristol City (W),,
@@ -2689,7 +2697,6 @@ Ceara SC Fortaleza,,
 Celaya,,
 Celtic (W),,
 Central Coast (W),,
-Central Coast Mariners (W),,
 Centro de Formacao de Atletas Tirol,,
 Cerezo Osaka Sakai (W),,
 Cesar Vallejo Moquegua,,
@@ -2777,7 +2784,6 @@ Durham (W),,
 Dynamo Kyiv U19,,
 EC Sao Jose Porto Alegre,,
 EC Vitoria Salvador,,
-ES Setif,,
 Eastern Company SC,,
 Egypt,,
 Eik-Tonsberg,,
@@ -2852,7 +2858,6 @@ Fehervar,,
 Ferroviaria DE U20,,
 Ferroviario CE U20,,
 Feu Tamaraws,,
-First Vienna Fc 1894,,
 Fk Buducnost Podgorica,,
 Fk Jedinstvo Bijelo Polje,,
 Fk Jezero,,
@@ -2940,7 +2945,6 @@ Jaalan,,
 Jef Utd Chiba,,
 Jerash,,
 Jerash SC,,
-Joinville,,
 Jordan,,
 Jordan U23,,
 Jorge Wilstermann,,
@@ -3051,7 +3055,6 @@ Mebrat Hayl,,
 Menemen Belediyespor,,
 Mersin Idman Yurdu,,
 Middlesbrough (W),,
-Middlesbrough U21,,
 Migori (Res),,
 Millwall U21,,
 Ming Chuan University,,
@@ -3171,7 +3174,6 @@ Portsmouth (W),,
 Potros del Este FC,,
 Preston,,
 Preston North End U21,,
-Primavera MT,,
 Prime Bangkok,,
 Proxy Work Club,,
 Psbi Blitar,,
@@ -3362,7 +3364,6 @@ UTA Arad,,
 Udon Banjan United,,
 Uganda Revenue Authority,,
 Ujpest,,
-Umm Salal,,
 Uniao EC Rondonopolis (Res),,
 Union Cocle,,
 Union Cocle (Res),,
@@ -3410,7 +3411,6 @@ Westerlo (Res),,
 Western Sydney (W),,
 Western Sydney Wanderers (,,
 Western Sydney Wanderers (W),,
-Wexford F.C,,
 Wigan,,
 Wigan Athletic U21,,
 Wolfsburg (W),,
