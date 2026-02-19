@@ -45,11 +45,10 @@ NOTIFY_ON_ERROR = False  # Future: enable when notification method decided
 # Telegram user notifications (comment out to disable)
 # Note: arb_create.py will read harbi-config.py to send arbitrage alerts
 TELEGRAM_USERS = [
-    {'name': 'James', 'id': 1580648939},
-    {'name': 'Ismail', 'id': 7530341430},
-    {'name': 'Hidden_Tomi', 'id': 588354800},
-    {'name': 'Totti', 'id': 5387409105},
-    {'name': 'AbelardoZ5', 'id': 977623500},
-    {'name': 'cassiolincoln10', 'id': 403609484},
-    # {'name': 'Ozan', 'id': 580717381},
+    {'name': 'xx', 'id': xx},
+    {'name': 'xx', 'id': xx},
+    {'name': 'xx', 'id': xx},
+    {'name': 'xx', 'id': xx},
+    {'name': 'xx', 'id': xx},
+    {'name': 'xx', 'id': xx},
 ]

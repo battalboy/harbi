@@ -7,7 +7,7 @@
 - **5-6 paying clients** will use this system
 - **Clients are Turkish** - all notifications, error messages, and UI text will eventually be in Turkish
 - **Clients need web access from anywhere** (no Python knowledge required)
-- **Remote production server**: 89.125.255.32 (giray@)
+- **Remote production server**: xx.xx.xx.xx (user@)
 - **Clients CANNOT run scripts manually** - must access via web interface or receive Telegram messages
 - **Production deployment is the END GOAL**, not just proof-of-concept
 - **Web server required**: Flask application for client access (not simple HTTP server)
@@ -127,6 +127,11 @@ The matching system uses **indicator-first filtering** to ensure accurate matche
 - All matching: **Oddswar ↔ Traditional Site**
 - If a team isn't on Oddswar, it won't appear in the software
 
+#### Oddswar as Source of Truth for Event Metadata (Status, League, Start Time)
+- **arb_basketball_create.py** uses Oddswar's values for Status, League, and Start Time in its output (HTML, Telegram). **arb_create.py** (soccer) does not yet have this update
+- Traditional sites (Stoiximan, Roobet, Tumbet) contribute: **odds and links**. Their Status/League/Start Time fields are **never used** by the arb pipeline
+- **Implication**: Don't over-invest in extracting league names or start times from traditional sites. Oddswar defines the event metadata for display. Having these fields on traditional site formatted files is harmless (e.g. for cross-check, debugging) but not required for arbitrage detection
+
 ### Step 2: Standardize Event Formats
 - Must identify when different formats represent the SAME event
 - Requires Step 1 (team name matching) completed first
@@ -168,24 +173,24 @@ The matching system uses **indicator-first filtering** to ensure accurate matche
 
 ## Remote Server Information
 
-- **IP Address**: 89.125.255.32
-- **Username**: giray
+- **IP Address**: xx.xx.xx.xx
+- **Username**: user
 - **Operating System**: Ubuntu
 - **Python Version**: 3.10.11
-- **Location**: Frankfurt, Germany
-- **SSH**: `ssh giray@89.125.255.32`
+- **Location**: xxxx, xxxx
+- **SSH**: `ssh user@xx.xx.xx.xx`
 
 ## Web Server
 
-- **Port**: 8080
-- **Soccer results**: `http://89.125.255.32:8080/results.html`
-- **Basketball results**: `http://89.125.255.32:8080/results_basketball.html`
+- **Port**: xxxx
+- **Soccer results**: `http://xx.xx.xx.xx:xxxx/results.html`
+- **Basketball results**: `http://xx.xx.xx.xx:xxxx/results_basketball.html`
 - Service: `harbi-http-server.service`
 
 ## VPN/Proxy (Gluetun)
 
-- Greece (Stoiximan): Port 8888
-- Canada (Stake): Port 8889
+- Greece (Stoiximan): Port xxxx
+- Canada (Stake): Port xxxx
 - Config: `docker-greece.yaml`, `docker-canada.yaml`
 
 ## Automated Event Fetching
