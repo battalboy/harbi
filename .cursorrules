@@ -5,7 +5,7 @@
 - **5-6 paying clients** will use this system
 - **Clients are Turkish** - all notifications, error messages, and UI text will eventually be in Turkish
 - **Clients need web access from anywhere** (no Python knowledge required)
-- **Remote production server**: 89.125.255.32 (giray@)
+- **Remote production server**: xx.xx.xx.xx (user@)
 - **Clients CANNOT run scripts manually** - must access via web interface or receive Telegram messages
 - **Production deployment is the END GOAL**, not just proof-of-concept
 - **Web server required**: Flask application for client access (not simple HTTP server)
@@ -610,14 +610,14 @@ This system does NOT place bets automatically. It identifies opportunities for t
   - For sites like Stoiximan: if prematch API is unavailable, consider accepting live-only data rather than using browser automation
 
 ## Remote Server Information
-- **IP Address**: 89.125.255.32
-- **Username**: giray
+- **IP Address**: xx.xx.xx.xx
+- **Username**: user
 - **Operating System**: Ubuntu (latest release)
 - **Python Version**: 3.10.11
-- **Location**: Frankfurt, Germany
+- **Location**: xxx, xxx
 - **Authentication**: Passwordless SSH with public key (id_rsa)
-- **SSH Command**: `ssh giray@89.125.255.32`
-- **SCP Command Example**: `scp file.txt giray@89.125.255.32:~/path/to/destination/`
+- **SSH Command**: `ssh user@xx.xx.xx.x`
+- **SCP Command Example**: `scp file.txt user@xx.xx.xx.xx:~/path/to/destination/`
 - **Note**: The local machine's private key (id_rsa) has been copied to the remote for GitHub access
 
 ## Web Server Setup (Remote Server)
@@ -627,14 +627,14 @@ This system does NOT place bets automatically. It identifies opportunities for t
 **Implementation**: Python's built-in HTTP server as systemd service
 
 **Configuration:**
-- **Port**: 8080
+- **Port**: xxxx
 - **Service File**: `harbi-http-server.service`
-- **Working Directory**: `/home/giray/harbi/` (serves files from this directory)
-- **Log File**: `/home/giray/harbi/logs/http_server.log`
+- **Working Directory**: `/home/xx/xx/` (serves files from this directory)
+- **Log File**: `/home/xx/xx/logs/http_server.log`
 
 **URLs:**
-- Soccer results: `http://89.125.255.32:8080/results.html`
-- Basketball results: `http://89.125.255.32:8080/results_basketball.html`
+- Soccer results: `http://xx.xx.xx.xx:xxxx/results.html`
+- Basketball results: `http://xx.xx.xx.xx:xxxx/results_basketball.html`
 
 **Service Management:**
 ```bash
@@ -654,12 +654,12 @@ sudo systemctl status harbi-http-server
 sudo systemctl enable harbi-http-server
 
 # View logs
-tail -f /home/giray/harbi/logs/http_server.log
+tail -f /home/xx/xx/logs/http_server.log
 ```
 
 **Installation (first time only):**
 ```bash
-sudo cp /home/giray/harbi/harbi-http-server.service /etc/systemd/system/
+sudo cp /home/xx/xx/harbi-http-server.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable harbi-http-server
 sudo systemctl start harbi-http-server
@@ -688,8 +688,8 @@ sudo systemctl start harbi-http-server
 ```python
 # For scripts that need VPN access (e.g., collect_stake_teams.py, event_create_stoiximan.py)
 proxies = {
-    'http': 'http://127.0.0.1:8889',   # Canada VPN for Stake
-    'https': 'http://127.0.0.1:8889'
+    'http': 'http://127.0.0.1:xxxx',   # Canada VPN for Stake
+    'https': 'http://127.0.0.1:xxxx'
 }
 response = requests.get(url, proxies=proxies)
 ```
@@ -698,7 +698,7 @@ response = requests.get(url, proxies=proxies)
 
 *For Stake.com (Canada VPN):*
 - Firefox Settings → Network Settings → Manual proxy configuration
-- HTTP Proxy: `127.0.0.1`, Port: `8889`
+- HTTP Proxy: `127.0.0.1`, Port: `xxxx`
 - ☑ Also use this proxy for HTTPS
 - Leave SOCKS Host empty
 - No proxy for: `localhost, 127.0.0.1`
@@ -718,8 +718,8 @@ firefox --proxy-server="http://127.0.0.1:8888" https://www.stoiximan.gr
 **FoxyProxy Setup (Recommended - Automatic Proxy Switching):**
 
 *Why use FoxyProxy:*
-- Automatically routes Stake.com through Canada proxy (8889)
-- Automatically routes Stoiximan through Greece proxy (8888)
+- Automatically routes Stake.com through Canada proxy (xxxx)
+- Automatically routes Stoiximan through Greece proxy (xxxx)
 - All other sites use direct connection (no proxy)
 - No manual proxy switching required
 
@@ -735,7 +735,7 @@ firefox --proxy-server="http://127.0.0.1:8888" https://www.stoiximan.gr
 3. **Title**: `Canada VPN (Stake)`
 4. **Type**: `HTTP`
 5. **Hostname**: `127.0.0.1`
-6. **Port**: `8889`
+6. **Port**: `xxxx`
 7. Go to "Patterns" tab → "Add New Pattern"
    - **Pattern Name**: `Stake.com`
    - **Pattern**: `*stake.com*`
@@ -747,7 +747,7 @@ firefox --proxy-server="http://127.0.0.1:8888" https://www.stoiximan.gr
 2. **Title**: `Greece VPN (Stoiximan)`
 3. **Type**: `HTTP`
 4. **Hostname**: `127.0.0.1`
-5. **Port**: `8888`
+5. **Port**: `xxxx`
 6. Go to "Patterns" tab → "Add New Pattern"
    - **Pattern Name**: `Stoiximan`
    - **Pattern**: `*stoiximan.gr*`
@@ -780,7 +780,7 @@ sudo docker logs gluetun_greece
 ```
 
 **Notes:**
-- Gluetun provides HTTP proxy (port 8888/8889) and Shadowsocks encrypted proxy (port 8390/8391)
+- Gluetun provides HTTP proxy (port xxxx/xxxx) and Shadowsocks encrypted proxy (port 8390/8391)
 - **HTTP proxy works for HTTPS sites** using HTTP CONNECT tunneling method (confirmed working)
 - Shadowsocks is NOT plain SOCKS5 - requires password or SSH tunnel for Firefox testing
 - Both containers can run simultaneously (different ports prevent conflicts)
@@ -792,7 +792,7 @@ sudo docker logs gluetun_greece
 
 **Implementation Plan**: Python daemon service running on remote server
 
-**Script Location**: `/home/giray/harbi/run_event_loop.py`
+**Script Location**: `/home/xx/xx/run_event_loop.py`
 
 **Configuration File (harbi-config.py)**:
 ```python
@@ -816,12 +816,12 @@ NOTIFY_ON_ERROR = False  # Future: enable when notification method decided
 # Telegram user notifications (comment out to disable)
 # Note: arb_create.py will read harbi-config.py to send arbitrage alerts
 TELEGRAM_USERS = [
-    {'name': 'James', 'id': 1580648939},
-    {'name': 'Ismail', 'id': 7530341430},
-    # {'name': 'Hidden_Tomi', 'id': 588354800},  # Disabled temporarily
-    {'name': 'Totti', 'id': 5387409105},
-    {'name': 'AbelardoZ5', 'id': 977623500},
-    {'name': 'cassiolincoln10', 'id': 403609484},
+    {'name': 'xx', 'id': xx},
+    {'name': 'xx', 'id': xx},
+    # {'name': 'xx', 'id': xx},  # Disabled temporarily
+    {'name': 'xx', 'id': xx},
+    {'name': 'xx', 'id': xx},
+    {'name': 'xx', 'id': xx},
 ]
 ```
 
@@ -905,12 +905,12 @@ tail -f /home/giray/harbi/logs/event_loop.log
 **Telegram supports basic HTML/Markdown but NO tables**
 
 **Client Telegram IDs:**
-- 1580648939 - James (me - the developer/owner)
-- 7530341430 - Ismail
-- 588354800 - @Hidden_Tomi
-- 5387409105 - @Totti34x (Totti)
-- 977623500 - @AbelardoZ5
-- 403609484 - @cassiolincoln10
+- xx - xx (me - the developer/owner)
+- xx - xx
+- xx - xx
+- xx - xx
+- xx - xx
+- xx - xx
 
 **Supported HTML tags:**
 - `<b>bold</b>` - **bold text**
