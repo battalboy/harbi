@@ -1,7 +1,5 @@
 # Harbi - Arbitrage Betting System
 
-## ⚠️ CRITICAL CONTEXT - READ THIS FIRST ⚠️
-
 **THIS IS COMMISSIONED CLIENT SOFTWARE - NOT A PERSONAL PROJECT**
 
 - **5-6 paying clients** will use this system
