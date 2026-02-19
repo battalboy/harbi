@@ -12,6 +12,12 @@ These rules apply to all work on this codebase.
 - The user will explicitly state whether the commit is to local and/or live git.
 - The user may have asked for a series of procedures without mentioning git at all and it may seem like a natural or logical step to commit to git or to use the git command as part of these procedures but DO NOT do so. Ask the user for permission.
 
+## Code Debugging
+
+- **DO NOT perform ANY debugging operations on actual scripts** unless the user explicitly requests it
+- When debugging, create a temp file of the script being debugged and debug that. No need to ask permission for this
+- Once the user gives the go-ahead then implement the fix in the actual script but do not push to git until the user explicitly requests it.
+
 ## Remote Server Operations
 
 - **DO NOT make ANY changes to the remote production server** (89.125.255.32) without the user's express permission
