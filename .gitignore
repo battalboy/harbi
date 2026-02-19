@@ -49,4 +49,7 @@ results.html
 # Terminal files
 terminals/
 
+# Specstory history (local only)
+.specstory/
+
 
