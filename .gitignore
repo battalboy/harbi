@@ -52,4 +52,7 @@ terminals/
 # Specstory history (local only)
 .specstory/
 
+# Runtime config with sensitive data (TELEGRAM_USERS) - deployed manually to server
+harbi-config.py
+
 
