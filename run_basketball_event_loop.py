@@ -109,7 +109,7 @@ def run_script(script_name, site_name):
             [python_exe, str(script_path)],
             capture_output=True,
             text=True,
-            timeout=300  # 5 minute timeout
+            timeout=60  # 1 minute timeout
         )
         
         if result.returncode == 0:

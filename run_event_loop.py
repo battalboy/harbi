@@ -11,7 +11,7 @@ import random
 import subprocess
 import os
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 
@@ -113,7 +113,7 @@ def run_script(script_name, site_name):
             [python_exe, str(script_path)],
             capture_output=True,
             text=True,
-            timeout=300  # 5 minute timeout
+            timeout=60  # 1 minute timeout
         )
         
         if result.returncode == 0:
@@ -146,7 +146,7 @@ def run_cycle(cycle_num):
         dict: Results summary
     """
     print(f"\n{'='*80}")
-    print(f"CYCLE #{cycle_num} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"CYCLE #{cycle_num} - {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC")
     print(f"{'='*80}")
     
     # Step 1: Load config
@@ -252,10 +252,10 @@ def main():
             # Get varied random interval
             interval_seconds = get_varied_random_interval(cycle_count)
             interval_minutes = interval_seconds / 60
-            next_time = datetime.fromtimestamp(time.time() + interval_seconds)
+            next_time = datetime.utcnow() + timedelta(seconds=interval_seconds)
             
             print(f"\n⏱️  Next cycle in {interval_minutes:.1f} minutes ({interval_seconds} seconds)")
-            print(f"   Waiting until: {next_time.strftime('%H:%M:%S')}")
+            print(f"   Waiting until: {next_time.strftime('%H:%M:%S')} UTC")
             print(f"{'='*80}\n")
             
             # Wait for random interval
