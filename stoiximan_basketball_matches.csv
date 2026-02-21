@@ -1,5 +1,5 @@
 Oddswar,Stoiximan,Confidence
-Benfica Basket,SL Benfica,100.0
+BK Patrioti Levice,BK Levicki Patrioti,100.0
  Maccabi Raanana, Maccabi Raanana,100.0
 ACBD Rio Claro,ACBD Rio Claro,100.0
 ADA Blois Basket 41,Ada Blois Basket 41,100.0
@@ -84,6 +84,7 @@ Beijing Royal Fighters,Beijing Royal Fighters,100.0
 Beliers de Kemper - UJA,Beliers de Kemper,100.0
 Beliers de Kemper - UJAP,Beliers de Kemper,100.0
 Bendigo Spirit W,Bendigo Spirit (W),100.0
+Benfica Basket,SL Benfica,100.0
 Besiktas JK,Besiktas,100.0
 Bigua,Bigua,100.0
 Bilbao Basket,Bilbao,100.0
@@ -136,6 +137,7 @@ Club Atletico Welcome,Club Atletico Welcome,100.0
 Club Joventut Badalona,Joventut Badalona,100.0
 Club Malvin,Malvin,100.0
 Club Melilla Baloncesto,Club Melilla Baloncesto,100.0
+Club Ourense Baloncesto,Ourense,100.0
 Club de Regatas Vasco da Gama,Vasco da Gama,100.0
 Clube Uniao Corinthians,EC Uniao Corinthians,100.0
 Corinthians,Corinthians,100.0
@@ -202,6 +204,7 @@ KD Ilirija,Ilirija,100.0
 KK Borac Cacak,Borac Cacak,100.0
 KK Bosna Royal Sarajevo,KK Bosna,100.0
 KK Buducnost Voli,Buducnost,100.0
+KK Cedevita Junior,KK Cedevita Junior,100.0
 KK Cedevita Olimpija Ljubljana,Cedevita Olimpija,100.0
 KK Crvena zvezda Belgrade,Crvena Zvezda,100.0
 KK Dinamo Zagreb,KK Dinamo Zagreb,100.0
@@ -240,7 +243,7 @@ Leicester Riders,Leicester Riders,100.0
 Limoges CSP,Limoges,100.0
 LoKoKo Bisons,Lokoko Bisons,100.0
 Lokomotiv Plovdiv 1926,Lokomotiv Plovdiv,100.0
-London Lions,BA London Lions,100.0
+London Lions,London Lions,100.0
 Lucentum Alicante,Alicante,100.0
 MBK Handlova,MBK Handlova,100.0
 Maccabi Ironi Ramat Gan,Maccabi Ironi Ramat Gan,100.0
@@ -304,6 +307,7 @@ Regatas Corrientes,Regatas Corrientes,100.0
 Reyer Venezia,Reyer Venezia,100.0
 Riesen Ludwigsburg,Ludwigsburg,100.0
 Rilski Sportist,Rilski Sportist Samokov,100.0
+Roanne Chorale,Roanne,100.0
 Rostock Seawolves,Rostock Seawolves,100.0
 Rouen Metropole Basket,Rouen,100.0
 Rytas Vilnius,Rytas Vilnius,100.0
@@ -384,63 +388,61 @@ Zaragoza,Zaragoza U22,100.0
 Zastal BC Zielona Gora,Zielona Gora,100.0
 Zhejiang Lions,Zhejiang Guangsha Lions,100.0
 Zonkeys de Tijuana,Zonkeys de Tijuana,100.0
+Bnei Herzliya Basket,Bnei Herzliya,100.0
+Alba Berlin,Alba Berlin,100.0
 Zadar,,
 Guangzhou Loong Lions,,
 Reyer Venezia Women,,
 Toros Laguna,,
+BC Olympiakos Piraeus,,
 CA San Lorenzo de Almag,,
-Alliance Sport Alsace,,
 KK Omis,,
 Geelong United W,,
-Shanghai Sharks,,
+Nassjo Basket,,
+Beijing Ducks,,
+CS Dinamo Bucuresti,,
 Illawarra Hawks,,
-Qingdao Eagles,,
-Zhejiang Golden Bulls,,
 JL Bourg Basket,,
 Jiangsu Dragons,,
 KK Bosna,,
-Nassjo Basket,,
-Vrlse BBK,,
+Qingdao Eagles,,
 Bears Academy,,
-Flammes Carolo Basket Ardenne,,
 Champagne Basketball,,
 Pallacanestro Reggiana,,
+Zhejiang Golden Bulls,,
 Basket Schio Women,,
+Shanghai Sharks,,
 Xinjiang Flying Tigers,,
-Wilki Morskie Szczecin,,
-FC Universitatea Cluj,,
 Ulm Baskets,,
-Fenerbahce Women,,
 Asa Koroivos,,
+Zaragoza Women,,
 AD Atenas Cordoba,,
 Akademik Bulteks 99,,
+Alliance Sport Alsace,,
 Anadolu Efes,,
 Anyang Jungkwanjang Red Booste,,
 BC Aris Thessaloniki,,
-BC Olympiakos Piraeus,,
-BK Patrioti Levice,,
 BV Chemnitz 99,,
 Baloncesto Malaga,,
-Beijing Ducks,,
 Bkm Lucenec,,
 Busan Sum Women,,
 CB 1939 Canarias,,
 CB Bahia San Agustin,,
 CB Canarias,,
-CS Dinamo Bucuresti,,
 CS Rapid Bucuresti,,
 CS Valcea 1924 Rm Valcea,,
 CSO Voluntari,,
 Cheongju KB Stars Women,,
 Ciclista Olimpico de La B,,
-Club Ourense Baloncesto,,
 Club Ourense Baloncesto Sad,,
 Elan Bearnais Pau-Lacq-Ort,,
 Esporte Clube Uniao Corinthia,,
+FC Universitatea Cluj,,
+Fenerbahce Women,,
+Flammes Carolo Basket Ardenne,,
 Fujian Sturgeons,,
 Goyang Skygunners,,
 Hana Bank Women,,
-KK Cedevita Junior,,
 KK Split,,
 Liaoning Flying Leopards,,
 MBC,,
@@ -449,7 +451,6 @@ Pallacanestro Trieste 2004,,
 Panionios BC Athens,,
 Quimsa Santiogo Del Est,,
 Quimsa Santiogo Del Estero,,
-Roanne Chorale,,
 S'Birds Women,,
 SCM Timisoara,,
 Shanxi Loongs,,
@@ -458,7 +459,8 @@ Sichuan Blue Whales,,
 Spar Girona Women,,
 Starwings Basket Regio B,,
 Uniao Corinthians,,
+Vrlse BBK,,
+Wilki Morskie Szczecin,,
 Woori WON Women,,
 Yongin Blueminx Women,,
 ZVVZ USK Praha Women,,
-Zaragoza Women,,

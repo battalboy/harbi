@@ -1,6 +1,5 @@
 Oddswar,Roobet,Confidence
-Flyers Wels,Flyers Wels,100.0
-Derthona Basket,Derthona Basket,100.0
+Cholet Basket,Cholet Basket,100.0
 AEK Athens,BC AEK Athens,100.0
 ALBA Berlin,Alba Berlin,100.0
 AO Kolossos Rodou,BC Kolossos Rhodes,100.0
@@ -66,6 +65,7 @@ Chiba Jets,Chiba Jets Funabashi,100.0
 Club Joventut Badalona,Club Joventut Badalona,100.0
 Czarni Slupsk,Energa Czarni Slupsk,100.0
 Dabrowa Gornicza,MKS Dabrowa Gornicza,100.0
+Derthona Basket,Derthona Basket,100.0
 Dinamo Sassari,Dinamo Sassari,100.0
 Dubai Basketball,BC Dubai,100.0
 Elan Chalon,Elan Chalon,100.0
@@ -77,6 +77,7 @@ Falco Szombathely,Falco KC Szombathely,100.0
 Fenerbahce Istanbul,Fenerbahce Istanbul,100.0
 Fenerbahce SK,Fenerbahce Istanbul,100.0
 Flammes Carolo Basket Ardenne,Flammes Carolo Basket,100.0
+Flyers Wels,Flyers Wels,100.0
 Fribourg Olympic,Fribourg Olympic,100.0
 Fujian Sturgeons,Fujian Sturgeons,100.0
 Furstenfeld Panthers,Furstenfeld Panthers,100.0
@@ -229,9 +230,8 @@ Hyeres Toulon,,
 Nitra Blue Wings,,
 ADA Blois Basket 41,,
 Aix Maurienne Savoie Basket,,
-Basket Landes SASP Wome,,
+Basket Cartagena,,
 CB Zamora,,
-Cholet Basket,,
 Osasco Basket,,
 Caballeros de Culiacan,,
 CB Tizona,,
@@ -245,6 +245,7 @@ Newcastle Eagles,,
 BC Astana,,
 Bauru Basket,,
 Bears Academy,,
+Bristol Flyers,,
 Kosice Wolves,,
 Lokomotiv Plovdiv 1926,,
 Napoli Basket,,
@@ -253,8 +254,6 @@ LoKoKo Bisons,,
 Bakken Bears,,
 Bourges Women,,
 Reyer Venezia Women,,
-Bristol Flyers,,
-Basket Cartagena,,
 Cheshire Phoenix,,
 Champagne Basketball,,
 ZVVZ USK Praha Women,,
@@ -275,6 +274,7 @@ Aguada,,
 Akademik Bulteks 99,,
 Al Riyadi,,
 Al Wahda,,
+Alba Berlin,,
 Alkar Sinj,,
 Alliance Sport Alsace,,
 Anyang Jungkwanjang Red Booste,,
@@ -294,12 +294,14 @@ BKM Lucenec,,
 BMS Herlev,,
 BV Chemnitz 99,,
 Baloncesto Fuenlabrada,,
+Basket Landes SASP Wome,,
 Beliers de Kemper - UJAP,,
 Bendigo Spirit W,,
 Bigua,,
 Bkk Radnicki Belgrade,,
 Bkm Lucenec,,
 Bnei Herzliya,,
+Bnei Herzliya Basket,,
 Botafogo,,
 Busan Sum Women,,
 CA Penarol,,

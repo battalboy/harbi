@@ -1,6 +1,5 @@
 Oddswar,Tumbet,Confidence
-Yongin Blueminx Women,Yongin Life Blue Minx W.,100.0
-ZVVZ USK Praha Women,USK Praha (K.),100.0
+Bkk Radnicki Belgrade,Radnicki Beograd,100.0
  Al Riyadi,Al Riyadi,100.0
 ACBD Rio Claro,Rio Claro,100.0
 ADA Blois Basket 41,Ada Blois,100.0
@@ -187,6 +186,7 @@ Guangdong Southern Tigers,Guangdong Southern Tigers,100.0
 Guangzhou Loong Lions,Guangzhou Long Lions,100.0
 Hamburg Towers,Hamburg Towers,100.0
 Hapoel Beer Sheva,Hapoel Beer Sheva,100.0
+Hapoel Galil Elyon,Hapoel Galil Elyon,100.0
 Hapoel Haemek,Hapoel Migdal HaEmek,100.0
 Hapoel Holon BC,Hapoel Holon,100.0
 Hapoel Jerusalem,Hapoel Jerusalem,100.0
@@ -407,6 +407,8 @@ Wonju DB Promy,Dongbu Promy,100.0
 Wurzburg Baskets,Wurzburg,100.0
 Xinjiang Flying Tigers,Xinjiang Flying Tigers,100.0
 Yokohama B-Corsairs,Yokohama B Corsairs,100.0
+Yongin Blueminx Women,Yongin Life Blue Minx W.,100.0
+ZVVZ USK Praha Women,USK Praha (K.),100.0
 Zadar,KK Zadar,100.0
 Zaragoza,Zaragoza 2002,100.0
 Zastal BC Zielona Gora,Zielona Gora,100.0
@@ -415,6 +417,7 @@ Zhejiang Lions,Zhejiang Guangsha Lions,100.0
 Alliance Sport Alsace,,
 Angeles CD Mexico,,
 Nanjing Monkey Kings,,
+Alba Berlin,,
 Ciclista Olimpico de La Banda,,
 Reyer Venezia Women,,
 Toros Laguna,,
@@ -424,9 +427,11 @@ CA San Lorenzo de Almag,,
 CB Malaga,,
 Goyang Skygunners,,
 KK Bosna,,
+Quimsa Santiogo Del Est,,
 Caballeros de Culiacan,,
 Frayles de Guasave,,
 AD Atenas Cordoba,,
+Uniao Corinthians,,
 CB 1939 Canarias,,
 CB Tizona,,
 Krka,,
@@ -437,24 +442,24 @@ Maccabi Tel Aviv BC,,
 FC Universitatea Cluj,,
 Zaragoza Women,,
 Basket Schio Women,,
+Bnei Herzliya Basket,,
 Caledonia Gladiators,,
-Atletico Goes,,
 Alkar Sinj,,
 Benfica Basket,,
 Champagne Basketball,,
 Minas Tenis Clube,,
+Napoli Basket,,
 Palencia Baloncesto,,
 Ulm Baskets,,
-Napoli Basket,,
 Fenerbahce Women,,
 Pallacanestro Trieste 2004,,
 Club Ourense Baloncesto,,
 Union Neuchatel Basket,,
-Bkk Radnicki Belgrade,,
 KK Crvena zvezda Belgrade,,
 BC Olympiakos Piraeus,,
 Busan Sum Women,,
 Union de Santa Fe,,
+Atletico Goes,,
 APU Udine,,
 BC Aris Thessaloniki,,
 BC Nevezis Kedainiai,,
@@ -468,14 +473,12 @@ Hana Bank Women,,
 Kk Split,,
 Ostioneros de Guaymas,,
 Pioneros de Los Mochis,,
-Quimsa Santiogo Del Est,,
 Quimsa Santiogo Del Estero,,
 Rayos de Hermosillo,,
 S'Birds Women,,
 Sesi SP/Franca BC,,
 Starwings Basket Regio B,,
 Turk Telekom,,
-Uniao Corinthians,,
 Venados de Mazatlan,,
 Woori WON Women,,
 Zonkeys de Tijuana,,
